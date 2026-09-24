@@ -1,0 +1,3253 @@
+{
+  "condition": "C4",
+  "run_id": "ablation-cost-exact-c4-remainder",
+  "started_at": "2026-09-24T20:20:19.958079+00:00",
+  "base_url": "http://127.0.0.1:8010",
+  "items": [
+    {
+      "spec_id": "P02",
+      "specification": {
+        "spec_id": "P02",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+        "dificuldade": 3,
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "restricoes": [
+          "uma única alternativa defensável",
+          "não perguntar apenas por uma propriedade isolada"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+        "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P02",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T20:20:19.985288+00:00",
+        "updated_at": "2026-09-24T20:20:19.985288+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P02",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+          "dificuldade": 3,
+          "competencia": "Analisar arquiteturas de comunicação",
+          "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+          "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+          "restricoes": [
+            "uma única alternativa defensável",
+            "não perguntar apenas por uma propriedade isolada"
+          ]
+        }
+      },
+      "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+      "generation_status": 200,
+      "generation": {
+        "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+        "state": "ATTEMPTS_EXHAUSTED",
+        "red_flags": [
+          {
+            "codigo": "iwf_gabarito_mais_longo",
+            "etapa": "DETERMINISTICA",
+            "campo": "alternativas",
+            "evidencia": "palavras por alternativa=[9, 8, 8, 7, 46]; o gabarito não deve se destacar pela extensão",
+            "reparo": "DISTRATORES"
+          },
+          {
+            "codigo": "iwf_repeticao_entrega_gabarito",
+            "etapa": "DETERMINISTICA",
+            "campo": "enunciado",
+            "evidencia": "termos exclusivos repetidos no gabarito: cabecalho, dados, pacotes",
+            "reparo": "NUCLEO"
+          }
+        ]
+      },
+      "history": {
+        "request": {
+          "id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+          "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P02",
+          "state": "ATTEMPTS_EXHAUSTED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 6,
+          "stem_attempts": 3,
+          "distractor_attempts": 3,
+          "created_at": "2026-09-24T20:20:19.985288+00:00",
+          "updated_at": "2026-09-24T20:23:15.786302+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P02",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+            "dificuldade": 3,
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "restricoes": [
+              "uma única alternativa defensável",
+              "não perguntar apenas por uma propriedade isolada"
+            ]
+          }
+        },
+        "versions": [
+          {
+            "id": "b0bffd9f-83ea-48c4-b04e-273d27cda65c",
+            "version_number": 1,
+            "created_at": "2026-09-24T20:21:16.126596+00:00"
+          },
+          {
+            "id": "f0a36363-9d20-462b-8c25-20725f47517f",
+            "version_number": 2,
+            "created_at": "2026-09-24T20:22:06.416883+00:00"
+          },
+          {
+            "id": "d79141f6-1b75-46cd-a7f7-73d6ded38967",
+            "version_number": 3,
+            "created_at": "2026-09-24T20:23:15.770753+00:00"
+          }
+        ],
+        "latest_version": {
+          "id": "d79141f6-1b75-46cd-a7f7-73d6ded38967",
+          "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+          "version_number": 3,
+          "created_at": "2026-09-24T20:23:15.770753+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Em um cenário de aplicação que exige comunicação em tempo real, tolera perda ocasional de pacotes, mas requer que os dados cheguem na mesma sequência em que foram enviados, compare as proteções de transmissão e o overhead de cabeçalho oferecidos pelos protocolos TCP e UDP.",
+            "alternativas": [
+              "TCP permite que os pacchettes cheguen em qualquer ordem",
+              "Transmissão TCP é mais rápida do que UDP",
+              "Protocolo IP é responsável por controlar o fluxo",
+              "UDP tem menos overhead do que TCP",
+              "O TCP garante transmissão confiável, controle de fluxo e de congestionamento, preservando a ordem dos dados, porém com overhead de cabeçalho maior; o UDP fornece transmissão sem conexão, sem controle de fluxo nem de congestionamento, permitindo menor overhead, mas sem garantir confiabilidade nem ordem dos pacotes."
+            ],
+            "correta": 4,
+            "explicacao": "O TCP, por ser orientado a conexão, implementa mecanismos de reconhecimento, retransmissão, controle de fluxo e de congestionamento, assegurando que todos os segmentos cheguem ao destino na mesma ordem em que foram enviados, o que aumenta o tamanho do cabeçalho. O UDP, por ser sem conexão, não realiza esses controles, resultando em um cabeçalho mais enxuto e menor latência, porém não oferece garantias de confiabilidade nem de ordem, sendo adequado apenas para aplicações que podem tolerar perdas e reordenamentos.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 3
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-redes-transporte-007",
+            "llm": "openai/gpt-oss-120b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "artifacts": [
+          {
+            "id": 198,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T20:20:20.005742+00:00",
+            "payload": {
+              "id": "rag-redes-transporte-007",
+              "texto": "Na arquitetura TCP/IP, a camada de transporte oferece comunicação fim a fim entre processos. O TCP fornece serviço orientado a conexão, entrega confiável, controle de fluxo e controle de congestionamento. O UDP oferece serviço sem conexão com menor sobrecarga, sem garantir entrega ou ordenação.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Redes de Computadores",
+                "habilidade": "Comparar protocolos de transporte",
+                "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet.",
+                "linha": 7,
+                "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 25.756259,
+                "termos_recuperados": [
+                  "comunicacao",
+                  "fim",
+                  "protocolos",
+                  "tcp",
+                  "transporte",
+                  "udp"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "arquiteturas",
+                  "cenario",
+                  "comunicacao",
+                  "conforme",
+                  "fim",
+                  "garantias",
+                  "oferecidas",
+                  "pelos",
+                  "protocolo",
+                  "protocolos",
+                  "requisitos",
+                  "selecionar",
+                  "tcp",
+                  "transporte",
+                  "udp"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-redes-transporte-007",
+                    "score": 25.756259
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 199,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "kind": "STEM",
+            "created_at": "2026-09-24T20:20:22.040011+00:00",
+            "payload": {
+              "enunciado": "Em um sistema de videoconferência interativo, a aplicação tolera perda ocasional de pacotes, porém requer latência mínima para manter a fluidez da comunicação. Qual protocolo de transporte deve ser adotado e, com base nas garantias oferecidas por TCP e UDP, justifique a escolha?",
+              "resposta_correta": "UDP, porque ele não fornece garantias de entrega ou ordenação, resultando em menor sobrecarga e latência, adequando‑se ao requisito de tolerância a perdas e necessidade de baixa latência; já TCP garante entrega confiável e ordenada, o que aumentaria a latência e não é necessário nesse cenário.",
+              "explicacao": "TCP oferece serviço orientado à conexão, controle de fluxo, congestionamento e entrega confiável, o que implica em retransmissões e maior tempo de ida‑e‑volta. Em aplicações que exigem entrega estrita, isso é essencial. UDP, por outro lado, é sem conexão, sem controle de fluxo ou congestionamento, e não garante entrega ou ordem, proporcionando menor overhead e latência. Quando a aplicação pode tolerar perdas e prioriza rapidez, UDP satisfaz melhor os requisitos, enquanto TCP introduziria atraso desnecessário.",
+              "competencia": "Analisar arquiteturas de comunicação",
+              "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 913,
+                "completion_tokens": 638,
+                "total_tokens": 1551
+              }
+            }
+          },
+          {
+            "id": 200,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T20:21:16.117391+00:00",
+            "payload": [
+              {
+                "texto": "IP",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "DNS",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "DHCP",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "HTTP",
+                "erro": "",
+                "por_que_e_falso": ""
+              }
+            ],
+            "provenance": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_3:distratos->distratores",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto"
+              ],
+              "amostras": 3,
+              "candidatos_gerados": 8,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "token_usage_local": {
+                "input_tokens": 1509,
+                "output_tokens": 59,
+                "total_tokens": 1568
+              },
+              "familia": "resposta_textual",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 8,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 201,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T20:21:16.135735+00:00",
+            "payload": [
+              {
+                "codigo": "iwf_gabarito_mais_longo",
+                "etapa": "DETERMINISTICA",
+                "campo": "alternativas",
+                "evidencia": "palavras por alternativa=[1, 1, 1, 1, 47]; o gabarito não deve se destacar pela extensão",
+                "reparo": "DISTRATORES"
+              },
+              {
+                "codigo": "iwf_repeticao_entrega_gabarito",
+                "etapa": "DETERMINISTICA",
+                "campo": "enunciado",
+                "evidencia": "termos exclusivos repetidos no gabarito: garantias, latencia",
+                "reparo": "NUCLEO"
+              }
+            ],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.1.0",
+              "tipo": "deterministico"
+            }
+          },
+          {
+            "id": 202,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "kind": "STEM",
+            "created_at": "2026-09-24T20:21:18.419766+00:00",
+            "payload": {
+              "enunciado": "Em um cenário de aplicação que exige comunicação fim a fim, compare as garantias de entrega e ordenação oferecidas pelos protocolos TCP e UDP.",
+              "resposta_correta": "TCP garante entrega confiável e ordenação das mensagens, ao passo que UDP não oferece tais garantias, podendo perder ou reordenar pacotes.",
+              "explicacao": "A camada de transporte do modelo TCP/IP define o nível de serviço. TCP é orientado a conexão, realiza controle de fluxo, retransmissão de pacotes perdidos e mantém a ordem dos segmentos, assegurando entrega confiável e ordenada. UDP, por ser sem conexão, simplesmente encaminha datagramas sem retransmissão nem controle de ordem, o que implica ausência de garantia de entrega e ordenação. Assim, a diferença fundamental reside nas garantias de confiabilidade e ordenação que TCP oferece e que UDP não fornece.",
+              "competencia": "Analisar arquiteturas de comunicação",
+              "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 1056,
+                "completion_tokens": 847,
+                "total_tokens": 1903
+              }
+            }
+          },
+          {
+            "id": 203,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T20:22:06.409299+00:00",
+            "payload": [
+              {
+                "texto": "TCP garantiu que mensagem fosse entregue antes de outra",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "Protocolo TCP garantiou que pacotes seriam enviados na sequência",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "Protocolo TCP garantiu a ordem dos pacotes",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "UDP garantiu que pacote fosse enviado primeiro",
+                "erro": "",
+                "por_que_e_falso": ""
+              }
+            ],
+            "provenance": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto"
+              ],
+              "amostras": 2,
+              "candidatos_gerados": 8,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "token_usage_local": {
+                "input_tokens": 852,
+                "output_tokens": 114,
+                "total_tokens": 966
+              },
+              "familia": "resposta_textual",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 8,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  5,
+                  7,
+                  3,
+                  6
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 204,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T20:22:06.422468+00:00",
+            "payload": [
+              {
+                "codigo": "iwf_gabarito_mais_longo",
+                "etapa": "DETERMINISTICA",
+                "campo": "alternativas",
+                "evidencia": "palavras por alternativa=[9, 7, 9, 7, 21]; o gabarito não deve se destacar pela extensão",
+                "reparo": "DISTRATORES"
+              },
+              {
+                "codigo": "iwf_repeticao_entrega_gabarito",
+                "etapa": "DETERMINISTICA",
+                "campo": "enunciado",
+                "evidencia": "termos exclusivos repetidos no gabarito: entrega, garantias, ordenacao",
+                "reparo": "NUCLEO"
+              }
+            ],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.1.0",
+              "tipo": "deterministico"
+            }
+          },
+          {
+            "id": 205,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "kind": "STEM",
+            "created_at": "2026-09-24T20:22:09.724087+00:00",
+            "payload": {
+              "enunciado": "Em um cenário de aplicação que exige comunicação em tempo real, tolera perda ocasional de pacotes, mas requer que os dados cheguem na mesma sequência em que foram enviados, compare as proteções de transmissão e o overhead de cabeçalho oferecidos pelos protocolos TCP e UDP.",
+              "resposta_correta": "O TCP garante transmissão confiável, controle de fluxo e de congestionamento, preservando a ordem dos dados, porém com overhead de cabeçalho maior; o UDP fornece transmissão sem conexão, sem controle de fluxo nem de congestionamento, permitindo menor overhead, mas sem garantir confiabilidade nem ordem dos pacotes.",
+              "explicacao": "O TCP, por ser orientado a conexão, implementa mecanismos de reconhecimento, retransmissão, controle de fluxo e de congestionamento, assegurando que todos os segmentos cheguem ao destino na mesma ordem em que foram enviados, o que aumenta o tamanho do cabeçalho. O UDP, por ser sem conexão, não realiza esses controles, resultando em um cabeçalho mais enxuto e menor latência, porém não oferece garantias de confiabilidade nem de ordem, sendo adequado apenas para aplicações que podem tolerar perdas e reordenamentos.",
+              "competencia": "Analisar arquiteturas de comunicação",
+              "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 1058,
+                "completion_tokens": 1251,
+                "total_tokens": 2309
+              }
+            }
+          },
+          {
+            "id": 206,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T20:23:15.757171+00:00",
+            "payload": [
+              {
+                "texto": "TCP permite que os pacchettes cheguen em qualquer ordem",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "Protocolo IP é responsável por controlar o fluxo",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "Transmissão TCP é mais rápida do que UDP",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "UDP tem menos overhead do que TCP",
+                "erro": "",
+                "por_que_e_falso": ""
+              }
+            ],
+            "provenance": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_3:distratos->distratores",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto"
+              ],
+              "amostras": 3,
+              "candidatos_gerados": 8,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "token_usage_local": {
+                "input_tokens": 1503,
+                "output_tokens": 155,
+                "total_tokens": 1658
+              },
+              "familia": "resposta_textual",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 8,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  5,
+                  3,
+                  6,
+                  4
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 207,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T20:23:15.778173+00:00",
+            "payload": [
+              {
+                "codigo": "iwf_gabarito_mais_longo",
+                "etapa": "DETERMINISTICA",
+                "campo": "alternativas",
+                "evidencia": "palavras por alternativa=[9, 8, 8, 7, 46]; o gabarito não deve se destacar pela extensão",
+                "reparo": "DISTRATORES"
+              },
+              {
+                "codigo": "iwf_repeticao_entrega_gabarito",
+                "etapa": "DETERMINISTICA",
+                "campo": "enunciado",
+                "evidencia": "termos exclusivos repetidos no gabarito: cabecalho, dados, pacotes",
+                "reparo": "NUCLEO"
+              }
+            ],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.1.0",
+              "tipo": "deterministico"
+            }
+          }
+        ],
+        "red_flags": [
+          {
+            "id": 25,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "code": "iwf_gabarito_mais_longo",
+            "stage": "DETERMINISTICA",
+            "field": "alternativas",
+            "evidence": "palavras por alternativa=[1, 1, 1, 1, 47]; o gabarito não deve se destacar pela extensão",
+            "repair_target": "DISTRATORES",
+            "created_at": "2026-09-24T20:21:16.138303+00:00"
+          },
+          {
+            "id": 26,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "code": "iwf_repeticao_entrega_gabarito",
+            "stage": "DETERMINISTICA",
+            "field": "enunciado",
+            "evidence": "termos exclusivos repetidos no gabarito: garantias, latencia",
+            "repair_target": "NUCLEO",
+            "created_at": "2026-09-24T20:21:16.138632+00:00"
+          },
+          {
+            "id": 27,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "code": "iwf_gabarito_mais_longo",
+            "stage": "DETERMINISTICA",
+            "field": "alternativas",
+            "evidence": "palavras por alternativa=[9, 7, 9, 7, 21]; o gabarito não deve se destacar pela extensão",
+            "repair_target": "DISTRATORES",
+            "created_at": "2026-09-24T20:22:06.424907+00:00"
+          },
+          {
+            "id": 28,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "code": "iwf_repeticao_entrega_gabarito",
+            "stage": "DETERMINISTICA",
+            "field": "enunciado",
+            "evidence": "termos exclusivos repetidos no gabarito: entrega, garantias, ordenacao",
+            "repair_target": "NUCLEO",
+            "created_at": "2026-09-24T20:22:06.425111+00:00"
+          },
+          {
+            "id": 29,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "code": "iwf_gabarito_mais_longo",
+            "stage": "DETERMINISTICA",
+            "field": "alternativas",
+            "evidence": "palavras por alternativa=[9, 8, 8, 7, 46]; o gabarito não deve se destacar pela extensão",
+            "repair_target": "DISTRATORES",
+            "created_at": "2026-09-24T20:23:15.780620+00:00"
+          },
+          {
+            "id": 30,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "code": "iwf_repeticao_entrega_gabarito",
+            "stage": "DETERMINISTICA",
+            "field": "enunciado",
+            "evidence": "termos exclusivos repetidos no gabarito: cabecalho, dados, pacotes",
+            "repair_target": "NUCLEO",
+            "created_at": "2026-09-24T20:23:15.780893+00:00"
+          }
+        ],
+        "events": [
+          {
+            "id": 312,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T20:20:19.986044+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P02",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+              "dificuldade": 3,
+              "competencia": "Analisar arquiteturas de comunicação",
+              "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "restricoes": [
+                "uma única alternativa defensável",
+                "não perguntar apenas por uma propriedade isolada"
+              ]
+            }
+          },
+          {
+            "id": 313,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T20:20:20.008801+00:00",
+            "evidence": {
+              "id": "rag-redes-transporte-007"
+            }
+          },
+          {
+            "id": 314,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T20:20:22.044991+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 913,
+                "completion_tokens": 638,
+                "total_tokens": 1551
+              }
+            }
+          },
+          {
+            "id": 315,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T20:21:16.120786+00:00",
+            "evidence": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_3:distratos->distratores",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto"
+              ],
+              "amostras": 3,
+              "candidatos_gerados": 8,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "token_usage_local": {
+                "input_tokens": 1509,
+                "output_tokens": 59,
+                "total_tokens": 1568
+              },
+              "familia": "resposta_textual",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 8,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 316,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "version_id": "b0bffd9f-83ea-48c4-b04e-273d27cda65c",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T20:21:16.131146+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 317,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "version_id": "b0bffd9f-83ea-48c4-b04e-273d27cda65c",
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "BLOCKED_BY_RED_FLAGS",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "conteúdo bloqueado",
+            "created_at": "2026-09-24T20:21:16.141930+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "iwf_gabarito_mais_longo",
+                  "etapa": "DETERMINISTICA",
+                  "campo": "alternativas",
+                  "evidencia": "palavras por alternativa=[1, 1, 1, 1, 47]; o gabarito não deve se destacar pela extensão",
+                  "reparo": "DISTRATORES"
+                },
+                {
+                  "codigo": "iwf_repeticao_entrega_gabarito",
+                  "etapa": "DETERMINISTICA",
+                  "campo": "enunciado",
+                  "evidencia": "termos exclusivos repetidos no gabarito: garantias, latencia",
+                  "reparo": "NUCLEO"
+                }
+              ]
+            }
+          },
+          {
+            "id": 318,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "version_id": null,
+            "from_state": "BLOCKED_BY_RED_FLAGS",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T20:21:18.423917+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 1056,
+                "completion_tokens": 847,
+                "total_tokens": 1903
+              }
+            }
+          },
+          {
+            "id": 319,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T20:22:06.412655+00:00",
+            "evidence": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto"
+              ],
+              "amostras": 2,
+              "candidatos_gerados": 8,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "token_usage_local": {
+                "input_tokens": 852,
+                "output_tokens": 114,
+                "total_tokens": 966
+              },
+              "familia": "resposta_textual",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 8,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  5,
+                  7,
+                  3,
+                  6
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 320,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "version_id": "f0a36363-9d20-462b-8c25-20725f47517f",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T20:22:06.419661+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 321,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "version_id": "f0a36363-9d20-462b-8c25-20725f47517f",
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "BLOCKED_BY_RED_FLAGS",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "conteúdo bloqueado",
+            "created_at": "2026-09-24T20:22:06.427666+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "iwf_gabarito_mais_longo",
+                  "etapa": "DETERMINISTICA",
+                  "campo": "alternativas",
+                  "evidencia": "palavras por alternativa=[9, 7, 9, 7, 21]; o gabarito não deve se destacar pela extensão",
+                  "reparo": "DISTRATORES"
+                },
+                {
+                  "codigo": "iwf_repeticao_entrega_gabarito",
+                  "etapa": "DETERMINISTICA",
+                  "campo": "enunciado",
+                  "evidencia": "termos exclusivos repetidos no gabarito: entrega, garantias, ordenacao",
+                  "reparo": "NUCLEO"
+                }
+              ]
+            }
+          },
+          {
+            "id": 322,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "version_id": null,
+            "from_state": "BLOCKED_BY_RED_FLAGS",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T20:22:09.728051+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 1058,
+                "completion_tokens": 1251,
+                "total_tokens": 2309
+              }
+            }
+          },
+          {
+            "id": 323,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T20:23:15.763565+00:00",
+            "evidence": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_3:distratos->distratores",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto"
+              ],
+              "amostras": 3,
+              "candidatos_gerados": 8,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "token_usage_local": {
+                "input_tokens": 1503,
+                "output_tokens": 155,
+                "total_tokens": 1658
+              },
+              "familia": "resposta_textual",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 8,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  5,
+                  3,
+                  6,
+                  4
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 324,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "version_id": "d79141f6-1b75-46cd-a7f7-73d6ded38967",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T20:23:15.775246+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 325,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "version_id": "d79141f6-1b75-46cd-a7f7-73d6ded38967",
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "BLOCKED_BY_RED_FLAGS",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "conteúdo bloqueado",
+            "created_at": "2026-09-24T20:23:15.783427+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "iwf_gabarito_mais_longo",
+                  "etapa": "DETERMINISTICA",
+                  "campo": "alternativas",
+                  "evidencia": "palavras por alternativa=[9, 8, 8, 7, 46]; o gabarito não deve se destacar pela extensão",
+                  "reparo": "DISTRATORES"
+                },
+                {
+                  "codigo": "iwf_repeticao_entrega_gabarito",
+                  "etapa": "DETERMINISTICA",
+                  "campo": "enunciado",
+                  "evidencia": "termos exclusivos repetidos no gabarito: cabecalho, dados, pacotes",
+                  "reparo": "NUCLEO"
+                }
+              ]
+            }
+          },
+          {
+            "id": 326,
+            "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+            "version_id": null,
+            "from_state": "BLOCKED_BY_RED_FLAGS",
+            "to_state": "ATTEMPTS_EXHAUSTED",
+            "component": "HAILA",
+            "reason": "limite de tentativas da LLM atingido",
+            "created_at": "2026-09-24T20:23:15.786462+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "iwf_gabarito_mais_longo",
+                  "etapa": "DETERMINISTICA",
+                  "campo": "alternativas",
+                  "evidencia": "palavras por alternativa=[9, 8, 8, 7, 46]; o gabarito não deve se destacar pela extensão",
+                  "reparo": "DISTRATORES"
+                },
+                {
+                  "codigo": "iwf_repeticao_entrega_gabarito",
+                  "etapa": "DETERMINISTICA",
+                  "campo": "enunciado",
+                  "evidencia": "termos exclusivos repetidos no gabarito: cabecalho, dados, pacotes",
+                  "reparo": "NUCLEO"
+                }
+              ]
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 175.84
+    },
+    {
+      "spec_id": "P03",
+      "specification": {
+        "spec_id": "P03",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+        "dificuldade": 3,
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+        "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P03",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T20:23:15.803104+00:00",
+        "updated_at": "2026-09-24T20:23:15.803104+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P03",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+          "dificuldade": 3,
+          "competencia": "Analisar requisitos de software",
+          "habilidade": "Classificar requisitos conforme sua finalidade",
+          "objeto_conhecimento": "Engenharia de requisitos",
+          "restricoes": [
+            "usar cenário aplicado",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+      "generation_status": 200,
+      "generation": {
+        "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+        "state": "ATTEMPTS_EXHAUSTED",
+        "red_flags": [
+          {
+            "codigo": "gabarito_repetido_no_enunciado",
+            "etapa": "NUCLEO",
+            "campo": "enunciado",
+            "evidencia": "o enunciado contém literalmente a resposta correta e pode revelar o gabarito",
+            "reparo": "NUCLEO"
+          },
+          {
+            "codigo": "espaco_de_respostas_binario",
+            "etapa": "NUCLEO",
+            "campo": "enunciado",
+            "evidencia": "o comando restringe a resposta a duas classes, mas o item objetivo exige cinco alternativas plausíveis",
+            "reparo": "NUCLEO"
+          }
+        ]
+      },
+      "history": {
+        "request": {
+          "id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+          "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P03",
+          "state": "ATTEMPTS_EXHAUSTED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 3,
+          "stem_attempts": 3,
+          "distractor_attempts": 0,
+          "created_at": "2026-09-24T20:23:15.803104+00:00",
+          "updated_at": "2026-09-24T20:23:21.205399+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P03",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+            "dificuldade": 3,
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "restricoes": [
+              "usar cenário aplicado",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [],
+        "latest_version": null,
+        "artifacts": [
+          {
+            "id": 208,
+            "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T20:23:15.821371+00:00",
+            "payload": {
+              "id": "rag-engsoftware-requisitos-009",
+              "texto": "Requisitos funcionais descrevem serviços e comportamentos esperados do sistema. Requisitos não funcionais estabelecem atributos e restrições, como desempenho, segurança, confiabilidade e usabilidade. Elicitação, especificação, validação e gerenciamento de mudanças ajudam a manter alinhamento entre necessidades e solução.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Engenharia de Software",
+                "habilidade": "Analisar e classificar requisitos",
+                "objeto_conhecimento": "Engenharia de requisitos",
+                "referencia": "SOMMERVILLE, I. Engenharia de Software.",
+                "linha": 9,
+                "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 15.611199,
+                "termos_recuperados": [
+                  "classificar",
+                  "engenharia",
+                  "funcionais",
+                  "nao",
+                  "requisitos"
+                ],
+                "candidatas_relevantes": 3,
+                "consulta_normalizada": [
+                  "cenario",
+                  "classificar",
+                  "conforme",
+                  "engenharia",
+                  "finalidade",
+                  "funcionais",
+                  "nao",
+                  "projeto",
+                  "requisitos"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-engsoftware-requisitos-009",
+                    "score": 15.611199
+                  },
+                  {
+                    "id": "rag-engsoftware-testes-010",
+                    "score": 2.733973
+                  },
+                  {
+                    "id": "rag-estruturas-dados-004",
+                    "score": 1.587169
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 209,
+            "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+            "kind": "STEM",
+            "created_at": "2026-09-24T20:23:17.743784+00:00",
+            "payload": {
+              "enunciado": "Em um projeto de desenvolvimento de um aplicativo de saúde que registra a pressão arterial dos usuários, considere as seguintes afirmações: I – O aplicativo deve permitir que o usuário insira a pressão sistólica e diastólica manualmente. II – O aplicativo deve garantir que os dados de pressão arterial sejam armazenados criptografados para proteger a privacidade do usuário. Qual das afirmações corresponde a um requisito não funcional?",
+              "resposta_correta": "II",
+              "explicacao": "A afirmação II descreve uma restrição de segurança (criptografia dos dados), que caracteriza um requisito não funcional. Requisitos funcionais descrevem o que o sistema deve fazer (ex.: inserir valores), enquanto requisitos não funcionais tratam de atributos de qualidade como segurança, desempenho ou usabilidade.",
+              "competencia": "Analisar requisitos de software",
+              "habilidade": "Classificar requisitos conforme sua finalidade",
+              "objeto_conhecimento": "Engenharia de requisitos",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 902,
+                "completion_tokens": 666,
+                "total_tokens": 1568
+              }
+            }
+          },
+          {
+            "id": 210,
+            "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+            "kind": "STEM",
+            "created_at": "2026-09-24T20:23:19.617892+00:00",
+            "payload": {
+              "enunciado": "Considere o seguinte requisito extraído de um projeto de sistema de comércio eletrônico: \"O sistema deve permitir que apenas usuários autenticados realizem a operação de pagamento de pedidos\". Classifique esse requisito como funcional ou não funcional.",
+              "resposta_correta": "Funcional",
+              "explicacao": "O requisito descreve um comportamento esperado do sistema – a permissão de uma ação (pagamento) condicionada à autenticação do usuário. Requisitos que especificam serviços, funcionalidades ou comportamentos são classificados como funcionais, ao contrário dos não funcionais, que tratam de atributos como desempenho, segurança ou usabilidade.",
+              "competencia": "Analisar requisitos de software",
+              "habilidade": "Classificar requisitos conforme sua finalidade",
+              "objeto_conhecimento": "Engenharia de requisitos",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 966,
+                "completion_tokens": 609,
+                "total_tokens": 1575
+              }
+            }
+          },
+          {
+            "id": 211,
+            "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+            "kind": "STEM",
+            "created_at": "2026-09-24T20:23:21.192897+00:00",
+            "payload": {
+              "enunciado": "Em um projeto de software para uma clínica, o requisito a seguir foi especificado: \"O sistema deve garantir que o tempo de resposta para a consulta de histórico médico de um paciente não ultrapasse 1,5 segundo, mesmo sob carga de 200 usuários simultâneos.\" Classifique esse requisito como funcional ou não funcional.",
+              "resposta_correta": "Não funcional",
+              "explicacao": "O requisito descreve uma restrição de desempenho (tempo de resposta) que se refere a um atributo de qualidade do sistema, caracterizando‑se como requisito não funcional, pois não especifica um serviço ou comportamento direto do sistema.",
+              "competencia": "Analisar requisitos de software",
+              "habilidade": "Classificar requisitos conforme sua finalidade",
+              "objeto_conhecimento": "Engenharia de requisitos",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 1030,
+                "completion_tokens": 540,
+                "total_tokens": 1570
+              }
+            }
+          }
+        ],
+        "red_flags": [
+          {
+            "id": 31,
+            "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+            "code": "gabarito_repetido_no_enunciado",
+            "stage": "NUCLEO",
+            "field": "enunciado",
+            "evidence": "o enunciado contém literalmente a resposta correta e pode revelar o gabarito",
+            "repair_target": "NUCLEO",
+            "created_at": "2026-09-24T20:23:17.751891+00:00"
+          },
+          {
+            "id": 32,
+            "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+            "code": "gabarito_repetido_no_enunciado",
+            "stage": "NUCLEO",
+            "field": "enunciado",
+            "evidence": "o enunciado contém literalmente a resposta correta e pode revelar o gabarito",
+            "repair_target": "NUCLEO",
+            "created_at": "2026-09-24T20:23:19.623869+00:00"
+          },
+          {
+            "id": 33,
+            "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+            "code": "espaco_de_respostas_binario",
+            "stage": "NUCLEO",
+            "field": "enunciado",
+            "evidence": "o comando restringe a resposta a duas classes, mas o item objetivo exige cinco alternativas plausíveis",
+            "repair_target": "NUCLEO",
+            "created_at": "2026-09-24T20:23:19.624203+00:00"
+          },
+          {
+            "id": 34,
+            "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+            "code": "gabarito_repetido_no_enunciado",
+            "stage": "NUCLEO",
+            "field": "enunciado",
+            "evidence": "o enunciado contém literalmente a resposta correta e pode revelar o gabarito",
+            "repair_target": "NUCLEO",
+            "created_at": "2026-09-24T20:23:21.199444+00:00"
+          },
+          {
+            "id": 35,
+            "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+            "code": "espaco_de_respostas_binario",
+            "stage": "NUCLEO",
+            "field": "enunciado",
+            "evidence": "o comando restringe a resposta a duas classes, mas o item objetivo exige cinco alternativas plausíveis",
+            "repair_target": "NUCLEO",
+            "created_at": "2026-09-24T20:23:21.199668+00:00"
+          }
+        ],
+        "events": [
+          {
+            "id": 327,
+            "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T20:23:15.803625+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P03",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+              "dificuldade": 3,
+              "competencia": "Analisar requisitos de software",
+              "habilidade": "Classificar requisitos conforme sua finalidade",
+              "objeto_conhecimento": "Engenharia de requisitos",
+              "restricoes": [
+                "usar cenário aplicado",
+                "uma única alternativa defensável"
+              ]
+            }
+          },
+          {
+            "id": 328,
+            "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T20:23:15.824727+00:00",
+            "evidence": {
+              "id": "rag-engsoftware-requisitos-009"
+            }
+          },
+          {
+            "id": 329,
+            "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T20:23:17.747166+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 902,
+                "completion_tokens": 666,
+                "total_tokens": 1568
+              }
+            }
+          },
+          {
+            "id": 330,
+            "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "BLOCKED_BY_RED_FLAGS",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "núcleo bloqueado",
+            "created_at": "2026-09-24T20:23:17.755542+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "gabarito_repetido_no_enunciado",
+                  "etapa": "NUCLEO",
+                  "campo": "enunciado",
+                  "evidencia": "o enunciado contém literalmente a resposta correta e pode revelar o gabarito",
+                  "reparo": "NUCLEO"
+                }
+              ]
+            }
+          },
+          {
+            "id": 331,
+            "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+            "version_id": null,
+            "from_state": "BLOCKED_BY_RED_FLAGS",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T20:23:19.621031+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 966,
+                "completion_tokens": 609,
+                "total_tokens": 1575
+              }
+            }
+          },
+          {
+            "id": 332,
+            "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "BLOCKED_BY_RED_FLAGS",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "núcleo bloqueado",
+            "created_at": "2026-09-24T20:23:19.626448+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "gabarito_repetido_no_enunciado",
+                  "etapa": "NUCLEO",
+                  "campo": "enunciado",
+                  "evidencia": "o enunciado contém literalmente a resposta correta e pode revelar o gabarito",
+                  "reparo": "NUCLEO"
+                },
+                {
+                  "codigo": "espaco_de_respostas_binario",
+                  "etapa": "NUCLEO",
+                  "campo": "enunciado",
+                  "evidencia": "o comando restringe a resposta a duas classes, mas o item objetivo exige cinco alternativas plausíveis",
+                  "reparo": "NUCLEO"
+                }
+              ]
+            }
+          },
+          {
+            "id": 333,
+            "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+            "version_id": null,
+            "from_state": "BLOCKED_BY_RED_FLAGS",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T20:23:21.196450+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 1030,
+                "completion_tokens": 540,
+                "total_tokens": 1570
+              }
+            }
+          },
+          {
+            "id": 334,
+            "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "BLOCKED_BY_RED_FLAGS",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "núcleo bloqueado",
+            "created_at": "2026-09-24T20:23:21.202170+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "gabarito_repetido_no_enunciado",
+                  "etapa": "NUCLEO",
+                  "campo": "enunciado",
+                  "evidencia": "o enunciado contém literalmente a resposta correta e pode revelar o gabarito",
+                  "reparo": "NUCLEO"
+                },
+                {
+                  "codigo": "espaco_de_respostas_binario",
+                  "etapa": "NUCLEO",
+                  "campo": "enunciado",
+                  "evidencia": "o comando restringe a resposta a duas classes, mas o item objetivo exige cinco alternativas plausíveis",
+                  "reparo": "NUCLEO"
+                }
+              ]
+            }
+          },
+          {
+            "id": 335,
+            "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+            "version_id": null,
+            "from_state": "BLOCKED_BY_RED_FLAGS",
+            "to_state": "ATTEMPTS_EXHAUSTED",
+            "component": "HAILA",
+            "reason": "limite de tentativas da LLM atingido",
+            "created_at": "2026-09-24T20:23:21.205692+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "gabarito_repetido_no_enunciado",
+                  "etapa": "NUCLEO",
+                  "campo": "enunciado",
+                  "evidencia": "o enunciado contém literalmente a resposta correta e pode revelar o gabarito",
+                  "reparo": "NUCLEO"
+                },
+                {
+                  "codigo": "espaco_de_respostas_binario",
+                  "etapa": "NUCLEO",
+                  "campo": "enunciado",
+                  "evidencia": "o comando restringe a resposta a duas classes, mas o item objetivo exige cinco alternativas plausíveis",
+                  "reparo": "NUCLEO"
+                }
+              ]
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 5.413
+    },
+    {
+      "spec_id": "P04",
+      "specification": {
+        "spec_id": "P04",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+        "dificuldade": 3,
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+        "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P04",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T20:23:21.217122+00:00",
+        "updated_at": "2026-09-24T20:23:21.217122+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P04",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+          "dificuldade": 3,
+          "competencia": "Projetar soluções algorítmicas",
+          "habilidade": "Selecionar estruturas de dados",
+          "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+          "restricoes": [
+            "usar cenário aplicado",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+      "generation_status": 200,
+      "generation": {
+        "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+        "version": {
+          "id": "32fb3777-60e8-42c6-bdf9-9b7d2d69f4fa",
+          "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+          "version_number": 3,
+          "created_at": "2026-09-24T20:24:09.243588+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Considere um sistema de gerenciamento de sessões de usuários em que cada sessão é identificada por um token único. O sistema realiza consultas frequentes para localizar a sessão a partir do token, além de inserções e remoções ocasionais de sessões. Indique a estrutura de dados mais adequada para armazenar as sessões considerando a predominância das operações de busca por chave.",
+            "alternativas": [
+              "Fila",
+              "Árvore binária de busca",
+              "Heap",
+              "tabela hash",
+              "Pilha"
+            ],
+            "correta": 3,
+            "explicacao": "A tabela hash permite acesso direto ao elemento a partir da chave (token) em tempo médio O(1), atendendo à necessidade de buscas frequentes. Inserções e remoções também são O(1) em média, embora possam ser ligeiramente mais caras em casos de colisões, mas permanecem adequadas ao perfil de uso descrito. Pilhas e filas não suportam buscas por chave, e árvores de busca oferecem O(log n), inferior à eficiência da hash para este caso.",
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 1
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-estruturas-dados-004",
+            "llm": "openai/gpt-oss-120b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "state": "GENERATION_COMPLETED",
+        "red_flags": []
+      },
+      "history": {
+        "request": {
+          "id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+          "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P04",
+          "state": "GENERATION_COMPLETED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 6,
+          "stem_attempts": 3,
+          "distractor_attempts": 3,
+          "created_at": "2026-09-24T20:23:21.217122+00:00",
+          "updated_at": "2026-09-24T20:24:09.251536+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P04",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+            "dificuldade": 3,
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "restricoes": [
+              "usar cenário aplicado",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [
+          {
+            "id": "9f5bdab1-5bd0-48c9-962f-24d64c65389b",
+            "version_number": 1,
+            "created_at": "2026-09-24T20:24:05.152836+00:00"
+          },
+          {
+            "id": "d265b39d-ea77-4c64-beb8-02a7e5d273a6",
+            "version_number": 2,
+            "created_at": "2026-09-24T20:24:07.502861+00:00"
+          },
+          {
+            "id": "32fb3777-60e8-42c6-bdf9-9b7d2d69f4fa",
+            "version_number": 3,
+            "created_at": "2026-09-24T20:24:09.243588+00:00"
+          }
+        ],
+        "latest_version": {
+          "id": "32fb3777-60e8-42c6-bdf9-9b7d2d69f4fa",
+          "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+          "version_number": 3,
+          "created_at": "2026-09-24T20:24:09.243588+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Considere um sistema de gerenciamento de sessões de usuários em que cada sessão é identificada por um token único. O sistema realiza consultas frequentes para localizar a sessão a partir do token, além de inserções e remoções ocasionais de sessões. Indique a estrutura de dados mais adequada para armazenar as sessões considerando a predominância das operações de busca por chave.",
+            "alternativas": [
+              "Fila",
+              "Árvore binária de busca",
+              "Heap",
+              "tabela hash",
+              "Pilha"
+            ],
+            "correta": 3,
+            "explicacao": "A tabela hash permite acesso direto ao elemento a partir da chave (token) em tempo médio O(1), atendendo à necessidade de buscas frequentes. Inserções e remoções também são O(1) em média, embora possam ser ligeiramente mais caras em casos de colisões, mas permanecem adequadas ao perfil de uso descrito. Pilhas e filas não suportam buscas por chave, e árvores de busca oferecem O(log n), inferior à eficiência da hash para este caso.",
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 1
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-estruturas-dados-004",
+            "llm": "openai/gpt-oss-120b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "artifacts": [
+          {
+            "id": 212,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T20:23:21.236400+00:00",
+            "payload": {
+              "id": "rag-estruturas-dados-004",
+              "texto": "Pilhas seguem a disciplina LIFO, enquanto filas seguem FIFO. Árvores de busca organizam chaves hierarquicamente e tabelas de dispersão usam funções hash para localizar elementos. A estrutura apropriada depende das operações predominantes, dos requisitos de ordenação e do custo aceitável de busca, inserção e remoção.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Algoritmos e Estruturas de Dados",
+                "habilidade": "Selecionar estruturas de dados",
+                "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+                "referencia": "CORMEN, T. H. et al. Algoritmos: Teoria e Prática.",
+                "linha": 4,
+                "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 33.841909,
+                "termos_recuperados": [
+                  "arvores",
+                  "estrutura",
+                  "estruturas",
+                  "filas",
+                  "hash",
+                  "operacoes",
+                  "pilhas",
+                  "predominantes",
+                  "selecionar",
+                  "tabelas"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "adequada",
+                  "algoritmicas",
+                  "arvores",
+                  "considerando",
+                  "estrutura",
+                  "estruturas",
+                  "filas",
+                  "hash",
+                  "operacoes",
+                  "pilhas",
+                  "predominantes",
+                  "projetar",
+                  "selecionar",
+                  "solucoes",
+                  "tabelas"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-estruturas-dados-004",
+                    "score": 33.841909
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 213,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "kind": "STEM",
+            "created_at": "2026-09-24T20:23:22.980836+00:00",
+            "payload": {
+              "enunciado": "Em um sistema de gerenciamento de tarefas de impressão, as duas operações predominantes são: (i) inserir novas tarefas na ordem de chegada e (ii) remover a tarefa que deve ser impressa a seguir. Qual estrutura de dados é a mais adequada para implementar essa fila de impressão?",
+              "resposta_correta": "Fila (FIFO)",
+              "explicacao": "A operação de inserção na ordem de chegada corresponde ao enfileiramento (enqueue) e a remoção da próxima tarefa a ser impressa corresponde ao desenfileiramento (dequeue). Uma fila implementa o comportamento FIFO, atendendo exatamente a essas duas operações com complexidade O(1) para ambas, ao contrário de pilhas, árvores ou tabelas hash, que não preservam a ordem de chegada ou exigem custos maiores para remoção da primeira tarefa inserida.",
+              "competencia": "Projetar soluções algoríticas",
+              "habilidade": "Selecionar estruturas de dados",
+              "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 943,
+                "completion_tokens": 611,
+                "total_tokens": 1554
+              }
+            }
+          },
+          {
+            "id": 214,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T20:24:05.147375+00:00",
+            "payload": [
+              {
+                "texto": "Coluna",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "Lista",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "Arquivo",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "Banco de Dados",
+                "erro": "",
+                "por_que_e_falso": ""
+              }
+            ],
+            "provenance": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_3:distratos->distratores",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto"
+              ],
+              "amostras": 3,
+              "candidatos_gerados": 8,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "token_usage_local": {
+                "input_tokens": 1302,
+                "output_tokens": 75,
+                "total_tokens": 1377
+              },
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 8,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 215,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T20:24:05.159170+00:00",
+            "payload": [
+              {
+                "codigo": "iwf_repeticao_entrega_gabarito",
+                "etapa": "DETERMINISTICA",
+                "campo": "enunciado",
+                "evidencia": "termos exclusivos repetidos no gabarito: fila",
+                "reparo": "NUCLEO"
+              }
+            ],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.1.0",
+              "tipo": "deterministico"
+            }
+          },
+          {
+            "id": 216,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "kind": "STEM",
+            "created_at": "2026-09-24T20:24:07.483619+00:00",
+            "payload": {
+              "enunciado": "Um compilador deve armazenar os identificadores declarados em um escopo, permitindo que, durante a análise semântica, o algoritmo verifique rapidamente se um identificador já foi declarado e recupere informações associadas a ele. As operações de inserção e busca são realizadas com frequência, enquanto a ordem dos elementos não é relevante. Qual estrutura de dados é a mais adequada para atender a esses requisitos?",
+              "resposta_correta": "Tabela hash",
+              "explicacao": "A tabela hash utiliza uma função hash para mapear cada identificador a um índice de um vetor, proporcionando busca, inserção e remoção em tempo médio O(1). Como a ordem dos identificadores não importa no escopo, a característica de acesso direto da tabela hash atende perfeitamente ao requisito de rapidez nas operações de verificação e recuperação de informações. Pilhas, filas e árvores não garantem esse desempenho constante para buscas arbitrárias, sendo menos adequadas ao cenário descrito.",
+              "competencia": "Projetar soluções algorítmicas",
+              "habilidade": "Selecionar estruturas de dados",
+              "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 1004,
+                "completion_tokens": 776,
+                "total_tokens": 1780
+              }
+            }
+          },
+          {
+            "id": 217,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T20:24:07.496013+00:00",
+            "payload": [
+              {
+                "texto": "Fila",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Tabela hash, mas não responde ao cenário"
+              },
+              {
+                "texto": "Pilha",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Tabela hash, mas não responde ao cenário"
+              },
+              {
+                "texto": "Árvore binária de busca",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Tabela hash, mas não responde ao cenário"
+              },
+              {
+                "texto": "Heap",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Tabela hash, mas não responde ao cenário"
+              }
+            ],
+            "provenance": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "Tabela hash",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 218,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T20:24:07.509309+00:00",
+            "payload": [
+              {
+                "codigo": "iwf_comando_negativo",
+                "etapa": "DETERMINISTICA",
+                "campo": "enunciado",
+                "evidencia": "reformule o comando de maneira afirmativa",
+                "reparo": "NUCLEO"
+              }
+            ],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.1.0",
+              "tipo": "deterministico"
+            }
+          },
+          {
+            "id": 219,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "kind": "STEM",
+            "created_at": "2026-09-24T20:24:09.227671+00:00",
+            "payload": {
+              "enunciado": "Considere um sistema de gerenciamento de sessões de usuários em que cada sessão é identificada por um token único. O sistema realiza consultas frequentes para localizar a sessão a partir do token, além de inserções e remoções ocasionais de sessões. Indique a estrutura de dados mais adequada para armazenar as sessões considerando a predominância das operações de busca por chave.",
+              "resposta_correta": "tabela hash",
+              "explicacao": "A tabela hash permite acesso direto ao elemento a partir da chave (token) em tempo médio O(1), atendendo à necessidade de buscas frequentes. Inserções e remoções também são O(1) em média, embora possam ser ligeiramente mais caras em casos de colisões, mas permanecem adequadas ao perfil de uso descrito. Pilhas e filas não suportam buscas por chave, e árvores de busca oferecem O(log n), inferior à eficiência da hash para este caso.",
+              "competencia": "Projetar soluções algorítmicas",
+              "habilidade": "Selecionar estruturas de dados",
+              "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 998,
+                "completion_tokens": 550,
+                "total_tokens": 1548
+              }
+            }
+          },
+          {
+            "id": 220,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T20:24:09.237460+00:00",
+            "payload": [
+              {
+                "texto": "Fila",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Tabela hash, mas não responde ao cenário"
+              },
+              {
+                "texto": "Pilha",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Tabela hash, mas não responde ao cenário"
+              },
+              {
+                "texto": "Árvore binária de busca",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Tabela hash, mas não responde ao cenário"
+              },
+              {
+                "texto": "Heap",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Tabela hash, mas não responde ao cenário"
+              }
+            ],
+            "provenance": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "Tabela hash",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 221,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T20:24:09.249300+00:00",
+            "payload": [],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.1.0",
+              "tipo": "deterministico"
+            }
+          }
+        ],
+        "red_flags": [
+          {
+            "id": 36,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "code": "iwf_repeticao_entrega_gabarito",
+            "stage": "DETERMINISTICA",
+            "field": "enunciado",
+            "evidence": "termos exclusivos repetidos no gabarito: fila",
+            "repair_target": "NUCLEO",
+            "created_at": "2026-09-24T20:24:05.161640+00:00"
+          },
+          {
+            "id": 37,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "code": "iwf_comando_negativo",
+            "stage": "DETERMINISTICA",
+            "field": "enunciado",
+            "evidence": "reformule o comando de maneira afirmativa",
+            "repair_target": "NUCLEO",
+            "created_at": "2026-09-24T20:24:07.511715+00:00"
+          }
+        ],
+        "events": [
+          {
+            "id": 336,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T20:23:21.217553+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P04",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+              "dificuldade": 3,
+              "competencia": "Projetar soluções algorítmicas",
+              "habilidade": "Selecionar estruturas de dados",
+              "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+              "restricoes": [
+                "usar cenário aplicado",
+                "uma única alternativa defensável"
+              ]
+            }
+          },
+          {
+            "id": 337,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T20:23:21.240588+00:00",
+            "evidence": {
+              "id": "rag-estruturas-dados-004"
+            }
+          },
+          {
+            "id": 338,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T20:23:22.983904+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 943,
+                "completion_tokens": 611,
+                "total_tokens": 1554
+              }
+            }
+          },
+          {
+            "id": 339,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T20:24:05.150177+00:00",
+            "evidence": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_3:distratos->distratores",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto"
+              ],
+              "amostras": 3,
+              "candidatos_gerados": 8,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "token_usage_local": {
+                "input_tokens": 1302,
+                "output_tokens": 75,
+                "total_tokens": 1377
+              },
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 8,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 340,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "version_id": "9f5bdab1-5bd0-48c9-962f-24d64c65389b",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T20:24:05.156347+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 341,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "version_id": "9f5bdab1-5bd0-48c9-962f-24d64c65389b",
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "BLOCKED_BY_RED_FLAGS",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "conteúdo bloqueado",
+            "created_at": "2026-09-24T20:24:05.164191+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "iwf_repeticao_entrega_gabarito",
+                  "etapa": "DETERMINISTICA",
+                  "campo": "enunciado",
+                  "evidencia": "termos exclusivos repetidos no gabarito: fila",
+                  "reparo": "NUCLEO"
+                }
+              ]
+            }
+          },
+          {
+            "id": 342,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "version_id": null,
+            "from_state": "BLOCKED_BY_RED_FLAGS",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T20:24:07.486880+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 1004,
+                "completion_tokens": 776,
+                "total_tokens": 1780
+              }
+            }
+          },
+          {
+            "id": 343,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T20:24:07.499900+00:00",
+            "evidence": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "Tabela hash",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 344,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "version_id": "d265b39d-ea77-4c64-beb8-02a7e5d273a6",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T20:24:07.506454+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 345,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "version_id": "d265b39d-ea77-4c64-beb8-02a7e5d273a6",
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "BLOCKED_BY_RED_FLAGS",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "conteúdo bloqueado",
+            "created_at": "2026-09-24T20:24:07.514012+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "iwf_comando_negativo",
+                  "etapa": "DETERMINISTICA",
+                  "campo": "enunciado",
+                  "evidencia": "reformule o comando de maneira afirmativa",
+                  "reparo": "NUCLEO"
+                }
+              ]
+            }
+          },
+          {
+            "id": 346,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "version_id": null,
+            "from_state": "BLOCKED_BY_RED_FLAGS",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T20:24:09.230946+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 998,
+                "completion_tokens": 550,
+                "total_tokens": 1548
+              }
+            }
+          },
+          {
+            "id": 347,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T20:24:09.240577+00:00",
+            "evidence": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "Tabela hash",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 348,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "version_id": "32fb3777-60e8-42c6-bdf9-9b7d2d69f4fa",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T20:24:09.246960+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 349,
+            "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+            "version_id": "32fb3777-60e8-42c6-bdf9-9b7d2d69f4fa",
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "GENERATION_COMPLETED",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "geração concluída sem red flags",
+            "created_at": "2026-09-24T20:24:09.251598+00:00",
+            "evidence": {}
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 48.044
+    },
+    {
+      "spec_id": "P05",
+      "specification": {
+        "spec_id": "P05",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+        "dificuldade": 3,
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+        "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P05",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T20:24:09.263723+00:00",
+        "updated_at": "2026-09-24T20:24:09.263723+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P05",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+          "dificuldade": 3,
+          "competencia": "Analisar métodos de inteligência artificial",
+          "habilidade": "Distinguir paradigmas de aprendizado",
+          "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+          "restricoes": [
+            "usar cenário aplicado",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+      "generation_status": 200,
+      "generation": {
+        "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+        "state": "ATTEMPTS_EXHAUSTED",
+        "red_flags": [
+          {
+            "codigo": "iwf_gabarito_mais_longo",
+            "etapa": "DETERMINISTICA",
+            "campo": "alternativas",
+            "evidencia": "palavras por alternativa=[10, 11, 8, 33, 10]; o gabarito não deve se destacar pela extensão",
+            "reparo": "DISTRATORES"
+          }
+        ]
+      },
+      "history": {
+        "request": {
+          "id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+          "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P05",
+          "state": "ATTEMPTS_EXHAUSTED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 4,
+          "stem_attempts": 1,
+          "distractor_attempts": 3,
+          "created_at": "2026-09-24T20:24:09.263723+00:00",
+          "updated_at": "2026-09-24T20:27:29.276895+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P05",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+            "dificuldade": 3,
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "restricoes": [
+              "usar cenário aplicado",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [
+          {
+            "id": "6d1359ec-0347-4577-af08-ee7900457538",
+            "version_number": 1,
+            "created_at": "2026-09-24T20:25:17.049449+00:00"
+          },
+          {
+            "id": "917c5dd9-d6e6-4e30-b85e-01a7235d7a04",
+            "version_number": 2,
+            "created_at": "2026-09-24T20:26:32.631055+00:00"
+          },
+          {
+            "id": "e7a16339-6d0e-4b42-9da3-9f0f16a6970e",
+            "version_number": 3,
+            "created_at": "2026-09-24T20:27:29.264155+00:00"
+          }
+        ],
+        "latest_version": {
+          "id": "e7a16339-6d0e-4b42-9da3-9f0f16a6970e",
+          "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+          "version_number": 3,
+          "created_at": "2026-09-24T20:27:29.264155+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Considere um conjunto de imagens de satélite que contém apenas as coordenadas geográficas de cada foto, sem informações sobre o tipo de uso da terra. Um pesquisador deseja (i) treinar um modelo que classifique cada imagem como \"área urbana\", \"área agrícola\" ou \"área florestal\" e (ii) identificar automaticamente grupos de imagens que apresentam padrões semelhantes de cobertura vegetal, sem definir previamente as categorias. Qual afirmativa descreve corretamente a diferença entre os métodos de aprendizado adequados para as duas tarefas?",
+            "alternativas": [
+              "(iv) Faz análise por profundização, tentando entender padrões nas imagens.",
+              "(ii) Usa aprendizado auto-organizacional, buscando estruturar dados independentemente dos rótulo;",
+              "(i) Utiliza-se aprendizado supervisionado, exigindo rotulagem manual;",
+              "Para a tarefa (i) utiliza‑se aprendizado supervisionado, que requer exemplos rotulados; para a tarefa (ii) utiliza‑se aprendizado não supervisionado, que não requer rótulos e busca descobrir agrupamentos ou estruturas nos dados.",
+              "(iii) Aplica algoritmos de clustering, procurando agrupamento automático das fotos;"
+            ],
+            "correta": 3,
+            "explicacao": "No aprendizado supervisionado os dados de treinamento são acompanhados de rótulos que orientam o modelo a mapear entradas para saídas específicas (classificação ou regressão). Já no aprendizado não supervisionado os dados não possuem rótulos; o objetivo é extrair padrões internos, como agrupamentos ou representações latentes, usando medidas de similaridade ou outras técnicas de descoberta de estrutura. Assim, a classificação de imagens em categorias pré‑definidas requer supervisão, enquanto a descoberta de grupos semelhantes ocorre sem rótulos.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 1
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-ia-aprendizado-011",
+            "llm": "openai/gpt-oss-120b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "artifacts": [
+          {
+            "id": 222,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T20:24:09.275214+00:00",
+            "payload": {
+              "id": "rag-ia-aprendizado-011",
+              "texto": "No aprendizado supervisionado, exemplos rotulados orientam a construção de modelos para classificação ou regressão. No aprendizado não supervisionado, o objetivo é identificar estruturas ou agrupamentos sem rótulos de saída. A avaliação deve usar dados independentes do treinamento para estimar generalização e reduzir conclusões afetadas por sobreajuste.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Inteligência Artificial",
+                "habilidade": "Distinguir paradigmas de aprendizado",
+                "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+                "referencia": "RUSSELL, S.; NORVIG, P. Inteligência Artificial: Uma Abordagem Moderna.",
+                "linha": 11,
+                "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 22.082778,
+                "termos_recuperados": [
+                  "aprendizado",
+                  "artificial",
+                  "inteligencia",
+                  "nao",
+                  "paradigmas",
+                  "supervisionado"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "aprendizado",
+                  "artificial",
+                  "disponiveis",
+                  "inteligencia",
+                  "metodos",
+                  "nao",
+                  "paradigmas",
+                  "partir",
+                  "supervisionado"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-ia-aprendizado-011",
+                    "score": 22.082778
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 223,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "kind": "STEM",
+            "created_at": "2026-09-24T20:24:12.246553+00:00",
+            "payload": {
+              "enunciado": "Considere um conjunto de imagens de satélite que contém apenas as coordenadas geográficas de cada foto, sem informações sobre o tipo de uso da terra. Um pesquisador deseja (i) treinar um modelo que classifique cada imagem como \"área urbana\", \"área agrícola\" ou \"área florestal\" e (ii) identificar automaticamente grupos de imagens que apresentam padrões semelhantes de cobertura vegetal, sem definir previamente as categorias. Qual afirmativa descreve corretamente a diferença entre os métodos de aprendizado adequados para as duas tarefas?",
+              "resposta_correta": "Para a tarefa (i) utiliza‑se aprendizado supervisionado, que requer exemplos rotulados; para a tarefa (ii) utiliza‑se aprendizado não supervisionado, que não requer rótulos e busca descobrir agrupamentos ou estruturas nos dados.",
+              "explicacao": "No aprendizado supervisionado os dados de treinamento são acompanhados de rótulos que orientam o modelo a mapear entradas para saídas específicas (classificação ou regressão). Já no aprendizado não supervisionado os dados não possuem rótulos; o objetivo é extrair padrões internos, como agrupamentos ou representações latentes, usando medidas de similaridade ou outras técnicas de descoberta de estrutura. Assim, a classificação de imagens em categorias pré‑definidas requer supervisão, enquanto a descoberta de grupos semelhantes ocorre sem rótulos.",
+              "competencia": "Analisar métodos de inteligência artificial",
+              "habilidade": "Distinguir paradigmas de aprendizado",
+              "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 904,
+                "completion_tokens": 868,
+                "total_tokens": 1772
+              }
+            }
+          },
+          {
+            "id": 224,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T20:25:17.042869+00:00",
+            "payload": [
+              {
+                "texto": "(i) Treinamento por máquina inteligente, onde são usadas técnicas baseadas em algoritmos de machine learning.",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "(ii) Classificação automática, onde os modelos buscam detectar padrões na imagem.",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "aprendizado supervisionado",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "classificação automática",
+                "erro": "",
+                "por_que_e_falso": ""
+              }
+            ],
+            "provenance": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_3:distratos->distratores",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto"
+              ],
+              "amostras": 3,
+              "candidatos_gerados": 6,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "token_usage_local": {
+                "input_tokens": 1662,
+                "output_tokens": 121,
+                "total_tokens": 1783
+              },
+              "familia": "resposta_textual",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 6,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  4,
+                  5,
+                  0,
+                  1
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 225,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T20:25:17.055638+00:00",
+            "payload": [
+              {
+                "codigo": "iwf_gabarito_mais_longo",
+                "etapa": "DETERMINISTICA",
+                "campo": "alternativas",
+                "evidencia": "palavras por alternativa=[2, 15, 2, 33, 11]; o gabarito não deve se destacar pela extensão",
+                "reparo": "DISTRATORES"
+              }
+            ],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.1.0",
+              "tipo": "deterministico"
+            }
+          },
+          {
+            "id": 226,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T20:26:32.623558+00:00",
+            "payload": [
+              {
+                "texto": "(c) Aprendizado supervisioned pode ser usado na tarefa i, já que precisa de exemples rotulad.",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "(a) Para a tarefa (i), usa-se aprendizado supervisionado, pois necessita de exemplo rotulado.",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "(b) Para essa tarefa, usamos aprendizado supervised, porque precisamos de exemplos etiquetados.",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "modelagem de redes neurais",
+                "erro": "",
+                "por_que_e_falso": ""
+              }
+            ],
+            "provenance": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_3:distratos->distratores",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto"
+              ],
+              "amostras": 3,
+              "candidatos_gerados": 8,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "token_usage_local": {
+                "input_tokens": 1662,
+                "output_tokens": 170,
+                "total_tokens": 1832
+              },
+              "familia": "resposta_textual",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 8,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  7,
+                  5,
+                  6,
+                  3
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 227,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T20:26:32.637398+00:00",
+            "payload": [
+              {
+                "codigo": "iwf_gabarito_mais_longo",
+                "etapa": "DETERMINISTICA",
+                "campo": "alternativas",
+                "evidencia": "palavras por alternativa=[12, 15, 4, 33, 14]; o gabarito não deve se destacar pela extensão",
+                "reparo": "DISTRATORES"
+              }
+            ],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.1.0",
+              "tipo": "deterministico"
+            }
+          },
+          {
+            "id": 228,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T20:27:29.258384+00:00",
+            "payload": [
+              {
+                "texto": "(ii) Usa aprendizado auto-organizacional, buscando estruturar dados independentemente dos rótulo;",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "(iii) Aplica algoritmos de clustering, procurando agrupamento automático das fotos;",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "(iv) Faz análise por profundização, tentando entender padrões nas imagens.",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "(i) Utiliza-se aprendizado supervisionado, exigindo rotulagem manual;",
+                "erro": "",
+                "por_que_e_falso": ""
+              }
+            ],
+            "provenance": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto"
+              ],
+              "amostras": 2,
+              "candidatos_gerados": 8,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "token_usage_local": {
+                "input_tokens": 1108,
+                "output_tokens": 129,
+                "total_tokens": 1237
+              },
+              "familia": "resposta_textual",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 8,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  1,
+                  2,
+                  3,
+                  0
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 229,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T20:27:29.269895+00:00",
+            "payload": [
+              {
+                "codigo": "iwf_gabarito_mais_longo",
+                "etapa": "DETERMINISTICA",
+                "campo": "alternativas",
+                "evidencia": "palavras por alternativa=[10, 11, 8, 33, 10]; o gabarito não deve se destacar pela extensão",
+                "reparo": "DISTRATORES"
+              }
+            ],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.1.0",
+              "tipo": "deterministico"
+            }
+          }
+        ],
+        "red_flags": [
+          {
+            "id": 38,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "code": "iwf_gabarito_mais_longo",
+            "stage": "DETERMINISTICA",
+            "field": "alternativas",
+            "evidence": "palavras por alternativa=[2, 15, 2, 33, 11]; o gabarito não deve se destacar pela extensão",
+            "repair_target": "DISTRATORES",
+            "created_at": "2026-09-24T20:25:17.058590+00:00"
+          },
+          {
+            "id": 39,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "code": "iwf_gabarito_mais_longo",
+            "stage": "DETERMINISTICA",
+            "field": "alternativas",
+            "evidence": "palavras por alternativa=[12, 15, 4, 33, 14]; o gabarito não deve se destacar pela extensão",
+            "repair_target": "DISTRATORES",
+            "created_at": "2026-09-24T20:26:32.639998+00:00"
+          },
+          {
+            "id": 40,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "code": "iwf_gabarito_mais_longo",
+            "stage": "DETERMINISTICA",
+            "field": "alternativas",
+            "evidence": "palavras por alternativa=[10, 11, 8, 33, 10]; o gabarito não deve se destacar pela extensão",
+            "repair_target": "DISTRATORES",
+            "created_at": "2026-09-24T20:27:29.271984+00:00"
+          }
+        ],
+        "events": [
+          {
+            "id": 350,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T20:24:09.264055+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-ablation-cost-exact-c4-remainder-P05",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+              "dificuldade": 3,
+              "competencia": "Analisar métodos de inteligência artificial",
+              "habilidade": "Distinguir paradigmas de aprendizado",
+              "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+              "restricoes": [
+                "usar cenário aplicado",
+                "uma única alternativa defensável"
+              ]
+            }
+          },
+          {
+            "id": 351,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T20:24:09.278731+00:00",
+            "evidence": {
+              "id": "rag-ia-aprendizado-011"
+            }
+          },
+          {
+            "id": 352,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T20:24:12.249631+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 904,
+                "completion_tokens": 868,
+                "total_tokens": 1772
+              }
+            }
+          },
+          {
+            "id": 353,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T20:25:17.046375+00:00",
+            "evidence": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_3:distratos->distratores",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto"
+              ],
+              "amostras": 3,
+              "candidatos_gerados": 6,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "token_usage_local": {
+                "input_tokens": 1662,
+                "output_tokens": 121,
+                "total_tokens": 1783
+              },
+              "familia": "resposta_textual",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 6,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  4,
+                  5,
+                  0,
+                  1
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 354,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "version_id": "6d1359ec-0347-4577-af08-ee7900457538",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T20:25:17.052438+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 355,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "version_id": null,
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "BLOCKED_BY_RED_FLAGS",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "distratores/item bloqueados",
+            "created_at": "2026-09-24T20:25:17.061066+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "iwf_gabarito_mais_longo",
+                  "etapa": "DETERMINISTICA",
+                  "campo": "alternativas",
+                  "evidencia": "palavras por alternativa=[2, 15, 2, 33, 11]; o gabarito não deve se destacar pela extensão",
+                  "reparo": "DISTRATORES"
+                }
+              ]
+            }
+          },
+          {
+            "id": 356,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "version_id": null,
+            "from_state": "BLOCKED_BY_RED_FLAGS",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T20:26:32.626508+00:00",
+            "evidence": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_3:distratos->distratores",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto"
+              ],
+              "amostras": 3,
+              "candidatos_gerados": 8,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "token_usage_local": {
+                "input_tokens": 1662,
+                "output_tokens": 170,
+                "total_tokens": 1832
+              },
+              "familia": "resposta_textual",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 8,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  7,
+                  5,
+                  6,
+                  3
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 357,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "version_id": "917c5dd9-d6e6-4e30-b85e-01a7235d7a04",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T20:26:32.634583+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 358,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "version_id": null,
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "BLOCKED_BY_RED_FLAGS",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "distratores/item bloqueados",
+            "created_at": "2026-09-24T20:26:32.643821+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "iwf_gabarito_mais_longo",
+                  "etapa": "DETERMINISTICA",
+                  "campo": "alternativas",
+                  "evidencia": "palavras por alternativa=[12, 15, 4, 33, 14]; o gabarito não deve se destacar pela extensão",
+                  "reparo": "DISTRATORES"
+                }
+              ]
+            }
+          },
+          {
+            "id": 359,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "version_id": null,
+            "from_state": "BLOCKED_BY_RED_FLAGS",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T20:27:29.261292+00:00",
+            "evidence": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto"
+              ],
+              "amostras": 2,
+              "candidatos_gerados": 8,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "token_usage_local": {
+                "input_tokens": 1108,
+                "output_tokens": 129,
+                "total_tokens": 1237
+              },
+              "familia": "resposta_textual",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 8,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  1,
+                  2,
+                  3,
+                  0
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 360,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "version_id": "e7a16339-6d0e-4b42-9da3-9f0f16a6970e",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T20:27:29.267206+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 361,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "version_id": null,
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "BLOCKED_BY_RED_FLAGS",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "distratores/item bloqueados",
+            "created_at": "2026-09-24T20:27:29.274583+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "iwf_gabarito_mais_longo",
+                  "etapa": "DETERMINISTICA",
+                  "campo": "alternativas",
+                  "evidencia": "palavras por alternativa=[10, 11, 8, 33, 10]; o gabarito não deve se destacar pela extensão",
+                  "reparo": "DISTRATORES"
+                }
+              ]
+            }
+          },
+          {
+            "id": 362,
+            "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+            "version_id": null,
+            "from_state": "BLOCKED_BY_RED_FLAGS",
+            "to_state": "ATTEMPTS_EXHAUSTED",
+            "component": "HAILA",
+            "reason": "limite de tentativas do SLM atingido",
+            "created_at": "2026-09-24T20:27:29.276957+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "iwf_gabarito_mais_longo",
+                  "etapa": "DETERMINISTICA",
+                  "campo": "alternativas",
+                  "evidencia": "palavras por alternativa=[10, 11, 8, 33, 10]; o gabarito não deve se destacar pela extensão",
+                  "reparo": "DISTRATORES"
+                }
+              ]
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 200.027
+    }
+  ],
+  "finished_at": "2026-09-24T20:27:29.292738+00:00"
+}

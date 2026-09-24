@@ -1,0 +1,129 @@
+{
+  "started_at": "2026-09-24T20:11:03.074263+00:00",
+  "conditions": [
+    "C2_RAG_LLM"
+  ],
+  "items": [
+    {
+      "spec_id": "P04",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Um sistema de impressão recebe trabalhos de usuários em tempo real. Cada trabalho tem um identificador único e pode ser cancelado a qualquer momento antes de ser impresso. As operações mais frequentes são: 1) inserir um trabalho no final da fila, 2) remover o trabalho que está na frente da fila para impressão, e 3) cancelar um trabalho específico a partir de seu identificador. Qual estrutura de dados é mais adequada para atender a esses requisitos com eficiência?",
+        "alternativas": [
+          "Pilha (LIFO)",
+          "Fila (FIFO)",
+          "Lista encadeada (sequential)",
+          "Tabela hash (hashing)",
+          "Árvore binária de busca (BST)"
+        ],
+        "correta": 3,
+        "explicacao": "Para atender às operações de inserção no final, remoção na frente e cancelamento de um trabalho a partir de seu identificador, a estrutura que oferece a melhor combinação de eficiência é a tabela hash. Ela permite inserção e remoção em tempo constante média e, quando combinada com uma lista encadeada para manter a ordem de chegada, garante que a remoção da frente da fila também seja eficiente. Pilhas e filas não permitem remoção arbitrária; listas encadeadas têm busca linear; árvores binárias de busca exigem ordenação por chave, o que não corresponde à ordem de chegada.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-estruturas-dados-004",
+            "texto": "Pilhas seguem a disciplina LIFO, enquanto filas seguem FIFO. Árvores de busca organizam chaves hierarquicamente e tabelas de dispersão usam funções hash para localizar elementos. A estrutura apropriada depende das operações predominantes, dos requisitos de ordenação e do custo aceitável de busca, inserção e remoção.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Algoritmos e Estruturas de Dados",
+              "habilidade": "Selecionar estruturas de dados",
+              "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+              "referencia": "CORMEN, T. H. et al. Algoritmos: Teoria e Prática.",
+              "linha": 4,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 33.841909,
+              "termos_recuperados": [
+                "arvores",
+                "estrutura",
+                "estruturas",
+                "filas",
+                "hash",
+                "operacoes",
+                "pilhas",
+                "predominantes",
+                "selecionar",
+                "tabelas"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "adequada",
+                "algoritmicas",
+                "arvores",
+                "considerando",
+                "estrutura",
+                "estruturas",
+                "filas",
+                "hash",
+                "operacoes",
+                "pilhas",
+                "predominantes",
+                "projetar",
+                "selecionar",
+                "solucoes",
+                "tabelas"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-estruturas-dados-004",
+                  "score": 33.841909
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Um sistema de impressão recebe trabalhos de usuários em tempo real. Cada trabalho tem um identificador único e pode ser cancelado a qualquer momento antes de ser impresso. As operações mais frequentes são: 1) inserir um trabalho no final da fila, 2) remover o trabalho que está na frente da fila para impressão, e 3) cancelar um trabalho específico a partir de seu identificador. Qual estrutura de dados é mais adequada para atender a esses requisitos com eficiência?",
+            "alternativas": [
+              "Pilha (LIFO)",
+              "Fila (FIFO)",
+              "Lista encadeada (sequential)",
+              "Tabela hash (hashing)",
+              "Árvore binária de busca (BST)"
+            ],
+            "correta": 3,
+            "explicacao": "Para atender às operações de inserção no final, remoção na frente e cancelamento de um trabalho a partir de seu identificador, a estrutura que oferece a melhor combinação de eficiência é a tabela hash. Ela permite inserção e remoção em tempo constante média e, quando combinada com uma lista encadeada para manter a ordem de chegada, garante que a remoção da frente da fila também seja eficiente. Pilhas e filas não permitem remoção arbitrária; listas encadeadas têm busca linear; árvores binárias de busca exigem ordenação por chave, o que não corresponde à ordem de chegada.",
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 881,
+              "completion_tokens": 767,
+              "total_tokens": 1648
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 1.373
+    }
+  ],
+  "finished_at": "2026-09-24T20:11:04.486113+00:00"
+}

@@ -1,0 +1,429 @@
+{
+  "condition": "C4",
+  "run_id": "ablation-cost-exact-c4",
+  "started_at": "2026-09-24T20:11:27.143349+00:00",
+  "base_url": "http://127.0.0.1:8010",
+  "items": [
+    {
+      "spec_id": "P01",
+      "specification": {
+        "spec_id": "P01",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+        "dificuldade": 3,
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "restricoes": [
+          "uma única alternativa defensável",
+          "não exigir recurso visual"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "e27f3c37-046e-4ce8-94c8-0ece985b9de3",
+        "solicitante_id": "evaluation-ablation-cost-exact-c4-P01",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T20:11:27.177631+00:00",
+        "updated_at": "2026-09-24T20:11:27.177631+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-ablation-cost-exact-c4-P01",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+          "dificuldade": 3,
+          "competencia": "Analisar mecanismos de gerenciamento de dados",
+          "habilidade": "Analisar transações e recuperação de falhas",
+          "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+          "restricoes": [
+            "uma única alternativa defensável",
+            "não exigir recurso visual"
+          ]
+        }
+      },
+      "request_id": "e27f3c37-046e-4ce8-94c8-0ece985b9de3",
+      "generation_status": 200,
+      "generation": {
+        "request_id": "e27f3c37-046e-4ce8-94c8-0ece985b9de3",
+        "version": {
+          "id": "5f13af04-8610-4ac0-81f0-d5477bc064d2",
+          "request_id": "e27f3c37-046e-4ce8-94c8-0ece985b9de3",
+          "version_number": 1,
+          "created_at": "2026-09-24T20:11:29.292383+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Quando uma falha ocorre antes da execução do COMMIT de uma transação, qual propriedade do ACID impede que alterações parciais sejam gravadas permanentemente no banco de dados?",
+            "alternativas": [
+              "Durabilidade",
+              "Consistência",
+              "Isolamento",
+              "Serialização",
+              "Atomicidade"
+            ],
+            "correta": 4,
+            "explicacao": "A propriedade de atomicidade garante que uma transação seja tratada como uma única operação atômica: se ocorrer qualquer falha antes do COMMIT, todas as alterações realizadas pela transação são revertidas, evitando que dados parciais persistam. Por outro lado, a durabilidade assegura que, após o COMMIT, as alterações são permanentes mesmo diante de falhas subsequentes. Assim, em falhas pré-commit, apenas a atomicidade protege o banco contra alterações parciais.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 3
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-bd-transacoes-005",
+            "llm": "openai/gpt-oss-20b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "state": "GENERATION_COMPLETED",
+        "red_flags": []
+      },
+      "history": {
+        "request": {
+          "id": "e27f3c37-046e-4ce8-94c8-0ece985b9de3",
+          "solicitante_id": "evaluation-ablation-cost-exact-c4-P01",
+          "state": "GENERATION_COMPLETED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 2,
+          "stem_attempts": 1,
+          "distractor_attempts": 1,
+          "created_at": "2026-09-24T20:11:27.177631+00:00",
+          "updated_at": "2026-09-24T20:11:29.304392+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-ablation-cost-exact-c4-P01",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+            "dificuldade": 3,
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "restricoes": [
+              "uma única alternativa defensável",
+              "não exigir recurso visual"
+            ]
+          }
+        },
+        "versions": [
+          {
+            "id": "5f13af04-8610-4ac0-81f0-d5477bc064d2",
+            "version_number": 1,
+            "created_at": "2026-09-24T20:11:29.292383+00:00"
+          }
+        ],
+        "latest_version": {
+          "id": "5f13af04-8610-4ac0-81f0-d5477bc064d2",
+          "request_id": "e27f3c37-046e-4ce8-94c8-0ece985b9de3",
+          "version_number": 1,
+          "created_at": "2026-09-24T20:11:29.292383+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Quando uma falha ocorre antes da execução do COMMIT de uma transação, qual propriedade do ACID impede que alterações parciais sejam gravadas permanentemente no banco de dados?",
+            "alternativas": [
+              "Durabilidade",
+              "Consistência",
+              "Isolamento",
+              "Serialização",
+              "Atomicidade"
+            ],
+            "correta": 4,
+            "explicacao": "A propriedade de atomicidade garante que uma transação seja tratada como uma única operação atômica: se ocorrer qualquer falha antes do COMMIT, todas as alterações realizadas pela transação são revertidas, evitando que dados parciais persistam. Por outro lado, a durabilidade assegura que, após o COMMIT, as alterações são permanentes mesmo diante de falhas subsequentes. Assim, em falhas pré-commit, apenas a atomicidade protege o banco contra alterações parciais.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 3
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-bd-transacoes-005",
+            "llm": "openai/gpt-oss-20b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "artifacts": [
+          {
+            "id": 192,
+            "request_id": "e27f3c37-046e-4ce8-94c8-0ece985b9de3",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T20:11:27.202477+00:00",
+            "payload": {
+              "id": "rag-bd-transacoes-005",
+              "texto": "Transações de banco de dados devem preservar atomicidade, consistência, isolamento e durabilidade. O controle de concorrência busca evitar anomalias como leitura suja, atualização perdida e leitura não repetível. Bloqueios, ordenação por marcas de tempo e controle multiversão são estratégias usuais. Atomicidade significa que a transação produz todos os seus efeitos ou nenhum. Durabilidade protege os efeitos de transações já confirmadas por COMMIT. Uma falha antes da confirmação não demonstra violação de durabilidade; desfazer efeitos parciais preserva atomicidade.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Banco de Dados",
+                "habilidade": "Analisar transações concorrentes",
+                "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+                "referencia": "ELMASRI, R.; NAVATHE, S. Sistemas de Banco de Dados. Complemento conceitual: PostgreSQL, documentação 18, seção 3.4 Transactions, https://www.postgresql.org/docs/18/tutorial-transactions.html (consulta em 2026-09-22).",
+                "linha": 5,
+                "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 29.820143,
+                "termos_recuperados": [
+                  "acid",
+                  "antes",
+                  "atomicidade",
+                  "commit",
+                  "concorrencia",
+                  "controle",
+                  "durabilidade",
+                  "falha",
+                  "propriedades",
+                  "transacoes"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "acid",
+                  "antes",
+                  "atomicidade",
+                  "commit",
+                  "concorrencia",
+                  "controle",
+                  "durabilidade",
+                  "falha",
+                  "falhas",
+                  "gerenciamento",
+                  "mecanismos",
+                  "ocorrida",
+                  "propriedades",
+                  "recuperacao",
+                  "transacoes"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-bd-transacoes-005",
+                    "score": 29.820143
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 193,
+            "request_id": "e27f3c37-046e-4ce8-94c8-0ece985b9de3",
+            "kind": "STEM",
+            "created_at": "2026-09-24T20:11:29.268891+00:00",
+            "payload": {
+              "enunciado": "Quando uma falha ocorre antes da execução do COMMIT de uma transação, qual propriedade do ACID impede que alterações parciais sejam gravadas permanentemente no banco de dados?",
+              "resposta_correta": "Atomicidade",
+              "explicacao": "A propriedade de atomicidade garante que uma transação seja tratada como uma única operação atômica: se ocorrer qualquer falha antes do COMMIT, todas as alterações realizadas pela transação são revertidas, evitando que dados parciais persistam. Por outro lado, a durabilidade assegura que, após o COMMIT, as alterações são permanentes mesmo diante de falhas subsequentes. Assim, em falhas pré-commit, apenas a atomicidade protege o banco contra alterações parciais.",
+              "competencia": "Analisar mecanismos de gerenciamento de dados",
+              "habilidade": "Analisar transações e recuperação de falhas",
+              "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-20b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 1026,
+                "completion_tokens": 803,
+                "total_tokens": 1829
+              }
+            }
+          },
+          {
+            "id": 194,
+            "request_id": "e27f3c37-046e-4ce8-94c8-0ece985b9de3",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T20:11:29.284184+00:00",
+            "payload": [
+              {
+                "texto": "Consistência",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Atomicidade, mas não responde ao cenário"
+              },
+              {
+                "texto": "Isolamento",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Atomicidade, mas não responde ao cenário"
+              },
+              {
+                "texto": "Durabilidade",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Atomicidade, mas não responde ao cenário"
+              },
+              {
+                "texto": "Serialização",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Atomicidade, mas não responde ao cenário"
+              }
+            ],
+            "provenance": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "Atomicidade",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 195,
+            "request_id": "e27f3c37-046e-4ce8-94c8-0ece985b9de3",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T20:11:29.301456+00:00",
+            "payload": [],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.1.0",
+              "tipo": "deterministico"
+            }
+          }
+        ],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 303,
+            "request_id": "e27f3c37-046e-4ce8-94c8-0ece985b9de3",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T20:11:27.179211+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-ablation-cost-exact-c4-P01",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+              "dificuldade": 3,
+              "competencia": "Analisar mecanismos de gerenciamento de dados",
+              "habilidade": "Analisar transações e recuperação de falhas",
+              "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+              "restricoes": [
+                "uma única alternativa defensável",
+                "não exigir recurso visual"
+              ]
+            }
+          },
+          {
+            "id": 304,
+            "request_id": "e27f3c37-046e-4ce8-94c8-0ece985b9de3",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T20:11:27.206565+00:00",
+            "evidence": {
+              "id": "rag-bd-transacoes-005"
+            }
+          },
+          {
+            "id": 305,
+            "request_id": "e27f3c37-046e-4ce8-94c8-0ece985b9de3",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T20:11:29.273137+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-20b",
+              "prompt_version": "enade-stem-1.1.0",
+              "token_usage_remote": {
+                "prompt_tokens": 1026,
+                "completion_tokens": 803,
+                "total_tokens": 1829
+              }
+            }
+          },
+          {
+            "id": 306,
+            "request_id": "e27f3c37-046e-4ce8-94c8-0ece985b9de3",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T20:11:29.288031+00:00",
+            "evidence": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "Atomicidade",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 307,
+            "request_id": "e27f3c37-046e-4ce8-94c8-0ece985b9de3",
+            "version_id": "5f13af04-8610-4ac0-81f0-d5477bc064d2",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T20:11:29.296314+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 308,
+            "request_id": "e27f3c37-046e-4ce8-94c8-0ece985b9de3",
+            "version_id": "5f13af04-8610-4ac0-81f0-d5477bc064d2",
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "GENERATION_COMPLETED",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "geração concluída sem red flags",
+            "created_at": "2026-09-24T20:11:29.304580+00:00",
+            "evidence": {}
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 2.174
+    }
+  ]
+}

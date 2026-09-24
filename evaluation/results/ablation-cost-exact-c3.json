@@ -1,0 +1,1196 @@
+{
+  "started_at": "2026-09-24T20:06:03.751681+00:00",
+  "conditions": [
+    "C3_RAG_LLM_SLM"
+  ],
+  "items": [
+    {
+      "spec_id": "P01",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Qual propriedade ACID assegura que, em caso de falha antes do COMMIT, nenhum efeito parcial da transação seja persistido no banco de dados?",
+        "alternativas": [
+          "durabilidade",
+          "atomicidade",
+          "confiabilidade",
+          "consistência",
+          "autenticidade"
+        ],
+        "correta": 1,
+        "explicacao": "A propriedade de atomicidade garante que uma transação seja tratada como uma unidade indivisível: todos os seus efeitos são aplicados ou nenhum deles. Quando a falha ocorre antes da confirmação (COMMIT), o sistema revoga qualquer alteração parcial, mantendo o banco no estado anterior. A durabilidade, por outro lado, protege apenas os efeitos de transações já confirmadas.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-bd-transacoes-005",
+            "texto": "Transações de banco de dados devem preservar atomicidade, consistência, isolamento e durabilidade. O controle de concorrência busca evitar anomalias como leitura suja, atualização perdida e leitura não repetível. Bloqueios, ordenação por marcas de tempo e controle multiversão são estratégias usuais. Atomicidade significa que a transação produz todos os seus efeitos ou nenhum. Durabilidade protege os efeitos de transações já confirmadas por COMMIT. Uma falha antes da confirmação não demonstra violação de durabilidade; desfazer efeitos parciais preserva atomicidade.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Banco de Dados",
+              "habilidade": "Analisar transações concorrentes",
+              "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+              "referencia": "ELMASRI, R.; NAVATHE, S. Sistemas de Banco de Dados. Complemento conceitual: PostgreSQL, documentação 18, seção 3.4 Transactions, https://www.postgresql.org/docs/18/tutorial-transactions.html (consulta em 2026-09-22).",
+              "linha": 5,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 29.820143,
+              "termos_recuperados": [
+                "acid",
+                "antes",
+                "atomicidade",
+                "commit",
+                "concorrencia",
+                "controle",
+                "durabilidade",
+                "falha",
+                "propriedades",
+                "transacoes"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "acid",
+                "antes",
+                "atomicidade",
+                "commit",
+                "concorrencia",
+                "controle",
+                "durabilidade",
+                "falha",
+                "falhas",
+                "gerenciamento",
+                "mecanismos",
+                "ocorrida",
+                "propriedades",
+                "recuperacao",
+                "transacoes"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-bd-transacoes-005",
+                  "score": 29.820143
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Qual propriedade ACID assegura que, em caso de falha antes do COMMIT, nenhum efeito parcial da transação seja persistido no banco de dados?",
+            "resposta_correta": "atomicidade",
+            "explicacao": "A propriedade de atomicidade garante que uma transação seja tratada como uma unidade indivisível: todos os seus efeitos são aplicados ou nenhum deles. Quando a falha ocorre antes da confirmação (COMMIT), o sistema revoga qualquer alteração parcial, mantendo o banco no estado anterior. A durabilidade, por outro lado, protege apenas os efeitos de transações já confirmadas.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-20b",
+            "prompt_version": "enade-stem-1.1.0",
+            "token_usage_remote": {
+              "prompt_tokens": 1008,
+              "completion_tokens": 426,
+              "total_tokens": 1434
+            }
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "durabilidade",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "consistência",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "confiabilidade",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "autenticidade",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_3:distratos->distratores",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto"
+            ],
+            "amostras": 3,
+            "candidatos_gerados": 7,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "token_usage_local": {
+              "input_tokens": 1182,
+              "output_tokens": 81,
+              "total_tokens": 1263
+            },
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 7,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                0,
+                1,
+                2,
+                4
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Qual propriedade ACID assegura que, em caso de falha antes do COMMIT, nenhum efeito parcial da transação seja persistido no banco de dados?",
+            "alternativas": [
+              "durabilidade",
+              "atomicidade",
+              "confiabilidade",
+              "consistência",
+              "autenticidade"
+            ],
+            "correta": 1,
+            "explicacao": "A propriedade de atomicidade garante que uma transação seja tratada como uma unidade indivisível: todos os seus efeitos são aplicados ou nenhum deles. Quando a falha ocorre antes da confirmação (COMMIT), o sistema revoga qualquer alteração parcial, mantendo o banco no estado anterior. A durabilidade, por outro lado, protege apenas os efeitos de transações já confirmadas.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 3
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 53.109
+    },
+    {
+      "spec_id": "P02",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em um cenário de aplicação que requer comunicação entre processos, compare as garantias de entrega, ordenação e controle de fluxo oferecidas pelos protocolos TCP e UDP, indicando qual protocolo oferece cada garantia.",
+        "alternativas": [
+          "UDP offers reliable delivery without guaranteeing order or flow control.",
+          "TCP ensures reliable delivery with ordered data and controlled flows.",
+          "TCP garantir delivery reliable, ordering data and controlling the flow",
+          "The TCP guarantees reliable delivery, ordered data, and controlled flow.",
+          "O TCP garante entrega confiável, ordenação de bytes e controle de fluxo, enquanto o UDP oferece apenas entrega sem garantia, sem ordenação nem controle de fluxo."
+        ],
+        "correta": 4,
+        "explicacao": "O TCP, sendo orientado a conexão, implementa mecanismos de controle de fluxo (ex.: janela deslizante) e de controle de congestionamento, além de retransmitir pacotes perdidos e garantir a ordem de chegada dos bytes. O UDP, por outro lado, é sem conexão e não possui esses mecanismos; ele apenas encapsula dados em datagramas, sem confirmação de recebimento, sem reordenação e sem controle de fluxo, resultando em menor sobrecarga e latência, mas com risco de perda ou desordem dos pacotes.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-redes-transporte-007",
+            "texto": "Na arquitetura TCP/IP, a camada de transporte oferece comunicação fim a fim entre processos. O TCP fornece serviço orientado a conexão, entrega confiável, controle de fluxo e controle de congestionamento. O UDP oferece serviço sem conexão com menor sobrecarga, sem garantir entrega ou ordenação.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Redes de Computadores",
+              "habilidade": "Comparar protocolos de transporte",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet.",
+              "linha": 7,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 25.756259,
+              "termos_recuperados": [
+                "comunicacao",
+                "fim",
+                "protocolos",
+                "tcp",
+                "transporte",
+                "udp"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "arquiteturas",
+                "cenario",
+                "comunicacao",
+                "conforme",
+                "fim",
+                "garantias",
+                "oferecidas",
+                "pelos",
+                "protocolo",
+                "protocolos",
+                "requisitos",
+                "selecionar",
+                "tcp",
+                "transporte",
+                "udp"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-redes-transporte-007",
+                  "score": 25.756259
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Em um cenário de aplicação que requer comunicação entre processos, compare as garantias de entrega, ordenação e controle de fluxo oferecidas pelos protocolos TCP e UDP, indicando qual protocolo oferece cada garantia.",
+            "resposta_correta": "O TCP garante entrega confiável, ordenação de bytes e controle de fluxo, enquanto o UDP oferece apenas entrega sem garantia, sem ordenação nem controle de fluxo.",
+            "explicacao": "O TCP, sendo orientado a conexão, implementa mecanismos de controle de fluxo (ex.: janela deslizante) e de controle de congestionamento, além de retransmitir pacotes perdidos e garantir a ordem de chegada dos bytes. O UDP, por outro lado, é sem conexão e não possui esses mecanismos; ele apenas encapsula dados em datagramas, sem confirmação de recebimento, sem reordenação e sem controle de fluxo, resultando em menor sobrecarga e latência, mas com risco de perda ou desordem dos pacotes.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-20b",
+            "prompt_version": "enade-stem-1.1.0",
+            "token_usage_remote": {
+              "prompt_tokens": 893,
+              "completion_tokens": 658,
+              "total_tokens": 1551
+            }
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "TCP garantir delivery reliable, ordering data and controlling the flow",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "The TCP guarantees reliable delivery, ordered data, and controlled flow.",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "TCP ensures reliable delivery with ordered data and controlled flows.",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "UDP offers reliable delivery without guaranteeing order or flow control.",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto"
+            ],
+            "amostras": 2,
+            "candidatos_gerados": 8,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "token_usage_local": {
+              "input_tokens": 886,
+              "output_tokens": 130,
+              "total_tokens": 1016
+            },
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 8,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                2,
+                3,
+                4,
+                5
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Em um cenário de aplicação que requer comunicação entre processos, compare as garantias de entrega, ordenação e controle de fluxo oferecidas pelos protocolos TCP e UDP, indicando qual protocolo oferece cada garantia.",
+            "alternativas": [
+              "UDP offers reliable delivery without guaranteeing order or flow control.",
+              "TCP ensures reliable delivery with ordered data and controlled flows.",
+              "TCP garantir delivery reliable, ordering data and controlling the flow",
+              "The TCP guarantees reliable delivery, ordered data, and controlled flow.",
+              "O TCP garante entrega confiável, ordenação de bytes e controle de fluxo, enquanto o UDP oferece apenas entrega sem garantia, sem ordenação nem controle de fluxo."
+            ],
+            "correta": 4,
+            "explicacao": "O TCP, sendo orientado a conexão, implementa mecanismos de controle de fluxo (ex.: janela deslizante) e de controle de congestionamento, além de retransmitir pacotes perdidos e garantir a ordem de chegada dos bytes. O UDP, por outro lado, é sem conexão e não possui esses mecanismos; ele apenas encapsula dados em datagramas, sem confirmação de recebimento, sem reordenação e sem controle de fluxo, resultando em menor sobrecarga e latência, mas com risco de perda ou desordem dos pacotes.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 54.67
+    },
+    {
+      "spec_id": "P03",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em um sistema bancário, qual tipo de requisito descreve o serviço de alteração de endereço de e-mail pelo usuário?",
+        "alternativas": [
+          "Requisito funcional",
+          "Requisições funcionais",
+          "Requisitos estéticos",
+          "Condições técnicas",
+          "Normas operacionais"
+        ],
+        "correta": 0,
+        "explicacao": "O requisito descreve uma ação que o sistema deve executar, ou seja, permitir que o usuário altere seu endereço de e-mail. Requisitos funcionais definem comportamentos e serviços que o sistema deve oferecer, enquanto requisitos não funcionais tratam de atributos como desempenho, segurança e usabilidade.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-engsoftware-requisitos-009",
+            "texto": "Requisitos funcionais descrevem serviços e comportamentos esperados do sistema. Requisitos não funcionais estabelecem atributos e restrições, como desempenho, segurança, confiabilidade e usabilidade. Elicitação, especificação, validação e gerenciamento de mudanças ajudam a manter alinhamento entre necessidades e solução.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Engenharia de Software",
+              "habilidade": "Analisar e classificar requisitos",
+              "objeto_conhecimento": "Engenharia de requisitos",
+              "referencia": "SOMMERVILLE, I. Engenharia de Software.",
+              "linha": 9,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 15.611199,
+              "termos_recuperados": [
+                "classificar",
+                "engenharia",
+                "funcionais",
+                "nao",
+                "requisitos"
+              ],
+              "candidatas_relevantes": 3,
+              "consulta_normalizada": [
+                "cenario",
+                "classificar",
+                "conforme",
+                "engenharia",
+                "finalidade",
+                "funcionais",
+                "nao",
+                "projeto",
+                "requisitos"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-engsoftware-requisitos-009",
+                  "score": 15.611199
+                },
+                {
+                  "id": "rag-engsoftware-testes-010",
+                  "score": 2.733973
+                },
+                {
+                  "id": "rag-estruturas-dados-004",
+                  "score": 1.587169
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Em um sistema bancário, qual tipo de requisito descreve o serviço de alteração de endereço de e-mail pelo usuário?",
+            "resposta_correta": "Requisito funcional",
+            "explicacao": "O requisito descreve uma ação que o sistema deve executar, ou seja, permitir que o usuário altere seu endereço de e-mail. Requisitos funcionais definem comportamentos e serviços que o sistema deve oferecer, enquanto requisitos não funcionais tratam de atributos como desempenho, segurança e usabilidade.",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-20b",
+            "prompt_version": "enade-stem-1.1.0",
+            "token_usage_remote": {
+              "prompt_tokens": 882,
+              "completion_tokens": 1274,
+              "total_tokens": 2156
+            }
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "Requisitos estéticos",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Requisições funcionais",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Condições técnicas",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Normas operacionais",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:placeholder_descartado",
+              "amostra_3:distratos->distratores",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto"
+            ],
+            "amostras": 3,
+            "candidatos_gerados": 8,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "token_usage_local": {
+              "input_tokens": 1164,
+              "output_tokens": 107,
+              "total_tokens": 1271
+            },
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 8,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Em um sistema bancário, qual tipo de requisito descreve o serviço de alteração de endereço de e-mail pelo usuário?",
+            "alternativas": [
+              "Requisito funcional",
+              "Requisições funcionais",
+              "Requisitos estéticos",
+              "Condições técnicas",
+              "Normas operacionais"
+            ],
+            "correta": 0,
+            "explicacao": "O requisito descreve uma ação que o sistema deve executar, ou seja, permitir que o usuário altere seu endereço de e-mail. Requisitos funcionais definem comportamentos e serviços que o sistema deve oferecer, enquanto requisitos não funcionais tratam de atributos como desempenho, segurança e usabilidade.",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 1,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 3
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 50.63
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Um sistema de mensagens em tempo real recebe mensagens de usuários e as processa na ordem em que chegam. As mensagens são removidas do início da fila assim que processadas, mas, ocasionalmente, o sistema precisa acessar uma mensagem específica pelo seu índice para aplicar filtros avançados. Qual estrutura de dados melhor atende a esses requisitos?",
+        "alternativas": [
+          "fila",
+          "cola",
+          "queue",
+          "coluna",
+          "pilha"
+        ],
+        "correta": 0,
+        "explicacao": "A fila (FIFO) garante remoção eficiente no início, O(1) para enfileirar e desenfileirar. Embora o acesso por índice seja O(n), essa operação ocorre raramente, tornando-a aceitável. Outras estruturas, como pilha, não mantêm a ordem de chegada, e listas encadeadas ou árvores exigiriam mais complexidade de manutenção. Portanto, a fila satisfaz a predominância das operações de remoção e inserção sequenciais.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-estruturas-dados-004",
+            "texto": "Pilhas seguem a disciplina LIFO, enquanto filas seguem FIFO. Árvores de busca organizam chaves hierarquicamente e tabelas de dispersão usam funções hash para localizar elementos. A estrutura apropriada depende das operações predominantes, dos requisitos de ordenação e do custo aceitável de busca, inserção e remoção.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Algoritmos e Estruturas de Dados",
+              "habilidade": "Selecionar estruturas de dados",
+              "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+              "referencia": "CORMEN, T. H. et al. Algoritmos: Teoria e Prática.",
+              "linha": 4,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 33.841909,
+              "termos_recuperados": [
+                "arvores",
+                "estrutura",
+                "estruturas",
+                "filas",
+                "hash",
+                "operacoes",
+                "pilhas",
+                "predominantes",
+                "selecionar",
+                "tabelas"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "adequada",
+                "algoritmicas",
+                "arvores",
+                "considerando",
+                "estrutura",
+                "estruturas",
+                "filas",
+                "hash",
+                "operacoes",
+                "pilhas",
+                "predominantes",
+                "projetar",
+                "selecionar",
+                "solucoes",
+                "tabelas"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-estruturas-dados-004",
+                  "score": 33.841909
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Um sistema de mensagens em tempo real recebe mensagens de usuários e as processa na ordem em que chegam. As mensagens são removidas do início da fila assim que processadas, mas, ocasionalmente, o sistema precisa acessar uma mensagem específica pelo seu índice para aplicar filtros avançados. Qual estrutura de dados melhor atende a esses requisitos?",
+            "resposta_correta": "fila",
+            "explicacao": "A fila (FIFO) garante remoção eficiente no início, O(1) para enfileirar e desenfileirar. Embora o acesso por índice seja O(n), essa operação ocorre raramente, tornando-a aceitável. Outras estruturas, como pilha, não mantêm a ordem de chegada, e listas encadeadas ou árvores exigiriam mais complexidade de manutenção. Portanto, a fila satisfaz a predominância das operações de remoção e inserção sequenciais.",
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-20b",
+            "prompt_version": "enade-stem-1.1.0",
+            "token_usage_remote": {
+              "prompt_tokens": 923,
+              "completion_tokens": 1054,
+              "total_tokens": 1977
+            }
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "coluna",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "pilha",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "cola",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "queue",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:copia_do_gabarito_descartada",
+              "amostra_3:distratos->distratores",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:copia_do_gabarito_descartada"
+            ],
+            "amostras": 3,
+            "candidatos_gerados": 8,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "token_usage_local": {
+              "input_tokens": 1317,
+              "output_tokens": 65,
+              "total_tokens": 1382
+            },
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 8,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                0,
+                3,
+                4,
+                5
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Um sistema de mensagens em tempo real recebe mensagens de usuários e as processa na ordem em que chegam. As mensagens são removidas do início da fila assim que processadas, mas, ocasionalmente, o sistema precisa acessar uma mensagem específica pelo seu índice para aplicar filtros avançados. Qual estrutura de dados melhor atende a esses requisitos?",
+            "alternativas": [
+              "fila",
+              "cola",
+              "queue",
+              "coluna",
+              "pilha"
+            ],
+            "correta": 0,
+            "explicacao": "A fila (FIFO) garante remoção eficiente no início, O(1) para enfileirar e desenfileirar. Embora o acesso por índice seja O(n), essa operação ocorre raramente, tornando-a aceitável. Outras estruturas, como pilha, não mantêm a ordem de chegada, e listas encadeadas ou árvores exigiriam mais complexidade de manutenção. Portanto, a fila satisfaz a predominância das operações de remoção e inserção sequenciais.",
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 1
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 38.169
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Considere uma empresa que deseja prever a probabilidade de churn de clientes com base em histórico de uso e dados demográficos, utilizando um conjunto de dados rotulado onde cada registro indica se o cliente cancelou ou não a assinatura. Qual paradigma de aprendizado de máquina está sendo aplicado?",
+        "alternativas": [
+          "Regressão linear",
+          "Modelagem estadística",
+          "Aprendizagem automática",
+          "Inteligência artificial",
+          "Aprendizado supervisionado"
+        ],
+        "correta": 4,
+        "explicacao": "O algoritmo recebe exemplos rotulados – cada registro possui uma saída conhecida (cancelou ou não). O objetivo é aprender uma função que mapeie as características de entrada para a saída, o que caracteriza o aprendizado supervisionado, ao contrário do não supervisionado que não possui rótulos.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-ia-aprendizado-011",
+            "texto": "No aprendizado supervisionado, exemplos rotulados orientam a construção de modelos para classificação ou regressão. No aprendizado não supervisionado, o objetivo é identificar estruturas ou agrupamentos sem rótulos de saída. A avaliação deve usar dados independentes do treinamento para estimar generalização e reduzir conclusões afetadas por sobreajuste.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Inteligência Artificial",
+              "habilidade": "Distinguir paradigmas de aprendizado",
+              "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+              "referencia": "RUSSELL, S.; NORVIG, P. Inteligência Artificial: Uma Abordagem Moderna.",
+              "linha": 11,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 22.082778,
+              "termos_recuperados": [
+                "aprendizado",
+                "artificial",
+                "inteligencia",
+                "nao",
+                "paradigmas",
+                "supervisionado"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "aprendizado",
+                "artificial",
+                "disponiveis",
+                "inteligencia",
+                "metodos",
+                "nao",
+                "paradigmas",
+                "partir",
+                "supervisionado"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-ia-aprendizado-011",
+                  "score": 22.082778
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Considere uma empresa que deseja prever a probabilidade de churn de clientes com base em histórico de uso e dados demográficos, utilizando um conjunto de dados rotulado onde cada registro indica se o cliente cancelou ou não a assinatura. Qual paradigma de aprendizado de máquina está sendo aplicado?",
+            "resposta_correta": "Aprendizado supervisionado",
+            "explicacao": "O algoritmo recebe exemplos rotulados – cada registro possui uma saída conhecida (cancelou ou não). O objetivo é aprender uma função que mapeie as características de entrada para a saída, o que caracteriza o aprendizado supervisionado, ao contrário do não supervisionado que não possui rótulos.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-20b",
+            "prompt_version": "enade-stem-1.1.0",
+            "token_usage_remote": {
+              "prompt_tokens": 884,
+              "completion_tokens": 563,
+              "total_tokens": 1447
+            }
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "Aprendizagem automática",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Inteligência artificial",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Modelagem estadística",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Regressão linear",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_3:distratos->distratores",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto"
+            ],
+            "amostras": 3,
+            "candidatos_gerados": 6,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "token_usage_local": {
+              "input_tokens": 1275,
+              "output_tokens": 100,
+              "total_tokens": 1375
+            },
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 6,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                0,
+                1,
+                2,
+                4
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Considere uma empresa que deseja prever a probabilidade de churn de clientes com base em histórico de uso e dados demográficos, utilizando um conjunto de dados rotulado onde cada registro indica se o cliente cancelou ou não a assinatura. Qual paradigma de aprendizado de máquina está sendo aplicado?",
+            "alternativas": [
+              "Regressão linear",
+              "Modelagem estadística",
+              "Aprendizagem automática",
+              "Inteligência artificial",
+              "Aprendizado supervisionado"
+            ],
+            "correta": 4,
+            "explicacao": "O algoritmo recebe exemplos rotulados – cada registro possui uma saída conhecida (cancelou ou não). O objetivo é aprender uma função que mapeie as características de entrada para a saída, o que caracteriza o aprendizado supervisionado, ao contrário do não supervisionado que não possui rótulos.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 54.44
+    }
+  ],
+  "finished_at": "2026-09-24T20:10:15.004647+00:00"
+}

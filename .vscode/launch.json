@@ -1,0 +1,49 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "HAILA: Backend",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "haila.api:app",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8010",
+        "--reload"
+      ],
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "HAILA: Frontend",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/frontend/server.py",
+      "args": [
+        "--port",
+        "4174",
+        "--backend",
+        "http://127.0.0.1:8010"
+      ],
+      "cwd": "${workspaceFolder}",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "console": "integratedTerminal"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "HAILA: Front + Back",
+      "configurations": [
+        "HAILA: Backend",
+        "HAILA: Frontend"
+      ],
+      "stopAll": true
+    }
+  ]
+}

@@ -49,4 +49,13 @@ A API ficará em `http://127.0.0.1:8000` e o HAILA Studio em `http://127.0.0.1:4
 make test
 ```
 
+## Execução no VS Code
+
+1. Abra a pasta raiz `HAILA` no VS Code.
+2. Copie `.env.example` para `.env` e preencha `GROQ_API_KEY` somente no arquivo local.
+3. Abra **Executar e Depurar** e selecione **HAILA: Front + Back**.
+4. Acesse `http://127.0.0.1:4174/studio.html`.
+
+As tarefas **HAILA: Testes**, **HAILA: Ablação C1-C3**, **HAILA: Ablação C4** e **HAILA: Consolidar tokens exatos** ficam disponíveis em **Terminal > Executar Tarefa**. Os resultados são gravados em `evaluation/results/`. O consolidado separa os tokens pagos da Groq dos tokens processados localmente pela SLM.
+
 Modelos que avaliam questões como substitutos de professores não fazem parte do fluxo de produção. Esse uso permanece em `research/` como protocolo experimental para comparação com pareceres humanos.

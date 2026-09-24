@@ -1,0 +1,78 @@
+{
+  "started_at": "2026-09-24T20:03:35.006613+00:00",
+  "conditions": [
+    "C1_LLM"
+  ],
+  "items": [
+    {
+      "spec_id": "P02",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Um sistema de monitoramento remoto de sensores distribuidos, que envia pequenos pacotes de dados a cada segundo, requer que cada pacote chegue no destino, mas pode aceitar que alguns pacotes sejam perdidos, pois a aplicação pode calcular médias a partir dos pacotes recebidos. Qual protocolo de transporte é mais adequado?",
+        "alternativas": [
+          "TCP, porque garante que os pacotes sejam entregues na ordem correta, eliminando a necessidade de lógica de retransmissão na aplicação.",
+          "UDP, porque entrega os pacotes sem sobrecarga adicional, permitindo que a aplicação trate eventuais perdas.",
+          "TCP, porque fornece controle de fluxo e congestionamento, o que reduz a chance de perda de pacotes.",
+          "UDP, porque mantém a ordem de envio dos pacotes, evitando a necessidade de reordenação na aplicação.",
+          "TCP, porque é mais simples de implementar e não exige tratamento de perdas no nível da aplicação."
+        ],
+        "correta": 1,
+        "explicacao": "O protocolo UDP é sem conexão, não realiza handshake nem garante ordem ou entrega, mas possui menor sobrecarga e não faz retransmissões. Em cenários onde perdas podem ser toleradas e a latência deve ser mínima, UDP é a escolha correta. TCP garante entrega e ordem, mas adiciona overhead e atrasos que não são necessários quando a aplicação pode aceitar perda de pacotes.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Um sistema de monitoramento remoto de sensores distribuidos, que envia pequenos pacotes de dados a cada segundo, requer que cada pacote chegue no destino, mas pode aceitar que alguns pacotes sejam perdidos, pois a aplicação pode calcular médias a partir dos pacotes recebidos. Qual protocolo de transporte é mais adequado?",
+            "alternativas": [
+              "TCP, porque garante que os pacotes sejam entregues na ordem correta, eliminando a necessidade de lógica de retransmissão na aplicação.",
+              "UDP, porque entrega os pacotes sem sobrecarga adicional, permitindo que a aplicação trate eventuais perdas.",
+              "TCP, porque fornece controle de fluxo e congestionamento, o que reduz a chance de perda de pacotes.",
+              "UDP, porque mantém a ordem de envio dos pacotes, evitando a necessidade de reordenação na aplicação.",
+              "TCP, porque é mais simples de implementar e não exige tratamento de perdas no nível da aplicação."
+            ],
+            "correta": 1,
+            "explicacao": "O protocolo UDP é sem conexão, não realiza handshake nem garante ordem ou entrega, mas possui menor sobrecarga e não faz retransmissões. Em cenários onde perdas podem ser toleradas e a latência deve ser mínima, UDP é a escolha correta. TCP garante entrega e ordem, mas adiciona overhead e atrasos que não são necessários quando a aplicação pode aceitar perda de pacotes.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 494,
+              "completion_tokens": 1854,
+              "total_tokens": 2348
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 3.122
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C1_LLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    }
+  ],
+  "finished_at": "2026-09-24T20:03:41.687614+00:00"
+}

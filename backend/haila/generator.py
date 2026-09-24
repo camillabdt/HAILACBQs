@@ -36,58 +36,21 @@ class GeradorDistratores(Protocol):
     def __call__(self, nucleo: NucleoQuestao, feedback: list[dict[str, Any]]) -> tuple[list[DistratorGerado], dict[str, Any]]: ...
 
 
-SYSTEM_NUCLEO = """Você é o gerador de núcleo da HAILA.
-Crie um item inédito de Computação alinhado ao ENADE usando a referência apenas
-como base conceitual. Gere SOMENTE enunciado, resposta correta, explicação,
-competência, habilidade, objeto de conhecimento e dependência visual. É proibido
-gerar alternativas ou distratores. Resolva o item antes de definir o gabarito. Verifique se a explicação realmente
-sustenta a resposta, sem confundir uma garantia não aplicável com uma garantia
-violada. Em ACID, durabilidade protege transações confirmadas; perder alterações
-antes do COMMIT não constitui, por si só, violação de durabilidade.
-Não crie questão cuja resposta dependa de comportamento indefinido, premissa
-incorreta ou modelo de execução não declarado. Em campos multilinha, codifique
-quebras de linha JSON uma única vez; nunca devolva barras e a letra n como texto
-visível.
+SYSTEM_QUALITY_BASE = """Crie uma questão objetiva inédita de Computação, alinhada ao ENADE e à especificação.
+Use a referência somente como fundamento conceitual. Exija raciocínio, mantenha uma
+única resposta defensável e sustente-a na explicação. Delimite produto, API e modelo
+de execução quando forem necessários. Não use comportamento indefinido. Formule o
+comando afirmativamente, sem termos vagos ou absolutos. Não repita no enunciado a
+expressão que entrega o gabarito. Respeite o objeto de conhecimento e responda somente
+JSON válido."""
 
-O núcleo deve possuir uma única resposta defensável e um espaço de respostas
-claramente delimitado. A resposta correta deve ser concisa, preferencialmente entre
-1 e 12 palavras. Não pergunte genericamente "qual mecanismo de sincronização",
-pois mutex, semáforo binário, monitor e operações atômicas podem ser alternativas
-válidas dependendo do contexto. Delimite a API, a abstração ou a propriedade exata
-pedida (por exemplo, uma operação POSIX específica).
-Respeite o objetivo pedagógico e o objeto de conhecimento indicados; não troque
-uma comparação de técnicas por uma pergunta sobre detalhes internos de um produto.
-Se a resposta exigir campos ou APIs específicos de um SGBD, nomeie explicitamente
-o produto no enunciado e use apenas características sustentadas pela referência.
-Use singular na pergunta quando o gabarito for uma única propriedade, técnica ou
-entidade. Use plural somente quando a resposta exigir explicitamente mais de um item.
-Não escreva literalmente a resposta correta no enunciado. Se o gabarito for "fila",
-por exemplo, descreva o comportamento FIFO ou a ordem de atendimento sem chamar a
-estrutura de fila antes da pergunta.
-Formule o comando afirmativamente. Evite "exceto", "incorreta" e negações no
-comando. Evite termos absolutos como "sempre", "nunca", "todos" e "nenhum",
-salvo quando forem indispensáveis e conceitualmente exatos. Não repita no
-enunciado uma palavra técnica que apareça exclusivamente na resposta correta.
-Se listar requisitos, afirmações ou casos e perguntar qual pertence a uma categoria,
-confirme um a um que somente o item indicado no gabarito pertence à categoria. Por
-exemplo, tempo de resposta, autenticação e capacidade simultânea podem ser todos
-requisitos não funcionais; não os apresente juntos quando apenas uma resposta puder
-ser marcada.
-Ao comparar TCP e UDP, não pergunte simplesmente qual protocolo deve ser usado:
-outros protocolos de transporte podem satisfazer o mesmo cenário e criar múltiplas
-respostas defensáveis. Pergunte pela combinação de garantias requerida, como entrega
-confiável e ordenada, ou formule alternativas que comparem explicitamente TCP e UDP.
-Prefira o formato: "Considerando exclusivamente TCP e UDP, qual comparação descreve
-corretamente os serviços oferecidos?". Nesse formato, use como resposta uma comparação
-completa, por exemplo: "TCP oferece entrega confiável e ordenada; UDP reduz a sobrecarga
-sem oferecer essas garantias". Não copie essa resposta nem suas expressões distintivas
-no enunciado.
 
-Não use código C/C++ com acesso concorrente não atômico para pedir valores finais,
-pois data race implica comportamento indefinido. Para abordar condições de corrida,
-use pseudocódigo com modelo de execução explicitamente declarado ou pergunte por
-uma operação/propriedade específica, sem calcular o resultado de um programa com
-comportamento indefinido. Responda somente JSON válido."""
+SYSTEM_NUCLEO = SYSTEM_QUALITY_BASE + """
+Gere somente o núcleo: enunciado, resposta_correta concisa, explicacao, competencia,
+habilidade, objeto_conhecimento, tem_imagem e recurso_visual. Não gere alternativas.
+Ao comparar TCP e UDP, restrinja explicitamente a comparação aos dois protocolos e
+use como resposta uma afirmação comparativa sobre ambos, sem copiá-la no enunciado.
+Se o item reunir função e desempenho, pergunte separadamente pelo aspecto pretendido."""
 
 
 INSTRUCAO_DISTRACTORES = (

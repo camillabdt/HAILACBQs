@@ -1,0 +1,209 @@
+{
+  "started_at": "2026-09-24T20:02:09.371038+00:00",
+  "conditions": [
+    "C1_LLM"
+  ],
+  "items": [
+    {
+      "spec_id": "P01",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Em um sistema de banco de dados que implementa ACID, uma transação executa três operações e, logo após a última, ocorre uma falha de energia antes que o COMMIT seja concluído. Qual é a consequência correta sobre os efeitos das operações na base de dados?",
+        "alternativas": [
+          "As três operações permanecem visíveis para outras transações, pois o sistema grava o log antes da falha.",
+          "As três operações são revertidas, pois a atomicidade garante que nenhuma alteração seja persistida se o COMMIT não for concluído.",
+          "Apenas a última operação é revertida, enquanto as duas primeiras permanecem, já que o sistema grava as alterações incrementalmente.",
+          "As três operações são mantidas em disco, mas marcadas como não confirmadas, aguardando a recuperação automática do sistema.",
+          "As três operações são mantidas em disco, mas não são visíveis para outras transações até que o sistema seja reiniciado e o log seja processado."
+        ],
+        "correta": 1,
+        "explicacao": "A falha ocorre antes do COMMIT. A atomicidade assegura que a transação seja desfeita integralmente; portanto, nenhuma das operações fica persistida. A durabilidade só garante a permanência dos dados após um COMMIT bem-sucedido, não se aplicando quando o COMMIT não foi concluído.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Em um sistema de banco de dados que implementa ACID, uma transação executa três operações e, logo após a última, ocorre uma falha de energia antes que o COMMIT seja concluído. Qual é a consequência correta sobre os efeitos das operações na base de dados?",
+            "alternativas": [
+              "As três operações permanecem visíveis para outras transações, pois o sistema grava o log antes da falha.",
+              "As três operações são revertidas, pois a atomicidade garante que nenhuma alteração seja persistida se o COMMIT não for concluído.",
+              "Apenas a última operação é revertida, enquanto as duas primeiras permanecem, já que o sistema grava as alterações incrementalmente.",
+              "As três operações são mantidas em disco, mas marcadas como não confirmadas, aguardando a recuperação automática do sistema.",
+              "As três operações são mantidas em disco, mas não são visíveis para outras transações até que o sistema seja reiniciado e o log seja processado."
+            ],
+            "correta": 1,
+            "explicacao": "A falha ocorre antes do COMMIT. A atomicidade assegura que a transação seja desfeita integralmente; portanto, nenhuma das operações fica persistida. A durabilidade só garante a permanência dos dados após um COMMIT bem-sucedido, não se aplicando quando o COMMIT não foi concluído.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 494,
+              "completion_tokens": 822,
+              "total_tokens": 1316
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 1.464
+    },
+    {
+      "spec_id": "P02",
+      "condition": "C1_LLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "spec_id": "P03",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Um aplicativo de banco móvel apresenta os requisitos a seguir. Classifique cada requisito como funcional (F) ou não funcional (NF).",
+        "alternativas": [
+          "F, NF, F, NF, F",
+          "F, F, NF, NF, F",
+          "NF, NF, F, F, NF",
+          "F, NF, NF, NF, F",
+          "F, NF, F, F, NF"
+        ],
+        "correta": 0,
+        "explicacao": "Requisitos que descrevem comportamentos que o sistema deve realizar são funcionais. Requisitos que especificam qualidades ou restrições de desempenho, segurança, usabilidade, etc., são não funcionais. No enunciado, os requisitos 1, 3 e 5 pedem funcionalidades específicas, enquanto os 2 e 4 estabelecem limites de desempenho e capacidade, portanto a classificação correta é F, NF, F, NF, F.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Um aplicativo de banco móvel apresenta os requisitos a seguir. Classifique cada requisito como funcional (F) ou não funcional (NF).",
+            "alternativas": [
+              "F, NF, F, NF, F",
+              "F, F, NF, NF, F",
+              "NF, NF, F, F, NF",
+              "F, NF, NF, NF, F",
+              "F, NF, F, F, NF"
+            ],
+            "correta": 0,
+            "explicacao": "Requisitos que descrevem comportamentos que o sistema deve realizar são funcionais. Requisitos que especificam qualidades ou restrições de desempenho, segurança, usabilidade, etc., são não funcionais. No enunciado, os requisitos 1, 3 e 5 pedem funcionalidades específicas, enquanto os 2 e 4 estabelecem limites de desempenho e capacidade, portanto a classificação correta é F, NF, F, NF, F.",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 480,
+              "completion_tokens": 1230,
+              "total_tokens": 1710
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 1.712
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Uma aplicação de edição de texto precisa registrar cada alteração realizada pelo usuário para permitir desfazer a última ação. Considerando que as operações predominantes são registrar uma alteração e desfazer a última alteração, qual estrutura de dados é mais adequada para armazenar essas alterações?",
+        "alternativas": [
+          "pilha",
+          "fila",
+          "árvore binária de busca",
+          "tabela hash",
+          "lista ligada"
+        ],
+        "correta": 0,
+        "explicacao": "Para desfazer a última ação, a estrutura deve oferecer acesso rápido ao elemento mais recentemente inserido. A pilha implementa a política LIFO (Last-In-First-Out), permitindo empilhar (registrar) e desempilhar (desfazer) em tempo constante. Outras estruturas, como fila, árvore e tabela hash, não mantêm essa ordem LIFO e exigiriam operações adicionais, tornando-as menos eficientes para o cenário descrito.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Uma aplicação de edição de texto precisa registrar cada alteração realizada pelo usuário para permitir desfazer a última ação. Considerando que as operações predominantes são registrar uma alteração e desfazer a última alteração, qual estrutura de dados é mais adequada para armazenar essas alterações?",
+            "alternativas": [
+              "pilha",
+              "fila",
+              "árvore binária de busca",
+              "tabela hash",
+              "lista ligada"
+            ],
+            "correta": 0,
+            "explicacao": "Para desfazer a última ação, a estrutura deve oferecer acesso rápido ao elemento mais recentemente inserido. A pilha implementa a política LIFO (Last-In-First-Out), permitindo empilhar (registrar) e desempilhar (desfazer) em tempo constante. Outras estruturas, como fila, árvore e tabela hash, não mantêm essa ordem LIFO e exigiriam operações adicionais, tornando-as menos eficientes para o cenário descrito.",
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 484,
+              "completion_tokens": 1183,
+              "total_tokens": 1667
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 1.805
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C1_LLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    }
+  ],
+  "finished_at": "2026-09-24T20:02:20.159750+00:00"
+}

@@ -1,0 +1,74 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "HAILA: Testes",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": ["-m", "pytest", "backend/tests", "-q"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "group": {"kind": "test", "isDefault": true},
+      "problemMatcher": []
+    },
+    {
+      "label": "HAILA: Ablação C1-C3",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "evaluation/run_ablation.py",
+        "--base-url", "http://127.0.0.1:8010",
+        "--conditions", "C1_LLM", "C2_RAG_LLM", "C3_RAG_LLM_SLM",
+        "--specs", "evaluation/pilot_specifications.jsonl",
+        "--out", "evaluation/results/ablation-vscode.json"
+      ],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "HAILA: Ablação C4",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "evaluation/run_c4_pilot.py",
+        "--base-url", "http://127.0.0.1:8010",
+        "--specs", "evaluation/pilot_specifications.jsonl",
+        "--out", "evaluation/results/ablation-vscode-c4.json",
+        "--run-id", "ablation-vscode-c4"
+      ],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "HAILA: Consolidar tokens exatos",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "evaluation/summarize_token_usage.py",
+        "evaluation/results/ablation-vscode.json",
+        "evaluation/results/ablation-vscode-c4.json",
+        "--out", "evaluation/results/ablation-vscode-token-usage.json"
+      ],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "HAILA: Consolidar experimento atual",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "evaluation/summarize_token_usage.py",
+        "evaluation/results/ablation-cost-exact-c1.json",
+        "evaluation/results/ablation-cost-exact-c1-retry.json",
+        "evaluation/results/ablation-cost-exact-c1-p05-final.json",
+        "evaluation/results/ablation-cost-exact-c2.json",
+        "evaluation/results/ablation-cost-exact-c2-p04-final.json",
+        "evaluation/results/ablation-cost-exact-c3.json",
+        "evaluation/results/ablation-cost-exact-c4.json",
+        "evaluation/results/ablation-cost-exact-c4-remainder.json",
+        "--out", "evaluation/results/ablation-cost-exact-summary.json"
+      ],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    }
+  ]
+}

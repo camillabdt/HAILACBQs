@@ -1,0 +1,397 @@
+{
+  "measurement": "exact provider usage persisted by HAILA",
+  "cost_scope": "Groq tokens only; local SLM tokens reported separately",
+  "deduplication": "one run per condition/spec_id, preferring a successful run",
+  "rows": [
+    {
+      "source": "evaluation/results/ablation-cost-exact-c1.json",
+      "condition": "C1_LLM",
+      "spec_id": "P01",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 494,
+        "output": 822,
+        "total": 1316
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c1-retry.json",
+      "condition": "C1_LLM",
+      "spec_id": "P02",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 494,
+        "output": 1854,
+        "total": 2348
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c1.json",
+      "condition": "C1_LLM",
+      "spec_id": "P03",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 480,
+        "output": 1230,
+        "total": 1710
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c1.json",
+      "condition": "C1_LLM",
+      "spec_id": "P04",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 484,
+        "output": 1183,
+        "total": 1667
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c1-p05-final.json",
+      "condition": "C1_LLM",
+      "spec_id": "P05",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 486,
+        "output": 1017,
+        "total": 1503
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c2.json",
+      "condition": "C2_RAG_LLM",
+      "spec_id": "P01",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 966,
+        "output": 1706,
+        "total": 2672
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c2.json",
+      "condition": "C2_RAG_LLM",
+      "spec_id": "P02",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 851,
+        "output": 1059,
+        "total": 1910
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c2.json",
+      "condition": "C2_RAG_LLM",
+      "spec_id": "P03",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 840,
+        "output": 926,
+        "total": 1766
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c2-p04-final.json",
+      "condition": "C2_RAG_LLM",
+      "spec_id": "P04",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 881,
+        "output": 767,
+        "total": 1648
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c2.json",
+      "condition": "C2_RAG_LLM",
+      "spec_id": "P05",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 842,
+        "output": 1155,
+        "total": 1997
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c3.json",
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "P01",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 1008,
+        "output": 426,
+        "total": 1434
+      },
+      "slm_local": {
+        "input": 1182,
+        "output": 81,
+        "total": 1263
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c3.json",
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "P02",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 893,
+        "output": 658,
+        "total": 1551
+      },
+      "slm_local": {
+        "input": 886,
+        "output": 130,
+        "total": 1016
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c3.json",
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "P03",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 882,
+        "output": 1274,
+        "total": 2156
+      },
+      "slm_local": {
+        "input": 1164,
+        "output": 107,
+        "total": 1271
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c3.json",
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "P04",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 923,
+        "output": 1054,
+        "total": 1977
+      },
+      "slm_local": {
+        "input": 1317,
+        "output": 65,
+        "total": 1382
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c3.json",
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "P05",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 884,
+        "output": 563,
+        "total": 1447
+      },
+      "slm_local": {
+        "input": 1275,
+        "output": 100,
+        "total": 1375
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c4.json",
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "P01",
+      "state": "GENERATION_COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 1026,
+        "output": 803,
+        "total": 1829
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c4-remainder.json",
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "P02",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "successful": false,
+      "groq": {
+        "input": 3027,
+        "output": 2736,
+        "total": 5763
+      },
+      "slm_local": {
+        "input": 3864,
+        "output": 328,
+        "total": 4192
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c4-remainder.json",
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "P03",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "successful": false,
+      "groq": {
+        "input": 2898,
+        "output": 1815,
+        "total": 4713
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c4-remainder.json",
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "P04",
+      "state": "GENERATION_COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 2945,
+        "output": 1937,
+        "total": 4882
+      },
+      "slm_local": {
+        "input": 1302,
+        "output": 75,
+        "total": 1377
+      }
+    },
+    {
+      "source": "evaluation/results/ablation-cost-exact-c4-remainder.json",
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "P05",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "successful": false,
+      "groq": {
+        "input": 904,
+        "output": 868,
+        "total": 1772
+      },
+      "slm_local": {
+        "input": 4432,
+        "output": 420,
+        "total": 4852
+      }
+    }
+  ],
+  "summary": [
+    {
+      "items": 5,
+      "successful_items": 5,
+      "groq_input": 2438,
+      "groq_output": 6106,
+      "groq_total": 8544,
+      "slm_local_input": 0,
+      "slm_local_output": 0,
+      "slm_local_total": 0,
+      "condition": "C1_LLM",
+      "mean_groq_total_per_item": 1708.8
+    },
+    {
+      "items": 5,
+      "successful_items": 5,
+      "groq_input": 4380,
+      "groq_output": 5613,
+      "groq_total": 9993,
+      "slm_local_input": 0,
+      "slm_local_output": 0,
+      "slm_local_total": 0,
+      "condition": "C2_RAG_LLM",
+      "mean_groq_total_per_item": 1998.6
+    },
+    {
+      "items": 5,
+      "successful_items": 5,
+      "groq_input": 4590,
+      "groq_output": 3975,
+      "groq_total": 8565,
+      "slm_local_input": 5824,
+      "slm_local_output": 483,
+      "slm_local_total": 6307,
+      "condition": "C3_RAG_LLM_SLM",
+      "mean_groq_total_per_item": 1713.0
+    },
+    {
+      "items": 5,
+      "successful_items": 2,
+      "groq_input": 10800,
+      "groq_output": 8159,
+      "groq_total": 18959,
+      "slm_local_input": 9598,
+      "slm_local_output": 823,
+      "slm_local_total": 10421,
+      "condition": "C4_HAILA_COMPLETA",
+      "mean_groq_total_per_item": 3791.8
+    }
+  ]
+}

@@ -5,6 +5,7 @@ from enum import Enum
 from typing import Any, Callable
 
 from .contracts import NucleoQuestao
+from .generator import SYSTEM_QUALITY_BASE
 from .orchestrator import montar_item
 
 
@@ -14,13 +15,11 @@ class AblationCondition(str, Enum):
     C3_RAG_LLM_SLM = "C3_RAG_LLM_SLM"
 
 
-SYSTEM_MONOLITHIC = """Você gera uma questão objetiva inédita de Computação no formato ENADE.
-Produza enunciado, exatamente cinco alternativas, índice zero-based da única correta,
-explicação, competência, habilidade e objeto de conhecimento. As alternativas devem
-ser paralelas, plausíveis, distintas, ter extensões semelhantes e somente uma pode
-ser defensável. Use comando afirmativo; evite termos absolutos, termos vagos e pistas
-lexicais ou gramaticais que destaquem o gabarito. Responda
-somente JSON válido."""
+SYSTEM_MONOLITHIC = SYSTEM_QUALITY_BASE + """
+Gere a questão completa: enunciado, exatamente cinco alternativas, índice zero-based
+da correta, explicacao, competencia, habilidade e objeto_conhecimento. As alternativas
+devem ser paralelas, plausíveis, distintas e ter extensões semelhantes. Não use pistas
+lexicais ou gramaticais que destaquem o gabarito."""
 
 
 def validate_question(q: dict[str, Any]) -> dict[str, Any]:

@@ -1,0 +1,479 @@
+{
+  "started_at": "2026-09-24T20:04:47.890005+00:00",
+  "conditions": [
+    "C2_RAG_LLM"
+  ],
+  "items": [
+    {
+      "spec_id": "P01",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Durante a execução de uma transação T que envolve a atualização de duas tabelas, ocorre uma falha de energia antes da instrução COMMIT. Qual das afirmações abaixo descreve corretamente a situação em relação às propriedades ACID?",
+        "alternativas": [
+          "A atomicidade garante que, após a recuperação, as duas atualizações sejam aplicadas simultaneamente, preservando a consistência, enquanto a durabilidade assegura que os efeitos sejam permanentes mesmo após a falha.",
+          "A durabilidade impede que qualquer alteração feita por T seja perdida, portanto as duas atualizações permanecerão no banco mesmo sem o COMMIT.",
+          "A atomicidade garante que, após a falha, nenhuma das atualizações será mantida, enquanto a durabilidade não se aplica porque a transação não foi confirmada.",
+          "A consistência é a única propriedade que protege os dados neste cenário, garantindo que o banco volte a um estado válido após a falha.",
+          "A transação pode ser parcialmente concluída, pois a durabilidade permite que parte das alterações seja preservada antes do COMMIT."
+        ],
+        "correta": 2,
+        "explicacao": "A falha ocorre antes do COMMIT, logo a transação nunca foi confirmada. De acordo com a propriedade de atomicidade, todas as alterações realizadas por T devem ser desfeitas, retornando o banco ao estado anterior. A durabilidade, por sua vez, protege apenas os efeitos de transações que já foram confirmadas; portanto, não se aplica neste caso. A alternativa 3 reflete exatamente esse comportamento.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-bd-transacoes-005",
+            "texto": "Transações de banco de dados devem preservar atomicidade, consistência, isolamento e durabilidade. O controle de concorrência busca evitar anomalias como leitura suja, atualização perdida e leitura não repetível. Bloqueios, ordenação por marcas de tempo e controle multiversão são estratégias usuais. Atomicidade significa que a transação produz todos os seus efeitos ou nenhum. Durabilidade protege os efeitos de transações já confirmadas por COMMIT. Uma falha antes da confirmação não demonstra violação de durabilidade; desfazer efeitos parciais preserva atomicidade.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Banco de Dados",
+              "habilidade": "Analisar transações concorrentes",
+              "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+              "referencia": "ELMASRI, R.; NAVATHE, S. Sistemas de Banco de Dados. Complemento conceitual: PostgreSQL, documentação 18, seção 3.4 Transactions, https://www.postgresql.org/docs/18/tutorial-transactions.html (consulta em 2026-09-22).",
+              "linha": 5,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 29.820143,
+              "termos_recuperados": [
+                "acid",
+                "antes",
+                "atomicidade",
+                "commit",
+                "concorrencia",
+                "controle",
+                "durabilidade",
+                "falha",
+                "propriedades",
+                "transacoes"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "acid",
+                "antes",
+                "atomicidade",
+                "commit",
+                "concorrencia",
+                "controle",
+                "durabilidade",
+                "falha",
+                "falhas",
+                "gerenciamento",
+                "mecanismos",
+                "ocorrida",
+                "propriedades",
+                "recuperacao",
+                "transacoes"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-bd-transacoes-005",
+                  "score": 29.820143
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Durante a execução de uma transação T que envolve a atualização de duas tabelas, ocorre uma falha de energia antes da instrução COMMIT. Qual das afirmações abaixo descreve corretamente a situação em relação às propriedades ACID?",
+            "alternativas": [
+              "A atomicidade garante que, após a recuperação, as duas atualizações sejam aplicadas simultaneamente, preservando a consistência, enquanto a durabilidade assegura que os efeitos sejam permanentes mesmo após a falha.",
+              "A durabilidade impede que qualquer alteração feita por T seja perdida, portanto as duas atualizações permanecerão no banco mesmo sem o COMMIT.",
+              "A atomicidade garante que, após a falha, nenhuma das atualizações será mantida, enquanto a durabilidade não se aplica porque a transação não foi confirmada.",
+              "A consistência é a única propriedade que protege os dados neste cenário, garantindo que o banco volte a um estado válido após a falha.",
+              "A transação pode ser parcialmente concluída, pois a durabilidade permite que parte das alterações seja preservada antes do COMMIT."
+            ],
+            "correta": 2,
+            "explicacao": "A falha ocorre antes do COMMIT, logo a transação nunca foi confirmada. De acordo com a propriedade de atomicidade, todas as alterações realizadas por T devem ser desfeitas, retornando o banco ao estado anterior. A durabilidade, por sua vez, protege apenas os efeitos de transações que já foram confirmadas; portanto, não se aplica neste caso. A alternativa 3 reflete exatamente esse comportamento.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 966,
+              "completion_tokens": 1706,
+              "total_tokens": 2672
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 2.521
+    },
+    {
+      "spec_id": "P02",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Em um serviço de streaming de vídeo em tempo real, onde a latência deve ser mínima e a perda de pacotes pode ser tolerada, qual protocolo de transporte da camada de transporte do modelo TCP/IP deve ser escolhido e por quê?",
+        "alternativas": [
+          "TCP, porque garante entrega confiável e ordenada, reduzindo a necessidade de retransmissões.",
+          "UDP, porque oferece controle de fluxo e congestionamento, garantindo entrega em tempo real.",
+          "UDP, porque não oferece garantias de entrega ou ordenação, reduzindo sobrecarga e permitindo baixa latência, adequado para streaming tolerante a perda.",
+          "TCP, porque possui menor sobrecarga que UDP, ideal para aplicações que toleram perda.",
+          "UDP, porque possui controle de congestionamento, essencial para transmissão de vídeo em tempo real."
+        ],
+        "correta": 2,
+        "explicacao": "Para aplicações de streaming em tempo real que toleram perda de pacotes, a prioridade é minimizar a latência. O UDP não oferece controle de fluxo, congestionamento nem garante entrega ou ordenação, o que reduz a sobrecarga de protocolo e permite que os dados sejam enviados rapidamente. O TCP, embora confiável, introduz latência adicional por meio de retransmissões, controle de fluxo e congestionamento, tornando-o inadequado nesse cenário.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-redes-transporte-007",
+            "texto": "Na arquitetura TCP/IP, a camada de transporte oferece comunicação fim a fim entre processos. O TCP fornece serviço orientado a conexão, entrega confiável, controle de fluxo e controle de congestionamento. O UDP oferece serviço sem conexão com menor sobrecarga, sem garantir entrega ou ordenação.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Redes de Computadores",
+              "habilidade": "Comparar protocolos de transporte",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet.",
+              "linha": 7,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 25.756259,
+              "termos_recuperados": [
+                "comunicacao",
+                "fim",
+                "protocolos",
+                "tcp",
+                "transporte",
+                "udp"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "arquiteturas",
+                "cenario",
+                "comunicacao",
+                "conforme",
+                "fim",
+                "garantias",
+                "oferecidas",
+                "pelos",
+                "protocolo",
+                "protocolos",
+                "requisitos",
+                "selecionar",
+                "tcp",
+                "transporte",
+                "udp"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-redes-transporte-007",
+                  "score": 25.756259
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Em um serviço de streaming de vídeo em tempo real, onde a latência deve ser mínima e a perda de pacotes pode ser tolerada, qual protocolo de transporte da camada de transporte do modelo TCP/IP deve ser escolhido e por quê?",
+            "alternativas": [
+              "TCP, porque garante entrega confiável e ordenada, reduzindo a necessidade de retransmissões.",
+              "UDP, porque oferece controle de fluxo e congestionamento, garantindo entrega em tempo real.",
+              "UDP, porque não oferece garantias de entrega ou ordenação, reduzindo sobrecarga e permitindo baixa latência, adequado para streaming tolerante a perda.",
+              "TCP, porque possui menor sobrecarga que UDP, ideal para aplicações que toleram perda.",
+              "UDP, porque possui controle de congestionamento, essencial para transmissão de vídeo em tempo real."
+            ],
+            "correta": 2,
+            "explicacao": "Para aplicações de streaming em tempo real que toleram perda de pacotes, a prioridade é minimizar a latência. O UDP não oferece controle de fluxo, congestionamento nem garante entrega ou ordenação, o que reduz a sobrecarga de protocolo e permite que os dados sejam enviados rapidamente. O TCP, embora confiável, introduz latência adicional por meio de retransmissões, controle de fluxo e congestionamento, tornando-o inadequado nesse cenário.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 851,
+              "completion_tokens": 1059,
+              "total_tokens": 1910
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 1.683
+    },
+    {
+      "spec_id": "P03",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Considere o seguinte cenário: um sistema de gerenciamento de consultas médicas que permite aos pacientes agendar consultas online. O requisito abaixo descreve parte do comportamento do sistema: \"O sistema deve permitir que um paciente agende uma consulta online em até 30 segundos após a solicitação.\" Classifique esse requisito como funcional ou não funcional.",
+        "alternativas": [
+          "Requisito funcional",
+          "Requisito não funcional",
+          "Requisito funcional e não funcional",
+          "Requisito de desempenho",
+          "Requisito de segurança"
+        ],
+        "correta": 0,
+        "explicacao": "O requisito especifica uma ação que o sistema deve executar – agendar uma consulta. Essa descrição de comportamento caracteriza um requisito funcional. A menção ao tempo de 30 segundos indica uma restrição de desempenho, que é um atributo não funcional; contudo, a classificação principal permanece funcional, pois a característica principal do requisito é a funcionalidade de agendamento.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-engsoftware-requisitos-009",
+            "texto": "Requisitos funcionais descrevem serviços e comportamentos esperados do sistema. Requisitos não funcionais estabelecem atributos e restrições, como desempenho, segurança, confiabilidade e usabilidade. Elicitação, especificação, validação e gerenciamento de mudanças ajudam a manter alinhamento entre necessidades e solução.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Engenharia de Software",
+              "habilidade": "Analisar e classificar requisitos",
+              "objeto_conhecimento": "Engenharia de requisitos",
+              "referencia": "SOMMERVILLE, I. Engenharia de Software.",
+              "linha": 9,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 15.611199,
+              "termos_recuperados": [
+                "classificar",
+                "engenharia",
+                "funcionais",
+                "nao",
+                "requisitos"
+              ],
+              "candidatas_relevantes": 3,
+              "consulta_normalizada": [
+                "cenario",
+                "classificar",
+                "conforme",
+                "engenharia",
+                "finalidade",
+                "funcionais",
+                "nao",
+                "projeto",
+                "requisitos"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-engsoftware-requisitos-009",
+                  "score": 15.611199
+                },
+                {
+                  "id": "rag-engsoftware-testes-010",
+                  "score": 2.733973
+                },
+                {
+                  "id": "rag-estruturas-dados-004",
+                  "score": 1.587169
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Considere o seguinte cenário: um sistema de gerenciamento de consultas médicas que permite aos pacientes agendar consultas online. O requisito abaixo descreve parte do comportamento do sistema: \"O sistema deve permitir que um paciente agende uma consulta online em até 30 segundos após a solicitação.\" Classifique esse requisito como funcional ou não funcional.",
+            "alternativas": [
+              "Requisito funcional",
+              "Requisito não funcional",
+              "Requisito funcional e não funcional",
+              "Requisito de desempenho",
+              "Requisito de segurança"
+            ],
+            "correta": 0,
+            "explicacao": "O requisito especifica uma ação que o sistema deve executar – agendar uma consulta. Essa descrição de comportamento caracteriza um requisito funcional. A menção ao tempo de 30 segundos indica uma restrição de desempenho, que é um atributo não funcional; contudo, a classificação principal permanece funcional, pois a característica principal do requisito é a funcionalidade de agendamento.",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 840,
+              "completion_tokens": 926,
+              "total_tokens": 1766
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 1.599
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C2_RAG_LLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Uma empresa de e‑comércio deseja identificar segmentos de clientes com base em padrões de navegação e histórico de compras, mas não possui categorias pré‑definidas para esses clientes. Qual abordagem de aprendizado de máquina deve ser empregada para obter esses grupos de forma automática?",
+        "alternativas": [
+          "Aprendizado supervisionado",
+          "Aprendizado não supervisionado",
+          "Aprendizado por reforço",
+          "Aprendizado semi-supervisionado",
+          "Aprendizado profundo"
+        ],
+        "correta": 1,
+        "explicacao": "Para agrupar clientes sem rótulos predefinidos, o algoritmo deve descobrir padrões internos nos dados. O aprendizado não supervisionado realiza essa tarefa sem necessidade de exemplos rotulados, enquanto os demais paradigmas dependem de rótulos ou de recompensas externas.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-ia-aprendizado-011",
+            "texto": "No aprendizado supervisionado, exemplos rotulados orientam a construção de modelos para classificação ou regressão. No aprendizado não supervisionado, o objetivo é identificar estruturas ou agrupamentos sem rótulos de saída. A avaliação deve usar dados independentes do treinamento para estimar generalização e reduzir conclusões afetadas por sobreajuste.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Inteligência Artificial",
+              "habilidade": "Distinguir paradigmas de aprendizado",
+              "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+              "referencia": "RUSSELL, S.; NORVIG, P. Inteligência Artificial: Uma Abordagem Moderna.",
+              "linha": 11,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 22.082778,
+              "termos_recuperados": [
+                "aprendizado",
+                "artificial",
+                "inteligencia",
+                "nao",
+                "paradigmas",
+                "supervisionado"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "aprendizado",
+                "artificial",
+                "disponiveis",
+                "inteligencia",
+                "metodos",
+                "nao",
+                "paradigmas",
+                "partir",
+                "supervisionado"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-ia-aprendizado-011",
+                  "score": 22.082778
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Uma empresa de e‑comércio deseja identificar segmentos de clientes com base em padrões de navegação e histórico de compras, mas não possui categorias pré‑definidas para esses clientes. Qual abordagem de aprendizado de máquina deve ser empregada para obter esses grupos de forma automática?",
+            "alternativas": [
+              "Aprendizado supervisionado",
+              "Aprendizado não supervisionado",
+              "Aprendizado por reforço",
+              "Aprendizado semi-supervisionado",
+              "Aprendizado profundo"
+            ],
+            "correta": 1,
+            "explicacao": "Para agrupar clientes sem rótulos predefinidos, o algoritmo deve descobrir padrões internos nos dados. O aprendizado não supervisionado realiza essa tarefa sem necessidade de exemplos rotulados, enquanto os demais paradigmas dependem de rótulos ou de recompensas externas.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 842,
+              "completion_tokens": 1155,
+              "total_tokens": 1997
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 1.87
+    }
+  ],
+  "finished_at": "2026-09-24T20:04:55.823927+00:00"
+}
