@@ -1,0 +1,633 @@
+{
+  "method": "IWF-SAQUET+Arif-auto-v1",
+  "items": [
+    {
+      "spec_id": "P01",
+      "request_id": "716c6a17-9eba-476c-92cc-3ba4f0788094",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Um servidor de banco de dados sofre falha inesperada imediatamente antes de executar o comando COMMIT de uma transação que já realizou várias operações de escrita. Qual propriedade ACID assegura que nenhum desses efeitos permanecerá no banco após a recuperação?",
+        "alternativas": [
+          "Isolamento",
+          "Durabilidade",
+          "Serialização",
+          "Consistência",
+          "Atomicidade"
+        ],
+        "correta": 4,
+        "explicacao": "Atomicidade garante o princípio all‑or‑none: se o COMMIT ainda não foi emitido, a transação pode ser abortada e todas as modificações são revertidas, de modo que nenhum efeito parcial persiste. A durabilidade protege apenas transações já confirmadas; portanto, a falha antes do COMMIT não viola a durabilidade, mas depende da atomicidade para manter a consistência.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          }
+        ]
+      },
+      "status": 200,
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": true,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "Stem is specific and contains no ambiguous terms.",
+          "convergence_cues": "No overt hints direct to the correct answer beyond the factual scenario.",
+          "grammatical_cues": "The wording follows correct Portuguese grammar.",
+          "gratuitous_information": "All information in the stem is necessary for answering.",
+          "implausible_distractors": "All distractors are valid ACID properties, none implausible.",
+          "logical_cues": "No logical inconsistencies present.",
+          "more_than_one_correct": "Only 'Atomicidade' correctly satisfies the condition.",
+          "unfocused_stem": "Stem is focused on a single concept."
+        },
+        "flaws": [
+          "absolute_terms"
+        ],
+        "iwf_count": 1,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "Question aligns with competence on transaction management."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "No grammatical errors detected."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "Sufficient information provided to determine the correct answer."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "Question wording is clear and unambiguous."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "Scenario describes a specific failure point relevant to ACID."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Options are mutually exclusive."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "All options belong to same category (ACID properties)."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "Each distractor is a plausible property, making the choice non‑trivial."
+          }
+        }
+      }
+    },
+    {
+      "spec_id": "P02",
+      "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Um serviço de transferência de arquivos deve garantir que todos os bytes enviados cheguem ao destino sem perdas e na mesma sequência em que foram emitidos. Considerando as garantias oferecidas pelos protocolos de transporte TCP e UDP, quais garantias de nível de transporte são indispensáveis para atender a esses requisitos?",
+        "alternativas": [
+          "Entrega não confiável e sem preservação de ordem",
+          "Entrega com baixa latência garantida",
+          "Entrega ordenada sem retransmissão de perdas",
+          "Entrega confiável sem preservação de ordem",
+          "entrega confiável e ordenada"
+        ],
+        "correta": 4,
+        "explicacao": "Para que nenhum dado seja perdido e a ordem de chegada seja preservada, a aplicação necessita das duas garantias: (i) entrega confiável, que assegura a retransmissão de pacotes perdidos, e (ii) entrega ordenada, que garante que os segmentos sejam apresentados ao processo receptor na sequência original. O TCP fornece ambas as garantias; o UDP não oferece nem entrega confiável nem ordenação, portanto não satisfaz o requisito. Assim, a combinação \"entrega confiável e ordenada\" é a resposta correta.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "status": 200,
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": true,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "Enunciado define claramente o requisito de entrega sem perdas e em ordem.",
+          "convergence_cues": "Nenhuma pista linguística indica a alternativa correta; todas exigem conhecimento técnico.",
+          "grammatical_cues": "Frases estão gramaticalmente corretas, sem erros que sirvam de pista.",
+          "gratuitous_information": "Todas as informações do enunciado são necessárias para responder ao requisito.",
+          "implausible_distractors": "Cada distrator apresenta combinações plausíveis de garantias de transporte, ainda que incorretas.",
+          "logical_cues": "Não há contradições ou inferências lógicas que apontem a resposta.",
+          "more_than_one_correct": "A única alternativa que combina entrega confiável e ordenada é a correta; as demais são incorretas.",
+          "unfocused_stem": "O enunciado está focado no requisito de integridade e ordem da transferência de arquivos."
+        },
+        "flaws": [
+          "absolute_terms"
+        ],
+        "iwf_count": 1,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "Avalia competência de selecionar protocolo de transporte conforme requisitos."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "Texto livre de erros gramaticais."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "Pode ser respondida com conhecimento básico de TCP e UDP."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "Enunciado e alternativas são claros e diretos."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "Contexto de transferência de arquivos fornece cenário específico."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Opções são mutuamente exclusivas."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "Todas as opções são frases curtas de formato semelhante."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "Cada distrator apresenta combinações razoáveis de garantias de transporte, tornando-os plausíveis."
+          }
+        }
+      }
+    },
+    {
+      "spec_id": "P03",
+      "request_id": "7e614912-8ffa-47c3-a055-e78d915aaad1",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em um projeto de sistema de gerenciamento de biblioteca, foram identificados os seguintes requisitos: I – O sistema deve permitir que o usuário pesquise livros por título, autor ou ISBN. II – O tempo máximo de resposta para exibir os resultados de uma pesquisa não deve exceder 2 segundos. III – O sistema deve registrar todas as operações de empréstimo em um log auditável. IV – O sistema deve enviar e‑mail de confirmação ao usuário após a finalização do empréstimo. Qual desses requisitos é classificado como não funcional?",
+        "alternativas": [
+          "I.",
+          "I e II.",
+          "II",
+          "II e III.",
+          "II e IV."
+        ],
+        "correta": 2,
+        "explicacao": "Requisitos funcionais especificam serviços ou comportamentos que o sistema deve oferecer (I, III e IV descrevem funcionalidades do sistema). Requisitos não funcionais tratam de atributos de qualidade, como desempenho, segurança ou usabilidade. O requisito II trata exclusivamente de tempo de resposta, que é um atributo de desempenho, portanto é não funcional.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 2
+          }
+        ]
+      },
+      "status": 200,
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": true,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "O enunciado descreve claramente os quatro requisitos sem deixar dúvidas sobre seu significado.",
+          "convergence_cues": "Nenhuma pista de formato ou posição das alternativas indica a resposta correta.",
+          "grammatical_cues": "A redação está gramaticalmente correta e não contém indícios que apontem à alternativa certa.",
+          "gratuitous_information": "Todas as informações apresentadas são necessárias para distinguir requisitos funcionais de não funcionais.",
+          "implausible_distractors": "Cada distractor (I, I e II, II e III, II e IV) é plausível como resposta possível.",
+          "logical_cues": "Não há padrões lógicos que favoreçam uma alternativa específica.",
+          "more_than_one_correct": "Apenas o requisito II é exclusivamente não funcional; as demais combinações incluem requisitos funcionais.",
+          "unfocused_stem": "O enunciado está focado ao solicitar a identificação do requisito não funcional."
+        },
+        "flaws": [
+          "complex_k_type"
+        ],
+        "iwf_count": 1,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "A questão avalia a competência de analisar requisitos de software, alinhada ao objeto de conhecimento."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "Texto escrito sem erros gramaticais."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "A resposta pode ser determinada unicamente com base nas informações fornecidas."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "Enunciado e alternativas são claros e de fácil compreensão."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "Fornece contexto específico de um sistema de biblioteca, suficiente para a classificação dos requisitos."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Cada alternativa é distinta e não se sobrepõe em conteúdo textual."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "Todas as opções têm formato e extensão semelhantes (combinações de numerais romanos)."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "Todos os distractores são plausíveis como respostas possíveis para quem não domina o conceito."
+          }
+        }
+      }
+    },
+    {
+      "spec_id": "P04",
+      "request_id": "60774a2d-ff89-41b8-8e1f-6091408a6f95",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Um sistema de impressão recebe documentos de múltiplos usuários. Cada documento é colocado na fila de impressão na ordem de chegada e o spooler sempre envia o documento que está no início da fila para a impressora. Não há necessidade de buscar documentos aleatoriamente nem de reordenar a fila. Qual estrutura de dados é a mais adequada para implementar a fila de impressão?",
+        "alternativas": [
+          "Heap",
+          "Pilha",
+          "Tabela hash",
+          "fila",
+          "Árvore binária de busca"
+        ],
+        "correta": 3,
+        "explicacao": "A fila implementa o comportamento FIFO (first‑in‑first‑out), correspondendo exatamente ao requisito de atender documentos na ordem de chegada; inserções ocorrem no final e remoções no início, com O(1) nas duas operações, atendendo ao cenário descrito.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "status": 200,
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": true,
+          "true_or_false": false,
+          "absolute_terms": true,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": true,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": true,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "Enunciado descreve claramente a necessidade FIFO, sem termos ambíguos.",
+          "convergence_cues": "A palavra \"fila\" aparece no enunciado, coincidindo exatamente com a alternativa correta.",
+          "grammatical_cues": "Nenhuma pista gramatical direciona a resposta.",
+          "gratuitous_information": "Todas as informações são relevantes ao cenário descrito.",
+          "implausible_distractors": "Opções como Heap, Pilha, Tabela hash e Árvore binária de busca são claramente inadequadas para uma fila FIFO, tornando‑as implausíveis.",
+          "logical_cues": "Não há raciocínio lógico que indique a resposta além do conhecimento de estruturas.",
+          "more_than_one_correct": "Apenas a alternativa \"fila\" satisfaz os requisitos.",
+          "unfocused_stem": "O enunciado está focado no problema da fila de impressão."
+        },
+        "flaws": [
+          "implausible_distractors",
+          "absolute_terms",
+          "convergence_cues",
+          "word_repeats"
+        ],
+        "iwf_count": 4,
+        "classification": "unacceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "Avalia a escolha da estrutura de dados adequada ao problema proposto."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "Texto gramaticalmente correto."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "Com conhecimento básico de DS, o candidato pode responder."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "Enunciado é claro e direto."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "Fornece contexto específico de um spooler de impressão."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Todas as opções são mutuamente exclusivas."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "Todas as alternativas são tipos de estruturas de dados."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "Embora incorretas, as opções são estruturas conhecidas e plausíveis para quem não domina FIFO."
+          }
+        }
+      }
+    },
+    {
+      "spec_id": "P05",
+      "request_id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Uma empresa possui um histórico de compras de 10.000 clientes, contendo apenas os itens adquiridos e valores gastos, sem nenhuma informação pré‑definida sobre categorias ou rótulos. O objetivo é identificar grupos de clientes com padrões de consumo semelhantes para campanhas de marketing direcionado. Qual paradigma de aprendizado de máquina deve ser adotado para esse problema?",
+        "alternativas": [
+          "Aprendizado semissupervisionado",
+          "Aprendizado por reforço",
+          "Aprendizado não supervisionado",
+          "Aprendizado supervisionado",
+          "Aprendizado autossupervisionado"
+        ],
+        "correta": 2,
+        "explicacao": "Como os dados não possuem rótulos de saída, a tarefa consiste em descobrir estruturas ocultas (agrupamentos) nos próprios dados, característica típica do aprendizado não supervisionado, que utiliza técnicas como clustering para segmentar os clientes.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "status": 200,
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": true,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "The stem clearly defines the problem (no labels, need clustering) with no ambiguous terms.",
+          "convergence_cues": "No wording such as \"only\" or \"always\" that would steer toward a single answer.",
+          "grammatical_cues": "The sentence is grammatically correct; no errors that hint at the answer.",
+          "gratuitous_information": "All information (historical purchases, marketing goal) is relevant to the task.",
+          "implausible_distractors": "Options like \"Aprendizado por reforço\" are clearly unrelated to clustering without labels, making them implausible.",
+          "logical_cues": "The logical flow describes an unsupervised scenario but does not provide a shortcut to the answer beyond the content.",
+          "more_than_one_correct": "Only the unsupervised paradigm correctly matches the described problem; other paradigms are incorrect.",
+          "unfocused_stem": "The stem is focused on a single task: grouping customers based on purchase data."
+        },
+        "flaws": [
+          "implausible_distractors"
+        ],
+        "iwf_count": 1,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "The question aligns with the competence of analyzing AI methods and distinguishing learning paradigms."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "Portuguese text is grammatically correct."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "The correct answer can be deduced from the information provided."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "The wording is clear and unambiguous."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "The scenario (company purchase history) provides specific context for the task."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Each option represents a distinct learning paradigm with no overlap."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "All distractors belong to the same family (learning paradigms), maintaining homogeneity."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "While incorrect, options like semi‑supervised and autossupervision are plausible paradigms that a test‑taker might consider."
+          }
+        }
+      }
+    }
+  ]
+}

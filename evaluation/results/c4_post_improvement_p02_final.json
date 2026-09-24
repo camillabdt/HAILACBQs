@@ -1,0 +1,478 @@
+{
+  "condition": "C4",
+  "run_id": "c4-post-iwf-redflags-v2-p02",
+  "started_at": "2026-09-24T19:14:36.893330+00:00",
+  "base_url": "http://127.0.0.1:8010",
+  "items": [
+    {
+      "spec_id": "P02",
+      "specification": {
+        "spec_id": "P02",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+        "dificuldade": 3,
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "restricoes": [
+          "uma única alternativa defensável",
+          "não perguntar apenas por uma propriedade isolada"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "c6154038-ac33-409a-b1b9-c0f45ddf2419",
+        "solicitante_id": "evaluation-c4-post-iwf-redflags-v2-p02-P02",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T19:14:36.919863+00:00",
+        "updated_at": "2026-09-24T19:14:36.919863+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-c4-post-iwf-redflags-v2-p02-P02",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+          "dificuldade": 3,
+          "competencia": "Analisar arquiteturas de comunicação",
+          "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+          "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+          "restricoes": [
+            "uma única alternativa defensável",
+            "não perguntar apenas por uma propriedade isolada"
+          ]
+        }
+      },
+      "request_id": "c6154038-ac33-409a-b1b9-c0f45ddf2419",
+      "generation_status": 200,
+      "generation": {
+        "request_id": "c6154038-ac33-409a-b1b9-c0f45ddf2419",
+        "version": {
+          "id": "b65f288c-457b-405f-bea3-2fdabdbb1599",
+          "request_id": "c6154038-ac33-409a-b1b9-c0f45ddf2419",
+          "version_number": 1,
+          "created_at": "2026-09-24T19:15:55.427529+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Em um cenário de aplicação, compare as garantias de entrega e ordenação oferecidas pelos protocolos de transporte TCP e UDP.",
+            "alternativas": [
+              "Protocolo TCP garante entrega segure e organizado",
+              "UDP ensures that data is delivered reliably and in the correct sequence",
+              "TCP guarantees reliable, ordered delivery; UDP does not guarantee reliability or order",
+              "TCP provides guaranteed delivery with acknowledgment for both reliability and ordering",
+              "UDP offers a non-reliable service without any assurance of order or packet integrity"
+            ],
+            "correta": 2,
+            "explicacao": "O TCP, por ser orientado à conexão, assegura entrega confiável e ordenada de bytes, controlando fluxo e congestionamento. O UDP, sem conexão, não oferece garantias de entrega nem de ordem, resultando em menor sobrecarga.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 2
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-redes-transporte-007",
+            "llm": "openai/gpt-oss-20b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "state": "GENERATION_COMPLETED",
+        "red_flags": []
+      },
+      "history": {
+        "request": {
+          "id": "c6154038-ac33-409a-b1b9-c0f45ddf2419",
+          "solicitante_id": "evaluation-c4-post-iwf-redflags-v2-p02-P02",
+          "state": "GENERATION_COMPLETED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 2,
+          "stem_attempts": 1,
+          "distractor_attempts": 1,
+          "created_at": "2026-09-24T19:14:36.919863+00:00",
+          "updated_at": "2026-09-24T19:15:55.439059+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-c4-post-iwf-redflags-v2-p02-P02",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+            "dificuldade": 3,
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "restricoes": [
+              "uma única alternativa defensável",
+              "não perguntar apenas por uma propriedade isolada"
+            ]
+          }
+        },
+        "versions": [
+          {
+            "id": "b65f288c-457b-405f-bea3-2fdabdbb1599",
+            "version_number": 1,
+            "created_at": "2026-09-24T19:15:55.427529+00:00"
+          }
+        ],
+        "latest_version": {
+          "id": "b65f288c-457b-405f-bea3-2fdabdbb1599",
+          "request_id": "c6154038-ac33-409a-b1b9-c0f45ddf2419",
+          "version_number": 1,
+          "created_at": "2026-09-24T19:15:55.427529+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Em um cenário de aplicação, compare as garantias de entrega e ordenação oferecidas pelos protocolos de transporte TCP e UDP.",
+            "alternativas": [
+              "Protocolo TCP garante entrega segure e organizado",
+              "UDP ensures that data is delivered reliably and in the correct sequence",
+              "TCP guarantees reliable, ordered delivery; UDP does not guarantee reliability or order",
+              "TCP provides guaranteed delivery with acknowledgment for both reliability and ordering",
+              "UDP offers a non-reliable service without any assurance of order or packet integrity"
+            ],
+            "correta": 2,
+            "explicacao": "O TCP, por ser orientado à conexão, assegura entrega confiável e ordenada de bytes, controlando fluxo e congestionamento. O UDP, sem conexão, não oferece garantias de entrega nem de ordem, resultando em menor sobrecarga.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 2
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-redes-transporte-007",
+            "llm": "openai/gpt-oss-20b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "artifacts": [
+          {
+            "id": 188,
+            "request_id": "c6154038-ac33-409a-b1b9-c0f45ddf2419",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T19:14:36.941878+00:00",
+            "payload": {
+              "id": "rag-redes-transporte-007",
+              "texto": "Na arquitetura TCP/IP, a camada de transporte oferece comunicação fim a fim entre processos. O TCP fornece serviço orientado a conexão, entrega confiável, controle de fluxo e controle de congestionamento. O UDP oferece serviço sem conexão com menor sobrecarga, sem garantir entrega ou ordenação.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Redes de Computadores",
+                "habilidade": "Comparar protocolos de transporte",
+                "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet.",
+                "linha": 7,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 25.756259,
+                "termos_recuperados": [
+                  "comunicacao",
+                  "fim",
+                  "protocolos",
+                  "tcp",
+                  "transporte",
+                  "udp"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "arquiteturas",
+                  "cenario",
+                  "comunicacao",
+                  "conforme",
+                  "fim",
+                  "garantias",
+                  "oferecidas",
+                  "pelos",
+                  "protocolo",
+                  "protocolos",
+                  "requisitos",
+                  "selecionar",
+                  "tcp",
+                  "transporte",
+                  "udp"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-redes-transporte-007",
+                    "score": 25.756259
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 189,
+            "request_id": "c6154038-ac33-409a-b1b9-c0f45ddf2419",
+            "kind": "STEM",
+            "created_at": "2026-09-24T19:14:38.790465+00:00",
+            "payload": {
+              "enunciado": "Em um cenário de aplicação, compare as garantias de entrega e ordenação oferecidas pelos protocolos de transporte TCP e UDP.",
+              "resposta_correta": "TCP guarantees reliable, ordered delivery; UDP does not guarantee reliability or order",
+              "explicacao": "O TCP, por ser orientado à conexão, assegura entrega confiável e ordenada de bytes, controlando fluxo e congestionamento. O UDP, sem conexão, não oferece garantias de entrega nem de ordem, resultando em menor sobrecarga.",
+              "competencia": "Analisar arquiteturas de comunicação",
+              "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-20b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 190,
+            "request_id": "c6154038-ac33-409a-b1b9-c0f45ddf2419",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T19:15:55.415013+00:00",
+            "payload": [
+              {
+                "texto": "UDP ensures that data is delivered reliably and in the correct sequence",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "TCP provides guaranteed delivery with acknowledgment for both reliability and ordering",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "UDP offers a non-reliable service without any assurance of order or packet integrity",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "Protocolo TCP garante entrega segure e organizado",
+                "erro": "",
+                "por_que_e_falso": ""
+              }
+            ],
+            "provenance": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_3:distratos->distratores",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto"
+              ],
+              "amostras": 3,
+              "candidatos_gerados": 8,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "familia": "resposta_textual",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 8,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  0,
+                  1,
+                  2,
+                  6
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 191,
+            "request_id": "c6154038-ac33-409a-b1b9-c0f45ddf2419",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T19:15:55.436284+00:00",
+            "payload": [],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.1.0",
+              "tipo": "deterministico"
+            }
+          }
+        ],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 297,
+            "request_id": "c6154038-ac33-409a-b1b9-c0f45ddf2419",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T19:14:36.920383+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-c4-post-iwf-redflags-v2-p02-P02",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+              "dificuldade": 3,
+              "competencia": "Analisar arquiteturas de comunicação",
+              "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "restricoes": [
+                "uma única alternativa defensável",
+                "não perguntar apenas por uma propriedade isolada"
+              ]
+            }
+          },
+          {
+            "id": 298,
+            "request_id": "c6154038-ac33-409a-b1b9-c0f45ddf2419",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T19:14:36.947828+00:00",
+            "evidence": {
+              "id": "rag-redes-transporte-007"
+            }
+          },
+          {
+            "id": 299,
+            "request_id": "c6154038-ac33-409a-b1b9-c0f45ddf2419",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T19:14:38.795449+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-20b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 300,
+            "request_id": "c6154038-ac33-409a-b1b9-c0f45ddf2419",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T19:15:55.418889+00:00",
+            "evidence": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_3:distratos->distratores",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto"
+              ],
+              "amostras": 3,
+              "candidatos_gerados": 8,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "familia": "resposta_textual",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 8,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  0,
+                  1,
+                  2,
+                  6
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 301,
+            "request_id": "c6154038-ac33-409a-b1b9-c0f45ddf2419",
+            "version_id": "b65f288c-457b-405f-bea3-2fdabdbb1599",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T19:15:55.430763+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 302,
+            "request_id": "c6154038-ac33-409a-b1b9-c0f45ddf2419",
+            "version_id": "b65f288c-457b-405f-bea3-2fdabdbb1599",
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "GENERATION_COMPLETED",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "geração concluída sem red flags",
+            "created_at": "2026-09-24T19:15:55.439162+00:00",
+            "evidence": {}
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 78.621
+    }
+  ],
+  "finished_at": "2026-09-24T19:15:55.523626+00:00"
+}

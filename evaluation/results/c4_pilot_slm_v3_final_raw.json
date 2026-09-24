@@ -1,0 +1,883 @@
+{
+  "condition": "C4",
+  "run_id": "slm-v3-final",
+  "started_at": "2026-09-24T13:26:25.220979+00:00",
+  "base_url": "http://127.0.0.1:8010",
+  "items": [
+    {
+      "spec_id": "P02",
+      "specification": {
+        "spec_id": "P02",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+        "dificuldade": 3,
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "restricoes": [
+          "uma única alternativa defensável",
+          "não perguntar apenas por uma propriedade isolada"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+        "solicitante_id": "evaluation-slm-v3-final-P02",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T13:26:25.241003+00:00",
+        "updated_at": "2026-09-24T13:26:25.241003+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-slm-v3-final-P02",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+          "dificuldade": 3,
+          "competencia": "Analisar arquiteturas de comunicação",
+          "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+          "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+          "restricoes": [
+            "uma única alternativa defensável",
+            "não perguntar apenas por uma propriedade isolada"
+          ]
+        }
+      },
+      "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+      "generation_status": 200,
+      "generation": {
+        "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+        "version": {
+          "id": "a4c87c76-3dc8-4986-85f4-83bd76f27c56",
+          "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+          "version_number": 1,
+          "created_at": "2026-09-24T13:26:29.758492+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Um serviço de transferência de arquivos deve garantir que todos os bytes enviados cheguem ao destino sem perdas e na mesma sequência em que foram emitidos. Considerando as garantias oferecidas pelos protocolos de transporte TCP e UDP, quais garantias de nível de transporte são indispensáveis para atender a esses requisitos?",
+            "alternativas": [
+              "Entrega não confiável e sem preservação de ordem",
+              "Entrega com baixa latência garantida",
+              "Entrega ordenada sem retransmissão de perdas",
+              "Entrega confiável sem preservação de ordem",
+              "entrega confiável e ordenada"
+            ],
+            "correta": 4,
+            "explicacao": "Para que nenhum dado seja perdido e a ordem de chegada seja preservada, a aplicação necessita das duas garantias: (i) entrega confiável, que assegura a retransmissão de pacotes perdidos, e (ii) entrega ordenada, que garante que os segmentos sejam apresentados ao processo receptor na sequência original. O TCP fornece ambas as garantias; o UDP não oferece nem entrega confiável nem ordenação, portanto não satisfaz o requisito. Assim, a combinação \"entrega confiável e ordenada\" é a resposta correta.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-redes-transporte-007",
+            "llm": "openai/gpt-oss-120b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "state": "GENERATION_COMPLETED",
+        "red_flags": []
+      },
+      "history": {
+        "request": {
+          "id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+          "solicitante_id": "evaluation-slm-v3-final-P02",
+          "state": "GENERATION_COMPLETED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 3,
+          "stem_attempts": 2,
+          "distractor_attempts": 1,
+          "created_at": "2026-09-24T13:26:25.241003+00:00",
+          "updated_at": "2026-09-24T13:26:29.771380+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-slm-v3-final-P02",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+            "dificuldade": 3,
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "restricoes": [
+              "uma única alternativa defensável",
+              "não perguntar apenas por uma propriedade isolada"
+            ]
+          }
+        },
+        "versions": [
+          {
+            "id": "a4c87c76-3dc8-4986-85f4-83bd76f27c56",
+            "version_number": 1,
+            "created_at": "2026-09-24T13:26:29.758492+00:00"
+          }
+        ],
+        "latest_version": {
+          "id": "a4c87c76-3dc8-4986-85f4-83bd76f27c56",
+          "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+          "version_number": 1,
+          "created_at": "2026-09-24T13:26:29.758492+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Um serviço de transferência de arquivos deve garantir que todos os bytes enviados cheguem ao destino sem perdas e na mesma sequência em que foram emitidos. Considerando as garantias oferecidas pelos protocolos de transporte TCP e UDP, quais garantias de nível de transporte são indispensáveis para atender a esses requisitos?",
+            "alternativas": [
+              "Entrega não confiável e sem preservação de ordem",
+              "Entrega com baixa latência garantida",
+              "Entrega ordenada sem retransmissão de perdas",
+              "Entrega confiável sem preservação de ordem",
+              "entrega confiável e ordenada"
+            ],
+            "correta": 4,
+            "explicacao": "Para que nenhum dado seja perdido e a ordem de chegada seja preservada, a aplicação necessita das duas garantias: (i) entrega confiável, que assegura a retransmissão de pacotes perdidos, e (ii) entrega ordenada, que garante que os segmentos sejam apresentados ao processo receptor na sequência original. O TCP fornece ambas as garantias; o UDP não oferece nem entrega confiável nem ordenação, portanto não satisfaz o requisito. Assim, a combinação \"entrega confiável e ordenada\" é a resposta correta.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-redes-transporte-007",
+            "llm": "openai/gpt-oss-120b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "artifacts": [
+          {
+            "id": 90,
+            "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T13:26:25.259748+00:00",
+            "payload": {
+              "id": "rag-redes-transporte-007",
+              "texto": "Na arquitetura TCP/IP, a camada de transporte oferece comunicação fim a fim entre processos. O TCP fornece serviço orientado a conexão, entrega confiável, controle de fluxo e controle de congestionamento. O UDP oferece serviço sem conexão com menor sobrecarga, sem garantir entrega ou ordenação.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Redes de Computadores",
+                "habilidade": "Comparar protocolos de transporte",
+                "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet.",
+                "linha": 7,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 25.756259,
+                "termos_recuperados": [
+                  "comunicacao",
+                  "fim",
+                  "protocolos",
+                  "tcp",
+                  "transporte",
+                  "udp"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "arquiteturas",
+                  "cenario",
+                  "comunicacao",
+                  "conforme",
+                  "fim",
+                  "garantias",
+                  "oferecidas",
+                  "pelos",
+                  "protocolo",
+                  "protocolos",
+                  "requisitos",
+                  "selecionar",
+                  "tcp",
+                  "transporte",
+                  "udp"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-redes-transporte-007",
+                    "score": 25.756259
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 91,
+            "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+            "kind": "STEM",
+            "created_at": "2026-09-24T13:26:27.512515+00:00",
+            "payload": {
+              "enunciado": "Uma aplicação de transferência de arquivos requer entrega confiável, ordenada e controle de congestionamento, tolerando latência alta. Qual protocolo de transporte da camada TCP/IP deve ser escolhido?",
+              "resposta_correta": "TCP",
+              "explicacao": "TCP fornece serviço orientado a conexão com entrega confiável, ordenada e controle de congestionamento, atendendo exatamente aos requisitos; UDP não garante confiabilidade nem ordenação, portanto não satisfaz.",
+              "competencia": "Analisar arquiteturas de comunicação",
+              "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 92,
+            "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+            "kind": "STEM",
+            "created_at": "2026-09-24T13:26:29.725992+00:00",
+            "payload": {
+              "enunciado": "Um serviço de transferência de arquivos deve garantir que todos os bytes enviados cheguem ao destino sem perdas e na mesma sequência em que foram emitidos. Considerando as garantias oferecidas pelos protocolos de transporte TCP e UDP, quais garantias de nível de transporte são indispensáveis para atender a esses requisitos?",
+              "resposta_correta": "entrega confiável e ordenada",
+              "explicacao": "Para que nenhum dado seja perdido e a ordem de chegada seja preservada, a aplicação necessita das duas garantias: (i) entrega confiável, que assegura a retransmissão de pacotes perdidos, e (ii) entrega ordenada, que garante que os segmentos sejam apresentados ao processo receptor na sequência original. O TCP fornece ambas as garantias; o UDP não oferece nem entrega confiável nem ordenação, portanto não satisfaz o requisito. Assim, a combinação \"entrega confiável e ordenada\" é a resposta correta.",
+              "competencia": "Analisar arquiteturas de comunicação",
+              "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 93,
+            "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T13:26:29.745508+00:00",
+            "payload": [
+              {
+                "texto": "Entrega não confiável e sem preservação de ordem",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Entrega confiável e ordenada, mas não responde ao cenário"
+              },
+              {
+                "texto": "Entrega confiável sem preservação de ordem",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Entrega confiável e ordenada, mas não responde ao cenário"
+              },
+              {
+                "texto": "Entrega ordenada sem retransmissão de perdas",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Entrega confiável e ordenada, mas não responde ao cenário"
+              },
+              {
+                "texto": "Entrega com baixa latência garantida",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Entrega confiável e ordenada, mas não responde ao cenário"
+              }
+            ],
+            "provenance": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "Entrega confiável e ordenada",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 94,
+            "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T13:26:29.767718+00:00",
+            "payload": [],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.0.0",
+              "tipo": "deterministico"
+            }
+          }
+        ],
+        "red_flags": [
+          {
+            "id": 7,
+            "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+            "code": "selecao_de_protocolo_potencialmente_ambigua",
+            "stage": "NUCLEO",
+            "field": "enunciado",
+            "evidence": "outros protocolos podem satisfazer o cenário; avalie garantias ou compare explicitamente TCP e UDP",
+            "repair_target": "NUCLEO",
+            "created_at": "2026-09-24T13:26:27.521150+00:00"
+          }
+        ],
+        "events": [
+          {
+            "id": 139,
+            "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T13:26:25.241415+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-slm-v3-final-P02",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+              "dificuldade": 3,
+              "competencia": "Analisar arquiteturas de comunicação",
+              "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "restricoes": [
+                "uma única alternativa defensável",
+                "não perguntar apenas por uma propriedade isolada"
+              ]
+            }
+          },
+          {
+            "id": 140,
+            "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T13:26:25.265341+00:00",
+            "evidence": {
+              "id": "rag-redes-transporte-007"
+            }
+          },
+          {
+            "id": 141,
+            "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T13:26:27.515620+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 142,
+            "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "BLOCKED_BY_RED_FLAGS",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "núcleo bloqueado",
+            "created_at": "2026-09-24T13:26:27.524627+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "selecao_de_protocolo_potencialmente_ambigua",
+                  "etapa": "NUCLEO",
+                  "campo": "enunciado",
+                  "evidencia": "outros protocolos podem satisfazer o cenário; avalie garantias ou compare explicitamente TCP e UDP",
+                  "reparo": "NUCLEO"
+                }
+              ]
+            }
+          },
+          {
+            "id": 143,
+            "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+            "version_id": null,
+            "from_state": "BLOCKED_BY_RED_FLAGS",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T13:26:29.733124+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 144,
+            "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T13:26:29.751245+00:00",
+            "evidence": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "Entrega confiável e ordenada",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 145,
+            "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+            "version_id": "a4c87c76-3dc8-4986-85f4-83bd76f27c56",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T13:26:29.762624+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 146,
+            "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+            "version_id": "a4c87c76-3dc8-4986-85f4-83bd76f27c56",
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "GENERATION_COMPLETED",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "geração concluída sem red flags",
+            "created_at": "2026-09-24T13:26:29.771490+00:00",
+            "evidence": {}
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 4.559
+    },
+    {
+      "spec_id": "P05",
+      "specification": {
+        "spec_id": "P05",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+        "dificuldade": 3,
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+        "solicitante_id": "evaluation-slm-v3-final-P05",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T13:26:29.782672+00:00",
+        "updated_at": "2026-09-24T13:26:29.782672+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-slm-v3-final-P05",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+          "dificuldade": 3,
+          "competencia": "Analisar métodos de inteligência artificial",
+          "habilidade": "Distinguir paradigmas de aprendizado",
+          "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+          "restricoes": [
+            "usar cenário aplicado",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+      "generation_status": 200,
+      "generation": {
+        "request_id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+        "version": {
+          "id": "1ff9ae59-b20a-482e-8a5e-2a18a5e5c470",
+          "request_id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+          "version_number": 1,
+          "created_at": "2026-09-24T13:26:31.682653+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Uma empresa possui um histórico de compras de 10.000 clientes, contendo apenas os itens adquiridos e valores gastos, sem nenhuma informação pré‑definida sobre categorias ou rótulos. O objetivo é identificar grupos de clientes com padrões de consumo semelhantes para campanhas de marketing direcionado. Qual paradigma de aprendizado de máquina deve ser adotado para esse problema?",
+            "alternativas": [
+              "Aprendizado semissupervisionado",
+              "Aprendizado por reforço",
+              "Aprendizado não supervisionado",
+              "Aprendizado supervisionado",
+              "Aprendizado autossupervisionado"
+            ],
+            "correta": 2,
+            "explicacao": "Como os dados não possuem rótulos de saída, a tarefa consiste em descobrir estruturas ocultas (agrupamentos) nos próprios dados, característica típica do aprendizado não supervisionado, que utiliza técnicas como clustering para segmentar os clientes.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 3
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-ia-aprendizado-011",
+            "llm": "openai/gpt-oss-120b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "state": "GENERATION_COMPLETED",
+        "red_flags": []
+      },
+      "history": {
+        "request": {
+          "id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+          "solicitante_id": "evaluation-slm-v3-final-P05",
+          "state": "GENERATION_COMPLETED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 2,
+          "stem_attempts": 1,
+          "distractor_attempts": 1,
+          "created_at": "2026-09-24T13:26:29.782672+00:00",
+          "updated_at": "2026-09-24T13:26:31.696714+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-slm-v3-final-P05",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+            "dificuldade": 3,
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "restricoes": [
+              "usar cenário aplicado",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [
+          {
+            "id": "1ff9ae59-b20a-482e-8a5e-2a18a5e5c470",
+            "version_number": 1,
+            "created_at": "2026-09-24T13:26:31.682653+00:00"
+          }
+        ],
+        "latest_version": {
+          "id": "1ff9ae59-b20a-482e-8a5e-2a18a5e5c470",
+          "request_id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+          "version_number": 1,
+          "created_at": "2026-09-24T13:26:31.682653+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Uma empresa possui um histórico de compras de 10.000 clientes, contendo apenas os itens adquiridos e valores gastos, sem nenhuma informação pré‑definida sobre categorias ou rótulos. O objetivo é identificar grupos de clientes com padrões de consumo semelhantes para campanhas de marketing direcionado. Qual paradigma de aprendizado de máquina deve ser adotado para esse problema?",
+            "alternativas": [
+              "Aprendizado semissupervisionado",
+              "Aprendizado por reforço",
+              "Aprendizado não supervisionado",
+              "Aprendizado supervisionado",
+              "Aprendizado autossupervisionado"
+            ],
+            "correta": 2,
+            "explicacao": "Como os dados não possuem rótulos de saída, a tarefa consiste em descobrir estruturas ocultas (agrupamentos) nos próprios dados, característica típica do aprendizado não supervisionado, que utiliza técnicas como clustering para segmentar os clientes.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 3
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-ia-aprendizado-011",
+            "llm": "openai/gpt-oss-120b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "artifacts": [
+          {
+            "id": 95,
+            "request_id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T13:26:29.794552+00:00",
+            "payload": {
+              "id": "rag-ia-aprendizado-011",
+              "texto": "No aprendizado supervisionado, exemplos rotulados orientam a construção de modelos para classificação ou regressão. No aprendizado não supervisionado, o objetivo é identificar estruturas ou agrupamentos sem rótulos de saída. A avaliação deve usar dados independentes do treinamento para estimar generalização e reduzir conclusões afetadas por sobreajuste.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Inteligência Artificial",
+                "habilidade": "Distinguir paradigmas de aprendizado",
+                "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+                "referencia": "RUSSELL, S.; NORVIG, P. Inteligência Artificial: Uma Abordagem Moderna.",
+                "linha": 11,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 22.082778,
+                "termos_recuperados": [
+                  "aprendizado",
+                  "artificial",
+                  "inteligencia",
+                  "nao",
+                  "paradigmas",
+                  "supervisionado"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "aprendizado",
+                  "artificial",
+                  "disponiveis",
+                  "inteligencia",
+                  "metodos",
+                  "nao",
+                  "paradigmas",
+                  "partir",
+                  "supervisionado"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-ia-aprendizado-011",
+                    "score": 22.082778
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 96,
+            "request_id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+            "kind": "STEM",
+            "created_at": "2026-09-24T13:26:31.655598+00:00",
+            "payload": {
+              "enunciado": "Uma empresa possui um histórico de compras de 10.000 clientes, contendo apenas os itens adquiridos e valores gastos, sem nenhuma informação pré‑definida sobre categorias ou rótulos. O objetivo é identificar grupos de clientes com padrões de consumo semelhantes para campanhas de marketing direcionado. Qual paradigma de aprendizado de máquina deve ser adotado para esse problema?",
+              "resposta_correta": "Aprendizado não supervisionado",
+              "explicacao": "Como os dados não possuem rótulos de saída, a tarefa consiste em descobrir estruturas ocultas (agrupamentos) nos próprios dados, característica típica do aprendizado não supervisionado, que utiliza técnicas como clustering para segmentar os clientes.",
+              "competencia": "Analisar métodos de inteligência artificial",
+              "habilidade": "Distinguir paradigmas de aprendizado",
+              "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 97,
+            "request_id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T13:26:31.671543+00:00",
+            "payload": [
+              {
+                "texto": "Aprendizado supervisionado",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Aprendizado não supervisionado, mas não responde ao cenário"
+              },
+              {
+                "texto": "Aprendizado por reforço",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Aprendizado não supervisionado, mas não responde ao cenário"
+              },
+              {
+                "texto": "Aprendizado semissupervisionado",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Aprendizado não supervisionado, mas não responde ao cenário"
+              },
+              {
+                "texto": "Aprendizado autossupervisionado",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Aprendizado não supervisionado, mas não responde ao cenário"
+              }
+            ],
+            "provenance": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "Aprendizado não supervisionado",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 98,
+            "request_id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T13:26:31.692792+00:00",
+            "payload": [],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.0.0",
+              "tipo": "deterministico"
+            }
+          }
+        ],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 147,
+            "request_id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T13:26:29.783150+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-slm-v3-final-P05",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+              "dificuldade": 3,
+              "competencia": "Analisar métodos de inteligência artificial",
+              "habilidade": "Distinguir paradigmas de aprendizado",
+              "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+              "restricoes": [
+                "usar cenário aplicado",
+                "uma única alternativa defensável"
+              ]
+            }
+          },
+          {
+            "id": 148,
+            "request_id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T13:26:29.797580+00:00",
+            "evidence": {
+              "id": "rag-ia-aprendizado-011"
+            }
+          },
+          {
+            "id": 149,
+            "request_id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T13:26:31.659859+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 150,
+            "request_id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T13:26:31.676716+00:00",
+            "evidence": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "Aprendizado não supervisionado",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 151,
+            "request_id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+            "version_id": "1ff9ae59-b20a-482e-8a5e-2a18a5e5c470",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T13:26:31.688010+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 152,
+            "request_id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+            "version_id": "1ff9ae59-b20a-482e-8a5e-2a18a5e5c470",
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "GENERATION_COMPLETED",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "geração concluída sem red flags",
+            "created_at": "2026-09-24T13:26:31.696912+00:00",
+            "evidence": {}
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 1.93
+    }
+  ],
+  "finished_at": "2026-09-24T13:26:31.713684+00:00"
+}

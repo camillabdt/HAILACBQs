@@ -1,0 +1,1466 @@
+{
+  "condition": "C4",
+  "run_id": "c4-post-iwf-redflags-v1",
+  "started_at": "2026-09-24T19:08:19.594999+00:00",
+  "base_url": "http://127.0.0.1:8010",
+  "items": [
+    {
+      "spec_id": "P01",
+      "specification": {
+        "spec_id": "P01",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+        "dificuldade": 3,
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "restricoes": [
+          "uma única alternativa defensável",
+          "não exigir recurso visual"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "7bcfe3a1-b759-42ad-b6f0-9f9038831ddc",
+        "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P01",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T19:08:19.621024+00:00",
+        "updated_at": "2026-09-24T19:08:19.621024+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P01",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+          "dificuldade": 3,
+          "competencia": "Analisar mecanismos de gerenciamento de dados",
+          "habilidade": "Analisar transações e recuperação de falhas",
+          "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+          "restricoes": [
+            "uma única alternativa defensável",
+            "não exigir recurso visual"
+          ]
+        }
+      },
+      "request_id": "7bcfe3a1-b759-42ad-b6f0-9f9038831ddc",
+      "generation_status": 200,
+      "generation": {
+        "request_id": "7bcfe3a1-b759-42ad-b6f0-9f9038831ddc",
+        "version": {
+          "id": "4b75f591-f2d6-4db5-bc32-568e21f9fd2e",
+          "request_id": "7bcfe3a1-b759-42ad-b6f0-9f9038831ddc",
+          "version_number": 1,
+          "created_at": "2026-09-24T19:08:21.517599+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Qual propriedade ACID garante que, em caso de falha antes do COMMIT, as alterações parciais não são gravadas no banco?",
+            "alternativas": [
+              "Durabilidade",
+              "Consistência",
+              "Serialização",
+              "Isolamento",
+              "Atomicidade"
+            ],
+            "correta": 4,
+            "explicacao": "A atomicidade assegura que uma transação é tratada como uma única unidade: se falha antes do COMMIT, todos os efeitos são revertidos, mantendo o banco no estado anterior. Durabilidade protege apenas alterações já confirmadas, portanto não se aplica a falhas ocorridas antes do COMMIT.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-bd-transacoes-005",
+            "llm": "openai/gpt-oss-20b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "state": "GENERATION_COMPLETED",
+        "red_flags": []
+      },
+      "history": {
+        "request": {
+          "id": "7bcfe3a1-b759-42ad-b6f0-9f9038831ddc",
+          "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P01",
+          "state": "GENERATION_COMPLETED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 2,
+          "stem_attempts": 1,
+          "distractor_attempts": 1,
+          "created_at": "2026-09-24T19:08:19.621024+00:00",
+          "updated_at": "2026-09-24T19:08:21.532291+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P01",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+            "dificuldade": 3,
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "restricoes": [
+              "uma única alternativa defensável",
+              "não exigir recurso visual"
+            ]
+          }
+        },
+        "versions": [
+          {
+            "id": "4b75f591-f2d6-4db5-bc32-568e21f9fd2e",
+            "version_number": 1,
+            "created_at": "2026-09-24T19:08:21.517599+00:00"
+          }
+        ],
+        "latest_version": {
+          "id": "4b75f591-f2d6-4db5-bc32-568e21f9fd2e",
+          "request_id": "7bcfe3a1-b759-42ad-b6f0-9f9038831ddc",
+          "version_number": 1,
+          "created_at": "2026-09-24T19:08:21.517599+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Qual propriedade ACID garante que, em caso de falha antes do COMMIT, as alterações parciais não são gravadas no banco?",
+            "alternativas": [
+              "Durabilidade",
+              "Consistência",
+              "Serialização",
+              "Isolamento",
+              "Atomicidade"
+            ],
+            "correta": 4,
+            "explicacao": "A atomicidade assegura que uma transação é tratada como uma única unidade: se falha antes do COMMIT, todos os efeitos são revertidos, mantendo o banco no estado anterior. Durabilidade protege apenas alterações já confirmadas, portanto não se aplica a falhas ocorridas antes do COMMIT.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-bd-transacoes-005",
+            "llm": "openai/gpt-oss-20b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "artifacts": [
+          {
+            "id": 155,
+            "request_id": "7bcfe3a1-b759-42ad-b6f0-9f9038831ddc",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T19:08:19.647280+00:00",
+            "payload": {
+              "id": "rag-bd-transacoes-005",
+              "texto": "Transações de banco de dados devem preservar atomicidade, consistência, isolamento e durabilidade. O controle de concorrência busca evitar anomalias como leitura suja, atualização perdida e leitura não repetível. Bloqueios, ordenação por marcas de tempo e controle multiversão são estratégias usuais. Atomicidade significa que a transação produz todos os seus efeitos ou nenhum. Durabilidade protege os efeitos de transações já confirmadas por COMMIT. Uma falha antes da confirmação não demonstra violação de durabilidade; desfazer efeitos parciais preserva atomicidade.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Banco de Dados",
+                "habilidade": "Analisar transações concorrentes",
+                "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+                "referencia": "ELMASRI, R.; NAVATHE, S. Sistemas de Banco de Dados. Complemento conceitual: PostgreSQL, documentação 18, seção 3.4 Transactions, https://www.postgresql.org/docs/18/tutorial-transactions.html (consulta em 2026-09-22).",
+                "linha": 5,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 29.820143,
+                "termos_recuperados": [
+                  "acid",
+                  "antes",
+                  "atomicidade",
+                  "commit",
+                  "concorrencia",
+                  "controle",
+                  "durabilidade",
+                  "falha",
+                  "propriedades",
+                  "transacoes"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "acid",
+                  "antes",
+                  "atomicidade",
+                  "commit",
+                  "concorrencia",
+                  "controle",
+                  "durabilidade",
+                  "falha",
+                  "falhas",
+                  "gerenciamento",
+                  "mecanismos",
+                  "ocorrida",
+                  "propriedades",
+                  "recuperacao",
+                  "transacoes"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-bd-transacoes-005",
+                    "score": 29.820143
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 156,
+            "request_id": "7bcfe3a1-b759-42ad-b6f0-9f9038831ddc",
+            "kind": "STEM",
+            "created_at": "2026-09-24T19:08:21.488794+00:00",
+            "payload": {
+              "enunciado": "Qual propriedade ACID garante que, em caso de falha antes do COMMIT, as alterações parciais não são gravadas no banco?",
+              "resposta_correta": "Atomicidade",
+              "explicacao": "A atomicidade assegura que uma transação é tratada como uma única unidade: se falha antes do COMMIT, todos os efeitos são revertidos, mantendo o banco no estado anterior. Durabilidade protege apenas alterações já confirmadas, portanto não se aplica a falhas ocorridas antes do COMMIT.",
+              "competencia": "Analisar mecanismos de gerenciamento de dados",
+              "habilidade": "Analisar transações e recuperação de falhas",
+              "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-20b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 157,
+            "request_id": "7bcfe3a1-b759-42ad-b6f0-9f9038831ddc",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T19:08:21.506973+00:00",
+            "payload": [
+              {
+                "texto": "Consistência",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Atomicidade, mas não responde ao cenário"
+              },
+              {
+                "texto": "Isolamento",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Atomicidade, mas não responde ao cenário"
+              },
+              {
+                "texto": "Durabilidade",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Atomicidade, mas não responde ao cenário"
+              },
+              {
+                "texto": "Serialização",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Atomicidade, mas não responde ao cenário"
+              }
+            ],
+            "provenance": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "Atomicidade",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 158,
+            "request_id": "7bcfe3a1-b759-42ad-b6f0-9f9038831ddc",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T19:08:21.528806+00:00",
+            "payload": [],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.1.0",
+              "tipo": "deterministico"
+            }
+          }
+        ],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 242,
+            "request_id": "7bcfe3a1-b759-42ad-b6f0-9f9038831ddc",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T19:08:19.621530+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P01",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+              "dificuldade": 3,
+              "competencia": "Analisar mecanismos de gerenciamento de dados",
+              "habilidade": "Analisar transações e recuperação de falhas",
+              "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+              "restricoes": [
+                "uma única alternativa defensável",
+                "não exigir recurso visual"
+              ]
+            }
+          },
+          {
+            "id": 243,
+            "request_id": "7bcfe3a1-b759-42ad-b6f0-9f9038831ddc",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T19:08:19.652495+00:00",
+            "evidence": {
+              "id": "rag-bd-transacoes-005"
+            }
+          },
+          {
+            "id": 244,
+            "request_id": "7bcfe3a1-b759-42ad-b6f0-9f9038831ddc",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T19:08:21.494911+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-20b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 245,
+            "request_id": "7bcfe3a1-b759-42ad-b6f0-9f9038831ddc",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T19:08:21.511775+00:00",
+            "evidence": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "Atomicidade",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 246,
+            "request_id": "7bcfe3a1-b759-42ad-b6f0-9f9038831ddc",
+            "version_id": "4b75f591-f2d6-4db5-bc32-568e21f9fd2e",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T19:08:21.523078+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 247,
+            "request_id": "7bcfe3a1-b759-42ad-b6f0-9f9038831ddc",
+            "version_id": "4b75f591-f2d6-4db5-bc32-568e21f9fd2e",
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "GENERATION_COMPLETED",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "geração concluída sem red flags",
+            "created_at": "2026-09-24T19:08:21.532440+00:00",
+            "evidence": {}
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 1.952
+    },
+    {
+      "spec_id": "P02",
+      "specification": {
+        "spec_id": "P02",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+        "dificuldade": 3,
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "restricoes": [
+          "uma única alternativa defensável",
+          "não perguntar apenas por uma propriedade isolada"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+        "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P02",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T19:08:21.551318+00:00",
+        "updated_at": "2026-09-24T19:08:21.551318+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P02",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+          "dificuldade": 3,
+          "competencia": "Analisar arquiteturas de comunicação",
+          "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+          "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+          "restricoes": [
+            "uma única alternativa defensável",
+            "não perguntar apenas por uma propriedade isolada"
+          ]
+        }
+      },
+      "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+      "generation_status": 200,
+      "generation": {
+        "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+        "state": "ATTEMPTS_EXHAUSTED",
+        "red_flags": [
+          {
+            "codigo": "selecao_de_protocolo_potencialmente_ambigua",
+            "etapa": "NUCLEO",
+            "campo": "enunciado",
+            "evidencia": "outros protocolos podem satisfazer o cenário; avalie garantias ou compare explicitamente TCP e UDP",
+            "reparo": "NUCLEO"
+          }
+        ]
+      },
+      "history": {
+        "request": {
+          "id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+          "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P02",
+          "state": "ATTEMPTS_EXHAUSTED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 3,
+          "stem_attempts": 3,
+          "distractor_attempts": 0,
+          "created_at": "2026-09-24T19:08:21.551318+00:00",
+          "updated_at": "2026-09-24T19:08:27.520243+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P02",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+            "dificuldade": 3,
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "restricoes": [
+              "uma única alternativa defensável",
+              "não perguntar apenas por uma propriedade isolada"
+            ]
+          }
+        },
+        "versions": [],
+        "latest_version": null,
+        "artifacts": [
+          {
+            "id": 159,
+            "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T19:08:21.578269+00:00",
+            "payload": {
+              "id": "rag-redes-transporte-007",
+              "texto": "Na arquitetura TCP/IP, a camada de transporte oferece comunicação fim a fim entre processos. O TCP fornece serviço orientado a conexão, entrega confiável, controle de fluxo e controle de congestionamento. O UDP oferece serviço sem conexão com menor sobrecarga, sem garantir entrega ou ordenação.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Redes de Computadores",
+                "habilidade": "Comparar protocolos de transporte",
+                "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet.",
+                "linha": 7,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 25.756259,
+                "termos_recuperados": [
+                  "comunicacao",
+                  "fim",
+                  "protocolos",
+                  "tcp",
+                  "transporte",
+                  "udp"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "arquiteturas",
+                  "cenario",
+                  "comunicacao",
+                  "conforme",
+                  "fim",
+                  "garantias",
+                  "oferecidas",
+                  "pelos",
+                  "protocolo",
+                  "protocolos",
+                  "requisitos",
+                  "selecionar",
+                  "tcp",
+                  "transporte",
+                  "udp"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-redes-transporte-007",
+                    "score": 25.756259
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 160,
+            "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+            "kind": "STEM",
+            "created_at": "2026-09-24T19:08:23.627776+00:00",
+            "payload": {
+              "enunciado": "Em uma aplicação que precisa que todas as mensagens sejam entregues intactas e na ordem em que foram enviadas, qual protocolo de transporte deve ser escolhido?",
+              "resposta_correta": "TCP",
+              "explicacao": "O protocolo orientado a conexão garante entrega confiável, ordenada e sem perda de dados, atendendo requisitos de integridade e sequência. UDP, por outro lado, não oferece essas garantias.",
+              "competencia": "Analisar arquiteturas de comunicação",
+              "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-20b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 161,
+            "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+            "kind": "STEM",
+            "created_at": "2026-09-24T19:08:25.945881+00:00",
+            "payload": {
+              "enunciado": "Qual conjunto de garantias, dentre as oferecidas pelos protocolos TCP e UDP, caracteriza a entrega confiável e ordenada?",
+              "resposta_correta": "entrega confiável e ordenada",
+              "explicacao": "O TCP oferece serviços orientados a conexão que incluem entrega confiável e controle de fluxo, além de garantir a ordem correta dos pacotes. O UDP, por ser sem conexão, não oferece essas garantias. Assim, a combinação de garantias que descreve a entrega confiável e ordenada corresponde ao conjunto de recursos oferecidos pelo TCP.",
+              "competencia": "Analisar arquiteturas de comunicação",
+              "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-20b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 162,
+            "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+            "kind": "STEM",
+            "created_at": "2026-09-24T19:08:27.498493+00:00",
+            "payload": {
+              "enunciado": "Um sistema de transferência de arquivos de grande porte entre dois servidores exige que todos os pacotes cheguem na ordem correta e sem perda, mesmo em condições de congestionamento. Qual protocolo de transporte deve ser escolhido para atender a esses requisitos?",
+              "resposta_correta": "TCP",
+              "explicacao": "O TCP oferece conexão orientada, entrega confiável, controle de fluxo e controle de congestionamento, garantindo que os dados cheguem completos, na ordem correta e sem duplicação, atendendo ao requisito de transferência de arquivos robusta.",
+              "competencia": "Analisar arquiteturas de comunicação",
+              "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-20b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          }
+        ],
+        "red_flags": [
+          {
+            "id": 16,
+            "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+            "code": "selecao_de_protocolo_potencialmente_ambigua",
+            "stage": "NUCLEO",
+            "field": "enunciado",
+            "evidence": "outros protocolos podem satisfazer o cenário; avalie garantias ou compare explicitamente TCP e UDP",
+            "repair_target": "NUCLEO",
+            "created_at": "2026-09-24T19:08:23.637547+00:00"
+          },
+          {
+            "id": 17,
+            "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+            "code": "gabarito_repetido_no_enunciado",
+            "stage": "NUCLEO",
+            "field": "enunciado",
+            "evidence": "o enunciado contém literalmente a resposta correta e pode revelar o gabarito",
+            "repair_target": "NUCLEO",
+            "created_at": "2026-09-24T19:08:25.956660+00:00"
+          },
+          {
+            "id": 18,
+            "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+            "code": "selecao_de_protocolo_potencialmente_ambigua",
+            "stage": "NUCLEO",
+            "field": "enunciado",
+            "evidence": "outros protocolos podem satisfazer o cenário; avalie garantias ou compare explicitamente TCP e UDP",
+            "repair_target": "NUCLEO",
+            "created_at": "2026-09-24T19:08:27.510143+00:00"
+          }
+        ],
+        "events": [
+          {
+            "id": 248,
+            "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T19:08:21.552282+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P02",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+              "dificuldade": 3,
+              "competencia": "Analisar arquiteturas de comunicação",
+              "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "restricoes": [
+                "uma única alternativa defensável",
+                "não perguntar apenas por uma propriedade isolada"
+              ]
+            }
+          },
+          {
+            "id": 249,
+            "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T19:08:21.584760+00:00",
+            "evidence": {
+              "id": "rag-redes-transporte-007"
+            }
+          },
+          {
+            "id": 250,
+            "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T19:08:23.631982+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-20b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 251,
+            "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "BLOCKED_BY_RED_FLAGS",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "núcleo bloqueado",
+            "created_at": "2026-09-24T19:08:23.641420+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "selecao_de_protocolo_potencialmente_ambigua",
+                  "etapa": "NUCLEO",
+                  "campo": "enunciado",
+                  "evidencia": "outros protocolos podem satisfazer o cenário; avalie garantias ou compare explicitamente TCP e UDP",
+                  "reparo": "NUCLEO"
+                }
+              ]
+            }
+          },
+          {
+            "id": 252,
+            "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+            "version_id": null,
+            "from_state": "BLOCKED_BY_RED_FLAGS",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T19:08:25.950529+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-20b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 253,
+            "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "BLOCKED_BY_RED_FLAGS",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "núcleo bloqueado",
+            "created_at": "2026-09-24T19:08:25.961938+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "gabarito_repetido_no_enunciado",
+                  "etapa": "NUCLEO",
+                  "campo": "enunciado",
+                  "evidencia": "o enunciado contém literalmente a resposta correta e pode revelar o gabarito",
+                  "reparo": "NUCLEO"
+                }
+              ]
+            }
+          },
+          {
+            "id": 254,
+            "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+            "version_id": null,
+            "from_state": "BLOCKED_BY_RED_FLAGS",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T19:08:27.504984+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-20b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 255,
+            "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "BLOCKED_BY_RED_FLAGS",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "núcleo bloqueado",
+            "created_at": "2026-09-24T19:08:27.514669+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "selecao_de_protocolo_potencialmente_ambigua",
+                  "etapa": "NUCLEO",
+                  "campo": "enunciado",
+                  "evidencia": "outros protocolos podem satisfazer o cenário; avalie garantias ou compare explicitamente TCP e UDP",
+                  "reparo": "NUCLEO"
+                }
+              ]
+            }
+          },
+          {
+            "id": 256,
+            "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+            "version_id": null,
+            "from_state": "BLOCKED_BY_RED_FLAGS",
+            "to_state": "ATTEMPTS_EXHAUSTED",
+            "component": "HAILA",
+            "reason": "limite de tentativas da LLM atingido",
+            "created_at": "2026-09-24T19:08:27.520458+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "selecao_de_protocolo_potencialmente_ambigua",
+                  "etapa": "NUCLEO",
+                  "campo": "enunciado",
+                  "evidencia": "outros protocolos podem satisfazer o cenário; avalie garantias ou compare explicitamente TCP e UDP",
+                  "reparo": "NUCLEO"
+                }
+              ]
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 5.985
+    },
+    {
+      "spec_id": "P03",
+      "specification": {
+        "spec_id": "P03",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+        "dificuldade": 3,
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "7d09ae37-c4c8-4513-b880-388ac5572878",
+        "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P03",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T19:08:27.537932+00:00",
+        "updated_at": "2026-09-24T19:08:27.537932+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P03",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+          "dificuldade": 3,
+          "competencia": "Analisar requisitos de software",
+          "habilidade": "Classificar requisitos conforme sua finalidade",
+          "objeto_conhecimento": "Engenharia de requisitos",
+          "restricoes": [
+            "usar cenário aplicado",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "7d09ae37-c4c8-4513-b880-388ac5572878",
+      "generation_status": 429,
+      "generation": {
+        "detail": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+      },
+      "history": {
+        "request": {
+          "id": "7d09ae37-c4c8-4513-b880-388ac5572878",
+          "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P03",
+          "state": "GENERATION_FAILED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 0,
+          "stem_attempts": 0,
+          "distractor_attempts": 0,
+          "created_at": "2026-09-24T19:08:27.537932+00:00",
+          "updated_at": "2026-09-24T19:08:27.848808+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P03",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+            "dificuldade": 3,
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "restricoes": [
+              "usar cenário aplicado",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [],
+        "latest_version": null,
+        "artifacts": [
+          {
+            "id": 163,
+            "request_id": "7d09ae37-c4c8-4513-b880-388ac5572878",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T19:08:27.569824+00:00",
+            "payload": {
+              "id": "rag-engsoftware-requisitos-009",
+              "texto": "Requisitos funcionais descrevem serviços e comportamentos esperados do sistema. Requisitos não funcionais estabelecem atributos e restrições, como desempenho, segurança, confiabilidade e usabilidade. Elicitação, especificação, validação e gerenciamento de mudanças ajudam a manter alinhamento entre necessidades e solução.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Engenharia de Software",
+                "habilidade": "Analisar e classificar requisitos",
+                "objeto_conhecimento": "Engenharia de requisitos",
+                "referencia": "SOMMERVILLE, I. Engenharia de Software.",
+                "linha": 9,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 15.611199,
+                "termos_recuperados": [
+                  "classificar",
+                  "engenharia",
+                  "funcionais",
+                  "nao",
+                  "requisitos"
+                ],
+                "candidatas_relevantes": 3,
+                "consulta_normalizada": [
+                  "cenario",
+                  "classificar",
+                  "conforme",
+                  "engenharia",
+                  "finalidade",
+                  "funcionais",
+                  "nao",
+                  "projeto",
+                  "requisitos"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-engsoftware-requisitos-009",
+                    "score": 15.611199
+                  },
+                  {
+                    "id": "rag-engsoftware-testes-010",
+                    "score": 2.733973
+                  },
+                  {
+                    "id": "rag-estruturas-dados-004",
+                    "score": 1.587169
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 164,
+            "request_id": "7d09ae37-c4c8-4513-b880-388ac5572878",
+            "kind": "provider_error",
+            "created_at": "2026-09-24T19:08:27.842312+00:00",
+            "payload": {
+              "code": "groq_rate_limit",
+              "status": 429,
+              "message": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+            },
+            "provenance": {
+              "provider": "groq"
+            }
+          }
+        ],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 257,
+            "request_id": "7d09ae37-c4c8-4513-b880-388ac5572878",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T19:08:27.538831+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P03",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+              "dificuldade": 3,
+              "competencia": "Analisar requisitos de software",
+              "habilidade": "Classificar requisitos conforme sua finalidade",
+              "objeto_conhecimento": "Engenharia de requisitos",
+              "restricoes": [
+                "usar cenário aplicado",
+                "uma única alternativa defensável"
+              ]
+            }
+          },
+          {
+            "id": 258,
+            "request_id": "7d09ae37-c4c8-4513-b880-388ac5572878",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T19:08:27.575909+00:00",
+            "evidence": {
+              "id": "rag-engsoftware-requisitos-009"
+            }
+          },
+          {
+            "id": 259,
+            "request_id": "7d09ae37-c4c8-4513-b880-388ac5572878",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "GENERATION_FAILED",
+            "component": "HAILA",
+            "reason": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo.",
+            "created_at": "2026-09-24T19:08:27.849015+00:00",
+            "evidence": {
+              "provider": "groq",
+              "status": 429
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 0.323
+    },
+    {
+      "spec_id": "P04",
+      "specification": {
+        "spec_id": "P04",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+        "dificuldade": 3,
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "23068858-ce48-47f8-9b5d-861f6a31aeb3",
+        "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P04",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T19:08:27.864449+00:00",
+        "updated_at": "2026-09-24T19:08:27.864449+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P04",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+          "dificuldade": 3,
+          "competencia": "Projetar soluções algorítmicas",
+          "habilidade": "Selecionar estruturas de dados",
+          "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+          "restricoes": [
+            "usar cenário aplicado",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "23068858-ce48-47f8-9b5d-861f6a31aeb3",
+      "generation_status": 429,
+      "generation": {
+        "detail": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+      },
+      "history": {
+        "request": {
+          "id": "23068858-ce48-47f8-9b5d-861f6a31aeb3",
+          "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P04",
+          "state": "GENERATION_FAILED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 0,
+          "stem_attempts": 0,
+          "distractor_attempts": 0,
+          "created_at": "2026-09-24T19:08:27.864449+00:00",
+          "updated_at": "2026-09-24T19:08:28.611616+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P04",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+            "dificuldade": 3,
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "restricoes": [
+              "usar cenário aplicado",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [],
+        "latest_version": null,
+        "artifacts": [
+          {
+            "id": 165,
+            "request_id": "23068858-ce48-47f8-9b5d-861f6a31aeb3",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T19:08:27.891703+00:00",
+            "payload": {
+              "id": "rag-estruturas-dados-004",
+              "texto": "Pilhas seguem a disciplina LIFO, enquanto filas seguem FIFO. Árvores de busca organizam chaves hierarquicamente e tabelas de dispersão usam funções hash para localizar elementos. A estrutura apropriada depende das operações predominantes, dos requisitos de ordenação e do custo aceitável de busca, inserção e remoção.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Algoritmos e Estruturas de Dados",
+                "habilidade": "Selecionar estruturas de dados",
+                "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+                "referencia": "CORMEN, T. H. et al. Algoritmos: Teoria e Prática.",
+                "linha": 4,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 33.841909,
+                "termos_recuperados": [
+                  "arvores",
+                  "estrutura",
+                  "estruturas",
+                  "filas",
+                  "hash",
+                  "operacoes",
+                  "pilhas",
+                  "predominantes",
+                  "selecionar",
+                  "tabelas"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "adequada",
+                  "algoritmicas",
+                  "arvores",
+                  "considerando",
+                  "estrutura",
+                  "estruturas",
+                  "filas",
+                  "hash",
+                  "operacoes",
+                  "pilhas",
+                  "predominantes",
+                  "projetar",
+                  "selecionar",
+                  "solucoes",
+                  "tabelas"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-estruturas-dados-004",
+                    "score": 33.841909
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 166,
+            "request_id": "23068858-ce48-47f8-9b5d-861f6a31aeb3",
+            "kind": "provider_error",
+            "created_at": "2026-09-24T19:08:28.603912+00:00",
+            "payload": {
+              "code": "groq_rate_limit",
+              "status": 429,
+              "message": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+            },
+            "provenance": {
+              "provider": "groq"
+            }
+          }
+        ],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 260,
+            "request_id": "23068858-ce48-47f8-9b5d-861f6a31aeb3",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T19:08:27.865213+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P04",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+              "dificuldade": 3,
+              "competencia": "Projetar soluções algorítmicas",
+              "habilidade": "Selecionar estruturas de dados",
+              "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+              "restricoes": [
+                "usar cenário aplicado",
+                "uma única alternativa defensável"
+              ]
+            }
+          },
+          {
+            "id": 261,
+            "request_id": "23068858-ce48-47f8-9b5d-861f6a31aeb3",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T19:08:27.895716+00:00",
+            "evidence": {
+              "id": "rag-estruturas-dados-004"
+            }
+          },
+          {
+            "id": 262,
+            "request_id": "23068858-ce48-47f8-9b5d-861f6a31aeb3",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "GENERATION_FAILED",
+            "component": "HAILA",
+            "reason": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo.",
+            "created_at": "2026-09-24T19:08:28.611821+00:00",
+            "evidence": {
+              "provider": "groq",
+              "status": 429
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 0.76
+    },
+    {
+      "spec_id": "P05",
+      "specification": {
+        "spec_id": "P05",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+        "dificuldade": 3,
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "1bfcd439-6948-4e5c-a810-0e1de9ad9153",
+        "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P05",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T19:08:28.625418+00:00",
+        "updated_at": "2026-09-24T19:08:28.625418+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P05",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+          "dificuldade": 3,
+          "competencia": "Analisar métodos de inteligência artificial",
+          "habilidade": "Distinguir paradigmas de aprendizado",
+          "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+          "restricoes": [
+            "usar cenário aplicado",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "1bfcd439-6948-4e5c-a810-0e1de9ad9153",
+      "generation_status": 429,
+      "generation": {
+        "detail": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+      },
+      "history": {
+        "request": {
+          "id": "1bfcd439-6948-4e5c-a810-0e1de9ad9153",
+          "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P05",
+          "state": "GENERATION_FAILED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 0,
+          "stem_attempts": 0,
+          "distractor_attempts": 0,
+          "created_at": "2026-09-24T19:08:28.625418+00:00",
+          "updated_at": "2026-09-24T19:08:28.938137+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P05",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+            "dificuldade": 3,
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "restricoes": [
+              "usar cenário aplicado",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [],
+        "latest_version": null,
+        "artifacts": [
+          {
+            "id": 167,
+            "request_id": "1bfcd439-6948-4e5c-a810-0e1de9ad9153",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T19:08:28.645238+00:00",
+            "payload": {
+              "id": "rag-ia-aprendizado-011",
+              "texto": "No aprendizado supervisionado, exemplos rotulados orientam a construção de modelos para classificação ou regressão. No aprendizado não supervisionado, o objetivo é identificar estruturas ou agrupamentos sem rótulos de saída. A avaliação deve usar dados independentes do treinamento para estimar generalização e reduzir conclusões afetadas por sobreajuste.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Inteligência Artificial",
+                "habilidade": "Distinguir paradigmas de aprendizado",
+                "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+                "referencia": "RUSSELL, S.; NORVIG, P. Inteligência Artificial: Uma Abordagem Moderna.",
+                "linha": 11,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 22.082778,
+                "termos_recuperados": [
+                  "aprendizado",
+                  "artificial",
+                  "inteligencia",
+                  "nao",
+                  "paradigmas",
+                  "supervisionado"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "aprendizado",
+                  "artificial",
+                  "disponiveis",
+                  "inteligencia",
+                  "metodos",
+                  "nao",
+                  "paradigmas",
+                  "partir",
+                  "supervisionado"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-ia-aprendizado-011",
+                    "score": 22.082778
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 168,
+            "request_id": "1bfcd439-6948-4e5c-a810-0e1de9ad9153",
+            "kind": "provider_error",
+            "created_at": "2026-09-24T19:08:28.932061+00:00",
+            "payload": {
+              "code": "groq_rate_limit",
+              "status": 429,
+              "message": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+            },
+            "provenance": {
+              "provider": "groq"
+            }
+          }
+        ],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 263,
+            "request_id": "1bfcd439-6948-4e5c-a810-0e1de9ad9153",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T19:08:28.625980+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-c4-post-iwf-redflags-v1-P05",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+              "dificuldade": 3,
+              "competencia": "Analisar métodos de inteligência artificial",
+              "habilidade": "Distinguir paradigmas de aprendizado",
+              "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+              "restricoes": [
+                "usar cenário aplicado",
+                "uma única alternativa defensável"
+              ]
+            }
+          },
+          {
+            "id": 264,
+            "request_id": "1bfcd439-6948-4e5c-a810-0e1de9ad9153",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T19:08:28.650876+00:00",
+            "evidence": {
+              "id": "rag-ia-aprendizado-011"
+            }
+          },
+          {
+            "id": 265,
+            "request_id": "1bfcd439-6948-4e5c-a810-0e1de9ad9153",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "GENERATION_FAILED",
+            "component": "HAILA",
+            "reason": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo.",
+            "created_at": "2026-09-24T19:08:28.938397+00:00",
+            "evidence": {
+              "provider": "groq",
+              "status": 429
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 0.326
+    }
+  ],
+  "finished_at": "2026-09-24T19:08:28.953648+00:00"
+}

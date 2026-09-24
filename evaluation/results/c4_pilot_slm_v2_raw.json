@@ -1,0 +1,2261 @@
+{
+  "condition": "C4",
+  "run_id": "slm-v2",
+  "started_at": "2026-09-24T12:57:51.021081+00:00",
+  "base_url": "http://127.0.0.1:8010",
+  "items": [
+    {
+      "spec_id": "P01",
+      "specification": {
+        "spec_id": "P01",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+        "dificuldade": 3,
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "restricoes": [
+          "uma única alternativa defensável",
+          "não exigir recurso visual"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+        "solicitante_id": "evaluation-slm-v2-P01",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T12:57:51.042056+00:00",
+        "updated_at": "2026-09-24T12:57:51.042056+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-slm-v2-P01",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+          "dificuldade": 3,
+          "competencia": "Analisar mecanismos de gerenciamento de dados",
+          "habilidade": "Analisar transações e recuperação de falhas",
+          "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+          "restricoes": [
+            "uma única alternativa defensável",
+            "não exigir recurso visual"
+          ]
+        }
+      },
+      "request_id": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+      "generation_status": 200,
+      "generation": {
+        "request_id": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+        "version": {
+          "id": "791c420c-4dad-483b-b704-a78f9abe55bd",
+          "request_id": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+          "version_number": 1,
+          "created_at": "2026-09-24T12:57:53.072613+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Uma transação em um SGBD ACID realizou alterações em duas tabelas e, antes da execução do comando COMMIT, ocorreu uma falha de energia que interrompeu o sistema. Qual propriedade do modelo ACID assegura que nenhuma dessas alterações permanecerá gravada no banco de dados?",
+            "alternativas": [
+              "Durabilidade",
+              "Consistência",
+              "Atomicidade",
+              "Isolamento",
+              "Serialização"
+            ],
+            "correta": 2,
+            "explicacao": "Durabilidade protege apenas os efeitos de transações já confirmadas por COMMIT. Como a falha ocorreu antes do COMMIT, a propriedade responsável por garantir que todas as alterações sejam desfeitas é a atomicidade, que impõe o comportamento tudo‑ou‑nada da transação. Assim, não há violação de durabilidade; a atomicidade preserva a consistência ao abortar a transação.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 3
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-bd-transacoes-005",
+            "llm": "openai/gpt-oss-120b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "state": "GENERATION_COMPLETED",
+        "red_flags": []
+      },
+      "history": {
+        "request": {
+          "id": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+          "solicitante_id": "evaluation-slm-v2-P01",
+          "state": "GENERATION_COMPLETED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 2,
+          "stem_attempts": 1,
+          "distractor_attempts": 1,
+          "created_at": "2026-09-24T12:57:51.042056+00:00",
+          "updated_at": "2026-09-24T12:57:53.089680+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-slm-v2-P01",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+            "dificuldade": 3,
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "restricoes": [
+              "uma única alternativa defensável",
+              "não exigir recurso visual"
+            ]
+          }
+        },
+        "versions": [
+          {
+            "id": "791c420c-4dad-483b-b704-a78f9abe55bd",
+            "version_number": 1,
+            "created_at": "2026-09-24T12:57:53.072613+00:00"
+          }
+        ],
+        "latest_version": {
+          "id": "791c420c-4dad-483b-b704-a78f9abe55bd",
+          "request_id": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+          "version_number": 1,
+          "created_at": "2026-09-24T12:57:53.072613+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Uma transação em um SGBD ACID realizou alterações em duas tabelas e, antes da execução do comando COMMIT, ocorreu uma falha de energia que interrompeu o sistema. Qual propriedade do modelo ACID assegura que nenhuma dessas alterações permanecerá gravada no banco de dados?",
+            "alternativas": [
+              "Durabilidade",
+              "Consistência",
+              "Atomicidade",
+              "Isolamento",
+              "Serialização"
+            ],
+            "correta": 2,
+            "explicacao": "Durabilidade protege apenas os efeitos de transações já confirmadas por COMMIT. Como a falha ocorreu antes do COMMIT, a propriedade responsável por garantir que todas as alterações sejam desfeitas é a atomicidade, que impõe o comportamento tudo‑ou‑nada da transação. Assim, não há violação de durabilidade; a atomicidade preserva a consistência ao abortar a transação.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 3
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-bd-transacoes-005",
+            "llm": "openai/gpt-oss-120b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "artifacts": [
+          {
+            "id": 41,
+            "request_id": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T12:57:51.055838+00:00",
+            "payload": {
+              "id": "rag-bd-transacoes-005",
+              "texto": "Transações de banco de dados devem preservar atomicidade, consistência, isolamento e durabilidade. O controle de concorrência busca evitar anomalias como leitura suja, atualização perdida e leitura não repetível. Bloqueios, ordenação por marcas de tempo e controle multiversão são estratégias usuais. Atomicidade significa que a transação produz todos os seus efeitos ou nenhum. Durabilidade protege os efeitos de transações já confirmadas por COMMIT. Uma falha antes da confirmação não demonstra violação de durabilidade; desfazer efeitos parciais preserva atomicidade.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Banco de Dados",
+                "habilidade": "Analisar transações concorrentes",
+                "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+                "referencia": "ELMASRI, R.; NAVATHE, S. Sistemas de Banco de Dados. Complemento conceitual: PostgreSQL, documentação 18, seção 3.4 Transactions, https://www.postgresql.org/docs/18/tutorial-transactions.html (consulta em 2026-09-22).",
+                "linha": 5,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 29.820143,
+                "termos_recuperados": [
+                  "acid",
+                  "antes",
+                  "atomicidade",
+                  "commit",
+                  "concorrencia",
+                  "controle",
+                  "durabilidade",
+                  "falha",
+                  "propriedades",
+                  "transacoes"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "acid",
+                  "antes",
+                  "atomicidade",
+                  "commit",
+                  "concorrencia",
+                  "controle",
+                  "durabilidade",
+                  "falha",
+                  "falhas",
+                  "gerenciamento",
+                  "mecanismos",
+                  "ocorrida",
+                  "propriedades",
+                  "recuperacao",
+                  "transacoes"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-bd-transacoes-005",
+                    "score": 29.820143
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 42,
+            "request_id": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+            "kind": "STEM",
+            "created_at": "2026-09-24T12:57:53.053295+00:00",
+            "payload": {
+              "enunciado": "Uma transação em um SGBD ACID realizou alterações em duas tabelas e, antes da execução do comando COMMIT, ocorreu uma falha de energia que interrompeu o sistema. Qual propriedade do modelo ACID assegura que nenhuma dessas alterações permanecerá gravada no banco de dados?",
+              "resposta_correta": "Atomicidade",
+              "explicacao": "Durabilidade protege apenas os efeitos de transações já confirmadas por COMMIT. Como a falha ocorreu antes do COMMIT, a propriedade responsável por garantir que todas as alterações sejam desfeitas é a atomicidade, que impõe o comportamento tudo‑ou‑nada da transação. Assim, não há violação de durabilidade; a atomicidade preserva a consistência ao abortar a transação.",
+              "competencia": "Analisar mecanismos de gerenciamento de dados",
+              "habilidade": "Analisar transações e recuperação de falhas",
+              "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 43,
+            "request_id": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T12:57:53.065572+00:00",
+            "payload": [
+              {
+                "texto": "Consistência",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Atomicidade, mas não responde ao cenário"
+              },
+              {
+                "texto": "Isolamento",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Atomicidade, mas não responde ao cenário"
+              },
+              {
+                "texto": "Durabilidade",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Atomicidade, mas não responde ao cenário"
+              },
+              {
+                "texto": "Serialização",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Atomicidade, mas não responde ao cenário"
+              }
+            ],
+            "provenance": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "Atomicidade",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 44,
+            "request_id": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T12:57:53.085136+00:00",
+            "payload": [],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.0.0",
+              "tipo": "deterministico"
+            }
+          }
+        ],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 61,
+            "request_id": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T12:57:51.042547+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-slm-v2-P01",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+              "dificuldade": 3,
+              "competencia": "Analisar mecanismos de gerenciamento de dados",
+              "habilidade": "Analisar transações e recuperação de falhas",
+              "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+              "restricoes": [
+                "uma única alternativa defensável",
+                "não exigir recurso visual"
+              ]
+            }
+          },
+          {
+            "id": 62,
+            "request_id": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T12:57:51.059444+00:00",
+            "evidence": {
+              "id": "rag-bd-transacoes-005"
+            }
+          },
+          {
+            "id": 63,
+            "request_id": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T12:57:53.057436+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 64,
+            "request_id": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T12:57:53.068740+00:00",
+            "evidence": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "Atomicidade",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 65,
+            "request_id": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+            "version_id": "791c420c-4dad-483b-b704-a78f9abe55bd",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T12:57:53.080008+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 66,
+            "request_id": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+            "version_id": "791c420c-4dad-483b-b704-a78f9abe55bd",
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "GENERATION_COMPLETED",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "geração concluída sem red flags",
+            "created_at": "2026-09-24T12:57:53.089910+00:00",
+            "evidence": {}
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 2.077
+    },
+    {
+      "spec_id": "P02",
+      "specification": {
+        "spec_id": "P02",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+        "dificuldade": 3,
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "restricoes": [
+          "uma única alternativa defensável",
+          "não perguntar apenas por uma propriedade isolada"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+        "solicitante_id": "evaluation-slm-v2-P02",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T12:57:53.100630+00:00",
+        "updated_at": "2026-09-24T12:57:53.100630+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-slm-v2-P02",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+          "dificuldade": 3,
+          "competencia": "Analisar arquiteturas de comunicação",
+          "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+          "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+          "restricoes": [
+            "uma única alternativa defensável",
+            "não perguntar apenas por uma propriedade isolada"
+          ]
+        }
+      },
+      "request_id": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+      "generation_status": 200,
+      "generation": {
+        "request_id": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+        "version": {
+          "id": "df9c768c-1cd2-4fa5-afb6-7b1cab7f9c0f",
+          "request_id": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+          "version_number": 1,
+          "created_at": "2026-09-24T12:57:55.058101+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Uma aplicação de streaming de vídeo em tempo real precisa de baixa latência, tolera perda de pacotes e não requer entrega ordenada nem controle de fluxo. Qual protocolo de transporte da camada TCP/IP deve ser escolhido?",
+            "alternativas": [
+              "QUIC",
+              "SCTP",
+              "TCP",
+              "UDP",
+              "DCCP"
+            ],
+            "correta": 3,
+            "explicacao": "UDP oferece serviço sem conexão, com mínima sobrecarga, não garante entrega nem ordenação e, portanto, atende a requisitos de baixa latência e tolerância a perdas, ao contrário do TCP que impõe controle de fluxo, confiabilidade e ordenação.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 2
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-redes-transporte-007",
+            "llm": "openai/gpt-oss-120b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "state": "GENERATION_COMPLETED",
+        "red_flags": []
+      },
+      "history": {
+        "request": {
+          "id": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+          "solicitante_id": "evaluation-slm-v2-P02",
+          "state": "GENERATION_COMPLETED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 2,
+          "stem_attempts": 1,
+          "distractor_attempts": 1,
+          "created_at": "2026-09-24T12:57:53.100630+00:00",
+          "updated_at": "2026-09-24T12:57:55.069306+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-slm-v2-P02",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+            "dificuldade": 3,
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "restricoes": [
+              "uma única alternativa defensável",
+              "não perguntar apenas por uma propriedade isolada"
+            ]
+          }
+        },
+        "versions": [
+          {
+            "id": "df9c768c-1cd2-4fa5-afb6-7b1cab7f9c0f",
+            "version_number": 1,
+            "created_at": "2026-09-24T12:57:55.058101+00:00"
+          }
+        ],
+        "latest_version": {
+          "id": "df9c768c-1cd2-4fa5-afb6-7b1cab7f9c0f",
+          "request_id": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+          "version_number": 1,
+          "created_at": "2026-09-24T12:57:55.058101+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Uma aplicação de streaming de vídeo em tempo real precisa de baixa latência, tolera perda de pacotes e não requer entrega ordenada nem controle de fluxo. Qual protocolo de transporte da camada TCP/IP deve ser escolhido?",
+            "alternativas": [
+              "QUIC",
+              "SCTP",
+              "TCP",
+              "UDP",
+              "DCCP"
+            ],
+            "correta": 3,
+            "explicacao": "UDP oferece serviço sem conexão, com mínima sobrecarga, não garante entrega nem ordenação e, portanto, atende a requisitos de baixa latência e tolerância a perdas, ao contrário do TCP que impõe controle de fluxo, confiabilidade e ordenação.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 2
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-redes-transporte-007",
+            "llm": "openai/gpt-oss-120b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "artifacts": [
+          {
+            "id": 45,
+            "request_id": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T12:57:53.113933+00:00",
+            "payload": {
+              "id": "rag-redes-transporte-007",
+              "texto": "Na arquitetura TCP/IP, a camada de transporte oferece comunicação fim a fim entre processos. O TCP fornece serviço orientado a conexão, entrega confiável, controle de fluxo e controle de congestionamento. O UDP oferece serviço sem conexão com menor sobrecarga, sem garantir entrega ou ordenação.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Redes de Computadores",
+                "habilidade": "Comparar protocolos de transporte",
+                "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet.",
+                "linha": 7,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 25.756259,
+                "termos_recuperados": [
+                  "comunicacao",
+                  "fim",
+                  "protocolos",
+                  "tcp",
+                  "transporte",
+                  "udp"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "arquiteturas",
+                  "cenario",
+                  "comunicacao",
+                  "conforme",
+                  "fim",
+                  "garantias",
+                  "oferecidas",
+                  "pelos",
+                  "protocolo",
+                  "protocolos",
+                  "requisitos",
+                  "selecionar",
+                  "tcp",
+                  "transporte",
+                  "udp"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-redes-transporte-007",
+                    "score": 25.756259
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 46,
+            "request_id": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+            "kind": "STEM",
+            "created_at": "2026-09-24T12:57:55.040716+00:00",
+            "payload": {
+              "enunciado": "Uma aplicação de streaming de vídeo em tempo real precisa de baixa latência, tolera perda de pacotes e não requer entrega ordenada nem controle de fluxo. Qual protocolo de transporte da camada TCP/IP deve ser escolhido?",
+              "resposta_correta": "UDP",
+              "explicacao": "UDP oferece serviço sem conexão, com mínima sobrecarga, não garante entrega nem ordenação e, portanto, atende a requisitos de baixa latência e tolerância a perdas, ao contrário do TCP que impõe controle de fluxo, confiabilidade e ordenação.",
+              "competencia": "Analisar arquiteturas de comunicação",
+              "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 47,
+            "request_id": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T12:57:55.051101+00:00",
+            "payload": [
+              {
+                "texto": "TCP",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de UDP, mas não responde ao cenário"
+              },
+              {
+                "texto": "SCTP",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de UDP, mas não responde ao cenário"
+              },
+              {
+                "texto": "DCCP",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de UDP, mas não responde ao cenário"
+              },
+              {
+                "texto": "QUIC",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de UDP, mas não responde ao cenário"
+              }
+            ],
+            "provenance": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "UDP",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 48,
+            "request_id": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T12:57:55.065667+00:00",
+            "payload": [],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.0.0",
+              "tipo": "deterministico"
+            }
+          }
+        ],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 67,
+            "request_id": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T12:57:53.101077+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-slm-v2-P02",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+              "dificuldade": 3,
+              "competencia": "Analisar arquiteturas de comunicação",
+              "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "restricoes": [
+                "uma única alternativa defensável",
+                "não perguntar apenas por uma propriedade isolada"
+              ]
+            }
+          },
+          {
+            "id": 68,
+            "request_id": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T12:57:53.117588+00:00",
+            "evidence": {
+              "id": "rag-redes-transporte-007"
+            }
+          },
+          {
+            "id": 69,
+            "request_id": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T12:57:55.044157+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 70,
+            "request_id": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T12:57:55.054327+00:00",
+            "evidence": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "UDP",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 71,
+            "request_id": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+            "version_id": "df9c768c-1cd2-4fa5-afb6-7b1cab7f9c0f",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T12:57:55.062762+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 72,
+            "request_id": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+            "version_id": "df9c768c-1cd2-4fa5-afb6-7b1cab7f9c0f",
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "GENERATION_COMPLETED",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "geração concluída sem red flags",
+            "created_at": "2026-09-24T12:57:55.069540+00:00",
+            "evidence": {}
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 1.981
+    },
+    {
+      "spec_id": "P03",
+      "specification": {
+        "spec_id": "P03",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+        "dificuldade": 3,
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+        "solicitante_id": "evaluation-slm-v2-P03",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T12:57:55.088087+00:00",
+        "updated_at": "2026-09-24T12:57:55.088087+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-slm-v2-P03",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+          "dificuldade": 3,
+          "competencia": "Analisar requisitos de software",
+          "habilidade": "Classificar requisitos conforme sua finalidade",
+          "objeto_conhecimento": "Engenharia de requisitos",
+          "restricoes": [
+            "usar cenário aplicado",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+      "generation_status": 200,
+      "generation": {
+        "request_id": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+        "version": {
+          "id": "4a9c6e96-8ee9-4312-95ff-a2fd70179742",
+          "request_id": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+          "version_number": 1,
+          "created_at": "2026-09-24T12:58:59.328364+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Em um sistema de gestão de biblioteca, foram especificados os seguintes requisitos: REQ1 – O usuário deve poder pesquisar livros por título; REQ2 – A pesquisa deve retornar resultados em até 2 segundos; REQ3 – O acesso ao sistema deve ser restrito a usuários autenticados; REQ4 – O sistema deve suportar até 500 usuários simultâneos. Qual desses requisitos corresponde a um requisito não funcional?",
+            "alternativas": [
+              "Acesso ao sistema pode ser liberado gratuitamente",
+              "REQ4",
+              "REQ2",
+              "REQ1",
+              "REQ3"
+            ],
+            "correta": 2,
+            "explicacao": "REQ2 trata de desempenho (tempo máximo de resposta), que caracteriza um atributo de qualidade do sistema, portanto é um requisito não funcional. Os demais descrevem funcionalidades específicas do sistema.",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 1
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-engsoftware-requisitos-009",
+            "llm": "openai/gpt-oss-120b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "state": "GENERATION_COMPLETED",
+        "red_flags": []
+      },
+      "history": {
+        "request": {
+          "id": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+          "solicitante_id": "evaluation-slm-v2-P03",
+          "state": "GENERATION_COMPLETED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 2,
+          "stem_attempts": 1,
+          "distractor_attempts": 1,
+          "created_at": "2026-09-24T12:57:55.088087+00:00",
+          "updated_at": "2026-09-24T12:58:59.345738+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-slm-v2-P03",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+            "dificuldade": 3,
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "restricoes": [
+              "usar cenário aplicado",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [
+          {
+            "id": "4a9c6e96-8ee9-4312-95ff-a2fd70179742",
+            "version_number": 1,
+            "created_at": "2026-09-24T12:58:59.328364+00:00"
+          }
+        ],
+        "latest_version": {
+          "id": "4a9c6e96-8ee9-4312-95ff-a2fd70179742",
+          "request_id": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+          "version_number": 1,
+          "created_at": "2026-09-24T12:58:59.328364+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Em um sistema de gestão de biblioteca, foram especificados os seguintes requisitos: REQ1 – O usuário deve poder pesquisar livros por título; REQ2 – A pesquisa deve retornar resultados em até 2 segundos; REQ3 – O acesso ao sistema deve ser restrito a usuários autenticados; REQ4 – O sistema deve suportar até 500 usuários simultâneos. Qual desses requisitos corresponde a um requisito não funcional?",
+            "alternativas": [
+              "Acesso ao sistema pode ser liberado gratuitamente",
+              "REQ4",
+              "REQ2",
+              "REQ1",
+              "REQ3"
+            ],
+            "correta": 2,
+            "explicacao": "REQ2 trata de desempenho (tempo máximo de resposta), que caracteriza um atributo de qualidade do sistema, portanto é um requisito não funcional. Os demais descrevem funcionalidades específicas do sistema.",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 1
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-engsoftware-requisitos-009",
+            "llm": "openai/gpt-oss-120b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "artifacts": [
+          {
+            "id": 49,
+            "request_id": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T12:57:55.102869+00:00",
+            "payload": {
+              "id": "rag-engsoftware-requisitos-009",
+              "texto": "Requisitos funcionais descrevem serviços e comportamentos esperados do sistema. Requisitos não funcionais estabelecem atributos e restrições, como desempenho, segurança, confiabilidade e usabilidade. Elicitação, especificação, validação e gerenciamento de mudanças ajudam a manter alinhamento entre necessidades e solução.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Engenharia de Software",
+                "habilidade": "Analisar e classificar requisitos",
+                "objeto_conhecimento": "Engenharia de requisitos",
+                "referencia": "SOMMERVILLE, I. Engenharia de Software.",
+                "linha": 9,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 15.611199,
+                "termos_recuperados": [
+                  "classificar",
+                  "engenharia",
+                  "funcionais",
+                  "nao",
+                  "requisitos"
+                ],
+                "candidatas_relevantes": 3,
+                "consulta_normalizada": [
+                  "cenario",
+                  "classificar",
+                  "conforme",
+                  "engenharia",
+                  "finalidade",
+                  "funcionais",
+                  "nao",
+                  "projeto",
+                  "requisitos"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-engsoftware-requisitos-009",
+                    "score": 15.611199
+                  },
+                  {
+                    "id": "rag-engsoftware-testes-010",
+                    "score": 2.733973
+                  },
+                  {
+                    "id": "rag-estruturas-dados-004",
+                    "score": 1.587169
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 50,
+            "request_id": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+            "kind": "STEM",
+            "created_at": "2026-09-24T12:57:57.276688+00:00",
+            "payload": {
+              "enunciado": "Em um sistema de gestão de biblioteca, foram especificados os seguintes requisitos: REQ1 – O usuário deve poder pesquisar livros por título; REQ2 – A pesquisa deve retornar resultados em até 2 segundos; REQ3 – O acesso ao sistema deve ser restrito a usuários autenticados; REQ4 – O sistema deve suportar até 500 usuários simultâneos. Qual desses requisitos corresponde a um requisito não funcional?",
+              "resposta_correta": "REQ2",
+              "explicacao": "REQ2 trata de desempenho (tempo máximo de resposta), que caracteriza um atributo de qualidade do sistema, portanto é um requisito não funcional. Os demais descrevem funcionalidades específicas do sistema.",
+              "competencia": "Analisar requisitos de software",
+              "habilidade": "Classificar requisitos conforme sua finalidade",
+              "objeto_conhecimento": "Engenharia de requisitos",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 51,
+            "request_id": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T12:58:59.314914+00:00",
+            "payload": [
+              {
+                "texto": "REQ1",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "REQ3",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "REQ4",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "Acesso ao sistema pode ser liberado gratuitamente",
+                "erro": "",
+                "por_que_e_falso": ""
+              }
+            ],
+            "provenance": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_3:distratos->distratores",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto"
+              ],
+              "amostras": 3,
+              "candidatos_gerados": 7,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 7,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  0,
+                  1,
+                  3,
+                  5
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 52,
+            "request_id": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T12:58:59.339863+00:00",
+            "payload": [],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.0.0",
+              "tipo": "deterministico"
+            }
+          }
+        ],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 73,
+            "request_id": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T12:57:55.088984+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-slm-v2-P03",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+              "dificuldade": 3,
+              "competencia": "Analisar requisitos de software",
+              "habilidade": "Classificar requisitos conforme sua finalidade",
+              "objeto_conhecimento": "Engenharia de requisitos",
+              "restricoes": [
+                "usar cenário aplicado",
+                "uma única alternativa defensável"
+              ]
+            }
+          },
+          {
+            "id": 74,
+            "request_id": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T12:57:55.106334+00:00",
+            "evidence": {
+              "id": "rag-engsoftware-requisitos-009"
+            }
+          },
+          {
+            "id": 75,
+            "request_id": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T12:57:57.280008+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 76,
+            "request_id": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T12:58:59.318882+00:00",
+            "evidence": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_3:distratos->distratores",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto"
+              ],
+              "amostras": 3,
+              "candidatos_gerados": 7,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 7,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  0,
+                  1,
+                  3,
+                  5
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 77,
+            "request_id": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+            "version_id": "4a9c6e96-8ee9-4312-95ff-a2fd70179742",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T12:58:59.334381+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 78,
+            "request_id": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+            "version_id": "4a9c6e96-8ee9-4312-95ff-a2fd70179742",
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "GENERATION_COMPLETED",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "geração concluída sem red flags",
+            "created_at": "2026-09-24T12:58:59.345848+00:00",
+            "evidence": {}
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 64.32
+    },
+    {
+      "spec_id": "P04",
+      "specification": {
+        "spec_id": "P04",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+        "dificuldade": 3,
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "560bd37f-a337-4a8a-9a88-2392863f4354",
+        "solicitante_id": "evaluation-slm-v2-P04",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T12:58:59.424772+00:00",
+        "updated_at": "2026-09-24T12:58:59.424772+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-slm-v2-P04",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+          "dificuldade": 3,
+          "competencia": "Projetar soluções algorítmicas",
+          "habilidade": "Selecionar estruturas de dados",
+          "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+          "restricoes": [
+            "usar cenário aplicado",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "560bd37f-a337-4a8a-9a88-2392863f4354",
+      "generation_status": 200,
+      "generation": {
+        "request_id": "560bd37f-a337-4a8a-9a88-2392863f4354",
+        "version": {
+          "id": "2741b9cd-56bb-414a-9f2e-8c224d720b49",
+          "request_id": "560bd37f-a337-4a8a-9a88-2392863f4354",
+          "version_number": 1,
+          "created_at": "2026-09-24T12:59:01.709950+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Um interpretador de calculadora recebe expressões aritméticas em notação pós‑fixada (notação polonesa inversa) e deve avaliá‑las realizando sucessivas operações de empilhar operandos e desempilhar para aplicar operadores. Qual estrutura de dados é a mais adequada para implementar esse algoritmo, considerando as operações predominantes?",
+            "alternativas": [
+              "Árvore binária de busca",
+              "Tabela hash",
+              "Fila",
+              "Heap",
+              "pilha"
+            ],
+            "correta": 4,
+            "explicacao": "Na notação pós‑fixada, os operandos são inseridos e mantidos até que um operador seja encontrado; então os dois últimos operandos são retirados, a operação é executada e o resultado é empilhado novamente. Essa sequência de push e pop corresponde exatamente ao comportamento LIFO de uma pilha, garantindo O(1) para ambas as operações e simplificando a avaliação.",
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 3
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-estruturas-dados-004",
+            "llm": "openai/gpt-oss-120b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "state": "GENERATION_COMPLETED",
+        "red_flags": []
+      },
+      "history": {
+        "request": {
+          "id": "560bd37f-a337-4a8a-9a88-2392863f4354",
+          "solicitante_id": "evaluation-slm-v2-P04",
+          "state": "GENERATION_COMPLETED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 2,
+          "stem_attempts": 1,
+          "distractor_attempts": 1,
+          "created_at": "2026-09-24T12:58:59.424772+00:00",
+          "updated_at": "2026-09-24T12:59:01.721707+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-slm-v2-P04",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+            "dificuldade": 3,
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "restricoes": [
+              "usar cenário aplicado",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [
+          {
+            "id": "2741b9cd-56bb-414a-9f2e-8c224d720b49",
+            "version_number": 1,
+            "created_at": "2026-09-24T12:59:01.709950+00:00"
+          }
+        ],
+        "latest_version": {
+          "id": "2741b9cd-56bb-414a-9f2e-8c224d720b49",
+          "request_id": "560bd37f-a337-4a8a-9a88-2392863f4354",
+          "version_number": 1,
+          "created_at": "2026-09-24T12:59:01.709950+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Um interpretador de calculadora recebe expressões aritméticas em notação pós‑fixada (notação polonesa inversa) e deve avaliá‑las realizando sucessivas operações de empilhar operandos e desempilhar para aplicar operadores. Qual estrutura de dados é a mais adequada para implementar esse algoritmo, considerando as operações predominantes?",
+            "alternativas": [
+              "Árvore binária de busca",
+              "Tabela hash",
+              "Fila",
+              "Heap",
+              "pilha"
+            ],
+            "correta": 4,
+            "explicacao": "Na notação pós‑fixada, os operandos são inseridos e mantidos até que um operador seja encontrado; então os dois últimos operandos são retirados, a operação é executada e o resultado é empilhado novamente. Essa sequência de push e pop corresponde exatamente ao comportamento LIFO de uma pilha, garantindo O(1) para ambas as operações e simplificando a avaliação.",
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 3
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-estruturas-dados-004",
+            "llm": "openai/gpt-oss-120b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "artifacts": [
+          {
+            "id": 53,
+            "request_id": "560bd37f-a337-4a8a-9a88-2392863f4354",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T12:58:59.458793+00:00",
+            "payload": {
+              "id": "rag-estruturas-dados-004",
+              "texto": "Pilhas seguem a disciplina LIFO, enquanto filas seguem FIFO. Árvores de busca organizam chaves hierarquicamente e tabelas de dispersão usam funções hash para localizar elementos. A estrutura apropriada depende das operações predominantes, dos requisitos de ordenação e do custo aceitável de busca, inserção e remoção.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Algoritmos e Estruturas de Dados",
+                "habilidade": "Selecionar estruturas de dados",
+                "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+                "referencia": "CORMEN, T. H. et al. Algoritmos: Teoria e Prática.",
+                "linha": 4,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 33.841909,
+                "termos_recuperados": [
+                  "arvores",
+                  "estrutura",
+                  "estruturas",
+                  "filas",
+                  "hash",
+                  "operacoes",
+                  "pilhas",
+                  "predominantes",
+                  "selecionar",
+                  "tabelas"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "adequada",
+                  "algoritmicas",
+                  "arvores",
+                  "considerando",
+                  "estrutura",
+                  "estruturas",
+                  "filas",
+                  "hash",
+                  "operacoes",
+                  "pilhas",
+                  "predominantes",
+                  "projetar",
+                  "selecionar",
+                  "solucoes",
+                  "tabelas"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-estruturas-dados-004",
+                    "score": 33.841909
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 54,
+            "request_id": "560bd37f-a337-4a8a-9a88-2392863f4354",
+            "kind": "STEM",
+            "created_at": "2026-09-24T12:59:01.687332+00:00",
+            "payload": {
+              "enunciado": "Um interpretador de calculadora recebe expressões aritméticas em notação pós‑fixada (notação polonesa inversa) e deve avaliá‑las realizando sucessivas operações de empilhar operandos e desempilhar para aplicar operadores. Qual estrutura de dados é a mais adequada para implementar esse algoritmo, considerando as operações predominantes?",
+              "resposta_correta": "pilha",
+              "explicacao": "Na notação pós‑fixada, os operandos são inseridos e mantidos até que um operador seja encontrado; então os dois últimos operandos são retirados, a operação é executada e o resultado é empilhado novamente. Essa sequência de push e pop corresponde exatamente ao comportamento LIFO de uma pilha, garantindo O(1) para ambas as operações e simplificando a avaliação.",
+              "competencia": "Projetar soluções algorítmicas",
+              "habilidade": "Selecionar estruturas de dados",
+              "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 55,
+            "request_id": "560bd37f-a337-4a8a-9a88-2392863f4354",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T12:59:01.700795+00:00",
+            "payload": [
+              {
+                "texto": "Fila",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Pilha, mas não responde ao cenário"
+              },
+              {
+                "texto": "Árvore binária de busca",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Pilha, mas não responde ao cenário"
+              },
+              {
+                "texto": "Tabela hash",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Pilha, mas não responde ao cenário"
+              },
+              {
+                "texto": "Heap",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Pilha, mas não responde ao cenário"
+              }
+            ],
+            "provenance": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "Pilha",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 56,
+            "request_id": "560bd37f-a337-4a8a-9a88-2392863f4354",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T12:59:01.718242+00:00",
+            "payload": [],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.0.0",
+              "tipo": "deterministico"
+            }
+          }
+        ],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 79,
+            "request_id": "560bd37f-a337-4a8a-9a88-2392863f4354",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T12:58:59.425480+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-slm-v2-P04",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+              "dificuldade": 3,
+              "competencia": "Projetar soluções algorítmicas",
+              "habilidade": "Selecionar estruturas de dados",
+              "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+              "restricoes": [
+                "usar cenário aplicado",
+                "uma única alternativa defensável"
+              ]
+            }
+          },
+          {
+            "id": 80,
+            "request_id": "560bd37f-a337-4a8a-9a88-2392863f4354",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T12:58:59.463487+00:00",
+            "evidence": {
+              "id": "rag-estruturas-dados-004"
+            }
+          },
+          {
+            "id": 81,
+            "request_id": "560bd37f-a337-4a8a-9a88-2392863f4354",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T12:59:01.691339+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 82,
+            "request_id": "560bd37f-a337-4a8a-9a88-2392863f4354",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T12:59:01.705975+00:00",
+            "evidence": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "Pilha",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 83,
+            "request_id": "560bd37f-a337-4a8a-9a88-2392863f4354",
+            "version_id": "2741b9cd-56bb-414a-9f2e-8c224d720b49",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T12:59:01.714891+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 84,
+            "request_id": "560bd37f-a337-4a8a-9a88-2392863f4354",
+            "version_id": "2741b9cd-56bb-414a-9f2e-8c224d720b49",
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "GENERATION_COMPLETED",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "geração concluída sem red flags",
+            "created_at": "2026-09-24T12:59:01.721888+00:00",
+            "evidence": {}
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 2.319
+    },
+    {
+      "spec_id": "P05",
+      "specification": {
+        "spec_id": "P05",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+        "dificuldade": 3,
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+        "solicitante_id": "evaluation-slm-v2-P05",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T12:59:01.748226+00:00",
+        "updated_at": "2026-09-24T12:59:01.748226+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-slm-v2-P05",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+          "dificuldade": 3,
+          "competencia": "Analisar métodos de inteligência artificial",
+          "habilidade": "Distinguir paradigmas de aprendizado",
+          "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+          "restricoes": [
+            "usar cenário aplicado",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+      "generation_status": 200,
+      "generation": {
+        "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+        "version": {
+          "id": "c8ca62f9-a97c-475d-9620-9c5b49aede63",
+          "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+          "version_number": 1,
+          "created_at": "2026-09-24T12:59:39.625809+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Uma empresa possui um histórico de 10.000 clientes contendo as variáveis idade, renda, número de compras nos últimos 6 meses e, para cada cliente, a informação se ele cancelou o serviço (sim ou não). O objetivo é criar um modelo que, a partir das características dos clientes, preveja se um novo cliente irá cancelar o serviço. Qual paradigma de aprendizado de máquina deve ser empregado?",
+            "alternativas": [
+              "machine learning",
+              "aprendizado supervisionado",
+              "aprendizagem automática",
+              "modelagem probabilística",
+              "modelagem estadística"
+            ],
+            "correta": 1,
+            "explicacao": "O conjunto de dados inclui um rótulo de saída (cancelou ou não). Quando os exemplos são rotulados, o modelo é treinado para mapear entradas às saídas, caracterizando o aprendizado supervisionado. O objetivo de predizer o rótulo para novos casos confirma essa escolha.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 2
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-ia-aprendizado-011",
+            "llm": "openai/gpt-oss-120b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "state": "GENERATION_COMPLETED",
+        "red_flags": []
+      },
+      "history": {
+        "request": {
+          "id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+          "solicitante_id": "evaluation-slm-v2-P05",
+          "state": "GENERATION_COMPLETED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 3,
+          "stem_attempts": 1,
+          "distractor_attempts": 2,
+          "created_at": "2026-09-24T12:59:01.748226+00:00",
+          "updated_at": "2026-09-24T12:59:39.633966+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-slm-v2-P05",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+            "dificuldade": 3,
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "restricoes": [
+              "usar cenário aplicado",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [
+          {
+            "id": "c8ca62f9-a97c-475d-9620-9c5b49aede63",
+            "version_number": 1,
+            "created_at": "2026-09-24T12:59:39.625809+00:00"
+          }
+        ],
+        "latest_version": {
+          "id": "c8ca62f9-a97c-475d-9620-9c5b49aede63",
+          "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+          "version_number": 1,
+          "created_at": "2026-09-24T12:59:39.625809+00:00",
+          "question": {
+            "exame": "ENADE",
+            "enunciado": "Uma empresa possui um histórico de 10.000 clientes contendo as variáveis idade, renda, número de compras nos últimos 6 meses e, para cada cliente, a informação se ele cancelou o serviço (sim ou não). O objetivo é criar um modelo que, a partir das características dos clientes, preveja se um novo cliente irá cancelar o serviço. Qual paradigma de aprendizado de máquina deve ser empregado?",
+            "alternativas": [
+              "machine learning",
+              "aprendizado supervisionado",
+              "aprendizagem automática",
+              "modelagem probabilística",
+              "modelagem estadística"
+            ],
+            "correta": 1,
+            "explicacao": "O conjunto de dados inclui um rótulo de saída (cancelou ou não). Quando os exemplos são rotulados, o modelo é treinado para mapear entradas às saídas, caracterizando o aprendizado supervisionado. O objetivo de predizer o rótulo para novos casos confirma essa escolha.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 2
+              }
+            ]
+          },
+          "provenance": {
+            "rag_id": "rag-ia-aprendizado-011",
+            "llm": "openai/gpt-oss-120b",
+            "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct:base))"
+          }
+        },
+        "artifacts": [
+          {
+            "id": 57,
+            "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T12:59:01.764537+00:00",
+            "payload": {
+              "id": "rag-ia-aprendizado-011",
+              "texto": "No aprendizado supervisionado, exemplos rotulados orientam a construção de modelos para classificação ou regressão. No aprendizado não supervisionado, o objetivo é identificar estruturas ou agrupamentos sem rótulos de saída. A avaliação deve usar dados independentes do treinamento para estimar generalização e reduzir conclusões afetadas por sobreajuste.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Inteligência Artificial",
+                "habilidade": "Distinguir paradigmas de aprendizado",
+                "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+                "referencia": "RUSSELL, S.; NORVIG, P. Inteligência Artificial: Uma Abordagem Moderna.",
+                "linha": 11,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 22.082778,
+                "termos_recuperados": [
+                  "aprendizado",
+                  "artificial",
+                  "inteligencia",
+                  "nao",
+                  "paradigmas",
+                  "supervisionado"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "aprendizado",
+                  "artificial",
+                  "disponiveis",
+                  "inteligencia",
+                  "metodos",
+                  "nao",
+                  "paradigmas",
+                  "partir",
+                  "supervisionado"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-ia-aprendizado-011",
+                    "score": 22.082778
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 58,
+            "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+            "kind": "STEM",
+            "created_at": "2026-09-24T12:59:03.381854+00:00",
+            "payload": {
+              "enunciado": "Uma empresa possui um histórico de 10.000 clientes contendo as variáveis idade, renda, número de compras nos últimos 6 meses e, para cada cliente, a informação se ele cancelou o serviço (sim ou não). O objetivo é criar um modelo que, a partir das características dos clientes, preveja se um novo cliente irá cancelar o serviço. Qual paradigma de aprendizado de máquina deve ser empregado?",
+              "resposta_correta": "aprendizado supervisionado",
+              "explicacao": "O conjunto de dados inclui um rótulo de saída (cancelou ou não). Quando os exemplos são rotulados, o modelo é treinado para mapear entradas às saídas, caracterizando o aprendizado supervisionado. O objetivo de predizer o rótulo para novos casos confirma essa escolha.",
+              "competencia": "Analisar métodos de inteligência artificial",
+              "habilidade": "Distinguir paradigmas de aprendizado",
+              "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 59,
+            "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T12:59:03.392873+00:00",
+            "payload": [
+              {
+                "texto": "Aprendizado não supervisionado",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Aprendizado supervisionado, mas não responde ao cenário"
+              },
+              {
+                "texto": "Aprendizado por reforço",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Aprendizado supervisionado, mas não responde ao cenário"
+              },
+              {
+                "texto": "Aprendizado semissupervisionado",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Aprendizado supervisionado, mas não responde ao cenário"
+              },
+              {
+                "texto": "Regressão supervisionada",
+                "erro": "conceito_vizinho",
+                "por_que_e_falso": "conceito da mesma família de Aprendizado supervisionado, mas não responde ao cenário"
+              }
+            ],
+            "provenance": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "Aprendizado supervisionado",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 60,
+            "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+            "kind": "DISTRACTORS",
+            "created_at": "2026-09-24T12:59:39.620288+00:00",
+            "payload": [
+              {
+                "texto": "aprendizagem automática",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "machine learning",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "modelagem estadística",
+                "erro": "",
+                "por_que_e_falso": ""
+              },
+              {
+                "texto": "modelagem probabilística",
+                "erro": "",
+                "por_que_e_falso": ""
+              }
+            ],
+            "provenance": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_3:distratos->distratores",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto"
+              ],
+              "amostras": 3,
+              "candidatos_gerados": 8,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 8,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  0,
+                  1,
+                  2,
+                  5
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 61,
+            "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+            "kind": "DETERMINISTIC_RED_FLAGS",
+            "created_at": "2026-09-24T12:59:39.631064+00:00",
+            "payload": [],
+            "provenance": {
+              "modelo": "haila-deterministic-redflags-v3",
+              "catalog_version": "haila-redflags-3.0.0",
+              "tipo": "deterministico"
+            }
+          }
+        ],
+        "red_flags": [
+          {
+            "id": 1,
+            "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+            "code": "distrator_parafraseia_gabarito",
+            "stage": "DISTRATORES",
+            "field": "distratores",
+            "evidence": "similaridade lexical >= 0.82",
+            "repair_target": "DISTRATORES",
+            "created_at": "2026-09-24T12:59:03.398965+00:00"
+          }
+        ],
+        "events": [
+          {
+            "id": 85,
+            "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T12:59:01.749419+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-slm-v2-P05",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+              "dificuldade": 3,
+              "competencia": "Analisar métodos de inteligência artificial",
+              "habilidade": "Distinguir paradigmas de aprendizado",
+              "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+              "restricoes": [
+                "usar cenário aplicado",
+                "uma única alternativa defensável"
+              ]
+            }
+          },
+          {
+            "id": 86,
+            "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T12:59:01.767707+00:00",
+            "evidence": {
+              "id": "rag-ia-aprendizado-011"
+            }
+          },
+          {
+            "id": 87,
+            "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T12:59:03.384877+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 88,
+            "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T12:59:03.395802+00:00",
+            "evidence": {
+              "modelo": "slm-memory-curated-v1",
+              "estrategia": "familia_conceitual_curada",
+              "resposta_reconhecida": "Aprendizado supervisionado",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "pool_exato"
+            }
+          },
+          {
+            "id": 89,
+            "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+            "version_id": null,
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "BLOCKED_BY_RED_FLAGS",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "distratores/item bloqueados",
+            "created_at": "2026-09-24T12:59:03.402258+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "distrator_parafraseia_gabarito",
+                  "etapa": "DISTRATORES",
+                  "campo": "distratores",
+                  "evidencia": "similaridade lexical >= 0.82",
+                  "reparo": "DISTRATORES"
+                }
+              ]
+            }
+          },
+          {
+            "id": 90,
+            "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+            "version_id": null,
+            "from_state": "BLOCKED_BY_RED_FLAGS",
+            "to_state": "DISTRACTORS_GENERATED",
+            "component": "HAILA_SLM",
+            "reason": "distratores gerados",
+            "created_at": "2026-09-24T12:59:39.623362+00:00",
+            "evidence": {
+              "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+              "adapter_path": null,
+              "normalizacoes": [
+                "amostra_1:distratos->distratores",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_1:string->objeto",
+                "amostra_2:distratos->distratores",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_2:string->objeto",
+                "amostra_3:distratos->distratores",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto",
+                "amostra_3:string->objeto"
+              ],
+              "amostras": 3,
+              "candidatos_gerados": 8,
+              "feedback_aplicado": false,
+              "alternativas_rejeitadas": [],
+              "prompt_version": "qwen-distractors-1.4.0",
+              "familia": "resposta_curta",
+              "roteador": "hybrid-v8",
+              "selecao": "deterministic_best_of_n",
+              "candidatos_no_pool": 8,
+              "seletor": {
+                "modelo": "deterministic-pool-selector-v1",
+                "indices_selecionados": [
+                  0,
+                  1,
+                  2,
+                  5
+                ],
+                "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+              }
+            }
+          },
+          {
+            "id": 91,
+            "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+            "version_id": "c8ca62f9-a97c-475d-9620-9c5b49aede63",
+            "from_state": "DISTRACTORS_GENERATED",
+            "to_state": "ITEM_ASSEMBLED",
+            "component": "HAILA_ASSEMBLER",
+            "reason": "item montado",
+            "created_at": "2026-09-24T12:59:39.628249+00:00",
+            "evidence": {}
+          },
+          {
+            "id": 92,
+            "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+            "version_id": "c8ca62f9-a97c-475d-9620-9c5b49aede63",
+            "from_state": "ITEM_ASSEMBLED",
+            "to_state": "GENERATION_COMPLETED",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "geração concluída sem red flags",
+            "created_at": "2026-09-24T12:59:39.634083+00:00",
+            "evidence": {}
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 37.897
+    }
+  ],
+  "finished_at": "2026-09-24T12:59:39.642312+00:00"
+}

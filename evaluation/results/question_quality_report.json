@@ -1,0 +1,1535 @@
+{
+  "metodo": "triagem-deterministica-haila-v1",
+  "itens": [
+    {
+      "request_id": "50b77170-cebc-425a-a872-03028a35e0e0",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "haila-studio",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Analisar a diferença entre atomicidade e durabilidade diante de uma falha ocorrida antes do COMMIT.",
+        "dificuldade": 3,
+        "competencia": null,
+        "habilidade": null,
+        "objeto_conhecimento": "arquitetura de computadores",
+        "restricoes": []
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Uma transação em um SGBD sofre queda de energia antes de executar COMMIT. Considerando as propriedades ACID, qual delas assegura que a perda das alterações feitas até o ponto da falha não constitui violação da garantia oferecida pelo sistema?",
+        "alternativas": [
+          "Atomicidade",
+          "Segurança",
+          "Persistência",
+          "Conservação",
+          "Integridade"
+        ],
+        "correta": 0,
+        "explicacao": "A atomicidade garante o comportamento tudo‑ou‑nada: se a transação não chega a COMMIT, todas as suas alterações são desfeitas. Assim, a perda das mudanças ocorridas antes do COMMIT é esperada e não viola a propriedade. A durabilidade só se aplica a transações já confirmadas, portanto não é afetada.",
+        "competencia": "Aplicar princípios de gerenciamento de dados e transações em sistemas de banco de dados",
+        "habilidade": "Analisar o impacto de falhas nas propriedades ACID de um SGBD",
+        "objeto_conhecimento": "Propriedades ACID – atomicidade e durabilidade",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "flags": [
+        {
+          "codigo": "possivel_desalinhamento_do_objeto_conhecimento",
+          "camada": "semantica_triagem",
+          "campo": "objeto_conhecimento",
+          "evidencia": "solicitado='arquitetura de computadores'; gerado='Propriedades ACID – atomicidade e durabilidade'; requer confirmação humana",
+          "severidade": "review"
+        }
+      ],
+      "metricas": {
+        "enunciado_caracteres": 242,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.5,
+        "sobreposicao_objeto_conhecimento": 0.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 1
+      },
+      "requer_revisao": true
+    },
+    {
+      "request_id": "2f619649-dfe7-49b2-bc71-9c94839bb326",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "haila-studio",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Analisar tipos de arquitetura e reconhecer padrões",
+        "dificuldade": 3,
+        "competencia": null,
+        "habilidade": null,
+        "objeto_conhecimento": "arquitetura de computadores",
+        "restricoes": []
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Qual padrão arquitetural descreve a organização em camadas da pilha TCP/IP, em que a camada de transporte fornece serviços de comunicação fim a fim aos processos da camada de aplicação?",
+        "alternativas": [
+          "Protocolo de Camadas",
+          "Estructura de Arquitectura",
+          "Sistema de Camada",
+          "Arquitetura em camadas",
+          "Modelo de Camadas"
+        ],
+        "correta": 3,
+        "explicacao": "A pilha TCP/IP é estruturada em níveis hierárquicos (aplicação, transporte, rede, enlace e física). Cada nível oferece serviços ao nível superior, caracterizando o padrão de arquitetura em camadas, que promove modularidade e independência entre as funções de rede.",
+        "competencia": "Analisar e projetar sistemas computacionais considerando arquiteturas de hardware e software",
+        "habilidade": "Comparar protocolos de transporte e reconhecer padrões de arquitetura em camadas",
+        "objeto_conhecimento": "Arquitetura de computadores: modelo em camadas e protocolos TCP/UDP",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 0
+          }
+        ]
+      },
+      "flags": [
+        {
+          "codigo": "idioma_inconsistente",
+          "camada": "linguistica",
+          "campo": "alternativas",
+          "evidencia": "arquitectura, estructura",
+          "severidade": "review"
+        }
+      ],
+      "metricas": {
+        "enunciado_caracteres": 185,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.833,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 1
+      },
+      "requer_revisao": true
+    },
+    {
+      "request_id": "3bcfb3f5-6755-47f5-a179-d6f6659df1d4",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "haila-studio",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "FORMACAO_GERAL",
+        "objetivo_pedagogico": "Analisar modelos de arquitetura",
+        "dificuldade": 3,
+        "competencia": null,
+        "habilidade": null,
+        "objeto_conhecimento": "arquitetura de computadores",
+        "restricoes": []
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Cite uma funcionalidade fornecida pelo protocolo TCP que não está presente no protocolo UDP.",
+        "alternativas": [
+          "Controle de congestionamento",
+          "Transmissão de pacotes",
+          "Manter a ordem",
+          "Segurança dos dados",
+          "Manter a conexão aberta"
+        ],
+        "correta": 0,
+        "explicacao": "O TCP inclui mecanismos de controle de congestionamento para ajustar a taxa de envio de segmentos e evitar sobrecarga da rede; o UDP não possui esse mecanismo, pois oferece serviço sem conexão e sem garantias de entrega.",
+        "competencia": "Analisar e comparar arquiteturas de comunicação de sistemas computacionais",
+        "habilidade": "Comparar características dos protocolos de transporte TCP e UDP",
+        "objeto_conhecimento": "Protocolos de transporte TCP e UDP",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "flags": [
+        {
+          "codigo": "comando_resposta_aberta_em_item_objetivo",
+          "camada": "linguistica",
+          "campo": "enunciado",
+          "evidencia": "Cite uma funcionalidade fornecida pelo protocolo TCP que não está presente no protocolo UDP.",
+          "severidade": "review"
+        },
+        {
+          "codigo": "possivel_desalinhamento_do_objeto_conhecimento",
+          "camada": "semantica_triagem",
+          "campo": "objeto_conhecimento",
+          "evidencia": "solicitado='arquitetura de computadores'; gerado='Protocolos de transporte TCP e UDP'; requer confirmação humana",
+          "severidade": "review"
+        }
+      ],
+      "metricas": {
+        "enunciado_caracteres": 92,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.25,
+        "sobreposicao_objeto_conhecimento": 0.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 2
+      },
+      "requer_revisao": true
+    },
+    {
+      "request_id": "e2223d66-590c-4c49-997e-25256c9f2049",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "haila-studio",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "FORMACAO_GERAL",
+        "objetivo_pedagogico": "Compreender processos de qualidade de software",
+        "dificuldade": 3,
+        "competencia": null,
+        "habilidade": null,
+        "objeto_conhecimento": "Engenharia de software",
+        "restricoes": []
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Em um projeto de software, quais requisitos são responsáveis por especificar atributos como desempenho, segurança, confiabilidade e usabilidade?",
+        "alternativas": [
+          "Definição de qualidade",
+          "Critérios de aceitação",
+          "Requisito funcional",
+          "Requisitos não funcionais",
+          "Especificações técnicas"
+        ],
+        "correta": 3,
+        "explicacao": "Requisitos não funcionais definem características de qualidade do sistema, como desempenho, segurança, confiabilidade e usabilidade, diferindo dos requisitos funcionais que descrevem serviços e comportamentos esperados.",
+        "competencia": "Analisar e classificar requisitos",
+        "habilidade": "Analisar e classificar requisitos",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 144,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.4,
+        "sobreposicao_objeto_conhecimento": 0.5,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    },
+    {
+      "request_id": "37f20290-4c55-433e-9b26-053133e20f8d",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-P01",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+        "dificuldade": 3,
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "restricoes": [
+          "uma única alternativa defensável",
+          "não exigir recurso visual"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Em um sistema de gerenciamento de banco de dados que garante as propriedades ACID, ocorre uma queda de energia imediatamente antes da execução do comando COMMIT de uma transação. Qual propriedade ACID, se houver, está sendo violada por essa falha?",
+        "alternativas": [
+          "<NAME>",
+          "Nenhuma",
+          "consulta",
+          "alteração",
+          "transação"
+        ],
+        "correta": 1,
+        "explicacao": "A falha ocorre antes do COMMIT; a transação ainda não está confirmada, portanto a durabilidade não se aplica. O SGBD aborta a transação, preservando a atomicidade (todos ou nenhum efeito). Assim, nenhuma propriedade ACID é violada.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 0
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 247,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.636,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    },
+    {
+      "request_id": "dda7b947-5b81-4069-912d-4ffdfc6737a7",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-P02",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+        "dificuldade": 3,
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "restricoes": [
+          "uma única alternativa defensável",
+          "não perguntar apenas por uma propriedade isolada"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Um sistema de videoconferência em tempo real deve minimizar a latência, podendo tolerar perda ocasional de pacotes, enquanto mantém a comunicação bidirecional entre clientes. Considerando as garantias oferecidas por TCP e UDP, qual protocolo de transporte é mais adequado para atender a esses requisitos?",
+        "alternativas": [
+          "HTTP",
+          "SMTP",
+          "TCP",
+          "UDP",
+          "FTP"
+        ],
+        "correta": 3,
+        "explicacao": "UDP fornece serviço sem conexão, não realiza controle de fluxo, ordenação ou retransmissão, o que reduz a latência e permite perda de pacotes tolerada; já TCP garante entrega confiável, ordenação e controle de congestionamento, introduzindo atrasos que prejudicam aplicações sensíveis ao tempo, como videoconferência.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 2
+          }
+        ]
+      },
+      "flags": [
+        {
+          "codigo": "selecao_de_protocolo_potencialmente_ambigua",
+          "camada": "deterministica",
+          "campo": "enunciado",
+          "evidencia": "outros protocolos podem satisfazer o cenário; avalie garantias ou compare explicitamente TCP e UDP",
+          "severidade": "block"
+        }
+      ],
+      "metricas": {
+        "enunciado_caracteres": 304,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.636,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 1,
+        "flags_revisao": 0
+      },
+      "requer_revisao": true
+    },
+    {
+      "request_id": "76456ded-0792-4ef4-b132-d7bcdd1652bd",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-P03",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+        "dificuldade": 3,
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Em um sistema bancário online, o requisito a seguir deve ser analisado: “O sistema deve garantir que a operação de transferência entre contas seja concluída em até 2 segundos.” Classifique esse requisito como funcional ou não funcional.",
+        "alternativas": [
+          "conta",
+          "transferrencia",
+          "operacao",
+          "funcionaria",
+          "Não funcional"
+        ],
+        "correta": 4,
+        "explicacao": "O requisito descreve uma restrição de desempenho (tempo máximo de resposta), que caracteriza um atributo de qualidade do sistema, portanto trata‑se de um requisito não funcional.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          }
+        ]
+      },
+      "flags": [
+        {
+          "codigo": "espaco_de_respostas_binario",
+          "camada": "deterministica",
+          "campo": "enunciado",
+          "evidencia": "o comando restringe a resposta a duas classes, mas o item objetivo exige cinco alternativas plausíveis",
+          "severidade": "block"
+        }
+      ],
+      "metricas": {
+        "enunciado_caracteres": 236,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.625,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 1,
+        "flags_revisao": 0
+      },
+      "requer_revisao": true
+    },
+    {
+      "request_id": "53015de6-418d-43c2-b598-61e14f1163f7",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-P04",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+        "dificuldade": 3,
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Um sistema de atendimento ao cliente registra as solicitações na ordem em que chegam e deve atender cada cliente exatamente nessa sequência, garantindo tempo O(1) para inserir uma nova solicitação e para remover a próxima a ser atendida. Qual estrutura de dados é a mais adequada para implementar essa fila de atendimento?",
+        "alternativas": [
+          "Fila",
+          "Lista",
+          "Linha",
+          "Arquivo",
+          "Cola"
+        ],
+        "correta": 0,
+        "explicacao": "A fila implementa a disciplina FIFO, permitindo inserção (enqueue) e remoção (dequeue) em O(1). Essa propriedade atende ao requisito de atender clientes na ordem de chegada, ao contrário de pilhas (LIFO) ou tabelas hash (acesso direto).",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 0
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 322,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.75,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    },
+    {
+      "request_id": "97400dc1-648f-403b-9088-3f00f3549439",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-P05",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+        "dificuldade": 3,
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Uma empresa de comércio eletrônico deseja segmentar seus clientes em grupos com padrões de compra semelhantes, mas não possui rótulos que indiquem a qual segmento cada cliente pertence. Qual tipo de aprendizado de máquina deve ser empregado para realizar essa tarefa?",
+        "alternativas": [
+          "análise discriminante",
+          "Aprendizado não supervisionado",
+          "Regressão linear",
+          "Análise de clusterização",
+          "Aprendizagem supervisionada"
+        ],
+        "correta": 1,
+        "explicacao": "Como não há rótulos de saída que indiquem a classe ou segmento dos clientes, o objetivo é descobrir estruturas inerentes nos dados, como grupos de comportamento de compra. Essa característica corresponde ao aprendizado não supervisionado, que identifica padrões ou agrupamentos sem necessidade de exemplos rotulados.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 2
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 267,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.571,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    },
+    {
+      "request_id": "ddd10b0c-9960-4312-9510-618a4c7a236c",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "haila-studio",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "FORMACAO_GERAL",
+        "objetivo_pedagogico": "Saber comando importantes de banco de dados",
+        "dificuldade": 3,
+        "competencia": null,
+        "habilidade": null,
+        "objeto_conhecimento": "banco de dados",
+        "restricoes": []
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Em um sistema de gerenciamento de banco de dados, uma transação é confirmada (COMMIT) e, imediatamente após, ocorre uma falha de energia que interrompe o servidor. Qual propriedade ACID assegura que os efeitos dessa transação permanecem no banco de dados após a recuperação?",
+        "alternativas": [
+          "Consistência",
+          "Isolamento",
+          "Durabilidade",
+          "Atomicidade",
+          "Serialização"
+        ],
+        "correta": 2,
+        "explicacao": "A propriedade de Durabilidade garante que, uma vez que a transação tenha sido confirmada, seus efeitos são gravados de forma permanente em mídia estável. Assim, mesmo diante de falhas de energia ou de sistema, os dados confirmados são preservados após a restauração. Perdas de alterações antes do COMMIT não configuram violação de Durabilidade, pois a garantia só se aplica às alterações já confirmadas.",
+        "competencia": "Aplicar conhecimentos de computação na solução de problemas reais",
+        "habilidade": "Analisar propriedades ACID e identificar a garantia oferecida por cada uma",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "flags": [
+        {
+          "codigo": "possivel_desalinhamento_do_objeto_conhecimento",
+          "camada": "semantica_triagem",
+          "campo": "objeto_conhecimento",
+          "evidencia": "solicitado='banco de dados'; gerado='Propriedades ACID e controle de concorrência'; requer confirmação humana",
+          "severidade": "review"
+        }
+      ],
+      "metricas": {
+        "enunciado_caracteres": 274,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.4,
+        "sobreposicao_objeto_conhecimento": 0.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 1
+      },
+      "requer_revisao": true
+    },
+    {
+      "request_id": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-slm-v2-P01",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+        "dificuldade": 3,
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "restricoes": [
+          "uma única alternativa defensável",
+          "não exigir recurso visual"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Uma transação em um SGBD ACID realizou alterações em duas tabelas e, antes da execução do comando COMMIT, ocorreu uma falha de energia que interrompeu o sistema. Qual propriedade do modelo ACID assegura que nenhuma dessas alterações permanecerá gravada no banco de dados?",
+        "alternativas": [
+          "Durabilidade",
+          "Consistência",
+          "Atomicidade",
+          "Isolamento",
+          "Serialização"
+        ],
+        "correta": 2,
+        "explicacao": "Durabilidade protege apenas os efeitos de transações já confirmadas por COMMIT. Como a falha ocorreu antes do COMMIT, a propriedade responsável por garantir que todas as alterações sejam desfeitas é a atomicidade, que impõe o comportamento tudo‑ou‑nada da transação. Assim, não há violação de durabilidade; a atomicidade preserva a consistência ao abortar a transação.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 271,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.636,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    },
+    {
+      "request_id": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-slm-v2-P02",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+        "dificuldade": 3,
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "restricoes": [
+          "uma única alternativa defensável",
+          "não perguntar apenas por uma propriedade isolada"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Uma aplicação de streaming de vídeo em tempo real precisa de baixa latência, tolera perda de pacotes e não requer entrega ordenada nem controle de fluxo. Qual protocolo de transporte da camada TCP/IP deve ser escolhido?",
+        "alternativas": [
+          "QUIC",
+          "SCTP",
+          "TCP",
+          "UDP",
+          "DCCP"
+        ],
+        "correta": 3,
+        "explicacao": "UDP oferece serviço sem conexão, com mínima sobrecarga, não garante entrega nem ordenação e, portanto, atende a requisitos de baixa latência e tolerância a perdas, ao contrário do TCP que impõe controle de fluxo, confiabilidade e ordenação.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 2
+          }
+        ]
+      },
+      "flags": [
+        {
+          "codigo": "selecao_de_protocolo_potencialmente_ambigua",
+          "camada": "deterministica",
+          "campo": "enunciado",
+          "evidencia": "outros protocolos podem satisfazer o cenário; avalie garantias ou compare explicitamente TCP e UDP",
+          "severidade": "block"
+        }
+      ],
+      "metricas": {
+        "enunciado_caracteres": 219,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.455,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 1,
+        "flags_revisao": 0
+      },
+      "requer_revisao": true
+    },
+    {
+      "request_id": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-slm-v2-P03",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+        "dificuldade": 3,
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Em um sistema de gestão de biblioteca, foram especificados os seguintes requisitos: REQ1 – O usuário deve poder pesquisar livros por título; REQ2 – A pesquisa deve retornar resultados em até 2 segundos; REQ3 – O acesso ao sistema deve ser restrito a usuários autenticados; REQ4 – O sistema deve suportar até 500 usuários simultâneos. Qual desses requisitos corresponde a um requisito não funcional?",
+        "alternativas": [
+          "Acesso ao sistema pode ser liberado gratuitamente",
+          "REQ4",
+          "REQ2",
+          "REQ1",
+          "REQ3"
+        ],
+        "correta": 2,
+        "explicacao": "REQ2 trata de desempenho (tempo máximo de resposta), que caracteriza um atributo de qualidade do sistema, portanto é um requisito não funcional. Os demais descrevem funcionalidades específicas do sistema.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "flags": [
+        {
+          "codigo": "multiplos_candidatos_ao_gabarito",
+          "camada": "deterministica",
+          "campo": "enunciado",
+          "evidencia": "3 requisitos apresentam marcadores de requisito não funcional",
+          "severidade": "block"
+        },
+        {
+          "codigo": "alternativas_com_extensao_desequilibrada",
+          "camada": "linguistica",
+          "campo": "alternativas",
+          "evidencia": "palavras por alternativa=[6, 1, 1, 1, 1]",
+          "severidade": "review"
+        }
+      ],
+      "metricas": {
+        "enunciado_caracteres": 398,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.625,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 1,
+        "flags_revisao": 1
+      },
+      "requer_revisao": true
+    },
+    {
+      "request_id": "560bd37f-a337-4a8a-9a88-2392863f4354",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-slm-v2-P04",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+        "dificuldade": 3,
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Um interpretador de calculadora recebe expressões aritméticas em notação pós‑fixada (notação polonesa inversa) e deve avaliá‑las realizando sucessivas operações de empilhar operandos e desempilhar para aplicar operadores. Qual estrutura de dados é a mais adequada para implementar esse algoritmo, considerando as operações predominantes?",
+        "alternativas": [
+          "Árvore binária de busca",
+          "Tabela hash",
+          "Fila",
+          "Heap",
+          "pilha"
+        ],
+        "correta": 4,
+        "explicacao": "Na notação pós‑fixada, os operandos são inseridos e mantidos até que um operador seja encontrado; então os dois últimos operandos são retirados, a operação é executada e o resultado é empilhado novamente. Essa sequência de push e pop corresponde exatamente ao comportamento LIFO de uma pilha, garantindo O(1) para ambas as operações e simplificando a avaliação.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 337,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 1.0,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    },
+    {
+      "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-slm-v2-P05",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+        "dificuldade": 3,
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Uma empresa possui um histórico de 10.000 clientes contendo as variáveis idade, renda, número de compras nos últimos 6 meses e, para cada cliente, a informação se ele cancelou o serviço (sim ou não). O objetivo é criar um modelo que, a partir das características dos clientes, preveja se um novo cliente irá cancelar o serviço. Qual paradigma de aprendizado de máquina deve ser empregado?",
+        "alternativas": [
+          "machine learning",
+          "aprendizado supervisionado",
+          "aprendizagem automática",
+          "modelagem probabilística",
+          "modelagem estadística"
+        ],
+        "correta": 1,
+        "explicacao": "O conjunto de dados inclui um rótulo de saída (cancelou ou não). Quando os exemplos são rotulados, o modelo é treinado para mapear entradas às saídas, caracterizando o aprendizado supervisionado. O objetivo de predizer o rótulo para novos casos confirma essa escolha.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 2
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 388,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.714,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    },
+    {
+      "request_id": "716c6a17-9eba-476c-92cc-3ba4f0788094",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-slm-v3-P01",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+        "dificuldade": 3,
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "restricoes": [
+          "uma única alternativa defensável",
+          "não exigir recurso visual"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Um servidor de banco de dados sofre falha inesperada imediatamente antes de executar o comando COMMIT de uma transação que já realizou várias operações de escrita. Qual propriedade ACID assegura que nenhum desses efeitos permanecerá no banco após a recuperação?",
+        "alternativas": [
+          "Isolamento",
+          "Durabilidade",
+          "Serialização",
+          "Consistência",
+          "Atomicidade"
+        ],
+        "correta": 4,
+        "explicacao": "Atomicidade garante o princípio all‑or‑none: se o COMMIT ainda não foi emitido, a transação pode ser abortada e todas as modificações são revertidas, de modo que nenhum efeito parcial persiste. A durabilidade protege apenas transações já confirmadas; portanto, a falha antes do COMMIT não viola a durabilidade, mas depende da atomicidade para manter a consistência.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 261,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.636,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    },
+    {
+      "request_id": "42495f67-d615-4d4c-a010-738e56388cc7",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-slm-v3-P02",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+        "dificuldade": 3,
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "restricoes": [
+          "uma única alternativa defensável",
+          "não perguntar apenas por uma propriedade isolada"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Uma aplicação de transferência de arquivos críticos exige que todos os bytes cheguem ao destino na mesma ordem em que foram enviados, mesmo que isso aumente o tempo de transmissão. Qual protocolo de transporte deve ser escolhido?",
+        "alternativas": [
+          "SCTP",
+          "DCCP",
+          "UDP",
+          "QUIC",
+          "TCP"
+        ],
+        "correta": 4,
+        "explicacao": "TCP oferece serviço orientado a conexão, entrega confiável, controle de fluxo e congestionamento, garantindo que os dados cheguem ao destino sem perdas e na ordem correta, atendendo ao requisito da aplicação; UDP não fornece essas garantias.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "flags": [
+        {
+          "codigo": "selecao_de_protocolo_potencialmente_ambigua",
+          "camada": "deterministica",
+          "campo": "enunciado",
+          "evidencia": "outros protocolos podem satisfazer o cenário; avalie garantias ou compare explicitamente TCP e UDP",
+          "severidade": "block"
+        }
+      ],
+      "metricas": {
+        "enunciado_caracteres": 229,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.455,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 1,
+        "flags_revisao": 0
+      },
+      "requer_revisao": true
+    },
+    {
+      "request_id": "7e614912-8ffa-47c3-a055-e78d915aaad1",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-slm-v3-P03",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+        "dificuldade": 3,
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Em um projeto de sistema de gerenciamento de biblioteca, foram identificados os seguintes requisitos: I – O sistema deve permitir que o usuário pesquise livros por título, autor ou ISBN. II – O tempo máximo de resposta para exibir os resultados de uma pesquisa não deve exceder 2 segundos. III – O sistema deve registrar todas as operações de empréstimo em um log auditável. IV – O sistema deve enviar e‑mail de confirmação ao usuário após a finalização do empréstimo. Qual desses requisitos é classificado como não funcional?",
+        "alternativas": [
+          "I.",
+          "I e II.",
+          "II",
+          "II e III.",
+          "II e IV."
+        ],
+        "correta": 2,
+        "explicacao": "Requisitos funcionais especificam serviços ou comportamentos que o sistema deve oferecer (I, III e IV descrevem funcionalidades do sistema). Requisitos não funcionais tratam de atributos de qualidade, como desempenho, segurança ou usabilidade. O requisito II trata exclusivamente de tempo de resposta, que é um atributo de desempenho, portanto é não funcional.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 2
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 526,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.75,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    },
+    {
+      "request_id": "60774a2d-ff89-41b8-8e1f-6091408a6f95",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-slm-v3-P04",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+        "dificuldade": 3,
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Um sistema de impressão recebe documentos de múltiplos usuários. Cada documento é colocado na fila de impressão na ordem de chegada e o spooler sempre envia o documento que está no início da fila para a impressora. Não há necessidade de buscar documentos aleatoriamente nem de reordenar a fila. Qual estrutura de dados é a mais adequada para implementar a fila de impressão?",
+        "alternativas": [
+          "Heap",
+          "Pilha",
+          "Tabela hash",
+          "fila",
+          "Árvore binária de busca"
+        ],
+        "correta": 3,
+        "explicacao": "A fila implementa o comportamento FIFO (first‑in‑first‑out), correspondendo exatamente ao requisito de atender documentos na ordem de chegada; inserções ocorrem no final e remoções no início, com O(1) nas duas operações, atendendo ao cenário descrito.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 374,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.75,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    },
+    {
+      "request_id": "ca66e36c-3f16-4ffe-accf-46a541f1fa12",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-slm-v3-fix-P05",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+        "dificuldade": 3,
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Uma empresa possui dados demográficos e de compras de seus clientes, mas não dispõe de rótulos indicando quem cancelou o serviço. Para descobrir grupos de clientes com comportamentos semelhantes e direcionar campanhas de marketing, qual paradigma de aprendizado de máquina deve ser empregado?",
+        "alternativas": [
+          "Aprendizagem supervisionada",
+          "Aprendizado não supervisionado",
+          "Modelo de classificação",
+          "Clustering automático",
+          "Regressão linear"
+        ],
+        "correta": 1,
+        "explicacao": "Como não há rótulos que indiquem a classe ou o valor a ser previsto, a tarefa consiste em identificar estruturas ocultas nos dados. Técnicas como clustering (ex.: K‑means) são típicas do aprendizado não supervisionado, que agrupa observações sem necessidade de exemplos rotulados.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 2
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 292,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.714,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    },
+    {
+      "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-slm-v3-final-P02",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+        "dificuldade": 3,
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "restricoes": [
+          "uma única alternativa defensável",
+          "não perguntar apenas por uma propriedade isolada"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Um serviço de transferência de arquivos deve garantir que todos os bytes enviados cheguem ao destino sem perdas e na mesma sequência em que foram emitidos. Considerando as garantias oferecidas pelos protocolos de transporte TCP e UDP, quais garantias de nível de transporte são indispensáveis para atender a esses requisitos?",
+        "alternativas": [
+          "Entrega não confiável e sem preservação de ordem",
+          "Entrega com baixa latência garantida",
+          "Entrega ordenada sem retransmissão de perdas",
+          "Entrega confiável sem preservação de ordem",
+          "entrega confiável e ordenada"
+        ],
+        "correta": 4,
+        "explicacao": "Para que nenhum dado seja perdido e a ordem de chegada seja preservada, a aplicação necessita das duas garantias: (i) entrega confiável, que assegura a retransmissão de pacotes perdidos, e (ii) entrega ordenada, que garante que os segmentos sejam apresentados ao processo receptor na sequência original. O TCP fornece ambas as garantias; o UDP não oferece nem entrega confiável nem ordenação, portanto não satisfaz o requisito. Assim, a combinação \"entrega confiável e ordenada\" é a resposta correta.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 325,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.818,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    },
+    {
+      "request_id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-slm-v3-final-P05",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+        "dificuldade": 3,
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Uma empresa possui um histórico de compras de 10.000 clientes, contendo apenas os itens adquiridos e valores gastos, sem nenhuma informação pré‑definida sobre categorias ou rótulos. O objetivo é identificar grupos de clientes com padrões de consumo semelhantes para campanhas de marketing direcionado. Qual paradigma de aprendizado de máquina deve ser adotado para esse problema?",
+        "alternativas": [
+          "Aprendizado semissupervisionado",
+          "Aprendizado por reforço",
+          "Aprendizado não supervisionado",
+          "Aprendizado supervisionado",
+          "Aprendizado autossupervisionado"
+        ],
+        "correta": 2,
+        "explicacao": "Como os dados não possuem rótulos de saída, a tarefa consiste em descobrir estruturas ocultas (agrupamentos) nos próprios dados, característica típica do aprendizado não supervisionado, que utiliza técnicas como clustering para segmentar os clientes.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 379,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.571,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    }
+  ],
+  "resumo": {
+    "questoes": 22,
+    "sem_sinais": 13,
+    "para_revisao": 9,
+    "flags_bloqueio": 5,
+    "flags_revisao": 6
+  }
+}

@@ -1,0 +1,564 @@
+{
+  "started_at": "2026-09-24T14:11:24.315559+00:00",
+  "conditions": [
+    "C1_LLM",
+    "C2_RAG_LLM",
+    "C3_RAG_LLM_SLM"
+  ],
+  "items": [
+    {
+      "spec_id": "P01",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Em um sistema de gerenciamento de banco de dados, uma transação T executa várias operações de atualização e, imediatamente antes de emitir o comando COMMIT, ocorre uma falha que provoca a interrupção do sistema. Considerando as propriedades ACID, especialmente atomicidade e durabilidade, qual das afirmações abaixo está correta?",
+        "alternativas": [
+          "A atomicidade garante que, apesar da falha antes do COMMIT, todas as modificações realizadas pela transação permanecem no banco de dados, enquanto a durabilidade ainda não se aplica.",
+          "A atomicidade assegura que, se a falha ocorre antes do COMMIT, nenhuma das alterações da transação será visível, e a durabilidade só será garantida após um COMMIT bem‑sucedido.",
+          "A durabilidade impede que a falha antes do COMMIT cause perda de dados, mantendo todas as alterações em memória volátil até que o COMMIT seja concluído.",
+          "A atomicidade e a durabilidade são equivalentes; ambas garantem que, mesmo antes do COMMIT, as alterações permanecem persistentes.",
+          "A atomicidade só se aplica após o COMMIT, portanto, antes da confirmação a transação pode deixar o banco em estado inconsistente, mas a durabilidade corrige isso."
+        ],
+        "correta": 1,
+        "explicacao": "Como a falha ocorre antes do COMMIT, a propriedade de atomicidade entra em ação: a transação deve ser completamente desfeita, de modo que nenhuma de suas alterações torne‑se visível ao banco de dados. A durabilidade só se torna relevante após um COMMIT bem‑sucedido, garantindo que as mudanças confirmadas permaneçam persistentes mesmo diante de falhas subsequentes. Portanto, a alternativa 1 descreve corretamente o comportamento das duas propriedades nesse cenário.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Em um sistema de gerenciamento de banco de dados, uma transação T executa várias operações de atualização e, imediatamente antes de emitir o comando COMMIT, ocorre uma falha que provoca a interrupção do sistema. Considerando as propriedades ACID, especialmente atomicidade e durabilidade, qual das afirmações abaixo está correta?",
+            "alternativas": [
+              "A atomicidade garante que, apesar da falha antes do COMMIT, todas as modificações realizadas pela transação permanecem no banco de dados, enquanto a durabilidade ainda não se aplica.",
+              "A atomicidade assegura que, se a falha ocorre antes do COMMIT, nenhuma das alterações da transação será visível, e a durabilidade só será garantida após um COMMIT bem‑sucedido.",
+              "A durabilidade impede que a falha antes do COMMIT cause perda de dados, mantendo todas as alterações em memória volátil até que o COMMIT seja concluído.",
+              "A atomicidade e a durabilidade são equivalentes; ambas garantem que, mesmo antes do COMMIT, as alterações permanecem persistentes.",
+              "A atomicidade só se aplica após o COMMIT, portanto, antes da confirmação a transação pode deixar o banco em estado inconsistente, mas a durabilidade corrige isso."
+            ],
+            "correta": 1,
+            "explicacao": "Como a falha ocorre antes do COMMIT, a propriedade de atomicidade entra em ação: a transação deve ser completamente desfeita, de modo que nenhuma de suas alterações torne‑se visível ao banco de dados. A durabilidade só se torna relevante após um COMMIT bem‑sucedido, garantindo que as mudanças confirmadas permaneçam persistentes mesmo diante de falhas subsequentes. Portanto, a alternativa 1 descreve corretamente o comportamento das duas propriedades nesse cenário.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 2.62
+    },
+    {
+      "spec_id": "P02",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Uma universidade deseja transmitir ao vivo a aula de um professor para centenas de estudantes via internet. É imprescindível que o atraso entre a captura da imagem e sua exibição nos dispositivos dos estudantes seja o menor possível; pequenas perdas de quadros são toleráveis, mas a ordem dos quadros recebidos não é crítica. Qual protocolo de transporte é o mais adequado para atender a esses requisitos?",
+        "alternativas": [
+          "TCP, pois garante entrega ordenada e sem perdas, essencial para a qualidade do vídeo.",
+          "UDP, pois minimiza a latência e tolera perdas de pacotes, adequado para transmissão em tempo real.",
+          "SCTP, pois combina recursos de TCP e UDP e oferece multihoming, sendo ideal para streaming.",
+          "HTTP sobre TCP, pois permite controle de fluxo e é amplamente suportado por navegadores.",
+          "FTP, pois fornece transferência de arquivos confiável e pode ser usado para streaming."
+        ],
+        "correta": 1,
+        "explicacao": "UDP não realiza controle de congestionamento, não garante entrega nem ordem dos pacotes, o que reduz significativamente a latência. Em aplicações de streaming ao vivo, pequenas perdas de quadros são aceitáveis, enquanto a rapidez na entrega é prioritária. TCP, ao garantir entrega ordenada e retransmissões, introduz atrasos que comprometem a experiência em tempo real, tornando-o inadequado para esse cenário.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Uma universidade deseja transmitir ao vivo a aula de um professor para centenas de estudantes via internet. É imprescindível que o atraso entre a captura da imagem e sua exibição nos dispositivos dos estudantes seja o menor possível; pequenas perdas de quadros são toleráveis, mas a ordem dos quadros recebidos não é crítica. Qual protocolo de transporte é o mais adequado para atender a esses requisitos?",
+            "alternativas": [
+              "TCP, pois garante entrega ordenada e sem perdas, essencial para a qualidade do vídeo.",
+              "UDP, pois minimiza a latência e tolera perdas de pacotes, adequado para transmissão em tempo real.",
+              "SCTP, pois combina recursos de TCP e UDP e oferece multihoming, sendo ideal para streaming.",
+              "HTTP sobre TCP, pois permite controle de fluxo e é amplamente suportado por navegadores.",
+              "FTP, pois fornece transferência de arquivos confiável e pode ser usado para streaming."
+            ],
+            "correta": 1,
+            "explicacao": "UDP não realiza controle de congestionamento, não garante entrega nem ordem dos pacotes, o que reduz significativamente a latência. Em aplicações de streaming ao vivo, pequenas perdas de quadros são aceitáveis, enquanto a rapidez na entrega é prioritária. TCP, ao garantir entrega ordenada e retransmissões, introduz atrasos que comprometem a experiência em tempo real, tornando-o inadequado para esse cenário.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 2.087
+    },
+    {
+      "spec_id": "P03",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Considere o desenvolvimento de um sistema de gerenciamento de empréstimos de livros para a biblioteca da universidade. Analise as descrições a seguir e assinale a alternativa que apresenta um requisito **não‑funcional**:",
+        "alternativas": [
+          "O sistema deve permitir que o usuário pesquise livros por título, autor ou ISBN.",
+          "O sistema deve registrar o histórico de empréstimos de cada usuário.",
+          "O sistema deve garantir que todas as transações sejam concluídas em no máximo 2 segundos.",
+          "O sistema deve enviar notificação por e‑mail quando o prazo de devolução estiver próximo.",
+          "O sistema deve armazenar os dados em um banco de dados relacional."
+        ],
+        "correta": 2,
+        "explicacao": "Requisitos não‑funcionais descrevem atributos de qualidade do sistema, como desempenho, segurança ou usabilidade. A alternativa 2 impõe um limite de tempo (≤2 s) para a conclusão das transações, caracterizando um requisito de desempenho, portanto não‑funcional. As demais alternativas especificam funcionalidades que o sistema deve oferecer (pesquisa, registro de histórico, envio de e‑mail, escolha de tecnologia de armazenamento).",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Considere o desenvolvimento de um sistema de gerenciamento de empréstimos de livros para a biblioteca da universidade. Analise as descrições a seguir e assinale a alternativa que apresenta um requisito **não‑funcional**:",
+            "alternativas": [
+              "O sistema deve permitir que o usuário pesquise livros por título, autor ou ISBN.",
+              "O sistema deve registrar o histórico de empréstimos de cada usuário.",
+              "O sistema deve garantir que todas as transações sejam concluídas em no máximo 2 segundos.",
+              "O sistema deve enviar notificação por e‑mail quando o prazo de devolução estiver próximo.",
+              "O sistema deve armazenar os dados em um banco de dados relacional."
+            ],
+            "correta": 2,
+            "explicacao": "Requisitos não‑funcionais descrevem atributos de qualidade do sistema, como desempenho, segurança ou usabilidade. A alternativa 2 impõe um limite de tempo (≤2 s) para a conclusão das transações, caracterizando um requisito de desempenho, portanto não‑funcional. As demais alternativas especificam funcionalidades que o sistema deve oferecer (pesquisa, registro de histórico, envio de e‑mail, escolha de tecnologia de armazenamento).",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 3.326
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Um sistema de navegação de um navegador web mantém o histórico de páginas visitadas para permitir que o usuário retorne às páginas anteriores usando o botão “Voltar”. Cada vez que o usuário visita uma nova página, o endereço da página é inserido no topo do histórico; ao pressionar “Voltar”, o endereço do topo é removido e exibido. Considerando que as operações predominantes são inserção e remoção no topo, qual estrutura de dados é a mais adequada para implementar esse histórico?",
+        "alternativas": [
+          "Fila (queue) implementada com vetor",
+          "Pilha (stack) implementada com lista encadeada",
+          "Árvore binária de busca",
+          "Tabela hash",
+          "Lista duplamente encadeada"
+        ],
+        "correta": 1,
+        "explicacao": "A operação de inserir e remover sempre no topo caracteriza o comportamento LIFO (Last‑In‑First‑Out). Uma pilha implementada com lista encadeada fornece inserção (push) e remoção (pop) em O(1) sem necessidade de redimensionamento, sendo ideal para o histórico de navegação descrito. As demais estruturas atendem a outros padrões de acesso (FIFO, busca ordenada, acesso direto ou navegação bidirecional) e não são tão eficientes para o padrão LIFO exigido.",
+        "competencia": "Projetar soluções algoríticas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Um sistema de navegação de um navegador web mantém o histórico de páginas visitadas para permitir que o usuário retorne às páginas anteriores usando o botão “Voltar”. Cada vez que o usuário visita uma nova página, o endereço da página é inserido no topo do histórico; ao pressionar “Voltar”, o endereço do topo é removido e exibido. Considerando que as operações predominantes são inserção e remoção no topo, qual estrutura de dados é a mais adequada para implementar esse histórico?",
+            "alternativas": [
+              "Fila (queue) implementada com vetor",
+              "Pilha (stack) implementada com lista encadeada",
+              "Árvore binária de busca",
+              "Tabela hash",
+              "Lista duplamente encadeada"
+            ],
+            "correta": 1,
+            "explicacao": "A operação de inserir e remover sempre no topo caracteriza o comportamento LIFO (Last‑In‑First‑Out). Uma pilha implementada com lista encadeada fornece inserção (push) e remoção (pop) em O(1) sem necessidade de redimensionamento, sendo ideal para o histórico de navegação descrito. As demais estruturas atendem a outros padrões de acesso (FIFO, busca ordenada, acesso direto ou navegação bidirecional) e não são tão eficientes para o padrão LIFO exigido.",
+            "competencia": "Projetar soluções algoríticas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 2.335
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Uma empresa de e‑commerce possui um histórico de compras de 10 mil clientes e, além disso, dispõe de informações de churn (cliente cancelou a assinatura: sim ou não) para 2 mil desses clientes. O analista de dados pretende (i) identificar grupos de clientes com comportamentos de compra semelhantes e (ii) prever se um cliente que ainda não cancelou irá cancelar no próximo trimestre. Considerando as técnicas de aprendizado de máquina, associe corretamente cada objetivo ao tipo de aprendizado mais adequado.",
+        "alternativas": [
+          "(i) aprendizado supervisionado; (ii) aprendizado não supervisionado",
+          "(i) aprendizado não supervisionado; (ii) aprendizado supervisionado",
+          "(i) aprendizado por reforço; (ii) aprendizado supervisionado",
+          "(i) aprendizado não supervisionado; (ii) aprendizado por reforço",
+          "(i) aprendizado supervisionado; (ii) aprendizado supervisionado"
+        ],
+        "correta": 1,
+        "explicacao": "Para agrupar clientes com padrões de compra semelhantes utiliza‑se clustering, que é uma técnica de aprendizado não supervisionado, pois não há rótulos para os grupos. Já a previsão de churn requer um modelo que aprenda a partir de exemplos rotulados (churn = sim/não), caracterizando um problema de classificação, que pertence ao aprendizado supervisionado.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Uma empresa de e‑commerce possui um histórico de compras de 10 mil clientes e, além disso, dispõe de informações de churn (cliente cancelou a assinatura: sim ou não) para 2 mil desses clientes. O analista de dados pretende (i) identificar grupos de clientes com comportamentos de compra semelhantes e (ii) prever se um cliente que ainda não cancelou irá cancelar no próximo trimestre. Considerando as técnicas de aprendizado de máquina, associe corretamente cada objetivo ao tipo de aprendizado mais adequado.",
+            "alternativas": [
+              "(i) aprendizado supervisionado; (ii) aprendizado não supervisionado",
+              "(i) aprendizado não supervisionado; (ii) aprendizado supervisionado",
+              "(i) aprendizado por reforço; (ii) aprendizado supervisionado",
+              "(i) aprendizado não supervisionado; (ii) aprendizado por reforço",
+              "(i) aprendizado supervisionado; (ii) aprendizado supervisionado"
+            ],
+            "correta": 1,
+            "explicacao": "Para agrupar clientes com padrões de compra semelhantes utiliza‑se clustering, que é uma técnica de aprendizado não supervisionado, pois não há rótulos para os grupos. Já a previsão de churn requer um modelo que aprenda a partir de exemplos rotulados (churn = sim/não), caracterizando um problema de classificação, que pertence ao aprendizado supervisionado.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 2.96
+    },
+    {
+      "spec_id": "P01",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Considere uma transação T que executa operações de atualização em um banco de dados relacional. Durante a execução, ocorre uma falha de energia antes que o comando COMMIT seja emitido. Em relação às propriedades ACID, assinale a alternativa que descreve corretamente o comportamento esperado do SGBD diante dessa situação.",
+        "alternativas": [
+          "O SGBD deve garantir que todas as alterações feitas por T sejam mantidas permanentemente, pois a durabilidade protege os efeitos mesmo antes do COMMIT.",
+          "O SGBD deve descartar todas as alterações realizadas por T, assegurando que nenhum efeito parcial permaneça, de modo a preservar a atomicidade.",
+          "O SGBD pode escolher aleatoriamente entre manter ou descartar as alterações de T, pois a durabilidade só se aplica após o COMMIT e a atomicidade não impõe restrição antes da falha.",
+          "O SGBD deve registrar as alterações em um log de recuperação e, após a restauração, aplicar parcialmente as mudanças que já foram escritas no disco, garantindo consistência.",
+          "O SGBD deve bloquear outras transações até que a falha seja resolvida, mantendo as alterações de T em estado pendente para garantir isolamento."
+        ],
+        "correta": 1,
+        "explicacao": "A propriedade de atomicidade garante que uma transação seja executada completamente ou não seja aplicada. Como a falha ocorreu antes do COMMIT, o SGBD deve desfazer todas as modificações realizadas por T, preservando a atomicidade. A durabilidade só protege os efeitos de transações já confirmadas (após COMMIT).",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-bd-transacoes-005",
+            "texto": "Transações de banco de dados devem preservar atomicidade, consistência, isolamento e durabilidade. O controle de concorrência busca evitar anomalias como leitura suja, atualização perdida e leitura não repetível. Bloqueios, ordenação por marcas de tempo e controle multiversão são estratégias usuais. Atomicidade significa que a transação produz todos os seus efeitos ou nenhum. Durabilidade protege os efeitos de transações já confirmadas por COMMIT. Uma falha antes da confirmação não demonstra violação de durabilidade; desfazer efeitos parciais preserva atomicidade.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Banco de Dados",
+              "habilidade": "Analisar transações concorrentes",
+              "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+              "referencia": "ELMASRI, R.; NAVATHE, S. Sistemas de Banco de Dados. Complemento conceitual: PostgreSQL, documentação 18, seção 3.4 Transactions, https://www.postgresql.org/docs/18/tutorial-transactions.html (consulta em 2026-09-22).",
+              "linha": 5,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 29.820143,
+              "termos_recuperados": [
+                "acid",
+                "antes",
+                "atomicidade",
+                "commit",
+                "concorrencia",
+                "controle",
+                "durabilidade",
+                "falha",
+                "propriedades",
+                "transacoes"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "acid",
+                "antes",
+                "atomicidade",
+                "commit",
+                "concorrencia",
+                "controle",
+                "durabilidade",
+                "falha",
+                "falhas",
+                "gerenciamento",
+                "mecanismos",
+                "ocorrida",
+                "propriedades",
+                "recuperacao",
+                "transacoes"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-bd-transacoes-005",
+                  "score": 29.820143
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Considere uma transação T que executa operações de atualização em um banco de dados relacional. Durante a execução, ocorre uma falha de energia antes que o comando COMMIT seja emitido. Em relação às propriedades ACID, assinale a alternativa que descreve corretamente o comportamento esperado do SGBD diante dessa situação.",
+            "alternativas": [
+              "O SGBD deve garantir que todas as alterações feitas por T sejam mantidas permanentemente, pois a durabilidade protege os efeitos mesmo antes do COMMIT.",
+              "O SGBD deve descartar todas as alterações realizadas por T, assegurando que nenhum efeito parcial permaneça, de modo a preservar a atomicidade.",
+              "O SGBD pode escolher aleatoriamente entre manter ou descartar as alterações de T, pois a durabilidade só se aplica após o COMMIT e a atomicidade não impõe restrição antes da falha.",
+              "O SGBD deve registrar as alterações em um log de recuperação e, após a restauração, aplicar parcialmente as mudanças que já foram escritas no disco, garantindo consistência.",
+              "O SGBD deve bloquear outras transações até que a falha seja resolvida, mantendo as alterações de T em estado pendente para garantir isolamento."
+            ],
+            "correta": 1,
+            "explicacao": "A propriedade de atomicidade garante que uma transação seja executada completamente ou não seja aplicada. Como a falha ocorreu antes do COMMIT, o SGBD deve desfazer todas as modificações realizadas por T, preservando a atomicidade. A durabilidade só protege os efeitos de transações já confirmadas (após COMMIT).",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 2.551
+    },
+    {
+      "spec_id": "P02",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Em um sistema de videoconferência em tempo real e em um sistema de backup de arquivos, quais das afirmativas abaixo descreve corretamente as garantias oferecidas pelos protocolos TCP e UDP em relação à entrega, ordenação e controle de fluxo?",
+        "alternativas": [
+          "Para a videoconferência, o UDP garante entrega confiável e ordenada, enquanto para o backup o TCP não oferece controle de congestionamento.",
+          "O UDP não garante entrega nem ordenação dos datagramas, mas tem menor sobrecarga; já o TCP garante entrega confiável, ordenação e controla fluxo e congestionamento.",
+          "Tanto o TCP quanto o UDP fornecem controle de fluxo, porém apenas o TCP oferece entrega sem perdas.",
+          "O TCP oferece comunicação sem conexão e menor latência, enquanto o UDP estabelece conexão e garante entrega ordenada.",
+          "Ambos os protocolos garantem entrega confiável, porém o UDP possui mecanismo de retransmissão mais rápido que o TCP."
+        ],
+        "correta": 1,
+        "explicacao": "A alternativa 1 está correta porque descreve exatamente as propriedades de cada protocolo: UDP é sem conexão, não garante entrega nem ordenação e tem menor sobrecarga; TCP é orientado a conexão, fornece entrega confiável, ordenação, controle de fluxo e de congestionamento. As demais alternativas confundem ou invertem essas características, atribuindo garantias ao UDP que ele não possui ou negando recursos do TCP que são essenciais.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-redes-transporte-007",
+            "texto": "Na arquitetura TCP/IP, a camada de transporte oferece comunicação fim a fim entre processos. O TCP fornece serviço orientado a conexão, entrega confiável, controle de fluxo e controle de congestionamento. O UDP oferece serviço sem conexão com menor sobrecarga, sem garantir entrega ou ordenação.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Redes de Computadores",
+              "habilidade": "Comparar protocolos de transporte",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet.",
+              "linha": 7,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 25.756259,
+              "termos_recuperados": [
+                "comunicacao",
+                "fim",
+                "protocolos",
+                "tcp",
+                "transporte",
+                "udp"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "arquiteturas",
+                "cenario",
+                "comunicacao",
+                "conforme",
+                "fim",
+                "garantias",
+                "oferecidas",
+                "pelos",
+                "protocolo",
+                "protocolos",
+                "requisitos",
+                "selecionar",
+                "tcp",
+                "transporte",
+                "udp"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-redes-transporte-007",
+                  "score": 25.756259
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Em um sistema de videoconferência em tempo real e em um sistema de backup de arquivos, quais das afirmativas abaixo descreve corretamente as garantias oferecidas pelos protocolos TCP e UDP em relação à entrega, ordenação e controle de fluxo?",
+            "alternativas": [
+              "Para a videoconferência, o UDP garante entrega confiável e ordenada, enquanto para o backup o TCP não oferece controle de congestionamento.",
+              "O UDP não garante entrega nem ordenação dos datagramas, mas tem menor sobrecarga; já o TCP garante entrega confiável, ordenação e controla fluxo e congestionamento.",
+              "Tanto o TCP quanto o UDP fornecem controle de fluxo, porém apenas o TCP oferece entrega sem perdas.",
+              "O TCP oferece comunicação sem conexão e menor latência, enquanto o UDP estabelece conexão e garante entrega ordenada.",
+              "Ambos os protocolos garantem entrega confiável, porém o UDP possui mecanismo de retransmissão mais rápido que o TCP."
+            ],
+            "correta": 1,
+            "explicacao": "A alternativa 1 está correta porque descreve exatamente as propriedades de cada protocolo: UDP é sem conexão, não garante entrega nem ordenação e tem menor sobrecarga; TCP é orientado a conexão, fornece entrega confiável, ordenação, controle de fluxo e de congestionamento. As demais alternativas confundem ou invertem essas características, atribuindo garantias ao UDP que ele não possui ou negando recursos do TCP que são essenciais.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 3.052
+    },
+    {
+      "spec_id": "P03",
+      "condition": "C2_RAG_LLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C2_RAG_LLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C2_RAG_LLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "spec_id": "P01",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "spec_id": "P02",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "spec_id": "P03",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    }
+  ],
+  "finished_at": "2026-09-24T14:11:44.681290+00:00"
+}

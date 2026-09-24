@@ -1,0 +1,232 @@
+{
+  "started_at": "2026-09-24T14:16:52.352105+00:00",
+  "conditions": [
+    "C2_RAG_LLM"
+  ],
+  "items": [
+    {
+      "spec_id": "P03",
+      "condition": "C2_RAG_LLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 409: Conflict"
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Um sistema de reservas online precisa inserir novas reservas, remover reservas existentes (raramente) e atender rapidamente a solicitações de \"próxima reserva\" no mesmo horário de chegada. Qual estrutura de dados é mais adequada para essa situação?",
+        "alternativas": [
+          "Pilha (LIFO)",
+          "Fila (FIFO)",
+          "Árvore de busca binária (BST)",
+          "Tabela hash (hash table)",
+          "Lista encadeada (linked list)"
+        ],
+        "correta": 1,
+        "explicacao": "A operação predominante é a recuperação da próxima reserva no mesmo horário de chegada, que exige acesso no primeiro elemento inserido (FIFO). A fila oferece acesso O(1) para inserção e remoção de extremos, atendendo a essa necessidade. Embora a remoção de reservas específicas seja rara, a fila pode lidar com isso percorrendo os elementos sem custo significativo. As demais estruturas – pilha, BST, hash table e lista encadeada – não garantem a ordem de chegada nem oferecem a mesma eficiência para a operação mais frequente.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-estruturas-dados-004",
+            "texto": "Pilhas seguem a disciplina LIFO, enquanto filas seguem FIFO. Árvores de busca organizam chaves hierarquicamente e tabelas de dispersão usam funções hash para localizar elementos. A estrutura apropriada depende das operações predominantes, dos requisitos de ordenação e do custo aceitável de busca, inserção e remoção.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Algoritmos e Estruturas de Dados",
+              "habilidade": "Selecionar estruturas de dados",
+              "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+              "referencia": "CORMEN, T. H. et al. Algoritmos: Teoria e Prática.",
+              "linha": 4,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 33.841909,
+              "termos_recuperados": [
+                "arvores",
+                "estrutura",
+                "estruturas",
+                "filas",
+                "hash",
+                "operacoes",
+                "pilhas",
+                "predominantes",
+                "selecionar",
+                "tabelas"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "adequada",
+                "algoritmicas",
+                "arvores",
+                "considerando",
+                "estrutura",
+                "estruturas",
+                "filas",
+                "hash",
+                "operacoes",
+                "pilhas",
+                "predominantes",
+                "projetar",
+                "selecionar",
+                "solucoes",
+                "tabelas"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-estruturas-dados-004",
+                  "score": 33.841909
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Um sistema de reservas online precisa inserir novas reservas, remover reservas existentes (raramente) e atender rapidamente a solicitações de \"próxima reserva\" no mesmo horário de chegada. Qual estrutura de dados é mais adequada para essa situação?",
+            "alternativas": [
+              "Pilha (LIFO)",
+              "Fila (FIFO)",
+              "Árvore de busca binária (BST)",
+              "Tabela hash (hash table)",
+              "Lista encadeada (linked list)"
+            ],
+            "correta": 1,
+            "explicacao": "A operação predominante é a recuperação da próxima reserva no mesmo horário de chegada, que exige acesso no primeiro elemento inserido (FIFO). A fila oferece acesso O(1) para inserção e remoção de extremos, atendendo a essa necessidade. Embora a remoção de reservas específicas seja rara, a fila pode lidar com isso percorrendo os elementos sem custo significativo. As demais estruturas – pilha, BST, hash table e lista encadeada – não garantem a ordem de chegada nem oferecem a mesma eficiência para a operação mais frequente.",
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 1.495
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Uma empresa de e-commerce coleta dados de navegação dos clientes (tempo em página, cliques, etc.) e deseja segmentar usuários para campanhas de marketing. Para outra tarefa, a empresa quer prever o valor de compra de um cliente com base em seus dados anteriores, que já possui rótulos de valor. Qual das alternativas abaixo descreve corretamente a abordagem de aprendizado mais apropriada para cada tarefa?",
+        "alternativas": [
+          "Usar aprendizado supervisionado para segmentar usuários e aprendizado não supervisionado para prever valor de compra.",
+          "Usar aprendizado não supervisionado para segmentar usuários e aprendizado supervisionado para prever valor de compra.",
+          "Usar aprendizado supervisionado para ambas as tarefas.",
+          "Usar aprendizado não supervisionado para ambas as tarefas.",
+          "Usar aprendizado semi-supervisionado para ambas as tarefas."
+        ],
+        "correta": 1,
+        "explicacao": "Para segmentação de usuários, não há rótulos predefinidos, logo a tarefa é de agrupamento, que corresponde ao aprendizado não supervisionado. Para prever o valor de compra, existem rótulos (valor) disponíveis, portanto a tarefa é de regressão, que corresponde ao aprendizado supervisionado. Assim, a alternativa que associa aprendizado não supervisionado à segmentação e aprendizado supervisionado à previsão é a correta.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-ia-aprendizado-011",
+            "texto": "No aprendizado supervisionado, exemplos rotulados orientam a construção de modelos para classificação ou regressão. No aprendizado não supervisionado, o objetivo é identificar estruturas ou agrupamentos sem rótulos de saída. A avaliação deve usar dados independentes do treinamento para estimar generalização e reduzir conclusões afetadas por sobreajuste.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Inteligência Artificial",
+              "habilidade": "Distinguir paradigmas de aprendizado",
+              "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+              "referencia": "RUSSELL, S.; NORVIG, P. Inteligência Artificial: Uma Abordagem Moderna.",
+              "linha": 11,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 22.082778,
+              "termos_recuperados": [
+                "aprendizado",
+                "artificial",
+                "inteligencia",
+                "nao",
+                "paradigmas",
+                "supervisionado"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "aprendizado",
+                "artificial",
+                "disponiveis",
+                "inteligencia",
+                "metodos",
+                "nao",
+                "paradigmas",
+                "partir",
+                "supervisionado"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-ia-aprendizado-011",
+                  "score": 22.082778
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Uma empresa de e-commerce coleta dados de navegação dos clientes (tempo em página, cliques, etc.) e deseja segmentar usuários para campanhas de marketing. Para outra tarefa, a empresa quer prever o valor de compra de um cliente com base em seus dados anteriores, que já possui rótulos de valor. Qual das alternativas abaixo descreve corretamente a abordagem de aprendizado mais apropriada para cada tarefa?",
+            "alternativas": [
+              "Usar aprendizado supervisionado para segmentar usuários e aprendizado não supervisionado para prever valor de compra.",
+              "Usar aprendizado não supervisionado para segmentar usuários e aprendizado supervisionado para prever valor de compra.",
+              "Usar aprendizado supervisionado para ambas as tarefas.",
+              "Usar aprendizado não supervisionado para ambas as tarefas.",
+              "Usar aprendizado semi-supervisionado para ambas as tarefas."
+            ],
+            "correta": 1,
+            "explicacao": "Para segmentação de usuários, não há rótulos predefinidos, logo a tarefa é de agrupamento, que corresponde ao aprendizado não supervisionado. Para prever o valor de compra, existem rótulos (valor) disponíveis, portanto a tarefa é de regressão, que corresponde ao aprendizado supervisionado. Assim, a alternativa que associa aprendizado não supervisionado à segmentação e aprendizado supervisionado à previsão é a correta.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 1.621
+    }
+  ],
+  "finished_at": "2026-09-24T14:16:57.690464+00:00"
+}

@@ -1,0 +1,1142 @@
+{
+  "started_at": "2026-09-24T19:33:02.933383+00:00",
+  "conditions": [
+    "C3_RAG_LLM_SLM"
+  ],
+  "items": [
+    {
+      "spec_id": "P01",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Quando uma falha acontece antes da confirmação de uma transação, qual garantia do ACID permanece intacta?",
+        "alternativas": [
+          "Conservação",
+          "Durabilidade",
+          "Integridade",
+          "Segurança",
+          "Persistência"
+        ],
+        "correta": 1,
+        "explicacao": "A durabilidade assegura que os efeitos de transações confirmadas por COMMIT não são perdidos. Se a falha ocorre antes do COMMIT, a transação ainda não foi confirmada, portanto a garantia de durabilidade não é violada; apenas a atomicidade garante que os efeitos parciais sejam revertidos.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-bd-transacoes-005",
+            "texto": "Transações de banco de dados devem preservar atomicidade, consistência, isolamento e durabilidade. O controle de concorrência busca evitar anomalias como leitura suja, atualização perdida e leitura não repetível. Bloqueios, ordenação por marcas de tempo e controle multiversão são estratégias usuais. Atomicidade significa que a transação produz todos os seus efeitos ou nenhum. Durabilidade protege os efeitos de transações já confirmadas por COMMIT. Uma falha antes da confirmação não demonstra violação de durabilidade; desfazer efeitos parciais preserva atomicidade.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Banco de Dados",
+              "habilidade": "Analisar transações concorrentes",
+              "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+              "referencia": "ELMASRI, R.; NAVATHE, S. Sistemas de Banco de Dados. Complemento conceitual: PostgreSQL, documentação 18, seção 3.4 Transactions, https://www.postgresql.org/docs/18/tutorial-transactions.html (consulta em 2026-09-22).",
+              "linha": 5,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 29.820143,
+              "termos_recuperados": [
+                "acid",
+                "antes",
+                "atomicidade",
+                "commit",
+                "concorrencia",
+                "controle",
+                "durabilidade",
+                "falha",
+                "propriedades",
+                "transacoes"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "acid",
+                "antes",
+                "atomicidade",
+                "commit",
+                "concorrencia",
+                "controle",
+                "durabilidade",
+                "falha",
+                "falhas",
+                "gerenciamento",
+                "mecanismos",
+                "ocorrida",
+                "propriedades",
+                "recuperacao",
+                "transacoes"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-bd-transacoes-005",
+                  "score": 29.820143
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Quando uma falha acontece antes da confirmação de uma transação, qual garantia do ACID permanece intacta?",
+            "resposta_correta": "Durabilidade",
+            "explicacao": "A durabilidade assegura que os efeitos de transações confirmadas por COMMIT não são perdidos. Se a falha ocorre antes do COMMIT, a transação ainda não foi confirmada, portanto a garantia de durabilidade não é violada; apenas a atomicidade garante que os efeitos parciais sejam revertidos.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-20b",
+            "prompt_version": "enade-stem-1.1.0"
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "Conservação",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Segurança",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Integridade",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Persistência",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_3:distratos->distratores",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto"
+            ],
+            "amostras": 3,
+            "candidatos_gerados": 6,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 6,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Quando uma falha acontece antes da confirmação de uma transação, qual garantia do ACID permanece intacta?",
+            "alternativas": [
+              "Conservação",
+              "Durabilidade",
+              "Integridade",
+              "Segurança",
+              "Persistência"
+            ],
+            "correta": 1,
+            "explicacao": "A durabilidade assegura que os efeitos de transações confirmadas por COMMIT não são perdidos. Se a falha ocorre antes do COMMIT, a transação ainda não foi confirmada, portanto a garantia de durabilidade não é violada; apenas a atomicidade garante que os efeitos parciais sejam revertidos.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 3
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 47.455
+    },
+    {
+      "spec_id": "P02",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Descreva, em comparação, as garantias de entrega e controle de fluxo fornecidas pelos protocolos de transporte que oferecem comunicação fim a fim.",
+        "alternativas": [
+          "HTTPS oferece privacidade ao compartilhar informações",
+          "SMTP controla o conteúdo das mensagens enviadas",
+          "HTTP oferece segurança contra ataques man-in-the-middle",
+          "SMTP oferece verificação de origem das mensagens",
+          "TCP oferece entrega confiável e ordenada; UDP não oferece essas garantias"
+        ],
+        "correta": 4,
+        "explicacao": "O TCP, por ser orientado a conexão, garante entrega confiável e ordenada, além de controle de fluxo e congestionamento. O UDP, por ser sem conexão, não oferece garantias de entrega nem de ordem, reduzindo a sobrecarga.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-redes-transporte-007",
+            "texto": "Na arquitetura TCP/IP, a camada de transporte oferece comunicação fim a fim entre processos. O TCP fornece serviço orientado a conexão, entrega confiável, controle de fluxo e controle de congestionamento. O UDP oferece serviço sem conexão com menor sobrecarga, sem garantir entrega ou ordenação.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Redes de Computadores",
+              "habilidade": "Comparar protocolos de transporte",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet.",
+              "linha": 7,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 25.756259,
+              "termos_recuperados": [
+                "comunicacao",
+                "fim",
+                "protocolos",
+                "tcp",
+                "transporte",
+                "udp"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "arquiteturas",
+                "cenario",
+                "comunicacao",
+                "conforme",
+                "fim",
+                "garantias",
+                "oferecidas",
+                "pelos",
+                "protocolo",
+                "protocolos",
+                "requisitos",
+                "selecionar",
+                "tcp",
+                "transporte",
+                "udp"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-redes-transporte-007",
+                  "score": 25.756259
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Descreva, em comparação, as garantias de entrega e controle de fluxo fornecidas pelos protocolos de transporte que oferecem comunicação fim a fim.",
+            "resposta_correta": "TCP oferece entrega confiável e ordenada; UDP não oferece essas garantias",
+            "explicacao": "O TCP, por ser orientado a conexão, garante entrega confiável e ordenada, além de controle de fluxo e congestionamento. O UDP, por ser sem conexão, não oferece garantias de entrega nem de ordem, reduzindo a sobrecarga.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-20b",
+            "prompt_version": "enade-stem-1.1.0"
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "HTTP oferece segurança contra ataques man-in-the-middle",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "SMTP oferece verificação de origem das mensagens",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "SMTP controla o conteúdo das mensagens enviadas",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "HTTPS oferece privacidade ao compartilhar informações",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto"
+            ],
+            "amostras": 2,
+            "candidatos_gerados": 8,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 8,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                0,
+                2,
+                6,
+                3
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Descreva, em comparação, as garantias de entrega e controle de fluxo fornecidas pelos protocolos de transporte que oferecem comunicação fim a fim.",
+            "alternativas": [
+              "HTTPS oferece privacidade ao compartilhar informações",
+              "SMTP controla o conteúdo das mensagens enviadas",
+              "HTTP oferece segurança contra ataques man-in-the-middle",
+              "SMTP oferece verificação de origem das mensagens",
+              "TCP oferece entrega confiável e ordenada; UDP não oferece essas garantias"
+            ],
+            "correta": 4,
+            "explicacao": "O TCP, por ser orientado a conexão, garante entrega confiável e ordenada, além de controle de fluxo e congestionamento. O UDP, por ser sem conexão, não oferece garantias de entrega nem de ordem, reduzindo a sobrecarga.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 35.907
+    },
+    {
+      "spec_id": "P03",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Um sistema bancário online deve permitir que usuários façam transferências entre contas. Qual tipo de requisito é 'O sistema deve processar até 10.000 transações por segundo'?",
+        "alternativas": [
+          "Requisito de desempenho",
+          "Requisitsores de recursos",
+          "Requisitos de segurança",
+          "Restrições de tempo",
+          "Regulamentos de qualidade"
+        ],
+        "correta": 0,
+        "explicacao": "Esta frase descreve uma restrição de desempenho, um atributo que avalia a capacidade do sistema, não um comportamento funcional.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-engsoftware-requisitos-009",
+            "texto": "Requisitos funcionais descrevem serviços e comportamentos esperados do sistema. Requisitos não funcionais estabelecem atributos e restrições, como desempenho, segurança, confiabilidade e usabilidade. Elicitação, especificação, validação e gerenciamento de mudanças ajudam a manter alinhamento entre necessidades e solução.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Engenharia de Software",
+              "habilidade": "Analisar e classificar requisitos",
+              "objeto_conhecimento": "Engenharia de requisitos",
+              "referencia": "SOMMERVILLE, I. Engenharia de Software.",
+              "linha": 9,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 15.611199,
+              "termos_recuperados": [
+                "classificar",
+                "engenharia",
+                "funcionais",
+                "nao",
+                "requisitos"
+              ],
+              "candidatas_relevantes": 3,
+              "consulta_normalizada": [
+                "cenario",
+                "classificar",
+                "conforme",
+                "engenharia",
+                "finalidade",
+                "funcionais",
+                "nao",
+                "projeto",
+                "requisitos"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-engsoftware-requisitos-009",
+                  "score": 15.611199
+                },
+                {
+                  "id": "rag-engsoftware-testes-010",
+                  "score": 2.733973
+                },
+                {
+                  "id": "rag-estruturas-dados-004",
+                  "score": 1.587169
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Um sistema bancário online deve permitir que usuários façam transferências entre contas. Qual tipo de requisito é 'O sistema deve processar até 10.000 transações por segundo'?",
+            "resposta_correta": "Requisito de desempenho",
+            "explicacao": "Esta frase descreve uma restrição de desempenho, um atributo que avalia a capacidade do sistema, não um comportamento funcional.",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-20b",
+            "prompt_version": "enade-stem-1.1.0"
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "Requisitos de segurança",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Requisitsores de recursos",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Restrições de tempo",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Regulamentos de qualidade",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_3:distratos->distratores",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto"
+            ],
+            "amostras": 3,
+            "candidatos_gerados": 8,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 8,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Um sistema bancário online deve permitir que usuários façam transferências entre contas. Qual tipo de requisito é 'O sistema deve processar até 10.000 transações por segundo'?",
+            "alternativas": [
+              "Requisito de desempenho",
+              "Requisitsores de recursos",
+              "Requisitos de segurança",
+              "Restrições de tempo",
+              "Regulamentos de qualidade"
+            ],
+            "correta": 0,
+            "explicacao": "Esta frase descreve uma restrição de desempenho, um atributo que avalia a capacidade do sistema, não um comportamento funcional.",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 1,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 3
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 42.424
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em um call center, as chamadas chegam continuamente e devem ser atendidas na ordem de chegada. Se uma chamada for cancelada antes de ser atendida, ela deve ser removida da lista de espera. Qual estrutura de dados é mais adequada para gerenciar essa fila de chamadas?",
+        "alternativas": [
+          "Fila (FIFO)",
+          "Linha de Espera",
+          "Pilha",
+          "Lista encadeada",
+          "Cola"
+        ],
+        "correta": 0,
+        "explicacao": "A estrutura que mantém a ordem de inserção garante que a primeira chamada recebida seja a primeira atendida, satisfazendo a disciplina FIFO. Remoções de itens específicos, como cancelamentos, podem ser realizadas percorrendo a lista ou utilizando ponteiros, sem violar a ordem das demais chamadas.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-estruturas-dados-004",
+            "texto": "Pilhas seguem a disciplina LIFO, enquanto filas seguem FIFO. Árvores de busca organizam chaves hierarquicamente e tabelas de dispersão usam funções hash para localizar elementos. A estrutura apropriada depende das operações predominantes, dos requisitos de ordenação e do custo aceitável de busca, inserção e remoção.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Algoritmos e Estruturas de Dados",
+              "habilidade": "Selecionar estruturas de dados",
+              "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+              "referencia": "CORMEN, T. H. et al. Algoritmos: Teoria e Prática.",
+              "linha": 4,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 33.841909,
+              "termos_recuperados": [
+                "arvores",
+                "estrutura",
+                "estruturas",
+                "filas",
+                "hash",
+                "operacoes",
+                "pilhas",
+                "predominantes",
+                "selecionar",
+                "tabelas"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "adequada",
+                "algoritmicas",
+                "arvores",
+                "considerando",
+                "estrutura",
+                "estruturas",
+                "filas",
+                "hash",
+                "operacoes",
+                "pilhas",
+                "predominantes",
+                "projetar",
+                "selecionar",
+                "solucoes",
+                "tabelas"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-estruturas-dados-004",
+                  "score": 33.841909
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Em um call center, as chamadas chegam continuamente e devem ser atendidas na ordem de chegada. Se uma chamada for cancelada antes de ser atendida, ela deve ser removida da lista de espera. Qual estrutura de dados é mais adequada para gerenciar essa fila de chamadas?",
+            "resposta_correta": "Fila (FIFO)",
+            "explicacao": "A estrutura que mantém a ordem de inserção garante que a primeira chamada recebida seja a primeira atendida, satisfazendo a disciplina FIFO. Remoções de itens específicos, como cancelamentos, podem ser realizadas percorrendo a lista ou utilizando ponteiros, sem violar a ordem das demais chamadas.",
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-20b",
+            "prompt_version": "enade-stem-1.1.0"
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "Lista encadeada",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Cola",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Linha de Espera",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Pilha",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:placeholder_descartado",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_3:distratos->distratores",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto"
+            ],
+            "amostras": 3,
+            "candidatos_gerados": 7,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 7,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                3,
+                0,
+                1,
+                2
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Em um call center, as chamadas chegam continuamente e devem ser atendidas na ordem de chegada. Se uma chamada for cancelada antes de ser atendida, ela deve ser removida da lista de espera. Qual estrutura de dados é mais adequada para gerenciar essa fila de chamadas?",
+            "alternativas": [
+              "Fila (FIFO)",
+              "Linha de Espera",
+              "Pilha",
+              "Lista encadeada",
+              "Cola"
+            ],
+            "correta": 0,
+            "explicacao": "A estrutura que mantém a ordem de inserção garante que a primeira chamada recebida seja a primeira atendida, satisfazendo a disciplina FIFO. Remoções de itens específicos, como cancelamentos, podem ser realizadas percorrendo a lista ou utilizando ponteiros, sem violar a ordem das demais chamadas.",
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 1
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 37.406
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Qual é a principal diferença entre aprendizado supervisionado e não supervisionado?",
+        "alternativas": [
+          "O uso de modelos probabilísticos",
+          "A utilização de algoritmos complexos",
+          "O uso de métodos baseados na probabilidade",
+          "O uso de um conjunto diversificado de exemplos",
+          "Uso de rótulos nos dados de treinamento"
+        ],
+        "correta": 4,
+        "explicacao": "No aprendizado supervisionado, os exemplos de treinamento vêm com rótulos que orientam a construção do modelo para tarefas de classificação ou regressão, enquanto no aprendizado não supervisionado os dados não possuem rótulos e o objetivo é descobrir estruturas ou agrupamentos internos.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-ia-aprendizado-011",
+            "texto": "No aprendizado supervisionado, exemplos rotulados orientam a construção de modelos para classificação ou regressão. No aprendizado não supervisionado, o objetivo é identificar estruturas ou agrupamentos sem rótulos de saída. A avaliação deve usar dados independentes do treinamento para estimar generalização e reduzir conclusões afetadas por sobreajuste.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Inteligência Artificial",
+              "habilidade": "Distinguir paradigmas de aprendizado",
+              "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+              "referencia": "RUSSELL, S.; NORVIG, P. Inteligência Artificial: Uma Abordagem Moderna.",
+              "linha": 11,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 22.082778,
+              "termos_recuperados": [
+                "aprendizado",
+                "artificial",
+                "inteligencia",
+                "nao",
+                "paradigmas",
+                "supervisionado"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "aprendizado",
+                "artificial",
+                "disponiveis",
+                "inteligencia",
+                "metodos",
+                "nao",
+                "paradigmas",
+                "partir",
+                "supervisionado"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-ia-aprendizado-011",
+                  "score": 22.082778
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Qual é a principal diferença entre aprendizado supervisionado e não supervisionado?",
+            "resposta_correta": "Uso de rótulos nos dados de treinamento",
+            "explicacao": "No aprendizado supervisionado, os exemplos de treinamento vêm com rótulos que orientam a construção do modelo para tarefas de classificação ou regressão, enquanto no aprendizado não supervisionado os dados não possuem rótulos e o objetivo é descobrir estruturas ou agrupamentos internos.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-20b",
+            "prompt_version": "enade-stem-1.1.0"
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "O uso de métodos baseados na probabilidade",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "O uso de um conjunto diversificado de exemplos",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "A utilização de algoritmos complexos",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "O uso de modelos probabilísticos",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_3:distratos->distratores",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto"
+            ],
+            "amostras": 3,
+            "candidatos_gerados": 8,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 8,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                7,
+                4,
+                0,
+                1
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Qual é a principal diferença entre aprendizado supervisionado e não supervisionado?",
+            "alternativas": [
+              "O uso de modelos probabilísticos",
+              "A utilização de algoritmos complexos",
+              "O uso de métodos baseados na probabilidade",
+              "O uso de um conjunto diversificado de exemplos",
+              "Uso de rótulos nos dados de treinamento"
+            ],
+            "correta": 4,
+            "explicacao": "No aprendizado supervisionado, os exemplos de treinamento vêm com rótulos que orientam a construção do modelo para tarefas de classificação ou regressão, enquanto no aprendizado não supervisionado os dados não possuem rótulos e o objetivo é descobrir estruturas ou agrupamentos internos.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 60.239
+    }
+  ],
+  "finished_at": "2026-09-24T19:36:46.476167+00:00"
+}

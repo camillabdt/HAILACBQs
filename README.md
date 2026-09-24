@@ -1,35 +1,52 @@
-# HAILA Front
+# HAILA
 
-Interface completa para apresentação, configuração, geração e revisão de questões ENADE. O visual segue a referência fornecida, com mascote original, e a integração usa o contrato real da API HAILA-CBQ.
+HAILA é uma arquitetura híbrida para gerar questões objetivas no formato ENADE com rastreabilidade e revisão humana. O código operacional está separado da interface e dos experimentos da pesquisa.
 
-## Executar
+## Arquitetura
 
-```sh
-./scripts/start_front.sh
+```mermaid
+flowchart LR
+    P[Professor] --> F[Frontend HAILA]
+    F --> O[Orquestrador]
+    O --> R[RAG local]
+    R --> L[LLM: núcleo]
+    L --> S[SLM Qwen: distratores]
+    S --> M[Montagem]
+    M --> D{Red flags determinísticas}
+    D -->|sem bloqueio| C[Candidata à revisão humana]
+    D -->|núcleo| L
+    D -->|distratores| S
+    C --> H{Parecer do professor}
+    H --> A[Aprovada]
+    H --> X[Rejeitada]
 ```
 
-Abra http://127.0.0.1:4173. Para outra porta do motor:
+O RAG recupera uma referência do acervo local. A LLM produz enunciado, resposta correta e explicação. A SLM local produz os distratores. Regras determinísticas verificam estrutura, duplicidade, formatação, vazamentos e dependências ausentes. A aprovação pedagógica permanece humana.
 
-```sh
-python3 server.py --backend http://127.0.0.1:8000 --port 4173
+## Pastas
+
+- `backend/`: API, orquestração, RAG, geradores, regras e persistência.
+- `frontend/`: HAILA Studio e proxy local restrito.
+- `research/`: protocolos e componentes experimentais da dissertação.
+- `docs/`: documentação da arquitetura e do contrato da API.
+- `runtime/`: banco e saídas locais; não deve ser versionado.
+- `archive/`: orientação sobre o código legado preservado.
+
+## Execução
+
+Crie e ative um ambiente Python, instale `backend/requirements.txt` e copie `.env.example` para `.env`. Depois, em dois terminais:
+
+```bash
+make backend
+make frontend
 ```
 
-Também é possível executar diretamente com `python3 server.py`. Use `HAILA_API_URL` e `HAILA_FRONT_PORT` para alterar a configuração; `.env.example` mostra os valores padrão.
+A API ficará em `http://127.0.0.1:8000` e o HAILA Studio em `http://127.0.0.1:4173/studio.html`.
 
-Para verificar o contrato do front sem carregar modelos, execute `python3 scripts/check_integration.py`. O teste sobe um motor temporário em memória, percorre saúde, criação, geração e histórico, e encerra sem persistir dados.
+## Verificação
 
-Inicie separadamente o motor existente usando `iniciar_haila_api.sh` no projeto original. Nenhuma credencial é enviada ao navegador. A interface chama `/health`, cria `/requests`, executa `/requests/{id}/generate` e consulta `/requests/{id}` a cada quatro segundos durante a execução. O contrato completo está em `docs/API_CONTRACT.md`.
+```bash
+make test
+```
 
-## Escopo e limites
-
-- Página inicial e estúdio responsivos; demonstração claramente identificada, rastreabilidade e exportação JSON.
-- Parâmetros pedagógicos, retorno de alternativas, gabarito, justificativa e eventos reais do motor.
-- O exemplo não executa modelos. Não há scores, métricas, júri de modelos ou autenticação simulados.
-- A conexão real depende da API e dos modelos configurados. A interface não inicia treinamento nem carrega modelos por conta própria.
-- Resultados ficam na memória da página; o histórico persistente pertence ao motor. Não feche a aba durante a geração. A API atual não fornece o conteúdo de versões completas ao consultar um histórico, portanto não é possível restaurar uma questão final após recarregar a página sem ampliar esse contrato.
-- O servidor é local, vinculado a `127.0.0.1`. Para publicar, substitua o proxy por uma API HTTPS protegida e configure autenticação antes de expor a geração.
-- As fontes têm alternativas locais caso Google Fonts não esteja acessível.
-
-## Mascote
-
-`public/mascot.png` foi criada pela ferramenta nativa de geração de imagens. Prompt: “Friendly cute feminine educational robot, full body standing arms open. White pearlescent armor, teal screen face with expressive eyes and a smile, magenta headphones, pink joints and belt, white and lavender high ponytail helmet. Polished cartoon illustration, entire figure visible, transparent background, no typography or UI, for a deep ultramarine website hero.”
+Modelos que avaliam questões como substitutos de professores não fazem parte do fluxo de produção. Esse uso permanece em `research/` como protocolo experimental para comparação com pareceres humanos.

@@ -1,0 +1,356 @@
+{
+  "started_at": "2026-09-24T19:30:05.007567+00:00",
+  "conditions": [
+    "C1_LLM",
+    "C2_RAG_LLM",
+    "C3_RAG_LLM_SLM"
+  ],
+  "items": [
+    {
+      "spec_id": "P01",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Em um sistema de banco de dados, uma transação falha antes de executar o COMMIT. Qual das seguintes afirmações descreve corretamente a diferença entre atomicidade e durabilidade nessa situação?",
+        "alternativas": [
+          "Atomicidade garante que todas as operações da transação sejam revertidas, enquanto durabilidade garante que as alterações permaneçam mesmo após a falha.",
+          "Atomicidade garante que as alterações sejam permanentes, enquanto durabilidade garante que a transação seja revertida em caso de falha.",
+          "Atomicidade assegura que a falha não afete outras transações, enquanto durabilidade assegura que a transação seja executada em ordem sequencial.",
+          "Atomicidade garante que a transação seja executada em blocos de dados, enquanto durabilidade garante que cada bloco seja gravado em disco.",
+          "Atomicidade assegura que a transação seja revertida se falhar antes do COMMIT, enquanto durabilidade assegura que as alterações permaneçam somente após o COMMIT."
+        ],
+        "correta": 4,
+        "explicacao": "A propriedade de atomicidade garante que, se a transação falhar antes de ser confirmada, todas as suas alterações são desfeitas, retornando o banco ao estado anterior. A durabilidade, por outro lado, só entra em vigor após o COMMIT, assegurando que as alterações sobrevivam a falhas subsequentes.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Em um sistema de banco de dados, uma transação falha antes de executar o COMMIT. Qual das seguintes afirmações descreve corretamente a diferença entre atomicidade e durabilidade nessa situação?",
+            "alternativas": [
+              "Atomicidade garante que todas as operações da transação sejam revertidas, enquanto durabilidade garante que as alterações permaneçam mesmo após a falha.",
+              "Atomicidade garante que as alterações sejam permanentes, enquanto durabilidade garante que a transação seja revertida em caso de falha.",
+              "Atomicidade assegura que a falha não afete outras transações, enquanto durabilidade assegura que a transação seja executada em ordem sequencial.",
+              "Atomicidade garante que a transação seja executada em blocos de dados, enquanto durabilidade garante que cada bloco seja gravado em disco.",
+              "Atomicidade assegura que a transação seja revertida se falhar antes do COMMIT, enquanto durabilidade assegura que as alterações permaneçam somente após o COMMIT."
+            ],
+            "correta": 4,
+            "explicacao": "A propriedade de atomicidade garante que, se a transação falhar antes de ser confirmada, todas as suas alterações são desfeitas, retornando o banco ao estado anterior. A durabilidade, por outro lado, só entra em vigor após o COMMIT, assegurando que as alterações sobrevivam a falhas subsequentes.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 3.851
+    },
+    {
+      "spec_id": "P02",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Em uma aplicação de transmissão de vídeo em tempo real, qual das seguintes afirmações descreve de maneira mais adequada a diferença entre as garantias oferecidas pelos protocolos TCP e UDP?",
+        "alternativas": [
+          "O TCP garante entrega ordenada e sem erros, mas pode introduzir latência, enquanto o UDP não garante ordem nem correção de erros, permitindo menor atraso.",
+          "O UDP oferece retransmissão automática de pacotes perdidos, enquanto o TCP permite perda de pacotes para reduzir a carga de rede.",
+          "Ambos os protocolos garantem entrega sem duplicidade, porém o TCP permite controle de fluxo, enquanto o UDP não.",
+          "O UDP garante que os dados cheguem na mesma ordem em que foram enviados, enquanto o TCP não.",
+          "O TCP garante que os dados sejam entregues apenas se o receptor solicitar, enquanto o UDP envia os dados sem confirmação."
+        ],
+        "correta": 0,
+        "explicacao": "O TCP oferece garantias de entrega confiável, controle de fluxo e correção de erros, mas pode aumentar a latência. O UDP não oferece essas garantias, resultando em menor sobrecarga e latência, adequado para aplicações que toleram perdas.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Em uma aplicação de transmissão de vídeo em tempo real, qual das seguintes afirmações descreve de maneira mais adequada a diferença entre as garantias oferecidas pelos protocolos TCP e UDP?",
+            "alternativas": [
+              "O TCP garante entrega ordenada e sem erros, mas pode introduzir latência, enquanto o UDP não garante ordem nem correção de erros, permitindo menor atraso.",
+              "O UDP oferece retransmissão automática de pacotes perdidos, enquanto o TCP permite perda de pacotes para reduzir a carga de rede.",
+              "Ambos os protocolos garantem entrega sem duplicidade, porém o TCP permite controle de fluxo, enquanto o UDP não.",
+              "O UDP garante que os dados cheguem na mesma ordem em que foram enviados, enquanto o TCP não.",
+              "O TCP garante que os dados sejam entregues apenas se o receptor solicitar, enquanto o UDP envia os dados sem confirmação."
+            ],
+            "correta": 0,
+            "explicacao": "O TCP oferece garantias de entrega confiável, controle de fluxo e correção de erros, mas pode aumentar a latência. O UDP não oferece essas garantias, resultando em menor sobrecarga e latência, adequado para aplicações que toleram perdas.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 2.343
+    },
+    {
+      "spec_id": "P03",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "No sistema de gerenciamento de biblioteca, qual das seguintes especificações descreve um requisito funcional?",
+        "alternativas": [
+          "O sistema deve garantir que o tempo de resposta seja inferior a 2 segundos.",
+          "O sistema deve registrar a data de devolução do livro.",
+          "O sistema deve ser compatível com navegadores modernos.",
+          "O sistema deve ter alta disponibilidade 99,9%.",
+          "O sistema deve criptografar dados sensíveis."
+        ],
+        "correta": 1,
+        "explicacao": "Um requisito funcional descreve uma ação ou comportamento que o sistema deve realizar, como registrar a data de devolução de um livro. As demais alternativas referem-se a características de desempenho, compatibilidade, disponibilidade e segurança, que são requisitos não funcionais.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "No sistema de gerenciamento de biblioteca, qual das seguintes especificações descreve um requisito funcional?",
+            "alternativas": [
+              "O sistema deve garantir que o tempo de resposta seja inferior a 2 segundos.",
+              "O sistema deve registrar a data de devolução do livro.",
+              "O sistema deve ser compatível com navegadores modernos.",
+              "O sistema deve ter alta disponibilidade 99,9%.",
+              "O sistema deve criptografar dados sensíveis."
+            ],
+            "correta": 1,
+            "explicacao": "Um requisito funcional descreve uma ação ou comportamento que o sistema deve realizar, como registrar a data de devolução de um livro. As demais alternativas referem-se a características de desempenho, compatibilidade, disponibilidade e segurança, que são requisitos não funcionais.",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 2.11
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Um sistema de gerenciamento de pedidos de um restaurante online precisa armazenar os pedidos em ordem de chegada, permitir que o cozinheiro retire o pedido mais antigo para preparar, e ocasionalmente verifique se um pedido específico já está na fila para cancelar. Qual estrutura de dados é mais adequada para atender a essas operações predominantes?",
+        "alternativas": [
+          "Pilha, que armazena os pedidos em ordem LIFO, facilitando a retirada do último pedido adicionado.",
+          "Fila, que mantém a ordem de chegada dos pedidos e permite retirar o mais antigo.",
+          "Árvore binária de busca, que possibilita buscas rápidas, mas não garante a ordem de chegada.",
+          "Tabela hash, que oferece busca em tempo constante, porém não preserva a ordem de chegada.",
+          "Lista duplamente ligada, que pode ser usada como fila, mas não oferece buscas eficientes."
+        ],
+        "correta": 1,
+        "explicacao": "A fila (queue) mantém os pedidos na ordem de chegada, permitindo que o item mais antigo seja removido em tempo constante (FIFO). A busca por um pedido pode ser feita percorrendo a fila, o que atende ao requisito de verificação ocasional. As demais estruturas não mantêm a ordem de chegada ou não oferecem a operação de remoção do item mais antigo de forma eficiente.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Um sistema de gerenciamento de pedidos de um restaurante online precisa armazenar os pedidos em ordem de chegada, permitir que o cozinheiro retire o pedido mais antigo para preparar, e ocasionalmente verifique se um pedido específico já está na fila para cancelar. Qual estrutura de dados é mais adequada para atender a essas operações predominantes?",
+            "alternativas": [
+              "Pilha, que armazena os pedidos em ordem LIFO, facilitando a retirada do último pedido adicionado.",
+              "Fila, que mantém a ordem de chegada dos pedidos e permite retirar o mais antigo.",
+              "Árvore binária de busca, que possibilita buscas rápidas, mas não garante a ordem de chegada.",
+              "Tabela hash, que oferece busca em tempo constante, porém não preserva a ordem de chegada.",
+              "Lista duplamente ligada, que pode ser usada como fila, mas não oferece buscas eficientes."
+            ],
+            "correta": 1,
+            "explicacao": "A fila (queue) mantém os pedidos na ordem de chegada, permitindo que o item mais antigo seja removido em tempo constante (FIFO). A busca por um pedido pode ser feita percorrendo a fila, o que atende ao requisito de verificação ocasional. As demais estruturas não mantêm a ordem de chegada ou não oferecem a operação de remoção do item mais antigo de forma eficiente.",
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 2.819
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Uma fábrica de automóveis coleta dados de sensores de temperatura e vibração de motores em operação contínua. Nenhum dado está rotulado como 'falha' ou 'normal'. O objetivo é identificar padrões que indiquem possíveis falhas antes que ocorram. Qual abordagem de aprendizado de máquina é mais adequada para esse cenário?",
+        "alternativas": [
+          "Aprendizado supervisionado, pois o sistema precisa de rótulos de falha para treinar.",
+          "Aprendizado não supervisionado, pois os dados não contêm rótulos e podem revelar padrões de falha.",
+          "Aprendizado por reforço, pois o agente aprende a maximizar recompensas ao detectar falhas.",
+          "Aprendizado semi-supervisionado, pois pode usar poucos exemplos rotulados para melhorar.",
+          "Aprendizado por transferência, pois aplica conhecimento de outro domínio."
+        ],
+        "correta": 1,
+        "explicacao": "O aprendizado não supervisionado permite identificar padrões e anomalias em conjuntos de dados sem rótulos. Como os registros não contêm informações sobre falhas, o modelo deve descobrir por conta própria grupos ou comportamentos atípicos que podem indicar falhas potenciais.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Uma fábrica de automóveis coleta dados de sensores de temperatura e vibração de motores em operação contínua. Nenhum dado está rotulado como 'falha' ou 'normal'. O objetivo é identificar padrões que indiquem possíveis falhas antes que ocorram. Qual abordagem de aprendizado de máquina é mais adequada para esse cenário?",
+            "alternativas": [
+              "Aprendizado supervisionado, pois o sistema precisa de rótulos de falha para treinar.",
+              "Aprendizado não supervisionado, pois os dados não contêm rótulos e podem revelar padrões de falha.",
+              "Aprendizado por reforço, pois o agente aprende a maximizar recompensas ao detectar falhas.",
+              "Aprendizado semi-supervisionado, pois pode usar poucos exemplos rotulados para melhorar.",
+              "Aprendizado por transferência, pois aplica conhecimento de outro domínio."
+            ],
+            "correta": 1,
+            "explicacao": "O aprendizado não supervisionado permite identificar padrões e anomalias em conjuntos de dados sem rótulos. Como os registros não contêm informações sobre falhas, o modelo deve descobrir por conta própria grupos ou comportamentos atípicos que podem indicar falhas potenciais.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 2.02
+    },
+    {
+      "spec_id": "P01",
+      "condition": "C2_RAG_LLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "spec_id": "P02",
+      "condition": "C2_RAG_LLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "spec_id": "P03",
+      "condition": "C2_RAG_LLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C2_RAG_LLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C2_RAG_LLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "spec_id": "P01",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "spec_id": "P02",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "spec_id": "P03",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 500: Internal Server Error"
+    }
+  ],
+  "finished_at": "2026-09-24T19:30:22.687977+00:00"
+}

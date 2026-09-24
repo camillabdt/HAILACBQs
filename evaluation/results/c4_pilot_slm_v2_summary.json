@@ -1,0 +1,16 @@
+{
+  "condition": "C4",
+  "run_id": "slm-v2",
+  "n": 5,
+  "completed": 5,
+  "median_seconds": 2.319,
+  "min_seconds": 1.981,
+  "max_seconds": 64.32,
+  "request_ids": {
+    "P01": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+    "P02": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+    "P03": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+    "P04": "560bd37f-a337-4a8a-9a88-2392863f4354",
+    "P05": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577"
+  }
+}

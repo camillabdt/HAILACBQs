@@ -1,0 +1,470 @@
+{
+  "method": "IWF-SAQUET+Arif-auto-v1",
+  "sample": "expanded-v1",
+  "items": [
+    {
+      "spec_id": "E01",
+      "request_id": "97844796-4b95-41b9-b492-4f29d28e4f11",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em um programa multithread, três threads executam simultaneamente a instrução \"counter = counter + 1\" sobre a mesma variável global \"counter\". Cada incremento deve ocorrer de forma atômica para evitar condições de corrida. Qual objeto de sincronização, que garante que apenas uma thread possa possuir o bloqueio a qualquer instante e que deve ser liberado pela mesma thread que o adquiriu, deve ser utilizado para proteger essa região crítica?",
+        "alternativas": [
+          "condicional",
+          "mutex",
+          "flag",
+          "semaphore",
+          "lock"
+        ],
+        "correta": 1,
+        "explicacao": "A instrução de incremento lê, modifica e grava a variável, o que não é atômico. Sem proteção, a ordem de execução das threads cria uma condição de corrida, produzindo resultados incorretos. Um mutex (mutual exclusion lock) permite que apenas uma thread adquira o lock de cada vez; as demais ficam bloqueadas até que a thread que o detém o libere. Como o mutex só pode ser liberado pela thread que o adquiriu, evita-se a liberação indevida e, quando usado corretamente (lock/unlock pareados), não introduz deadlock. Assim, o mutex garante exclusão mútua e preserva a consistência do contador.",
+        "competencia": "Analisar sistemas concorrentes",
+        "habilidade": "Analisar sincronização e concorrência",
+        "objeto_conhecimento": "Concorrência, condições de corrida, mutexes e semáforos",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "status": 200,
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": true,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": true,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "The stem provides a clear description without ambiguous terms.",
+          "convergence_cues": "The description \"only one thread can possess the lock at any instant and must be released by the same thread\" directly defines a mutex, leading to the answer.",
+          "grammatical_cues": "No grammatical errors that hint at the answer.",
+          "gratuitous_information": "All information (three threads, increment) is relevant to the concurrency scenario.",
+          "implausible_distractors": "Option \"condicional\" is not a synchronization primitive, making it implausible.",
+          "logical_cues": "No logical inconsistencies are present.",
+          "more_than_one_correct": "Only \"mutex\" matches all the required properties.",
+          "unfocused_stem": "The stem is focused on a single concept."
+        },
+        "flaws": [
+          "implausible_distractors",
+          "convergence_cues"
+        ],
+        "iwf_count": 2,
+        "classification": "unacceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "The question assesses knowledge of synchronization mechanisms."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "The Portuguese text is grammatically correct."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "The correct answer can be determined from the stem."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "The wording is clear and unambiguous."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "A concrete multithread scenario is provided."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Each option denotes a distinct synchronization concept."
+          },
+          "distractor_homogeneity": {
+            "pass": false,
+            "evidence": "Distractors vary widely (conditional, flag, semaphore, lock) and are not homogeneous."
+          },
+          "distractor_plausibility": {
+            "pass": false,
+            "evidence": "At least one distractor (\"condicional\") is not a plausible synchronization primitive."
+          }
+        }
+      }
+    },
+    {
+      "spec_id": "E02",
+      "request_id": "771aff6b-8edd-499a-b55e-509faf230014",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em um sistema que utiliza paginação, qual papel desempenha a tabela de páginas durante a tradução de um endereço virtual em endereço físico?",
+        "alternativas": [
+          "Registrar eventos de uso",
+          "Mapear o endereço virtual para o endereço físico",
+          "Manter a segurança dos dados",
+          "Controlar acesso aos recursos",
+          "conversor de base numérica"
+        ],
+        "correta": 1,
+        "explicacao": "A tabela de páginas contém, para cada página virtual, o número do quadro físico onde a página está armazenada. Quando a MMU recebe um endereço virtual, separa o número da página e o deslocamento; usa o número da página como índice na tabela para obter o quadro correspondente e, assim, forma o endereço físico concatenando o quadro com o deslocamento. Essa associação permite que processos utilizem endereços virtuais independentes da memória física, garantindo isolamento e suporte à memória virtual.",
+        "competencia": "Analisar gerenciamento de memória",
+        "habilidade": "Analisar gerenciamento de memória",
+        "objeto_conhecimento": "Memória virtual e paginação",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "status": 200,
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": true,
+          "ambiguous_information": false,
+          "implausible_distractors": true,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": true,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "Stem is clear and unambiguous.",
+          "convergence_cues": "No linguistic cues point to the correct answer.",
+          "grammatical_cues": "No grammar errors that hint at the answer.",
+          "gratuitous_information": "All information in the stem is necessary for the question.",
+          "implausible_distractors": "Option \"conversor de base numérica\" is unrelated to the function of a page table.",
+          "logical_cues": "No logical shortcuts are present.",
+          "more_than_one_correct": "Only one alternative correctly describes the role of the page table.",
+          "unfocused_stem": "Stem focuses specifically on address translation in a paged system."
+        },
+        "flaws": [
+          "longest_option_correct",
+          "implausible_distractors",
+          "word_repeats"
+        ],
+        "iwf_count": 3,
+        "classification": "unacceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "Question aligns with the topic of paging and address translation."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "Portuguese grammar is correct."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "The question can be answered using the provided options."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "Stem is clear and easily understood."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "Context is specific to the role of the page table in virtual‑physical address mapping."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "All options are mutually exclusive."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "Distractors share a similar short‑phrase format."
+          },
+          "distractor_plausibility": {
+            "pass": false,
+            "evidence": "One distractor (\"conversor de base numérica\") is implausible for the described function."
+          }
+        }
+      }
+    },
+    {
+      "spec_id": "E04",
+      "request_id": "426fbcc4-f40a-4b5d-8006-5267121bba8a",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Um sistema deve atender solicitações de clientes na mesma ordem em que são recebidas, permitindo inserção de novas solicitações somente no final e remoção apenas no início da estrutura.",
+        "alternativas": [
+          "Árvore binária de busca",
+          "Heap",
+          "fila",
+          "Tabela hash",
+          "Pilha"
+        ],
+        "correta": 2,
+        "explicacao": "A fila implementa o comportamento FIFO (First‑In‑First‑Out), atendendo exatamente a inserção no final e remoção no início; pilha seria LIFO, árvores e tabelas hash não garantem ordem de atendimento.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 0
+          }
+        ]
+      },
+      "status": 500,
+      "evaluation": {
+        "detail": "Internal Server Error"
+      }
+    },
+    {
+      "spec_id": "E05",
+      "request_id": "7be98c48-1f5e-406a-94ec-921a0ac1643a",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Um sistema de banco de dados executa uma transação que atualiza várias tuplas. Durante a execução ocorre uma falha de energia antes que o comando COMMIT seja emitido. Considerando as propriedades ACID, qual delas permanece garantida apesar da interrupção?",
+        "alternativas": [
+          "Serialização",
+          "Durabilidade",
+          "Isolamento",
+          "Consistência",
+          "Atomicidade"
+        ],
+        "correta": 4,
+        "explicacao": "A atomicidade exige que os efeitos de uma transação ocorram integralmente ou não ocorram. Como a falha aconteceu antes do COMMIT, o SGBD deve desfazer todas as alterações parciais, preservando a atomicidade. A durabilidade só se aplica a alterações já confirmadas; portanto, a perda de dados não‑confirmados não viola a durabilidade.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações concorrentes",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          }
+        ]
+      },
+      "status": 500,
+      "evaluation": {
+        "detail": "Internal Server Error"
+      }
+    },
+    {
+      "spec_id": "E07",
+      "request_id": "83760625-8e8f-4e76-b49e-1d94f93a9d26",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em uma aplicação que requer que os segmentos cheguem ao destino na mesma ordem em que foram enviados e sem perdas, qual garantia de transporte é fornecida pelo protocolo TCP e ausente no UDP?",
+        "alternativas": [
+          "Entrega ordenada sem retransmissão de perdas",
+          "Entrega confiável e ordenada",
+          "Entrega com baixa latência garantida",
+          "Entrega não confiável e sem preservação de ordem",
+          "Entrega confiável sem preservação de ordem"
+        ],
+        "correta": 1,
+        "explicacao": "O TCP estabelece conexão, utiliza números de sequência, ACKs e retransmissões, garantindo que todos os bytes sejam entregues ao receptor e na ordem correta. O UDP não realiza controle de fluxo, não mantém estado de sequência nem retransmite pacotes perdidos, portanto não oferece essa garantia de entrega confiável e ordenada.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Comparar protocolos de transporte",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "status": 200,
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "The stem clearly asks for the transport guarantee provided by TCP and absent in UDP, leaving no ambiguity.",
+          "convergence_cues": "No wording in the stem or options leads the test‑taker toward the correct answer beyond knowledge of the protocols.",
+          "grammatical_cues": "The sentence is grammatically correct and does not contain hints.",
+          "gratuitous_information": "All information in the stem is necessary to define the required guarantee.",
+          "implausible_distractors": "All distractors are plausible statements about transport services, even if incorrect.",
+          "logical_cues": "The options do not contain logical patterns that reveal the correct choice.",
+          "more_than_one_correct": "Only one alternative accurately describes TCP's reliable ordered delivery.",
+          "unfocused_stem": "The stem is focused on a single concept: ordered, loss‑free delivery."
+        },
+        "flaws": [],
+        "iwf_count": 0,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "The stem and options are directly related to the TCP/UDP transport guarantee."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "No grammatical errors are present."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "A candidate with knowledge of TCP and UDP can answer."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "The question is clearly worded."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "The context of ordered, lossless delivery is specific enough."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Each option expresses a distinct property."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "Distractors are similar in length and style."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "All distractors could be reasonably considered by someone who confuses protocol features."
+          }
+        }
+      }
+    }
+  ]
+}

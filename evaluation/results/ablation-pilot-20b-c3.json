@@ -1,0 +1,1133 @@
+{
+  "started_at": "2026-09-24T14:13:30.755897+00:00",
+  "conditions": [
+    "C3_RAG_LLM_SLM"
+  ],
+  "items": [
+    {
+      "spec_id": "P01",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Qual propriedade ACID não é violada quando ocorre uma falha antes do COMMIT?",
+        "alternativas": [
+          "Conservação",
+          "Durabilidade não é violada; atomicidade pode falhar se não revertida.",
+          "Integridade",
+          "Transparência",
+          "Segurança"
+        ],
+        "correta": 1,
+        "explicacao": "O princípio de durabilidade garante que os efeitos de transações já confirmadas por COMMIT sejam preservados mesmo após falhas. Quando a falha ocorre antes do COMMIT, a transação ainda não foi confirmada, portanto a durabilidade não se aplica. Entretanto, a atomicidade exige que a transação produza todos os seus efeitos ou nenhum. Se o sistema não reverte as alterações parciais, a atomicidade é violada. Assim, a falha antes do COMMIT não constitui violação de durabilidade, mas pode violar a atomicidade caso não haja rollback.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-bd-transacoes-005",
+            "texto": "Transações de banco de dados devem preservar atomicidade, consistência, isolamento e durabilidade. O controle de concorrência busca evitar anomalias como leitura suja, atualização perdida e leitura não repetível. Bloqueios, ordenação por marcas de tempo e controle multiversão são estratégias usuais. Atomicidade significa que a transação produz todos os seus efeitos ou nenhum. Durabilidade protege os efeitos de transações já confirmadas por COMMIT. Uma falha antes da confirmação não demonstra violação de durabilidade; desfazer efeitos parciais preserva atomicidade.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Banco de Dados",
+              "habilidade": "Analisar transações concorrentes",
+              "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+              "referencia": "ELMASRI, R.; NAVATHE, S. Sistemas de Banco de Dados. Complemento conceitual: PostgreSQL, documentação 18, seção 3.4 Transactions, https://www.postgresql.org/docs/18/tutorial-transactions.html (consulta em 2026-09-22).",
+              "linha": 5,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 29.820143,
+              "termos_recuperados": [
+                "acid",
+                "antes",
+                "atomicidade",
+                "commit",
+                "concorrencia",
+                "controle",
+                "durabilidade",
+                "falha",
+                "propriedades",
+                "transacoes"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "acid",
+                "antes",
+                "atomicidade",
+                "commit",
+                "concorrencia",
+                "controle",
+                "durabilidade",
+                "falha",
+                "falhas",
+                "gerenciamento",
+                "mecanismos",
+                "ocorrida",
+                "propriedades",
+                "recuperacao",
+                "transacoes"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-bd-transacoes-005",
+                  "score": 29.820143
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Qual propriedade ACID não é violada quando ocorre uma falha antes do COMMIT?",
+            "resposta_correta": "Durabilidade não é violada; atomicidade pode falhar se não revertida.",
+            "explicacao": "O princípio de durabilidade garante que os efeitos de transações já confirmadas por COMMIT sejam preservados mesmo após falhas. Quando a falha ocorre antes do COMMIT, a transação ainda não foi confirmada, portanto a durabilidade não se aplica. Entretanto, a atomicidade exige que a transação produza todos os seus efeitos ou nenhum. Se o sistema não reverte as alterações parciais, a atomicidade é violada. Assim, a falha antes do COMMIT não constitui violação de durabilidade, mas pode violar a atomicidade caso não haja rollback.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-20b",
+            "prompt_version": "enade-stem-1.1.0"
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "Conservação",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Transparência",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Integridade",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Segurança",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_3:distratos->distratores",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto"
+            ],
+            "amostras": 3,
+            "candidatos_gerados": 5,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 5,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Qual propriedade ACID não é violada quando ocorre uma falha antes do COMMIT?",
+            "alternativas": [
+              "Conservação",
+              "Durabilidade não é violada; atomicidade pode falhar se não revertida.",
+              "Integridade",
+              "Transparência",
+              "Segurança"
+            ],
+            "correta": 1,
+            "explicacao": "O princípio de durabilidade garante que os efeitos de transações já confirmadas por COMMIT sejam preservados mesmo após falhas. Quando a falha ocorre antes do COMMIT, a transação ainda não foi confirmada, portanto a durabilidade não se aplica. Entretanto, a atomicidade exige que a transação produza todos os seus efeitos ou nenhum. Se o sistema não reverte as alterações parciais, a atomicidade é violada. Assim, a falha antes do COMMIT não constitui violação de durabilidade, mas pode violar a atomicidade caso não haja rollback.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 3
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 45.319
+    },
+    {
+      "spec_id": "P02",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em um cenário de aplicação que requer entrega confiável e ordenada de dados entre processos finais, qual protocolo de transporte oferece essas garantias?",
+        "alternativas": [
+          "SMTP",
+          "FTP",
+          "UDP",
+          "HTTP",
+          "TCP"
+        ],
+        "correta": 4,
+        "explicacao": "O TCP, na camada de transporte da arquitetura TCP/IP, oferece serviço orientado a conexão que assegura entrega confiável, controle de fluxo e controle de congestionamento, além de manter a ordem dos pacotes. O UDP, por outro lado, não garante nem entrega nem ordenação.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-redes-transporte-007",
+            "texto": "Na arquitetura TCP/IP, a camada de transporte oferece comunicação fim a fim entre processos. O TCP fornece serviço orientado a conexão, entrega confiável, controle de fluxo e controle de congestionamento. O UDP oferece serviço sem conexão com menor sobrecarga, sem garantir entrega ou ordenação.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Redes de Computadores",
+              "habilidade": "Comparar protocolos de transporte",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet.",
+              "linha": 7,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 25.756259,
+              "termos_recuperados": [
+                "comunicacao",
+                "fim",
+                "protocolos",
+                "tcp",
+                "transporte",
+                "udp"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "arquiteturas",
+                "cenario",
+                "comunicacao",
+                "conforme",
+                "fim",
+                "garantias",
+                "oferecidas",
+                "pelos",
+                "protocolo",
+                "protocolos",
+                "requisitos",
+                "selecionar",
+                "tcp",
+                "transporte",
+                "udp"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-redes-transporte-007",
+                  "score": 25.756259
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Em um cenário de aplicação que requer entrega confiável e ordenada de dados entre processos finais, qual protocolo de transporte oferece essas garantias?",
+            "resposta_correta": "TCP",
+            "explicacao": "O TCP, na camada de transporte da arquitetura TCP/IP, oferece serviço orientado a conexão que assegura entrega confiável, controle de fluxo e controle de congestionamento, além de manter a ordem dos pacotes. O UDP, por outro lado, não garante nem entrega nem ordenação.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-20b",
+            "prompt_version": "enade-stem-1.1.0"
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "UDP",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "HTTP",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "FTP",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "SMTP",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_3:distratos->distratores",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto"
+            ],
+            "amostras": 3,
+            "candidatos_gerados": 4,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "selecao": "pool_exato"
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Em um cenário de aplicação que requer entrega confiável e ordenada de dados entre processos finais, qual protocolo de transporte oferece essas garantias?",
+            "alternativas": [
+              "SMTP",
+              "FTP",
+              "UDP",
+              "HTTP",
+              "TCP"
+            ],
+            "correta": 4,
+            "explicacao": "O TCP, na camada de transporte da arquitetura TCP/IP, oferece serviço orientado a conexão que assegura entrega confiável, controle de fluxo e controle de congestionamento, além de manter a ordem dos pacotes. O UDP, por outro lado, não garante nem entrega nem ordenação.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 30.258
+    },
+    {
+      "spec_id": "P03",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Um sistema de controle de estoque deve registrar a data e hora de cada transação. Qual tipo de requisito descreve essa exigência?",
+        "alternativas": [
+          "Requisito funcional",
+          "Requisições funcionais",
+          "Requisitos estéticos",
+          "Normas operacionais",
+          "Requisitos normativos"
+        ],
+        "correta": 0,
+        "explicacao": "O requisito descreve um serviço que o sistema deve executar – registrar data e hora de cada transação – caracterizando um requisito funcional. Requisitos não funcionais tratam de atributos como desempenho ou segurança, não se aplicam a esta exigência.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-engsoftware-requisitos-009",
+            "texto": "Requisitos funcionais descrevem serviços e comportamentos esperados do sistema. Requisitos não funcionais estabelecem atributos e restrições, como desempenho, segurança, confiabilidade e usabilidade. Elicitação, especificação, validação e gerenciamento de mudanças ajudam a manter alinhamento entre necessidades e solução.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Engenharia de Software",
+              "habilidade": "Analisar e classificar requisitos",
+              "objeto_conhecimento": "Engenharia de requisitos",
+              "referencia": "SOMMERVILLE, I. Engenharia de Software.",
+              "linha": 9,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 15.611199,
+              "termos_recuperados": [
+                "classificar",
+                "engenharia",
+                "funcionais",
+                "nao",
+                "requisitos"
+              ],
+              "candidatas_relevantes": 3,
+              "consulta_normalizada": [
+                "cenario",
+                "classificar",
+                "conforme",
+                "engenharia",
+                "finalidade",
+                "funcionais",
+                "nao",
+                "projeto",
+                "requisitos"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-engsoftware-requisitos-009",
+                  "score": 15.611199
+                },
+                {
+                  "id": "rag-engsoftware-testes-010",
+                  "score": 2.733973
+                },
+                {
+                  "id": "rag-estruturas-dados-004",
+                  "score": 1.587169
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Um sistema de controle de estoque deve registrar a data e hora de cada transação. Qual tipo de requisito descreve essa exigência?",
+            "resposta_correta": "Requisito funcional",
+            "explicacao": "O requisito descreve um serviço que o sistema deve executar – registrar data e hora de cada transação – caracterizando um requisito funcional. Requisitos não funcionais tratam de atributos como desempenho ou segurança, não se aplicam a esta exigência.",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-20b",
+            "prompt_version": "enade-stem-1.1.0"
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "Requisitos estéticos",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Requisições funcionais",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Normas operacionais",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Requisitos normativos",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:placeholder_descartado",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_3:distratos->distratores",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:placeholder_descartado"
+            ],
+            "amostras": 3,
+            "candidatos_gerados": 7,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 7,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Um sistema de controle de estoque deve registrar a data e hora de cada transação. Qual tipo de requisito descreve essa exigência?",
+            "alternativas": [
+              "Requisito funcional",
+              "Requisições funcionais",
+              "Requisitos estéticos",
+              "Normas operacionais",
+              "Requisitos normativos"
+            ],
+            "correta": 0,
+            "explicacao": "O requisito descreve um serviço que o sistema deve executar – registrar data e hora de cada transação – caracterizando um requisito funcional. Requisitos não funcionais tratam de atributos como desempenho ou segurança, não se aplicam a esta exigência.",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 1,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 3
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 40.138
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em um sistema onde a maioria das operações são inserções e buscas de elementos sem necessidade de ordenação, qual estrutura de dados é mais adequada?",
+        "alternativas": [
+          "tabela hash",
+          "algoritmo quicksort",
+          "matriz",
+          "array dinâmico",
+          "grafo direcionado"
+        ],
+        "correta": 0,
+        "explicacao": "Como as operações predominam em inserção e busca, a tabela hash oferece complexidade constante média e não requer ordenação, tornando‑a a escolha mais eficiente.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-estruturas-dados-004",
+            "texto": "Pilhas seguem a disciplina LIFO, enquanto filas seguem FIFO. Árvores de busca organizam chaves hierarquicamente e tabelas de dispersão usam funções hash para localizar elementos. A estrutura apropriada depende das operações predominantes, dos requisitos de ordenação e do custo aceitável de busca, inserção e remoção.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Algoritmos e Estruturas de Dados",
+              "habilidade": "Selecionar estruturas de dados",
+              "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+              "referencia": "CORMEN, T. H. et al. Algoritmos: Teoria e Prática.",
+              "linha": 4,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 33.841909,
+              "termos_recuperados": [
+                "arvores",
+                "estrutura",
+                "estruturas",
+                "filas",
+                "hash",
+                "operacoes",
+                "pilhas",
+                "predominantes",
+                "selecionar",
+                "tabelas"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "adequada",
+                "algoritmicas",
+                "arvores",
+                "considerando",
+                "estrutura",
+                "estruturas",
+                "filas",
+                "hash",
+                "operacoes",
+                "pilhas",
+                "predominantes",
+                "projetar",
+                "selecionar",
+                "solucoes",
+                "tabelas"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-estruturas-dados-004",
+                  "score": 33.841909
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Em um sistema onde a maioria das operações são inserções e buscas de elementos sem necessidade de ordenação, qual estrutura de dados é mais adequada?",
+            "resposta_correta": "tabela hash",
+            "explicacao": "Como as operações predominam em inserção e busca, a tabela hash oferece complexidade constante média e não requer ordenação, tornando‑a a escolha mais eficiente.",
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-20b",
+            "prompt_version": "enade-stem-1.1.0"
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "array dinâmico",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "grafo direcionado",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "algoritmo quicksort",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "matriz",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto"
+            ],
+            "amostras": 2,
+            "candidatos_gerados": 8,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 8,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                1,
+                6,
+                7,
+                0
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Em um sistema onde a maioria das operações são inserções e buscas de elementos sem necessidade de ordenação, qual estrutura de dados é mais adequada?",
+            "alternativas": [
+              "tabela hash",
+              "algoritmo quicksort",
+              "matriz",
+              "array dinâmico",
+              "grafo direcionado"
+            ],
+            "correta": 0,
+            "explicacao": "Como as operações predominam em inserção e busca, a tabela hash oferece complexidade constante média e não requer ordenação, tornando‑a a escolha mais eficiente.",
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 1
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 24.59
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Considera-se um conjunto de dados de clientes contendo idade, renda e histórico de compras, mas sem rótulos que indiquem se cada cliente é ou não um cliente fiel. Qual abordagem de aprendizado é apropriada para descobrir padrões neste conjunto?",
+        "alternativas": [
+          "Clustering automático",
+          "Análise discriminante",
+          "Análise de treinamento",
+          "Aprendizagem supervisionada",
+          "Aprendizado não supervisionado"
+        ],
+        "correta": 4,
+        "explicacao": "A ausência de rótulos impede a construção de modelos que preveem saídas conhecidas; portanto, a técnica mais adequada é a de aprendizado não supervisionado, que busca identificar estruturas ou agrupamentos nos dados.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-ia-aprendizado-011",
+            "texto": "No aprendizado supervisionado, exemplos rotulados orientam a construção de modelos para classificação ou regressão. No aprendizado não supervisionado, o objetivo é identificar estruturas ou agrupamentos sem rótulos de saída. A avaliação deve usar dados independentes do treinamento para estimar generalização e reduzir conclusões afetadas por sobreajuste.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Inteligência Artificial",
+              "habilidade": "Distinguir paradigmas de aprendizado",
+              "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+              "referencia": "RUSSELL, S.; NORVIG, P. Inteligência Artificial: Uma Abordagem Moderna.",
+              "linha": 11,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 22.082778,
+              "termos_recuperados": [
+                "aprendizado",
+                "artificial",
+                "inteligencia",
+                "nao",
+                "paradigmas",
+                "supervisionado"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "aprendizado",
+                "artificial",
+                "disponiveis",
+                "inteligencia",
+                "metodos",
+                "nao",
+                "paradigmas",
+                "partir",
+                "supervisionado"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-ia-aprendizado-011",
+                  "score": 22.082778
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Considera-se um conjunto de dados de clientes contendo idade, renda e histórico de compras, mas sem rótulos que indiquem se cada cliente é ou não um cliente fiel. Qual abordagem de aprendizado é apropriada para descobrir padrões neste conjunto?",
+            "resposta_correta": "Aprendizado não supervisionado",
+            "explicacao": "A ausência de rótulos impede a construção de modelos que preveem saídas conhecidas; portanto, a técnica mais adequada é a de aprendizado não supervisionado, que busca identificar estruturas ou agrupamentos nos dados.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-20b",
+            "prompt_version": "enade-stem-1.1.0"
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "Análise de treinamento",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Aprendizagem supervisionada",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Análise discriminante",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Clustering automático",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_3:distratos->distratores",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto"
+            ],
+            "amostras": 3,
+            "candidatos_gerados": 7,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 7,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                6,
+                0,
+                1,
+                2
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Considera-se um conjunto de dados de clientes contendo idade, renda e histórico de compras, mas sem rótulos que indiquem se cada cliente é ou não um cliente fiel. Qual abordagem de aprendizado é apropriada para descobrir padrões neste conjunto?",
+            "alternativas": [
+              "Clustering automático",
+              "Análise discriminante",
+              "Análise de treinamento",
+              "Aprendizagem supervisionada",
+              "Aprendizado não supervisionado"
+            ],
+            "correta": 4,
+            "explicacao": "A ausência de rótulos impede a construção de modelos que preveem saídas conhecidas; portanto, a técnica mais adequada é a de aprendizado não supervisionado, que busca identificar estruturas ou agrupamentos nos dados.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 43.669
+    }
+  ],
+  "finished_at": "2026-09-24T14:16:34.813704+00:00"
+}

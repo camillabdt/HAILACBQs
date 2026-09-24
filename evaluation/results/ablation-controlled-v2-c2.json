@@ -1,0 +1,557 @@
+{
+  "started_at": "2026-09-24T19:31:42.924326+00:00",
+  "conditions": [
+    "C2_RAG_LLM"
+  ],
+  "items": [
+    {
+      "spec_id": "P01",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Um sistema de banco de dados executa uma transação que realiza três atualizações em tabelas distintas. Antes de emitir o COMMIT, ocorre uma falha no servidor. Qual das seguintes afirmativas descreve corretamente a situação em relação às propriedades ACID?",
+        "alternativas": [
+          "A) A durabilidade é violada porque os efeitos das atualizações podem não ser persistidos.",
+          "B) A atomicidade é violada porque as atualizações são parcialmente aplicadas.",
+          "C) A consistência pode ser violada se as regras de integridade forem quebradas.",
+          "D) A atomicidade garante que nenhuma das atualizações será persistida até que o COMMIT seja concluído.",
+          "E) A durabilidade garante que as atualizações serão preservadas mesmo após a falha."
+        ],
+        "correta": 3,
+        "explicacao": "Em uma falha ocorrida antes do COMMIT, a propriedade de durabilidade não se aplica, pois nenhuma alteração foi confirmada. A propriedade de atomicidade assegura que, até que a transação seja confirmada, nenhum efeito parcial é permanente; portanto, nenhuma das três atualizações será persistida. A alternativa D reflete essa garantia.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-bd-transacoes-005",
+            "texto": "Transações de banco de dados devem preservar atomicidade, consistência, isolamento e durabilidade. O controle de concorrência busca evitar anomalias como leitura suja, atualização perdida e leitura não repetível. Bloqueios, ordenação por marcas de tempo e controle multiversão são estratégias usuais. Atomicidade significa que a transação produz todos os seus efeitos ou nenhum. Durabilidade protege os efeitos de transações já confirmadas por COMMIT. Uma falha antes da confirmação não demonstra violação de durabilidade; desfazer efeitos parciais preserva atomicidade.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Banco de Dados",
+              "habilidade": "Analisar transações concorrentes",
+              "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+              "referencia": "ELMASRI, R.; NAVATHE, S. Sistemas de Banco de Dados. Complemento conceitual: PostgreSQL, documentação 18, seção 3.4 Transactions, https://www.postgresql.org/docs/18/tutorial-transactions.html (consulta em 2026-09-22).",
+              "linha": 5,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 29.820143,
+              "termos_recuperados": [
+                "acid",
+                "antes",
+                "atomicidade",
+                "commit",
+                "concorrencia",
+                "controle",
+                "durabilidade",
+                "falha",
+                "propriedades",
+                "transacoes"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "acid",
+                "antes",
+                "atomicidade",
+                "commit",
+                "concorrencia",
+                "controle",
+                "durabilidade",
+                "falha",
+                "falhas",
+                "gerenciamento",
+                "mecanismos",
+                "ocorrida",
+                "propriedades",
+                "recuperacao",
+                "transacoes"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-bd-transacoes-005",
+                  "score": 29.820143
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Um sistema de banco de dados executa uma transação que realiza três atualizações em tabelas distintas. Antes de emitir o COMMIT, ocorre uma falha no servidor. Qual das seguintes afirmativas descreve corretamente a situação em relação às propriedades ACID?",
+            "alternativas": [
+              "A) A durabilidade é violada porque os efeitos das atualizações podem não ser persistidos.",
+              "B) A atomicidade é violada porque as atualizações são parcialmente aplicadas.",
+              "C) A consistência pode ser violada se as regras de integridade forem quebradas.",
+              "D) A atomicidade garante que nenhuma das atualizações será persistida até que o COMMIT seja concluído.",
+              "E) A durabilidade garante que as atualizações serão preservadas mesmo após a falha."
+            ],
+            "correta": 3,
+            "explicacao": "Em uma falha ocorrida antes do COMMIT, a propriedade de durabilidade não se aplica, pois nenhuma alteração foi confirmada. A propriedade de atomicidade assegura que, até que a transação seja confirmada, nenhum efeito parcial é permanente; portanto, nenhuma das três atualizações será persistida. A alternativa D reflete essa garantia.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 2.034
+    },
+    {
+      "spec_id": "P02",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Considerando um cenário de aplicação que exige transmissão de dados com entrega confiável, ordem correta e controle de congestionamento, qual protocolo de transporte deve ser escolhido?",
+        "alternativas": [
+          "TCP, pois fornece conexão orientada, entrega confiável, ordem correta, controle de fluxo e controle de congestionamento.",
+          "UDP, pois possui menor sobrecarga e é adequado para aplicações que toleram perda de pacotes.",
+          "TCP, pois garante entrega mas não controla o fluxo de dados.",
+          "UDP, pois garante entrega de todos os pacotes enviados.",
+          "TCP, pois oferece comunicação sem conexão entre processos."
+        ],
+        "correta": 0,
+        "explicacao": "O protocolo TCP oferece conexão orientada, entrega confiável, ordem correta de pacotes, controle de fluxo e controle de congestionamento, atendendo a todos os requisitos citados. O UDP não oferece nenhuma dessas garantias, sendo adequado apenas para aplicações que não precisam de confiabilidade ou ordem.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-redes-transporte-007",
+            "texto": "Na arquitetura TCP/IP, a camada de transporte oferece comunicação fim a fim entre processos. O TCP fornece serviço orientado a conexão, entrega confiável, controle de fluxo e controle de congestionamento. O UDP oferece serviço sem conexão com menor sobrecarga, sem garantir entrega ou ordenação.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Redes de Computadores",
+              "habilidade": "Comparar protocolos de transporte",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet.",
+              "linha": 7,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 25.756259,
+              "termos_recuperados": [
+                "comunicacao",
+                "fim",
+                "protocolos",
+                "tcp",
+                "transporte",
+                "udp"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "arquiteturas",
+                "cenario",
+                "comunicacao",
+                "conforme",
+                "fim",
+                "garantias",
+                "oferecidas",
+                "pelos",
+                "protocolo",
+                "protocolos",
+                "requisitos",
+                "selecionar",
+                "tcp",
+                "transporte",
+                "udp"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-redes-transporte-007",
+                  "score": 25.756259
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Considerando um cenário de aplicação que exige transmissão de dados com entrega confiável, ordem correta e controle de congestionamento, qual protocolo de transporte deve ser escolhido?",
+            "alternativas": [
+              "TCP, pois fornece conexão orientada, entrega confiável, ordem correta, controle de fluxo e controle de congestionamento.",
+              "UDP, pois possui menor sobrecarga e é adequado para aplicações que toleram perda de pacotes.",
+              "TCP, pois garante entrega mas não controla o fluxo de dados.",
+              "UDP, pois garante entrega de todos os pacotes enviados.",
+              "TCP, pois oferece comunicação sem conexão entre processos."
+            ],
+            "correta": 0,
+            "explicacao": "O protocolo TCP oferece conexão orientada, entrega confiável, ordem correta de pacotes, controle de fluxo e controle de congestionamento, atendendo a todos os requisitos citados. O UDP não oferece nenhuma dessas garantias, sendo adequado apenas para aplicações que não precisam de confiabilidade ou ordem.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 2.914
+    },
+    {
+      "spec_id": "P03",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Um sistema de gerenciamento de biblioteca online permite que usuários pesquisem livros, reservem cópias e recebam notificações por e-mail. O gerente de projeto deseja garantir que o sistema atenda a requisitos específicos antes de sua implantação. Qual dos seguintes requisitos deve ser classificado como requisito funcional?",
+        "alternativas": [
+          "O sistema deve processar 1000 requisições por segundo.",
+          "O sistema deve exibir a lista de livros pesquisados em menos de 2 segundos.",
+          "O usuário deve ser capaz de pesquisar livros pelo título, autor ou ISBN.",
+          "O sistema deve usar criptografia AES‑256 para proteger dados de usuários.",
+          "O sistema deve ter disponibilidade de 99,9 % durante o horário comercial."
+        ],
+        "correta": 2,
+        "explicacao": "Requisitos funcionais descrevem ações e comportamentos que o sistema deve oferecer aos usuários. A opção 3 descreve uma funcionalidade de pesquisa, portanto é funcional. As demais tratam de desempenho, segurança e disponibilidade, que são atributos não funcionais.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-engsoftware-requisitos-009",
+            "texto": "Requisitos funcionais descrevem serviços e comportamentos esperados do sistema. Requisitos não funcionais estabelecem atributos e restrições, como desempenho, segurança, confiabilidade e usabilidade. Elicitação, especificação, validação e gerenciamento de mudanças ajudam a manter alinhamento entre necessidades e solução.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Engenharia de Software",
+              "habilidade": "Analisar e classificar requisitos",
+              "objeto_conhecimento": "Engenharia de requisitos",
+              "referencia": "SOMMERVILLE, I. Engenharia de Software.",
+              "linha": 9,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 15.611199,
+              "termos_recuperados": [
+                "classificar",
+                "engenharia",
+                "funcionais",
+                "nao",
+                "requisitos"
+              ],
+              "candidatas_relevantes": 3,
+              "consulta_normalizada": [
+                "cenario",
+                "classificar",
+                "conforme",
+                "engenharia",
+                "finalidade",
+                "funcionais",
+                "nao",
+                "projeto",
+                "requisitos"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-engsoftware-requisitos-009",
+                  "score": 15.611199
+                },
+                {
+                  "id": "rag-engsoftware-testes-010",
+                  "score": 2.733973
+                },
+                {
+                  "id": "rag-estruturas-dados-004",
+                  "score": 1.587169
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Um sistema de gerenciamento de biblioteca online permite que usuários pesquisem livros, reservem cópias e recebam notificações por e-mail. O gerente de projeto deseja garantir que o sistema atenda a requisitos específicos antes de sua implantação. Qual dos seguintes requisitos deve ser classificado como requisito funcional?",
+            "alternativas": [
+              "O sistema deve processar 1000 requisições por segundo.",
+              "O sistema deve exibir a lista de livros pesquisados em menos de 2 segundos.",
+              "O usuário deve ser capaz de pesquisar livros pelo título, autor ou ISBN.",
+              "O sistema deve usar criptografia AES‑256 para proteger dados de usuários.",
+              "O sistema deve ter disponibilidade de 99,9 % durante o horário comercial."
+            ],
+            "correta": 2,
+            "explicacao": "Requisitos funcionais descrevem ações e comportamentos que o sistema deve oferecer aos usuários. A opção 3 descreve uma funcionalidade de pesquisa, portanto é funcional. As demais tratam de desempenho, segurança e disponibilidade, que são atributos não funcionais.",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 2.546
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Um aplicativo de gerenciamento de tarefas precisa permitir que os usuários adicionem novas tarefas, marquem tarefas como concluídas e obtenham rapidamente a tarefa que vence em seguida. O objetivo principal é processar as tarefas na ordem de vencimento, enquanto as adições e remoções são frequentes. Qual estrutura de dados é mais adequada para este cenário?",
+        "alternativas": [
+          "Pilha (LIFO)",
+          "Fila (FIFO)",
+          "Árvore de Busca Binária",
+          "Tabela Hash",
+          "Fila de Prioridade"
+        ],
+        "correta": 4,
+        "explicacao": "A fila de prioridade mantém os elementos ordenados por chave de prioridade, permitindo que a tarefa com menor data de vencimento seja recuperada em tempo logarítmico. As demais estruturas não oferecem essa ordenação eficiente: pilha processa no último inserido, fila segue a ordem de inserção, árvore de busca exige busca explícita e tabela hash não mantém ordem.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-estruturas-dados-004",
+            "texto": "Pilhas seguem a disciplina LIFO, enquanto filas seguem FIFO. Árvores de busca organizam chaves hierarquicamente e tabelas de dispersão usam funções hash para localizar elementos. A estrutura apropriada depende das operações predominantes, dos requisitos de ordenação e do custo aceitável de busca, inserção e remoção.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Algoritmos e Estruturas de Dados",
+              "habilidade": "Selecionar estruturas de dados",
+              "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+              "referencia": "CORMEN, T. H. et al. Algoritmos: Teoria e Prática.",
+              "linha": 4,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 33.841909,
+              "termos_recuperados": [
+                "arvores",
+                "estrutura",
+                "estruturas",
+                "filas",
+                "hash",
+                "operacoes",
+                "pilhas",
+                "predominantes",
+                "selecionar",
+                "tabelas"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "adequada",
+                "algoritmicas",
+                "arvores",
+                "considerando",
+                "estrutura",
+                "estruturas",
+                "filas",
+                "hash",
+                "operacoes",
+                "pilhas",
+                "predominantes",
+                "projetar",
+                "selecionar",
+                "solucoes",
+                "tabelas"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-estruturas-dados-004",
+                  "score": 33.841909
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Um aplicativo de gerenciamento de tarefas precisa permitir que os usuários adicionem novas tarefas, marquem tarefas como concluídas e obtenham rapidamente a tarefa que vence em seguida. O objetivo principal é processar as tarefas na ordem de vencimento, enquanto as adições e remoções são frequentes. Qual estrutura de dados é mais adequada para este cenário?",
+            "alternativas": [
+              "Pilha (LIFO)",
+              "Fila (FIFO)",
+              "Árvore de Busca Binária",
+              "Tabela Hash",
+              "Fila de Prioridade"
+            ],
+            "correta": 4,
+            "explicacao": "A fila de prioridade mantém os elementos ordenados por chave de prioridade, permitindo que a tarefa com menor data de vencimento seja recuperada em tempo logarítmico. As demais estruturas não oferecem essa ordenação eficiente: pilha processa no último inserido, fila segue a ordem de inserção, árvore de busca exige busca explícita e tabela hash não mantém ordem.",
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 2.836
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Uma empresa de telecom está analisando dados de chamadas para identificar padrões de churn. Ela possui um conjunto de dados com informações sobre clientes, mas apenas alguns registros têm a etiqueta de churn (1 se o cliente cancelou, 0 se não). Qual abordagem de aprendizado de máquina é mais adequada para aproveitar esses dados rotulados e não rotulados?",
+        "alternativas": [
+          "Aprendizado supervisionado usando regressão logística.",
+          "Aprendizado não supervisionado usando clustering k‑means.",
+          "Aprendizado supervisionado usando redes neurais profundas.",
+          "Aprendizado semi‑supervisionado combinando redes neurais e clustering.",
+          "Aprendizado por reforço com simulação de churn."
+        ],
+        "correta": 4,
+        "explicacao": "O cenário apresenta dados parcialmente rotulados. Métodos supervisionados requerem rótulos completos e não aproveitam os registros sem rótulo. Métodos não supervisionados ignoram as informações de rótulo disponíveis. O aprendizado semi‑supervisionado permite usar a informação de rótulo em parte do conjunto e ainda explorar a estrutura dos dados não rotulados, tornando‑se a opção mais adequada.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-ia-aprendizado-011",
+            "texto": "No aprendizado supervisionado, exemplos rotulados orientam a construção de modelos para classificação ou regressão. No aprendizado não supervisionado, o objetivo é identificar estruturas ou agrupamentos sem rótulos de saída. A avaliação deve usar dados independentes do treinamento para estimar generalização e reduzir conclusões afetadas por sobreajuste.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Inteligência Artificial",
+              "habilidade": "Distinguir paradigmas de aprendizado",
+              "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+              "referencia": "RUSSELL, S.; NORVIG, P. Inteligência Artificial: Uma Abordagem Moderna.",
+              "linha": 11,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 22.082778,
+              "termos_recuperados": [
+                "aprendizado",
+                "artificial",
+                "inteligencia",
+                "nao",
+                "paradigmas",
+                "supervisionado"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "aprendizado",
+                "artificial",
+                "disponiveis",
+                "inteligencia",
+                "metodos",
+                "nao",
+                "paradigmas",
+                "partir",
+                "supervisionado"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-ia-aprendizado-011",
+                  "score": 22.082778
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Uma empresa de telecom está analisando dados de chamadas para identificar padrões de churn. Ela possui um conjunto de dados com informações sobre clientes, mas apenas alguns registros têm a etiqueta de churn (1 se o cliente cancelou, 0 se não). Qual abordagem de aprendizado de máquina é mais adequada para aproveitar esses dados rotulados e não rotulados?",
+            "alternativas": [
+              "Aprendizado supervisionado usando regressão logística.",
+              "Aprendizado não supervisionado usando clustering k‑means.",
+              "Aprendizado supervisionado usando redes neurais profundas.",
+              "Aprendizado semi‑supervisionado combinando redes neurais e clustering.",
+              "Aprendizado por reforço com simulação de churn."
+            ],
+            "correta": 4,
+            "explicacao": "O cenário apresenta dados parcialmente rotulados. Métodos supervisionados requerem rótulos completos e não aproveitam os registros sem rótulo. Métodos não supervisionados ignoram as informações de rótulo disponíveis. O aprendizado semi‑supervisionado permite usar a informação de rótulo em parte do conjunto e ainda explorar a estrutura dos dados não rotulados, tornando‑se a opção mais adequada.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 1.605
+    }
+  ],
+  "finished_at": "2026-09-24T19:31:54.998079+00:00"
+}

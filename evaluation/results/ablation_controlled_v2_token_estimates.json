@@ -1,0 +1,204 @@
+{
+  "method": "proxy-tokenizer Qwen2.5-1.5B-Instruct; excludes chat framing; remote LLM only",
+  "exact": false,
+  "items": [
+    {
+      "condition": "C1_LLM",
+      "spec_id": "P01",
+      "input_est": 354,
+      "output_est": 402,
+      "total_est": 756,
+      "remote_calls": 1
+    },
+    {
+      "condition": "C1_LLM",
+      "spec_id": "P02",
+      "input_est": 359,
+      "output_est": 370,
+      "total_est": 729,
+      "remote_calls": 1
+    },
+    {
+      "condition": "C1_LLM",
+      "spec_id": "P03",
+      "input_est": 338,
+      "output_est": 250,
+      "total_est": 588,
+      "remote_calls": 1
+    },
+    {
+      "condition": "C1_LLM",
+      "spec_id": "P04",
+      "input_est": 350,
+      "output_est": 420,
+      "total_est": 770,
+      "remote_calls": 1
+    },
+    {
+      "condition": "C1_LLM",
+      "spec_id": "P05",
+      "input_est": 342,
+      "output_est": 364,
+      "total_est": 706,
+      "remote_calls": 1
+    },
+    {
+      "condition": "C2_RAG_LLM",
+      "spec_id": "P01",
+      "input_est": 890,
+      "output_est": 376,
+      "total_est": 1266,
+      "remote_calls": 1
+    },
+    {
+      "condition": "C2_RAG_LLM",
+      "spec_id": "P02",
+      "input_est": 762,
+      "output_est": 325,
+      "total_est": 1087,
+      "remote_calls": 1
+    },
+    {
+      "condition": "C2_RAG_LLM",
+      "spec_id": "P03",
+      "input_est": 764,
+      "output_est": 335,
+      "total_est": 1099,
+      "remote_calls": 1
+    },
+    {
+      "condition": "C2_RAG_LLM",
+      "spec_id": "P04",
+      "input_est": 803,
+      "output_est": 327,
+      "total_est": 1130,
+      "remote_calls": 1
+    },
+    {
+      "condition": "C2_RAG_LLM",
+      "spec_id": "P05",
+      "input_est": 739,
+      "output_est": 346,
+      "total_est": 1085,
+      "remote_calls": 1
+    },
+    {
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "P01",
+      "input_est": 1754,
+      "output_est": 196,
+      "total_est": 1950,
+      "remote_calls": 1
+    },
+    {
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "P02",
+      "input_est": 1626,
+      "output_est": 203,
+      "total_est": 1829,
+      "remote_calls": 1
+    },
+    {
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "P03",
+      "input_est": 1628,
+      "output_est": 163,
+      "total_est": 1791,
+      "remote_calls": 1
+    },
+    {
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "P04",
+      "input_est": 1667,
+      "output_est": 242,
+      "total_est": 1909,
+      "remote_calls": 1
+    },
+    {
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "P05",
+      "input_est": 1603,
+      "output_est": 179,
+      "total_est": 1782,
+      "remote_calls": 1
+    },
+    {
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "P01",
+      "input_est": 1775,
+      "output_est": 196,
+      "total_est": 1971,
+      "remote_calls": 1
+    },
+    {
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "P02",
+      "input_est": 1650,
+      "output_est": 190,
+      "total_est": 1840,
+      "remote_calls": 1
+    },
+    {
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "P03",
+      "input_est": 1652,
+      "output_est": 222,
+      "total_est": 1874,
+      "remote_calls": 1
+    },
+    {
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "P04",
+      "input_est": 3382,
+      "output_est": 458,
+      "total_est": 3840,
+      "remote_calls": 2
+    },
+    {
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "P05",
+      "input_est": 1627,
+      "output_est": 149,
+      "total_est": 1776,
+      "remote_calls": 1
+    }
+  ],
+  "summary": [
+    {
+      "condition": "C1_LLM",
+      "questions": 5,
+      "remote_calls": 5,
+      "input_tokens_est": 1743,
+      "output_tokens_est": 1806,
+      "total_tokens_est": 3549,
+      "mean_tokens_per_question_est": 709.8
+    },
+    {
+      "condition": "C2_RAG_LLM",
+      "questions": 5,
+      "remote_calls": 5,
+      "input_tokens_est": 3958,
+      "output_tokens_est": 1709,
+      "total_tokens_est": 5667,
+      "mean_tokens_per_question_est": 1133.4
+    },
+    {
+      "condition": "C3_RAG_LLM_SLM",
+      "questions": 5,
+      "remote_calls": 5,
+      "input_tokens_est": 8278,
+      "output_tokens_est": 983,
+      "total_tokens_est": 9261,
+      "mean_tokens_per_question_est": 1852.2
+    },
+    {
+      "condition": "C4_HAILA_COMPLETA",
+      "questions": 5,
+      "remote_calls": 6,
+      "input_tokens_est": 10086,
+      "output_tokens_est": 1215,
+      "total_tokens_est": 11301,
+      "mean_tokens_per_question_est": 2260.2
+    }
+  ]
+}

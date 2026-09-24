@@ -1,32 +1,26 @@
-# Arquitetura do front
+# Arquitetura da HAILA
 
-```text
-haila-front/
-├── public/
-│   ├── app/
-│   │   ├── api.js       cliente do contrato HAILA
-│   │   ├── demo.js      dados demonstrativos identificados
-│   │   ├── studio.js    fluxo e renderização do estúdio
-│   │   └── webmcp.js    ferramentas opcionais para navegadores compatíveis
-│   ├── index.html       apresentação
-│   ├── studio.html      criação e revisão
-│   ├── landing.css      identidade da apresentação
-│   ├── style.css        layout do estúdio
-│   ├── studio-theme.css cores do estúdio
-│   ├── states.css       mensagens de sucesso, alerta e erro
-│   ├── mascot.png       mascote da HAILA
-│   └── favicon.svg
-├── scripts/
-│   ├── start_front.sh
-│   └── check_integration.py
-├── docs/
-│   ├── API_CONTRACT.md
-│   └── ARCHITECTURE.md
-├── .env.example
-├── README.md
-└── server.py
-```
+## Camadas operacionais
 
-O navegador conversa apenas com `/api`. O servidor local encaminha uma lista restrita de caminhos ao motor HAILA. Isso evita CORS, mantém o endereço do motor em um só lugar e impede que a página funcione como proxy aberto.
+1. **Frontend** recebe a intenção pedagógica, exibe rastreabilidade e registra o parecer humano.
+2. **API** valida entradas e expõe solicitações, geração, histórico e avaliações humanas.
+3. **Orquestrador** controla estados, tentativas e o destino de cada regeneração.
+4. **RAG** seleciona uma referência relevante de um corpus local auditável.
+5. **LLM** gera somente o núcleo: enunciado, gabarito, explicação e metadados pedagógicos.
+6. **SLM** gera os quatro distratores; o backend seleciona candidatos sem reescrevê-los.
+7. **Validação determinística** aplica regras reproduzíveis antes de liberar uma candidata.
+8. **Persistência** registra solicitações, versões, artefatos, proveniência, eventos, red flags e pareceres.
 
-O fluxo de geração é assíncrono do ponto de vista visual: a chamada de geração permanece aberta enquanto o estúdio consulta o histórico em paralelo. Assim, o usuário acompanha RAG, LLM, SLM e red flags sem depender de dados inventados.
+## Fronteira entre sistema e pesquisa
+
+O backend não usa uma segunda LLM para aprovar questões. Avaliação automática por modelos externos pode ser executada em estudos comparativos, mas não altera o estado de produção nem substitui o professor. Essa separação evita apresentar opinião probabilística como red flag determinística.
+
+## Estados principais
+
+`REQUESTED → REFERENCE_RETRIEVED → STEM_GENERATED → DISTRACTORS_GENERATED → ITEM_ASSEMBLED → GENERATION_COMPLETED`
+
+Uma falha verificável leva a `BLOCKED_BY_RED_FLAGS` e à regeneração do núcleo ou dos distratores. O esgotamento dos limites leva a `ATTEMPTS_EXHAUSTED`.
+
+## Correspondência com a figura da dissertação
+
+Na figura anterior, o bloco “Júri” deve ser separado do pipeline. O fluxo operacional termina em “Candidata à revisão humana”. “Juízes LLM” e “Agregação” pertencem ao protocolo experimental de avaliação. O “Catálogo de Red Flags” alimenta regras determinísticas e não participa de votação.

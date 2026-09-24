@@ -1,0 +1,119 @@
+{
+  "started_at": "2026-09-24T14:17:11.045588+00:00",
+  "conditions": [
+    "C2_RAG_LLM"
+  ],
+  "items": [
+    {
+      "spec_id": "P03",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Em um projeto de desenvolvimento de um sistema de gerenciamento de biblioteca, os seguintes requisitos foram levantados: 1) O sistema deve permitir que usuarios faciam reservas de livros. 2) O sistema deve enviar um e-mail de notificacao 24 horas antes da devolucao. 3) O sistema deve garantir que o tempo medio de resposta das paginas nao ultrapasse 2 segundos. 4) O sistema deve registrar a data de cadastro de cada livro. 5) O sistema deve permitir que os usuarios alterem a senha de acesso.",
+        "alternativas": [
+          "O sistema deve permitir que usuarios faciam reservas de livros.",
+          "O sistema deve enviar um e-mail de notificacao 24 horas antes da devolucao.",
+          "O sistema deve garantir que o tempo medio de resposta das paginas nao ultrapasse 2 segundos.",
+          "O sistema deve registrar a data de cadastro de cada livro.",
+          "O sistema deve permitir que os usuarios alterem a senha de acesso."
+        ],
+        "correta": 2,
+        "explicacao": "Requisitos nao funcionais descrevem atributos de qualidade, como desempenho. A alternativa 3 especifica um limite de tempo de resposta, portanto e um requisito nao funcional. As demais alternativas descrevem servicos que o sistema deve oferecer, logo sao requisitos funcionais.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-engsoftware-requisitos-009",
+            "texto": "Requisitos funcionais descrevem serviços e comportamentos esperados do sistema. Requisitos não funcionais estabelecem atributos e restrições, como desempenho, segurança, confiabilidade e usabilidade. Elicitação, especificação, validação e gerenciamento de mudanças ajudam a manter alinhamento entre necessidades e solução.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Engenharia de Software",
+              "habilidade": "Analisar e classificar requisitos",
+              "objeto_conhecimento": "Engenharia de requisitos",
+              "referencia": "SOMMERVILLE, I. Engenharia de Software.",
+              "linha": 9,
+              "corpus": "backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 15.611199,
+              "termos_recuperados": [
+                "classificar",
+                "engenharia",
+                "funcionais",
+                "nao",
+                "requisitos"
+              ],
+              "candidatas_relevantes": 3,
+              "consulta_normalizada": [
+                "cenario",
+                "classificar",
+                "conforme",
+                "engenharia",
+                "finalidade",
+                "funcionais",
+                "nao",
+                "projeto",
+                "requisitos"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-engsoftware-requisitos-009",
+                  "score": 15.611199
+                },
+                {
+                  "id": "rag-engsoftware-testes-010",
+                  "score": 2.733973
+                },
+                {
+                  "id": "rag-estruturas-dados-004",
+                  "score": 1.587169
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Em um projeto de desenvolvimento de um sistema de gerenciamento de biblioteca, os seguintes requisitos foram levantados: 1) O sistema deve permitir que usuarios faciam reservas de livros. 2) O sistema deve enviar um e-mail de notificacao 24 horas antes da devolucao. 3) O sistema deve garantir que o tempo medio de resposta das paginas nao ultrapasse 2 segundos. 4) O sistema deve registrar a data de cadastro de cada livro. 5) O sistema deve permitir que os usuarios alterem a senha de acesso.",
+            "alternativas": [
+              "O sistema deve permitir que usuarios faciam reservas de livros.",
+              "O sistema deve enviar um e-mail de notificacao 24 horas antes da devolucao.",
+              "O sistema deve garantir que o tempo medio de resposta das paginas nao ultrapasse 2 segundos.",
+              "O sistema deve registrar a data de cadastro de cada livro.",
+              "O sistema deve permitir que os usuarios alterem a senha de acesso."
+            ],
+            "correta": 2,
+            "explicacao": "Requisitos nao funcionais descrevem atributos de qualidade, como desempenho. A alternativa 3 especifica um limite de tempo de resposta, portanto e um requisito nao funcional. As demais alternativas descrevem servicos que o sistema deve oferecer, logo sao requisitos funcionais.",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-20b"
+      },
+      "elapsed_seconds": 2.29
+    }
+  ],
+  "finished_at": "2026-09-24T14:17:13.364844+00:00"
+}

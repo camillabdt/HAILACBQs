@@ -1,0 +1,558 @@
+{
+  "metodo": "haila-component-benchmark-v1",
+  "resumo": {
+    "total": 87,
+    "passou": 87,
+    "falhou": 0,
+    "grupos": {
+      "RAG": {
+        "total": 12,
+        "passou": 12
+      },
+      "SLM_MEMORIA": {
+        "total": 65,
+        "passou": 65
+      },
+      "RED_FLAGS_ITEM": {
+        "total": 5,
+        "passou": 5
+      },
+      "RED_FLAGS_NUCLEO": {
+        "total": 3,
+        "passou": 3
+      },
+      "RED_FLAGS_DISTRACTORES": {
+        "total": 1,
+        "passou": 1
+      },
+      "RED_FLAGS_ESTRUTURA": {
+        "total": 1,
+        "passou": 1
+      }
+    }
+  },
+  "resultados": [
+    {
+      "grupo": "RAG",
+      "teste": "rag-so-concorrencia-001",
+      "passou": true,
+      "evidencia": "esperado=rag-so-concorrencia-001; recuperado=rag-so-concorrencia-001"
+    },
+    {
+      "grupo": "RAG",
+      "teste": "rag-so-memoria-002",
+      "passou": true,
+      "evidencia": "esperado=rag-so-memoria-002; recuperado=rag-so-memoria-002"
+    },
+    {
+      "grupo": "RAG",
+      "teste": "rag-algoritmos-complexidade-003",
+      "passou": true,
+      "evidencia": "esperado=rag-algoritmos-complexidade-003; recuperado=rag-algoritmos-complexidade-003"
+    },
+    {
+      "grupo": "RAG",
+      "teste": "rag-estruturas-dados-004",
+      "passou": true,
+      "evidencia": "esperado=rag-estruturas-dados-004; recuperado=rag-estruturas-dados-004"
+    },
+    {
+      "grupo": "RAG",
+      "teste": "rag-bd-transacoes-005",
+      "passou": true,
+      "evidencia": "esperado=rag-bd-transacoes-005; recuperado=rag-bd-transacoes-005"
+    },
+    {
+      "grupo": "RAG",
+      "teste": "rag-bd-modelagem-006",
+      "passou": true,
+      "evidencia": "esperado=rag-bd-modelagem-006; recuperado=rag-bd-modelagem-006"
+    },
+    {
+      "grupo": "RAG",
+      "teste": "rag-redes-transporte-007",
+      "passou": true,
+      "evidencia": "esperado=rag-redes-transporte-007; recuperado=rag-redes-transporte-007"
+    },
+    {
+      "grupo": "RAG",
+      "teste": "rag-seguranca-008",
+      "passou": true,
+      "evidencia": "esperado=rag-seguranca-008; recuperado=rag-seguranca-008"
+    },
+    {
+      "grupo": "RAG",
+      "teste": "rag-engsoftware-requisitos-009",
+      "passou": true,
+      "evidencia": "esperado=rag-engsoftware-requisitos-009; recuperado=rag-engsoftware-requisitos-009"
+    },
+    {
+      "grupo": "RAG",
+      "teste": "rag-engsoftware-testes-010",
+      "passou": true,
+      "evidencia": "esperado=rag-engsoftware-testes-010; recuperado=rag-engsoftware-testes-010"
+    },
+    {
+      "grupo": "RAG",
+      "teste": "rag-ia-aprendizado-011",
+      "passou": true,
+      "evidencia": "esperado=rag-ia-aprendizado-011; recuperado=rag-ia-aprendizado-011"
+    },
+    {
+      "grupo": "RAG",
+      "teste": "rag-distribuidos-microsservicos-012",
+      "passou": true,
+      "evidencia": "esperado=rag-distribuidos-microsservicos-012; recuperado=rag-distribuidos-microsservicos-012"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_0:Nenhuma",
+      "passou": true,
+      "evidencia": "alvo=Nenhuma; distratores=['Atomicidade', 'Consistência', 'Isolamento', 'Durabilidade']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_0:Atomicidade",
+      "passou": true,
+      "evidencia": "alvo=Atomicidade; distratores=['Consistência', 'Isolamento', 'Durabilidade', 'Serialização']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_0:Consistência",
+      "passou": true,
+      "evidencia": "alvo=Consistência; distratores=['Atomicidade', 'Isolamento', 'Durabilidade', 'Serialização']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_0:Isolamento",
+      "passou": true,
+      "evidencia": "alvo=Isolamento; distratores=['Atomicidade', 'Consistência', 'Durabilidade', 'Serialização']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_0:Durabilidade",
+      "passou": true,
+      "evidencia": "alvo=Durabilidade; distratores=['Atomicidade', 'Consistência', 'Isolamento', 'Serialização']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_1:Atomicidade",
+      "passou": true,
+      "evidencia": "alvo=Atomicidade; distratores=['Consistência', 'Isolamento', 'Durabilidade', 'Serialização']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_1:Consistência",
+      "passou": true,
+      "evidencia": "alvo=Consistência; distratores=['Atomicidade', 'Isolamento', 'Durabilidade', 'Serialização']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_1:Isolamento",
+      "passou": true,
+      "evidencia": "alvo=Isolamento; distratores=['Atomicidade', 'Consistência', 'Durabilidade', 'Serialização']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_1:Durabilidade",
+      "passou": true,
+      "evidencia": "alvo=Durabilidade; distratores=['Atomicidade', 'Consistência', 'Isolamento', 'Serialização']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_1:Serialização",
+      "passou": true,
+      "evidencia": "alvo=Serialização; distratores=['Atomicidade', 'Consistência', 'Isolamento', 'Durabilidade']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_2:Leitura suja",
+      "passou": true,
+      "evidencia": "alvo=Leitura suja; distratores=['Leitura não repetível', 'Leitura fantasma', 'Atualização perdida', 'Escrita suja']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_2:Leitura não repetível",
+      "passou": true,
+      "evidencia": "alvo=Leitura não repetível; distratores=['Leitura suja', 'Leitura fantasma', 'Atualização perdida', 'Escrita suja']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_2:Leitura fantasma",
+      "passou": true,
+      "evidencia": "alvo=Leitura fantasma; distratores=['Leitura suja', 'Leitura não repetível', 'Atualização perdida', 'Escrita suja']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_2:Atualização perdida",
+      "passou": true,
+      "evidencia": "alvo=Atualização perdida; distratores=['Leitura suja', 'Leitura não repetível', 'Leitura fantasma', 'Escrita suja']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_2:Escrita suja",
+      "passou": true,
+      "evidencia": "alvo=Escrita suja; distratores=['Leitura suja', 'Leitura não repetível', 'Leitura fantasma', 'Atualização perdida']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_3:MVCC",
+      "passou": true,
+      "evidencia": "alvo=MVCC; distratores=['Bloqueio em duas fases (2PL)', 'Controle otimista por validação', 'Ordenação por carimbo de tempo', 'Bloqueio pessimista']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_3:Bloqueio em duas fases (2PL)",
+      "passou": true,
+      "evidencia": "alvo=Bloqueio em duas fases (2PL); distratores=['MVCC', 'Controle otimista por validação', 'Ordenação por carimbo de tempo', 'Bloqueio pessimista']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_3:Controle otimista por validação",
+      "passou": true,
+      "evidencia": "alvo=Controle otimista por validação; distratores=['MVCC', 'Bloqueio em duas fases (2PL)', 'Ordenação por carimbo de tempo', 'Bloqueio pessimista']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_3:Ordenação por carimbo de tempo",
+      "passou": true,
+      "evidencia": "alvo=Ordenação por carimbo de tempo; distratores=['MVCC', 'Bloqueio em duas fases (2PL)', 'Controle otimista por validação', 'Bloqueio pessimista']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_3:Bloqueio pessimista",
+      "passou": true,
+      "evidencia": "alvo=Bloqueio pessimista; distratores=['MVCC', 'Bloqueio em duas fases (2PL)', 'Controle otimista por validação', 'Ordenação por carimbo de tempo']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_4:Fila",
+      "passou": true,
+      "evidencia": "alvo=Fila; distratores=['Pilha', 'Árvore binária de busca', 'Tabela hash', 'Heap']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_4:Pilha",
+      "passou": true,
+      "evidencia": "alvo=Pilha; distratores=['Fila', 'Árvore binária de busca', 'Tabela hash', 'Heap']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_4:Árvore binária de busca",
+      "passou": true,
+      "evidencia": "alvo=Árvore binária de busca; distratores=['Fila', 'Pilha', 'Tabela hash', 'Heap']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_4:Tabela hash",
+      "passou": true,
+      "evidencia": "alvo=Tabela hash; distratores=['Fila', 'Pilha', 'Árvore binária de busca', 'Heap']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_4:Heap",
+      "passou": true,
+      "evidencia": "alvo=Heap; distratores=['Fila', 'Pilha', 'Árvore binária de busca', 'Tabela hash']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_5:Padrão SAGA",
+      "passou": true,
+      "evidencia": "alvo=Padrão SAGA; distratores=['Protocolo Two-Phase Commit (2PC)', 'Protocolo Three-Phase Commit (3PC)', 'Transação distribuída XA', 'Bloqueio distribuído']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_5:Protocolo Two-Phase Commit (2PC)",
+      "passou": true,
+      "evidencia": "alvo=Protocolo Two-Phase Commit (2PC); distratores=['Padrão SAGA', 'Protocolo Three-Phase Commit (3PC)', 'Transação distribuída XA', 'Bloqueio distribuído']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_5:Protocolo Three-Phase Commit (3PC)",
+      "passou": true,
+      "evidencia": "alvo=Protocolo Three-Phase Commit (3PC); distratores=['Padrão SAGA', 'Protocolo Two-Phase Commit (2PC)', 'Transação distribuída XA', 'Bloqueio distribuído']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_5:Transação distribuída XA",
+      "passou": true,
+      "evidencia": "alvo=Transação distribuída XA; distratores=['Padrão SAGA', 'Protocolo Two-Phase Commit (2PC)', 'Protocolo Three-Phase Commit (3PC)', 'Bloqueio distribuído']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_5:Bloqueio distribuído",
+      "passou": true,
+      "evidencia": "alvo=Bloqueio distribuído; distratores=['Padrão SAGA', 'Protocolo Two-Phase Commit (2PC)', 'Protocolo Three-Phase Commit (3PC)', 'Transação distribuída XA']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_6:Tabela de páginas",
+      "passou": true,
+      "evidencia": "alvo=Tabela de páginas; distratores=['TLB', 'Tabela de segmentos', 'Lista de quadros livres', 'Mapa de bits da memória física']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_6:TLB",
+      "passou": true,
+      "evidencia": "alvo=TLB; distratores=['Tabela de páginas', 'Tabela de segmentos', 'Lista de quadros livres', 'Mapa de bits da memória física']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_6:Tabela de segmentos",
+      "passou": true,
+      "evidencia": "alvo=Tabela de segmentos; distratores=['Tabela de páginas', 'TLB', 'Lista de quadros livres', 'Mapa de bits da memória física']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_6:Lista de quadros livres",
+      "passou": true,
+      "evidencia": "alvo=Lista de quadros livres; distratores=['Tabela de páginas', 'TLB', 'Tabela de segmentos', 'Mapa de bits da memória física']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_6:Mapa de bits da memória física",
+      "passou": true,
+      "evidencia": "alvo=Mapa de bits da memória física; distratores=['Tabela de páginas', 'TLB', 'Tabela de segmentos', 'Lista de quadros livres']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_7:Mapear endereços virtuais para endereços físicos",
+      "passou": true,
+      "evidencia": "alvo=Mapear endereços virtuais para endereços físicos; distratores=['Mapear endereços físicos para dispositivos de E/S', 'Registrar apenas os quadros livres da memória física', 'Armazenar cópias das páginas removidas no espaço de troca', 'Traduzir segmentos lógicos diretamente em blocos de disco']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_7:Mapear endereços físicos para dispositivos de E/S",
+      "passou": true,
+      "evidencia": "alvo=Mapear endereços físicos para dispositivos de E/S; distratores=['Mapear endereços virtuais para endereços físicos', 'Registrar apenas os quadros livres da memória física', 'Armazenar cópias das páginas removidas no espaço de troca', 'Traduzir segmentos lógicos diretamente em blocos de disco']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_7:Registrar apenas os quadros livres da memória física",
+      "passou": true,
+      "evidencia": "alvo=Registrar apenas os quadros livres da memória física; distratores=['Mapear endereços virtuais para endereços físicos', 'Mapear endereços físicos para dispositivos de E/S', 'Armazenar cópias das páginas removidas no espaço de troca', 'Traduzir segmentos lógicos diretamente em blocos de disco']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_7:Armazenar cópias das páginas removidas no espaço de troca",
+      "passou": true,
+      "evidencia": "alvo=Armazenar cópias das páginas removidas no espaço de troca; distratores=['Mapear endereços virtuais para endereços físicos', 'Mapear endereços físicos para dispositivos de E/S', 'Registrar apenas os quadros livres da memória física', 'Traduzir segmentos lógicos diretamente em blocos de disco']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_7:Traduzir segmentos lógicos diretamente em blocos de disco",
+      "passou": true,
+      "evidencia": "alvo=Traduzir segmentos lógicos diretamente em blocos de disco; distratores=['Mapear endereços virtuais para endereços físicos', 'Mapear endereços físicos para dispositivos de E/S', 'Registrar apenas os quadros livres da memória física', 'Armazenar cópias das páginas removidas no espaço de troca']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_8:TCP",
+      "passou": true,
+      "evidencia": "alvo=TCP; distratores=['UDP', 'SCTP', 'DCCP', 'QUIC']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_8:UDP",
+      "passou": true,
+      "evidencia": "alvo=UDP; distratores=['TCP', 'SCTP', 'DCCP', 'QUIC']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_8:SCTP",
+      "passou": true,
+      "evidencia": "alvo=SCTP; distratores=['TCP', 'UDP', 'DCCP', 'QUIC']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_8:DCCP",
+      "passou": true,
+      "evidencia": "alvo=DCCP; distratores=['TCP', 'UDP', 'SCTP', 'QUIC']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_8:QUIC",
+      "passou": true,
+      "evidencia": "alvo=QUIC; distratores=['TCP', 'UDP', 'SCTP', 'DCCP']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_9:Não funcional",
+      "passou": true,
+      "evidencia": "alvo=Não funcional; distratores=['Funcional', 'Regra de negócio', 'Requisito de interface', 'Restrição de domínio']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_9:Funcional",
+      "passou": true,
+      "evidencia": "alvo=Funcional; distratores=['Não funcional', 'Regra de negócio', 'Requisito de interface', 'Restrição de domínio']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_9:Regra de negócio",
+      "passou": true,
+      "evidencia": "alvo=Regra de negócio; distratores=['Não funcional', 'Funcional', 'Requisito de interface', 'Restrição de domínio']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_9:Requisito de interface",
+      "passou": true,
+      "evidencia": "alvo=Requisito de interface; distratores=['Não funcional', 'Funcional', 'Regra de negócio', 'Restrição de domínio']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_9:Restrição de domínio",
+      "passou": true,
+      "evidencia": "alvo=Restrição de domínio; distratores=['Não funcional', 'Funcional', 'Regra de negócio', 'Requisito de interface']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_10:Aprendizado não supervisionado",
+      "passou": true,
+      "evidencia": "alvo=Aprendizado não supervisionado; distratores=['Aprendizado supervisionado', 'Aprendizado por reforço', 'Aprendizado semissupervisionado', 'Aprendizado autossupervisionado']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_10:Aprendizado supervisionado",
+      "passou": true,
+      "evidencia": "alvo=Aprendizado supervisionado; distratores=['Aprendizado não supervisionado', 'Aprendizado por reforço', 'Aprendizado semissupervisionado', 'Aprendizado autossupervisionado']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_10:Aprendizado por reforço",
+      "passou": true,
+      "evidencia": "alvo=Aprendizado por reforço; distratores=['Aprendizado não supervisionado', 'Aprendizado supervisionado', 'Aprendizado semissupervisionado', 'Aprendizado autossupervisionado']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_10:Aprendizado semissupervisionado",
+      "passou": true,
+      "evidencia": "alvo=Aprendizado semissupervisionado; distratores=['Aprendizado não supervisionado', 'Aprendizado supervisionado', 'Aprendizado por reforço', 'Aprendizado autossupervisionado']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_10:Aprendizado autossupervisionado",
+      "passou": true,
+      "evidencia": "alvo=Aprendizado autossupervisionado; distratores=['Aprendizado não supervisionado', 'Aprendizado supervisionado', 'Aprendizado por reforço', 'Aprendizado semissupervisionado']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_11:Entrega confiável e ordenada",
+      "passou": true,
+      "evidencia": "alvo=Entrega confiável e ordenada; distratores=['Entrega não confiável e sem preservação de ordem', 'Entrega confiável sem preservação de ordem', 'Entrega ordenada sem retransmissão de perdas', 'Entrega com baixa latência garantida']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_11:Entrega não confiável e sem preservação de ordem",
+      "passou": true,
+      "evidencia": "alvo=Entrega não confiável e sem preservação de ordem; distratores=['Entrega confiável e ordenada', 'Entrega confiável sem preservação de ordem', 'Entrega ordenada sem retransmissão de perdas', 'Entrega com baixa latência garantida']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_11:Entrega confiável sem preservação de ordem",
+      "passou": true,
+      "evidencia": "alvo=Entrega confiável sem preservação de ordem; distratores=['Entrega confiável e ordenada', 'Entrega não confiável e sem preservação de ordem', 'Entrega ordenada sem retransmissão de perdas', 'Entrega com baixa latência garantida']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_11:Entrega ordenada sem retransmissão de perdas",
+      "passou": true,
+      "evidencia": "alvo=Entrega ordenada sem retransmissão de perdas; distratores=['Entrega confiável e ordenada', 'Entrega não confiável e sem preservação de ordem', 'Entrega confiável sem preservação de ordem', 'Entrega com baixa latência garantida']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_11:Entrega com baixa latência garantida",
+      "passou": true,
+      "evidencia": "alvo=Entrega com baixa latência garantida; distratores=['Entrega confiável e ordenada', 'Entrega não confiável e sem preservação de ordem', 'Entrega confiável sem preservação de ordem', 'Entrega ordenada sem retransmissão de perdas']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_12:TCP para a primeira e UDP para a segunda",
+      "passou": true,
+      "evidencia": "alvo=TCP para a primeira e UDP para a segunda; distratores=['UDP para a primeira e TCP para a segunda', 'TCP para ambas as aplicações', 'UDP para ambas as aplicações', 'UDP para a primeira e DCCP para a segunda']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_12:UDP para a primeira e TCP para a segunda",
+      "passou": true,
+      "evidencia": "alvo=UDP para a primeira e TCP para a segunda; distratores=['TCP para a primeira e UDP para a segunda', 'TCP para ambas as aplicações', 'UDP para ambas as aplicações', 'UDP para a primeira e DCCP para a segunda']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_12:TCP para ambas as aplicações",
+      "passou": true,
+      "evidencia": "alvo=TCP para ambas as aplicações; distratores=['TCP para a primeira e UDP para a segunda', 'UDP para a primeira e TCP para a segunda', 'UDP para ambas as aplicações', 'UDP para a primeira e DCCP para a segunda']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_12:UDP para ambas as aplicações",
+      "passou": true,
+      "evidencia": "alvo=UDP para ambas as aplicações; distratores=['TCP para a primeira e UDP para a segunda', 'UDP para a primeira e TCP para a segunda', 'TCP para ambas as aplicações', 'UDP para a primeira e DCCP para a segunda']"
+    },
+    {
+      "grupo": "SLM_MEMORIA",
+      "teste": "familia_12:UDP para a primeira e DCCP para a segunda",
+      "passou": true,
+      "evidencia": "alvo=UDP para a primeira e DCCP para a segunda; distratores=['TCP para a primeira e UDP para a segunda', 'UDP para a primeira e TCP para a segunda', 'TCP para ambas as aplicações', 'UDP para ambas as aplicações']"
+    },
+    {
+      "grupo": "RED_FLAGS_ITEM",
+      "teste": "item_limpo",
+      "passou": true,
+      "evidencia": "esperado=[]; encontrado=[]"
+    },
+    {
+      "grupo": "RED_FLAGS_ITEM",
+      "teste": "placeholder",
+      "passou": true,
+      "evidencia": "esperado=['placeholder_residual']; encontrado=['placeholder_residual']"
+    },
+    {
+      "grupo": "RED_FLAGS_ITEM",
+      "teste": "imagem_ausente",
+      "passou": true,
+      "evidencia": "esperado=['dependencia_visual_ausente']; encontrado=['dependencia_visual_ausente']"
+    },
+    {
+      "grupo": "RED_FLAGS_ITEM",
+      "teste": "vazamento",
+      "passou": true,
+      "evidencia": "esperado=['vazamento_de_artefato']; encontrado=['vazamento_de_artefato']"
+    },
+    {
+      "grupo": "RED_FLAGS_ITEM",
+      "teste": "alternativa_vazia",
+      "passou": true,
+      "evidencia": "esperado=['formatacao_quebrada']; encontrado=['formatacao_quebrada']"
+    },
+    {
+      "grupo": "RED_FLAGS_NUCLEO",
+      "teste": "plural_singular",
+      "passou": true,
+      "evidencia": "esperado=enunciado_ambiguo; encontrado=['enunciado_ambiguo']"
+    },
+    {
+      "grupo": "RED_FLAGS_NUCLEO",
+      "teste": "binario",
+      "passou": true,
+      "evidencia": "esperado=espaco_de_respostas_binario; encontrado=['espaco_de_respostas_binario']"
+    },
+    {
+      "grupo": "RED_FLAGS_NUCLEO",
+      "teste": "protocolo",
+      "passou": true,
+      "evidencia": "esperado=selecao_de_protocolo_potencialmente_ambigua; encontrado=['selecao_de_protocolo_potencialmente_ambigua']"
+    },
+    {
+      "grupo": "RED_FLAGS_DISTRACTORES",
+      "teste": "duplicidade",
+      "passou": true,
+      "evidencia": "encontrado=['distratores_duplicados']"
+    },
+    {
+      "grupo": "RED_FLAGS_ESTRUTURA",
+      "teste": "item_malformado",
+      "passou": true,
+      "evidencia": "encontrado=['gabarito_estruturalmente_invalido', 'quantidade_alternativas_invalida']"
+    }
+  ]
+}

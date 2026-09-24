@@ -1,0 +1,220 @@
+{
+  "condition": "C4",
+  "n": 5,
+  "completed": 5,
+  "median_seconds": 31.087,
+  "min_seconds": 24.353,
+  "max_seconds": 31.571,
+  "items": [
+    {
+      "spec_id": "P01",
+      "request_id": "37f20290-4c55-433e-9b26-053133e20f8d",
+      "state": "GENERATION_COMPLETED",
+      "seconds": 25.835,
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em um sistema de gerenciamento de banco de dados que garante as propriedades ACID, ocorre uma queda de energia imediatamente antes da execução do comando COMMIT de uma transação. Qual propriedade ACID, se houver, está sendo violada por essa falha?",
+        "alternativas": [
+          "<NAME>",
+          "Nenhuma",
+          "consulta",
+          "alteração",
+          "transação"
+        ],
+        "correta": 1,
+        "explicacao": "A falha ocorre antes do COMMIT; a transação ainda não está confirmada, portanto a durabilidade não se aplica. O SGBD aborta a transação, preservando a atomicidade (todos ou nenhum efeito). Assim, nenhuma propriedade ACID é violada.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 0
+          }
+        ]
+      }
+    },
+    {
+      "spec_id": "P02",
+      "request_id": "dda7b947-5b81-4069-912d-4ffdfc6737a7",
+      "state": "GENERATION_COMPLETED",
+      "seconds": 24.353,
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Um sistema de videoconferência em tempo real deve minimizar a latência, podendo tolerar perda ocasional de pacotes, enquanto mantém a comunicação bidirecional entre clientes. Considerando as garantias oferecidas por TCP e UDP, qual protocolo de transporte é mais adequado para atender a esses requisitos?",
+        "alternativas": [
+          "HTTP",
+          "SMTP",
+          "TCP",
+          "UDP",
+          "FTP"
+        ],
+        "correta": 3,
+        "explicacao": "UDP fornece serviço sem conexão, não realiza controle de fluxo, ordenação ou retransmissão, o que reduz a latência e permite perda de pacotes tolerada; já TCP garante entrega confiável, ordenação e controle de congestionamento, introduzindo atrasos que prejudicam aplicações sensíveis ao tempo, como videoconferência.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 2
+          }
+        ]
+      }
+    },
+    {
+      "spec_id": "P03",
+      "request_id": "76456ded-0792-4ef4-b132-d7bcdd1652bd",
+      "state": "GENERATION_COMPLETED",
+      "seconds": 31.206,
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em um sistema bancário online, o requisito a seguir deve ser analisado: “O sistema deve garantir que a operação de transferência entre contas seja concluída em até 2 segundos.” Classifique esse requisito como funcional ou não funcional.",
+        "alternativas": [
+          "conta",
+          "transferrencia",
+          "operacao",
+          "funcionaria",
+          "Não funcional"
+        ],
+        "correta": 4,
+        "explicacao": "O requisito descreve uma restrição de desempenho (tempo máximo de resposta), que caracteriza um atributo de qualidade do sistema, portanto trata‑se de um requisito não funcional.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          }
+        ]
+      }
+    },
+    {
+      "spec_id": "P04",
+      "request_id": "53015de6-418d-43c2-b598-61e14f1163f7",
+      "state": "GENERATION_COMPLETED",
+      "seconds": 31.087,
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Um sistema de atendimento ao cliente registra as solicitações na ordem em que chegam e deve atender cada cliente exatamente nessa sequência, garantindo tempo O(1) para inserir uma nova solicitação e para remover a próxima a ser atendida. Qual estrutura de dados é a mais adequada para implementar essa fila de atendimento?",
+        "alternativas": [
+          "Fila",
+          "Lista",
+          "Linha",
+          "Arquivo",
+          "Cola"
+        ],
+        "correta": 0,
+        "explicacao": "A fila implementa a disciplina FIFO, permitindo inserção (enqueue) e remoção (dequeue) em O(1). Essa propriedade atende ao requisito de atender clientes na ordem de chegada, ao contrário de pilhas (LIFO) ou tabelas hash (acesso direto).",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 0
+          }
+        ]
+      }
+    },
+    {
+      "spec_id": "P05",
+      "request_id": "97400dc1-648f-403b-9088-3f00f3549439",
+      "state": "GENERATION_COMPLETED",
+      "seconds": 31.571,
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Uma empresa de comércio eletrônico deseja segmentar seus clientes em grupos com padrões de compra semelhantes, mas não possui rótulos que indiquem a qual segmento cada cliente pertence. Qual tipo de aprendizado de máquina deve ser empregado para realizar essa tarefa?",
+        "alternativas": [
+          "análise discriminante",
+          "Aprendizado não supervisionado",
+          "Regressão linear",
+          "Análise de clusterização",
+          "Aprendizagem supervisionada"
+        ],
+        "correta": 1,
+        "explicacao": "Como não há rótulos de saída que indiquem a classe ou segmento dos clientes, o objetivo é descobrir estruturas inerentes nos dados, como grupos de comportamento de compra. Essa característica corresponde ao aprendizado não supervisionado, que identifica padrões ou agrupamentos sem necessidade de exemplos rotulados.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 2
+          }
+        ]
+      }
+    }
+  ]
+}

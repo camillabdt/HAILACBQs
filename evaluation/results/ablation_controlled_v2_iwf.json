@@ -1,0 +1,2315 @@
+{
+  "method": "IWF/SAQUET + Arif; same configured semantic judge",
+  "items": [
+    {
+      "condition": "C1_LLM",
+      "spec_id": "P01",
+      "status": "COMPLETED",
+      "question": {
+        "enunciado": "Em um sistema de banco de dados, uma transação falha antes de executar o COMMIT. Qual das seguintes afirmações descreve corretamente a diferença entre atomicidade e durabilidade nessa situação?",
+        "alternativas": [
+          "Atomicidade garante que todas as operações da transação sejam revertidas, enquanto durabilidade garante que as alterações permaneçam mesmo após a falha.",
+          "Atomicidade garante que as alterações sejam permanentes, enquanto durabilidade garante que a transação seja revertida em caso de falha.",
+          "Atomicidade assegura que a falha não afete outras transações, enquanto durabilidade assegura que a transação seja executada em ordem sequencial.",
+          "Atomicidade garante que a transação seja executada em blocos de dados, enquanto durabilidade garante que cada bloco seja gravado em disco.",
+          "Atomicidade assegura que a transação seja revertida se falhar antes do COMMIT, enquanto durabilidade assegura que as alterações permaneçam somente após o COMMIT."
+        ],
+        "correta": 4,
+        "explicacao": "A propriedade de atomicidade garante que, se a transação falhar antes de ser confirmada, todas as suas alterações são desfeitas, retornando o banco ao estado anterior. A durabilidade, por outro lado, só entra em vigor após o COMMIT, assegurando que as alterações sobrevivam a falhas subsequentes.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": true,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "",
+          "convergence_cues": "",
+          "grammatical_cues": "",
+          "gratuitous_information": "",
+          "implausible_distractors": "",
+          "logical_cues": "",
+          "more_than_one_correct": "",
+          "unfocused_stem": ""
+        },
+        "flaws": [
+          "longest_option_correct"
+        ],
+        "iwf_count": 1,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": ""
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": ""
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": ""
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": ""
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": ""
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": ""
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": ""
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": ""
+          }
+        }
+      }
+    },
+    {
+      "condition": "C1_LLM",
+      "spec_id": "P02",
+      "status": "COMPLETED",
+      "question": {
+        "enunciado": "Em uma aplicação de transmissão de vídeo em tempo real, qual das seguintes afirmações descreve de maneira mais adequada a diferença entre as garantias oferecidas pelos protocolos TCP e UDP?",
+        "alternativas": [
+          "O TCP garante entrega ordenada e sem erros, mas pode introduzir latência, enquanto o UDP não garante ordem nem correção de erros, permitindo menor atraso.",
+          "O UDP oferece retransmissão automática de pacotes perdidos, enquanto o TCP permite perda de pacotes para reduzir a carga de rede.",
+          "Ambos os protocolos garantem entrega sem duplicidade, porém o TCP permite controle de fluxo, enquanto o UDP não.",
+          "O UDP garante que os dados cheguem na mesma ordem em que foram enviados, enquanto o TCP não.",
+          "O TCP garante que os dados sejam entregues apenas se o receptor solicitar, enquanto o UDP envia os dados sem confirmação."
+        ],
+        "correta": 0,
+        "explicacao": "O TCP oferece garantias de entrega confiável, controle de fluxo e correção de erros, mas pode aumentar a latência. O UDP não oferece essas garantias, resultando em menor sobrecarga e latência, adequado para aplicações que toleram perdas.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": true,
+          "ambiguous_information": false,
+          "implausible_distractors": true,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "The stem is clear and unambiguous.",
+          "convergence_cues": "No specific convergence cues are present.",
+          "grammatical_cues": "The stem and alternatives are grammatically correct.",
+          "gratuitous_information": "No extraneous information beyond the question.",
+          "implausible_distractors": "Alternatives 1, 2, 3, and 4 contain statements that are factually incorrect and not plausible for TCP/UDP behavior.",
+          "logical_cues": "The stem logically leads to a comparison of TCP and UDP guarantees.",
+          "more_than_one_correct": "Only alternative 0 is correct.",
+          "unfocused_stem": "The stem is focused on TCP vs UDP in real‑time video."
+        },
+        "flaws": [
+          "longest_option_correct",
+          "implausible_distractors"
+        ],
+        "iwf_count": 2,
+        "classification": "unacceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "Question matches the stated competence."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "No grammatical errors detected."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "Answer can be determined from the provided options."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "Question and options are clear."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "Context of real‑time video transmission is specified."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Options are distinct."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "All distractors relate to TCP/UDP differences."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "Distractors are plausible but incorrect."
+          }
+        }
+      }
+    },
+    {
+      "condition": "C1_LLM",
+      "spec_id": "P03",
+      "status": "COMPLETED",
+      "question": {
+        "enunciado": "No sistema de gerenciamento de biblioteca, qual das seguintes especificações descreve um requisito funcional?",
+        "alternativas": [
+          "O sistema deve garantir que o tempo de resposta seja inferior a 2 segundos.",
+          "O sistema deve registrar a data de devolução do livro.",
+          "O sistema deve ser compatível com navegadores modernos.",
+          "O sistema deve ter alta disponibilidade 99,9%.",
+          "O sistema deve criptografar dados sensíveis."
+        ],
+        "correta": 1,
+        "explicacao": "Um requisito funcional descreve uma ação ou comportamento que o sistema deve realizar, como registrar a data de devolução de um livro. As demais alternativas referem-se a características de desempenho, compatibilidade, disponibilidade e segurança, que são requisitos não funcionais.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "O enunciado e as alternativas são claros e não há ambiguidade.",
+          "convergence_cues": "Não há pistas no enunciado que indiquem a resposta correta.",
+          "grammatical_cues": "Nenhum elemento gramatical aponta para a alternativa correta.",
+          "gratuitous_information": "Todas as informações fornecidas são necessárias para a compreensão da pergunta.",
+          "implausible_distractors": "Todos os distractores são plausíveis como requisitos não funcionais.",
+          "logical_cues": "Não há pistas lógicas no enunciado que levem à resposta.",
+          "more_than_one_correct": "Somente a alternativa 1 atende à descrição de requisito funcional.",
+          "unfocused_stem": "O enunciado está focado no conceito de requisito funcional."
+        },
+        "flaws": [],
+        "iwf_count": 0,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "A pergunta aborda requisitos de software, alinhada à competência."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "O texto está gramaticalmente correto em português."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "A pergunta pode ser respondida com base nas alternativas apresentadas."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "O enunciado e as alternativas são claros e compreensíveis."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "Especifica o contexto de um sistema de gerenciamento de biblioteca."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Cada alternativa descreve uma característica distinta."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "Os distractores representam requisitos não funcionais, mantendo homogeneidade."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "Todos os distractores são plausíveis dentro do domínio de requisitos."
+          }
+        }
+      }
+    },
+    {
+      "condition": "C1_LLM",
+      "spec_id": "P04",
+      "status": "COMPLETED",
+      "question": {
+        "enunciado": "Um sistema de gerenciamento de pedidos de um restaurante online precisa armazenar os pedidos em ordem de chegada, permitir que o cozinheiro retire o pedido mais antigo para preparar, e ocasionalmente verifique se um pedido específico já está na fila para cancelar. Qual estrutura de dados é mais adequada para atender a essas operações predominantes?",
+        "alternativas": [
+          "Pilha, que armazena os pedidos em ordem LIFO, facilitando a retirada do último pedido adicionado.",
+          "Fila, que mantém a ordem de chegada dos pedidos e permite retirar o mais antigo.",
+          "Árvore binária de busca, que possibilita buscas rápidas, mas não garante a ordem de chegada.",
+          "Tabela hash, que oferece busca em tempo constante, porém não preserva a ordem de chegada.",
+          "Lista duplamente ligada, que pode ser usada como fila, mas não oferece buscas eficientes."
+        ],
+        "correta": 1,
+        "explicacao": "A fila (queue) mantém os pedidos na ordem de chegada, permitindo que o item mais antigo seja removido em tempo constante (FIFO). A busca por um pedido pode ser feita percorrendo a fila, o que atende ao requisito de verificação ocasional. As demais estruturas não mantêm a ordem de chegada ou não oferecem a operação de remoção do item mais antigo de forma eficiente.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": true,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "The stem clearly specifies the required operations (FIFO, removal of oldest, occasional search).",
+          "convergence_cues": "The stem does not provide misleading or ambiguous cues; it directly points to a FIFO structure.",
+          "grammatical_cues": "The Portuguese text is grammatically correct and unambiguous.",
+          "gratuitous_information": "No unnecessary information is present in the stem.",
+          "implausible_distractors": "All alternatives are plausible data structures for the described scenario.",
+          "logical_cues": "The logical requirements (FIFO and occasional search) are consistent with the correct answer.",
+          "more_than_one_correct": "Only the queue uniquely satisfies the primary operations efficiently.",
+          "unfocused_stem": "The stem is focused on the required operations."
+        },
+        "flaws": [
+          "vague_terms"
+        ],
+        "iwf_count": 1,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "All criteria are directly relevant to evaluating the question."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "The question and options are grammatically correct."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "The question can be answered with the provided options."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "The question is clear and understandable."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "The question specifies the context of an online restaurant order system."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Each option represents a distinct data structure."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "All distractors are data structures, maintaining homogeneity."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "Each distractor is plausible but incorrect for the given requirements."
+          }
+        }
+      }
+    },
+    {
+      "condition": "C1_LLM",
+      "spec_id": "P05",
+      "status": "COMPLETED",
+      "question": {
+        "enunciado": "Uma fábrica de automóveis coleta dados de sensores de temperatura e vibração de motores em operação contínua. Nenhum dado está rotulado como 'falha' ou 'normal'. O objetivo é identificar padrões que indiquem possíveis falhas antes que ocorram. Qual abordagem de aprendizado de máquina é mais adequada para esse cenário?",
+        "alternativas": [
+          "Aprendizado supervisionado, pois o sistema precisa de rótulos de falha para treinar.",
+          "Aprendizado não supervisionado, pois os dados não contêm rótulos e podem revelar padrões de falha.",
+          "Aprendizado por reforço, pois o agente aprende a maximizar recompensas ao detectar falhas.",
+          "Aprendizado semi-supervisionado, pois pode usar poucos exemplos rotulados para melhorar.",
+          "Aprendizado por transferência, pois aplica conhecimento de outro domínio."
+        ],
+        "correta": 1,
+        "explicacao": "O aprendizado não supervisionado permite identificar padrões e anomalias em conjuntos de dados sem rótulos. Como os registros não contêm informações sobre falhas, o modelo deve descobrir por conta própria grupos ou comportamentos atípicos que podem indicar falhas potenciais.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": true,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": true,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "Question wording is clear and unambiguous.",
+          "convergence_cues": "No convergence cues present; question is straightforward.",
+          "grammatical_cues": "The text is grammatically correct in Portuguese.",
+          "gratuitous_information": "All information provided is relevant to the question.",
+          "implausible_distractors": "Each distractor represents a plausible machine‑learning approach.",
+          "logical_cues": "The question follows logical structure and intent.",
+          "more_than_one_correct": "Only unsupervised learning is correct given no labels are available.",
+          "unfocused_stem": "Stem directly addresses the scenario."
+        },
+        "flaws": [
+          "longest_option_correct",
+          "absolute_terms"
+        ],
+        "iwf_count": 2,
+        "classification": "unacceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "Question directly tests knowledge of ML paradigms."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "No grammatical errors detected."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "Question is answerable with provided options."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "Phrasing is clear and concise."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "Context of automotive sensor data is explicitly stated."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Options are mutually exclusive learning paradigms."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "All distractors are learning methods."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "Each distractor is a plausible ML approach."
+          }
+        }
+      }
+    },
+    {
+      "condition": "C2_RAG_LLM",
+      "spec_id": "P01",
+      "status": "COMPLETED",
+      "question": {
+        "enunciado": "Um sistema de banco de dados executa uma transação que realiza três atualizações em tabelas distintas. Antes de emitir o COMMIT, ocorre uma falha no servidor. Qual das seguintes afirmativas descreve corretamente a situação em relação às propriedades ACID?",
+        "alternativas": [
+          "A) A durabilidade é violada porque os efeitos das atualizações podem não ser persistidos.",
+          "B) A atomicidade é violada porque as atualizações são parcialmente aplicadas.",
+          "C) A consistência pode ser violada se as regras de integridade forem quebradas.",
+          "D) A atomicidade garante que nenhuma das atualizações será persistida até que o COMMIT seja concluído.",
+          "E) A durabilidade garante que as atualizações serão preservadas mesmo após a falha."
+        ],
+        "correta": 3,
+        "explicacao": "Em uma falha ocorrida antes do COMMIT, a propriedade de durabilidade não se aplica, pois nenhuma alteração foi confirmada. A propriedade de atomicidade assegura que, até que a transação seja confirmada, nenhum efeito parcial é permanente; portanto, nenhuma das três atualizações será persistida. A alternativa D reflete essa garantia.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": true,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "The stem and options are unambiguous.",
+          "convergence_cues": "No convergence cues present.",
+          "grammatical_cues": "The Portuguese wording is grammatically correct.",
+          "gratuitous_information": "All provided information is relevant to the question.",
+          "implausible_distractors": "All distractors are plausible but incorrect.",
+          "logical_cues": "Logical structure of the question is sound.",
+          "more_than_one_correct": "Only option D is correct.",
+          "unfocused_stem": "Stem directly addresses the scenario."
+        },
+        "flaws": [
+          "longest_option_correct"
+        ],
+        "iwf_count": 1,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "Question pertains to ACID properties."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "Grammatical construction is correct."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "Question can be answered with provided options."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "Question is clear."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "Focuses on database transaction failure."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Options are distinct."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "All distractors relate to ACID properties."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "Distractors are plausible but incorrect."
+          }
+        }
+      }
+    },
+    {
+      "condition": "C2_RAG_LLM",
+      "spec_id": "P02",
+      "status": "COMPLETED",
+      "question": {
+        "enunciado": "Considerando um cenário de aplicação que exige transmissão de dados com entrega confiável, ordem correta e controle de congestionamento, qual protocolo de transporte deve ser escolhido?",
+        "alternativas": [
+          "TCP, pois fornece conexão orientada, entrega confiável, ordem correta, controle de fluxo e controle de congestionamento.",
+          "UDP, pois possui menor sobrecarga e é adequado para aplicações que toleram perda de pacotes.",
+          "TCP, pois garante entrega mas não controla o fluxo de dados.",
+          "UDP, pois garante entrega de todos os pacotes enviados.",
+          "TCP, pois oferece comunicação sem conexão entre processos."
+        ],
+        "correta": 0,
+        "explicacao": "O protocolo TCP oferece conexão orientada, entrega confiável, ordem correta de pacotes, controle de fluxo e controle de congestionamento, atendendo a todos os requisitos citados. O UDP não oferece nenhuma dessas garantias, sendo adequado apenas para aplicações que não precisam de confiabilidade ou ordem.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": true,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": true,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "Stem explicitly states requirements, no ambiguity.",
+          "convergence_cues": "Stem directly asks for protocol choice, no misleading cues.",
+          "grammatical_cues": "No grammatical errors detected.",
+          "gratuitous_information": "Stem contains only necessary information.",
+          "implausible_distractors": "All distractors are plausible but incorrect.",
+          "logical_cues": "Stem logically leads to answer based on given criteria.",
+          "more_than_one_correct": "Only one option satisfies all requirements.",
+          "unfocused_stem": "Stem focuses on transport protocol selection."
+        },
+        "flaws": [
+          "longest_option_correct",
+          "absolute_terms"
+        ],
+        "iwf_count": 2,
+        "classification": "unacceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "Question directly tests selection of transport protocol based on reliability, order, congestion control, aligning with competency."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "No grammatical errors."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "Clear stem and options; one correct answer."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "Stem and options are clear and concise."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "Specifies requirements and options."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Options differ in protocol and justification."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "All distractors are statements about TCP or UDP with reasons."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "Each distractor could be considered correct by someone unfamiliar with protocol details."
+          }
+        }
+      }
+    },
+    {
+      "condition": "C2_RAG_LLM",
+      "spec_id": "P03",
+      "status": "COMPLETED",
+      "question": {
+        "enunciado": "Um sistema de gerenciamento de biblioteca online permite que usuários pesquisem livros, reservem cópias e recebam notificações por e-mail. O gerente de projeto deseja garantir que o sistema atenda a requisitos específicos antes de sua implantação. Qual dos seguintes requisitos deve ser classificado como requisito funcional?",
+        "alternativas": [
+          "O sistema deve processar 1000 requisições por segundo.",
+          "O sistema deve exibir a lista de livros pesquisados em menos de 2 segundos.",
+          "O usuário deve ser capaz de pesquisar livros pelo título, autor ou ISBN.",
+          "O sistema deve usar criptografia AES‑256 para proteger dados de usuários.",
+          "O sistema deve ter disponibilidade de 99,9 % durante o horário comercial."
+        ],
+        "correta": 2,
+        "explicacao": "Requisitos funcionais descrevem ações e comportamentos que o sistema deve oferecer aos usuários. A opção 3 descreve uma funcionalidade de pesquisa, portanto é funcional. As demais tratam de desempenho, segurança e disponibilidade, que são atributos não funcionais.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "The stem is unambiguous and specifies the type of requirement to classify.",
+          "convergence_cues": "No linguistic cues that bias toward a particular answer are present.",
+          "grammatical_cues": "The Portuguese sentence is grammatically correct and does not contain hints.",
+          "gratuitous_information": "All information in the stem is necessary to answer the question.",
+          "implausible_distractors": "Each distractor represents a realistic non‑functional requirement.",
+          "logical_cues": "The question follows the standard functional vs non‑functional distinction.",
+          "more_than_one_correct": "Only the third option describes a functional requirement.",
+          "unfocused_stem": "The stem is focused on a single classification task."
+        },
+        "flaws": [],
+        "iwf_count": 0,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "Question addresses a core topic in software requirements engineering."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "The question is grammatically correct in Portuguese."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "The answer can be determined from the information provided."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "The wording is clear and unambiguous."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "The scenario is specific to an online library system."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Each option represents a distinct requirement category."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "All distractors are non‑functional requirements, sharing the same type."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "Each distractor is a plausible non‑functional requirement."
+          }
+        }
+      }
+    },
+    {
+      "condition": "C2_RAG_LLM",
+      "spec_id": "P04",
+      "status": "COMPLETED",
+      "question": {
+        "enunciado": "Um aplicativo de gerenciamento de tarefas precisa permitir que os usuários adicionem novas tarefas, marquem tarefas como concluídas e obtenham rapidamente a tarefa que vence em seguida. O objetivo principal é processar as tarefas na ordem de vencimento, enquanto as adições e remoções são frequentes. Qual estrutura de dados é mais adequada para este cenário?",
+        "alternativas": [
+          "Pilha (LIFO)",
+          "Fila (FIFO)",
+          "Árvore de Busca Binária",
+          "Tabela Hash",
+          "Fila de Prioridade"
+        ],
+        "correta": 4,
+        "explicacao": "A fila de prioridade mantém os elementos ordenados por chave de prioridade, permitindo que a tarefa com menor data de vencimento seja recuperada em tempo logarítmico. As demais estruturas não oferecem essa ordenação eficiente: pilha processa no último inserido, fila segue a ordem de inserção, árvore de busca exige busca explícita e tabela hash não mantém ordem.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "The stem is clear and unambiguous.",
+          "convergence_cues": "No convergence cues needed.",
+          "grammatical_cues": "The Portuguese grammar is correct.",
+          "gratuitous_information": "The stem contains only necessary information.",
+          "implausible_distractors": "All distractors are plausible data structures.",
+          "logical_cues": "The logic of the question is sound.",
+          "more_than_one_correct": "Only one correct answer.",
+          "unfocused_stem": "The stem is focused on priority ordering."
+        },
+        "flaws": [],
+        "iwf_count": 0,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "The question is relevant to data structure selection."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "The stem is grammatically correct."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "The question can be answered."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "The question is clear."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "The scenario is specific enough."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Options are distinct."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "Distractors are of the same type."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "Each distractor is plausible but not the best choice."
+          }
+        }
+      }
+    },
+    {
+      "condition": "C2_RAG_LLM",
+      "spec_id": "P05",
+      "status": "COMPLETED",
+      "question": {
+        "enunciado": "Uma empresa de telecom está analisando dados de chamadas para identificar padrões de churn. Ela possui um conjunto de dados com informações sobre clientes, mas apenas alguns registros têm a etiqueta de churn (1 se o cliente cancelou, 0 se não). Qual abordagem de aprendizado de máquina é mais adequada para aproveitar esses dados rotulados e não rotulados?",
+        "alternativas": [
+          "Aprendizado supervisionado usando regressão logística.",
+          "Aprendizado não supervisionado usando clustering k‑means.",
+          "Aprendizado supervisionado usando redes neurais profundas.",
+          "Aprendizado semi‑supervisionado combinando redes neurais e clustering.",
+          "Aprendizado por reforço com simulação de churn."
+        ],
+        "correta": 4,
+        "explicacao": "O cenário apresenta dados parcialmente rotulados. Métodos supervisionados requerem rótulos completos e não aproveitam os registros sem rótulo. Métodos não supervisionados ignoram as informações de rótulo disponíveis. O aprendizado semi‑supervisionado permite usar a informação de rótulo em parte do conjunto e ainda explorar a estrutura dos dados não rotulados, tornando‑se a opção mais adequada.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "The stem clearly asks for the most suitable machine learning approach for partially labeled data.",
+          "convergence_cues": "No specific convergence cues are present beyond the logical implication of semi‑supervised learning.",
+          "grammatical_cues": "The Portuguese phrasing is grammatically correct.",
+          "gratuitous_information": "All information provided in the stem and alternatives is relevant to the question.",
+          "implausible_distractors": "Each distractor represents a valid machine learning paradigm, though not appropriate for the scenario.",
+          "logical_cues": "The mention of partially labeled data logically points to semi‑supervised learning.",
+          "more_than_one_correct": "Only one answer aligns with the described scenario.",
+          "unfocused_stem": "The stem directly addresses the selection of an ML approach."
+        },
+        "flaws": [],
+        "iwf_count": 0,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "The question aligns with the competence of analyzing AI methods."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "No grammatical errors detected."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "The question can be answered with the provided alternatives."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "The wording is clear and unambiguous."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "The context of churn prediction is explicitly mentioned."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Alternatives represent distinct learning paradigms."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "All distractors are within the domain of machine learning approaches."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "Each distractor is a plausible but incorrect choice."
+          }
+        }
+      }
+    },
+    {
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "P01",
+      "status": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Quando uma falha acontece antes da confirmação de uma transação, qual garantia do ACID permanece intacta?",
+        "alternativas": [
+          "Conservação",
+          "Durabilidade",
+          "Integridade",
+          "Segurança",
+          "Persistência"
+        ],
+        "correta": 1,
+        "explicacao": "A durabilidade assegura que os efeitos de transações confirmadas por COMMIT não são perdidos. Se a falha ocorre antes do COMMIT, a transação ainda não foi confirmada, portanto a garantia de durabilidade não é violada; apenas a atomicidade garante que os efeitos parciais sejam revertidos.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "The question is clear and unambiguous.",
+          "convergence_cues": "No cues suggest multiple correct answers.",
+          "grammatical_cues": "The sentence is grammatically correct.",
+          "gratuitous_information": "No unnecessary information is present in the stem.",
+          "implausible_distractors": "All distractors are plausible ACID-related terms.",
+          "logical_cues": "The explanation logically supports the correct answer.",
+          "more_than_one_correct": "Only one ACID property satisfies the condition.",
+          "unfocused_stem": "The stem directly addresses the ACID property in question."
+        },
+        "flaws": [],
+        "iwf_count": 0,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "Question directly addresses ACID properties."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "No grammatical errors detected."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "The question is answerable with the provided options."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "The question is clear and concise."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "The question is specific to database transaction properties."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Options are distinct ACID-related terms."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "Distractors share the same ACID-related category."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "All distractors are plausible but incorrect."
+          }
+        }
+      }
+    },
+    {
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "P02",
+      "status": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Descreva, em comparação, as garantias de entrega e controle de fluxo fornecidas pelos protocolos de transporte que oferecem comunicação fim a fim.",
+        "alternativas": [
+          "HTTPS oferece privacidade ao compartilhar informações",
+          "SMTP controla o conteúdo das mensagens enviadas",
+          "HTTP oferece segurança contra ataques man-in-the-middle",
+          "SMTP oferece verificação de origem das mensagens",
+          "TCP oferece entrega confiável e ordenada; UDP não oferece essas garantias"
+        ],
+        "correta": 4,
+        "explicacao": "O TCP, por ser orientado a conexão, garante entrega confiável e ordenada, além de controle de fluxo e congestionamento. O UDP, por ser sem conexão, não oferece garantias de entrega nem de ordem, reduzindo a sobrecarga.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": true,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": true,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "The stem explicitly requests a comparison of delivery and flow-control guarantees of transport protocols, leaving no ambiguity about the required content.",
+          "convergence_cues": "No convergence cues are present; the question does not rely on cues to steer the answer.",
+          "grammatical_cues": "The Portuguese text is grammatically correct and free of errors.",
+          "gratuitous_information": "All information in the stem and alternatives is relevant to the question.",
+          "implausible_distractors": "Each distractor is plausible within the context of networking protocols, though they are incorrect.",
+          "logical_cues": "No logical cues that might bias the answer are present.",
+          "more_than_one_correct": "Only one alternative correctly describes TCP and UDP guarantees.",
+          "unfocused_stem": "The stem is focused on transport-level delivery and flow control guarantees."
+        },
+        "flaws": [
+          "longest_option_correct",
+          "word_repeats"
+        ],
+        "iwf_count": 2,
+        "classification": "unacceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "Stem and options are directly related to transport protocols and their guarantees."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "Both stem and alternatives are grammatically correct."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "The question can be answered based on the provided alternatives."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "The stem is clear and unambiguous."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "The question is specific to transport-layer protocols (TCP/UDP)."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Each option presents a distinct claim."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "All distractors are related to networking protocols, maintaining thematic consistency."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "Distractors are plausible but incorrect within the context of the question."
+          }
+        }
+      }
+    },
+    {
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "P03",
+      "status": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Um sistema bancário online deve permitir que usuários façam transferências entre contas. Qual tipo de requisito é 'O sistema deve processar até 10.000 transações por segundo'?",
+        "alternativas": [
+          "Requisito de desempenho",
+          "Requisitsores de recursos",
+          "Requisitos de segurança",
+          "Restrições de tempo",
+          "Regulamentos de qualidade"
+        ],
+        "correta": 0,
+        "explicacao": "Esta frase descreve uma restrição de desempenho, um atributo que avalia a capacidade do sistema, não um comportamento funcional.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "",
+          "convergence_cues": "",
+          "grammatical_cues": "",
+          "gratuitous_information": "",
+          "implausible_distractors": "",
+          "logical_cues": "",
+          "more_than_one_correct": "",
+          "unfocused_stem": ""
+        },
+        "flaws": [],
+        "iwf_count": 0,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": ""
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": ""
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": ""
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": ""
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": ""
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": ""
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": ""
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": ""
+          }
+        }
+      }
+    },
+    {
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "P04",
+      "status": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em um call center, as chamadas chegam continuamente e devem ser atendidas na ordem de chegada. Se uma chamada for cancelada antes de ser atendida, ela deve ser removida da lista de espera. Qual estrutura de dados é mais adequada para gerenciar essa fila de chamadas?",
+        "alternativas": [
+          "Fila (FIFO)",
+          "Linha de Espera",
+          "Pilha",
+          "Lista encadeada",
+          "Cola"
+        ],
+        "correta": 0,
+        "explicacao": "A estrutura que mantém a ordem de inserção garante que a primeira chamada recebida seja a primeira atendida, satisfazendo a disciplina FIFO. Remoções de itens específicos, como cancelamentos, podem ser realizadas percorrendo a lista ou utilizando ponteiros, sem violar a ordem das demais chamadas.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": true,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "The question is clear and unambiguous.",
+          "convergence_cues": "No specific convergence cues are present, but they are not required for clarity.",
+          "grammatical_cues": "The Portuguese grammar is correct.",
+          "gratuitous_information": "The explanation is additional but not essential to answer the question.",
+          "implausible_distractors": "All distractors are plausible data structure concepts.",
+          "logical_cues": "The logical structure of the question is sound.",
+          "more_than_one_correct": "Only one option correctly satisfies the FIFO requirement.",
+          "unfocused_stem": "The stem directly addresses the problem."
+        },
+        "flaws": [
+          "word_repeats"
+        ],
+        "iwf_count": 1,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "Question is relevant to data structure selection."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "Correct Portuguese grammar."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "Answerable with given options."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "Clear and concise."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "Specific to call center queue management."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Options are distinct."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "All distractors are data-structure related."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "Each distractor is plausible but incorrect."
+          }
+        }
+      }
+    },
+    {
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "P05",
+      "status": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Qual é a principal diferença entre aprendizado supervisionado e não supervisionado?",
+        "alternativas": [
+          "O uso de modelos probabilísticos",
+          "A utilização de algoritmos complexos",
+          "O uso de métodos baseados na probabilidade",
+          "O uso de um conjunto diversificado de exemplos",
+          "Uso de rótulos nos dados de treinamento"
+        ],
+        "correta": 4,
+        "explicacao": "No aprendizado supervisionado, os exemplos de treinamento vêm com rótulos que orientam a construção do modelo para tarefas de classificação ou regressão, enquanto no aprendizado não supervisionado os dados não possuem rótulos e o objetivo é descobrir estruturas ou agrupamentos internos.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": true,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "Stem is clear and unambiguous.",
+          "convergence_cues": "No convergence cues present.",
+          "grammatical_cues": "Stem is grammatically correct.",
+          "gratuitous_information": "No unnecessary information in the stem.",
+          "implausible_distractors": "All distractors are unrelated to the main difference and are obviously incorrect.",
+          "logical_cues": "Logical structure is intact.",
+          "more_than_one_correct": "Only one correct answer exists.",
+          "unfocused_stem": "Stem is focused on the main difference."
+        },
+        "flaws": [
+          "implausible_distractors"
+        ],
+        "iwf_count": 1,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "All elements are relevant."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "Grammar is correct."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "Answer can be derived from stem."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "Question is clear."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "Question is specific to supervised vs unsupervised learning."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Options are distinct."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "Distractors share a common theme but are distinct."
+          },
+          "distractor_plausibility": {
+            "pass": false,
+            "evidence": "Distractors are implausible and not realistic."
+          }
+        }
+      }
+    },
+    {
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "P01",
+      "status": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Qual propriedade ACID garante que, em caso de falha antes do COMMIT, as alterações parciais não são gravadas no banco?",
+        "alternativas": [
+          "Durabilidade",
+          "Consistência",
+          "Serialização",
+          "Isolamento",
+          "Atomicidade"
+        ],
+        "correta": 4,
+        "explicacao": "A atomicidade assegura que uma transação é tratada como uma única unidade: se falha antes do COMMIT, todos os efeitos são revertidos, mantendo o banco no estado anterior. Durabilidade protege apenas alterações já confirmadas, portanto não se aplica a falhas ocorridas antes do COMMIT.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "The stem is clear and unambiguous.",
+          "convergence_cues": "No convergence cues present.",
+          "grammatical_cues": "The sentence is grammatically correct.",
+          "gratuitous_information": "No extraneous information in the stem.",
+          "implausible_distractors": "All distractors are plausible ACID properties.",
+          "logical_cues": "No misleading logical cues.",
+          "more_than_one_correct": "Only one correct answer exists.",
+          "unfocused_stem": "The stem directly addresses the ACID property in question."
+        },
+        "flaws": [],
+        "iwf_count": 0,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "The question is relevant to database transaction concepts."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "The question uses correct Portuguese grammar."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "The question can be answered with knowledge of ACID properties."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "The wording is clear and concise."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "The question is specific to ACID properties of transactions."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Each option is a distinct ACID property."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "All distractors belong to the same category (ACID properties)."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "Each distractor is plausible and could be mistakenly selected."
+          }
+        }
+      }
+    },
+    {
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "P02",
+      "status": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em um cenário de aplicação, compare as garantias de entrega e ordenação oferecidas pelos protocolos de transporte TCP e UDP.",
+        "alternativas": [
+          "Protocolo TCP garante entrega segure e organizado",
+          "UDP ensures that data is delivered reliably and in the correct sequence",
+          "TCP guarantees reliable, ordered delivery; UDP does not guarantee reliability or order",
+          "TCP provides guaranteed delivery with acknowledgment for both reliability and ordering",
+          "UDP offers a non-reliable service without any assurance of order or packet integrity"
+        ],
+        "correta": 2,
+        "explicacao": "O TCP, por ser orientado à conexão, assegura entrega confiável e ordenada de bytes, controlando fluxo e congestionamento. O UDP, sem conexão, não oferece garantias de entrega nem de ordem, resultando em menor sobrecarga.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 2
+          }
+        ]
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": true,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": true,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "None",
+          "convergence_cues": "None",
+          "grammatical_cues": "Typos: 'segure', missing articles",
+          "gratuitous_information": "None",
+          "implausible_distractors": "None",
+          "logical_cues": "None",
+          "more_than_one_correct": "Alternatives 2, 3 and 4 are all correct",
+          "unfocused_stem": "None"
+        },
+        "flaws": [
+          "more_than_one_correct",
+          "grammatical_cues"
+        ],
+        "iwf_count": 2,
+        "classification": "unacceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "Question addresses TCP/UDP guarantees"
+          },
+          "grammar": {
+            "pass": false,
+            "evidence": "Spelling and article errors"
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "Stem asks comparison, answerable"
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "Clear language"
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "Specific to TCP/UDP"
+          },
+          "question_option_disjoint": {
+            "pass": false,
+            "evidence": "Options overlap; multiple correct"
+          },
+          "distractor_homogeneity": {
+            "pass": false,
+            "evidence": "Distractors vary in focus"
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "All distractors plausible"
+          }
+        }
+      }
+    },
+    {
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "P03",
+      "status": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em um sistema de gerenciamento de biblioteca, há um requisito que especifica que os usuários devem poder consultar o catálogo de livros por título ou autor, e a busca deve retornar resultados em até 3 segundos. Qual é a classificação desse requisito?",
+        "alternativas": [
+          "Regulamentos administrativos",
+          "Requisitórios políticos",
+          "Requisições econômicas",
+          "Requisitos estéticos",
+          "Requisito funcional"
+        ],
+        "correta": 4,
+        "explicacao": "O requisito descreve um serviço que o sistema deve oferecer – a consulta ao catálogo – e define um comportamento esperado, caracterizando um requisito funcional. Requisitos não funcionais, por outro lado, tratam de atributos como desempenho, segurança ou usabilidade, mas não descrevem serviços diretos que o usuário realiza.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          }
+        ]
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": true,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": true,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": true,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": true
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "The requirement includes both a functional aspect (query by title or author) and a performance constraint (results within 3 seconds), making the classification ambiguous.",
+          "convergence_cues": "The presence of a performance bound could mislead test takers to consider the requirement non‑functional, contradicting the provided answer.",
+          "grammatical_cues": "The stem and options are grammatically correct and unambiguous.",
+          "gratuitous_information": "The performance requirement is not necessary to determine the functional classification and adds extraneous detail.",
+          "implausible_distractors": "All distractors represent plausible categories of requirement types, even if some are uncommon.",
+          "logical_cues": "The explanation explicitly states that the requirement is functional, providing a logical cue.",
+          "more_than_one_correct": "The inclusion of a performance constraint could justify both functional and non‑functional classifications, indicating more than one plausible answer.",
+          "unfocused_stem": "The stem directly asks for the classification of the requirement, remaining focused."
+        },
+        "flaws": [
+          "ambiguous_information",
+          "convergence_cues",
+          "more_than_one_correct",
+          "gratuitous_information"
+        ],
+        "iwf_count": 4,
+        "classification": "unacceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "The question assesses classification of software requirements, matching the stated competency."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "The question and options are grammatically correct."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "The information provided is sufficient to answer the question."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "The wording is clear and unambiguous in terms of structure."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "The question requires knowledge of software engineering terminology, which is contextually specific."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "Each option represents a distinct category of requirement."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "All distractors are categories of requirement types, maintaining homogeneity."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "Each distractor could plausibly be considered a type of requirement, though only one is correct."
+          }
+        }
+      }
+    },
+    {
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "P04",
+      "status": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Um serviço de atendimento ao cliente recebe solicitações e as processa na ordem em que chegam, sem necessidade de acesso aleatório aos elementos.",
+        "alternativas": [
+          "Árvore binária de busca",
+          "Pilha",
+          "Tabela hash",
+          "Heap",
+          "fila"
+        ],
+        "correta": 4,
+        "explicacao": "Para atender solicitações na ordem de chegada, a estrutura que garante a disciplina FIFO e oferece inserção e remoção eficientes é a fila.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "The stem explicitly states FIFO processing with no random access, leaving no room for ambiguity.",
+          "convergence_cues": "The phrase ‘sem necessidade de acesso aleatório’ directly points to a queue structure.",
+          "grammatical_cues": "The Portuguese sentence is grammatically correct with proper subject‑verb agreement and punctuation.",
+          "gratuitous_information": "All information in the stem is relevant to selecting the appropriate data structure.",
+          "implausible_distractors": "Each distractor (tree, stack, hash, heap) is a legitimate data structure, making them plausible but incorrect.",
+          "logical_cues": "The logical requirement of FIFO is clearly stated, guiding toward the queue.",
+          "more_than_one_correct": "Only the queue satisfies all stated conditions.",
+          "unfocused_stem": "The stem focuses solely on order of processing and access needs."
+        },
+        "flaws": [],
+        "iwf_count": 0,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "The question pertains directly to selecting data structures for a client service scenario."
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "The Portuguese text is grammatically sound."
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "The correct answer is determinable from the stem and options."
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "The wording is concise and unambiguous."
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "It specifically targets the competency of selecting data structures."
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "All options are distinct data structures."
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "All distractors belong to the same category of data structures."
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "Each distractor is a realistic alternative for the given scenario."
+          }
+        }
+      }
+    },
+    {
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "P05",
+      "status": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Qual característica dos dados permite que o modelo aprenda a prever uma saída específica?",
+        "alternativas": [
+          "dados codificados",
+          "informações classificadas",
+          "valores marcados",
+          "registros etiquetados",
+          "exemplos rotulados"
+        ],
+        "correta": 4,
+        "explicacao": "Aprendizado supervisionado requer exemplos rotulados que fornecem a saída desejada. Sem esses rótulos, o modelo não pode aprender a prever a saída.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "evaluation": {
+        "iwf": {
+          "longest_option_correct": false,
+          "ambiguous_information": false,
+          "implausible_distractors": false,
+          "true_or_false": false,
+          "absolute_terms": false,
+          "complex_k_type": false,
+          "negatively_worded": false,
+          "convergence_cues": false,
+          "lost_sequence": false,
+          "unfocused_stem": false,
+          "none_of_the_above": false,
+          "word_repeats": false,
+          "more_than_one_correct": false,
+          "logical_cues": false,
+          "all_of_the_above": false,
+          "fill_in_the_blank": false,
+          "vague_terms": false,
+          "grammatical_cues": false,
+          "gratuitous_information": false
+        },
+        "evidence": {
+          "longest_option_correct": "regra determinística",
+          "true_or_false": "regra determinística",
+          "absolute_terms": "regra determinística",
+          "complex_k_type": "regra determinística",
+          "negatively_worded": "regra determinística",
+          "lost_sequence": "regra determinística",
+          "none_of_the_above": "regra determinística",
+          "word_repeats": "regra determinística",
+          "all_of_the_above": "regra determinística",
+          "fill_in_the_blank": "regra determinística",
+          "vague_terms": "regra determinística",
+          "ambiguous_information": "",
+          "convergence_cues": "",
+          "grammatical_cues": "",
+          "gratuitous_information": "",
+          "implausible_distractors": "",
+          "logical_cues": "",
+          "more_than_one_correct": "",
+          "unfocused_stem": ""
+        },
+        "flaws": [],
+        "iwf_count": 0,
+        "classification": "acceptable",
+        "unresolved": [],
+        "arif": {
+          "relevance": {
+            "pass": true,
+            "evidence": "question targets supervised learning concept"
+          },
+          "grammar": {
+            "pass": true,
+            "evidence": "question and options are grammatically correct"
+          },
+          "answerability": {
+            "pass": true,
+            "evidence": "question has a clear single correct answer"
+          },
+          "clarity": {
+            "pass": true,
+            "evidence": "stem is clear and concise"
+          },
+          "contextual_specificity": {
+            "pass": true,
+            "evidence": "question provides sufficient context about supervised learning"
+          },
+          "question_option_disjoint": {
+            "pass": true,
+            "evidence": "options are distinct terms"
+          },
+          "distractor_homogeneity": {
+            "pass": true,
+            "evidence": "all distractors are similar in type"
+          },
+          "distractor_plausibility": {
+            "pass": true,
+            "evidence": "distractors are plausible synonyms"
+          }
+        }
+      }
+    }
+  ]
+}

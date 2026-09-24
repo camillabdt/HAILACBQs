@@ -1,0 +1,1534 @@
+{
+  "condition": "C4",
+  "run_id": "expanded-v1-retry",
+  "started_at": "2026-09-24T13:54:25.215351+00:00",
+  "base_url": "http://127.0.0.1:8010",
+  "items": [
+    {
+      "spec_id": "E03",
+      "specification": {
+        "spec_id": "E03",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Comparar crescimento assintótico de algoritmos em função do tamanho da entrada.",
+        "dificuldade": 3,
+        "competencia": "Analisar eficiência de algoritmos",
+        "habilidade": "Analisar eficiência computacional",
+        "objeto_conhecimento": "Complexidade de algoritmos",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "4db98388-e22b-4505-94ce-2722c4fe4973",
+        "solicitante_id": "evaluation-expanded-v1-retry-E03",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T13:54:25.233715+00:00",
+        "updated_at": "2026-09-24T13:54:25.233715+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-expanded-v1-retry-E03",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Comparar crescimento assintótico de algoritmos em função do tamanho da entrada.",
+          "dificuldade": 3,
+          "competencia": "Analisar eficiência de algoritmos",
+          "habilidade": "Analisar eficiência computacional",
+          "objeto_conhecimento": "Complexidade de algoritmos",
+          "restricoes": [
+            "usar cenário aplicado",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "4db98388-e22b-4505-94ce-2722c4fe4973",
+      "generation_status": 429,
+      "generation": {
+        "detail": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+      },
+      "history": {
+        "request": {
+          "id": "4db98388-e22b-4505-94ce-2722c4fe4973",
+          "solicitante_id": "evaluation-expanded-v1-retry-E03",
+          "state": "GENERATION_FAILED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 1,
+          "stem_attempts": 1,
+          "distractor_attempts": 0,
+          "created_at": "2026-09-24T13:54:25.233715+00:00",
+          "updated_at": "2026-09-24T13:54:27.643424+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-expanded-v1-retry-E03",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Comparar crescimento assintótico de algoritmos em função do tamanho da entrada.",
+            "dificuldade": 3,
+            "competencia": "Analisar eficiência de algoritmos",
+            "habilidade": "Analisar eficiência computacional",
+            "objeto_conhecimento": "Complexidade de algoritmos",
+            "restricoes": [
+              "usar cenário aplicado",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [],
+        "latest_version": null,
+        "artifacts": [
+          {
+            "id": 140,
+            "request_id": "4db98388-e22b-4505-94ce-2722c4fe4973",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T13:54:25.245973+00:00",
+            "payload": {
+              "id": "rag-algoritmos-complexidade-003",
+              "texto": "A análise assintótica descreve como o consumo de tempo ou espaço de um algoritmo cresce em função do tamanho da entrada. As notações O, Omega e Theta expressam limites assintóticos. A escolha da estrutura de dados e as propriedades da entrada podem alterar significativamente o desempenho observado.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Algoritmos e Estruturas de Dados",
+                "habilidade": "Analisar eficiência computacional",
+                "objeto_conhecimento": "Complexidade de algoritmos",
+                "referencia": "CORMEN, T. H. et al. Algoritmos: Teoria e Prática.",
+                "linha": 3,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 19.165736,
+                "termos_recuperados": [
+                  "algoritmos",
+                  "complexidade",
+                  "computacional",
+                  "eficiencia",
+                  "entrada",
+                  "tamanho"
+                ],
+                "candidatas_relevantes": 2,
+                "consulta_normalizada": [
+                  "algoritmos",
+                  "assintotico",
+                  "complexidade",
+                  "computacional",
+                  "crescimento",
+                  "eficiencia",
+                  "entrada",
+                  "tamanho"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-algoritmos-complexidade-003",
+                    "score": 19.165736
+                  },
+                  {
+                    "id": "rag-estruturas-dados-004",
+                    "score": 1.587169
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 141,
+            "request_id": "4db98388-e22b-4505-94ce-2722c4fe4973",
+            "kind": "STEM",
+            "created_at": "2026-09-24T13:54:27.560331+00:00",
+            "payload": {
+              "enunciado": "Dois algoritmos resolvem o mesmo problema. O Algoritmo A tem tempo de execução Θ(n²) e o Algoritmo B tem tempo de execução Θ(n·log n). Qual deles apresenta crescimento assintótico mais lento à medida que n aumenta?",
+              "resposta_correta": "Algoritmo B",
+              "explicacao": "n·log n cresce mais lentamente que n² para valores grandes de n; portanto, o Algoritmo B tem crescimento assintótico menor que o Algoritmo A.",
+              "competencia": "Analisar eficiência de algoritmos",
+              "habilidade": "Analisar eficiência computacional",
+              "objeto_conhecimento": "Complexidade de algoritmos",
+              "tem_imagem": false,
+              "recurso_visual": null
+            },
+            "provenance": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 142,
+            "request_id": "4db98388-e22b-4505-94ce-2722c4fe4973",
+            "kind": "provider_error",
+            "created_at": "2026-09-24T13:54:27.639198+00:00",
+            "payload": {
+              "code": "groq_rate_limit",
+              "status": 429,
+              "message": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+            },
+            "provenance": {
+              "provider": "groq"
+            }
+          }
+        ],
+        "red_flags": [
+          {
+            "id": 15,
+            "request_id": "4db98388-e22b-4505-94ce-2722c4fe4973",
+            "code": "gabarito_repetido_no_enunciado",
+            "stage": "NUCLEO",
+            "field": "enunciado",
+            "evidence": "o enunciado contém literalmente a resposta correta e pode revelar o gabarito",
+            "repair_target": "NUCLEO",
+            "created_at": "2026-09-24T13:54:27.568138+00:00"
+          }
+        ],
+        "events": [
+          {
+            "id": 219,
+            "request_id": "4db98388-e22b-4505-94ce-2722c4fe4973",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T13:54:25.234066+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-expanded-v1-retry-E03",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Comparar crescimento assintótico de algoritmos em função do tamanho da entrada.",
+              "dificuldade": 3,
+              "competencia": "Analisar eficiência de algoritmos",
+              "habilidade": "Analisar eficiência computacional",
+              "objeto_conhecimento": "Complexidade de algoritmos",
+              "restricoes": [
+                "usar cenário aplicado",
+                "uma única alternativa defensável"
+              ]
+            }
+          },
+          {
+            "id": 220,
+            "request_id": "4db98388-e22b-4505-94ce-2722c4fe4973",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T13:54:25.249645+00:00",
+            "evidence": {
+              "id": "rag-algoritmos-complexidade-003"
+            }
+          },
+          {
+            "id": 221,
+            "request_id": "4db98388-e22b-4505-94ce-2722c4fe4973",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "STEM_GENERATED",
+            "component": "HAILA_LLM",
+            "reason": "núcleo gerado",
+            "created_at": "2026-09-24T13:54:27.564182+00:00",
+            "evidence": {
+              "modelo": "openai/gpt-oss-120b",
+              "prompt_version": "enade-stem-1.1.0"
+            }
+          },
+          {
+            "id": 222,
+            "request_id": "4db98388-e22b-4505-94ce-2722c4fe4973",
+            "version_id": null,
+            "from_state": "STEM_GENERATED",
+            "to_state": "BLOCKED_BY_RED_FLAGS",
+            "component": "HAILA_RED_FLAGS",
+            "reason": "núcleo bloqueado",
+            "created_at": "2026-09-24T13:54:27.571759+00:00",
+            "evidence": {
+              "red_flags": [
+                {
+                  "codigo": "gabarito_repetido_no_enunciado",
+                  "etapa": "NUCLEO",
+                  "campo": "enunciado",
+                  "evidencia": "o enunciado contém literalmente a resposta correta e pode revelar o gabarito",
+                  "reparo": "NUCLEO"
+                }
+              ]
+            }
+          },
+          {
+            "id": 223,
+            "request_id": "4db98388-e22b-4505-94ce-2722c4fe4973",
+            "version_id": null,
+            "from_state": "BLOCKED_BY_RED_FLAGS",
+            "to_state": "GENERATION_FAILED",
+            "component": "HAILA",
+            "reason": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo.",
+            "created_at": "2026-09-24T13:54:27.643689+00:00",
+            "evidence": {
+              "provider": "groq",
+              "status": 429
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 2.438
+    },
+    {
+      "spec_id": "E06",
+      "specification": {
+        "spec_id": "E06",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Identificar anomalias de atualização causadas por dependências funcionais em um esquema relacional.",
+        "dificuldade": 3,
+        "competencia": "Projetar bancos de dados",
+        "habilidade": "Projetar esquemas relacionais",
+        "objeto_conhecimento": "Modelo relacional e normalização",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "5f13009b-0e67-49ce-874e-851960c5cb53",
+        "solicitante_id": "evaluation-expanded-v1-retry-E06",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T13:54:27.662670+00:00",
+        "updated_at": "2026-09-24T13:54:27.662670+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-expanded-v1-retry-E06",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Identificar anomalias de atualização causadas por dependências funcionais em um esquema relacional.",
+          "dificuldade": 3,
+          "competencia": "Projetar bancos de dados",
+          "habilidade": "Projetar esquemas relacionais",
+          "objeto_conhecimento": "Modelo relacional e normalização",
+          "restricoes": [
+            "usar cenário aplicado",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "5f13009b-0e67-49ce-874e-851960c5cb53",
+      "generation_status": 429,
+      "generation": {
+        "detail": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+      },
+      "history": {
+        "request": {
+          "id": "5f13009b-0e67-49ce-874e-851960c5cb53",
+          "solicitante_id": "evaluation-expanded-v1-retry-E06",
+          "state": "GENERATION_FAILED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 0,
+          "stem_attempts": 0,
+          "distractor_attempts": 0,
+          "created_at": "2026-09-24T13:54:27.662670+00:00",
+          "updated_at": "2026-09-24T13:54:27.893612+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-expanded-v1-retry-E06",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Identificar anomalias de atualização causadas por dependências funcionais em um esquema relacional.",
+            "dificuldade": 3,
+            "competencia": "Projetar bancos de dados",
+            "habilidade": "Projetar esquemas relacionais",
+            "objeto_conhecimento": "Modelo relacional e normalização",
+            "restricoes": [
+              "usar cenário aplicado",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [],
+        "latest_version": null,
+        "artifacts": [
+          {
+            "id": 143,
+            "request_id": "5f13009b-0e67-49ce-874e-851960c5cb53",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T13:54:27.686226+00:00",
+            "payload": {
+              "id": "rag-bd-modelagem-006",
+              "texto": "A modelagem relacional representa dados em relações compostas por atributos e tuplas. Chaves identificam registros e restrições de integridade mantêm associações válidas. A normalização reduz redundâncias e anomalias de atualização por meio da análise de dependências funcionais.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Banco de Dados",
+                "habilidade": "Projetar esquemas relacionais",
+                "objeto_conhecimento": "Modelo relacional e normalização",
+                "referencia": "ELMASRI, R.; NAVATHE, S. Sistemas de Banco de Dados.",
+                "linha": 6,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 30.399002,
+                "termos_recuperados": [
+                  "anomalias",
+                  "atualizacao",
+                  "dependencias",
+                  "esquemas",
+                  "funcionais",
+                  "modelo",
+                  "normalizacao",
+                  "por",
+                  "projetar",
+                  "relacionais",
+                  "relacional"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "anomalias",
+                  "atualizacao",
+                  "bancos",
+                  "causadas",
+                  "dependencias",
+                  "esquema",
+                  "esquemas",
+                  "funcionais",
+                  "modelo",
+                  "normalizacao",
+                  "por",
+                  "projetar",
+                  "relacionais",
+                  "relacional"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-bd-modelagem-006",
+                    "score": 30.399002
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 144,
+            "request_id": "5f13009b-0e67-49ce-874e-851960c5cb53",
+            "kind": "provider_error",
+            "created_at": "2026-09-24T13:54:27.888494+00:00",
+            "payload": {
+              "code": "groq_rate_limit",
+              "status": 429,
+              "message": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+            },
+            "provenance": {
+              "provider": "groq"
+            }
+          }
+        ],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 224,
+            "request_id": "5f13009b-0e67-49ce-874e-851960c5cb53",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T13:54:27.663434+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-expanded-v1-retry-E06",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Identificar anomalias de atualização causadas por dependências funcionais em um esquema relacional.",
+              "dificuldade": 3,
+              "competencia": "Projetar bancos de dados",
+              "habilidade": "Projetar esquemas relacionais",
+              "objeto_conhecimento": "Modelo relacional e normalização",
+              "restricoes": [
+                "usar cenário aplicado",
+                "uma única alternativa defensável"
+              ]
+            }
+          },
+          {
+            "id": 225,
+            "request_id": "5f13009b-0e67-49ce-874e-851960c5cb53",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T13:54:27.689340+00:00",
+            "evidence": {
+              "id": "rag-bd-modelagem-006"
+            }
+          },
+          {
+            "id": 226,
+            "request_id": "5f13009b-0e67-49ce-874e-851960c5cb53",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "GENERATION_FAILED",
+            "component": "HAILA",
+            "reason": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo.",
+            "created_at": "2026-09-24T13:54:27.893834+00:00",
+            "evidence": {
+              "provider": "groq",
+              "status": 429
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 0.249
+    },
+    {
+      "spec_id": "E08",
+      "specification": {
+        "spec_id": "E08",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Selecionar controles de segurança de acordo com confidencialidade, integridade e disponibilidade.",
+        "dificuldade": 3,
+        "competencia": "Analisar riscos e controles de segurança",
+        "habilidade": "Analisar controles de segurança",
+        "objeto_conhecimento": "Confidencialidade, integridade e disponibilidade",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "7fc293a8-f7c2-4ca4-a57f-53886d65b070",
+        "solicitante_id": "evaluation-expanded-v1-retry-E08",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T13:54:27.908171+00:00",
+        "updated_at": "2026-09-24T13:54:27.908171+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-expanded-v1-retry-E08",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Selecionar controles de segurança de acordo com confidencialidade, integridade e disponibilidade.",
+          "dificuldade": 3,
+          "competencia": "Analisar riscos e controles de segurança",
+          "habilidade": "Analisar controles de segurança",
+          "objeto_conhecimento": "Confidencialidade, integridade e disponibilidade",
+          "restricoes": [
+            "usar cenário aplicado",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "7fc293a8-f7c2-4ca4-a57f-53886d65b070",
+      "generation_status": 429,
+      "generation": {
+        "detail": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+      },
+      "history": {
+        "request": {
+          "id": "7fc293a8-f7c2-4ca4-a57f-53886d65b070",
+          "solicitante_id": "evaluation-expanded-v1-retry-E08",
+          "state": "GENERATION_FAILED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 0,
+          "stem_attempts": 0,
+          "distractor_attempts": 0,
+          "created_at": "2026-09-24T13:54:27.908171+00:00",
+          "updated_at": "2026-09-24T13:54:28.137460+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-expanded-v1-retry-E08",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Selecionar controles de segurança de acordo com confidencialidade, integridade e disponibilidade.",
+            "dificuldade": 3,
+            "competencia": "Analisar riscos e controles de segurança",
+            "habilidade": "Analisar controles de segurança",
+            "objeto_conhecimento": "Confidencialidade, integridade e disponibilidade",
+            "restricoes": [
+              "usar cenário aplicado",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [],
+        "latest_version": null,
+        "artifacts": [
+          {
+            "id": 145,
+            "request_id": "7fc293a8-f7c2-4ca4-a57f-53886d65b070",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T13:54:27.930995+00:00",
+            "payload": {
+              "id": "rag-seguranca-008",
+              "texto": "A segurança da informação procura preservar confidencialidade, integridade e disponibilidade. Autenticação confirma identidades, autorização limita operações e auditoria registra eventos relevantes. Controles preventivos, detectivos e corretivos devem ser combinados de acordo com riscos, ameaças e vulnerabilidades.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Segurança da Informação",
+                "habilidade": "Analisar controles de segurança",
+                "objeto_conhecimento": "Confidencialidade, integridade e disponibilidade",
+                "referencia": "STALLINGS, W.; BROWN, L. Segurança de Computadores.",
+                "linha": 8,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 25.152617,
+                "termos_recuperados": [
+                  "acordo",
+                  "confidencialidade",
+                  "controles",
+                  "disponibilidade",
+                  "integridade",
+                  "riscos",
+                  "seguranca"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "acordo",
+                  "confidencialidade",
+                  "controles",
+                  "disponibilidade",
+                  "integridade",
+                  "riscos",
+                  "seguranca",
+                  "selecionar"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-seguranca-008",
+                    "score": 25.152617
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 146,
+            "request_id": "7fc293a8-f7c2-4ca4-a57f-53886d65b070",
+            "kind": "provider_error",
+            "created_at": "2026-09-24T13:54:28.131975+00:00",
+            "payload": {
+              "code": "groq_rate_limit",
+              "status": 429,
+              "message": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+            },
+            "provenance": {
+              "provider": "groq"
+            }
+          }
+        ],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 227,
+            "request_id": "7fc293a8-f7c2-4ca4-a57f-53886d65b070",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T13:54:27.908897+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-expanded-v1-retry-E08",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Selecionar controles de segurança de acordo com confidencialidade, integridade e disponibilidade.",
+              "dificuldade": 3,
+              "competencia": "Analisar riscos e controles de segurança",
+              "habilidade": "Analisar controles de segurança",
+              "objeto_conhecimento": "Confidencialidade, integridade e disponibilidade",
+              "restricoes": [
+                "usar cenário aplicado",
+                "uma única alternativa defensável"
+              ]
+            }
+          },
+          {
+            "id": 228,
+            "request_id": "7fc293a8-f7c2-4ca4-a57f-53886d65b070",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T13:54:27.935224+00:00",
+            "evidence": {
+              "id": "rag-seguranca-008"
+            }
+          },
+          {
+            "id": 229,
+            "request_id": "7fc293a8-f7c2-4ca4-a57f-53886d65b070",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "GENERATION_FAILED",
+            "component": "HAILA",
+            "reason": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo.",
+            "created_at": "2026-09-24T13:54:28.137753+00:00",
+            "evidence": {
+              "provider": "groq",
+              "status": 429
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 0.242
+    },
+    {
+      "spec_id": "E09",
+      "specification": {
+        "spec_id": "E09",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Classificar requisitos de software segundo o atributo ou comportamento especificado.",
+        "dificuldade": 3,
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Analisar e classificar requisitos",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "restricoes": [
+          "evitar pergunta binária",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "f9b312a3-93f3-4460-b545-4f969e0d4a69",
+        "solicitante_id": "evaluation-expanded-v1-retry-E09",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T13:54:28.152460+00:00",
+        "updated_at": "2026-09-24T13:54:28.152460+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-expanded-v1-retry-E09",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Classificar requisitos de software segundo o atributo ou comportamento especificado.",
+          "dificuldade": 3,
+          "competencia": "Analisar requisitos de software",
+          "habilidade": "Analisar e classificar requisitos",
+          "objeto_conhecimento": "Engenharia de requisitos",
+          "restricoes": [
+            "evitar pergunta binária",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "f9b312a3-93f3-4460-b545-4f969e0d4a69",
+      "generation_status": 429,
+      "generation": {
+        "detail": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+      },
+      "history": {
+        "request": {
+          "id": "f9b312a3-93f3-4460-b545-4f969e0d4a69",
+          "solicitante_id": "evaluation-expanded-v1-retry-E09",
+          "state": "GENERATION_FAILED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 0,
+          "stem_attempts": 0,
+          "distractor_attempts": 0,
+          "created_at": "2026-09-24T13:54:28.152460+00:00",
+          "updated_at": "2026-09-24T13:54:28.368129+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-expanded-v1-retry-E09",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Classificar requisitos de software segundo o atributo ou comportamento especificado.",
+            "dificuldade": 3,
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Analisar e classificar requisitos",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "restricoes": [
+              "evitar pergunta binária",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [],
+        "latest_version": null,
+        "artifacts": [
+          {
+            "id": 147,
+            "request_id": "f9b312a3-93f3-4460-b545-4f969e0d4a69",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T13:54:28.177164+00:00",
+            "payload": {
+              "id": "rag-engsoftware-requisitos-009",
+              "texto": "Requisitos funcionais descrevem serviços e comportamentos esperados do sistema. Requisitos não funcionais estabelecem atributos e restrições, como desempenho, segurança, confiabilidade e usabilidade. Elicitação, especificação, validação e gerenciamento de mudanças ajudam a manter alinhamento entre necessidades e solução.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Engenharia de Software",
+                "habilidade": "Analisar e classificar requisitos",
+                "objeto_conhecimento": "Engenharia de requisitos",
+                "referencia": "SOMMERVILLE, I. Engenharia de Software.",
+                "linha": 9,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 11.958651,
+                "termos_recuperados": [
+                  "classificar",
+                  "engenharia",
+                  "requisitos"
+                ],
+                "candidatas_relevantes": 3,
+                "consulta_normalizada": [
+                  "atributo",
+                  "classificar",
+                  "comportamento",
+                  "engenharia",
+                  "especificado",
+                  "requisitos",
+                  "segundo"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-engsoftware-requisitos-009",
+                    "score": 11.958651
+                  },
+                  {
+                    "id": "rag-engsoftware-testes-010",
+                    "score": 3.842496
+                  },
+                  {
+                    "id": "rag-estruturas-dados-004",
+                    "score": 1.587169
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 148,
+            "request_id": "f9b312a3-93f3-4460-b545-4f969e0d4a69",
+            "kind": "provider_error",
+            "created_at": "2026-09-24T13:54:28.363976+00:00",
+            "payload": {
+              "code": "groq_rate_limit",
+              "status": 429,
+              "message": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+            },
+            "provenance": {
+              "provider": "groq"
+            }
+          }
+        ],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 230,
+            "request_id": "f9b312a3-93f3-4460-b545-4f969e0d4a69",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T13:54:28.153249+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-expanded-v1-retry-E09",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Classificar requisitos de software segundo o atributo ou comportamento especificado.",
+              "dificuldade": 3,
+              "competencia": "Analisar requisitos de software",
+              "habilidade": "Analisar e classificar requisitos",
+              "objeto_conhecimento": "Engenharia de requisitos",
+              "restricoes": [
+                "evitar pergunta binária",
+                "uma única alternativa defensável"
+              ]
+            }
+          },
+          {
+            "id": 231,
+            "request_id": "f9b312a3-93f3-4460-b545-4f969e0d4a69",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T13:54:28.180358+00:00",
+            "evidence": {
+              "id": "rag-engsoftware-requisitos-009"
+            }
+          },
+          {
+            "id": 232,
+            "request_id": "f9b312a3-93f3-4460-b545-4f969e0d4a69",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "GENERATION_FAILED",
+            "component": "HAILA",
+            "reason": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo.",
+            "created_at": "2026-09-24T13:54:28.368344+00:00",
+            "evidence": {
+              "provider": "groq",
+              "status": 429
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 0.231
+    },
+    {
+      "spec_id": "E10",
+      "specification": {
+        "spec_id": "E10",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Selecionar um nível de teste adequado ao tipo de defeito que se deseja revelar.",
+        "dificuldade": 3,
+        "competencia": "Planejar qualidade de software",
+        "habilidade": "Planejar verificação e validação",
+        "objeto_conhecimento": "Testes de software",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "e740a63a-8e88-43e8-a465-8d26ef1b2acc",
+        "solicitante_id": "evaluation-expanded-v1-retry-E10",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T13:54:28.386215+00:00",
+        "updated_at": "2026-09-24T13:54:28.386215+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-expanded-v1-retry-E10",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Selecionar um nível de teste adequado ao tipo de defeito que se deseja revelar.",
+          "dificuldade": 3,
+          "competencia": "Planejar qualidade de software",
+          "habilidade": "Planejar verificação e validação",
+          "objeto_conhecimento": "Testes de software",
+          "restricoes": [
+            "usar cenário aplicado",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "e740a63a-8e88-43e8-a465-8d26ef1b2acc",
+      "generation_status": 429,
+      "generation": {
+        "detail": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+      },
+      "history": {
+        "request": {
+          "id": "e740a63a-8e88-43e8-a465-8d26ef1b2acc",
+          "solicitante_id": "evaluation-expanded-v1-retry-E10",
+          "state": "GENERATION_FAILED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 0,
+          "stem_attempts": 0,
+          "distractor_attempts": 0,
+          "created_at": "2026-09-24T13:54:28.386215+00:00",
+          "updated_at": "2026-09-24T13:54:28.624420+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-expanded-v1-retry-E10",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Selecionar um nível de teste adequado ao tipo de defeito que se deseja revelar.",
+            "dificuldade": 3,
+            "competencia": "Planejar qualidade de software",
+            "habilidade": "Planejar verificação e validação",
+            "objeto_conhecimento": "Testes de software",
+            "restricoes": [
+              "usar cenário aplicado",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [],
+        "latest_version": null,
+        "artifacts": [
+          {
+            "id": 149,
+            "request_id": "e740a63a-8e88-43e8-a465-8d26ef1b2acc",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T13:54:28.408379+00:00",
+            "payload": {
+              "id": "rag-engsoftware-testes-010",
+              "texto": "Testes de software procuram revelar defeitos e fornecer evidências sobre a qualidade do produto. Testes unitários verificam componentes, testes de integração examinam interfaces e testes de sistema avaliam o comportamento completo. Critérios de cobertura apoiam a seleção de casos, mas cobertura elevada não demonstra ausência de defeitos.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Engenharia de Software",
+                "habilidade": "Planejar verificação e validação",
+                "objeto_conhecimento": "Testes de software",
+                "referencia": "SOMMERVILLE, I. Engenharia de Software.",
+                "linha": 10,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 16.546575,
+                "termos_recuperados": [
+                  "planejar",
+                  "qualidade",
+                  "revelar",
+                  "testes",
+                  "validacao",
+                  "verificacao"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "adequado",
+                  "defeito",
+                  "deseja",
+                  "nivel",
+                  "planejar",
+                  "qualidade",
+                  "revelar",
+                  "selecionar",
+                  "teste",
+                  "testes",
+                  "tipo",
+                  "validacao",
+                  "verificacao"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-engsoftware-testes-010",
+                    "score": 16.546575
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 150,
+            "request_id": "e740a63a-8e88-43e8-a465-8d26ef1b2acc",
+            "kind": "provider_error",
+            "created_at": "2026-09-24T13:54:28.619917+00:00",
+            "payload": {
+              "code": "groq_rate_limit",
+              "status": 429,
+              "message": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+            },
+            "provenance": {
+              "provider": "groq"
+            }
+          }
+        ],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 233,
+            "request_id": "e740a63a-8e88-43e8-a465-8d26ef1b2acc",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T13:54:28.387060+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-expanded-v1-retry-E10",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Selecionar um nível de teste adequado ao tipo de defeito que se deseja revelar.",
+              "dificuldade": 3,
+              "competencia": "Planejar qualidade de software",
+              "habilidade": "Planejar verificação e validação",
+              "objeto_conhecimento": "Testes de software",
+              "restricoes": [
+                "usar cenário aplicado",
+                "uma única alternativa defensável"
+              ]
+            }
+          },
+          {
+            "id": 234,
+            "request_id": "e740a63a-8e88-43e8-a465-8d26ef1b2acc",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T13:54:28.412674+00:00",
+            "evidence": {
+              "id": "rag-engsoftware-testes-010"
+            }
+          },
+          {
+            "id": 235,
+            "request_id": "e740a63a-8e88-43e8-a465-8d26ef1b2acc",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "GENERATION_FAILED",
+            "component": "HAILA",
+            "reason": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo.",
+            "created_at": "2026-09-24T13:54:28.624662+00:00",
+            "evidence": {
+              "provider": "groq",
+              "status": 429
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 0.25
+    },
+    {
+      "spec_id": "E11",
+      "specification": {
+        "spec_id": "E11",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir paradigmas de aprendizado a partir da presença ou ausência de rótulos.",
+        "dificuldade": 3,
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "restricoes": [
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "28ecd3a3-949b-4c84-8d89-ef61457d6ca7",
+        "solicitante_id": "evaluation-expanded-v1-retry-E11",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T13:54:28.639937+00:00",
+        "updated_at": "2026-09-24T13:54:28.639937+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-expanded-v1-retry-E11",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Distinguir paradigmas de aprendizado a partir da presença ou ausência de rótulos.",
+          "dificuldade": 3,
+          "competencia": "Analisar métodos de inteligência artificial",
+          "habilidade": "Distinguir paradigmas de aprendizado",
+          "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+          "restricoes": [
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "28ecd3a3-949b-4c84-8d89-ef61457d6ca7",
+      "generation_status": 429,
+      "generation": {
+        "detail": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+      },
+      "history": {
+        "request": {
+          "id": "28ecd3a3-949b-4c84-8d89-ef61457d6ca7",
+          "solicitante_id": "evaluation-expanded-v1-retry-E11",
+          "state": "GENERATION_FAILED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 0,
+          "stem_attempts": 0,
+          "distractor_attempts": 0,
+          "created_at": "2026-09-24T13:54:28.639937+00:00",
+          "updated_at": "2026-09-24T13:54:28.902584+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-expanded-v1-retry-E11",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Distinguir paradigmas de aprendizado a partir da presença ou ausência de rótulos.",
+            "dificuldade": 3,
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "restricoes": [
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [],
+        "latest_version": null,
+        "artifacts": [
+          {
+            "id": 151,
+            "request_id": "28ecd3a3-949b-4c84-8d89-ef61457d6ca7",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T13:54:28.661926+00:00",
+            "payload": {
+              "id": "rag-ia-aprendizado-011",
+              "texto": "No aprendizado supervisionado, exemplos rotulados orientam a construção de modelos para classificação ou regressão. No aprendizado não supervisionado, o objetivo é identificar estruturas ou agrupamentos sem rótulos de saída. A avaliação deve usar dados independentes do treinamento para estimar generalização e reduzir conclusões afetadas por sobreajuste.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Inteligência Artificial",
+                "habilidade": "Distinguir paradigmas de aprendizado",
+                "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+                "referencia": "RUSSELL, S.; NORVIG, P. Inteligência Artificial: Uma Abordagem Moderna.",
+                "linha": 11,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 24.288271,
+                "termos_recuperados": [
+                  "aprendizado",
+                  "artificial",
+                  "inteligencia",
+                  "nao",
+                  "paradigmas",
+                  "rotulos",
+                  "supervisionado"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "aprendizado",
+                  "artificial",
+                  "ausencia",
+                  "inteligencia",
+                  "metodos",
+                  "nao",
+                  "paradigmas",
+                  "partir",
+                  "presenca",
+                  "rotulos",
+                  "supervisionado"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-ia-aprendizado-011",
+                    "score": 24.288271
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 152,
+            "request_id": "28ecd3a3-949b-4c84-8d89-ef61457d6ca7",
+            "kind": "provider_error",
+            "created_at": "2026-09-24T13:54:28.897460+00:00",
+            "payload": {
+              "code": "groq_rate_limit",
+              "status": 429,
+              "message": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+            },
+            "provenance": {
+              "provider": "groq"
+            }
+          }
+        ],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 236,
+            "request_id": "28ecd3a3-949b-4c84-8d89-ef61457d6ca7",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T13:54:28.640700+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-expanded-v1-retry-E11",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Distinguir paradigmas de aprendizado a partir da presença ou ausência de rótulos.",
+              "dificuldade": 3,
+              "competencia": "Analisar métodos de inteligência artificial",
+              "habilidade": "Distinguir paradigmas de aprendizado",
+              "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+              "restricoes": [
+                "uma única alternativa defensável"
+              ]
+            }
+          },
+          {
+            "id": 237,
+            "request_id": "28ecd3a3-949b-4c84-8d89-ef61457d6ca7",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T13:54:28.666979+00:00",
+            "evidence": {
+              "id": "rag-ia-aprendizado-011"
+            }
+          },
+          {
+            "id": 238,
+            "request_id": "28ecd3a3-949b-4c84-8d89-ef61457d6ca7",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "GENERATION_FAILED",
+            "component": "HAILA",
+            "reason": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo.",
+            "created_at": "2026-09-24T13:54:28.902805+00:00",
+            "evidence": {
+              "provider": "groq",
+              "status": 429
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 0.275
+    },
+    {
+      "spec_id": "E12",
+      "specification": {
+        "spec_id": "E12",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Analisar benefícios e desafios da decomposição de uma aplicação em microsserviços.",
+        "dificuldade": 3,
+        "competencia": "Analisar sistemas distribuídos",
+        "habilidade": "Analisar arquiteturas distribuídas",
+        "objeto_conhecimento": "Microsserviços e sistemas distribuídos",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "25687809-50d8-432b-a982-f65151cf67dc",
+        "solicitante_id": "evaluation-expanded-v1-retry-E12",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-24T13:54:28.918897+00:00",
+        "updated_at": "2026-09-24T13:54:28.918897+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-expanded-v1-retry-E12",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Analisar benefícios e desafios da decomposição de uma aplicação em microsserviços.",
+          "dificuldade": 3,
+          "competencia": "Analisar sistemas distribuídos",
+          "habilidade": "Analisar arquiteturas distribuídas",
+          "objeto_conhecimento": "Microsserviços e sistemas distribuídos",
+          "restricoes": [
+            "usar cenário aplicado",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "25687809-50d8-432b-a982-f65151cf67dc",
+      "generation_status": 429,
+      "generation": {
+        "detail": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+      },
+      "history": {
+        "request": {
+          "id": "25687809-50d8-432b-a982-f65151cf67dc",
+          "solicitante_id": "evaluation-expanded-v1-retry-E12",
+          "state": "GENERATION_FAILED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 0,
+          "stem_attempts": 0,
+          "distractor_attempts": 0,
+          "created_at": "2026-09-24T13:54:28.918897+00:00",
+          "updated_at": "2026-09-24T13:54:29.147840+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-expanded-v1-retry-E12",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Analisar benefícios e desafios da decomposição de uma aplicação em microsserviços.",
+            "dificuldade": 3,
+            "competencia": "Analisar sistemas distribuídos",
+            "habilidade": "Analisar arquiteturas distribuídas",
+            "objeto_conhecimento": "Microsserviços e sistemas distribuídos",
+            "restricoes": [
+              "usar cenário aplicado",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [],
+        "latest_version": null,
+        "artifacts": [
+          {
+            "id": 153,
+            "request_id": "25687809-50d8-432b-a982-f65151cf67dc",
+            "kind": "REFERENCE",
+            "created_at": "2026-09-24T13:54:28.939080+00:00",
+            "payload": {
+              "id": "rag-distribuidos-microsservicos-012",
+              "texto": "Sistemas distribuídos coordenam componentes executados em computadores conectados por rede. Microsserviços dividem uma aplicação em serviços implantáveis de maneira independente, favorecendo evolução e escalabilidade seletiva. Essa decomposição também introduz desafios de comunicação, observabilidade, consistência e tolerância a falhas.",
+              "exame": "ACERVO_CONCEITUAL_HAILA",
+              "ano": 2024,
+              "metadados": {
+                "curso": null,
+                "componente": null,
+                "area": "Sistemas Distribuídos",
+                "habilidade": "Analisar arquiteturas distribuídas",
+                "objeto_conhecimento": "Microsserviços e sistemas distribuídos",
+                "referencia": "TANENBAUM, A. S.; VAN STEEN, M. Sistemas Distribuídos.",
+                "linha": 12,
+                "corpus": "backend/fontes_rag.jsonl",
+                "retrieval": "bm25-aliases-v3",
+                "score": 20.258987,
+                "termos_recuperados": [
+                  "arquiteturas",
+                  "decomposicao",
+                  "desafios",
+                  "distribuidas",
+                  "distribuidos",
+                  "microsservicos"
+                ],
+                "candidatas_relevantes": 1,
+                "consulta_normalizada": [
+                  "arquiteturas",
+                  "beneficios",
+                  "decomposicao",
+                  "desafios",
+                  "distribuidas",
+                  "distribuidos",
+                  "microsservicos"
+                ],
+                "ranking": [
+                  {
+                    "id": "rag-distribuidos-microsservicos-012",
+                    "score": 20.258987
+                  }
+                ]
+              }
+            },
+            "provenance": {}
+          },
+          {
+            "id": 154,
+            "request_id": "25687809-50d8-432b-a982-f65151cf67dc",
+            "kind": "provider_error",
+            "created_at": "2026-09-24T13:54:29.144722+00:00",
+            "payload": {
+              "code": "groq_rate_limit",
+              "status": 429,
+              "message": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo."
+            },
+            "provenance": {
+              "provider": "groq"
+            }
+          }
+        ],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 239,
+            "request_id": "25687809-50d8-432b-a982-f65151cf67dc",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-24T13:54:28.919655+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-expanded-v1-retry-E12",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Analisar benefícios e desafios da decomposição de uma aplicação em microsserviços.",
+              "dificuldade": 3,
+              "competencia": "Analisar sistemas distribuídos",
+              "habilidade": "Analisar arquiteturas distribuídas",
+              "objeto_conhecimento": "Microsserviços e sistemas distribuídos",
+              "restricoes": [
+                "usar cenário aplicado",
+                "uma única alternativa defensável"
+              ]
+            }
+          },
+          {
+            "id": 240,
+            "request_id": "25687809-50d8-432b-a982-f65151cf67dc",
+            "version_id": null,
+            "from_state": "REQUESTED",
+            "to_state": "REFERENCE_RETRIEVED",
+            "component": "HAILA_RAG",
+            "reason": "referência recuperada",
+            "created_at": "2026-09-24T13:54:28.943325+00:00",
+            "evidence": {
+              "id": "rag-distribuidos-microsservicos-012"
+            }
+          },
+          {
+            "id": 241,
+            "request_id": "25687809-50d8-432b-a982-f65151cf67dc",
+            "version_id": null,
+            "from_state": "REFERENCE_RETRIEVED",
+            "to_state": "GENERATION_FAILED",
+            "component": "HAILA",
+            "reason": "Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo.",
+            "created_at": "2026-09-24T13:54:29.147923+00:00",
+            "evidence": {
+              "provider": "groq",
+              "status": 429
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 0.239
+    }
+  ],
+  "finished_at": "2026-09-24T13:54:29.156703+00:00"
+}
