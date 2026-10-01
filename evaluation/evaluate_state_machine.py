@@ -16,7 +16,7 @@ BACKEND_DIR = PROJECT_ROOT / "backend"
 if str(BACKEND_DIR) not in sys.path:
     sys.path.insert(0, str(BACKEND_DIR))
 
-from haila.domain import Estado, TRANSICOES_PERMITIDAS
+from haila.domain import ESTADOS_TERMINAIS, Estado, TRANSICOES_PERMITIDAS
 from haila.repository import HailaRepository
 
 TERMINAIS = {Estado.GENERATION_COMPLETED, Estado.ATTEMPTS_EXHAUSTED, Estado.GENERATION_FAILED}
@@ -83,10 +83,12 @@ def audit_database(path: Path, request_ids: set[str] | None = None) -> tuple[lis
         for event in events[1:]:
             old=Estado(event["from_state"]); new=Estado(event["to_state"])
             transition_counts[f"{old.value}->{new.value}"] += 1
-            if old != new and new not in TRANSICOES_PERMITIDAS[old]:
+            if new not in TRANSICOES_PERMITIDAS[old]:
                 issues.append(f"transição inválida {old.value}->{new.value}")
         if events and events[-1]["to_state"] != request["state"]:
             issues.append("último evento diverge do estado persistido")
+        if Estado(request["state"]) not in ESTADOS_TERMINAIS:
+            issues.append(f"execução não terminou: estado {request['state']} não é terminal")
         for artifact in artifacts:
             try:
                 json.loads(artifact["payload_json"]); json.loads(artifact["provenance_json"])

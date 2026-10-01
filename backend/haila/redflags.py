@@ -18,7 +18,7 @@ class DeterministicRedFlagAnalyzer:
     """Detecta problemas observáveis sem chamar outro modelo generativo."""
 
     model = "haila-deterministic-redflags-v3"
-    catalog_version = "haila-redflags-3.0.0"
+    catalog_version = "haila-redflags-3.1.0"
 
     def __call__(self, questao, specification, referencia):
         flags: list[RedFlag] = []
@@ -110,7 +110,7 @@ class DeterministicRedFlagAnalyzer:
 
         return flags, {
             "modelo": self.model,
-            "catalog_version": "haila-redflags-3.1.0",
+            "catalog_version": self.catalog_version,
             "tipo": "deterministico",
         }
 

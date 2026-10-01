@@ -93,7 +93,7 @@ class HailaRepository:
             row=con.execute("SELECT state FROM requests WHERE id=?",(rid,)).fetchone()
             if row is None: raise KeyError(rid)
             old=Estado(row["state"])
-            if to_state != old and to_state not in TRANSICOES_PERMITIDAS.get(old,set()): raise RuntimeError(f"transição inválida: {old.value}->{to_state.value}")
+            if to_state not in TRANSICOES_PERMITIDAS.get(old,set()): raise RuntimeError(f"transição inválida: {old.value}->{to_state.value}")
             con.execute("UPDATE requests SET state=?,updated_at=? WHERE id=?",(to_state.value,agora(),rid)); self._event(con,rid,vid,old,to_state,component,reason,evidence)
     def history(self,rid):
         req=self.get_request(rid)

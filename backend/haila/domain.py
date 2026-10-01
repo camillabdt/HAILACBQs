@@ -17,11 +17,15 @@ class Estado(str, Enum):
 
 TRANSICOES_PERMITIDAS = {
     Estado.REQUESTED: {Estado.REFERENCE_RETRIEVED, Estado.GENERATION_FAILED},
-    Estado.REFERENCE_RETRIEVED: {Estado.STEM_GENERATED, Estado.GENERATION_FAILED},
+    # BLOCKED_BY_RED_FLAGS: a primeira saída da LLM pode ser ininterpretável.
+    Estado.REFERENCE_RETRIEVED: {Estado.STEM_GENERATED, Estado.BLOCKED_BY_RED_FLAGS, Estado.GENERATION_FAILED},
     Estado.STEM_GENERATED: {Estado.DISTRACTORS_GENERATED, Estado.BLOCKED_BY_RED_FLAGS, Estado.GENERATION_FAILED},
     Estado.DISTRACTORS_GENERATED: {Estado.ITEM_ASSEMBLED, Estado.BLOCKED_BY_RED_FLAGS, Estado.GENERATION_FAILED},
     Estado.ITEM_ASSEMBLED: {Estado.BLOCKED_BY_RED_FLAGS, Estado.GENERATION_COMPLETED, Estado.GENERATION_FAILED},
     Estado.BLOCKED_BY_RED_FLAGS: {
+        # Autotransição explícita: falhas de interpretação consecutivas
+        # registram um novo bloqueio sem passar por outro estado.
+        Estado.BLOCKED_BY_RED_FLAGS,
         Estado.REFERENCE_RETRIEVED, Estado.STEM_GENERATED, Estado.DISTRACTORS_GENERATED,
         Estado.ATTEMPTS_EXHAUSTED, Estado.GENERATION_FAILED,
     },
@@ -29,3 +33,6 @@ TRANSICOES_PERMITIDAS = {
     Estado.ATTEMPTS_EXHAUSTED: set(),
     Estado.GENERATION_FAILED: set(),
 }
+
+
+ESTADOS_TERMINAIS = frozenset(e for e, destinos in TRANSICOES_PERMITIDAS.items() if not destinos)

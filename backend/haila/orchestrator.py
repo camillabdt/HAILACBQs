@@ -6,7 +6,7 @@ import re
 from typing import Any
 
 from .contracts import DistratorGerado, NucleoQuestao, RedFlag, ReferenciaRAG
-from .domain import Estado
+from .domain import ESTADOS_TERMINAIS, Estado
 from .repository import HailaRepository
 from .structural import avaliar_distratores, avaliar_item, avaliar_nucleo
 
@@ -22,6 +22,29 @@ class HailaOrchestrator:
         return self.repo.get_request(rid)
 
     def executar(self, request_id: str, rag, stem_generator, distractor_generator, red_flag_analyzer) -> dict:
+        """Executa a geração e garante que toda solicitação termine em estado terminal.
+
+        Qualquer exceção não tratada (RAG sem referência, cota do provedor,
+        falha ao carregar a SLM etc.) leva a GENERATION_FAILED antes de ser
+        propagada. Sem isso, a solicitação ficaria parada num estado
+        intermediário e o histórico não explicaria o encerramento.
+        """
+        try:
+            return self._executar(request_id, rag, stem_generator, distractor_generator, red_flag_analyzer)
+        except Exception as exc:
+            try:
+                atual = Estado(self.repo.get_request(request_id)["state"])
+                if atual not in ESTADOS_TERMINAIS:
+                    self.repo.transition(
+                        request_id, None, Estado.GENERATION_FAILED, "HAILA",
+                        "execução interrompida por exceção",
+                        {"excecao": type(exc).__name__, "mensagem": str(exc)[:500]},
+                    )
+            except Exception:
+                pass
+            raise
+
+    def _executar(self, request_id: str, rag, stem_generator, distractor_generator, red_flag_analyzer) -> dict:
         req = self.repo.get_request(request_id)
         referencia: ReferenciaRAG = rag(req["specification"])
         self.repo.save_artifact(request_id, "REFERENCE", referencia.to_dict(), {})
