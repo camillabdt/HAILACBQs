@@ -49,14 +49,18 @@ VISUAL = re.compile(r"\b(figura|imagem|gr[aá]fico|diagrama|esquema a seguir|tab
 
 # --------------------------------------------------------------------------- PDF
 def texto_da_pagina(pagina) -> str:
-    """Lê a página respeitando duas colunas quando houver uma faixa vazia no meio."""
+    """Lê a página respeitando duas colunas quando houver uma faixa vazia no meio.
+
+    A detecção usa caracteres, não palavras: nas provas com a fonte sem
+    ToUnicode o espaço é um glifo comum, e uma linha inteira vira uma "palavra".
+    """
     largura = pagina.width
-    palavras = pagina.extract_words(keep_blank_chars=False, use_text_flow=False)
     meio = largura / 2
-    cruzam = [w for w in palavras if w["x0"] < meio - 4 and w["x1"] > meio + 4]
-    esquerda = [w for w in palavras if w["x1"] <= meio]
-    direita = [w for w in palavras if w["x0"] >= meio]
-    duas_colunas = len(cruzam) <= max(2, 0.02 * len(palavras)) and len(esquerda) > 20 and len(direita) > 20
+    visiveis = [c for c in pagina.chars if c["text"].strip()]
+    faixa = [c for c in visiveis if c["x0"] < meio + 3 and c["x1"] > meio - 3]
+    esquerda = sum(1 for c in visiveis if c["x1"] <= meio)
+    direita = sum(1 for c in visiveis if c["x0"] >= meio)
+    duas_colunas = len(faixa) <= max(3, 0.01 * len(visiveis)) and esquerda > 150 and direita > 150
     if not duas_colunas:
         return pagina.extract_text() or ""
     a = pagina.crop((0, 0, meio, pagina.height)).extract_text() or ""
@@ -64,11 +68,52 @@ def texto_da_pagina(pagina) -> str:
     return a + "\n" + b
 
 
+# As provas de 2014 e 2017 embutem a Calibri sem tabela ToUnicode: o texto sai
+# como índices de glifo, "(cid:258)" etc. O mapa abaixo foi obtido alinhando o
+# texto dessas provas ao OCR das páginas renderizadas (concordância >= 0,8 por
+# glifo) e completado com as ligaduras da Calibri (fi, ti, tt...) pelo contexto.
+MAPA_GID = {int(k): v for k, v in json.loads(
+    (Path(__file__).with_name("mapa_calibri_gid.json")).read_text(encoding="utf-8")).items()}
+DESCONHECIDO = "\ufffd"
+
+
+CID = re.compile(r"\(cid:(\d+)\)")
+
+
+def decodificar_cid(texto: str) -> str:
+    """Decodificação só por texto (sem saber a fonte); usada no gabarito."""
+    return CID.sub(lambda m: MAPA_GID.get(int(m.group(1)), DESCONHECIDO), texto)
+
+
+def decodificar_caracteres(pagina) -> None:
+    """Troca, caractere a caractere, "(cid:N)" pelo texto conforme a fonte.
+
+    Calibri usa o mapa aprendido; Courier New segue a ordem padrão de glifos
+    TrueType (glifo = código ASCII - 29); outras fontes (Symbol) ficam como
+    desconhecidas, e o item é excluído depois.
+    """
+    for c in pagina.chars:
+        m = CID.fullmatch(c["text"])
+        if not m:
+            continue
+        gid, fonte = int(m.group(1)), c.get("fontname", "")
+        if "Calibri" in fonte:
+            c["text"] = MAPA_GID.get(gid, DESCONHECIDO)
+        elif "Courier" in fonte and 3 <= gid <= 97:
+            c["text"] = chr(gid + 29)
+        else:
+            c["text"] = DESCONHECIDO
+
+
 def ler_pdf(caminho: Path) -> str:
     import pdfplumber
 
     with pdfplumber.open(str(caminho)) as pdf:
-        return "\n".join(texto_da_pagina(p) for p in pdf.pages)
+        partes = []
+        for p in pdf.pages:
+            decodificar_caracteres(p)
+            partes.append(texto_da_pagina(p))
+        return "\n".join(partes)
 
 
 # ------------------------------------------------------------------- questões
@@ -79,6 +124,14 @@ def limpar(linhas: list[str]) -> list[str]:
 def separar_alternativas(bloco: str) -> tuple[str, list[str]] | None:
     """Encontra a última sequência A..E no início de linhas e divide o bloco."""
     linhas = limpar(bloco.splitlines())
+    # Em algumas provas a letra da alternativa fica numa linha e o texto na seguinte.
+    juntas: list[str] = []
+    for linha in linhas:
+        if juntas and re.fullmatch(r"\s*\(?[A-E]\)?\s*", juntas[-1]):
+            juntas[-1] = juntas[-1].strip() + " " + linha.strip()
+        else:
+            juntas.append(linha)
+    linhas = juntas
     marcas = [(i, m.group(1)) for i, l in enumerate(linhas) if (m := ALTERNATIVA.match(l))]
     # Procura de trás para frente uma sequência A, B, C, D, E em ordem.
     for inicio in range(len(marcas) - 1, -1, -1):
@@ -99,8 +152,21 @@ def separar_alternativas(bloco: str) -> tuple[str, list[str]] | None:
             primeira = ALTERNATIVA.match(linhas[i]).group(2)
             resto = [l.strip() for l in linhas[i + 1: fim]]
             alternativas.append(" ".join([primeira, *resto]).strip())
-        return re.sub(r"\s+", " ", enunciado).strip(), alternativas
+        return re.sub(r"\s+", " ", enunciado).strip(), [limpar_cauda(a, alternativas) for a in alternativas]
     return None
+
+
+CORTE = re.compile(r"\s(?:QUEST[ÃA]O\s+\d|[ÁA]REA LIVRE|RASCUNHO|\*[A-Z]\d|[–-]\s*DISCURSIVA)", re.I)
+
+
+def limpar_cauda(alternativa: str, todas: list[str]) -> str:
+    """Remove restos de cabeçalho/rodapé grudados no fim de uma alternativa."""
+    a = CORTE.split(alternativa)[0].strip()
+    pontuadas = sum(bool(re.search(r"[.;?!)]$", x.strip())) for x in todas)
+    m = re.match(r"^(.*[.;?!)])\s+(\S+(?:\s+\S+){0,3})$", a)
+    if m and pontuadas >= 3 and not re.search(r"[.;?!)]", m.group(2)):
+        a = m.group(1)
+    return a
 
 
 def extrair_questoes(texto: str) -> dict[int, str]:
@@ -129,16 +195,21 @@ def ler_gabarito(prefixo: Path) -> tuple[dict[int, str], str]:
     pdf_path = prefixo.with_name(prefixo.name + "-gabarito.pdf")
     if not pdf_path.exists():
         return {}, "ausente"
-    texto = ler_pdf(pdf_path).upper()
-    pares = re.findall(r"\b(\d{1,2})\s*[-–:]?\s*(ANULADA|[A-E])\b", texto)
+    import pdfplumber
+
+    # O gabarito é uma tabela "item | letra": ler sem separar colunas, senão o
+    # número e a letra caem em colunas diferentes.
+    with pdfplumber.open(str(pdf_path)) as pdf:
+        texto = decodificar_cid("\n".join(p.extract_text() or "" for p in pdf.pages)).upper()
+    pares = re.findall(r"(?<!DISCURSIVA )\b(\d{1,2})\s*[-–:]?\s*(ANULADA|[A-E])\b", texto)
     gabarito: dict[int, str] = {}
-    conflito = False
+    conflitos = 0
     for q, g in pares:
         q = int(q)
         if q in gabarito and gabarito[q] != g:
-            conflito = True
+            conflitos += 1
         gabarito.setdefault(q, g)
-    return ({} if conflito else gabarito), ("pdf_conflito" if conflito else "pdf")
+    return gabarito, ("pdf" if not conflitos else f"pdf_{conflitos}_conflitos")
 
 
 # ---------------------------------------------------------------------- main
@@ -159,10 +230,19 @@ def main() -> None:
         prefixo = prova.with_name(prova.name[: -len("-prova.pdf")])
         fonte = prefixo.name
         gabarito, origem_gab = ler_gabarito(prefixo)
-        blocos = extrair_questoes(ler_pdf(prova))
+        texto_prova = re.sub(r"\S*(?:VALID|INEP20\d\d)\S*", "", ler_pdf(prova))  # marca d'água de 2023
+        blocos = extrair_questoes(texto_prova)
+        # O primeiro item do componente específico muda entre edições (9 até
+        # 2021, 10 em 2023): usa a primeira questão após o título da seção.
+        primeira = args.primeira_especifica
+        secao = re.search(r"^\s*COMPONENTE ESPEC[ÍI]FICO\s*$", texto_prova, re.M)
+        if secao:
+            seguinte = CABECALHO.search(texto_prova, secao.end())
+            if seguinte:
+                primeira = int(seguinte.group(1))
         aceitas = 0
         for numero, bloco in sorted(blocos.items()):
-            if numero < args.primeira_especifica and not args.incluir_formacao_geral:
+            if numero < primeira and not args.incluir_formacao_geral:
                 continue
             problemas = []
             partes = separar_alternativas(bloco)
@@ -173,8 +253,13 @@ def main() -> None:
             letra = gabarito.get(numero)
             if letra == "ANULADA":
                 continue
-            if letra not in LETRAS or not letra:
+            if not letra or letra not in LETRAS:
                 revisao.append({"fonte": fonte, "questao": numero, "problema": f"gabarito ausente ({origem_gab})"})
+                continue
+            if DESCONHECIDO in enunciado + "".join(alternativas):
+                # Trechos em outra fonte (código em Courier, símbolos) não puderam
+                # ser decodificados; o item fica fora em vez de entrar corrompido.
+                revisao.append({"fonte": fonte, "questao": numero, "problema": "caracteres não recuperados (excluída)"})
                 continue
             if len(enunciado) < 60:
                 problemas.append("enunciado curto: pode ter sido cortado")

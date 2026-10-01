@@ -11,7 +11,7 @@ Cada exemplo usa exatamente o mesmo prompt da inferência da HAILA
 ajustado no formato em que será usado.
 
 Uso:
-    python research/lora/preparar_dados.py questoes.jsonl dados/haila-lora-v1
+    python research/lora/preparar_dados.py questoes.jsonl dados/haila-lora-enade-poscomp
 
 Não grave a saída em dados/qwen-enade-curado-v2/: esse é o caminho padrão da
 memória curada da HAILA, que passaria a devolver distratores do treino.
@@ -93,6 +93,10 @@ def avaliar(q: dict, max_razao: float) -> tuple[dict | None, str | None]:
     return exemplo, None
 
 
+def eh_poscomp(exemplo: dict) -> bool:
+    return str(exemplo["meta"].get("fonte") or "").startswith("POSCOMP")
+
+
 def particao(identificador: str, fracao_validacao: float) -> str:
     """Partição determinística: o mesmo id cai sempre no mesmo conjunto."""
     h = int(hashlib.sha256(identificador.encode()).hexdigest(), 16) % 10_000
@@ -101,9 +105,12 @@ def particao(identificador: str, fracao_validacao: float) -> str:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("entrada", type=Path)
+    ap.add_argument("entrada", type=Path, nargs="+", help="um ou mais questoes.jsonl (ENADE, POSCOMP...)")
     ap.add_argument("saida", type=Path)
-    ap.add_argument("--validacao", type=float, default=0.15, help="fração para validação (padrão 0,15)")
+    ap.add_argument("--validacao", type=float, default=0.2,
+                    help="fração das questões do ENADE reservada para validação (padrão 0,2)")
+    ap.add_argument("--repetir-enade", type=int, default=1,
+                    help="quantas vezes cada exemplo do ENADE aparece no treino (peso; padrão 1)")
     ap.add_argument("--max-razao-extensao", type=float, default=1.5,
                     help="gabarito / mediana dos distratores, em palavras (padrão 1,5)")
     args = ap.parse_args()
@@ -113,7 +120,7 @@ def main() -> None:
 
     descartes, vistos = Counter(), set()
     conjuntos: dict[str, list[dict]] = {"treino": [], "validacao": []}
-    linhas = args.entrada.read_text(encoding="utf-8").splitlines()
+    linhas = [l for e in args.entrada for l in e.read_text(encoding="utf-8").splitlines()]
     for n, linha in enumerate(linhas, 1):
         if not linha.strip():
             continue
@@ -131,7 +138,16 @@ def main() -> None:
         if motivo:
             descartes[motivo] += 1
             continue
-        conjuntos[particao(exemplo["id"], args.validacao)].append(exemplo)
+        # A validação contém só ENADE (o alvo da HAILA); o POSCOMP, quando
+        # presente, entra apenas no treino. A partição depende só do id, então
+        # o conjunto de validação é o mesmo com ou sem POSCOMP.
+        destino = "treino" if eh_poscomp(exemplo) else particao(exemplo["id"], args.validacao)
+        conjuntos[destino].append(exemplo)
+
+    if args.repetir_enade > 1:
+        enade = [e for e in conjuntos["treino"] if not eh_poscomp(e)]
+        for r in range(2, args.repetir_enade + 1):
+            conjuntos["treino"] += [dict(e, id=f"{e['id']}#rep{r}") for e in enade]
 
     args.saida.mkdir(parents=True, exist_ok=True)
     hashes = {}
@@ -140,12 +156,15 @@ def main() -> None:
         caminho.write_text("".join(json.dumps(e, ensure_ascii=False) + "\n" for e in exemplos), encoding="utf-8")
         hashes[nome] = hashlib.sha256(caminho.read_bytes()).hexdigest()
     relatorio = {
-        "entrada": str(args.entrada),
-        "entrada_sha256": hashlib.sha256(args.entrada.read_bytes()).hexdigest(),
+        "entrada": [str(e) for e in args.entrada],
+        "entrada_sha256": {str(e): hashlib.sha256(e.read_bytes()).hexdigest() for e in args.entrada},
         "questoes_lidas": sum(1 for l in linhas if l.strip()),
         "aceitas": {k: len(v) for k, v in conjuntos.items()},
         "descartadas_por_motivo": dict(descartes),
-        "criterios": {"max_razao_extensao": args.max_razao_extensao, "fracao_validacao": args.validacao},
+        "criterios": {"max_razao_extensao": args.max_razao_extensao, "fracao_validacao_enade": args.validacao,
+                      "repetir_enade": args.repetir_enade, "validacao": "somente ENADE"},
+        "por_fonte": {nome: dict(Counter("POSCOMP" if eh_poscomp(e) else "ENADE" for e in v))
+                      for nome, v in conjuntos.items()},
         "por_objeto_conhecimento": dict(Counter(
             e["meta"]["objeto_conhecimento"] or "nao_informado" for v in conjuntos.values() for e in v)),
         "sha256": hashes,

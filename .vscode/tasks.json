@@ -5,9 +5,19 @@
       "label": "HAILA: Testes",
       "type": "shell",
       "command": "${workspaceFolder}/.venv/bin/python",
-      "args": ["-m", "pytest", "backend/tests", "-q"],
-      "options": {"cwd": "${workspaceFolder}"},
-      "group": {"kind": "test", "isDefault": true},
+      "args": [
+        "-m",
+        "pytest",
+        "backend/tests",
+        "-q"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
       "problemMatcher": []
     },
     {
@@ -16,12 +26,20 @@
       "command": "${workspaceFolder}/.venv/bin/python",
       "args": [
         "evaluation/run_ablation.py",
-        "--base-url", "http://127.0.0.1:8010",
-        "--conditions", "C1_LLM", "C2_RAG_LLM", "C3_RAG_LLM_SLM",
-        "--specs", "evaluation/pilot_specifications.jsonl",
-        "--out", "evaluation/results/ablation-vscode.json"
+        "--base-url",
+        "http://127.0.0.1:8010",
+        "--conditions",
+        "C1_LLM",
+        "C2_RAG_LLM",
+        "C3_RAG_LLM_SLM",
+        "--specs",
+        "evaluation/pilot_specifications.jsonl",
+        "--out",
+        "evaluation/results/ablation-vscode.json"
       ],
-      "options": {"cwd": "${workspaceFolder}"},
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
       "problemMatcher": []
     },
     {
@@ -30,12 +48,18 @@
       "command": "${workspaceFolder}/.venv/bin/python",
       "args": [
         "evaluation/run_c4_pilot.py",
-        "--base-url", "http://127.0.0.1:8010",
-        "--specs", "evaluation/pilot_specifications.jsonl",
-        "--out", "evaluation/results/ablation-vscode-c4.json",
-        "--run-id", "ablation-vscode-c4"
+        "--base-url",
+        "http://127.0.0.1:8010",
+        "--specs",
+        "evaluation/pilot_specifications.jsonl",
+        "--out",
+        "evaluation/results/ablation-vscode-c4.json",
+        "--run-id",
+        "ablation-vscode-c4"
       ],
-      "options": {"cwd": "${workspaceFolder}"},
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
       "problemMatcher": []
     },
     {
@@ -46,9 +70,12 @@
         "evaluation/summarize_token_usage.py",
         "evaluation/results/ablation-vscode.json",
         "evaluation/results/ablation-vscode-c4.json",
-        "--out", "evaluation/results/ablation-vscode-token-usage.json"
+        "--out",
+        "evaluation/results/ablation-vscode-token-usage.json"
       ],
-      "options": {"cwd": "${workspaceFolder}"},
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
       "problemMatcher": []
     },
     {
@@ -65,9 +92,108 @@
         "evaluation/results/ablation-cost-exact-c3.json",
         "evaluation/results/ablation-cost-exact-c4.json",
         "evaluation/results/ablation-cost-exact-c4-remainder.json",
-        "--out", "evaluation/results/ablation-cost-exact-summary.json"
+        "--out",
+        "evaluation/results/ablation-cost-exact-summary.json"
       ],
-      "options": {"cwd": "${workspaceFolder}"},
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "HAILA LoRA ★ Montar dataset completo (ENADE + POSCOMP)",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "research/lora/montar_dataset.py"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "HAILA LoRA 0a: Baixar provas do GitHub (geacc/enade)",
+      "type": "shell",
+      "command": "git clone --depth 1 https://github.com/geacc/enade.git ../geacc-enade || git -C ../geacc-enade pull",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "HAILA LoRA 0b: Copiar provas para enade/",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "research/lora/importar_geacc.py",
+        "../geacc-enade",
+        "enade/"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "HAILA LoRA 0c: Baixar PDFs listados em enade/links.txt (opcional)",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "research/lora/baixar_enade.py",
+        "enade/links.txt",
+        "enade/"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "HAILA LoRA 1: Extrair questões do ENADE",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "research/lora/extrair_enade.py",
+        "enade/",
+        "dados/questoes.jsonl"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "HAILA LoRA ★★ Teste rápido (5 passos)",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "research/lora/treinar_tudo.py",
+        "--teste-rapido"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PYTORCH_ENABLE_MPS_FALLBACK": "1",
+          "TOKENIZERS_PARALLELISM": "false"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "HAILA LoRA ★★★ Treinar e comparar",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "research/lora/treinar_tudo.py"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PYTORCH_ENABLE_MPS_FALLBACK": "1",
+          "TOKENIZERS_PARALLELISM": "false"
+        }
+      },
       "problemMatcher": []
     }
   ]

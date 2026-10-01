@@ -7,3 +7,4 @@ peft>=0.12
 accelerate>=0.33
 pydantic>=2.8
 pytest>=8.0
+pdfplumber==0.11.9

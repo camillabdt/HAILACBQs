@@ -1,0 +1,76 @@
+{
+  "descricao": "Conjunto de ajuste fino da SLM (ENADE Computação 2005-2023 + POSCOMP 2002-2024, sem Matemática)",
+  "fontes": {
+    "geacc/enade": "a657632b72b97468c8a5eb3b433d1abb4a5511c5",
+    "poscomp_md5": "3dbe6ee2fbe74c6708714dcd2ce32b30",
+    "inep_originais": "Redes de Computadores 2014/2017/2021, Eng. Computação 2014/2017/2019/2023, CC 2017/2021, Lic. 2017/2021"
+  },
+  "pdfplumber": "0.11.9",
+  "variantes": {
+    "haila-lora-enade": {
+      "aceitas": {
+        "treino": 103,
+        "validacao": 26
+      },
+      "por_fonte": {
+        "treino": {
+          "ENADE": 103
+        },
+        "validacao": {
+          "ENADE": 26
+        }
+      },
+      "criterios": {
+        "max_razao_extensao": 1.5,
+        "fracao_validacao_enade": 0.2,
+        "repetir_enade": 1,
+        "validacao": "somente ENADE"
+      },
+      "sha256": {
+        "treino": "cfefd79a307bd81783d44776c15acf054f118778504ceba3737d447e65c6f5c5",
+        "validacao": "621570bec5bc83c0051219bcbd2a457eade1714088d48afe6c2b9a5d1a4f913f"
+      },
+      "descartadas_por_motivo": {
+        "gabarito_destoa_em_extensao": 18,
+        "formato_fechado_combinacao_itens": 142,
+        "depende_de_recurso_visual": 107,
+        "alternativas_duplicadas": 13,
+        "formato_fechado_assercoes": 7,
+        "enunciado_repetido": 35
+      }
+    },
+    "haila-lora-enade-poscomp": {
+      "aceitas": {
+        "treino": 1085,
+        "validacao": 26
+      },
+      "por_fonte": {
+        "treino": {
+          "ENADE": 309,
+          "POSCOMP": 776
+        },
+        "validacao": {
+          "ENADE": 26
+        }
+      },
+      "criterios": {
+        "max_razao_extensao": 1.5,
+        "fracao_validacao_enade": 0.2,
+        "repetir_enade": 3,
+        "validacao": "somente ENADE"
+      },
+      "sha256": {
+        "treino": "b4b30f06afb02bd2ecdc8cd1d98b8f24a52209cbae2b0c5f911b2ee6adde5112",
+        "validacao": "621570bec5bc83c0051219bcbd2a457eade1714088d48afe6c2b9a5d1a4f913f"
+      },
+      "descartadas_por_motivo": {
+        "gabarito_destoa_em_extensao": 90,
+        "formato_fechado_combinacao_itens": 154,
+        "depende_de_recurso_visual": 138,
+        "alternativas_duplicadas": 42,
+        "formato_fechado_assercoes": 7,
+        "enunciado_repetido": 40
+      }
+    }
+  }
+}

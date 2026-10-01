@@ -1,14 +1,33 @@
 # Ajuste fino do Qwen com LoRA para distratores
 
-## 0. Caminho rápido
+## Caminho mais curto (terminal)
 
-1. Baixe do site do INEP (Enade > provas e gabaritos) as provas e os gabaritos definitivos de
-   Ciência da Computação, Engenharia de Computação e Sistemas de Informação.
-2. Salve numa pasta `enade/` com nomes no padrão `ANO-curso-prova.pdf` e `ANO-curso-gabarito.pdf`
-   (ex.: `2021-ciencia-computacao-prova.pdf` e `2021-ciencia-computacao-gabarito.pdf`).
-3. Rode `pip install pdfplumber` e `python research/lora/extrair_enade.py enade/ questoes.jsonl`.
-4. Abra `questoes_revisao.csv` e confira os itens marcados no `questoes.jsonl`.
-5. Abra `research/lora/treinar_no_colab.ipynb` no Google Colab e rode as células.
+Na raiz do projeto, com o ambiente ativado (`source .venv/bin/activate`):
+
+```bash
+pip install -r backend/requirements.txt
+mkdir -p enade/originais          # coloque aqui os PDFs do INEP com o nome original
+python research/lora/montar_dataset.py
+python research/lora/treinar_tudo.py --teste-rapido
+nohup python research/lora/treinar_tudo.py > treino.log 2>&1 &
+tail -f treino.log
+```
+
+`montar_dataset.py` gera `dados/haila-lora-enade/` (103 treino) e `dados/haila-lora-enade-poscomp/`
+(1.085 treino: ENADE repetido 3× + POSCOMP), as duas com a mesma validação de 26 questões do ENADE, e
+confere os hashes com `MANIFESTO_DADOS.json`. `treinar_tudo.py` treina as duas versões, avalia o Qwen
+base na mesma validação e grava `adapters/comparacao_validacao.md` com a versão recomendada.
+Cite o POSCOMP Dataset (DOI 10.5281/zenodo.17570916, CC BY 4.0) na dissertação.
+
+## 0. Caminho manual
+
+1. Abra no navegador a página Provas e Gabaritos do Enade
+   (https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade/provas-e-gabaritos)
+   e clique em cada aba de ano, para o conteúdo carregar.
+2. Aperte F12, vá em **Console**, cole o conteúdo de `research/lora/coletar_links_enade.js` e aperte Enter.
+   Os links de Ciência da Computação, Engenharia de Computação e Sistemas de Informação são copiados.
+3. Crie `enade/links.txt` na raiz do projeto e cole.
+4. No VS Code, rode as tarefas `HAILA LoRA 0` a `HAILA LoRA 4` (Terminal > Executar Tarefa).
 
 ## 1. Montar as questões de entrada (formato)
 
@@ -25,7 +44,7 @@ Quanto mais exemplos, melhor; abaixo de ~300 questões aceitas o ajuste tende a 
 ## 2. Preparar os dados
 
 ```bash
-python research/lora/preparar_dados.py questoes.jsonl dados/haila-lora-v1
+python research/lora/preparar_dados.py questoes.jsonl dados/haila-lora-enade-poscomp
 ```
 
 O script descarta questões que dependem de figura, formatos fechados (I, II e III; asserção-razão,
@@ -53,7 +72,7 @@ com 16 GB ou mais, e possivelmente um dia inteiro só em CPU. Se a sua máquina 
 
 ```bash
 pip install "torch>=2.2" "transformers>=4.44" "peft>=0.12" "accelerate>=0.33"
-python research/lora/treinar_lora_qwen.py dados/haila-lora-v1 adapters/qwen-distratores-lora-v1
+python research/lora/treinar_lora_qwen.py dados/haila-lora-enade-poscomp adapters/qwen-distratores-lora-v1
 ```
 
 Hiperparâmetros padrão: r=16, alpha=32, dropout=0,05, taxa de aprendizado 2e-4, 3 épocas,

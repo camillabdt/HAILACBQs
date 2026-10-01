@@ -2,7 +2,7 @@
 
 Uso (GPU recomendada; uma T4 de 16 GB do Colab é suficiente):
 
-    python research/lora/treinar_lora_qwen.py dados/haila-lora-v1 adapters/qwen-distratores-lora-v1
+    python research/lora/treinar_lora_qwen.py dados/haila-lora-enade-poscomp adapters/qwen-distratores-lora-v1
 
 Decisões de projeto:
 - O prompt de treino é o mesmo da inferência (template de chat do Qwen com
@@ -29,6 +29,8 @@ from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(RAIZ / "backend"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from avaliacao_slm import avaliar_validacao  # noqa: E402
 
 
 def ler_jsonl(caminho: Path) -> list[dict]:
@@ -68,57 +70,6 @@ class Colador:
             return torch.tensor([x[chave] + [valor] * (n - len(x[chave])) for x in lote])
         return {"input_ids": pad("input_ids", self.pad_id), "attention_mask": pad("attention_mask", 0),
                 "labels": pad("labels", -100)}
-
-
-def palavras(t: str) -> int:
-    return len(re.findall(r"\w+", str(t)))
-
-
-def avaliar_validacao(model, tokenizer, exemplos: list[dict], limite: int, max_new_tokens: int) -> dict:
-    """Gera distratores para a validação e mede as métricas automáticas."""
-    import torch
-    from haila.generator import _extrair_json, normalizar_distratores_parciais
-
-    def chave(t):
-        return re.sub(r"\W+", "", str(t).casefold())
-
-    model.eval()
-    resultados = []
-    for ex in exemplos[:limite]:
-        resposta = re.search(r"### Resposta correta:\s*\n(.*?)\n\s*\n", ex["prompt"], re.S).group(1).strip()
-        mensagens = [{"role": "system", "content": ex["system"]}, {"role": "user", "content": ex["prompt"]}]
-        texto = tokenizer.apply_chat_template(mensagens, tokenize=False, add_generation_prompt=True)
-        entrada = tokenizer(texto, return_tensors="pt").to(model.device)
-        with torch.inference_mode():
-            ids = model.generate(**entrada, max_new_tokens=max_new_tokens, do_sample=False,
-                                 pad_token_id=tokenizer.eos_token_id)
-        bruto = tokenizer.decode(ids[0][entrada["input_ids"].shape[1]:], skip_special_tokens=True)
-        r = {"id": ex["id"], "json_valido": False, "quatro_distintos": False, "copia_gabarito": False,
-             "razao_extensao": None}
-        try:
-            distratores, _ = normalizar_distratores_parciais(_extrair_json(bruto))
-            textos = [d.texto for d in distratores]
-            r["json_valido"] = True
-            r["quatro_distintos"] = len(textos) == 4 and len({chave(t) for t in textos}) == 4
-            r["copia_gabarito"] = chave(resposta) in {chave(t) for t in textos}
-            if textos:
-                r["razao_extensao"] = round(palavras(resposta) / (statistics.median(palavras(t) for t in textos) or 1), 3)
-        except ValueError:
-            pass
-        r["saida"] = bruto[:400]
-        resultados.append(r)
-
-    n = len(resultados) or 1
-    razoes = [r["razao_extensao"] for r in resultados if r["razao_extensao"] is not None]
-    return {
-        "itens": len(resultados),
-        "taxa_json_valido": sum(r["json_valido"] for r in resultados) / n,
-        "taxa_quatro_distintos": sum(r["quatro_distintos"] for r in resultados) / n,
-        "taxa_copia_gabarito": sum(r["copia_gabarito"] for r in resultados) / n,
-        "mediana_razao_extensao": statistics.median(razoes) if razoes else None,
-        "taxa_razao_acima_1_5": (sum(x > 1.5 for x in razoes) / len(razoes)) if razoes else None,
-        "por_item": resultados,
-    }
 
 
 def main() -> None:

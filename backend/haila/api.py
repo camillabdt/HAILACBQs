@@ -89,9 +89,14 @@ def executar(acao):
 @app.get("/health")
 def health():
     backend=os.getenv("HAILA_SLM_BACKEND","qwen").strip().casefold()
-    slm_ok=backend=="qwen" or bool(os.getenv("HAILA_SLM_ADAPTER_PATH"))
+    adapter=os.getenv("HAILA_SLM_ADAPTER_PATH","").strip()
+    adapter_ok=bool(adapter) and Path(adapter).exists()
+    slm_ok=backend=="qwen" or adapter_ok
     return {"status":"ok","service":"HAILA","build":API_BUILD,"llm_configured":bool(os.getenv("GROQ_API_KEY")),
             "slm_backend":backend,"slm_configured":slm_ok,
+            # Distingue explicitamente o Qwen base do Qwen ajustado com LoRA.
+            "slm_adapter_path":adapter or None,"slm_adapter_loaded":adapter_ok,
+            "slm_mode":"lora" if adapter_ok else "base",
             "distractor_memory":os.getenv("HAILA_USE_CURATED_MEMORY","1") == "1",
             "distractor_rules":os.getenv("HAILA_USE_DETERMINISTIC_DISTRACTOR_RULES","1") == "1",
             "rag_corpus":os.getenv("HAILA_RAG_CORPUS",str(Path(__file__).resolve().parents[1]/"fontes_rag.jsonl")),

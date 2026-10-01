@@ -70,10 +70,10 @@ SYSTEM_DISTRACTORES_QWEN = (
     "placeholders como <NAME>, traduções para outro idioma ou palavras soltas "
     "sem função de alternativa. Se o gabarito é uma propriedade, protocolo, "
     "estrutura, classe ou paradigma, todos os distratores devem pertencer à "
-    "mesma categoria. Responda "
+    "mesma categoria. "
     "Mantenha as quatro alternativas com extensão e estrutura gramatical próximas "
     "às da resposta correta, para que o gabarito não se destaque pelo tamanho. "
-    "exclusivamente com JSON válido no formato "
+    "Responda exclusivamente com JSON válido no formato "
     '{"distratores":["D1","D2","D3","D4"]}.'
 )
 
@@ -359,7 +359,7 @@ class QwenDistractorGenerator:
                 "candidatos_gerados": len(acumulados[:tamanho_pool]),
                 "feedback_aplicado": bool(rejeitados),
                 "alternativas_rejeitadas": rejeitados,
-                "prompt_version": "qwen-distractors-1.4.0",
+                "prompt_version": "qwen-distractors-1.5.0",
                 "token_usage_local": {
                     "input_tokens": input_tokens_total,
                     "output_tokens": output_tokens_total,
