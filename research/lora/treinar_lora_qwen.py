@@ -79,8 +79,8 @@ def main() -> None:
     ap.add_argument("--modelo-base", default="Qwen/Qwen2.5-1.5B-Instruct")
     ap.add_argument("--epocas", type=float, default=3)
     ap.add_argument("--lr", type=float, default=2e-4)
-    ap.add_argument("--lote", type=int, default=4)
-    ap.add_argument("--acumulacao", type=int, default=4)
+    ap.add_argument("--lote", type=int, default=1)
+    ap.add_argument("--acumulacao", type=int, default=16)
     ap.add_argument("--r", type=int, default=16)
     ap.add_argument("--alpha", type=int, default=32)
     ap.add_argument("--dropout", type=float, default=0.05)
@@ -118,10 +118,10 @@ def main() -> None:
     dispositivo = "cuda" if cuda else ("mps" if mps else "cpu")
     print(f"dispositivo: {dispositivo}" + ("  (sem GPU: o treino completo pode levar muitas horas)" if dispositivo == "cpu" else ""))
     model = AutoModelForCausalLM.from_pretrained(
-        args.modelo_base, torch_dtype=torch.bfloat16 if bf16 else (torch.float16 if cuda else torch.float32)
+        args.modelo_base, torch_dtype=torch.bfloat16 if bf16 else torch.float32
     )
     model.config.use_cache = False
-    if not cuda:
+    if True:  # checkpointing de gradiente sempre: cabe na T4 (15 GB)
         # Sem GPU, o checkpointing de gradiente reduz o uso de memória; com LoRA
         # ele exige que as entradas propaguem gradiente.
         model.enable_input_require_grads()
@@ -140,7 +140,7 @@ def main() -> None:
             weight_decay=0.0, logging_steps=10, eval_strategy="epoch", save_strategy="epoch",
             save_total_limit=2, load_best_model_at_end=True, metric_for_best_model="eval_loss",
             greater_is_better=False, bf16=bf16, fp16=cuda and not bf16, seed=args.semente,
-            max_steps=5 if args.teste_rapido else -1, gradient_checkpointing=not cuda,
+            max_steps=5 if args.teste_rapido else -1, gradient_checkpointing=True,
             report_to=[], remove_unused_columns=False,
         ),
         train_dataset=treino, eval_dataset=val, data_collator=Colador(tokenizer.pad_token_id),

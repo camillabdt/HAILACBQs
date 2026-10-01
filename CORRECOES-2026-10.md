@@ -83,3 +83,7 @@ Nenhuma execução usou adapter LoRA.
   distratores reais da prova.
 - `research/lora/treinar_tudo.py`: treina as duas versões, avalia o Qwen base e gera
   `adapters/comparacao_validacao.md` com a recomendada.
+- Treino ajustado para a GPU T4 do Colab (15 GB): lote 1 com acumulação 16 (mesmo lote efetivo de 16),
+  checkpointing de gradiente sempre ligado e pesos em fp32 com precisão mista (a T4 não tem bf16).
+  Notebook do Colab refeito: acha os arquivos enviados, fixa transformers 4.46.3 / peft 0.13.2 /
+  accelerate 1.1.1 e roda tudo com "Executar tudo".

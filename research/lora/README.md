@@ -71,7 +71,7 @@ com 16 GB ou mais, e possivelmente um dia inteiro só em CPU. Se a sua máquina 
 ## 3b. Treinar no Google Colab (GPU T4 ou superior)
 
 ```bash
-pip install "torch>=2.2" "transformers>=4.44" "peft>=0.12" "accelerate>=0.33"
+pip install "transformers==4.46.3" "peft==0.13.2" "accelerate==1.1.1"
 python research/lora/treinar_lora_qwen.py dados/haila-lora-enade-poscomp adapters/qwen-distratores-lora-v1
 ```
 
