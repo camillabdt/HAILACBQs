@@ -1,0 +1,574 @@
+{
+  "condition": "C4",
+  "run_id": "oficial-20260925-112826",
+  "started_at": "2026-09-25T14:29:04.495757+00:00",
+  "base_url": "http://127.0.0.1:8010",
+  "items": [
+    {
+      "spec_id": "P01",
+      "specification": {
+        "spec_id": "P01",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+        "dificuldade": 3,
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "restricoes": [
+          "uma única alternativa defensável",
+          "não exigir recurso visual"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "8139ec96-32ea-418a-9f1c-43074b8edc60",
+        "solicitante_id": "evaluation-oficial-20260925-112826-P01",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-25T14:29:04.523344+00:00",
+        "updated_at": "2026-09-25T14:29:04.523344+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-oficial-20260925-112826-P01",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+          "dificuldade": 3,
+          "competencia": "Analisar mecanismos de gerenciamento de dados",
+          "habilidade": "Analisar transações e recuperação de falhas",
+          "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+          "restricoes": [
+            "uma única alternativa defensável",
+            "não exigir recurso visual"
+          ]
+        }
+      },
+      "request_id": "8139ec96-32ea-418a-9f1c-43074b8edc60",
+      "generation_status": 409,
+      "generation": {
+        "detail": "corpus RAG não encontrado: backend/fontes_rag.jsonl"
+      },
+      "history": {
+        "request": {
+          "id": "8139ec96-32ea-418a-9f1c-43074b8edc60",
+          "solicitante_id": "evaluation-oficial-20260925-112826-P01",
+          "state": "REQUESTED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 0,
+          "stem_attempts": 0,
+          "distractor_attempts": 0,
+          "created_at": "2026-09-25T14:29:04.523344+00:00",
+          "updated_at": "2026-09-25T14:29:04.523344+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-oficial-20260925-112826-P01",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+            "dificuldade": 3,
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "restricoes": [
+              "uma única alternativa defensável",
+              "não exigir recurso visual"
+            ]
+          }
+        },
+        "versions": [],
+        "latest_version": null,
+        "artifacts": [],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 1,
+            "request_id": "8139ec96-32ea-418a-9f1c-43074b8edc60",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-25T14:29:04.523997+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-oficial-20260925-112826-P01",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+              "dificuldade": 3,
+              "competencia": "Analisar mecanismos de gerenciamento de dados",
+              "habilidade": "Analisar transações e recuperação de falhas",
+              "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+              "restricoes": [
+                "uma única alternativa defensável",
+                "não exigir recurso visual"
+              ]
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 0.04
+    },
+    {
+      "spec_id": "P02",
+      "specification": {
+        "spec_id": "P02",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+        "dificuldade": 3,
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "restricoes": [
+          "uma única alternativa defensável",
+          "não perguntar apenas por uma propriedade isolada"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "35f78c3c-3ed0-48a5-bf1e-19da0a3faf29",
+        "solicitante_id": "evaluation-oficial-20260925-112826-P02",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-25T14:29:04.537359+00:00",
+        "updated_at": "2026-09-25T14:29:04.537359+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-oficial-20260925-112826-P02",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+          "dificuldade": 3,
+          "competencia": "Analisar arquiteturas de comunicação",
+          "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+          "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+          "restricoes": [
+            "uma única alternativa defensável",
+            "não perguntar apenas por uma propriedade isolada"
+          ]
+        }
+      },
+      "request_id": "35f78c3c-3ed0-48a5-bf1e-19da0a3faf29",
+      "generation_status": 409,
+      "generation": {
+        "detail": "corpus RAG não encontrado: backend/fontes_rag.jsonl"
+      },
+      "history": {
+        "request": {
+          "id": "35f78c3c-3ed0-48a5-bf1e-19da0a3faf29",
+          "solicitante_id": "evaluation-oficial-20260925-112826-P02",
+          "state": "REQUESTED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 0,
+          "stem_attempts": 0,
+          "distractor_attempts": 0,
+          "created_at": "2026-09-25T14:29:04.537359+00:00",
+          "updated_at": "2026-09-25T14:29:04.537359+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-oficial-20260925-112826-P02",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+            "dificuldade": 3,
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "restricoes": [
+              "uma única alternativa defensável",
+              "não perguntar apenas por uma propriedade isolada"
+            ]
+          }
+        },
+        "versions": [],
+        "latest_version": null,
+        "artifacts": [],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 2,
+            "request_id": "35f78c3c-3ed0-48a5-bf1e-19da0a3faf29",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-25T14:29:04.537780+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-oficial-20260925-112826-P02",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Comparar as garantias oferecidas pelos protocolos TCP e UDP em um cenário de aplicação.",
+              "dificuldade": 3,
+              "competencia": "Analisar arquiteturas de comunicação",
+              "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "restricoes": [
+                "uma única alternativa defensável",
+                "não perguntar apenas por uma propriedade isolada"
+              ]
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 0.011
+    },
+    {
+      "spec_id": "P03",
+      "specification": {
+        "spec_id": "P03",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+        "dificuldade": 3,
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "1c892fbc-7b52-4d9b-ae5d-99654d23de2b",
+        "solicitante_id": "evaluation-oficial-20260925-112826-P03",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-25T14:29:04.549020+00:00",
+        "updated_at": "2026-09-25T14:29:04.549020+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-oficial-20260925-112826-P03",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+          "dificuldade": 3,
+          "competencia": "Analisar requisitos de software",
+          "habilidade": "Classificar requisitos conforme sua finalidade",
+          "objeto_conhecimento": "Engenharia de requisitos",
+          "restricoes": [
+            "usar cenário aplicado",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "1c892fbc-7b52-4d9b-ae5d-99654d23de2b",
+      "generation_status": 409,
+      "generation": {
+        "detail": "corpus RAG não encontrado: backend/fontes_rag.jsonl"
+      },
+      "history": {
+        "request": {
+          "id": "1c892fbc-7b52-4d9b-ae5d-99654d23de2b",
+          "solicitante_id": "evaluation-oficial-20260925-112826-P03",
+          "state": "REQUESTED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 0,
+          "stem_attempts": 0,
+          "distractor_attempts": 0,
+          "created_at": "2026-09-25T14:29:04.549020+00:00",
+          "updated_at": "2026-09-25T14:29:04.549020+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-oficial-20260925-112826-P03",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+            "dificuldade": 3,
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "restricoes": [
+              "usar cenário aplicado",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [],
+        "latest_version": null,
+        "artifacts": [],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 3,
+            "request_id": "1c892fbc-7b52-4d9b-ae5d-99654d23de2b",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-25T14:29:04.549735+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-oficial-20260925-112826-P03",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Classificar requisitos funcionais e não funcionais em um cenário de projeto de software.",
+              "dificuldade": 3,
+              "competencia": "Analisar requisitos de software",
+              "habilidade": "Classificar requisitos conforme sua finalidade",
+              "objeto_conhecimento": "Engenharia de requisitos",
+              "restricoes": [
+                "usar cenário aplicado",
+                "uma única alternativa defensável"
+              ]
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 0.011
+    },
+    {
+      "spec_id": "P04",
+      "specification": {
+        "spec_id": "P04",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+        "dificuldade": 3,
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "b9a7117f-37c9-48da-a472-46211f5e9a1a",
+        "solicitante_id": "evaluation-oficial-20260925-112826-P04",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-25T14:29:04.559894+00:00",
+        "updated_at": "2026-09-25T14:29:04.559894+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-oficial-20260925-112826-P04",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+          "dificuldade": 3,
+          "competencia": "Projetar soluções algorítmicas",
+          "habilidade": "Selecionar estruturas de dados",
+          "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+          "restricoes": [
+            "usar cenário aplicado",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "b9a7117f-37c9-48da-a472-46211f5e9a1a",
+      "generation_status": 409,
+      "generation": {
+        "detail": "corpus RAG não encontrado: backend/fontes_rag.jsonl"
+      },
+      "history": {
+        "request": {
+          "id": "b9a7117f-37c9-48da-a472-46211f5e9a1a",
+          "solicitante_id": "evaluation-oficial-20260925-112826-P04",
+          "state": "REQUESTED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 0,
+          "stem_attempts": 0,
+          "distractor_attempts": 0,
+          "created_at": "2026-09-25T14:29:04.559894+00:00",
+          "updated_at": "2026-09-25T14:29:04.559894+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-oficial-20260925-112826-P04",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+            "dificuldade": 3,
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "restricoes": [
+              "usar cenário aplicado",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [],
+        "latest_version": null,
+        "artifacts": [],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 4,
+            "request_id": "b9a7117f-37c9-48da-a472-46211f5e9a1a",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-25T14:29:04.560520+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-oficial-20260925-112826-P04",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+              "dificuldade": 3,
+              "competencia": "Projetar soluções algorítmicas",
+              "habilidade": "Selecionar estruturas de dados",
+              "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+              "restricoes": [
+                "usar cenário aplicado",
+                "uma única alternativa defensável"
+              ]
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 0.01
+    },
+    {
+      "spec_id": "P05",
+      "specification": {
+        "spec_id": "P05",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+        "dificuldade": 3,
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "create_status": 201,
+      "created": {
+        "id": "fec95725-9d49-4cb1-a3ed-11778bdd5a84",
+        "solicitante_id": "evaluation-oficial-20260925-112826-P05",
+        "state": "REQUESTED",
+        "max_attempts": 3,
+        "max_distractor_attempts": 3,
+        "attempts": 0,
+        "stem_attempts": 0,
+        "distractor_attempts": 0,
+        "created_at": "2026-09-25T14:29:04.570853+00:00",
+        "updated_at": "2026-09-25T14:29:04.570853+00:00",
+        "specification": {
+          "solicitante_id": "evaluation-oficial-20260925-112826-P05",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+          "dificuldade": 3,
+          "competencia": "Analisar métodos de inteligência artificial",
+          "habilidade": "Distinguir paradigmas de aprendizado",
+          "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+          "restricoes": [
+            "usar cenário aplicado",
+            "uma única alternativa defensável"
+          ]
+        }
+      },
+      "request_id": "fec95725-9d49-4cb1-a3ed-11778bdd5a84",
+      "generation_status": 409,
+      "generation": {
+        "detail": "corpus RAG não encontrado: backend/fontes_rag.jsonl"
+      },
+      "history": {
+        "request": {
+          "id": "fec95725-9d49-4cb1-a3ed-11778bdd5a84",
+          "solicitante_id": "evaluation-oficial-20260925-112826-P05",
+          "state": "REQUESTED",
+          "max_attempts": 3,
+          "max_distractor_attempts": 3,
+          "attempts": 0,
+          "stem_attempts": 0,
+          "distractor_attempts": 0,
+          "created_at": "2026-09-25T14:29:04.570853+00:00",
+          "updated_at": "2026-09-25T14:29:04.570853+00:00",
+          "specification": {
+            "solicitante_id": "evaluation-oficial-20260925-112826-P05",
+            "curso": "Computação",
+            "exame": "ENADE",
+            "componente": "ESPECIFICO",
+            "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+            "dificuldade": 3,
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "restricoes": [
+              "usar cenário aplicado",
+              "uma única alternativa defensável"
+            ]
+          }
+        },
+        "versions": [],
+        "latest_version": null,
+        "artifacts": [],
+        "red_flags": [],
+        "events": [
+          {
+            "id": 5,
+            "request_id": "fec95725-9d49-4cb1-a3ed-11778bdd5a84",
+            "version_id": null,
+            "from_state": null,
+            "to_state": "REQUESTED",
+            "component": "HAILA",
+            "reason": "solicitação registrada",
+            "created_at": "2026-09-25T14:29:04.571361+00:00",
+            "evidence": {
+              "solicitante_id": "evaluation-oficial-20260925-112826-P05",
+              "curso": "Computação",
+              "exame": "ENADE",
+              "componente": "ESPECIFICO",
+              "objetivo_pedagogico": "Distinguir aprendizado supervisionado de não supervisionado a partir dos dados disponíveis.",
+              "dificuldade": 3,
+              "competencia": "Analisar métodos de inteligência artificial",
+              "habilidade": "Distinguir paradigmas de aprendizado",
+              "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+              "restricoes": [
+                "usar cenário aplicado",
+                "uma única alternativa defensável"
+              ]
+            }
+          }
+        ],
+        "reviews": []
+      },
+      "elapsed_seconds": 0.009
+    }
+  ],
+  "finished_at": "2026-09-25T14:29:04.579368+00:00"
+}

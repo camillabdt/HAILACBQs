@@ -1,0 +1,664 @@
+{
+  "executed_at": "2026-09-25T15:20:59.304977+00:00",
+  "database": "runtime/haila.sqlite3",
+  "model_checks": [
+    {
+      "check": "todos_estados_possuem_regra",
+      "passou": true,
+      "evidencia": "definidos=9, origens=9"
+    },
+    {
+      "check": "destinos_sao_estados_validos",
+      "passou": true,
+      "evidencia": "destinos_desconhecidos=[]"
+    },
+    {
+      "check": "terminais_sem_saida",
+      "passou": true,
+      "evidencia": "GENERATION_COMPLETED, ATTEMPTS_EXHAUSTED, GENERATION_FAILED"
+    },
+    {
+      "check": "todos_estados_alcancaveis",
+      "passou": true,
+      "evidencia": "inalcancáveis=[]"
+    },
+    {
+      "check": "repositorio_rejeita_transicao_invalida",
+      "passou": true,
+      "evidencia": "transição inválida: REQUESTED->GENERATION_COMPLETED"
+    }
+  ],
+  "database_summary": {
+    "requests": 67,
+    "completed": 37,
+    "conforming": 67,
+    "state_counts": {
+      "GENERATION_COMPLETED": 37,
+      "GENERATION_FAILED": 17,
+      "ATTEMPTS_EXHAUSTED": 11,
+      "STEM_GENERATED": 2
+    },
+    "transition_counts": {
+      "REQUESTED->REFERENCE_RETRIEVED": 67,
+      "REFERENCE_RETRIEVED->STEM_GENERATED": 52,
+      "STEM_GENERATED->DISTRACTORS_GENERATED": 55,
+      "DISTRACTORS_GENERATED->ITEM_ASSEMBLED": 60,
+      "ITEM_ASSEMBLED->GENERATION_COMPLETED": 37,
+      "DISTRACTORS_GENERATED->BLOCKED_BY_RED_FLAGS": 5,
+      "BLOCKED_BY_RED_FLAGS->DISTRACTORS_GENERATED": 10,
+      "STEM_GENERATED->BLOCKED_BY_RED_FLAGS": 22,
+      "BLOCKED_BY_RED_FLAGS->STEM_GENERATED": 27,
+      "REFERENCE_RETRIEVED->GENERATION_FAILED": 15,
+      "BLOCKED_BY_RED_FLAGS->ATTEMPTS_EXHAUSTED": 11,
+      "BLOCKED_BY_RED_FLAGS->GENERATION_FAILED": 2,
+      "ITEM_ASSEMBLED->BLOCKED_BY_RED_FLAGS": 23
+    }
+  },
+  "requests": [
+    {
+      "request_id": "50b77170-cebc-425a-a872-03028a35e0e0",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "2f619649-dfe7-49b2-bc71-9c94839bb326",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "3bcfb3f5-6755-47f5-a179-d6f6659df1d4",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "e2223d66-590c-4c49-997e-25256c9f2049",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "37f20290-4c55-433e-9b26-053133e20f8d",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "dda7b947-5b81-4069-912d-4ffdfc6737a7",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "76456ded-0792-4ef4-b132-d7bcdd1652bd",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "53015de6-418d-43c2-b598-61e14f1163f7",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "97400dc1-648f-403b-9088-3f00f3549439",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "ddd10b0c-9960-4312-9510-618a4c7a236c",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "40058529-c7d9-4955-b9de-3bd37adbf90e",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "89a2bef4-9eb3-4d9b-a410-e669625ebf9b",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "45e49c4d-fffe-4f09-9e0b-6be50f9e00c3",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "560bd37f-a337-4a8a-9a88-2392863f4354",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "23ad82c2-b7a4-45bf-a8f8-aacd69a00577",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 8,
+      "artefatos": 5,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "716c6a17-9eba-476c-92cc-3ba4f0788094",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "42495f67-d615-4d4c-a010-738e56388cc7",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "7e614912-8ffa-47c3-a055-e78d915aaad1",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 8,
+      "artefatos": 5,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "60774a2d-ff89-41b8-8e1f-6091408a6f95",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "36a39362-c6f1-4489-a9ba-dcafc325b596",
+      "estado": "GENERATION_FAILED",
+      "eventos": 3,
+      "artefatos": 2,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "a5aa700f-04c1-451d-a07a-1c8ff76fbc6e",
+      "estado": "ATTEMPTS_EXHAUSTED",
+      "eventos": 9,
+      "artefatos": 4,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "ca66e36c-3f16-4ffe-accf-46a541f1fa12",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 8,
+      "artefatos": 5,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "f6a83c2b-4da8-4b78-820a-fe8ec7b7c6db",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 8,
+      "artefatos": 5,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "bdf3cf31-4a59-4367-ac77-808b27f42d32",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "97844796-4b95-41b9-b492-4f29d28e4f11",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "771aff6b-8edd-499a-b55e-509faf230014",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "70635a12-8d88-4fe3-97d1-290c429b0458",
+      "estado": "ATTEMPTS_EXHAUSTED",
+      "eventos": 14,
+      "artefatos": 7,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "426fbcc4-f40a-4b5d-8006-5267121bba8a",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "7be98c48-1f5e-406a-94ec-921a0ac1643a",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "34ababc9-30c7-45f8-aa7e-4442ac90eab5",
+      "estado": "GENERATION_FAILED",
+      "eventos": 7,
+      "artefatos": 4,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "83760625-8e8f-4e76-b49e-1d94f93a9d26",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "bcb8a273-cc1f-406f-86aa-594f2e7de5ff",
+      "estado": "GENERATION_FAILED",
+      "eventos": 3,
+      "artefatos": 2,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "f909143f-f704-443d-a1d1-40f596b3cc46",
+      "estado": "GENERATION_FAILED",
+      "eventos": 3,
+      "artefatos": 2,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "b9adfaf9-12d5-4ae1-9816-de8fef7dbf2f",
+      "estado": "GENERATION_FAILED",
+      "eventos": 3,
+      "artefatos": 2,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "a91c67c1-2440-4760-884b-687718714428",
+      "estado": "GENERATION_FAILED",
+      "eventos": 3,
+      "artefatos": 2,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "3c6185b0-ccc1-4405-988e-0ca9662ad202",
+      "estado": "GENERATION_FAILED",
+      "eventos": 3,
+      "artefatos": 2,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "4db98388-e22b-4505-94ce-2722c4fe4973",
+      "estado": "GENERATION_FAILED",
+      "eventos": 5,
+      "artefatos": 3,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "5f13009b-0e67-49ce-874e-851960c5cb53",
+      "estado": "GENERATION_FAILED",
+      "eventos": 3,
+      "artefatos": 2,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "7fc293a8-f7c2-4ca4-a57f-53886d65b070",
+      "estado": "GENERATION_FAILED",
+      "eventos": 3,
+      "artefatos": 2,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "f9b312a3-93f3-4460-b545-4f969e0d4a69",
+      "estado": "GENERATION_FAILED",
+      "eventos": 3,
+      "artefatos": 2,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "e740a63a-8e88-43e8-a465-8d26ef1b2acc",
+      "estado": "GENERATION_FAILED",
+      "eventos": 3,
+      "artefatos": 2,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "28ecd3a3-949b-4c84-8d89-ef61457d6ca7",
+      "estado": "GENERATION_FAILED",
+      "eventos": 3,
+      "artefatos": 2,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "25687809-50d8-432b-a982-f65151cf67dc",
+      "estado": "GENERATION_FAILED",
+      "eventos": 3,
+      "artefatos": 2,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "7bcfe3a1-b759-42ad-b6f0-9f9038831ddc",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "016206f5-452c-4f0d-b21b-dfe0bcc7f8a6",
+      "estado": "ATTEMPTS_EXHAUSTED",
+      "eventos": 9,
+      "artefatos": 4,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "7d09ae37-c4c8-4513-b880-388ac5572878",
+      "estado": "GENERATION_FAILED",
+      "eventos": 3,
+      "artefatos": 2,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "23068858-ce48-47f8-9b5d-861f6a31aeb3",
+      "estado": "GENERATION_FAILED",
+      "eventos": 3,
+      "artefatos": 2,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "1bfcd439-6948-4e5c-a810-0e1de9ad9153",
+      "estado": "GENERATION_FAILED",
+      "eventos": 3,
+      "artefatos": 2,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "4572a0b4-7314-408a-8e42-1dbe2e96a730",
+      "estado": "ATTEMPTS_EXHAUSTED",
+      "eventos": 9,
+      "artefatos": 4,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "1716af42-8318-40e5-95cc-85e3823b662d",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "eab960d0-f004-49c8-8dc9-b35cde2a098c",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 10,
+      "artefatos": 7,
+      "versoes": 2,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "9443880a-5839-4eeb-8e6c-4ecaf7e43948",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "c6154038-ac33-409a-b1b9-c0f45ddf2419",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "e27f3c37-046e-4ce8-94c8-0ece985b9de3",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "e03894cc-4e9e-486b-a4d4-f0801d3595f3",
+      "estado": "STEM_GENERATED",
+      "eventos": 3,
+      "artefatos": 2,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "1498a632-a1c4-423c-a66f-c46ad26c2a4c",
+      "estado": "ATTEMPTS_EXHAUSTED",
+      "eventos": 15,
+      "artefatos": 10,
+      "versoes": 3,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "b126be8b-c29f-4116-8707-e1e9e2b98b94",
+      "estado": "ATTEMPTS_EXHAUSTED",
+      "eventos": 9,
+      "artefatos": 4,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "65293c76-7c0e-4c3d-80bf-01a81505383d",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 14,
+      "artefatos": 10,
+      "versoes": 3,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "e785ab24-3ccc-4784-bd03-239ea22038f6",
+      "estado": "ATTEMPTS_EXHAUSTED",
+      "eventos": 13,
+      "artefatos": 8,
+      "versoes": 3,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "a582d888-7bc8-4a93-ac71-81ebf8d8cc1c",
+      "estado": "ATTEMPTS_EXHAUSTED",
+      "eventos": 21,
+      "artefatos": 14,
+      "versoes": 5,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "b1a27369-7719-4e7b-9a36-bf200fdfa040",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 6,
+      "artefatos": 4,
+      "versoes": 1,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "5e9f9cb5-d773-4302-8a03-982d87f8813d",
+      "estado": "STEM_GENERATED",
+      "eventos": 3,
+      "artefatos": 2,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "b509815a-dfd9-40d7-bb45-252fd391e796",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 14,
+      "artefatos": 10,
+      "versoes": 3,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "65acf220-be0a-4979-b0e9-dd6838bb59cd",
+      "estado": "ATTEMPTS_EXHAUSTED",
+      "eventos": 13,
+      "artefatos": 8,
+      "versoes": 3,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "0e6cb292-56fd-47a1-9798-3f94cb48d34f",
+      "estado": "ATTEMPTS_EXHAUSTED",
+      "eventos": 9,
+      "artefatos": 4,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "50eabf6c-ede5-4f02-86fc-0984a59852a7",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 10,
+      "artefatos": 7,
+      "versoes": 2,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "fb130463-702b-401a-a483-bad20cbd8ce0",
+      "estado": "ATTEMPTS_EXHAUSTED",
+      "eventos": 15,
+      "artefatos": 10,
+      "versoes": 3,
+      "conforme": true,
+      "problemas": []
+    }
+  ],
+  "all_model_checks_passed": true,
+  "all_histories_conforming": true
+}

@@ -1,0 +1,2100 @@
+{
+  "started_at": "2026-09-25T14:33:56.831602+00:00",
+  "conditions": [
+    "C1_LLM",
+    "C2_RAG_LLM",
+    "C3_RAG_LLM_SLM"
+  ],
+  "items": [
+    {
+      "spec_id": "P01",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Considere uma transação T que executa várias operações de atualização e que, imediatamente antes da instrução COMMIT, ocorre uma falha de energia que interrompe o sistema. Após a recuperação do banco de dados, qual das afirmações abaixo descreve corretamente o estado dos efeitos de T em relação às propriedades ACID?",
+        "alternativas": [
+          "Todas as alterações realizadas por T permanecerão no banco de dados, pois a durabilidade protege os dados mesmo antes do COMMIT.",
+          "Apenas as alterações que foram escritas no log de recuperação permanecerão, enquanto as demais serão perdidas.",
+          "Nenhuma das alterações realizadas por T será refletida no banco de dados após a recuperação, pois a atomicidade garante que a transação seja abortada e a durabilidade só se aplica após o COMMIT.",
+          "Metade das operações de T serão mantidas, pois o mecanismo de checkpoint salva parte dos dados antes do COMMIT.",
+          "Os dados modificados por T serão mantidos temporariamente em memória e serão perdidos após o reinício, mas o log de transação garante a possibilidade de refazer a transação."
+        ],
+        "correta": 2,
+        "explicacao": "A propriedade de atomicidade assegura que uma transação seja indivisível: se o COMMIT não for concluído, todas as suas alterações devem ser desfeitas. A durabilidade só se aplica após o COMMIT, quando os efeitos são garantidos permanentemente. Como a falha ocorreu antes do COMMIT, o sistema, ao recuperar, utiliza o log de transação para desfazer (undo) as alterações de T, resultando em nenhum efeito visível da transação no banco de dados.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Considere uma transação T que executa várias operações de atualização e que, imediatamente antes da instrução COMMIT, ocorre uma falha de energia que interrompe o sistema. Após a recuperação do banco de dados, qual das afirmações abaixo descreve corretamente o estado dos efeitos de T em relação às propriedades ACID?",
+            "alternativas": [
+              "Todas as alterações realizadas por T permanecerão no banco de dados, pois a durabilidade protege os dados mesmo antes do COMMIT.",
+              "Apenas as alterações que foram escritas no log de recuperação permanecerão, enquanto as demais serão perdidas.",
+              "Nenhuma das alterações realizadas por T será refletida no banco de dados após a recuperação, pois a atomicidade garante que a transação seja abortada e a durabilidade só se aplica após o COMMIT.",
+              "Metade das operações de T serão mantidas, pois o mecanismo de checkpoint salva parte dos dados antes do COMMIT.",
+              "Os dados modificados por T serão mantidos temporariamente em memória e serão perdidos após o reinício, mas o log de transação garante a possibilidade de refazer a transação."
+            ],
+            "correta": 2,
+            "explicacao": "A propriedade de atomicidade assegura que uma transação seja indivisível: se o COMMIT não for concluído, todas as suas alterações devem ser desfeitas. A durabilidade só se aplica após o COMMIT, quando os efeitos são garantidos permanentemente. Como a falha ocorreu antes do COMMIT, o sistema, ao recuperar, utiliza o log de transação para desfazer (undo) as alterações de T, resultando em nenhum efeito visível da transação no banco de dados.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 494,
+              "completion_tokens": 934,
+              "total_tokens": 1428
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 2.805
+    },
+    {
+      "spec_id": "P02",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Uma empresa desenvolve um sistema que envia dados de sensores críticos em tempo real para um servidor central. Nesse cenário, a perda ocasional de pacotes pode ser tolerada, porém a latência mínima é essencial para a tomada de decisão. Qual protocolo de transporte deve ser escolhido e por quê?",
+        "alternativas": [
+          "Utilizar TCP, pois garante entrega confiável e ordem dos pacotes, assegurando a integridade dos dados críticos.",
+          "Utilizar UDP, pois minimiza a latência ao não exigir estabelecimento de conexão nem controle de congestionamento, aceitando perdas eventuais.",
+          "Utilizar TCP, pois seu controle de fluxo reduz a taxa de transmissão, evitando sobrecarga na rede.",
+          "Utilizar UDP, pois permite retransmissão automática de pacotes perdidos, mantendo a ordem dos dados.",
+          "Utilizar TCP, pois oferece multiplexação de portas e suporte a transmissão em broadcast."
+        ],
+        "correta": 1,
+        "explicacao": "UDP é adequado quando a prioridade é baixa latência e a aplicação pode tolerar perdas, já que não realiza handshake, controle de congestionamento nem retransmissões, reduzindo o tempo de ida e volta dos pacotes. TCP, ao garantir confiabilidade, ordenação e controle de fluxo, introduz atrasos que violariam o requisito de latência mínima. Assim, a alternativa B é a única que alinha as características do protocolo ao requisito do cenário.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Uma empresa desenvolve um sistema que envia dados de sensores críticos em tempo real para um servidor central. Nesse cenário, a perda ocasional de pacotes pode ser tolerada, porém a latência mínima é essencial para a tomada de decisão. Qual protocolo de transporte deve ser escolhido e por quê?",
+            "alternativas": [
+              "Utilizar TCP, pois garante entrega confiável e ordem dos pacotes, assegurando a integridade dos dados críticos.",
+              "Utilizar UDP, pois minimiza a latência ao não exigir estabelecimento de conexão nem controle de congestionamento, aceitando perdas eventuais.",
+              "Utilizar TCP, pois seu controle de fluxo reduz a taxa de transmissão, evitando sobrecarga na rede.",
+              "Utilizar UDP, pois permite retransmissão automática de pacotes perdidos, mantendo a ordem dos dados.",
+              "Utilizar TCP, pois oferece multiplexação de portas e suporte a transmissão em broadcast."
+            ],
+            "correta": 1,
+            "explicacao": "UDP é adequado quando a prioridade é baixa latência e a aplicação pode tolerar perdas, já que não realiza handshake, controle de congestionamento nem retransmissões, reduzindo o tempo de ida e volta dos pacotes. TCP, ao garantir confiabilidade, ordenação e controle de fluxo, introduz atrasos que violariam o requisito de latência mínima. Assim, a alternativa B é a única que alinha as características do protocolo ao requisito do cenário.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 494,
+              "completion_tokens": 691,
+              "total_tokens": 1185
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 2.224
+    },
+    {
+      "spec_id": "P03",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Considere o cenário de um sistema de matrícula online para uma universidade, no qual o analista de requisitos descreveu as seguintes funcionalidades. Assinale a alternativa que corresponde a um requisito não funcional:",
+        "alternativas": [
+          "O sistema deve permitir que o estudante selecione, adicione e remova disciplinas do seu plano de estudos antes do encerramento do período de matrícula.",
+          "O sistema deve enviar por e‑mail ao estudante a confirmação da matrícula contendo a lista de disciplinas e o horário das aulas.",
+          "O sistema deve validar se o número total de créditos selecionados está dentro do limite mínimo e máximo permitido pelo curso.",
+          "O sistema deve estar disponível 99,5% do tempo ao longo do semestre, exceto durante as manutenções programadas.",
+          "O sistema deve gerar um relatório mensal com estatísticas de matrícula para a secretaria acadêmica."
+        ],
+        "correta": 3,
+        "explicacao": "Requisitos não funcionais descrevem atributos de qualidade do sistema, como disponibilidade, desempenho ou segurança. A alternativa D especifica a disponibilidade esperada (99,5% do tempo), caracterizando um requisito não funcional. As demais alternativas descrevem ações que o sistema deve executar, caracterizando requisitos funcionais.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Considere o cenário de um sistema de matrícula online para uma universidade, no qual o analista de requisitos descreveu as seguintes funcionalidades. Assinale a alternativa que corresponde a um requisito não funcional:",
+            "alternativas": [
+              "O sistema deve permitir que o estudante selecione, adicione e remova disciplinas do seu plano de estudos antes do encerramento do período de matrícula.",
+              "O sistema deve enviar por e‑mail ao estudante a confirmação da matrícula contendo a lista de disciplinas e o horário das aulas.",
+              "O sistema deve validar se o número total de créditos selecionados está dentro do limite mínimo e máximo permitido pelo curso.",
+              "O sistema deve estar disponível 99,5% do tempo ao longo do semestre, exceto durante as manutenções programadas.",
+              "O sistema deve gerar um relatório mensal com estatísticas de matrícula para a secretaria acadêmica."
+            ],
+            "correta": 3,
+            "explicacao": "Requisitos não funcionais descrevem atributos de qualidade do sistema, como disponibilidade, desempenho ou segurança. A alternativa D especifica a disponibilidade esperada (99,5% do tempo), caracterizando um requisito não funcional. As demais alternativas descrevem ações que o sistema deve executar, caracterizando requisitos funcionais.",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 480,
+              "completion_tokens": 791,
+              "total_tokens": 1271
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 3.131
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Um sistema de comércio eletrônico precisa armazenar o catálogo de livros, onde cada livro é identificado por seu ISBN. As operações mais frequentes são consultas para localizar rapidamente um livro a partir do ISBN e, ocasionalmente, inserções ou remoções de títulos. Qual estrutura de dados é a mais adequada para atender a esse padrão de uso?",
+        "alternativas": [
+          "Pilha (Stack)",
+          "Fila (Queue)",
+          "Árvore binária de busca (Binary Search Tree)",
+          "Tabela hash com encadeamento (Hash Table with chaining)",
+          "Lista simplesmente encadeada (Singly linked list)"
+        ],
+        "correta": 3,
+        "explicacao": "A consulta por ISBN deve ser muito rápida. Uma tabela hash oferece, em média, complexidade O(1) para buscas, inserções e remoções, atendendo ao requisito de desempenho. As demais estruturas apresentam custos maiores nas buscas (pilha e fila são inadequadas, árvore binária tem O(log n) no melhor caso e O(n) no pior caso, e lista encadeada tem O(n)).",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Um sistema de comércio eletrônico precisa armazenar o catálogo de livros, onde cada livro é identificado por seu ISBN. As operações mais frequentes são consultas para localizar rapidamente um livro a partir do ISBN e, ocasionalmente, inserções ou remoções de títulos. Qual estrutura de dados é a mais adequada para atender a esse padrão de uso?",
+            "alternativas": [
+              "Pilha (Stack)",
+              "Fila (Queue)",
+              "Árvore binária de busca (Binary Search Tree)",
+              "Tabela hash com encadeamento (Hash Table with chaining)",
+              "Lista simplesmente encadeada (Singly linked list)"
+            ],
+            "correta": 3,
+            "explicacao": "A consulta por ISBN deve ser muito rápida. Uma tabela hash oferece, em média, complexidade O(1) para buscas, inserções e remoções, atendendo ao requisito de desempenho. As demais estruturas apresentam custos maiores nas buscas (pilha e fila são inadequadas, árvore binária tem O(log n) no melhor caso e O(n) no pior caso, e lista encadeada tem O(n)).",
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 484,
+              "completion_tokens": 816,
+              "total_tokens": 1300
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 2.598
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Uma operadora de telecomunicações possui um conjunto de dados contendo, para cada cliente, número de chamadas realizadas, total de minutos consumidos, tipo de plano (pré‑pago ou pós‑pago) e se o cliente renovou o contrato no último trimestre (sim ou não). O objetivo é (i) prever a probabilidade de renovação dos clientes e (ii) identificar grupos de clientes com comportamento semelhante para direcionar campanhas de marketing. Considerando essas duas tarefas, assinale a alternativa que relaciona corretamente o tipo de aprendizado de máquina adequado a cada objetivo.",
+        "alternativas": [
+          "Prever renovação – aprendizado supervisionado; identificar grupos – aprendizado supervisionado.",
+          "Prever renovação – aprendizado não supervisionado; identificar grupos – aprendizado supervisionado.",
+          "Prever renovação – aprendizado supervisionado; identificar grupos – aprendizado não supervisionado.",
+          "Prever renovação – aprendizado por reforço; identificar grupos – aprendizado não supervisionado.",
+          "Prever renovação – aprendizado semi‑supervisionado; identificar grupos – aprendizado por reforço."
+        ],
+        "correta": 2,
+        "explicacao": "A tarefa de prever se o cliente renovará o contrato possui rótulo (sim ou não) e, portanto, requer aprendizado supervisionado, geralmente por classificação. Já a identificação de grupos de clientes sem rótulo corresponde a um problema de agrupamento, resolvido por técnicas de aprendizado não supervisionado (ex.: k‑means, DBSCAN). As demais combinações atribuem tipos de aprendizado inadequados às tarefas descritas.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Uma operadora de telecomunicações possui um conjunto de dados contendo, para cada cliente, número de chamadas realizadas, total de minutos consumidos, tipo de plano (pré‑pago ou pós‑pago) e se o cliente renovou o contrato no último trimestre (sim ou não). O objetivo é (i) prever a probabilidade de renovação dos clientes e (ii) identificar grupos de clientes com comportamento semelhante para direcionar campanhas de marketing. Considerando essas duas tarefas, assinale a alternativa que relaciona corretamente o tipo de aprendizado de máquina adequado a cada objetivo.",
+            "alternativas": [
+              "Prever renovação – aprendizado supervisionado; identificar grupos – aprendizado supervisionado.",
+              "Prever renovação – aprendizado não supervisionado; identificar grupos – aprendizado supervisionado.",
+              "Prever renovação – aprendizado supervisionado; identificar grupos – aprendizado não supervisionado.",
+              "Prever renovação – aprendizado por reforço; identificar grupos – aprendizado não supervisionado.",
+              "Prever renovação – aprendizado semi‑supervisionado; identificar grupos – aprendizado por reforço."
+            ],
+            "correta": 2,
+            "explicacao": "A tarefa de prever se o cliente renovará o contrato possui rótulo (sim ou não) e, portanto, requer aprendizado supervisionado, geralmente por classificação. Já a identificação de grupos de clientes sem rótulo corresponde a um problema de agrupamento, resolvido por técnicas de aprendizado não supervisionado (ex.: k‑means, DBSCAN). As demais combinações atribuem tipos de aprendizado inadequados às tarefas descritas.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 486,
+              "completion_tokens": 826,
+              "total_tokens": 1312
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 2.336
+    },
+    {
+      "spec_id": "P01",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Considere um SGBD que garante as propriedades ACID. Uma transação T executa duas atualizações e, antes de receber o comando COMMIT, ocorre uma falha de energia que interrompe o sistema. Após a recuperação, quais afirmações descrevem corretamente o efeito da falha sobre as propriedades de atomicidade e durabilidade da transação T?",
+        "alternativas": [
+          "Os efeitos de T são preservados, pois a durabilidade garante que as alterações já realizadas permanecem gravadas mesmo sem COMMIT.",
+          "Nenhum efeito de T permanece, pois a falha antes do COMMIT faz com que o SGBD desfaça todas as alterações, preservando a atomicidade, enquanto a durabilidade não é violada.",
+          "A maioria das alterações de T é mantida, mas algumas podem ser perdidas; a atomicidade é parcialmente violada, porém a durabilidade protege o que foi escrito.",
+          "As alterações de T são registradas no log, mas não são aplicadas ao banco; assim, a atomicidade é comprometida, mas a durabilidade assegura que o log não será perdido.",
+          "A transação T pode ser concluída automaticamente após a recuperação, pois o SGBD assume que o COMMIT já havia sido emitido; isso preserva tanto atomicidade quanto durabilidade."
+        ],
+        "correta": 1,
+        "explicacao": "Como a falha ocorreu antes do COMMIT, a propriedade de atomicidade exige que todas as operações da transação sejam desfeitas, de modo que nenhum efeito persiste. A durabilidade só se aplica a alterações de transações já confirmadas; portanto, não há violação da durabilidade, pois nada foi comprometido permanentemente.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-bd-transacoes-005",
+            "texto": "Transações de banco de dados devem preservar atomicidade, consistência, isolamento e durabilidade. O controle de concorrência busca evitar anomalias como leitura suja, atualização perdida e leitura não repetível. Bloqueios, ordenação por marcas de tempo e controle multiversão são estratégias usuais. Atomicidade significa que a transação produz todos os seus efeitos ou nenhum. Durabilidade protege os efeitos de transações já confirmadas por COMMIT. Uma falha antes da confirmação não demonstra violação de durabilidade; desfazer efeitos parciais preserva atomicidade.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Banco de Dados",
+              "habilidade": "Analisar transações concorrentes",
+              "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+              "referencia": "ELMASRI, R.; NAVATHE, S. Sistemas de Banco de Dados. Complemento conceitual: PostgreSQL, documentação 18, seção 3.4 Transactions, https://www.postgresql.org/docs/18/tutorial-transactions.html (consulta em 2026-09-22).",
+              "linha": 5,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 29.820143,
+              "termos_recuperados": [
+                "acid",
+                "antes",
+                "atomicidade",
+                "commit",
+                "concorrencia",
+                "controle",
+                "durabilidade",
+                "falha",
+                "propriedades",
+                "transacoes"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "acid",
+                "antes",
+                "atomicidade",
+                "commit",
+                "concorrencia",
+                "controle",
+                "durabilidade",
+                "falha",
+                "falhas",
+                "gerenciamento",
+                "mecanismos",
+                "ocorrida",
+                "propriedades",
+                "recuperacao",
+                "transacoes"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-bd-transacoes-005",
+                  "score": 29.820143
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Considere um SGBD que garante as propriedades ACID. Uma transação T executa duas atualizações e, antes de receber o comando COMMIT, ocorre uma falha de energia que interrompe o sistema. Após a recuperação, quais afirmações descrevem corretamente o efeito da falha sobre as propriedades de atomicidade e durabilidade da transação T?",
+            "alternativas": [
+              "Os efeitos de T são preservados, pois a durabilidade garante que as alterações já realizadas permanecem gravadas mesmo sem COMMIT.",
+              "Nenhum efeito de T permanece, pois a falha antes do COMMIT faz com que o SGBD desfaça todas as alterações, preservando a atomicidade, enquanto a durabilidade não é violada.",
+              "A maioria das alterações de T é mantida, mas algumas podem ser perdidas; a atomicidade é parcialmente violada, porém a durabilidade protege o que foi escrito.",
+              "As alterações de T são registradas no log, mas não são aplicadas ao banco; assim, a atomicidade é comprometida, mas a durabilidade assegura que o log não será perdido.",
+              "A transação T pode ser concluída automaticamente após a recuperação, pois o SGBD assume que o COMMIT já havia sido emitido; isso preserva tanto atomicidade quanto durabilidade."
+            ],
+            "correta": 1,
+            "explicacao": "Como a falha ocorreu antes do COMMIT, a propriedade de atomicidade exige que todas as operações da transação sejam desfeitas, de modo que nenhum efeito persiste. A durabilidade só se aplica a alterações de transações já confirmadas; portanto, não há violação da durabilidade, pois nada foi comprometido permanentemente.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 966,
+              "completion_tokens": 969,
+              "total_tokens": 1935
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 2.608
+    },
+    {
+      "spec_id": "P02",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Um sistema distribuído deve transferir arquivos de tamanho considerável entre um servidor e múltiplos clientes, ao mesmo tempo em que envia mensagens de status curtas a cada 5 s que podem ser descartadas sem comprometer a operação. Qual combinação de protocolos de transporte atende adequadamente a confiabilidade exigida para a transferência de arquivos e a baixa latência desejada para as mensagens de status?",
+        "alternativas": [
+          "TCP para a transferência de arquivos e UDP para as mensagens de status",
+          "UDP para a transferência de arquivos e TCP para as mensagens de status",
+          "TCP para ambas as transferências e mensagens de status",
+          "UDP para ambas as transferências e mensagens de status",
+          "Nenhum protocolo de transporte é necessário, pois a camada de aplicação resolve tudo"
+        ],
+        "correta": 0,
+        "explicacao": "A transferência de arquivos requer entrega completa, ordenada e controle de fluxo, características garantidas pelo TCP. As mensagens de status podem ser perdidas e exigem mínima latência, o que favorece o UDP, que tem menor sobrecarga e não realiza controle de congestionamento nem garante entrega. Assim, a combinação \"TCP para a transferência de arquivos e UDP para as mensagens de status\" satisfaz simultaneamente confiabilidade e baixa latência.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-redes-transporte-007",
+            "texto": "Na arquitetura TCP/IP, a camada de transporte oferece comunicação fim a fim entre processos. O TCP fornece serviço orientado a conexão, entrega confiável, controle de fluxo e controle de congestionamento. O UDP oferece serviço sem conexão com menor sobrecarga, sem garantir entrega ou ordenação.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Redes de Computadores",
+              "habilidade": "Comparar protocolos de transporte",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet.",
+              "linha": 7,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 25.756259,
+              "termos_recuperados": [
+                "comunicacao",
+                "fim",
+                "protocolos",
+                "tcp",
+                "transporte",
+                "udp"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "arquiteturas",
+                "cenario",
+                "comunicacao",
+                "conforme",
+                "fim",
+                "garantias",
+                "oferecidas",
+                "pelos",
+                "protocolo",
+                "protocolos",
+                "requisitos",
+                "selecionar",
+                "tcp",
+                "transporte",
+                "udp"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-redes-transporte-007",
+                  "score": 25.756259
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Um sistema distribuído deve transferir arquivos de tamanho considerável entre um servidor e múltiplos clientes, ao mesmo tempo em que envia mensagens de status curtas a cada 5 s que podem ser descartadas sem comprometer a operação. Qual combinação de protocolos de transporte atende adequadamente a confiabilidade exigida para a transferência de arquivos e a baixa latência desejada para as mensagens de status?",
+            "alternativas": [
+              "TCP para a transferência de arquivos e UDP para as mensagens de status",
+              "UDP para a transferência de arquivos e TCP para as mensagens de status",
+              "TCP para ambas as transferências e mensagens de status",
+              "UDP para ambas as transferências e mensagens de status",
+              "Nenhum protocolo de transporte é necessário, pois a camada de aplicação resolve tudo"
+            ],
+            "correta": 0,
+            "explicacao": "A transferência de arquivos requer entrega completa, ordenada e controle de fluxo, características garantidas pelo TCP. As mensagens de status podem ser perdidas e exigem mínima latência, o que favorece o UDP, que tem menor sobrecarga e não realiza controle de congestionamento nem garante entrega. Assim, a combinação \"TCP para a transferência de arquivos e UDP para as mensagens de status\" satisfaz simultaneamente confiabilidade e baixa latência.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 851,
+              "completion_tokens": 751,
+              "total_tokens": 1602
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 2.231
+    },
+    {
+      "spec_id": "P03",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Considere o seguinte requisito para um sistema de gerenciamento de biblioteca digital: \"O tempo máximo de resposta para a operação de pesquisa de livros não deve exceder 2 segundos.\" De acordo com a definição de requisitos funcionais e não funcionais, assinale a alternativa que classifica corretamente esse requisito.",
+        "alternativas": [
+          "Requisito funcional, pois descreve uma funcionalidade que o sistema deve oferecer ao usuário.",
+          "Requisito não funcional, pois estabelece um atributo de desempenho que o sistema deve atender.",
+          "Requisito funcional, pois impõe uma restrição de segurança sobre o acesso aos dados.",
+          "Requisito não funcional, pois trata da usabilidade da interface para o usuário final.",
+          "Requisito funcional, pois define uma regra de negócio relacionada ao empréstimo de livros."
+        ],
+        "correta": 1,
+        "explicacao": "O requisito trata do tempo máximo de resposta, que é um atributo de qualidade (desempenho) do sistema. Requisitos que especificam atributos como desempenho, segurança, confiabilidade ou usabilidade são classificados como não funcionais. Portanto, a alternativa que indica que se trata de um requisito não funcional por ser um atributo de desempenho está correta.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-engsoftware-requisitos-009",
+            "texto": "Requisitos funcionais descrevem serviços e comportamentos esperados do sistema. Requisitos não funcionais estabelecem atributos e restrições, como desempenho, segurança, confiabilidade e usabilidade. Elicitação, especificação, validação e gerenciamento de mudanças ajudam a manter alinhamento entre necessidades e solução.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Engenharia de Software",
+              "habilidade": "Analisar e classificar requisitos",
+              "objeto_conhecimento": "Engenharia de requisitos",
+              "referencia": "SOMMERVILLE, I. Engenharia de Software.",
+              "linha": 9,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 15.611199,
+              "termos_recuperados": [
+                "classificar",
+                "engenharia",
+                "funcionais",
+                "nao",
+                "requisitos"
+              ],
+              "candidatas_relevantes": 3,
+              "consulta_normalizada": [
+                "cenario",
+                "classificar",
+                "conforme",
+                "engenharia",
+                "finalidade",
+                "funcionais",
+                "nao",
+                "projeto",
+                "requisitos"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-engsoftware-requisitos-009",
+                  "score": 15.611199
+                },
+                {
+                  "id": "rag-engsoftware-testes-010",
+                  "score": 2.733973
+                },
+                {
+                  "id": "rag-estruturas-dados-004",
+                  "score": 1.587169
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Considere o seguinte requisito para um sistema de gerenciamento de biblioteca digital: \"O tempo máximo de resposta para a operação de pesquisa de livros não deve exceder 2 segundos.\" De acordo com a definição de requisitos funcionais e não funcionais, assinale a alternativa que classifica corretamente esse requisito.",
+            "alternativas": [
+              "Requisito funcional, pois descreve uma funcionalidade que o sistema deve oferecer ao usuário.",
+              "Requisito não funcional, pois estabelece um atributo de desempenho que o sistema deve atender.",
+              "Requisito funcional, pois impõe uma restrição de segurança sobre o acesso aos dados.",
+              "Requisito não funcional, pois trata da usabilidade da interface para o usuário final.",
+              "Requisito funcional, pois define uma regra de negócio relacionada ao empréstimo de livros."
+            ],
+            "correta": 1,
+            "explicacao": "O requisito trata do tempo máximo de resposta, que é um atributo de qualidade (desempenho) do sistema. Requisitos que especificam atributos como desempenho, segurança, confiabilidade ou usabilidade são classificados como não funcionais. Portanto, a alternativa que indica que se trata de um requisito não funcional por ser um atributo de desempenho está correta.",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 840,
+              "completion_tokens": 1100,
+              "total_tokens": 1940
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 3.456,
+      "execution_attempts": 1,
+      "elapsed_with_retries_seconds": 3.934
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Um sistema de gerenciamento de sessões de usuários de um site deve armazenar o identificador (ID) de cada sessão ativa. As operações mais frequentes são: (i) inserir o ID de uma nova sessão quando o usuário faz login; (ii) verificar, a qualquer momento, se um determinado ID já está presente para validar uma requisição; (iii) remover o ID quando o usuário faz logout. Não há necessidade de percorrer os IDs em ordem nem de manter relação de prioridade entre eles. Qual estrutura de dados é a mais adequada para atender a essas operações considerando o custo médio esperado?",
+        "alternativas": [
+          "Pilha (estrutura LIFO)",
+          "Fila (estrutura FIFO)",
+          "Árvore de busca binária balanceada",
+          "Tabela de dispersão (hash)",
+          "Lista ligada simples"
+        ],
+        "correta": 3,
+        "explicacao": "A operação de inserção, busca e remoção de um elemento identificado por chave (ID) deve ser realizada com o menor custo médio possível. Uma tabela de dispersão (hash) oferece, em média, O(1) para inserção, busca e remoção, sem exigir ordenação dos elementos. Pilhas e filas atendem apenas a políticas LIFO/FIFO, não suportam buscas arbitrárias eficientemente. Árvores de busca balanceadas garantem O(log n) nas operações, sendo menos eficientes que o hash para este caso. Listas ligadas exigem O(n) nas buscas, também inadequadas. Portanto, a tabela hash é a escolha mais apropriada.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-estruturas-dados-004",
+            "texto": "Pilhas seguem a disciplina LIFO, enquanto filas seguem FIFO. Árvores de busca organizam chaves hierarquicamente e tabelas de dispersão usam funções hash para localizar elementos. A estrutura apropriada depende das operações predominantes, dos requisitos de ordenação e do custo aceitável de busca, inserção e remoção.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Algoritmos e Estruturas de Dados",
+              "habilidade": "Selecionar estruturas de dados",
+              "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+              "referencia": "CORMEN, T. H. et al. Algoritmos: Teoria e Prática.",
+              "linha": 4,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 33.841909,
+              "termos_recuperados": [
+                "arvores",
+                "estrutura",
+                "estruturas",
+                "filas",
+                "hash",
+                "operacoes",
+                "pilhas",
+                "predominantes",
+                "selecionar",
+                "tabelas"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "adequada",
+                "algoritmicas",
+                "arvores",
+                "considerando",
+                "estrutura",
+                "estruturas",
+                "filas",
+                "hash",
+                "operacoes",
+                "pilhas",
+                "predominantes",
+                "projetar",
+                "selecionar",
+                "solucoes",
+                "tabelas"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-estruturas-dados-004",
+                  "score": 33.841909
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Um sistema de gerenciamento de sessões de usuários de um site deve armazenar o identificador (ID) de cada sessão ativa. As operações mais frequentes são: (i) inserir o ID de uma nova sessão quando o usuário faz login; (ii) verificar, a qualquer momento, se um determinado ID já está presente para validar uma requisição; (iii) remover o ID quando o usuário faz logout. Não há necessidade de percorrer os IDs em ordem nem de manter relação de prioridade entre eles. Qual estrutura de dados é a mais adequada para atender a essas operações considerando o custo médio esperado?",
+            "alternativas": [
+              "Pilha (estrutura LIFO)",
+              "Fila (estrutura FIFO)",
+              "Árvore de busca binária balanceada",
+              "Tabela de dispersão (hash)",
+              "Lista ligada simples"
+            ],
+            "correta": 3,
+            "explicacao": "A operação de inserção, busca e remoção de um elemento identificado por chave (ID) deve ser realizada com o menor custo médio possível. Uma tabela de dispersão (hash) oferece, em média, O(1) para inserção, busca e remoção, sem exigir ordenação dos elementos. Pilhas e filas atendem apenas a políticas LIFO/FIFO, não suportam buscas arbitrárias eficientemente. Árvores de busca balanceadas garantem O(log n) nas operações, sendo menos eficientes que o hash para este caso. Listas ligadas exigem O(n) nas buscas, também inadequadas. Portanto, a tabela hash é a escolha mais apropriada.",
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 881,
+              "completion_tokens": 1004,
+              "total_tokens": 1885
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 2.76,
+      "execution_attempts": 1,
+      "elapsed_with_retries_seconds": 2.785
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C2_RAG_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Uma rede de varejo possui um histórico de compras de seus clientes. O gestor deseja (i) agrupar os clientes em perfis de consumo sem categorias pré‑definidas e (ii) prever, para o próximo mês, quais clientes irão cancelar a assinatura, tendo registros anteriores em que o status de cancelamento está marcado. Considerando esses dois objetivos, assinale a alternativa que relaciona corretamente cada tarefa ao paradigma de aprendizado de máquina adequado:",
+        "alternativas": [
+          "Ambas as tarefas devem ser resolvidas por aprendizado supervisionado, pois exigem modelos que preveem resultados numéricos.",
+          "A tarefa de agrupar clientes deve ser tratada com aprendizado não supervisionado, enquanto a previsão de cancelamento deve usar aprendizado supervisionado.",
+          "A previsão de cancelamento deve ser tratada com aprendizado não supervisionado, enquanto o agrupamento de clientes deve usar aprendizado supervisionado.",
+          "As duas tarefas requerem aprendizado não supervisionado, pois não há rótulos disponíveis para nenhuma delas.",
+          "Nenhuma das tarefas pode ser abordada com aprendizado de máquina; ambas requerem sistemas baseados em regras."
+        ],
+        "correta": 1,
+        "explicacao": "O agrupamento de clientes sem categorias pré‑definidas busca descobrir estruturas ocultas nos dados, característica do aprendizado não supervisionado. Já a previsão de cancelamento utiliza rótulos de churn já conhecidos para treinar um modelo que generaliza a novos casos, o que caracteriza o aprendizado supervisionado. Assim, somente a alternativa B associa corretamente cada tarefa ao seu paradigma.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-ia-aprendizado-011",
+            "texto": "No aprendizado supervisionado, exemplos rotulados orientam a construção de modelos para classificação ou regressão. No aprendizado não supervisionado, o objetivo é identificar estruturas ou agrupamentos sem rótulos de saída. A avaliação deve usar dados independentes do treinamento para estimar generalização e reduzir conclusões afetadas por sobreajuste.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Inteligência Artificial",
+              "habilidade": "Distinguir paradigmas de aprendizado",
+              "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+              "referencia": "RUSSELL, S.; NORVIG, P. Inteligência Artificial: Uma Abordagem Moderna.",
+              "linha": 11,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 22.082778,
+              "termos_recuperados": [
+                "aprendizado",
+                "artificial",
+                "inteligencia",
+                "nao",
+                "paradigmas",
+                "supervisionado"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "aprendizado",
+                "artificial",
+                "disponiveis",
+                "inteligencia",
+                "metodos",
+                "nao",
+                "paradigmas",
+                "partir",
+                "supervisionado"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-ia-aprendizado-011",
+                  "score": 22.082778
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Uma rede de varejo possui um histórico de compras de seus clientes. O gestor deseja (i) agrupar os clientes em perfis de consumo sem categorias pré‑definidas e (ii) prever, para o próximo mês, quais clientes irão cancelar a assinatura, tendo registros anteriores em que o status de cancelamento está marcado. Considerando esses dois objetivos, assinale a alternativa que relaciona corretamente cada tarefa ao paradigma de aprendizado de máquina adequado:",
+            "alternativas": [
+              "Ambas as tarefas devem ser resolvidas por aprendizado supervisionado, pois exigem modelos que preveem resultados numéricos.",
+              "A tarefa de agrupar clientes deve ser tratada com aprendizado não supervisionado, enquanto a previsão de cancelamento deve usar aprendizado supervisionado.",
+              "A previsão de cancelamento deve ser tratada com aprendizado não supervisionado, enquanto o agrupamento de clientes deve usar aprendizado supervisionado.",
+              "As duas tarefas requerem aprendizado não supervisionado, pois não há rótulos disponíveis para nenhuma delas.",
+              "Nenhuma das tarefas pode ser abordada com aprendizado de máquina; ambas requerem sistemas baseados em regras."
+            ],
+            "correta": 1,
+            "explicacao": "O agrupamento de clientes sem categorias pré‑definidas busca descobrir estruturas ocultas nos dados, característica do aprendizado não supervisionado. Já a previsão de cancelamento utiliza rótulos de churn já conhecidos para treinar um modelo que generaliza a novos casos, o que caracteriza o aprendizado supervisionado. Assim, somente a alternativa B associa corretamente cada tarefa ao seu paradigma.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 842,
+              "completion_tokens": 855,
+              "total_tokens": 1697
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 2.556,
+      "execution_attempts": 1,
+      "elapsed_with_retries_seconds": 2.578
+    },
+    {
+      "spec_id": "P01",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Considere uma transação que executa várias operações de escrita e, em seguida, ocorre uma falha no sistema antes da instrução COMMIT ser emitida. Qual das afirmações a seguir descreve corretamente o efeito dessa falha sobre as propriedades ACID da transação?",
+        "alternativas": [
+          "A falhas na comunicação inter-sistêmica podem causar problemas de consistência",
+          "A falha compromete a atomicidade, pois os efeitos parciais da transação são revertidos, mas não afeta a durabilidade, que se aplica apenas a transações já confirmadas por COMMIT.",
+          "O erro pode levar ao cancelamento automático da transição",
+          "A falhura impede a validação dos dados após a transição",
+          "As alterações feitas durante a transação permanecem permanentemente armazenadas"
+        ],
+        "correta": 1,
+        "explicacao": "Atomicidade garante que a transação seja \"tudo ou nada\"; uma falha antes do COMMIT faz com que o SGBD desfaça quaisquer mudanças, preservando a atomicidade. Durabilidade protege apenas os efeitos de transações que já foram confirmadas; como o COMMIT não foi executado, não há garantia de durabilidade a ser violada. Assim, a falha afeta somente a atomicidade.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-bd-transacoes-005",
+            "texto": "Transações de banco de dados devem preservar atomicidade, consistência, isolamento e durabilidade. O controle de concorrência busca evitar anomalias como leitura suja, atualização perdida e leitura não repetível. Bloqueios, ordenação por marcas de tempo e controle multiversão são estratégias usuais. Atomicidade significa que a transação produz todos os seus efeitos ou nenhum. Durabilidade protege os efeitos de transações já confirmadas por COMMIT. Uma falha antes da confirmação não demonstra violação de durabilidade; desfazer efeitos parciais preserva atomicidade.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Banco de Dados",
+              "habilidade": "Analisar transações concorrentes",
+              "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+              "referencia": "ELMASRI, R.; NAVATHE, S. Sistemas de Banco de Dados. Complemento conceitual: PostgreSQL, documentação 18, seção 3.4 Transactions, https://www.postgresql.org/docs/18/tutorial-transactions.html (consulta em 2026-09-22).",
+              "linha": 5,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 29.820143,
+              "termos_recuperados": [
+                "acid",
+                "antes",
+                "atomicidade",
+                "commit",
+                "concorrencia",
+                "controle",
+                "durabilidade",
+                "falha",
+                "propriedades",
+                "transacoes"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "acid",
+                "antes",
+                "atomicidade",
+                "commit",
+                "concorrencia",
+                "controle",
+                "durabilidade",
+                "falha",
+                "falhas",
+                "gerenciamento",
+                "mecanismos",
+                "ocorrida",
+                "propriedades",
+                "recuperacao",
+                "transacoes"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-bd-transacoes-005",
+                  "score": 29.820143
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Considere uma transação que executa várias operações de escrita e, em seguida, ocorre uma falha no sistema antes da instrução COMMIT ser emitida. Qual das afirmações a seguir descreve corretamente o efeito dessa falha sobre as propriedades ACID da transação?",
+            "resposta_correta": "A falha compromete a atomicidade, pois os efeitos parciais da transação são revertidos, mas não afeta a durabilidade, que se aplica apenas a transações já confirmadas por COMMIT.",
+            "explicacao": "Atomicidade garante que a transação seja \"tudo ou nada\"; uma falha antes do COMMIT faz com que o SGBD desfaça quaisquer mudanças, preservando a atomicidade. Durabilidade protege apenas os efeitos de transações que já foram confirmadas; como o COMMIT não foi executado, não há garantia de durabilidade a ser violada. Assim, a falha afeta somente a atomicidade.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-120b",
+            "prompt_version": "enade-stem-1.1.0",
+            "token_usage_remote": {
+              "prompt_tokens": 1008,
+              "completion_tokens": 446,
+              "total_tokens": 1454
+            }
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "A falhas na comunicação inter-sistêmica podem causar problemas de consistência",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "A falhura impede a validação dos dados após a transição",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "O erro pode levar ao cancelamento automático da transição",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "As alterações feitas durante a transação permanecem permanentemente armazenadas",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto"
+            ],
+            "amostras": 2,
+            "candidatos_gerados": 8,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "token_usage_local": {
+              "input_tokens": 934,
+              "output_tokens": 95,
+              "total_tokens": 1029
+            },
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 8,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                0,
+                3,
+                1,
+                2
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Considere uma transação que executa várias operações de escrita e, em seguida, ocorre uma falha no sistema antes da instrução COMMIT ser emitida. Qual das afirmações a seguir descreve corretamente o efeito dessa falha sobre as propriedades ACID da transação?",
+            "alternativas": [
+              "A falhas na comunicação inter-sistêmica podem causar problemas de consistência",
+              "A falha compromete a atomicidade, pois os efeitos parciais da transação são revertidos, mas não afeta a durabilidade, que se aplica apenas a transações já confirmadas por COMMIT.",
+              "O erro pode levar ao cancelamento automático da transição",
+              "A falhura impede a validação dos dados após a transição",
+              "As alterações feitas durante a transação permanecem permanentemente armazenadas"
+            ],
+            "correta": 1,
+            "explicacao": "Atomicidade garante que a transação seja \"tudo ou nada\"; uma falha antes do COMMIT faz com que o SGBD desfaça quaisquer mudanças, preservando a atomicidade. Durabilidade protege apenas os efeitos de transações que já foram confirmadas; como o COMMIT não foi executado, não há garantia de durabilidade a ser violada. Assim, a falha afeta somente a atomicidade.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 3
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 52.692,
+      "execution_attempts": 1,
+      "elapsed_with_retries_seconds": 52.772
+    },
+    {
+      "spec_id": "P02",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em um cenário de aplicação que requer comunicação fim a fim, compare as garantias de entrega e o overhead dos protocolos TCP e UDP, indicando qual deles fornece entrega confiável com controle de congestionamento e qual apresenta menor sobrecarga porém sem garantias de entrega ou ordenação.",
+        "alternativas": [
+          "Oversubscrita por UDP",
+          "UDP controlou congestionamentos",
+          "TCP garantiu entregas confiáveis",
+          "TCP tem menos sobrecargas",
+          "TCP oferece entrega confiável, controle de fluxo e congestionamento, com maior overhead; UDP oferece menor overhead, sem garantia de entrega nem ordenação."
+        ],
+        "correta": 4,
+        "explicacao": "O TCP, como protocolo orientado a conexão, implementa mecanismos de retransmissão, controle de fluxo e controle de congestionamento, garantindo que os dados cheguem ao destino de forma íntegra e na ordem correta, porém adiciona cabeçalhos maiores e processos adicionais que aumentam o overhead. O UDP, por ser sem conexão, não realiza retransmissões nem controla fluxo ou congestionamento, resultando em cabeçalhos menores e menor latência, mas não assegura que os pacotes sejam entregues ou mantidos em ordem.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-redes-transporte-007",
+            "texto": "Na arquitetura TCP/IP, a camada de transporte oferece comunicação fim a fim entre processos. O TCP fornece serviço orientado a conexão, entrega confiável, controle de fluxo e controle de congestionamento. O UDP oferece serviço sem conexão com menor sobrecarga, sem garantir entrega ou ordenação.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Redes de Computadores",
+              "habilidade": "Comparar protocolos de transporte",
+              "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+              "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet.",
+              "linha": 7,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 25.756259,
+              "termos_recuperados": [
+                "comunicacao",
+                "fim",
+                "protocolos",
+                "tcp",
+                "transporte",
+                "udp"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "arquiteturas",
+                "cenario",
+                "comunicacao",
+                "conforme",
+                "fim",
+                "garantias",
+                "oferecidas",
+                "pelos",
+                "protocolo",
+                "protocolos",
+                "requisitos",
+                "selecionar",
+                "tcp",
+                "transporte",
+                "udp"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-redes-transporte-007",
+                  "score": 25.756259
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Em um cenário de aplicação que requer comunicação fim a fim, compare as garantias de entrega e o overhead dos protocolos TCP e UDP, indicando qual deles fornece entrega confiável com controle de congestionamento e qual apresenta menor sobrecarga porém sem garantias de entrega ou ordenação.",
+            "resposta_correta": "TCP oferece entrega confiável, controle de fluxo e congestionamento, com maior overhead; UDP oferece menor overhead, sem garantia de entrega nem ordenação.",
+            "explicacao": "O TCP, como protocolo orientado a conexão, implementa mecanismos de retransmissão, controle de fluxo e controle de congestionamento, garantindo que os dados cheguem ao destino de forma íntegra e na ordem correta, porém adiciona cabeçalhos maiores e processos adicionais que aumentam o overhead. O UDP, por ser sem conexão, não realiza retransmissões nem controla fluxo ou congestionamento, resultando em cabeçalhos menores e menor latência, mas não assegura que os pacotes sejam entregues ou mantidos em ordem.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-120b",
+            "prompt_version": "enade-stem-1.1.0",
+            "token_usage_remote": {
+              "prompt_tokens": 893,
+              "completion_tokens": 722,
+              "total_tokens": 1615
+            }
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "TCP garantiu entregas confiáveis",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "TCP tem menos sobrecargas",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "UDP controlou congestionamentos",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Oversubscrita por UDP",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto"
+            ],
+            "amostras": 2,
+            "candidatos_gerados": 8,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "token_usage_local": {
+              "input_tokens": 910,
+              "output_tokens": 61,
+              "total_tokens": 971
+            },
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 8,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                4,
+                6,
+                5,
+                7
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Em um cenário de aplicação que requer comunicação fim a fim, compare as garantias de entrega e o overhead dos protocolos TCP e UDP, indicando qual deles fornece entrega confiável com controle de congestionamento e qual apresenta menor sobrecarga porém sem garantias de entrega ou ordenação.",
+            "alternativas": [
+              "Oversubscrita por UDP",
+              "UDP controlou congestionamentos",
+              "TCP garantiu entregas confiáveis",
+              "TCP tem menos sobrecargas",
+              "TCP oferece entrega confiável, controle de fluxo e congestionamento, com maior overhead; UDP oferece menor overhead, sem garantia de entrega nem ordenação."
+            ],
+            "correta": 4,
+            "explicacao": "O TCP, como protocolo orientado a conexão, implementa mecanismos de retransmissão, controle de fluxo e controle de congestionamento, garantindo que os dados cheguem ao destino de forma íntegra e na ordem correta, porém adiciona cabeçalhos maiores e processos adicionais que aumentam o overhead. O UDP, por ser sem conexão, não realiza retransmissões nem controla fluxo ou congestionamento, resultando em cabeçalhos menores e menor latência, mas não assegura que os pacotes sejam entregues ou mantidos em ordem.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 27.73,
+      "execution_attempts": 1,
+      "elapsed_with_retries_seconds": 27.819
+    },
+    {
+      "spec_id": "P03",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em um sistema de internet banking, o produto deve garantir disponibilidade de 99,9% ao longo do ano. De acordo com as definições de requisitos funcionais e não funcionais, classifique essa exigência.",
+        "alternativas": [
+          "Não funcional",
+          "Segurança",
+          "Fácil acesso",
+          "Flexibilidade",
+          "Acessibilidade"
+        ],
+        "correta": 0,
+        "explicacao": "Requisitos não funcionais estabelecem atributos de qualidade do sistema, como desempenho, segurança, confiabilidade e disponibilidade. A exigência de disponibilidade de 99,9% refere-se à confiabilidade do serviço, portanto trata-se de um requisito não funcional.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-engsoftware-requisitos-009",
+            "texto": "Requisitos funcionais descrevem serviços e comportamentos esperados do sistema. Requisitos não funcionais estabelecem atributos e restrições, como desempenho, segurança, confiabilidade e usabilidade. Elicitação, especificação, validação e gerenciamento de mudanças ajudam a manter alinhamento entre necessidades e solução.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Engenharia de Software",
+              "habilidade": "Analisar e classificar requisitos",
+              "objeto_conhecimento": "Engenharia de requisitos",
+              "referencia": "SOMMERVILLE, I. Engenharia de Software.",
+              "linha": 9,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 15.611199,
+              "termos_recuperados": [
+                "classificar",
+                "engenharia",
+                "funcionais",
+                "nao",
+                "requisitos"
+              ],
+              "candidatas_relevantes": 3,
+              "consulta_normalizada": [
+                "cenario",
+                "classificar",
+                "conforme",
+                "engenharia",
+                "finalidade",
+                "funcionais",
+                "nao",
+                "projeto",
+                "requisitos"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-engsoftware-requisitos-009",
+                  "score": 15.611199
+                },
+                {
+                  "id": "rag-engsoftware-testes-010",
+                  "score": 2.733973
+                },
+                {
+                  "id": "rag-estruturas-dados-004",
+                  "score": 1.587169
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Em um sistema de internet banking, o produto deve garantir disponibilidade de 99,9% ao longo do ano. De acordo com as definições de requisitos funcionais e não funcionais, classifique essa exigência.",
+            "resposta_correta": "Não funcional",
+            "explicacao": "Requisitos não funcionais estabelecem atributos de qualidade do sistema, como desempenho, segurança, confiabilidade e disponibilidade. A exigência de disponibilidade de 99,9% refere-se à confiabilidade do serviço, portanto trata-se de um requisito não funcional.",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-120b",
+            "prompt_version": "enade-stem-1.1.0",
+            "token_usage_remote": {
+              "prompt_tokens": 882,
+              "completion_tokens": 676,
+              "total_tokens": 1558
+            }
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "Fácil acesso",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Segurança",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Flexibilidade",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Acessibilidade",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:placeholder_descartado",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_3:distratos->distratores",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto"
+            ],
+            "amostras": 3,
+            "candidatos_gerados": 7,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "token_usage_local": {
+              "input_tokens": 1224,
+              "output_tokens": 80,
+              "total_tokens": 1304
+            },
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 7,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                3,
+                0,
+                1,
+                2
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Em um sistema de internet banking, o produto deve garantir disponibilidade de 99,9% ao longo do ano. De acordo com as definições de requisitos funcionais e não funcionais, classifique essa exigência.",
+            "alternativas": [
+              "Não funcional",
+              "Segurança",
+              "Fácil acesso",
+              "Flexibilidade",
+              "Acessibilidade"
+            ],
+            "correta": 0,
+            "explicacao": "Requisitos não funcionais estabelecem atributos de qualidade do sistema, como desempenho, segurança, confiabilidade e disponibilidade. A exigência de disponibilidade de 99,9% refere-se à confiabilidade do serviço, portanto trata-se de um requisito não funcional.",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 1,
+                "distrator_origem": 1
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 3
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 36.865,
+      "execution_attempts": 1,
+      "elapsed_with_retries_seconds": 36.89
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Um compilador deve armazenar os símbolos identificados durante a análise sintática, permitindo inserção de novos identificadores e busca de um identificador já declarado em tempo constante esperado, sem necessidade de percorrer os símbolos em ordem alfabética. Qual estrutura de dados é a mais adequada para implementar a tabela de símbolos nesse contexto?",
+        "alternativas": [
+          "Tabela hash",
+          "Matriz associativa",
+          "Fila fifo",
+          "Arvore binária",
+          "Lista encadeada"
+        ],
+        "correta": 0,
+        "explicacao": "A tabela de símbolos requer inserções frequentes e buscas rápidas por chave (nome do identificador). Uma tabela hash fornece, em média, O(1) para inserção e consulta, atendendo ao requisito de tempo constante esperado. Não há necessidade de ordenação ou de acesso sequencial, portanto estruturas como árvores de busca (O(log n)) ou listas não são tão eficientes. Pilhas e filas atendem a políticas LIFO/FIFO e não suportam buscas arbitrárias, logo a tabela hash é a escolha mais apropriada.",
+        "competencia": "Projetar soluções algoríticas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-estruturas-dados-004",
+            "texto": "Pilhas seguem a disciplina LIFO, enquanto filas seguem FIFO. Árvores de busca organizam chaves hierarquicamente e tabelas de dispersão usam funções hash para localizar elementos. A estrutura apropriada depende das operações predominantes, dos requisitos de ordenação e do custo aceitável de busca, inserção e remoção.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Algoritmos e Estruturas de Dados",
+              "habilidade": "Selecionar estruturas de dados",
+              "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+              "referencia": "CORMEN, T. H. et al. Algoritmos: Teoria e Prática.",
+              "linha": 4,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 33.841909,
+              "termos_recuperados": [
+                "arvores",
+                "estrutura",
+                "estruturas",
+                "filas",
+                "hash",
+                "operacoes",
+                "pilhas",
+                "predominantes",
+                "selecionar",
+                "tabelas"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "adequada",
+                "algoritmicas",
+                "arvores",
+                "considerando",
+                "estrutura",
+                "estruturas",
+                "filas",
+                "hash",
+                "operacoes",
+                "pilhas",
+                "predominantes",
+                "projetar",
+                "selecionar",
+                "solucoes",
+                "tabelas"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-estruturas-dados-004",
+                  "score": 33.841909
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Um compilador deve armazenar os símbolos identificados durante a análise sintática, permitindo inserção de novos identificadores e busca de um identificador já declarado em tempo constante esperado, sem necessidade de percorrer os símbolos em ordem alfabética. Qual estrutura de dados é a mais adequada para implementar a tabela de símbolos nesse contexto?",
+            "resposta_correta": "Tabela hash",
+            "explicacao": "A tabela de símbolos requer inserções frequentes e buscas rápidas por chave (nome do identificador). Uma tabela hash fornece, em média, O(1) para inserção e consulta, atendendo ao requisito de tempo constante esperado. Não há necessidade de ordenação ou de acesso sequencial, portanto estruturas como árvores de busca (O(log n)) ou listas não são tão eficientes. Pilhas e filas atendem a políticas LIFO/FIFO e não suportam buscas arbitrárias, logo a tabela hash é a escolha mais apropriada.",
+            "competencia": "Projetar soluções algoríticas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-120b",
+            "prompt_version": "enade-stem-1.1.0",
+            "token_usage_remote": {
+              "prompt_tokens": 923,
+              "completion_tokens": 819,
+              "total_tokens": 1742
+            }
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "Arvore binária",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Lista encadeada",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Matriz associativa",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Fila fifo",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_3:distratos->distratores",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto"
+            ],
+            "amostras": 3,
+            "candidatos_gerados": 8,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "token_usage_local": {
+              "input_tokens": 1341,
+              "output_tokens": 79,
+              "total_tokens": 1420
+            },
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 8,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                0,
+                1,
+                2,
+                3
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Um compilador deve armazenar os símbolos identificados durante a análise sintática, permitindo inserção de novos identificadores e busca de um identificador já declarado em tempo constante esperado, sem necessidade de percorrer os símbolos em ordem alfabética. Qual estrutura de dados é a mais adequada para implementar a tabela de símbolos nesse contexto?",
+            "alternativas": [
+              "Tabela hash",
+              "Matriz associativa",
+              "Fila fifo",
+              "Arvore binária",
+              "Lista encadeada"
+            ],
+            "correta": 0,
+            "explicacao": "A tabela de símbolos requer inserções frequentes e buscas rápidas por chave (nome do identificador). Uma tabela hash fornece, em média, O(1) para inserção e consulta, atendendo ao requisito de tempo constante esperado. Não há necessidade de ordenação ou de acesso sequencial, portanto estruturas como árvores de busca (O(log n)) ou listas não são tão eficientes. Pilhas e filas atendem a políticas LIFO/FIFO e não suportam buscas arbitrárias, logo a tabela hash é a escolha mais apropriada.",
+            "competencia": "Projetar soluções algoríticas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 4,
+                "distrator_origem": 1
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 37.859,
+      "execution_attempts": 1,
+      "elapsed_with_retries_seconds": 37.883
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "COMPLETED",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em um projeto de análise de clientes, a equipe dispõe de dois conjuntos de dados: (I) um conjunto contendo atributos dos clientes e, para cada cliente, a informação se ele cancelou o serviço (rótulo de churn); (II) um conjunto contendo apenas os atributos dos clientes, sem qualquer rótulo de classe. Indique, respectivamente, o paradigma de aprendizado de máquina mais adequado para cada conjunto de dados.",
+        "alternativas": [
+          "Análise de padrões",
+          "Aprendalho não-supervisionada.",
+          "Machine learning supervised",
+          "Supervised machine learning",
+          "Aprendizado supervisionado para o conjunto (I) e aprendizado não supervisionado para o conjunto (II)."
+        ],
+        "correta": 4,
+        "explicacao": "O conjunto (I) possui rótulos que permitem treinar um modelo a prever a variável de saída (churn), caracterizando aprendizado supervisionado. O conjunto (II) carece de rótulos; assim, o objetivo é descobrir estruturas ou agrupamentos nos dados, o que corresponde ao aprendizado não supervisionado. Essa distinção segue a definição conceitual de que dados rotulados orientam modelos de classificação/regressão, enquanto dados não rotulados são usados para identificar padrões internos.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "kind": "REFERENCE",
+          "producer": "RAG",
+          "payload": {
+            "id": "rag-ia-aprendizado-011",
+            "texto": "No aprendizado supervisionado, exemplos rotulados orientam a construção de modelos para classificação ou regressão. No aprendizado não supervisionado, o objetivo é identificar estruturas ou agrupamentos sem rótulos de saída. A avaliação deve usar dados independentes do treinamento para estimar generalização e reduzir conclusões afetadas por sobreajuste.",
+            "exame": "ACERVO_CONCEITUAL_HAILA",
+            "ano": 2024,
+            "metadados": {
+              "curso": null,
+              "componente": null,
+              "area": "Inteligência Artificial",
+              "habilidade": "Distinguir paradigmas de aprendizado",
+              "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+              "referencia": "RUSSELL, S.; NORVIG, P. Inteligência Artificial: Uma Abordagem Moderna.",
+              "linha": 11,
+              "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+              "retrieval": "bm25-aliases-v3",
+              "score": 22.082778,
+              "termos_recuperados": [
+                "aprendizado",
+                "artificial",
+                "inteligencia",
+                "nao",
+                "paradigmas",
+                "supervisionado"
+              ],
+              "candidatas_relevantes": 1,
+              "consulta_normalizada": [
+                "aprendizado",
+                "artificial",
+                "disponiveis",
+                "inteligencia",
+                "metodos",
+                "nao",
+                "paradigmas",
+                "partir",
+                "supervisionado"
+              ],
+              "ranking": [
+                {
+                  "id": "rag-ia-aprendizado-011",
+                  "score": 22.082778
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "STEM",
+          "producer": "LLM_STEM",
+          "payload": {
+            "enunciado": "Em um projeto de análise de clientes, a equipe dispõe de dois conjuntos de dados: (I) um conjunto contendo atributos dos clientes e, para cada cliente, a informação se ele cancelou o serviço (rótulo de churn); (II) um conjunto contendo apenas os atributos dos clientes, sem qualquer rótulo de classe. Indique, respectivamente, o paradigma de aprendizado de máquina mais adequado para cada conjunto de dados.",
+            "resposta_correta": "Aprendizado supervisionado para o conjunto (I) e aprendizado não supervisionado para o conjunto (II).",
+            "explicacao": "O conjunto (I) possui rótulos que permitem treinar um modelo a prever a variável de saída (churn), caracterizando aprendizado supervisionado. O conjunto (II) carece de rótulos; assim, o objetivo é descobrir estruturas ou agrupamentos nos dados, o que corresponde ao aprendizado não supervisionado. Essa distinção segue a definição conceitual de que dados rotulados orientam modelos de classificação/regressão, enquanto dados não rotulados são usados para identificar padrões internos.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "modelo": "openai/gpt-oss-120b",
+            "prompt_version": "enade-stem-1.1.0",
+            "token_usage_remote": {
+              "prompt_tokens": 884,
+              "completion_tokens": 883,
+              "total_tokens": 1767
+            }
+          }
+        },
+        {
+          "kind": "DISTRACTORS",
+          "producer": "SLM",
+          "payload": [
+            {
+              "texto": "Machine learning supervised",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Supervised machine learning",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Aprendalho não-supervisionada.",
+              "erro": "",
+              "por_que_e_falso": ""
+            },
+            {
+              "texto": "Análise de padrões",
+              "erro": "",
+              "por_que_e_falso": ""
+            }
+          ],
+          "provenance": {
+            "modelo": "Qwen/Qwen2.5-1.5B-Instruct:base",
+            "adapter_path": null,
+            "normalizacoes": [
+              "amostra_1:distratos->distratores",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_1:string->objeto",
+              "amostra_2:distratos->distratores",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_2:string->objeto",
+              "amostra_3:distratos->distratores",
+              "amostra_3:string->objeto",
+              "amostra_3:string->objeto"
+            ],
+            "amostras": 3,
+            "candidatos_gerados": 8,
+            "feedback_aplicado": false,
+            "alternativas_rejeitadas": [],
+            "prompt_version": "qwen-distractors-1.4.0",
+            "token_usage_local": {
+              "input_tokens": 1422,
+              "output_tokens": 97,
+              "total_tokens": 1519
+            },
+            "selecao": "deterministic_best_of_n",
+            "candidatos_no_pool": 8,
+            "seletor": {
+              "modelo": "deterministic-pool-selector-v1",
+              "indices_selecionados": [
+                2,
+                3,
+                4,
+                5
+              ],
+              "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+            }
+          }
+        },
+        {
+          "kind": "QUESTION",
+          "producer": "ASSEMBLER",
+          "payload": {
+            "exame": "ENADE",
+            "enunciado": "Em um projeto de análise de clientes, a equipe dispõe de dois conjuntos de dados: (I) um conjunto contendo atributos dos clientes e, para cada cliente, a informação se ele cancelou o serviço (rótulo de churn); (II) um conjunto contendo apenas os atributos dos clientes, sem qualquer rótulo de classe. Indique, respectivamente, o paradigma de aprendizado de máquina mais adequado para cada conjunto de dados.",
+            "alternativas": [
+              "Análise de padrões",
+              "Aprendalho não-supervisionada.",
+              "Machine learning supervised",
+              "Supervised machine learning",
+              "Aprendizado supervisionado para o conjunto (I) e aprendizado não supervisionado para o conjunto (II)."
+            ],
+            "correta": 4,
+            "explicacao": "O conjunto (I) possui rótulos que permitem treinar um modelo a prever a variável de saída (churn), caracterizando aprendizado supervisionado. O conjunto (II) carece de rótulos; assim, o objetivo é descobrir estruturas ou agrupamentos nos dados, o que corresponde ao aprendizado não supervisionado. Essa distinção segue a definição conceitual de que dados rotulados orientam modelos de classificação/regressão, enquanto dados não rotulados são usados para identificar padrões internos.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "tem_imagem": false,
+            "recurso_visual": null,
+            "rastreio_distratores": [
+              {
+                "indice_final": 0,
+                "distrator_origem": 3
+              },
+              {
+                "indice_final": 1,
+                "distrator_origem": 2
+              },
+              {
+                "indice_final": 2,
+                "distrator_origem": 0
+              },
+              {
+                "indice_final": 3,
+                "distrator_origem": 1
+              }
+            ]
+          }
+        }
+      ],
+      "provenance": {
+        "rag": true,
+        "llm_mode": "stem_only",
+        "slm": true,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 43.214,
+      "execution_attempts": 1,
+      "elapsed_with_retries_seconds": 43.241
+    }
+  ],
+  "finished_at": "2026-09-25T14:47:32.033398+00:00",
+  "resumed_at": [
+    "2026-09-25T14:42:04.083870+00:00"
+  ]
+}

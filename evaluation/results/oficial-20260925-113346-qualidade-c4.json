@@ -1,0 +1,154 @@
+{
+  "metodo": "triagem-deterministica-haila-v1",
+  "escopo": {
+    "run_file": "evaluation/results/oficial-20260925-113346-c4.json",
+    "request_ids": [
+      "0e6cb292-56fd-47a1-9798-3f94cb48d34f",
+      "50eabf6c-ede5-4f02-86fc-0984a59852a7",
+      "65acf220-be0a-4979-b0e9-dd6838bb59cd",
+      "b509815a-dfd9-40d7-bb45-252fd391e796",
+      "fb130463-702b-401a-a483-bad20cbd8ce0"
+    ]
+  },
+  "itens": [
+    {
+      "request_id": "b509815a-dfd9-40d7-bb45-252fd391e796",
+      "state": "GENERATION_COMPLETED",
+      "version": 3,
+      "especificacao": {
+        "solicitante_id": "evaluation-oficial-20260925-113346-P01",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir atomicidade de durabilidade em uma falha ocorrida antes do COMMIT.",
+        "dificuldade": 3,
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "restricoes": [
+          "uma única alternativa defensável",
+          "não exigir recurso visual"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Uma transação executa várias operações e ocorre uma falha de energia antes de ser emitido o comando COMMIT. Qual propriedade ACID permanece garantida?",
+        "alternativas": [
+          "Durabilidade",
+          "Consistência",
+          "Atomicidade",
+          "Isolamento",
+          "Serialização"
+        ],
+        "correta": 2,
+        "explicacao": "A falha ocorre antes do COMMIT, portanto nenhum efeito da transação pode ser tornado permanente. O sistema de gerenciamento de banco de dados desfaz todas as alterações realizadas, assegurando que a transação tenha todos os seus efeitos ou nenhum (atomicidade). Como o COMMIT não foi alcançado, a durabilidade ainda não se aplica, logo apenas a atomicidade permanece garantida.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 150,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.636,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    },
+    {
+      "request_id": "50eabf6c-ede5-4f02-86fc-0984a59852a7",
+      "state": "GENERATION_COMPLETED",
+      "version": 2,
+      "especificacao": {
+        "solicitante_id": "evaluation-oficial-20260925-113346-P04",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Selecionar a estrutura de dados adequada considerando as operações predominantes.",
+        "dificuldade": 3,
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Um sistema de impressão recebe documentos de múltiplos usuários. Cada documento deve ser impresso na ordem em que chegou. A taxa de inserção de documentos é dez vezes maior que a taxa de remoção de documentos já impressos. Qual estrutura de dados deve ser utilizada para armazenar temporariamente os documentos antes da impressão?",
+        "alternativas": [
+          "Fila (queue)",
+          "Lista",
+          "Arquivo",
+          "Banco de Dados",
+          "Cola"
+        ],
+        "correta": 0,
+        "explicacao": "A ordem de serviço requerida é FIFO (first‑in‑first‑out). Uma fila garante que o primeiro documento inserido seja o primeiro a ser removido, atendendo ao requisito de impressão sequencial. Como a inserção ocorre com frequência muito maior que a remoção, a complexidade O(1) tanto para enqueue quanto para dequeue mantém o desempenho adequado, ao passo que pilhas (LIFO) ou árvores/bancos de dados hash não preservam a ordem de chegada.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 330,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.667,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    }
+  ],
+  "resumo": {
+    "questoes": 2,
+    "sem_sinais": 2,
+    "para_revisao": 0,
+    "flags_bloqueio": 0,
+    "flags_revisao": 0
+  }
+}

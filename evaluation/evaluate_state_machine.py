@@ -64,11 +64,13 @@ def repository_guard_check() -> dict:
         return check("repositorio_rejeita_transicao_invalida", False, "REQUESTED->GENERATION_COMPLETED foi aceita")
 
 
-def audit_database(path: Path) -> tuple[list[dict], dict]:
+def audit_database(path: Path, request_ids: set[str] | None = None) -> tuple[list[dict], dict]:
     if not path.exists():
         return [check("banco_existe", False, str(path))], {"requests": 0}
     con = sqlite3.connect(path); con.row_factory = sqlite3.Row
     requests = list(con.execute("SELECT * FROM requests ORDER BY created_at"))
+    if request_ids is not None:
+        requests = [request for request in requests if request["id"] in request_ids]
     results=[]; state_counts=Counter(); transition_counts=Counter(); completed=0
     for request in requests:
         rid=request["id"]; state_counts[request["state"]]+=1
@@ -130,10 +132,18 @@ def markdown(report: dict) -> str:
 
 
 def main() -> int:
-    ap=argparse.ArgumentParser(); ap.add_argument("--db",type=Path,default=Path("runtime/haila.sqlite3")); ap.add_argument("--out",type=Path,default=Path("evaluation/results/state_machine_report.json")); args=ap.parse_args()
+    ap=argparse.ArgumentParser(); ap.add_argument("--db",type=Path,default=Path("runtime/haila.sqlite3")); ap.add_argument("--out",type=Path,default=Path("evaluation/results/state_machine_report.json")); ap.add_argument("--run-file",type=Path,help="arquivo JSON da execução C4 usado para restringir os IDs auditados"); args=ap.parse_args()
+    request_ids=None
+    if args.run_file:
+        run=json.loads(args.run_file.read_text(encoding="utf-8")); request_ids=set()
+        for item in run.get("items",[]):
+            rid=item.get("request_id") or (item.get("generation") or {}).get("request_id") or (item.get("created") or {}).get("request_id") or (item.get("created") or {}).get("id")
+            if rid: request_ids.add(rid)
+        if not request_ids: raise SystemExit(f"nenhum request_id encontrado em {args.run_file}")
     model=graph_checks()+[repository_guard_check()]
-    requests,summary=audit_database(args.db)
+    requests,summary=audit_database(args.db,request_ids)
     report={"executed_at":now(),"database":str(args.db),"model_checks":model,"database_summary":summary,"requests":requests,
+            "scope":{"run_file":str(args.run_file) if args.run_file else None,"request_ids":sorted(request_ids) if request_ids is not None else None},
             "all_model_checks_passed":all(c["passou"] for c in model),"all_histories_conforming":all(r["conforme"] for r in requests)}
     args.out.parent.mkdir(parents=True,exist_ok=True); args.out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n")
     args.out.with_suffix(".md").write_text(markdown(report),encoding="utf-8")

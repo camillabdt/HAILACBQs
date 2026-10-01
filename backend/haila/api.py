@@ -182,10 +182,20 @@ def avaliar_iwf(payload:AvaliacaoAutomatica):
 @app.post("/evaluations/ablation/run")
 def executar_ablacao(payload:ExecucaoAblacao):
     stem=stem_generator_from_env(); condition=AblationCondition(payload.condition)
-    return executar(lambda:run_condition(
-        condition,payload.specification,llm_call=stem.caller,model=stem.model,
-        rag=rag_from_env() if condition is not AblationCondition.C1_LLM else None,
-        stem_generator=stem if condition is AblationCondition.C3_RAG_LLM_SLM else None,
-        distractor_generator=ablation_slm() if condition is AblationCondition.C3_RAG_LLM_SLM else None,
-        seed=payload.seed,
-    ))
+    try:
+        return executar(lambda:run_condition(
+            condition,payload.specification,llm_call=stem.caller,model=stem.model,
+            rag=rag_from_env() if condition is not AblationCondition.C1_LLM else None,
+            stem_generator=stem if condition is AblationCondition.C3_RAG_LLM_SLM else None,
+            distractor_generator=ablation_slm() if condition is AblationCondition.C3_RAG_LLM_SLM else None,
+            seed=payload.seed,
+        ))
+    except HTTPException:
+        raise
+    except Exception as exc:
+        status=getattr(exc,"status_code",None); name=exc.__class__.__name__
+        if status==429 or name=="RateLimitError":
+            raise HTTPException(429,"Limite temporário da Groq; aguarde antes de tentar novamente.") from exc
+        if name in {"APITimeoutError","APIConnectionError"}:
+            raise HTTPException(504,f"Falha temporária de comunicação com a Groq: {name}.") from exc
+        raise HTTPException(500,f"{name}: {exc}") from exc

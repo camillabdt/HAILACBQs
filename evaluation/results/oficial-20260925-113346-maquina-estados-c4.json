@@ -1,0 +1,111 @@
+{
+  "executed_at": "2026-09-25T15:44:53.308460+00:00",
+  "database": "runtime/haila.sqlite3",
+  "model_checks": [
+    {
+      "check": "todos_estados_possuem_regra",
+      "passou": true,
+      "evidencia": "definidos=9, origens=9"
+    },
+    {
+      "check": "destinos_sao_estados_validos",
+      "passou": true,
+      "evidencia": "destinos_desconhecidos=[]"
+    },
+    {
+      "check": "terminais_sem_saida",
+      "passou": true,
+      "evidencia": "ATTEMPTS_EXHAUSTED, GENERATION_FAILED, GENERATION_COMPLETED"
+    },
+    {
+      "check": "todos_estados_alcancaveis",
+      "passou": true,
+      "evidencia": "inalcancáveis=[]"
+    },
+    {
+      "check": "repositorio_rejeita_transicao_invalida",
+      "passou": true,
+      "evidencia": "transição inválida: REQUESTED->GENERATION_COMPLETED"
+    }
+  ],
+  "database_summary": {
+    "requests": 5,
+    "completed": 2,
+    "conforming": 5,
+    "state_counts": {
+      "GENERATION_COMPLETED": 2,
+      "ATTEMPTS_EXHAUSTED": 3
+    },
+    "transition_counts": {
+      "REQUESTED->REFERENCE_RETRIEVED": 5,
+      "REFERENCE_RETRIEVED->STEM_GENERATED": 5,
+      "STEM_GENERATED->DISTRACTORS_GENERATED": 9,
+      "DISTRACTORS_GENERATED->ITEM_ASSEMBLED": 11,
+      "ITEM_ASSEMBLED->BLOCKED_BY_RED_FLAGS": 9,
+      "BLOCKED_BY_RED_FLAGS->STEM_GENERATED": 7,
+      "ITEM_ASSEMBLED->GENERATION_COMPLETED": 2,
+      "BLOCKED_BY_RED_FLAGS->DISTRACTORS_GENERATED": 2,
+      "BLOCKED_BY_RED_FLAGS->ATTEMPTS_EXHAUSTED": 3,
+      "STEM_GENERATED->BLOCKED_BY_RED_FLAGS": 3
+    }
+  },
+  "requests": [
+    {
+      "request_id": "b509815a-dfd9-40d7-bb45-252fd391e796",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 14,
+      "artefatos": 10,
+      "versoes": 3,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "65acf220-be0a-4979-b0e9-dd6838bb59cd",
+      "estado": "ATTEMPTS_EXHAUSTED",
+      "eventos": 13,
+      "artefatos": 8,
+      "versoes": 3,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "0e6cb292-56fd-47a1-9798-3f94cb48d34f",
+      "estado": "ATTEMPTS_EXHAUSTED",
+      "eventos": 9,
+      "artefatos": 4,
+      "versoes": 0,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "50eabf6c-ede5-4f02-86fc-0984a59852a7",
+      "estado": "GENERATION_COMPLETED",
+      "eventos": 10,
+      "artefatos": 7,
+      "versoes": 2,
+      "conforme": true,
+      "problemas": []
+    },
+    {
+      "request_id": "fb130463-702b-401a-a483-bad20cbd8ce0",
+      "estado": "ATTEMPTS_EXHAUSTED",
+      "eventos": 15,
+      "artefatos": 10,
+      "versoes": 3,
+      "conforme": true,
+      "problemas": []
+    }
+  ],
+  "scope": {
+    "run_file": "evaluation/results/oficial-20260925-113346-c4.json",
+    "request_ids": [
+      "0e6cb292-56fd-47a1-9798-3f94cb48d34f",
+      "50eabf6c-ede5-4f02-86fc-0984a59852a7",
+      "65acf220-be0a-4979-b0e9-dd6838bb59cd",
+      "b509815a-dfd9-40d7-bb45-252fd391e796",
+      "fb130463-702b-401a-a483-bad20cbd8ce0"
+    ]
+  },
+  "all_model_checks_passed": true,
+  "all_histories_conforming": true
+}

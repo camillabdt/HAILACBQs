@@ -1,0 +1,293 @@
+{
+  "metodo": "triagem-deterministica-haila-v1",
+  "escopo": {
+    "run_file": "evaluation/results/oficial-expandido-20260925-155245-c4.json",
+    "request_ids": [
+      "1e9307d8-ea6d-42c5-9751-2851bbb5110a",
+      "2cf74f3b-5a01-4073-9220-79a6293fe595",
+      "56510edd-1cdd-4ae6-b095-1c001e24abd7",
+      "77e44924-96a9-4cfe-ac5c-3b65ff5b28a0",
+      "78be79e9-a14a-4cc6-b6e8-dab7e45c7442",
+      "89afabb1-03cb-477e-ab09-4a8aa9d82ed9",
+      "9dd3f744-57ff-468c-81ba-0691a012b9aa",
+      "bbfc86c3-1477-47fb-8863-e27203a50a84",
+      "c91b6fea-0a79-425e-b819-eb906ca1e53a",
+      "dcf2927d-f352-41fb-bbb3-655da32c79a6",
+      "e7836e2f-24cb-4218-a350-f57aee912c68",
+      "fceb24e1-909c-483a-a6a6-376479beaeae"
+    ]
+  },
+  "itens": [
+    {
+      "request_id": "78be79e9-a14a-4cc6-b6e8-dab7e45c7442",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-oficial-expandido-20260925-155245-E04",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Selecionar uma estrutura de dados conforme a ordem das operações exigidas.",
+        "dificuldade": 3,
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "restricoes": [
+          "não repetir o gabarito no enunciado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Um sistema de impressão recebe documentos de vários usuários e deve enviá‑los à impressora exatamente na ordem em que chegam, realizando inserções frequentes e remoções imediatas ao iniciar a impressão. Qual estrutura de dados é a mais adequada para implementar a fila de impressão?",
+        "alternativas": [
+          "fila (queue)",
+          "fila",
+          "tabela",
+          "coluna",
+          "matriz"
+        ],
+        "correta": 0,
+        "explicacao": "A fila segue a política FIFO (First‑In‑First‑Out), garantindo que o primeiro documento inserido seja o primeiro a ser removido, atendendo ao requisito de ordem de chegada. Além disso, as operações de inserção (enqueue) e remoção (dequeue) são O(1), adequadas para alta frequência de acesso.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 282,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.75,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    },
+    {
+      "request_id": "9dd3f744-57ff-468c-81ba-0691a012b9aa",
+      "state": "GENERATION_COMPLETED",
+      "version": 5,
+      "especificacao": {
+        "solicitante_id": "evaluation-oficial-expandido-20260925-155245-E08",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Selecionar controles de segurança de acordo com confidencialidade, integridade e disponibilidade.",
+        "dificuldade": 3,
+        "competencia": "Analisar riscos e controles de segurança",
+        "habilidade": "Analisar controles de segurança",
+        "objeto_conhecimento": "Confidencialidade, integridade e disponibilidade",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Um hospital utiliza um sistema eletrônico para armazenar prontuários de pacientes. Para assegurar que somente usuários autorizados visualizem esses registros, qual medida de segurança deve ser adotada prioritariamente?",
+        "alternativas": [
+          "Criar acesso direto ao sistema por email",
+          "Usar firewall para proteger a rede",
+          "Adicionar rastreamento de acesso",
+          "'Verificar presença física dos médicos'",
+          "Implementar autenticação forte, como autenticação multifator."
+        ],
+        "correta": 4,
+        "explicacao": "A confidencialidade dos dados de saúde depende da capacidade de impedir acessos não autorizados. A autenticação forte verifica a identidade do usuário com mais de um fator (algo que conhece, possui ou é), reduzindo significativamente o risco de comprometimento. Embora outras medidas (criptografia, controle de acesso) também sejam importantes, a autenticação robusta é o primeiro passo para garantir que apenas usuários legítimos acessem os prontuários.",
+        "competencia": "Analisar riscos e controles de segurança",
+        "habilidade": "Analisar controles de segurança",
+        "objeto_conhecimento": "Confidencialidade, integridade e disponibilidade",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 2
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 218,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.625,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    },
+    {
+      "request_id": "fceb24e1-909c-483a-a6a6-376479beaeae",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-oficial-expandido-20260925-155245-E09",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Classificar requisitos de software segundo o atributo ou comportamento especificado.",
+        "dificuldade": 3,
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Analisar e classificar requisitos",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "restricoes": [
+          "evitar pergunta binária",
+          "uma única alternativa defensável"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Considere o requisito: \"O sistema deve responder a consultas de usuários em até 2 segundos.\" Qual o atributo não funcional especificado nesse requisito?",
+        "alternativas": [
+          "Reliabilidade",
+          "Eficiência",
+          "Disponibilidade",
+          "Segurança",
+          "Desempenho"
+        ],
+        "correta": 4,
+        "explicacao": "O requisito descreve um limite temporal para a resposta do sistema, caracterizando um atributo de desempenho, que é um tipo de requisito não funcional conforme a definição de atributos como desempenho, segurança, confiabilidade e usabilidade. Assim, a classificação correta é o atributo de desempenho.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Analisar e classificar requisitos",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 152,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.75,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    },
+    {
+      "request_id": "1e9307d8-ea6d-42c5-9751-2851bbb5110a",
+      "state": "GENERATION_COMPLETED",
+      "version": 1,
+      "especificacao": {
+        "solicitante_id": "evaluation-oficial-expandido-20260925-155245-E10",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Selecionar um nível de teste adequado ao tipo de defeito que se deseja revelar.",
+        "dificuldade": 3,
+        "competencia": "Planejar qualidade de software",
+        "habilidade": "Planejar verificação e validação",
+        "objeto_conhecimento": "Testes de software",
+        "restricoes": [
+          "usar cenário aplicado",
+          "uma única alternativa defensável"
+        ]
+      },
+      "questao": {
+        "exame": "ENADE",
+        "enunciado": "Um sistema apresenta um defeito que só se manifesta quando duas unidades de código são executadas simultaneamente, não sendo detectado pelos testes unitários que avaliam cada unidade isoladamente. Qual nível de teste é o mais adequado para revelar esse defeito?",
+        "alternativas": [
+          "Análise de sistemas",
+          "Validação de senhas",
+          "teste de regressão",
+          "Validação de interfaces",
+          "Teste de integração"
+        ],
+        "correta": 4,
+        "explicacao": "Testes de integração verificam as interfaces e a interação entre componentes, permitindo detectar defeitos que surgem somente quando unidades trabalham em conjunto, como conflitos de concorrência ou troca de dados inadequada. Testes unitários, por analisarem componentes isolados, não capturam esse tipo de problema.",
+        "competencia": "Planejar qualidade de software",
+        "habilidade": "Planejar verificação e validação",
+        "objeto_conhecimento": "Testes de software",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "flags": [],
+      "metricas": {
+        "enunciado_caracteres": 261,
+        "alternativas": 5,
+        "sobreposicao_especificacao": 0.727,
+        "sobreposicao_objeto_conhecimento": 1.0,
+        "flags_bloqueio": 0,
+        "flags_revisao": 0
+      },
+      "requer_revisao": false
+    }
+  ],
+  "resumo": {
+    "questoes": 4,
+    "sem_sinais": 4,
+    "para_revisao": 0,
+    "flags_bloqueio": 0,
+    "flags_revisao": 0
+  }
+}

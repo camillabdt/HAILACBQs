@@ -1,0 +1,119 @@
+{
+  "run_id": "oficial-expandido-20260925-155245",
+  "items": 12,
+  "states": {
+    "ATTEMPTS_EXHAUSTED": 8,
+    "GENERATION_COMPLETED": 4
+  },
+  "completion_rate": 0.3333,
+  "elapsed_seconds": {
+    "total": 1461.674,
+    "median": 148.728,
+    "mean": 121.806
+  },
+  "final_red_flags": {
+    "iwf_gabarito_mais_longo": 6,
+    "iwf_repeticao_entrega_gabarito": 3,
+    "distrator_parafraseia_gabarito": 2,
+    "iwf_termo_absoluto": 1
+  },
+  "all_detected_red_flags": {
+    "iwf_gabarito_mais_longo": 27,
+    "iwf_repeticao_entrega_gabarito": 14,
+    "iwf_termo_absoluto": 3
+  },
+  "items_detail": [
+    {
+      "spec_id": "E01",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "elapsed_seconds": 127.751,
+      "final_red_flags": [
+        "iwf_gabarito_mais_longo"
+      ]
+    },
+    {
+      "spec_id": "E02",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "elapsed_seconds": 148.136,
+      "final_red_flags": [
+        "iwf_gabarito_mais_longo",
+        "iwf_repeticao_entrega_gabarito"
+      ]
+    },
+    {
+      "spec_id": "E03",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "elapsed_seconds": 179.452,
+      "final_red_flags": [
+        "distrator_parafraseia_gabarito"
+      ]
+    },
+    {
+      "spec_id": "E04",
+      "state": "GENERATION_COMPLETED",
+      "elapsed_seconds": 30.8,
+      "final_red_flags": []
+    },
+    {
+      "spec_id": "E05",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "elapsed_seconds": 190.847,
+      "final_red_flags": [
+        "iwf_gabarito_mais_longo"
+      ]
+    },
+    {
+      "spec_id": "E06",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "elapsed_seconds": 166.722,
+      "final_red_flags": [
+        "distrator_parafraseia_gabarito"
+      ]
+    },
+    {
+      "spec_id": "E07",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "elapsed_seconds": 87.37,
+      "final_red_flags": [
+        "iwf_gabarito_mais_longo",
+        "iwf_repeticao_entrega_gabarito",
+        "iwf_termo_absoluto"
+      ]
+    },
+    {
+      "spec_id": "E08",
+      "state": "GENERATION_COMPLETED",
+      "elapsed_seconds": 149.652,
+      "final_red_flags": []
+    },
+    {
+      "spec_id": "E09",
+      "state": "GENERATION_COMPLETED",
+      "elapsed_seconds": 24.53,
+      "final_red_flags": []
+    },
+    {
+      "spec_id": "E10",
+      "state": "GENERATION_COMPLETED",
+      "elapsed_seconds": 36.107,
+      "final_red_flags": []
+    },
+    {
+      "spec_id": "E11",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "elapsed_seconds": 170.986,
+      "final_red_flags": [
+        "iwf_gabarito_mais_longo",
+        "iwf_repeticao_entrega_gabarito"
+      ]
+    },
+    {
+      "spec_id": "E12",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "elapsed_seconds": 149.321,
+      "final_red_flags": [
+        "iwf_gabarito_mais_longo"
+      ]
+    }
+  ]
+}

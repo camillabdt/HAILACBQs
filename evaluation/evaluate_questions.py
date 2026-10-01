@@ -89,17 +89,19 @@ def evaluate(spec: dict, q: dict) -> tuple[list[dict], dict]:
     return flags, metrics
 
 
-def load(db: Path) -> list[dict]:
+def load(db: Path, request_ids: set[str] | None = None) -> list[dict]:
     con = sqlite3.connect(db); con.row_factory = sqlite3.Row
     rows = list(con.execute("""
         SELECT r.id request_id, r.specification_json, r.state,
                v.version_number, v.question_json, v.provenance_json
         FROM requests r JOIN versions v ON v.request_id=r.id
-        WHERE v.version_number=(SELECT MAX(v2.version_number) FROM versions v2 WHERE v2.request_id=r.id)
+        WHERE r.state='GENERATION_COMPLETED'
+          AND v.version_number=(SELECT MAX(v2.version_number) FROM versions v2 WHERE v2.request_id=r.id)
         ORDER BY r.created_at
     """))
     con.close()
-    return [dict(r) for r in rows]
+    result=[dict(r) for r in rows]
+    return result if request_ids is None else [r for r in result if r["request_id"] in request_ids]
 
 
 def render_md(report: dict) -> str:
@@ -135,18 +137,25 @@ def human_sheet(path: Path, items: list[dict]) -> None:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(); ap.add_argument("--db", type=Path, default=ROOT/"runtime/haila.sqlite3"); ap.add_argument("--out", type=Path, default=ROOT/"evaluation/results/question_quality_report.json"); args = ap.parse_args()
+    ap = argparse.ArgumentParser(); ap.add_argument("--db", type=Path, default=ROOT/"runtime/haila.sqlite3"); ap.add_argument("--out", type=Path, default=ROOT/"evaluation/results/question_quality_report.json"); ap.add_argument("--run-file",type=Path,help="arquivo JSON da execução C4 usado para restringir os IDs avaliados"); args = ap.parse_args()
+    request_ids=None
+    if args.run_file:
+        run=json.loads(args.run_file.read_text(encoding="utf-8")); request_ids=set()
+        for item in run.get("items",[]):
+            rid=item.get("request_id") or (item.get("generation") or {}).get("request_id") or (item.get("created") or {}).get("request_id") or (item.get("created") or {}).get("id")
+            if rid: request_ids.add(rid)
+        if not request_ids: raise SystemExit(f"nenhum request_id encontrado em {args.run_file}")
     items=[]
-    for row in load(args.db):
+    for row in load(args.db,request_ids):
         spec=json.loads(row["specification_json"]); q=json.loads(row["question_json"])
         flags, metrics=evaluate(spec,q)
         items.append({"request_id":row["request_id"],"state":row["state"],"version":row["version_number"],"especificacao":spec,"questao":q,"flags":flags,"metricas":metrics,"requer_revisao":bool(flags)})
     counts=Counter(f["severidade"] for i in items for f in i["flags"])
-    report={"metodo":"triagem-deterministica-haila-v1","itens":items,"resumo":{"questoes":len(items),"sem_sinais":sum(not i["flags"] for i in items),"para_revisao":sum(i["requer_revisao"] for i in items),"flags_bloqueio":counts["block"],"flags_revisao":counts["review"]}}
+    report={"metodo":"triagem-deterministica-haila-v1","escopo":{"run_file":str(args.run_file) if args.run_file else None,"request_ids":sorted(request_ids) if request_ids is not None else None},"itens":items,"resumo":{"questoes":len(items),"sem_sinais":sum(not i["flags"] for i in items),"para_revisao":sum(i["requer_revisao"] for i in items),"flags_bloqueio":counts["block"],"flags_revisao":counts["review"]}}
     args.out.parent.mkdir(parents=True,exist_ok=True)
     args.out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     args.out.with_suffix(".md").write_text(render_md(report),encoding="utf-8")
-    human_sheet(args.out.parent/"human_review_form.csv",items)
+    human_sheet(args.out.with_name(args.out.stem+"-revisao-humana.csv"),items)
     print(json.dumps(report["resumo"],ensure_ascii=False,indent=2))
     return 0
 

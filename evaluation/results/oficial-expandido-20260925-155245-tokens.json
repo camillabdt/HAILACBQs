@@ -1,0 +1,873 @@
+{
+  "measurement": "exact provider usage persisted by HAILA",
+  "cost_scope": "Groq tokens only; local SLM tokens reported separately",
+  "deduplication": "one run per condition/spec_id, preferring a successful run",
+  "rows": [
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C1_LLM",
+      "spec_id": "E01",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 501,
+        "output": 834,
+        "total": 1335
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C1_LLM",
+      "spec_id": "E02",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 488,
+        "output": 780,
+        "total": 1268
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C1_LLM",
+      "spec_id": "E03",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 480,
+        "output": 690,
+        "total": 1170
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C1_LLM",
+      "spec_id": "E04",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 492,
+        "output": 1191,
+        "total": 1683
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C1_LLM",
+      "spec_id": "E05",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 484,
+        "output": 842,
+        "total": 1326
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C1_LLM",
+      "spec_id": "E06",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 485,
+        "output": 744,
+        "total": 1229
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C1_LLM",
+      "spec_id": "E07",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 494,
+        "output": 977,
+        "total": 1471
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C1_LLM",
+      "spec_id": "E08",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 486,
+        "output": 729,
+        "total": 1215
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C1_LLM",
+      "spec_id": "E09",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 478,
+        "output": 977,
+        "total": 1455
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C1_LLM",
+      "spec_id": "E10",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 481,
+        "output": 639,
+        "total": 1120
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C1_LLM",
+      "spec_id": "E11",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 483,
+        "output": 831,
+        "total": 1314
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C1_LLM",
+      "spec_id": "E12",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 483,
+        "output": 558,
+        "total": 1041
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C2_RAG_LLM",
+      "spec_id": "E01",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 905,
+        "output": 1472,
+        "total": 2377
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C2_RAG_LLM",
+      "spec_id": "E02",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 828,
+        "output": 1048,
+        "total": 1876
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C2_RAG_LLM",
+      "spec_id": "E03",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 841,
+        "output": 820,
+        "total": 1661
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C2_RAG_LLM",
+      "spec_id": "E04",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 884,
+        "output": 754,
+        "total": 1638
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C2_RAG_LLM",
+      "spec_id": "E05",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 952,
+        "output": 1233,
+        "total": 2185
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C2_RAG_LLM",
+      "spec_id": "E06",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 853,
+        "output": 734,
+        "total": 1587
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C2_RAG_LLM",
+      "spec_id": "E07",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 832,
+        "output": 1053,
+        "total": 1885
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C2_RAG_LLM",
+      "spec_id": "E08",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 817,
+        "output": 884,
+        "total": 1701
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C2_RAG_LLM",
+      "spec_id": "E09",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 825,
+        "output": 958,
+        "total": 1783
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C2_RAG_LLM",
+      "spec_id": "E10",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 822,
+        "output": 901,
+        "total": 1723
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C2_RAG_LLM",
+      "spec_id": "E11",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 849,
+        "output": 954,
+        "total": 1803
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C2_RAG_LLM",
+      "spec_id": "E12",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 835,
+        "output": 879,
+        "total": 1714
+      },
+      "slm_local": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "E01",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 947,
+        "output": 620,
+        "total": 1567
+      },
+      "slm_local": {
+        "input": 1305,
+        "output": 82,
+        "total": 1387
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "E02",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 870,
+        "output": 519,
+        "total": 1389
+      },
+      "slm_local": {
+        "input": 870,
+        "output": 72,
+        "total": 942
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "E03",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 883,
+        "output": 543,
+        "total": 1426
+      },
+      "slm_local": {
+        "input": 980,
+        "output": 121,
+        "total": 1101
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "E04",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 926,
+        "output": 775,
+        "total": 1701
+      },
+      "slm_local": {
+        "input": 1413,
+        "output": 79,
+        "total": 1492
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "E05",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 994,
+        "output": 695,
+        "total": 1689
+      },
+      "slm_local": {
+        "input": 970,
+        "output": 93,
+        "total": 1063
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "E06",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 895,
+        "output": 596,
+        "total": 1491
+      },
+      "slm_local": {
+        "input": 1290,
+        "output": 108,
+        "total": 1398
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "E07",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 874,
+        "output": 587,
+        "total": 1461
+      },
+      "slm_local": {
+        "input": 828,
+        "output": 58,
+        "total": 886
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "E08",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 859,
+        "output": 740,
+        "total": 1599
+      },
+      "slm_local": {
+        "input": 1016,
+        "output": 81,
+        "total": 1097
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "E09",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 867,
+        "output": 865,
+        "total": 1732
+      },
+      "slm_local": {
+        "input": 1455,
+        "output": 112,
+        "total": 1567
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "E10",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 864,
+        "output": 414,
+        "total": 1278
+      },
+      "slm_local": {
+        "input": 1422,
+        "output": 96,
+        "total": 1518
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "E11",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 891,
+        "output": 729,
+        "total": 1620
+      },
+      "slm_local": {
+        "input": 950,
+        "output": 92,
+        "total": 1042
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c1-c3.json",
+      "condition": "C3_RAG_LLM_SLM",
+      "spec_id": "E12",
+      "state": "COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 877,
+        "output": 453,
+        "total": 1330
+      },
+      "slm_local": {
+        "input": 932,
+        "output": 97,
+        "total": 1029
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c4.json",
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "E01",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "successful": false,
+      "groq": {
+        "input": 969,
+        "output": 538,
+        "total": 1507
+      },
+      "slm_local": {
+        "input": 3798,
+        "output": 241,
+        "total": 4039
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c4.json",
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "E02",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "successful": false,
+      "groq": {
+        "input": 2959,
+        "output": 1614,
+        "total": 4573
+      },
+      "slm_local": {
+        "input": 3771,
+        "output": 342,
+        "total": 4113
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c4.json",
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "E03",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "successful": false,
+      "groq": {
+        "input": 1874,
+        "output": 1586,
+        "total": 3460
+      },
+      "slm_local": {
+        "input": 3896,
+        "output": 474,
+        "total": 4370
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c4.json",
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "E04",
+      "state": "GENERATION_COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 948,
+        "output": 502,
+        "total": 1450
+      },
+      "slm_local": {
+        "input": 1284,
+        "output": 65,
+        "total": 1349
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c4.json",
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "E05",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "successful": false,
+      "groq": {
+        "input": 3405,
+        "output": 3427,
+        "total": 6832
+      },
+      "slm_local": {
+        "input": 5909,
+        "output": 499,
+        "total": 6408
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c4.json",
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "E06",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "successful": false,
+      "groq": {
+        "input": 2962,
+        "output": 2363,
+        "total": 5325
+      },
+      "slm_local": {
+        "input": 4844,
+        "output": 415,
+        "total": 5259
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c4.json",
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "E07",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "successful": false,
+      "groq": {
+        "input": 3031,
+        "output": 2382,
+        "total": 5413
+      },
+      "slm_local": {
+        "input": 3454,
+        "output": 177,
+        "total": 3631
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c4.json",
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "E08",
+      "state": "GENERATION_COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 2921,
+        "output": 2782,
+        "total": 5703
+      },
+      "slm_local": {
+        "input": 4548,
+        "output": 399,
+        "total": 4947
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c4.json",
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "E09",
+      "state": "GENERATION_COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 2795,
+        "output": 1843,
+        "total": 4638
+      },
+      "slm_local": {
+        "input": 794,
+        "output": 46,
+        "total": 840
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c4.json",
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "E10",
+      "state": "GENERATION_COMPLETED",
+      "successful": true,
+      "groq": {
+        "input": 886,
+        "output": 416,
+        "total": 1302
+      },
+      "slm_local": {
+        "input": 1257,
+        "output": 99,
+        "total": 1356
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c4.json",
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "E11",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "successful": false,
+      "groq": {
+        "input": 3024,
+        "output": 2199,
+        "total": 5223
+      },
+      "slm_local": {
+        "input": 3807,
+        "output": 547,
+        "total": 4354
+      }
+    },
+    {
+      "source": "evaluation/results/oficial-expandido-20260925-155245-c4.json",
+      "condition": "C4_HAILA_COMPLETA",
+      "spec_id": "E12",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "successful": false,
+      "groq": {
+        "input": 899,
+        "output": 818,
+        "total": 1717
+      },
+      "slm_local": {
+        "input": 3458,
+        "output": 482,
+        "total": 3940
+      }
+    }
+  ],
+  "summary": [
+    {
+      "items": 12,
+      "successful_items": 12,
+      "groq_input": 5835,
+      "groq_output": 9792,
+      "groq_total": 15627,
+      "slm_local_input": 0,
+      "slm_local_output": 0,
+      "slm_local_total": 0,
+      "condition": "C1_LLM",
+      "mean_groq_total_per_item": 1302.25
+    },
+    {
+      "items": 12,
+      "successful_items": 12,
+      "groq_input": 10243,
+      "groq_output": 11690,
+      "groq_total": 21933,
+      "slm_local_input": 0,
+      "slm_local_output": 0,
+      "slm_local_total": 0,
+      "condition": "C2_RAG_LLM",
+      "mean_groq_total_per_item": 1827.75
+    },
+    {
+      "items": 12,
+      "successful_items": 12,
+      "groq_input": 10747,
+      "groq_output": 7536,
+      "groq_total": 18283,
+      "slm_local_input": 13431,
+      "slm_local_output": 1091,
+      "slm_local_total": 14522,
+      "condition": "C3_RAG_LLM_SLM",
+      "mean_groq_total_per_item": 1523.58
+    },
+    {
+      "items": 12,
+      "successful_items": 4,
+      "groq_input": 26673,
+      "groq_output": 20470,
+      "groq_total": 47143,
+      "slm_local_input": 40820,
+      "slm_local_output": 3786,
+      "slm_local_total": 44606,
+      "condition": "C4_HAILA_COMPLETA",
+      "mean_groq_total_per_item": 3928.58
+    }
+  ]
+}

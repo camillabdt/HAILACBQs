@@ -1,0 +1,391 @@
+{
+  "started_at": "2026-09-25T14:28:36.993589+00:00",
+  "conditions": [
+    "C1_LLM",
+    "C2_RAG_LLM",
+    "C3_RAG_LLM_SLM"
+  ],
+  "items": [
+    {
+      "spec_id": "P01",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Em um SGBD que utiliza registro de log antecipado (write-ahead logging), a transação T executa atualizações em duas páginas e ocorre falha do sistema antes de o registro de COMMIT ser escrito. Após a reinicialização, qual das assertivas descreve corretamente o estado da transação em relação à atomicidade e à durabilidade?",
+        "alternativas": [
+          "As atualizações de T permanecerão permanentemente no banco porque as páginas modificadas já foram gravadas em disco antes da falha.",
+          "A transação será considerada confirmada e seus efeitos ficarão visíveis a outras transações após a recuperação.",
+          "As atualizações de T serão desfeitas durante a recuperação, preservando a atomicidade, e nenhuma de suas mudanças será durável.",
+          "A transação será aplicada parcialmente: algumas atualizações permanecerão enquanto outras serão revertidas, violando a atomicidade.",
+          "O sistema ignorará totalmente a transação, não haverá registro no log e nenhuma ação de recuperação será executada."
+        ],
+        "correta": 2,
+        "explicacao": "Com write-ahead logging, somente após o registro de COMMIT o SGBD garante a durabilidade das mudanças. Como o COMMIT não foi registrado, a transação permanece não confirmada. No processo de recuperação, todas as alterações de transações não confirmadas são desfeitas (undo), assegurando a atomicidade; portanto, nenhuma mudança de T torna‑se durável.",
+        "competencia": "Analisar mecanismos de gerenciamento de dados",
+        "habilidade": "Analisar transações e recuperação de falhas",
+        "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Em um SGBD que utiliza registro de log antecipado (write-ahead logging), a transação T executa atualizações em duas páginas e ocorre falha do sistema antes de o registro de COMMIT ser escrito. Após a reinicialização, qual das assertivas descreve corretamente o estado da transação em relação à atomicidade e à durabilidade?",
+            "alternativas": [
+              "As atualizações de T permanecerão permanentemente no banco porque as páginas modificadas já foram gravadas em disco antes da falha.",
+              "A transação será considerada confirmada e seus efeitos ficarão visíveis a outras transações após a recuperação.",
+              "As atualizações de T serão desfeitas durante a recuperação, preservando a atomicidade, e nenhuma de suas mudanças será durável.",
+              "A transação será aplicada parcialmente: algumas atualizações permanecerão enquanto outras serão revertidas, violando a atomicidade.",
+              "O sistema ignorará totalmente a transação, não haverá registro no log e nenhuma ação de recuperação será executada."
+            ],
+            "correta": 2,
+            "explicacao": "Com write-ahead logging, somente após o registro de COMMIT o SGBD garante a durabilidade das mudanças. Como o COMMIT não foi registrado, a transação permanece não confirmada. No processo de recuperação, todas as alterações de transações não confirmadas são desfeitas (undo), assegurando a atomicidade; portanto, nenhuma mudança de T torna‑se durável.",
+            "competencia": "Analisar mecanismos de gerenciamento de dados",
+            "habilidade": "Analisar transações e recuperação de falhas",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 494,
+              "completion_tokens": 706,
+              "total_tokens": 1200
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 2.623
+    },
+    {
+      "spec_id": "P02",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Um jogo multiplayer em tempo real necessita de baixa latência para movimentos dos personagens, mas requer entrega confiável para atualizações críticas de inventário. Considerando as características dos protocolos TCP e UDP, qual das alternativas a seguir descreve a estratégia mais adequada para atender a esses requisitos?",
+        "alternativas": [
+          "Usar exclusivamente TCP para todo o tráfego, garantindo entrega, porém introduzindo latência excessiva nas ações em tempo real.",
+          "Usar exclusivamente UDP para todo o tráfego, eliminando latência, mas permitindo perda de mensagens críticas de inventário.",
+          "Empregar TCP para as atualizações críticas de inventário e UDP para os pacotes de movimento, combinando confiabilidade onde necessária e baixa latência onde tolerável.",
+          "Encapsular pacotes UDP dentro de fluxos TCP, aumentando a confiabilidade sem impactar a latência dos movimentos.",
+          "Alternar dinamicamente entre TCP e UDP a cada pacote com base na congestão da rede, buscando desempenho ótimo."
+        ],
+        "correta": 2,
+        "explicacao": "A alternativa C alinha as propriedades de cada protocolo ao requisito da aplicação: TCP oferece controle de fluxo, retransmissão e ordem, adequado para dados que não podem ser perdidos (inventário); UDP não possui esses mecanismos, proporcionando menor overhead e latência, adequado para dados que podem ser descartados ou atualizados rapidamente (movimentos). As demais alternativas apresentam limitações ou conceitos incorretos, como latência excessiva ao usar só TCP, perda de consistência ao usar só UDP, encapsulamento que aumentaria a latência, ou alternância por pacote que não é viável nem suportada pelos stacks de transporte.",
+        "competencia": "Analisar arquiteturas de comunicação",
+        "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+        "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Um jogo multiplayer em tempo real necessita de baixa latência para movimentos dos personagens, mas requer entrega confiável para atualizações críticas de inventário. Considerando as características dos protocolos TCP e UDP, qual das alternativas a seguir descreve a estratégia mais adequada para atender a esses requisitos?",
+            "alternativas": [
+              "Usar exclusivamente TCP para todo o tráfego, garantindo entrega, porém introduzindo latência excessiva nas ações em tempo real.",
+              "Usar exclusivamente UDP para todo o tráfego, eliminando latência, mas permitindo perda de mensagens críticas de inventário.",
+              "Empregar TCP para as atualizações críticas de inventário e UDP para os pacotes de movimento, combinando confiabilidade onde necessária e baixa latência onde tolerável.",
+              "Encapsular pacotes UDP dentro de fluxos TCP, aumentando a confiabilidade sem impactar a latência dos movimentos.",
+              "Alternar dinamicamente entre TCP e UDP a cada pacote com base na congestão da rede, buscando desempenho ótimo."
+            ],
+            "correta": 2,
+            "explicacao": "A alternativa C alinha as propriedades de cada protocolo ao requisito da aplicação: TCP oferece controle de fluxo, retransmissão e ordem, adequado para dados que não podem ser perdidos (inventário); UDP não possui esses mecanismos, proporcionando menor overhead e latência, adequado para dados que podem ser descartados ou atualizados rapidamente (movimentos). As demais alternativas apresentam limitações ou conceitos incorretos, como latência excessiva ao usar só TCP, perda de consistência ao usar só UDP, encapsulamento que aumentaria a latência, ou alternância por pacote que não é viável nem suportada pelos stacks de transporte.",
+            "competencia": "Analisar arquiteturas de comunicação",
+            "habilidade": "Selecionar protocolo de transporte conforme requisitos da aplicação",
+            "objeto_conhecimento": "TCP, UDP e comunicação fim a fim",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 494,
+              "completion_tokens": 702,
+              "total_tokens": 1196
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 2.178
+    },
+    {
+      "spec_id": "P03",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Um departamento universitário está desenvolvendo um sistema online de matrícula de disciplinas. Considere as seguintes exigências: (1) O sistema deve permitir que o estudante se inscreva em disciplinas após efetuar login; (2) O sistema deve responder a qualquer solicitação do usuário em até 2 segundos; (3) O sistema deve gerar um comprovante em PDF para cada matrícula concluída; (4) O sistema deve estar disponível 99,9% do tempo. Qual alternativa classifica corretamente cada exigência como funcional (F) ou não funcional (N)?",
+        "alternativas": [
+          "1-F, 2-N, 3-F, 4-N",
+          "1-F, 2-F, 3-N, 4-N",
+          "1-N, 2-N, 3-F, 4-F",
+          "1-F, 2-N, 3-N, 4-F",
+          "1-N, 2-F, 3-F, 4-N"
+        ],
+        "correta": 0,
+        "explicacao": "Exigência 1 descreve uma funcionalidade do sistema (inscrição de disciplinas). Exigência 2 refere‑se ao tempo de resposta, característica de desempenho, logo é não funcional. Exigência 3 trata da geração de um documento, funcionalidade do sistema. Exigência 4 indica disponibilidade, atributo de qualidade, portanto não funcional. Assim, a classificação correta é 1-F, 2-N, 3-F, 4-N.",
+        "competencia": "Analisar requisitos de software",
+        "habilidade": "Classificar requisitos conforme sua finalidade",
+        "objeto_conhecimento": "Engenharia de requisitos",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Um departamento universitário está desenvolvendo um sistema online de matrícula de disciplinas. Considere as seguintes exigências: (1) O sistema deve permitir que o estudante se inscreva em disciplinas após efetuar login; (2) O sistema deve responder a qualquer solicitação do usuário em até 2 segundos; (3) O sistema deve gerar um comprovante em PDF para cada matrícula concluída; (4) O sistema deve estar disponível 99,9% do tempo. Qual alternativa classifica corretamente cada exigência como funcional (F) ou não funcional (N)?",
+            "alternativas": [
+              "1-F, 2-N, 3-F, 4-N",
+              "1-F, 2-F, 3-N, 4-N",
+              "1-N, 2-N, 3-F, 4-F",
+              "1-F, 2-N, 3-N, 4-F",
+              "1-N, 2-F, 3-F, 4-N"
+            ],
+            "correta": 0,
+            "explicacao": "Exigência 1 descreve uma funcionalidade do sistema (inscrição de disciplinas). Exigência 2 refere‑se ao tempo de resposta, característica de desempenho, logo é não funcional. Exigência 3 trata da geração de um documento, funcionalidade do sistema. Exigência 4 indica disponibilidade, atributo de qualidade, portanto não funcional. Assim, a classificação correta é 1-F, 2-N, 3-F, 4-N.",
+            "competencia": "Analisar requisitos de software",
+            "habilidade": "Classificar requisitos conforme sua finalidade",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 480,
+              "completion_tokens": 813,
+              "total_tokens": 1293
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 2.341
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Em um call center, as chamadas são atendidas exatamente na ordem em que chegam. O sistema deve permitir: (i) registrar a chegada de uma nova chamada; (ii) atender a chamada que está no início da fila; (iii) consultar quantas chamadas aguardam atendimento. Qual estrutura de dados oferece o melhor suporte para essas operações predominantes?",
+        "alternativas": [
+          "Pilha (Stack)",
+          "Fila (Queue)",
+          "Árvore Binária de Busca (BST)",
+          "Tabela Hash",
+          "Lista Encadeada Simples"
+        ],
+        "correta": 1,
+        "explicacao": "A fila (queue) mantém a ordem de inserção, permitindo inserções no final (enqueue) e remoções no início (dequeue) em O(1), atendendo exatamente ao requisito FIFO do call center. As demais estruturas não garantem essa ordem natural ou exigem custos maiores para as operações descritas.",
+        "competencia": "Projetar soluções algorítmicas",
+        "habilidade": "Selecionar estruturas de dados",
+        "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Em um call center, as chamadas são atendidas exatamente na ordem em que chegam. O sistema deve permitir: (i) registrar a chegada de uma nova chamada; (ii) atender a chamada que está no início da fila; (iii) consultar quantas chamadas aguardam atendimento. Qual estrutura de dados oferece o melhor suporte para essas operações predominantes?",
+            "alternativas": [
+              "Pilha (Stack)",
+              "Fila (Queue)",
+              "Árvore Binária de Busca (BST)",
+              "Tabela Hash",
+              "Lista Encadeada Simples"
+            ],
+            "correta": 1,
+            "explicacao": "A fila (queue) mantém a ordem de inserção, permitindo inserções no final (enqueue) e remoções no início (dequeue) em O(1), atendendo exatamente ao requisito FIFO do call center. As demais estruturas não garantem essa ordem natural ou exigem custos maiores para as operações descritas.",
+            "competencia": "Projetar soluções algorítmicas",
+            "habilidade": "Selecionar estruturas de dados",
+            "objeto_conhecimento": "Pilhas, filas, árvores e tabelas hash",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 484,
+              "completion_tokens": 647,
+              "total_tokens": 1131
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 2.052
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C1_LLM",
+      "state": "COMPLETED",
+      "question": {
+        "enunciado": "Uma operadora de telefonia possui um banco de dados com 10.000 clientes, contendo atributos como idade, plano contratado, número de chamadas mensais e gasto mensal. O analista deseja agrupar esses clientes em perfis com comportamento semelhante para direcionar campanhas de marketing. Qual método de aprendizado de máquina é o mais adequado para essa tarefa?",
+        "alternativas": [
+          "Regressão linear",
+          "Rede neural supervisionada",
+          "K-means clustering",
+          "Árvore de decisão",
+          "Máquina de vetor de suporte"
+        ],
+        "correta": 2,
+        "explicacao": "A tarefa descrita consiste em descobrir grupos naturais nos dados sem a presença de rótulos que indiquem a que grupo cada cliente pertence. Esse é um típico problema de aprendizado não supervisionado, e algoritmos de clustering, como o K-means, são projetados exatamente para esse fim. Os demais métodos listados são técnicas supervisionadas que exigem um conjunto de treinamento rotulado para aprender uma função de mapeamento entre atributos e classes ou valores contínuos.",
+        "competencia": "Analisar métodos de inteligência artificial",
+        "habilidade": "Distinguir paradigmas de aprendizado",
+        "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+        "exame": "ENADE",
+        "tem_imagem": false,
+        "recurso_visual": null
+      },
+      "artifacts": [
+        {
+          "kind": "QUESTION",
+          "producer": "LLM_MONOLITHIC",
+          "payload": {
+            "enunciado": "Uma operadora de telefonia possui um banco de dados com 10.000 clientes, contendo atributos como idade, plano contratado, número de chamadas mensais e gasto mensal. O analista deseja agrupar esses clientes em perfis com comportamento semelhante para direcionar campanhas de marketing. Qual método de aprendizado de máquina é o mais adequado para essa tarefa?",
+            "alternativas": [
+              "Regressão linear",
+              "Rede neural supervisionada",
+              "K-means clustering",
+              "Árvore de decisão",
+              "Máquina de vetor de suporte"
+            ],
+            "correta": 2,
+            "explicacao": "A tarefa descrita consiste em descobrir grupos naturais nos dados sem a presença de rótulos que indiquem a que grupo cada cliente pertence. Esse é um típico problema de aprendizado não supervisionado, e algoritmos de clustering, como o K-means, são projetados exatamente para esse fim. Os demais métodos listados são técnicas supervisionadas que exigem um conjunto de treinamento rotulado para aprender uma função de mapeamento entre atributos e classes ou valores contínuos.",
+            "competencia": "Analisar métodos de inteligência artificial",
+            "habilidade": "Distinguir paradigmas de aprendizado",
+            "objeto_conhecimento": "Aprendizado supervisionado e não supervisionado",
+            "exame": "ENADE",
+            "tem_imagem": false,
+            "recurso_visual": null
+          },
+          "provenance": {
+            "token_usage_remote": {
+              "prompt_tokens": 486,
+              "completion_tokens": 797,
+              "total_tokens": 1283
+            }
+          }
+        }
+      ],
+      "provenance": {
+        "rag": false,
+        "llm_mode": "monolithic",
+        "slm": false,
+        "red_flags": false,
+        "model": "openai/gpt-oss-120b"
+      },
+      "elapsed_seconds": 3.674
+    },
+    {
+      "spec_id": "P01",
+      "condition": "C2_RAG_LLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 409: Conflict"
+    },
+    {
+      "spec_id": "P02",
+      "condition": "C2_RAG_LLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 409: Conflict"
+    },
+    {
+      "spec_id": "P03",
+      "condition": "C2_RAG_LLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 409: Conflict"
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C2_RAG_LLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 409: Conflict"
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C2_RAG_LLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 409: Conflict"
+    },
+    {
+      "spec_id": "P01",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 409: Conflict"
+    },
+    {
+      "spec_id": "P02",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 409: Conflict"
+    },
+    {
+      "spec_id": "P03",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 409: Conflict"
+    },
+    {
+      "spec_id": "P04",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 409: Conflict"
+    },
+    {
+      "spec_id": "P05",
+      "condition": "C3_RAG_LLM_SLM",
+      "state": "FAILED",
+      "error_type": "HTTPError",
+      "error": "HTTP Error 409: Conflict"
+    }
+  ],
+  "finished_at": "2026-09-25T14:28:50.626335+00:00"
+}
