@@ -1,0 +1,694 @@
+{
+  "input": {
+    "solicitante_id": "teste-lora-es",
+    "curso": "Computação",
+    "exame": "ENADE",
+    "componente": "ESPECIFICO",
+    "objetivo_pedagogico": "Avaliar se o estudante consegue identificar e classificar requisitos funcionais e não funcionais a partir de um cenário de desenvolvimento de software.",
+    "dificuldade": 3,
+    "competencia": "Analisar especificações de requisitos de software.",
+    "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+    "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+    "restricoes": [
+      "Usar um cenário realista de sistema de software.",
+      "Evitar pistas lexicais que revelem o gabarito.",
+      "Manter apenas uma alternativa correta."
+    ],
+    "max_tentativas": 3,
+    "max_tentativas_distratores": 3
+  },
+  "generate_response": {
+    "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+    "state": "ATTEMPTS_EXHAUSTED",
+    "red_flags": [
+      {
+        "codigo": "distrator_parafraseia_gabarito",
+        "etapa": "DISTRATORES",
+        "campo": "distratores",
+        "evidencia": "similaridade lexical >= 0.82",
+        "reparo": "DISTRATORES"
+      }
+    ]
+  },
+  "history": {
+    "request": {
+      "id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+      "solicitante_id": "teste-lora-es",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "max_attempts": 3,
+      "max_distractor_attempts": 3,
+      "attempts": 4,
+      "stem_attempts": 1,
+      "distractor_attempts": 3,
+      "created_at": "2026-10-07T22:32:34.592314+00:00",
+      "updated_at": "2026-10-07T22:34:47.984810+00:00",
+      "specification": {
+        "solicitante_id": "teste-lora-es",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Avaliar se o estudante consegue identificar e classificar requisitos funcionais e não funcionais a partir de um cenário de desenvolvimento de software.",
+        "dificuldade": 3,
+        "competencia": "Analisar especificações de requisitos de software.",
+        "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+        "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+        "restricoes": [
+          "Usar um cenário realista de sistema de software.",
+          "Evitar pistas lexicais que revelem o gabarito.",
+          "Manter apenas uma alternativa correta."
+        ]
+      }
+    },
+    "versions": [],
+    "latest_version": null,
+    "artifacts": [
+      {
+        "id": 19,
+        "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+        "kind": "REFERENCE",
+        "created_at": "2026-10-07T22:32:34.616700+00:00",
+        "payload": {
+          "id": "rag-engsoftware-requisitos-009",
+          "texto": "Requisitos funcionais descrevem serviços e comportamentos esperados do sistema. Requisitos não funcionais estabelecem atributos e restrições, como desempenho, segurança, confiabilidade e usabilidade. Elicitação, especificação, validação e gerenciamento de mudanças ajudam a manter alinhamento entre necessidades e solução.",
+          "exame": "ACERVO_CONCEITUAL_HAILA",
+          "ano": 2024,
+          "metadados": {
+            "curso": null,
+            "componente": null,
+            "area": "Engenharia de Software",
+            "habilidade": "Analisar e classificar requisitos",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "referencia": "SOMMERVILLE, I. Engenharia de Software.",
+            "linha": 9,
+            "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+            "retrieval": "bm25-aliases-v3",
+            "score": 17.959648,
+            "termos_recuperados": [
+              "classificar",
+              "engenharia",
+              "funcionais",
+              "nao",
+              "necessidades",
+              "requisitos"
+            ],
+            "candidatas_relevantes": 2,
+            "consulta_normalizada": [
+              "cenario",
+              "classificar",
+              "consegue",
+              "desenvolvimento",
+              "engenharia",
+              "especificacoes",
+              "estudante",
+              "funcionais",
+              "los",
+              "nao",
+              "necessidades",
+              "partir",
+              "relaciona",
+              "requisitos"
+            ],
+            "ranking": [
+              {
+                "id": "rag-engsoftware-requisitos-009",
+                "score": 17.959648
+              },
+              {
+                "id": "rag-engsoftware-testes-010",
+                "score": 2.733973
+              }
+            ]
+          }
+        },
+        "provenance": {}
+      },
+      {
+        "id": 20,
+        "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+        "kind": "STEM",
+        "created_at": "2026-10-07T22:32:36.783802+00:00",
+        "payload": {
+          "enunciado": "Em um sistema de gerenciamento de biblioteca digital, foi definido o requisito: \"O sistema deve gerar relatórios mensais de empréstimos em formato PDF\". De acordo com a classificação de requisitos, como esse requisito deve ser categorizado?",
+          "resposta_correta": "Requisito funcional",
+          "explicacao": "Requisitos funcionais descrevem serviços ou comportamentos que o sistema deve oferecer. Gerar relatórios mensais de empréstimos é uma funcionalidade explícita que o usuário espera do sistema, caracterizando‑o como requisito funcional. Requisitos não funcionais tratam de atributos como desempenho, segurança ou usabilidade, o que não se aplica ao caso descrito.",
+          "competencia": "Analisar especificações de requisitos de software.",
+          "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+          "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+          "tem_imagem": false,
+          "recurso_visual": null
+        },
+        "provenance": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.1.0",
+          "token_usage_remote": {
+            "prompt_tokens": 947,
+            "completion_tokens": 796,
+            "total_tokens": 1743
+          }
+        }
+      },
+      {
+        "id": 21,
+        "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-07T22:33:16.804855+00:00",
+        "payload": [
+          {
+            "texto": "Requisitos funcionais",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Requisitos estéticos",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Requisitores funcionais",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Requisitores de qualidade",
+            "erro": "",
+            "por_que_e_falso": ""
+          }
+        ],
+        "provenance": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_2:distratos->distratores",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto"
+          ],
+          "amostras": 2,
+          "candidatos_gerados": 8,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.5.0",
+          "token_usage_local": {
+            "input_tokens": 836,
+            "output_tokens": 74,
+            "total_tokens": 910
+          },
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v8",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 8,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              0,
+              4,
+              5,
+              1
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      },
+      {
+        "id": 22,
+        "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-07T22:34:00.927409+00:00",
+        "payload": [
+          {
+            "texto": "Requisitos estéticos",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Requisitores funcionais",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Requisitoss funcionais",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Requisitos funcionais",
+            "erro": "",
+            "por_que_e_falso": ""
+          }
+        ],
+        "provenance": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_2:distratos->distratores",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 8,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.5.0",
+          "token_usage_local": {
+            "input_tokens": 1254,
+            "output_tokens": 105,
+            "total_tokens": 1359
+          },
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v8",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 8,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              0,
+              1,
+              4,
+              7
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      },
+      {
+        "id": 23,
+        "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-07T22:34:47.972229+00:00",
+        "payload": [
+          {
+            "texto": "Requisitos funcionais",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Requisitórios estéticos",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Definição de regras",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Técnicas de validação",
+            "erro": "",
+            "por_que_e_falso": ""
+          }
+        ],
+        "provenance": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 8,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.5.0",
+          "token_usage_local": {
+            "input_tokens": 1254,
+            "output_tokens": 107,
+            "total_tokens": 1361
+          },
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v8",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 8,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      }
+    ],
+    "red_flags": [
+      {
+        "id": 9,
+        "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+        "code": "distrator_parafraseia_gabarito",
+        "stage": "DISTRATORES",
+        "field": "distratores",
+        "evidence": "similaridade lexical >= 0.82",
+        "repair_target": "DISTRATORES",
+        "created_at": "2026-10-07T22:33:16.813226+00:00"
+      },
+      {
+        "id": 10,
+        "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+        "code": "distrator_parafraseia_gabarito",
+        "stage": "DISTRATORES",
+        "field": "distratores",
+        "evidence": "similaridade lexical >= 0.82",
+        "repair_target": "DISTRATORES",
+        "created_at": "2026-10-07T22:34:00.935305+00:00"
+      },
+      {
+        "id": 11,
+        "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+        "code": "distrator_parafraseia_gabarito",
+        "stage": "DISTRATORES",
+        "field": "distratores",
+        "evidence": "similaridade lexical >= 0.82",
+        "repair_target": "DISTRATORES",
+        "created_at": "2026-10-07T22:34:47.978788+00:00"
+      }
+    ],
+    "events": [
+      {
+        "id": 28,
+        "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+        "version_id": null,
+        "from_state": null,
+        "to_state": "REQUESTED",
+        "component": "HAILA",
+        "reason": "solicitação registrada",
+        "created_at": "2026-10-07T22:32:34.593051+00:00",
+        "evidence": {
+          "solicitante_id": "teste-lora-es",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Avaliar se o estudante consegue identificar e classificar requisitos funcionais e não funcionais a partir de um cenário de desenvolvimento de software.",
+          "dificuldade": 3,
+          "competencia": "Analisar especificações de requisitos de software.",
+          "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+          "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+          "restricoes": [
+            "Usar um cenário realista de sistema de software.",
+            "Evitar pistas lexicais que revelem o gabarito.",
+            "Manter apenas uma alternativa correta."
+          ]
+        }
+      },
+      {
+        "id": 29,
+        "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+        "version_id": null,
+        "from_state": "REQUESTED",
+        "to_state": "REFERENCE_RETRIEVED",
+        "component": "HAILA_RAG",
+        "reason": "referência recuperada",
+        "created_at": "2026-10-07T22:32:34.619677+00:00",
+        "evidence": {
+          "id": "rag-engsoftware-requisitos-009"
+        }
+      },
+      {
+        "id": 30,
+        "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+        "version_id": null,
+        "from_state": "REFERENCE_RETRIEVED",
+        "to_state": "STEM_GENERATED",
+        "component": "HAILA_LLM",
+        "reason": "núcleo gerado",
+        "created_at": "2026-10-07T22:32:36.788998+00:00",
+        "evidence": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.1.0",
+          "token_usage_remote": {
+            "prompt_tokens": 947,
+            "completion_tokens": 796,
+            "total_tokens": 1743
+          }
+        }
+      },
+      {
+        "id": 31,
+        "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+        "version_id": null,
+        "from_state": "STEM_GENERATED",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-07T22:33:16.808224+00:00",
+        "evidence": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_2:distratos->distratores",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto"
+          ],
+          "amostras": 2,
+          "candidatos_gerados": 8,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.5.0",
+          "token_usage_local": {
+            "input_tokens": 836,
+            "output_tokens": 74,
+            "total_tokens": 910
+          },
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v8",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 8,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              0,
+              4,
+              5,
+              1
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      },
+      {
+        "id": 32,
+        "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+        "version_id": null,
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "distratores/item bloqueados",
+        "created_at": "2026-10-07T22:33:16.815845+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "distrator_parafraseia_gabarito",
+              "etapa": "DISTRATORES",
+              "campo": "distratores",
+              "evidencia": "similaridade lexical >= 0.82",
+              "reparo": "DISTRATORES"
+            }
+          ]
+        }
+      },
+      {
+        "id": 33,
+        "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-07T22:34:00.931655+00:00",
+        "evidence": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_2:distratos->distratores",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 8,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.5.0",
+          "token_usage_local": {
+            "input_tokens": 1254,
+            "output_tokens": 105,
+            "total_tokens": 1359
+          },
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v8",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 8,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              0,
+              1,
+              4,
+              7
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      },
+      {
+        "id": 34,
+        "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+        "version_id": null,
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "distratores/item bloqueados",
+        "created_at": "2026-10-07T22:34:00.938166+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "distrator_parafraseia_gabarito",
+              "etapa": "DISTRATORES",
+              "campo": "distratores",
+              "evidencia": "similaridade lexical >= 0.82",
+              "reparo": "DISTRATORES"
+            }
+          ]
+        }
+      },
+      {
+        "id": 35,
+        "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-07T22:34:47.975132+00:00",
+        "evidence": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 8,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.5.0",
+          "token_usage_local": {
+            "input_tokens": 1254,
+            "output_tokens": 107,
+            "total_tokens": 1361
+          },
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v8",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 8,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      },
+      {
+        "id": 36,
+        "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+        "version_id": null,
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "distratores/item bloqueados",
+        "created_at": "2026-10-07T22:34:47.981444+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "distrator_parafraseia_gabarito",
+              "etapa": "DISTRATORES",
+              "campo": "distratores",
+              "evidencia": "similaridade lexical >= 0.82",
+              "reparo": "DISTRATORES"
+            }
+          ]
+        }
+      },
+      {
+        "id": 37,
+        "request_id": "2e04a741-f157-4ff4-952d-c3b921eda163",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "ATTEMPTS_EXHAUSTED",
+        "component": "HAILA",
+        "reason": "limite de tentativas do SLM atingido",
+        "created_at": "2026-10-07T22:34:47.984954+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "distrator_parafraseia_gabarito",
+              "etapa": "DISTRATORES",
+              "campo": "distratores",
+              "evidencia": "similaridade lexical >= 0.82",
+              "reparo": "DISTRATORES"
+            }
+          ]
+        }
+      }
+    ],
+    "reviews": []
+  },
+  "duration_seconds": 133.5
+}

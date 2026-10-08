@@ -17,7 +17,7 @@ const state = {
   auditConfig: { owner: 100, guest: 0 },
 };
 const STORAGE_KEY = "haila:last-request-id";
-const REQUIRED_API_BUILD = "20260924-17";
+const REQUIRED_API_BUILD = "20261002-lora-poscomp";
 
 function element(tag, text, className) {
   const node = document.createElement(tag);

@@ -1,0 +1,468 @@
+{
+  "input": {
+    "solicitante_id": "teste-lora-es",
+    "curso": "Computação",
+    "exame": "ENADE",
+    "componente": "ESPECIFICO",
+    "objetivo_pedagogico": "Avaliar se o estudante consegue identificar e classificar requisitos funcionais e não funcionais a partir de um cenário de desenvolvimento de software.",
+    "dificuldade": 3,
+    "competencia": "Analisar especificações de requisitos de software.",
+    "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+    "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+    "restricoes": [
+      "Usar um cenário realista de sistema de software.",
+      "Evitar pistas lexicais que revelem o gabarito.",
+      "Manter apenas uma alternativa correta."
+    ],
+    "max_tentativas": 3,
+    "max_tentativas_distratores": 3
+  },
+  "generate_response": {
+    "request_id": "c79e02d1-c20c-454f-bb2d-a1226a00863a",
+    "version": {
+      "id": "d3d9ca6a-a638-4009-9bad-c4723b8fd3b4",
+      "request_id": "c79e02d1-c20c-454f-bb2d-a1226a00863a",
+      "version_number": 1,
+      "created_at": "2026-10-07T22:58:50.052196+00:00",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em um sistema de gerenciamento de cursos universitários, foi especificado o seguinte requisito: \"O sistema deve criptografar todas as credenciais dos usuários utilizando algoritmo AES‑256 antes de armazená‑las no banco de dados.\" Qual a classificação correta desse requisito?",
+        "alternativas": [
+          "Requisito não funcional",
+          "Definição de projeto",
+          "Atributo de qualidade",
+          "Requisitórios de segurança",
+          "Requisítos de negócios"
+        ],
+        "correta": 0,
+        "explicacao": "O requisito descreve uma restrição de segurança ao comportamento do sistema (proteção dos dados), não uma funcionalidade que o usuário invoca. Requisitos não funcionais tratam de atributos de qualidade como segurança, desempenho, usabilidade, etc. Assim, a afirmação corresponde a um requisito não funcional de segurança.",
+        "competencia": "Analisar especificações de requisitos de software",
+        "habilidade": "Classificar requisitos e relacioná‑los às necessidades do sistema",
+        "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 2
+          }
+        ]
+      },
+      "provenance": {
+        "rag_id": "rag-engsoftware-requisitos-009",
+        "llm": "openai/gpt-oss-120b",
+        "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp))"
+      }
+    },
+    "state": "GENERATION_COMPLETED",
+    "red_flags": []
+  },
+  "history": {
+    "request": {
+      "id": "c79e02d1-c20c-454f-bb2d-a1226a00863a",
+      "solicitante_id": "teste-lora-es",
+      "state": "GENERATION_COMPLETED",
+      "max_attempts": 3,
+      "max_distractor_attempts": 3,
+      "attempts": 2,
+      "stem_attempts": 1,
+      "distractor_attempts": 1,
+      "created_at": "2026-10-07T22:57:55.878758+00:00",
+      "updated_at": "2026-10-07T22:58:50.059859+00:00",
+      "specification": {
+        "solicitante_id": "teste-lora-es",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Avaliar se o estudante consegue identificar e classificar requisitos funcionais e não funcionais a partir de um cenário de desenvolvimento de software.",
+        "dificuldade": 3,
+        "competencia": "Analisar especificações de requisitos de software.",
+        "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+        "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+        "restricoes": [
+          "Usar um cenário realista de sistema de software.",
+          "Evitar pistas lexicais que revelem o gabarito.",
+          "Manter apenas uma alternativa correta."
+        ]
+      }
+    },
+    "versions": [
+      {
+        "id": "d3d9ca6a-a638-4009-9bad-c4723b8fd3b4",
+        "version_number": 1,
+        "created_at": "2026-10-07T22:58:50.052196+00:00"
+      }
+    ],
+    "latest_version": {
+      "id": "d3d9ca6a-a638-4009-9bad-c4723b8fd3b4",
+      "request_id": "c79e02d1-c20c-454f-bb2d-a1226a00863a",
+      "version_number": 1,
+      "created_at": "2026-10-07T22:58:50.052196+00:00",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Em um sistema de gerenciamento de cursos universitários, foi especificado o seguinte requisito: \"O sistema deve criptografar todas as credenciais dos usuários utilizando algoritmo AES‑256 antes de armazená‑las no banco de dados.\" Qual a classificação correta desse requisito?",
+        "alternativas": [
+          "Requisito não funcional",
+          "Definição de projeto",
+          "Atributo de qualidade",
+          "Requisitórios de segurança",
+          "Requisítos de negócios"
+        ],
+        "correta": 0,
+        "explicacao": "O requisito descreve uma restrição de segurança ao comportamento do sistema (proteção dos dados), não uma funcionalidade que o usuário invoca. Requisitos não funcionais tratam de atributos de qualidade como segurança, desempenho, usabilidade, etc. Assim, a afirmação corresponde a um requisito não funcional de segurança.",
+        "competencia": "Analisar especificações de requisitos de software",
+        "habilidade": "Classificar requisitos e relacioná‑los às necessidades do sistema",
+        "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 2
+          }
+        ]
+      },
+      "provenance": {
+        "rag_id": "rag-engsoftware-requisitos-009",
+        "llm": "openai/gpt-oss-120b",
+        "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp))"
+      }
+    },
+    "artifacts": [
+      {
+        "id": 38,
+        "request_id": "c79e02d1-c20c-454f-bb2d-a1226a00863a",
+        "kind": "REFERENCE",
+        "created_at": "2026-10-07T22:57:55.902929+00:00",
+        "payload": {
+          "id": "rag-engsoftware-requisitos-009",
+          "texto": "Requisitos funcionais descrevem serviços e comportamentos esperados do sistema. Requisitos não funcionais estabelecem atributos e restrições, como desempenho, segurança, confiabilidade e usabilidade. Elicitação, especificação, validação e gerenciamento de mudanças ajudam a manter alinhamento entre necessidades e solução.",
+          "exame": "ACERVO_CONCEITUAL_HAILA",
+          "ano": 2024,
+          "metadados": {
+            "curso": null,
+            "componente": null,
+            "area": "Engenharia de Software",
+            "habilidade": "Analisar e classificar requisitos",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "referencia": "SOMMERVILLE, I. Engenharia de Software.",
+            "linha": 9,
+            "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+            "retrieval": "bm25-aliases-v3",
+            "score": 17.959648,
+            "termos_recuperados": [
+              "classificar",
+              "engenharia",
+              "funcionais",
+              "nao",
+              "necessidades",
+              "requisitos"
+            ],
+            "candidatas_relevantes": 2,
+            "consulta_normalizada": [
+              "cenario",
+              "classificar",
+              "consegue",
+              "desenvolvimento",
+              "engenharia",
+              "especificacoes",
+              "estudante",
+              "funcionais",
+              "los",
+              "nao",
+              "necessidades",
+              "partir",
+              "relaciona",
+              "requisitos"
+            ],
+            "ranking": [
+              {
+                "id": "rag-engsoftware-requisitos-009",
+                "score": 17.959648
+              },
+              {
+                "id": "rag-engsoftware-testes-010",
+                "score": 2.733973
+              }
+            ]
+          }
+        },
+        "provenance": {}
+      },
+      {
+        "id": 39,
+        "request_id": "c79e02d1-c20c-454f-bb2d-a1226a00863a",
+        "kind": "STEM",
+        "created_at": "2026-10-07T22:57:57.422671+00:00",
+        "payload": {
+          "enunciado": "Em um sistema de gerenciamento de cursos universitários, foi especificado o seguinte requisito: \"O sistema deve criptografar todas as credenciais dos usuários utilizando algoritmo AES‑256 antes de armazená‑las no banco de dados.\" Qual a classificação correta desse requisito?",
+          "resposta_correta": "Requisito não funcional",
+          "explicacao": "O requisito descreve uma restrição de segurança ao comportamento do sistema (proteção dos dados), não uma funcionalidade que o usuário invoca. Requisitos não funcionais tratam de atributos de qualidade como segurança, desempenho, usabilidade, etc. Assim, a afirmação corresponde a um requisito não funcional de segurança.",
+          "competencia": "Analisar especificações de requisitos de software",
+          "habilidade": "Classificar requisitos e relacioná‑los às necessidades do sistema",
+          "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais",
+          "tem_imagem": false,
+          "recurso_visual": null
+        },
+        "provenance": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 1214,
+            "completion_tokens": 461,
+            "total_tokens": 1675
+          }
+        }
+      },
+      {
+        "id": 40,
+        "request_id": "c79e02d1-c20c-454f-bb2d-a1226a00863a",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-07T22:58:50.045734+00:00",
+        "payload": [
+          {
+            "texto": "Requisitórios de segurança",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Atributo de qualidade",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Requisítos de negócios",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Definição de projeto",
+            "erro": "",
+            "por_que_e_falso": ""
+          }
+        ],
+        "provenance": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_2:distratos->distratores",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 8,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.5.0",
+          "token_usage_local": {
+            "input_tokens": 1293,
+            "output_tokens": 100,
+            "total_tokens": 1393
+          },
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v8",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 8,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              1,
+              3,
+              4,
+              5
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      },
+      {
+        "id": 41,
+        "request_id": "c79e02d1-c20c-454f-bb2d-a1226a00863a",
+        "kind": "DETERMINISTIC_RED_FLAGS",
+        "created_at": "2026-10-07T22:58:50.057534+00:00",
+        "payload": [],
+        "provenance": {
+          "modelo": "haila-deterministic-redflags-v3",
+          "catalog_version": "haila-redflags-3.1.0",
+          "tipo": "deterministico"
+        }
+      }
+    ],
+    "red_flags": [],
+    "events": [
+      {
+        "id": 65,
+        "request_id": "c79e02d1-c20c-454f-bb2d-a1226a00863a",
+        "version_id": null,
+        "from_state": null,
+        "to_state": "REQUESTED",
+        "component": "HAILA",
+        "reason": "solicitação registrada",
+        "created_at": "2026-10-07T22:57:55.879511+00:00",
+        "evidence": {
+          "solicitante_id": "teste-lora-es",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Avaliar se o estudante consegue identificar e classificar requisitos funcionais e não funcionais a partir de um cenário de desenvolvimento de software.",
+          "dificuldade": 3,
+          "competencia": "Analisar especificações de requisitos de software.",
+          "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+          "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+          "restricoes": [
+            "Usar um cenário realista de sistema de software.",
+            "Evitar pistas lexicais que revelem o gabarito.",
+            "Manter apenas uma alternativa correta."
+          ]
+        }
+      },
+      {
+        "id": 66,
+        "request_id": "c79e02d1-c20c-454f-bb2d-a1226a00863a",
+        "version_id": null,
+        "from_state": "REQUESTED",
+        "to_state": "REFERENCE_RETRIEVED",
+        "component": "HAILA_RAG",
+        "reason": "referência recuperada",
+        "created_at": "2026-10-07T22:57:55.907534+00:00",
+        "evidence": {
+          "id": "rag-engsoftware-requisitos-009"
+        }
+      },
+      {
+        "id": 67,
+        "request_id": "c79e02d1-c20c-454f-bb2d-a1226a00863a",
+        "version_id": null,
+        "from_state": "REFERENCE_RETRIEVED",
+        "to_state": "STEM_GENERATED",
+        "component": "HAILA_LLM",
+        "reason": "núcleo gerado",
+        "created_at": "2026-10-07T22:57:57.427084+00:00",
+        "evidence": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 1214,
+            "completion_tokens": 461,
+            "total_tokens": 1675
+          }
+        }
+      },
+      {
+        "id": 68,
+        "request_id": "c79e02d1-c20c-454f-bb2d-a1226a00863a",
+        "version_id": null,
+        "from_state": "STEM_GENERATED",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-07T22:58:50.048862+00:00",
+        "evidence": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_2:distratos->distratores",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 8,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.5.0",
+          "token_usage_local": {
+            "input_tokens": 1293,
+            "output_tokens": 100,
+            "total_tokens": 1393
+          },
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v8",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 8,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              1,
+              3,
+              4,
+              5
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      },
+      {
+        "id": 69,
+        "request_id": "c79e02d1-c20c-454f-bb2d-a1226a00863a",
+        "version_id": "d3d9ca6a-a638-4009-9bad-c4723b8fd3b4",
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "ITEM_ASSEMBLED",
+        "component": "HAILA_ASSEMBLER",
+        "reason": "item montado",
+        "created_at": "2026-10-07T22:58:50.054933+00:00",
+        "evidence": {}
+      },
+      {
+        "id": 70,
+        "request_id": "c79e02d1-c20c-454f-bb2d-a1226a00863a",
+        "version_id": "d3d9ca6a-a638-4009-9bad-c4723b8fd3b4",
+        "from_state": "ITEM_ASSEMBLED",
+        "to_state": "GENERATION_COMPLETED",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "geração concluída sem red flags",
+        "created_at": "2026-10-07T22:58:50.059921+00:00",
+        "evidence": {}
+      }
+    ],
+    "reviews": []
+  },
+  "duration_seconds": 54.19
+}

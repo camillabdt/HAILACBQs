@@ -1,0 +1,430 @@
+{
+  "input": {
+    "solicitante_id": "teste-lora-redes",
+    "curso": "Computação",
+    "exame": "ENADE",
+    "componente": "ESPECIFICO",
+    "objetivo_pedagogico": "Avaliar se o estudante consegue selecionar o mecanismo de endereçamento e roteamento adequado em uma situação de redes IPv4 envolvendo sub-redes e encaminhamento de pacotes.",
+    "dificuldade": 3,
+    "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+    "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+    "objeto_conhecimento": "Endereçamento IPv4, sub-redes e roteamento.",
+    "restricoes": [
+      "Evitar cálculos excessivamente longos.",
+      "Produzir alternativas plausíveis.",
+      "Manter apenas uma alternativa correta."
+    ],
+    "max_tentativas": 3,
+    "max_tentativas_distratores": 3
+  },
+  "generate_response": {
+    "request_id": "477a86bb-7fe9-4eed-9c61-e57446822dfe",
+    "state": "ATTEMPTS_EXHAUSTED",
+    "red_flags": [
+      {
+        "codigo": "formatacao_quebrada",
+        "etapa": "DISTRATORES",
+        "campo": "saida_slm",
+        "evidencia": "distratores não puderam ser interpretados: Qwen não reuniu 4 distratores distintos; candidatos=2; amostras=3; inicios=['{\"distratos\": [\"Máscaras /27 (2^27 - 1 = 131071)\\\\n\\\\n- Máscara 252.230.218.\", \"Mascaras /26 (26 - 2 = 64)\\\\n- Máscaras 246.208.\\\\n- Mascaras 124.\", \"Mascaras /16 (16 -2 =8)\\\\nMárcas 0.', '{\"distratos\": [\"Máscaras /27 (2^27 - 1 = 131071)\\\\ne /26 (2^(26-1)= 65535)\", \"Nenhuma das anteriores.\", \"Mascaras /29 (2^n – 1) onde n é um número ímpar maior que 2.\", \"Nenhum dos a', '{\"distratos\": [\"Máscaras /26 (2^26-2 = 65534 - 2 =65,532)\\\\n\\\\n(25 bits)]\\\\n\\\\n(Máscaras /27 (27 bits))\"}']",
+        "reparo": "DISTRATORES"
+      }
+    ]
+  },
+  "history": {
+    "request": {
+      "id": "477a86bb-7fe9-4eed-9c61-e57446822dfe",
+      "solicitante_id": "teste-lora-redes",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "max_attempts": 3,
+      "max_distractor_attempts": 3,
+      "attempts": 4,
+      "stem_attempts": 1,
+      "distractor_attempts": 3,
+      "created_at": "2026-10-07T23:51:58.316670+00:00",
+      "updated_at": "2026-10-07T23:56:17.327023+00:00",
+      "specification": {
+        "solicitante_id": "teste-lora-redes",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Avaliar se o estudante consegue selecionar o mecanismo de endereçamento e roteamento adequado em uma situação de redes IPv4 envolvendo sub-redes e encaminhamento de pacotes.",
+        "dificuldade": 3,
+        "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+        "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+        "objeto_conhecimento": "Endereçamento IPv4, sub-redes e roteamento.",
+        "restricoes": [
+          "Evitar cálculos excessivamente longos.",
+          "Produzir alternativas plausíveis.",
+          "Manter apenas uma alternativa correta."
+        ]
+      }
+    },
+    "versions": [],
+    "latest_version": null,
+    "artifacts": [
+      {
+        "id": 59,
+        "request_id": "477a86bb-7fe9-4eed-9c61-e57446822dfe",
+        "kind": "REFERENCE",
+        "created_at": "2026-10-07T23:51:58.875262+00:00",
+        "payload": {
+          "id": "seed-redes-de-computadores-subnetting-ipv4",
+          "texto": "[Fonte 1: seed-redes-de-computadores-subnetting-ipv4 | Redes de Computadores | Subnetting IPv4]\nPara dividir uma rede IPv4 em sub-redes, bits originalmente destinados a hosts são incorporados ao prefixo. Cada bit adicional no prefixo dobra o número de sub-redes possíveis e reduz pela metade o bloco de endereços de cada sub-rede.\n\n[Fonte 2: seed-redes-de-computadores-endereamento-ipv4 | Redes de Computadores | Endereçamento IPv4]\nUm endereço IPv4 possui 32 bits. O prefixo identifica a rede e os bits restantes identificam endereços dentro da sub-rede; a notação CIDR /n informa quantos bits pertencem ao prefixo.\n\n[Fonte 3: seed-redes-de-computadores-endereo-de-rede-broadcast-e-hosts-ipv4 | Redes de Computadores | Endereço de rede, broadcast e hosts IPv4]\nEm uma sub-rede IPv4 tradicional, o primeiro endereço representa a rede e o último é o broadcast dirigido; os endereços intermediários podem ser atribuídos a interfaces de hosts, observadas exceções e usos especiais.",
+          "exame": "ACERVO_CONCEITUAL_HAILA",
+          "ano": 2026,
+          "metadados": {
+            "curso": "Computação",
+            "componente": "ESPECIFICO",
+            "area": "Redes de Computadores",
+            "subarea": "Camada de Rede",
+            "habilidade": "Dividir uma rede em sub-redes",
+            "objeto_conhecimento": "Subnetting IPv4",
+            "palavras_chave": [
+              "subnetting",
+              "IPv4",
+              "sub-redes",
+              "máscara",
+              "prefixo"
+            ],
+            "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+            "fonte_tipo": "sintese_conceitual_curada",
+            "origem": "HAILA_SEED_ENADE_POSCOMP_2026",
+            "linha": 18,
+            "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+            "retrieval": "hybrid-bm25-phrase-fuzzy-metadata-v4",
+            "area_inferida": "Redes de Computadores",
+            "top_k": 3,
+            "fontes_ids": [
+              "seed-redes-de-computadores-subnetting-ipv4",
+              "seed-redes-de-computadores-endereamento-ipv4",
+              "seed-redes-de-computadores-endereo-de-rede-broadcast-e-hosts-ipv4"
+            ],
+            "fontes": [
+              {
+                "id": "seed-redes-de-computadores-subnetting-ipv4",
+                "area": "Redes de Computadores",
+                "subarea": "Camada de Rede",
+                "objeto_conhecimento": "Subnetting IPv4",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+                "score": 23.817349,
+                "focus_coverage": 0.5,
+                "termos_recuperados": [
+                  "computadores",
+                  "ipv4",
+                  "ipv4__subrede",
+                  "redes",
+                  "redes__computadores",
+                  "subrede"
+                ],
+                "fuzzy": []
+              },
+              {
+                "id": "seed-redes-de-computadores-endereamento-ipv4",
+                "area": "Redes de Computadores",
+                "subarea": "Camada de Rede",
+                "objeto_conhecimento": "Endereçamento IPv4",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+                "score": 23.329117,
+                "focus_coverage": 0.75,
+                "termos_recuperados": [
+                  "computadores",
+                  "enderecamento",
+                  "enderecamento__ipv4",
+                  "ipv4",
+                  "redes",
+                  "redes__computadores",
+                  "subrede"
+                ],
+                "fuzzy": []
+              },
+              {
+                "id": "seed-redes-de-computadores-endereo-de-rede-broadcast-e-hosts-ipv4",
+                "area": "Redes de Computadores",
+                "subarea": "Camada de Rede",
+                "objeto_conhecimento": "Endereço de rede, broadcast e hosts IPv4",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+                "score": 20.033656,
+                "focus_coverage": 0.5,
+                "termos_recuperados": [
+                  "computadores",
+                  "ipv4",
+                  "ipv4__subrede",
+                  "redes",
+                  "redes__computadores",
+                  "subrede"
+                ],
+                "fuzzy": []
+              }
+            ],
+            "candidatas_relevantes": 25,
+            "consulta_normalizada": [
+              "adequado",
+              "aplicar",
+              "computadores",
+              "comunicacao",
+              "encaminhamento",
+              "enderecamento",
+              "envolvendo",
+              "ipv4",
+              "mecanismo",
+              "organizacao",
+              "pacotes",
+              "principios",
+              "redes",
+              "roteamento",
+              "selecionar",
+              "subrede"
+            ],
+            "ranking": [
+              {
+                "id": "seed-redes-de-computadores-subnetting-ipv4",
+                "score": 23.817349,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-endereamento-ipv4",
+                "score": 23.329117,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-endereo-de-rede-broadcast-e-hosts-ipv4",
+                "score": 20.033656,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-roteamento-ip-e-tabela-de-rotas",
+                "score": 18.492775,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-vlsm-e-alocao-de-sub-redes",
+                "score": 17.680718,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-roteamento-esttico-e-rota-padro",
+                "score": 16.330439,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-mscara-de-sub-rede-e-cidr",
+                "score": 16.113014,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-ipv6-e-estrutura-de-endereamento",
+                "score": 15.636952,
+                "area": "Redes de Computadores"
+              }
+            ],
+            "query_fingerprint": "9de8e1b37e55f716"
+          }
+        },
+        "provenance": {}
+      },
+      {
+        "id": 60,
+        "request_id": "477a86bb-7fe9-4eed-9c61-e57446822dfe",
+        "kind": "STEM",
+        "created_at": "2026-10-07T23:52:02.853778+00:00",
+        "payload": {
+          "enunciado": "Uma empresa possui o bloco de endereços IPv4 192.168.0.0/24 e precisa dividir esse bloco em sub‑redes para quatro departamentos: A (30 hosts), B (14 hosts), C (6 hosts) e D (2 hosts). Cada sub‑rede deve reservar endereços de rede e broadcast. Qual máscara de sub‑rede deve ser atribuída à sub‑rede que atenderá o departamento B, de modo a suprir exatamente o número de hosts necessários sem desperdício excessivo?",
+          "resposta_correta": "Máscara /28 (255.255.255.240)",
+          "explicacao": "Para 14 hosts são necessários 14 + 2 = 16 endereços (incluindo rede e broadcast). O menor bloco que fornece 16 endereços tem 4 bits de host (2⁴ = 16), portanto o prefixo tem 32‑4 = 28 bits, ou seja, máscara /28 (255.255.255.240). Essa máscara oferece exatamente 14 endereços utilizáveis, atendendo ao requisito sem exceder o necessário.",
+          "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+          "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação‑problema.",
+          "objeto_conhecimento": "Endereçamento IPv4, sub‑redes e roteamento.",
+          "tem_imagem": false,
+          "recurso_visual": null
+        },
+        "provenance": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2393,
+            "completion_tokens": 958,
+            "total_tokens": 3351
+          }
+        }
+      }
+    ],
+    "red_flags": [
+      {
+        "id": 21,
+        "request_id": "477a86bb-7fe9-4eed-9c61-e57446822dfe",
+        "code": "formatacao_quebrada",
+        "stage": "DISTRATORES",
+        "field": "saida_slm",
+        "evidence": "distratores não puderam ser interpretados: Qwen não reuniu 4 distratores distintos; candidatos=3; amostras=3; inicios=['{\"distratos\": [\"Márcara /30 (2^30 - 2 = 1073741822)\", \"Máscarra /29 (2 ^29 - 1 = 536870911)\", \"máscaras /27 e /26\", \"Mascara /16\"]}', '{\"distratos\": [\"Márcara /30 (2^30 - 2 = 1073741822)\", \"Máscarra /29 (2^(29-1)=2^28=268435456)\", \"Nenhuma das anteriores\", \"Mascara /16 (2^-16+1=65537)\"]}', '{\"distratos\": [\"Márcara /30 (2^30 = 1024)\", \"Máscarra /27 (2^(27-2))\", \"Mascara /16 (2(16 - 2))\"]}']",
+        "repair_target": "DISTRATORES",
+        "created_at": "2026-10-07T23:53:22.585661+00:00"
+      },
+      {
+        "id": 22,
+        "request_id": "477a86bb-7fe9-4eed-9c61-e57446822dfe",
+        "code": "formatacao_quebrada",
+        "stage": "DISTRATORES",
+        "field": "saida_slm",
+        "evidence": "distratores não puderam ser interpretados: Qwen não reuniu 4 distratores distintos; candidatos=0; amostras=3; inicios=['{\"distrator\": [\"MáSCARA /25 (225.191.000.128)\", \"MAÇARA /24 (231.184.012.800)\", \"MACAra /19 (18.147.024.1)\", \"\\\\n\\\\nMÁSCARA DE SUBREDE /23 (248.224.-1.)\"]}', '{\"distrator\": [\"MáSCARA /25 (24 bits)\", \"MASCARA DE SUBREDE /24 (23 bits)\", \"\\\\nMÁSCARA DO REDE /23 (22 bits)\", MASCARA DE REDE /19\"]}', '{\"distrator\": [\"MáSCARA /25 (225.000.128.1)\", MáSCARA/26 (191.024.0.), MáSCARAS /24 (126.048.)\"]}']",
+        "repair_target": "DISTRATORES",
+        "created_at": "2026-10-07T23:54:42.390105+00:00"
+      },
+      {
+        "id": 23,
+        "request_id": "477a86bb-7fe9-4eed-9c61-e57446822dfe",
+        "code": "formatacao_quebrada",
+        "stage": "DISTRATORES",
+        "field": "saida_slm",
+        "evidence": "distratores não puderam ser interpretados: Qwen não reuniu 4 distratores distintos; candidatos=2; amostras=3; inicios=['{\"distratos\": [\"Máscaras /27 (2^27 - 1 = 131071)\\\\n\\\\n- Máscara 252.230.218.\", \"Mascaras /26 (26 - 2 = 64)\\\\n- Máscaras 246.208.\\\\n- Mascaras 124.\", \"Mascaras /16 (16 -2 =8)\\\\nMárcas 0.', '{\"distratos\": [\"Máscaras /27 (2^27 - 1 = 131071)\\\\ne /26 (2^(26-1)= 65535)\", \"Nenhuma das anteriores.\", \"Mascaras /29 (2^n – 1) onde n é um número ímpar maior que 2.\", \"Nenhum dos a', '{\"distratos\": [\"Máscaras /26 (2^26-2 = 65534 - 2 =65,532)\\\\n\\\\n(25 bits)]\\\\n\\\\n(Máscaras /27 (27 bits))\"}']",
+        "repair_target": "DISTRATORES",
+        "created_at": "2026-10-07T23:56:17.321349+00:00"
+      }
+    ],
+    "events": [
+      {
+        "id": 101,
+        "request_id": "477a86bb-7fe9-4eed-9c61-e57446822dfe",
+        "version_id": null,
+        "from_state": null,
+        "to_state": "REQUESTED",
+        "component": "HAILA",
+        "reason": "solicitação registrada",
+        "created_at": "2026-10-07T23:51:58.317045+00:00",
+        "evidence": {
+          "solicitante_id": "teste-lora-redes",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Avaliar se o estudante consegue selecionar o mecanismo de endereçamento e roteamento adequado em uma situação de redes IPv4 envolvendo sub-redes e encaminhamento de pacotes.",
+          "dificuldade": 3,
+          "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+          "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+          "objeto_conhecimento": "Endereçamento IPv4, sub-redes e roteamento.",
+          "restricoes": [
+            "Evitar cálculos excessivamente longos.",
+            "Produzir alternativas plausíveis.",
+            "Manter apenas uma alternativa correta."
+          ]
+        }
+      },
+      {
+        "id": 102,
+        "request_id": "477a86bb-7fe9-4eed-9c61-e57446822dfe",
+        "version_id": null,
+        "from_state": "REQUESTED",
+        "to_state": "REFERENCE_RETRIEVED",
+        "component": "HAILA_RAG",
+        "reason": "referência recuperada",
+        "created_at": "2026-10-07T23:51:58.879467+00:00",
+        "evidence": {
+          "id": "seed-redes-de-computadores-subnetting-ipv4"
+        }
+      },
+      {
+        "id": 103,
+        "request_id": "477a86bb-7fe9-4eed-9c61-e57446822dfe",
+        "version_id": null,
+        "from_state": "REFERENCE_RETRIEVED",
+        "to_state": "STEM_GENERATED",
+        "component": "HAILA_LLM",
+        "reason": "núcleo gerado",
+        "created_at": "2026-10-07T23:52:02.857732+00:00",
+        "evidence": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2393,
+            "completion_tokens": 958,
+            "total_tokens": 3351
+          }
+        }
+      },
+      {
+        "id": 104,
+        "request_id": "477a86bb-7fe9-4eed-9c61-e57446822dfe",
+        "version_id": null,
+        "from_state": "STEM_GENERATED",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "saída inválida do SLM; nova tentativa solicitada",
+        "created_at": "2026-10-07T23:53:22.590058+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "formatacao_quebrada",
+              "etapa": "DISTRATORES",
+              "campo": "saida_slm",
+              "evidencia": "distratores não puderam ser interpretados: Qwen não reuniu 4 distratores distintos; candidatos=3; amostras=3; inicios=['{\"distratos\": [\"Márcara /30 (2^30 - 2 = 1073741822)\", \"Máscarra /29 (2 ^29 - 1 = 536870911)\", \"máscaras /27 e /26\", \"Mascara /16\"]}', '{\"distratos\": [\"Márcara /30 (2^30 - 2 = 1073741822)\", \"Máscarra /29 (2^(29-1)=2^28=268435456)\", \"Nenhuma das anteriores\", \"Mascara /16 (2^-16+1=65537)\"]}', '{\"distratos\": [\"Márcara /30 (2^30 = 1024)\", \"Máscarra /27 (2^(27-2))\", \"Mascara /16 (2(16 - 2))\"]}']",
+              "reparo": "DISTRATORES"
+            }
+          ]
+        }
+      },
+      {
+        "id": 105,
+        "request_id": "477a86bb-7fe9-4eed-9c61-e57446822dfe",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "saída inválida do SLM; nova tentativa solicitada",
+        "created_at": "2026-10-07T23:54:42.393273+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "formatacao_quebrada",
+              "etapa": "DISTRATORES",
+              "campo": "saida_slm",
+              "evidencia": "distratores não puderam ser interpretados: Qwen não reuniu 4 distratores distintos; candidatos=0; amostras=3; inicios=['{\"distrator\": [\"MáSCARA /25 (225.191.000.128)\", \"MAÇARA /24 (231.184.012.800)\", \"MACAra /19 (18.147.024.1)\", \"\\\\n\\\\nMÁSCARA DE SUBREDE /23 (248.224.-1.)\"]}', '{\"distrator\": [\"MáSCARA /25 (24 bits)\", \"MASCARA DE SUBREDE /24 (23 bits)\", \"\\\\nMÁSCARA DO REDE /23 (22 bits)\", MASCARA DE REDE /19\"]}', '{\"distrator\": [\"MáSCARA /25 (225.000.128.1)\", MáSCARA/26 (191.024.0.), MáSCARAS /24 (126.048.)\"]}']",
+              "reparo": "DISTRATORES"
+            }
+          ]
+        }
+      },
+      {
+        "id": 106,
+        "request_id": "477a86bb-7fe9-4eed-9c61-e57446822dfe",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "saída inválida do SLM; nova tentativa solicitada",
+        "created_at": "2026-10-07T23:56:17.323846+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "formatacao_quebrada",
+              "etapa": "DISTRATORES",
+              "campo": "saida_slm",
+              "evidencia": "distratores não puderam ser interpretados: Qwen não reuniu 4 distratores distintos; candidatos=2; amostras=3; inicios=['{\"distratos\": [\"Máscaras /27 (2^27 - 1 = 131071)\\\\n\\\\n- Máscara 252.230.218.\", \"Mascaras /26 (26 - 2 = 64)\\\\n- Máscaras 246.208.\\\\n- Mascaras 124.\", \"Mascaras /16 (16 -2 =8)\\\\nMárcas 0.', '{\"distratos\": [\"Máscaras /27 (2^27 - 1 = 131071)\\\\ne /26 (2^(26-1)= 65535)\", \"Nenhuma das anteriores.\", \"Mascaras /29 (2^n – 1) onde n é um número ímpar maior que 2.\", \"Nenhum dos a', '{\"distratos\": [\"Máscaras /26 (2^26-2 = 65534 - 2 =65,532)\\\\n\\\\n(25 bits)]\\\\n\\\\n(Máscaras /27 (27 bits))\"}']",
+              "reparo": "DISTRATORES"
+            }
+          ]
+        }
+      },
+      {
+        "id": 107,
+        "request_id": "477a86bb-7fe9-4eed-9c61-e57446822dfe",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "ATTEMPTS_EXHAUSTED",
+        "component": "HAILA",
+        "reason": "limite de tentativas do SLM atingido",
+        "created_at": "2026-10-07T23:56:17.327234+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "formatacao_quebrada",
+              "etapa": "DISTRATORES",
+              "campo": "saida_slm",
+              "evidencia": "distratores não puderam ser interpretados: Qwen não reuniu 4 distratores distintos; candidatos=2; amostras=3; inicios=['{\"distratos\": [\"Máscaras /27 (2^27 - 1 = 131071)\\\\n\\\\n- Máscara 252.230.218.\", \"Mascaras /26 (26 - 2 = 64)\\\\n- Máscaras 246.208.\\\\n- Mascaras 124.\", \"Mascaras /16 (16 -2 =8)\\\\nMárcas 0.', '{\"distratos\": [\"Máscaras /27 (2^27 - 1 = 131071)\\\\ne /26 (2^(26-1)= 65535)\", \"Nenhuma das anteriores.\", \"Mascaras /29 (2^n – 1) onde n é um número ímpar maior que 2.\", \"Nenhum dos a', '{\"distratos\": [\"Máscaras /26 (2^26-2 = 65534 - 2 =65,532)\\\\n\\\\n(25 bits)]\\\\n\\\\n(Máscaras /27 (27 bits))\"}']",
+              "reparo": "DISTRATORES"
+            }
+          ]
+        }
+      }
+    ],
+    "reviews": []
+  },
+  "duration_seconds": 259.02
+}

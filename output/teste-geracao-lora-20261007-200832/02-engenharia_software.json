@@ -1,0 +1,478 @@
+{
+  "input": {
+    "solicitante_id": "teste-lora-es",
+    "curso": "Computação",
+    "exame": "ENADE",
+    "componente": "ESPECIFICO",
+    "objetivo_pedagogico": "Avaliar se o estudante consegue identificar e classificar requisitos funcionais e não funcionais a partir de um cenário de desenvolvimento de software.",
+    "dificuldade": 3,
+    "competencia": "Analisar especificações de requisitos de software.",
+    "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+    "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+    "restricoes": [
+      "Usar um cenário realista de sistema de software.",
+      "Evitar pistas lexicais que revelem o gabarito.",
+      "Manter apenas uma alternativa correta."
+    ],
+    "max_tentativas": 3,
+    "max_tentativas_distratores": 3
+  },
+  "generate_response": {
+    "request_id": "5d371279-3c8d-40ee-a25d-60e03b966d3f",
+    "version": {
+      "id": "4804edfa-5489-4fd6-9aa0-f9c157c726c4",
+      "request_id": "5d371279-3c8d-40ee-a25d-60e03b966d3f",
+      "version_number": 1,
+      "created_at": "2026-10-07T23:09:29.977455+00:00",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Um aplicativo móvel de banco permite que o usuário realize transferências entre contas, consulte extratos e pague contas. O cliente solicita que, independentemente da operação realizada, todas as mensagens trocadas entre o aplicativo e o servidor sejam protegidas por criptografia usando TLS 1.3. Qual classificação melhor descreve essa exigência?",
+        "alternativas": [
+          "Requisitórios de segurança",
+          "Regras de negócio",
+          "Requisito não funcional",
+          "Tecnologias de integração",
+          "Desenvolvimento de requisito (DR)"
+        ],
+        "correta": 2,
+        "explicacao": "A exigência de criptografar a comunicação trata de um atributo de segurança do sistema, que impõe uma restrição ao modo como o serviço deve ser fornecido, caracterizando‑se como requisito não funcional. Requisitos funcionais descrevem comportamentos observáveis (ex.: \"permitir transferência de fundos\"), enquanto requisitos não funcionais especificam propriedades como segurança, desempenho, usabilidade, confiabilidade, etc. Assim, a necessidade de TLS 1.3 refere‑se a segurança, portanto é não funcional.",
+        "competencia": "Analisar especificações de requisitos de software.",
+        "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+        "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "provenance": {
+        "rag_id": "rag-engsoftware-requisitos-009",
+        "llm": "openai/gpt-oss-120b",
+        "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp))"
+      }
+    },
+    "state": "GENERATION_COMPLETED",
+    "red_flags": []
+  },
+  "history": {
+    "request": {
+      "id": "5d371279-3c8d-40ee-a25d-60e03b966d3f",
+      "solicitante_id": "teste-lora-es",
+      "state": "GENERATION_COMPLETED",
+      "max_attempts": 3,
+      "max_distractor_attempts": 3,
+      "attempts": 2,
+      "stem_attempts": 1,
+      "distractor_attempts": 1,
+      "created_at": "2026-10-07T23:08:36.599071+00:00",
+      "updated_at": "2026-10-07T23:09:29.986970+00:00",
+      "specification": {
+        "solicitante_id": "teste-lora-es",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Avaliar se o estudante consegue identificar e classificar requisitos funcionais e não funcionais a partir de um cenário de desenvolvimento de software.",
+        "dificuldade": 3,
+        "competencia": "Analisar especificações de requisitos de software.",
+        "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+        "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+        "restricoes": [
+          "Usar um cenário realista de sistema de software.",
+          "Evitar pistas lexicais que revelem o gabarito.",
+          "Manter apenas uma alternativa correta."
+        ]
+      }
+    },
+    "versions": [
+      {
+        "id": "4804edfa-5489-4fd6-9aa0-f9c157c726c4",
+        "version_number": 1,
+        "created_at": "2026-10-07T23:09:29.977455+00:00"
+      }
+    ],
+    "latest_version": {
+      "id": "4804edfa-5489-4fd6-9aa0-f9c157c726c4",
+      "request_id": "5d371279-3c8d-40ee-a25d-60e03b966d3f",
+      "version_number": 1,
+      "created_at": "2026-10-07T23:09:29.977455+00:00",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Um aplicativo móvel de banco permite que o usuário realize transferências entre contas, consulte extratos e pague contas. O cliente solicita que, independentemente da operação realizada, todas as mensagens trocadas entre o aplicativo e o servidor sejam protegidas por criptografia usando TLS 1.3. Qual classificação melhor descreve essa exigência?",
+        "alternativas": [
+          "Requisitórios de segurança",
+          "Regras de negócio",
+          "Requisito não funcional",
+          "Tecnologias de integração",
+          "Desenvolvimento de requisito (DR)"
+        ],
+        "correta": 2,
+        "explicacao": "A exigência de criptografar a comunicação trata de um atributo de segurança do sistema, que impõe uma restrição ao modo como o serviço deve ser fornecido, caracterizando‑se como requisito não funcional. Requisitos funcionais descrevem comportamentos observáveis (ex.: \"permitir transferência de fundos\"), enquanto requisitos não funcionais especificam propriedades como segurança, desempenho, usabilidade, confiabilidade, etc. Assim, a necessidade de TLS 1.3 refere‑se a segurança, portanto é não funcional.",
+        "competencia": "Analisar especificações de requisitos de software.",
+        "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+        "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "provenance": {
+        "rag_id": "rag-engsoftware-requisitos-009",
+        "llm": "openai/gpt-oss-120b",
+        "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp))"
+      }
+    },
+    "artifacts": [
+      {
+        "id": 46,
+        "request_id": "5d371279-3c8d-40ee-a25d-60e03b966d3f",
+        "kind": "REFERENCE",
+        "created_at": "2026-10-07T23:08:36.618713+00:00",
+        "payload": {
+          "id": "rag-engsoftware-requisitos-009",
+          "texto": "Requisitos funcionais descrevem serviços e comportamentos esperados do sistema. Requisitos não funcionais estabelecem atributos e restrições, como desempenho, segurança, confiabilidade e usabilidade. Elicitação, especificação, validação e gerenciamento de mudanças ajudam a manter alinhamento entre necessidades e solução.",
+          "exame": "ACERVO_CONCEITUAL_HAILA",
+          "ano": 2024,
+          "metadados": {
+            "curso": null,
+            "componente": null,
+            "area": "Engenharia de Software",
+            "habilidade": "Analisar e classificar requisitos",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "referencia": "SOMMERVILLE, I. Engenharia de Software.",
+            "linha": 9,
+            "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+            "retrieval": "bm25-aliases-v3",
+            "score": 17.959648,
+            "termos_recuperados": [
+              "classificar",
+              "engenharia",
+              "funcionais",
+              "nao",
+              "necessidades",
+              "requisitos"
+            ],
+            "candidatas_relevantes": 2,
+            "consulta_normalizada": [
+              "cenario",
+              "classificar",
+              "consegue",
+              "desenvolvimento",
+              "engenharia",
+              "especificacoes",
+              "estudante",
+              "funcionais",
+              "los",
+              "nao",
+              "necessidades",
+              "partir",
+              "relaciona",
+              "requisitos"
+            ],
+            "ranking": [
+              {
+                "id": "rag-engsoftware-requisitos-009",
+                "score": 17.959648
+              },
+              {
+                "id": "rag-engsoftware-testes-010",
+                "score": 2.733973
+              }
+            ]
+          }
+        },
+        "provenance": {}
+      },
+      {
+        "id": 47,
+        "request_id": "5d371279-3c8d-40ee-a25d-60e03b966d3f",
+        "kind": "STEM",
+        "created_at": "2026-10-07T23:08:38.416496+00:00",
+        "payload": {
+          "enunciado": "Um aplicativo móvel de banco permite que o usuário realize transferências entre contas, consulte extratos e pague contas. O cliente solicita que, independentemente da operação realizada, todas as mensagens trocadas entre o aplicativo e o servidor sejam protegidas por criptografia usando TLS 1.3. Qual classificação melhor descreve essa exigência?",
+          "resposta_correta": "Requisito não funcional",
+          "explicacao": "A exigência de criptografar a comunicação trata de um atributo de segurança do sistema, que impõe uma restrição ao modo como o serviço deve ser fornecido, caracterizando‑se como requisito não funcional. Requisitos funcionais descrevem comportamentos observáveis (ex.: \"permitir transferência de fundos\"), enquanto requisitos não funcionais especificam propriedades como segurança, desempenho, usabilidade, confiabilidade, etc. Assim, a necessidade de TLS 1.3 refere‑se a segurança, portanto é não funcional.",
+          "competencia": "Analisar especificações de requisitos de software.",
+          "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+          "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+          "tem_imagem": false,
+          "recurso_visual": null
+        },
+        "provenance": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 1214,
+            "completion_tokens": 611,
+            "total_tokens": 1825
+          }
+        }
+      },
+      {
+        "id": 48,
+        "request_id": "5d371279-3c8d-40ee-a25d-60e03b966d3f",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-07T23:09:29.970219+00:00",
+        "payload": [
+          {
+            "texto": "Requisitórios de segurança",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Tecnologias de integração",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Regras de negócio",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Desenvolvimento de requisito (DR)",
+            "erro": "",
+            "por_que_e_falso": ""
+          }
+        ],
+        "provenance": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:candidato_lexical_descartado:possível corrupção lexical \"Requisitos\" (similaridade=0.95 com \"requisito\")",
+            "amostra_2:distratos->distratores",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:candidato_lexical_descartado:possível corrupção lexical \"Requisitos\" (similaridade=0.95 com \"requisito\")",
+            "amostra_2:candidato_lexical_descartado:possível corrupção lexical \"requisitos\" (similaridade=0.95 com \"requisito\")",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:candidato_lexical_descartado:possível corrupção lexical \"Requisitos\" (similaridade=0.95 com \"requisito\")",
+            "amostra_3:candidato_lexical_descartado:possível corrupção lexical \"requisitos\" (similaridade=0.95 com \"requisito\")"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 6,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.6.0",
+          "token_usage_local": {
+            "input_tokens": 1332,
+            "output_tokens": 111,
+            "total_tokens": 1443
+          },
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v8",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 6,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              0,
+              1,
+              2,
+              5
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      },
+      {
+        "id": 49,
+        "request_id": "5d371279-3c8d-40ee-a25d-60e03b966d3f",
+        "kind": "DETERMINISTIC_RED_FLAGS",
+        "created_at": "2026-10-07T23:09:29.984189+00:00",
+        "payload": [],
+        "provenance": {
+          "modelo": "haila-deterministic-redflags-v3",
+          "catalog_version": "haila-redflags-3.1.0",
+          "tipo": "deterministico"
+        }
+      }
+    ],
+    "red_flags": [],
+    "events": [
+      {
+        "id": 79,
+        "request_id": "5d371279-3c8d-40ee-a25d-60e03b966d3f",
+        "version_id": null,
+        "from_state": null,
+        "to_state": "REQUESTED",
+        "component": "HAILA",
+        "reason": "solicitação registrada",
+        "created_at": "2026-10-07T23:08:36.599663+00:00",
+        "evidence": {
+          "solicitante_id": "teste-lora-es",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Avaliar se o estudante consegue identificar e classificar requisitos funcionais e não funcionais a partir de um cenário de desenvolvimento de software.",
+          "dificuldade": 3,
+          "competencia": "Analisar especificações de requisitos de software.",
+          "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+          "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+          "restricoes": [
+            "Usar um cenário realista de sistema de software.",
+            "Evitar pistas lexicais que revelem o gabarito.",
+            "Manter apenas uma alternativa correta."
+          ]
+        }
+      },
+      {
+        "id": 80,
+        "request_id": "5d371279-3c8d-40ee-a25d-60e03b966d3f",
+        "version_id": null,
+        "from_state": "REQUESTED",
+        "to_state": "REFERENCE_RETRIEVED",
+        "component": "HAILA_RAG",
+        "reason": "referência recuperada",
+        "created_at": "2026-10-07T23:08:36.627223+00:00",
+        "evidence": {
+          "id": "rag-engsoftware-requisitos-009"
+        }
+      },
+      {
+        "id": 81,
+        "request_id": "5d371279-3c8d-40ee-a25d-60e03b966d3f",
+        "version_id": null,
+        "from_state": "REFERENCE_RETRIEVED",
+        "to_state": "STEM_GENERATED",
+        "component": "HAILA_LLM",
+        "reason": "núcleo gerado",
+        "created_at": "2026-10-07T23:08:38.422162+00:00",
+        "evidence": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 1214,
+            "completion_tokens": 611,
+            "total_tokens": 1825
+          }
+        }
+      },
+      {
+        "id": 82,
+        "request_id": "5d371279-3c8d-40ee-a25d-60e03b966d3f",
+        "version_id": null,
+        "from_state": "STEM_GENERATED",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-07T23:09:29.973783+00:00",
+        "evidence": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:candidato_lexical_descartado:possível corrupção lexical \"Requisitos\" (similaridade=0.95 com \"requisito\")",
+            "amostra_2:distratos->distratores",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:candidato_lexical_descartado:possível corrupção lexical \"Requisitos\" (similaridade=0.95 com \"requisito\")",
+            "amostra_2:candidato_lexical_descartado:possível corrupção lexical \"requisitos\" (similaridade=0.95 com \"requisito\")",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:candidato_lexical_descartado:possível corrupção lexical \"Requisitos\" (similaridade=0.95 com \"requisito\")",
+            "amostra_3:candidato_lexical_descartado:possível corrupção lexical \"requisitos\" (similaridade=0.95 com \"requisito\")"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 6,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.6.0",
+          "token_usage_local": {
+            "input_tokens": 1332,
+            "output_tokens": 111,
+            "total_tokens": 1443
+          },
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v8",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 6,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              0,
+              1,
+              2,
+              5
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      },
+      {
+        "id": 83,
+        "request_id": "5d371279-3c8d-40ee-a25d-60e03b966d3f",
+        "version_id": "4804edfa-5489-4fd6-9aa0-f9c157c726c4",
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "ITEM_ASSEMBLED",
+        "component": "HAILA_ASSEMBLER",
+        "reason": "item montado",
+        "created_at": "2026-10-07T23:09:29.980686+00:00",
+        "evidence": {}
+      },
+      {
+        "id": 84,
+        "request_id": "5d371279-3c8d-40ee-a25d-60e03b966d3f",
+        "version_id": "4804edfa-5489-4fd6-9aa0-f9c157c726c4",
+        "from_state": "ITEM_ASSEMBLED",
+        "to_state": "GENERATION_COMPLETED",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "geração concluída sem red flags",
+        "created_at": "2026-10-07T23:09:29.987065+00:00",
+        "evidence": {}
+      }
+    ],
+    "reviews": []
+  },
+  "duration_seconds": 53.4
+}

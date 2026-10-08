@@ -1,0 +1,1043 @@
+{
+  "input": {
+    "solicitante_id": "teste-lora-redes",
+    "curso": "Computação",
+    "exame": "ENADE",
+    "componente": "ESPECIFICO",
+    "objetivo_pedagogico": "Avaliar se o estudante consegue selecionar o mecanismo de endereçamento e roteamento adequado em uma situação de redes IPv4 envolvendo sub-redes e encaminhamento de pacotes.",
+    "dificuldade": 3,
+    "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+    "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+    "objeto_conhecimento": "Endereçamento IPv4, sub-redes e roteamento.",
+    "restricoes": [
+      "Evitar cálculos excessivamente longos.",
+      "Produzir alternativas plausíveis.",
+      "Manter apenas uma alternativa correta."
+    ],
+    "max_tentativas": 3,
+    "max_tentativas_distratores": 3
+  },
+  "generate_response": {
+    "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+    "version": {
+      "id": "4bc39da0-2303-48b3-ac8d-ed2a95e5940b",
+      "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+      "version_number": 3,
+      "created_at": "2026-10-08T00:30:12.676108+00:00",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Considere a rede IPv4 10.0.0.0/24 que será subdividida para atender a diferentes departamentos. Um desses departamentos precisa conectar 30 dispositivos simultaneamente, e o bloco de endereços destinado a ele deve ser contíguo e exclusivo. Qual notação CIDR define corretamente o tamanho mínimo do bloco que permite acomodar esse número de dispositivos?",
+        "alternativas": [
+          "/28",
+          "/16",
+          "/27",
+          "/30",
+          "/29"
+        ],
+        "correta": 2,
+        "explicacao": "Para suportar 30 hosts são necessários 5 bits de host (2^5‑2 = 30). Assim, restam 27 bits para o prefixo, resultando na notação /27, que oferece 32 endereços (30 utilizáveis, 1 rede e 1 broadcast).",
+        "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+        "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+        "objeto_conhecimento": "Endereçamento IPv4, sub-redes e roteamento.",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "provenance": {
+        "rag_id": "seed-redes-de-computadores-subnetting-ipv4",
+        "llm": "openai/gpt-oss-120b",
+        "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp))"
+      }
+    },
+    "state": "GENERATION_COMPLETED",
+    "red_flags": []
+  },
+  "history": {
+    "request": {
+      "id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+      "solicitante_id": "teste-lora-redes",
+      "state": "GENERATION_COMPLETED",
+      "max_attempts": 3,
+      "max_distractor_attempts": 3,
+      "attempts": 6,
+      "stem_attempts": 3,
+      "distractor_attempts": 3,
+      "created_at": "2026-10-08T00:27:50.476532+00:00",
+      "updated_at": "2026-10-08T00:30:12.683583+00:00",
+      "specification": {
+        "solicitante_id": "teste-lora-redes",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Avaliar se o estudante consegue selecionar o mecanismo de endereçamento e roteamento adequado em uma situação de redes IPv4 envolvendo sub-redes e encaminhamento de pacotes.",
+        "dificuldade": 3,
+        "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+        "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+        "objeto_conhecimento": "Endereçamento IPv4, sub-redes e roteamento.",
+        "restricoes": [
+          "Evitar cálculos excessivamente longos.",
+          "Produzir alternativas plausíveis.",
+          "Manter apenas uma alternativa correta."
+        ]
+      }
+    },
+    "versions": [
+      {
+        "id": "f9925c4f-fa96-4465-9f7f-ef17ea86e9ed",
+        "version_number": 1,
+        "created_at": "2026-10-08T00:28:59.927370+00:00"
+      },
+      {
+        "id": "e15f4df1-e5e8-4206-a484-216e6c031c2e",
+        "version_number": 2,
+        "created_at": "2026-10-08T00:29:39.114624+00:00"
+      },
+      {
+        "id": "4bc39da0-2303-48b3-ac8d-ed2a95e5940b",
+        "version_number": 3,
+        "created_at": "2026-10-08T00:30:12.676108+00:00"
+      }
+    ],
+    "latest_version": {
+      "id": "4bc39da0-2303-48b3-ac8d-ed2a95e5940b",
+      "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+      "version_number": 3,
+      "created_at": "2026-10-08T00:30:12.676108+00:00",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Considere a rede IPv4 10.0.0.0/24 que será subdividida para atender a diferentes departamentos. Um desses departamentos precisa conectar 30 dispositivos simultaneamente, e o bloco de endereços destinado a ele deve ser contíguo e exclusivo. Qual notação CIDR define corretamente o tamanho mínimo do bloco que permite acomodar esse número de dispositivos?",
+        "alternativas": [
+          "/28",
+          "/16",
+          "/27",
+          "/30",
+          "/29"
+        ],
+        "correta": 2,
+        "explicacao": "Para suportar 30 hosts são necessários 5 bits de host (2^5‑2 = 30). Assim, restam 27 bits para o prefixo, resultando na notação /27, que oferece 32 endereços (30 utilizáveis, 1 rede e 1 broadcast).",
+        "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+        "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+        "objeto_conhecimento": "Endereçamento IPv4, sub-redes e roteamento.",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "provenance": {
+        "rag_id": "seed-redes-de-computadores-subnetting-ipv4",
+        "llm": "openai/gpt-oss-120b",
+        "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp))"
+      }
+    },
+    "artifacts": [
+      {
+        "id": 69,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "kind": "REFERENCE",
+        "created_at": "2026-10-08T00:27:51.044199+00:00",
+        "payload": {
+          "id": "seed-redes-de-computadores-subnetting-ipv4",
+          "texto": "[Fonte 1: seed-redes-de-computadores-subnetting-ipv4 | Redes de Computadores | Subnetting IPv4]\nPara dividir uma rede IPv4 em sub-redes, bits originalmente destinados a hosts são incorporados ao prefixo. Cada bit adicional no prefixo dobra o número de sub-redes possíveis e reduz pela metade o bloco de endereços de cada sub-rede.\n\n[Fonte 2: seed-redes-de-computadores-endereamento-ipv4 | Redes de Computadores | Endereçamento IPv4]\nUm endereço IPv4 possui 32 bits. O prefixo identifica a rede e os bits restantes identificam endereços dentro da sub-rede; a notação CIDR /n informa quantos bits pertencem ao prefixo.\n\n[Fonte 3: seed-redes-de-computadores-endereo-de-rede-broadcast-e-hosts-ipv4 | Redes de Computadores | Endereço de rede, broadcast e hosts IPv4]\nEm uma sub-rede IPv4 tradicional, o primeiro endereço representa a rede e o último é o broadcast dirigido; os endereços intermediários podem ser atribuídos a interfaces de hosts, observadas exceções e usos especiais.",
+          "exame": "ACERVO_CONCEITUAL_HAILA",
+          "ano": 2026,
+          "metadados": {
+            "curso": "Computação",
+            "componente": "ESPECIFICO",
+            "area": "Redes de Computadores",
+            "subarea": "Camada de Rede",
+            "habilidade": "Dividir uma rede em sub-redes",
+            "objeto_conhecimento": "Subnetting IPv4",
+            "palavras_chave": [
+              "subnetting",
+              "IPv4",
+              "sub-redes",
+              "máscara",
+              "prefixo"
+            ],
+            "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+            "fonte_tipo": "sintese_conceitual_curada",
+            "origem": "HAILA_SEED_ENADE_POSCOMP_2026",
+            "linha": 18,
+            "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+            "retrieval": "hybrid-bm25-phrase-fuzzy-metadata-v4",
+            "area_inferida": "Redes de Computadores",
+            "top_k": 3,
+            "fontes_ids": [
+              "seed-redes-de-computadores-subnetting-ipv4",
+              "seed-redes-de-computadores-endereamento-ipv4",
+              "seed-redes-de-computadores-endereo-de-rede-broadcast-e-hosts-ipv4"
+            ],
+            "fontes": [
+              {
+                "id": "seed-redes-de-computadores-subnetting-ipv4",
+                "area": "Redes de Computadores",
+                "subarea": "Camada de Rede",
+                "objeto_conhecimento": "Subnetting IPv4",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+                "score": 23.817349,
+                "focus_coverage": 0.5,
+                "termos_recuperados": [
+                  "computadores",
+                  "ipv4",
+                  "ipv4__subrede",
+                  "redes",
+                  "redes__computadores",
+                  "subrede"
+                ],
+                "fuzzy": []
+              },
+              {
+                "id": "seed-redes-de-computadores-endereamento-ipv4",
+                "area": "Redes de Computadores",
+                "subarea": "Camada de Rede",
+                "objeto_conhecimento": "Endereçamento IPv4",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+                "score": 23.329117,
+                "focus_coverage": 0.75,
+                "termos_recuperados": [
+                  "computadores",
+                  "enderecamento",
+                  "enderecamento__ipv4",
+                  "ipv4",
+                  "redes",
+                  "redes__computadores",
+                  "subrede"
+                ],
+                "fuzzy": []
+              },
+              {
+                "id": "seed-redes-de-computadores-endereo-de-rede-broadcast-e-hosts-ipv4",
+                "area": "Redes de Computadores",
+                "subarea": "Camada de Rede",
+                "objeto_conhecimento": "Endereço de rede, broadcast e hosts IPv4",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+                "score": 20.033656,
+                "focus_coverage": 0.5,
+                "termos_recuperados": [
+                  "computadores",
+                  "ipv4",
+                  "ipv4__subrede",
+                  "redes",
+                  "redes__computadores",
+                  "subrede"
+                ],
+                "fuzzy": []
+              }
+            ],
+            "candidatas_relevantes": 25,
+            "consulta_normalizada": [
+              "adequado",
+              "aplicar",
+              "computadores",
+              "comunicacao",
+              "encaminhamento",
+              "enderecamento",
+              "envolvendo",
+              "ipv4",
+              "mecanismo",
+              "organizacao",
+              "pacotes",
+              "principios",
+              "redes",
+              "roteamento",
+              "selecionar",
+              "subrede"
+            ],
+            "ranking": [
+              {
+                "id": "seed-redes-de-computadores-subnetting-ipv4",
+                "score": 23.817349,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-endereamento-ipv4",
+                "score": 23.329117,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-endereo-de-rede-broadcast-e-hosts-ipv4",
+                "score": 20.033656,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-roteamento-ip-e-tabela-de-rotas",
+                "score": 18.492775,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-vlsm-e-alocao-de-sub-redes",
+                "score": 17.680718,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-roteamento-esttico-e-rota-padro",
+                "score": 16.330439,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-mscara-de-sub-rede-e-cidr",
+                "score": 16.113014,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-ipv6-e-estrutura-de-endereamento",
+                "score": 15.636952,
+                "area": "Redes de Computadores"
+              }
+            ],
+            "query_fingerprint": "9de8e1b37e55f716"
+          }
+        },
+        "provenance": {}
+      },
+      {
+        "id": 70,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "kind": "STEM",
+        "created_at": "2026-10-08T00:27:54.453699+00:00",
+        "payload": {
+          "enunciado": "Um host H possui o endereço IPv4 10.0.1.10 com máscara de sub-rede /22 (máscara 255.255.252.0) e tem como gateway padrão o endereço 10.0.0.1. Considere que H precisa enviar um datagrama IP ao destino 10.0.3.200. Qual mecanismo de encaminhamento o host H deve empregar para entregar o pacote ao destino?",
+          "resposta_correta": "Encaminhamento direto, utilizando ARP para enviar o quadro ao host de destino dentro da mesma sub-rede",
+          "explicacao": "Com a máscara /22, a sub-rede de H abrange os endereços de 10.0.0.0 a 10.0.3.255. O destino 10.0.3.200 está dentro desse intervalo, logo está na mesma sub-rede de H. Quando o destino está na mesma sub-rede, o host realiza resolução ARP para obter o endereço MAC do destino e envia o quadro Ethernet diretamente, sem recorrer ao gateway padrão. Erros comuns incluem encaminhar o pacote ao gateway, considerar o endereço como externo ou usar broadcast, o que não ocorre nesse caso.",
+          "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+          "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+          "objeto_conhecimento": "Endereçamento IPv4, sub-redes e roteamento.",
+          "tem_imagem": false,
+          "recurso_visual": null
+        },
+        "provenance": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2393,
+            "completion_tokens": 1050,
+            "total_tokens": 3443
+          }
+        }
+      },
+      {
+        "id": 71,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-08T00:28:59.919780+00:00",
+        "payload": [
+          {
+            "texto": "Encaminha-se pela porta Ethernet, pois o cabeçalho TCP já foi removido na interface física",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Encaminhar por meio de rotação, pois a rede está dividida em duas camadas",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Utilizando o método de broadcast, pois há conexões mútuas entre hosts.",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Encerrar o fluxo de tráfego via ICMP (ping).",
+            "erro": "",
+            "por_que_e_falso": ""
+          }
+        ],
+        "provenance": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:candidato_lexical_descartado:possível corrupção lexical \"datagramas\" (similaridade=0.95 com \"datagrama\")"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 7,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.6.0",
+          "token_usage_local": {
+            "input_tokens": 1494,
+            "output_tokens": 208,
+            "total_tokens": 1702
+          },
+          "familia": "resposta_textual",
+          "roteador": "hybrid-v8",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 7,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              1,
+              0,
+              2,
+              3
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      },
+      {
+        "id": 72,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "kind": "DETERMINISTIC_RED_FLAGS",
+        "created_at": "2026-10-08T00:28:59.932690+00:00",
+        "payload": [
+          {
+            "codigo": "iwf_gabarito_mais_longo",
+            "etapa": "DETERMINISTICA",
+            "campo": "alternativas",
+            "evidencia": "palavras por alternativa=[15, 8, 17, 11, 13]; o gabarito não deve se destacar pela extensão",
+            "reparo": "DISTRATORES"
+          },
+          {
+            "codigo": "iwf_repeticao_entrega_gabarito",
+            "etapa": "DETERMINISTICA",
+            "campo": "enunciado",
+            "evidencia": "termos exclusivos repetidos no gabarito: destino, encaminhamento, enviar",
+            "reparo": "NUCLEO"
+          }
+        ],
+        "provenance": {
+          "modelo": "haila-deterministic-redflags-v3",
+          "catalog_version": "haila-redflags-3.1.0",
+          "tipo": "deterministico"
+        }
+      },
+      {
+        "id": 73,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "kind": "STEM",
+        "created_at": "2026-10-08T00:29:02.609480+00:00",
+        "payload": {
+          "enunciado": "Um administrador possui duas redes IPv4: 192.168.10.0/24 e 192.168.20.0/24. Cada rede está conectada a um único roteador, que tem uma interface em cada uma delas. O objetivo é que um host da primeira rede consiga comunicar‑se com um host da segunda rede sem utilizar protocolos de roteamento dinâmico. Qual mecanismo deve ser configurado no roteador para atender a essa necessidade?",
+          "resposta_correta": "Roteamento estático",
+          "explicacao": "Com interfaces em ambas as sub‑redes, o roteador pode encaminhar pacotes entre elas mediante rotas definidas manualmente. Como não se deseja usar protocolos dinâmicos, a configuração de rotas estáticas especifica explicitamente os próximos saltos para as redes de destino, garantindo a comunicação correta.",
+          "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+          "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+          "objeto_conhecimento": "Endereçamento IPv4, sub‑redes e roteamento.",
+          "tem_imagem": false,
+          "recurso_visual": null
+        },
+        "provenance": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2583,
+            "completion_tokens": 941,
+            "total_tokens": 3524
+          }
+        }
+      },
+      {
+        "id": 74,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-08T00:29:39.108537+00:00",
+        "payload": [
+          {
+            "texto": "Máquina virtual",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Router inteligente",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "DNS remoto",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Redução IP",
+            "erro": "",
+            "por_que_e_falso": ""
+          }
+        ],
+        "provenance": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_2:distratos->distratores",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:candidato_lexical_descartado:possível corrupção lexical \"Configuração\" (similaridade=0.87 com \"configurado\")",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 10,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.6.0",
+          "token_usage_local": {
+            "input_tokens": 1440,
+            "output_tokens": 92,
+            "total_tokens": 1532
+          },
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v8",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 10,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              1,
+              2,
+              5,
+              7
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      },
+      {
+        "id": 75,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "kind": "DETERMINISTIC_RED_FLAGS",
+        "created_at": "2026-10-08T00:29:39.120652+00:00",
+        "payload": [
+          {
+            "codigo": "iwf_repeticao_entrega_gabarito",
+            "etapa": "DETERMINISTICA",
+            "campo": "enunciado",
+            "evidencia": "termos exclusivos repetidos no gabarito: roteamento",
+            "reparo": "NUCLEO"
+          }
+        ],
+        "provenance": {
+          "modelo": "haila-deterministic-redflags-v3",
+          "catalog_version": "haila-redflags-3.1.0",
+          "tipo": "deterministico"
+        }
+      },
+      {
+        "id": 76,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "kind": "STEM",
+        "created_at": "2026-10-08T00:29:42.496122+00:00",
+        "payload": {
+          "enunciado": "Considere a rede IPv4 10.0.0.0/24 que será subdividida para atender a diferentes departamentos. Um desses departamentos precisa conectar 30 dispositivos simultaneamente, e o bloco de endereços destinado a ele deve ser contíguo e exclusivo. Qual notação CIDR define corretamente o tamanho mínimo do bloco que permite acomodar esse número de dispositivos?",
+          "resposta_correta": "/27",
+          "explicacao": "Para suportar 30 hosts são necessários 5 bits de host (2^5‑2 = 30). Assim, restam 27 bits para o prefixo, resultando na notação /27, que oferece 32 endereços (30 utilizáveis, 1 rede e 1 broadcast).",
+          "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+          "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+          "objeto_conhecimento": "Endereçamento IPv4, sub-redes e roteamento.",
+          "tem_imagem": false,
+          "recurso_visual": null
+        },
+        "provenance": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2501,
+            "completion_tokens": 1126,
+            "total_tokens": 3627
+          }
+        }
+      },
+      {
+        "id": 77,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-08T00:30:12.670385+00:00",
+        "payload": [
+          {
+            "texto": "/28",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "/29",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "/30",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "/16",
+            "erro": "",
+            "por_que_e_falso": ""
+          }
+        ],
+        "provenance": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_2:distratos->distratores",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 4,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.6.0",
+          "token_usage_local": {
+            "input_tokens": 1365,
+            "output_tokens": 69,
+            "total_tokens": 1434
+          },
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v8",
+          "selecao": "pool_exato"
+        }
+      },
+      {
+        "id": 78,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "kind": "DETERMINISTIC_RED_FLAGS",
+        "created_at": "2026-10-08T00:30:12.681323+00:00",
+        "payload": [],
+        "provenance": {
+          "modelo": "haila-deterministic-redflags-v3",
+          "catalog_version": "haila-redflags-3.1.0",
+          "tipo": "deterministico"
+        }
+      }
+    ],
+    "red_flags": [
+      {
+        "id": 24,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "code": "iwf_gabarito_mais_longo",
+        "stage": "DETERMINISTICA",
+        "field": "alternativas",
+        "evidence": "palavras por alternativa=[15, 8, 17, 11, 13]; o gabarito não deve se destacar pela extensão",
+        "repair_target": "DISTRATORES",
+        "created_at": "2026-10-08T00:28:59.934865+00:00"
+      },
+      {
+        "id": 25,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "code": "iwf_repeticao_entrega_gabarito",
+        "stage": "DETERMINISTICA",
+        "field": "enunciado",
+        "evidence": "termos exclusivos repetidos no gabarito: destino, encaminhamento, enviar",
+        "repair_target": "NUCLEO",
+        "created_at": "2026-10-08T00:28:59.935018+00:00"
+      },
+      {
+        "id": 26,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "code": "iwf_repeticao_entrega_gabarito",
+        "stage": "DETERMINISTICA",
+        "field": "enunciado",
+        "evidence": "termos exclusivos repetidos no gabarito: roteamento",
+        "repair_target": "NUCLEO",
+        "created_at": "2026-10-08T00:29:39.122998+00:00"
+      }
+    ],
+    "events": [
+      {
+        "id": 120,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "version_id": null,
+        "from_state": null,
+        "to_state": "REQUESTED",
+        "component": "HAILA",
+        "reason": "solicitação registrada",
+        "created_at": "2026-10-08T00:27:50.476894+00:00",
+        "evidence": {
+          "solicitante_id": "teste-lora-redes",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Avaliar se o estudante consegue selecionar o mecanismo de endereçamento e roteamento adequado em uma situação de redes IPv4 envolvendo sub-redes e encaminhamento de pacotes.",
+          "dificuldade": 3,
+          "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+          "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+          "objeto_conhecimento": "Endereçamento IPv4, sub-redes e roteamento.",
+          "restricoes": [
+            "Evitar cálculos excessivamente longos.",
+            "Produzir alternativas plausíveis.",
+            "Manter apenas uma alternativa correta."
+          ]
+        }
+      },
+      {
+        "id": 121,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "version_id": null,
+        "from_state": "REQUESTED",
+        "to_state": "REFERENCE_RETRIEVED",
+        "component": "HAILA_RAG",
+        "reason": "referência recuperada",
+        "created_at": "2026-10-08T00:27:51.048495+00:00",
+        "evidence": {
+          "id": "seed-redes-de-computadores-subnetting-ipv4"
+        }
+      },
+      {
+        "id": 122,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "version_id": null,
+        "from_state": "REFERENCE_RETRIEVED",
+        "to_state": "STEM_GENERATED",
+        "component": "HAILA_LLM",
+        "reason": "núcleo gerado",
+        "created_at": "2026-10-08T00:27:54.458266+00:00",
+        "evidence": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2393,
+            "completion_tokens": 1050,
+            "total_tokens": 3443
+          }
+        }
+      },
+      {
+        "id": 123,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "version_id": null,
+        "from_state": "STEM_GENERATED",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-08T00:28:59.922184+00:00",
+        "evidence": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:candidato_lexical_descartado:possível corrupção lexical \"datagramas\" (similaridade=0.95 com \"datagrama\")"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 7,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.6.0",
+          "token_usage_local": {
+            "input_tokens": 1494,
+            "output_tokens": 208,
+            "total_tokens": 1702
+          },
+          "familia": "resposta_textual",
+          "roteador": "hybrid-v8",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 7,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              1,
+              0,
+              2,
+              3
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      },
+      {
+        "id": 124,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "version_id": "f9925c4f-fa96-4465-9f7f-ef17ea86e9ed",
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "ITEM_ASSEMBLED",
+        "component": "HAILA_ASSEMBLER",
+        "reason": "item montado",
+        "created_at": "2026-10-08T00:28:59.929961+00:00",
+        "evidence": {}
+      },
+      {
+        "id": 125,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "version_id": "f9925c4f-fa96-4465-9f7f-ef17ea86e9ed",
+        "from_state": "ITEM_ASSEMBLED",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "conteúdo bloqueado",
+        "created_at": "2026-10-08T00:28:59.937196+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "iwf_gabarito_mais_longo",
+              "etapa": "DETERMINISTICA",
+              "campo": "alternativas",
+              "evidencia": "palavras por alternativa=[15, 8, 17, 11, 13]; o gabarito não deve se destacar pela extensão",
+              "reparo": "DISTRATORES"
+            },
+            {
+              "codigo": "iwf_repeticao_entrega_gabarito",
+              "etapa": "DETERMINISTICA",
+              "campo": "enunciado",
+              "evidencia": "termos exclusivos repetidos no gabarito: destino, encaminhamento, enviar",
+              "reparo": "NUCLEO"
+            }
+          ]
+        }
+      },
+      {
+        "id": 126,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "STEM_GENERATED",
+        "component": "HAILA_LLM",
+        "reason": "núcleo gerado",
+        "created_at": "2026-10-08T00:29:02.614250+00:00",
+        "evidence": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2583,
+            "completion_tokens": 941,
+            "total_tokens": 3524
+          }
+        }
+      },
+      {
+        "id": 127,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "version_id": null,
+        "from_state": "STEM_GENERATED",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-08T00:29:39.111065+00:00",
+        "evidence": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_2:distratos->distratores",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:candidato_lexical_descartado:possível corrupção lexical \"Configuração\" (similaridade=0.87 com \"configurado\")",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 10,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.6.0",
+          "token_usage_local": {
+            "input_tokens": 1440,
+            "output_tokens": 92,
+            "total_tokens": 1532
+          },
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v8",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 10,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              1,
+              2,
+              5,
+              7
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      },
+      {
+        "id": 128,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "version_id": "e15f4df1-e5e8-4206-a484-216e6c031c2e",
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "ITEM_ASSEMBLED",
+        "component": "HAILA_ASSEMBLER",
+        "reason": "item montado",
+        "created_at": "2026-10-08T00:29:39.117891+00:00",
+        "evidence": {}
+      },
+      {
+        "id": 129,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "version_id": "e15f4df1-e5e8-4206-a484-216e6c031c2e",
+        "from_state": "ITEM_ASSEMBLED",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "conteúdo bloqueado",
+        "created_at": "2026-10-08T00:29:39.125297+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "iwf_repeticao_entrega_gabarito",
+              "etapa": "DETERMINISTICA",
+              "campo": "enunciado",
+              "evidencia": "termos exclusivos repetidos no gabarito: roteamento",
+              "reparo": "NUCLEO"
+            }
+          ]
+        }
+      },
+      {
+        "id": 130,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "STEM_GENERATED",
+        "component": "HAILA_LLM",
+        "reason": "núcleo gerado",
+        "created_at": "2026-10-08T00:29:42.500590+00:00",
+        "evidence": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2501,
+            "completion_tokens": 1126,
+            "total_tokens": 3627
+          }
+        }
+      },
+      {
+        "id": 131,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "version_id": null,
+        "from_state": "STEM_GENERATED",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-08T00:30:12.673067+00:00",
+        "evidence": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_2:distratos->distratores",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 4,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.6.0",
+          "token_usage_local": {
+            "input_tokens": 1365,
+            "output_tokens": 69,
+            "total_tokens": 1434
+          },
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v8",
+          "selecao": "pool_exato"
+        }
+      },
+      {
+        "id": 132,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "version_id": "4bc39da0-2303-48b3-ac8d-ed2a95e5940b",
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "ITEM_ASSEMBLED",
+        "component": "HAILA_ASSEMBLER",
+        "reason": "item montado",
+        "created_at": "2026-10-08T00:30:12.678694+00:00",
+        "evidence": {}
+      },
+      {
+        "id": 133,
+        "request_id": "2a6aa538-44c3-42af-b9e0-cca2954edb41",
+        "version_id": "4bc39da0-2303-48b3-ac8d-ed2a95e5940b",
+        "from_state": "ITEM_ASSEMBLED",
+        "to_state": "GENERATION_COMPLETED",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "geração concluída sem red flags",
+        "created_at": "2026-10-08T00:30:12.683654+00:00",
+        "evidence": {}
+      }
+    ],
+    "reviews": []
+  },
+  "duration_seconds": 142.22
+}

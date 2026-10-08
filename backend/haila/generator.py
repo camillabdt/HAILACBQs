@@ -5,10 +5,12 @@ import json
 import os
 import re
 import unicodedata
+from difflib import SequenceMatcher
 from pathlib import Path
 from typing import Any, Callable, Protocol
 
 from .contracts import DistratorGerado, NucleoQuestao, ReferenciaRAG
+from .slm_config import adapter_is_complete, allow_base_qwen, resolve_adapter_path, slm_backend, slm_base_model
 
 
 class RecuperadorRAG(Protocol):
@@ -46,11 +48,50 @@ JSON válido."""
 
 
 SYSTEM_NUCLEO = SYSTEM_QUALITY_BASE + """
-Gere somente o núcleo: enunciado, resposta_correta concisa, explicacao, competencia,
-habilidade, objeto_conhecimento, tem_imagem e recurso_visual. Não gere alternativas.
-Ao comparar TCP e UDP, restrinja explicitamente a comparação aos dois protocolos e
-use como resposta uma afirmação comparativa sobre ambos, sem copiá-la no enunciado.
-Se o item reunir função e desempenho, pergunte separadamente pelo aspecto pretendido."""
+Gere somente o núcleo da questão: enunciado, resposta_correta concisa,
+explicacao, competencia, habilidade, objeto_conhecimento, tem_imagem
+e recurso_visual.
+
+REGRAS OBRIGATÓRIAS PARA O NÚCLEO:
+
+1. NÃO gere alternativas. Não coloque A), B), C), D) ou E) dentro
+   do enunciado. As alternativas serão produzidas posteriormente
+   por outro componente.
+
+2. NÃO formule perguntas binárias como:
+   "funcional ou não funcional",
+   "verdadeiro ou falso",
+   "sim ou não",
+   ou qualquer comando que restrinja a resposta a somente duas classes.
+
+3. A resposta correta deve ser um conceito ou afirmação concisa e
+   NÃO deve aparecer literalmente no enunciado.
+
+4. O cenário deve permitir pelo menos quatro erros conceituais
+   plausíveis, para que posteriormente sejam produzidos quatro
+   distratores distintos.
+
+5. Quando o tema envolver requisitos funcionais e não funcionais,
+   descreva UM único requisito ou situação e pergunte qual
+   classificação, propriedade ou característica melhor o descreve.
+   Não apresente uma lista de requisitos candidatos no enunciado.
+
+6. Não inclua no mesmo cenário dois elementos que possam satisfazer
+   corretamente o comando.
+
+7. Não use grafia artificial, erros ortográficos ou palavras inventadas.
+
+8. Não antecipe as alternativas no enunciado.
+
+Ao comparar TCP e UDP, restrinja explicitamente a comparação aos dois
+protocolos e use como resposta uma afirmação comparativa sobre ambos,
+sem copiá-la no enunciado.
+
+Se o item reunir função e desempenho, pergunte separadamente pelo
+aspecto pretendido.
+
+Responda somente JSON válido.
+"""
 
 
 INSTRUCAO_DISTRACTORES = (
@@ -103,6 +144,110 @@ def chave_semantica_curta(texto):
     return re.sub(r"\W+", "", base)
 
 
+
+def _token_base(token: str) -> str:
+    base = unicodedata.normalize("NFKD", str(token).casefold())
+    base = "".join(
+        c for c in base
+        if not unicodedata.combining(c)
+    )
+    return re.sub(r"[^a-z0-9]", "", base)
+
+
+def _tokens_originais(texto: str) -> list[str]:
+    return re.findall(
+        r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ0-9_-]*",
+        str(texto),
+    )
+
+
+def motivo_distrator_lexicalmente_suspeito(
+    nucleo,
+    candidato: str,
+) -> str | None:
+    """
+    Detecta corrupção lexical conservadora.
+
+    Não tenta atuar como corretor ortográfico geral.
+    Procura principalmente palavras que parecem versões
+    deformadas de termos já existentes no enunciado/gabarito.
+    """
+
+    origem = (
+        str(nucleo.enunciado)
+        + " "
+        + str(nucleo.resposta_correta)
+    )
+
+    tokens_origem = _tokens_originais(origem)
+    tokens_candidato = _tokens_originais(candidato)
+
+    mapa_origem = {}
+
+    for token in tokens_origem:
+        base = _token_base(token)
+
+        if len(base) >= 4:
+            mapa_origem.setdefault(base, set()).add(
+                token.casefold()
+            )
+
+    bases_origem = list(mapa_origem)
+
+    for token in tokens_candidato:
+        base = _token_base(token)
+
+        if len(base) < 5:
+            continue
+
+        # Ex.: "Requisítos" x "Requisitos":
+        # mesma palavra após retirar acento, mas forma escrita
+        # diferente da que aparece na questão.
+        if base in mapa_origem:
+            formas = mapa_origem[base]
+
+            if (
+                token.casefold() not in formas
+                and any(
+                    _token_base(forma) == base
+                    for forma in formas
+                )
+            ):
+                return (
+                    f'forma ortográfica suspeita "{token}" '
+                    f'para termo existente na questão'
+                )
+
+            continue
+
+        # Ex.: Permitidr/permitir, estudants/estudantes,
+        # criptoagrar/criptografar, requisitórios/requisitos.
+        for original in bases_origem:
+            if len(original) < 5:
+                continue
+
+            if base[:3] != original[:3]:
+                continue
+
+            if abs(len(base) - len(original)) > 3:
+                continue
+
+            similaridade = SequenceMatcher(
+                None,
+                base,
+                original,
+            ).ratio()
+
+            if similaridade >= 0.86:
+                return (
+                    f'possível corrupção lexical "{token}" '
+                    f'(similaridade={similaridade:.2f} '
+                    f'com "{original}")'
+                )
+
+    return None
+
+
 def criar_prompt_distratores(enunciado, resposta, red_flags=None):
     """Prompt canônico compartilhado pelo fine-tuning e pela inferência local."""
     correcao = ""
@@ -125,8 +270,39 @@ class EnadeStemGenerator:
     def __call__(self, specification, referencia, feedback):
         reparo_prioritario = ""
         codigos = {str(item.get("codigo") or "") for item in feedback or []}
+
+        # HAILA_PATCH_NUCLEO_20261007
+        if codigos & {
+            "espaco_de_respostas_binario",
+            "gabarito_repetido_no_enunciado",
+            "alternativas_embutidas_no_nucleo",
+            "multiplos_candidatos_ao_gabarito",
+        }:
+            reparo_prioritario += (
+                "CORREÇÃO OBRIGATÓRIA DO NÚCLEO: "
+                "não repita a estrutura da tentativa anterior. "
+                "Não use pergunta binária; não escreva 'funcional ou não funcional'; "
+                "não coloque alternativas A), B), C), D) ou E) no enunciado; "
+                "não inclua a resposta correta literalmente no enunciado. "
+                "Descreva apenas UM caso e formule uma pergunta que permita "
+                "cinco alternativas conceitualmente distintas. "
+                "A resposta_correta deve ser curta e conceitual. "
+            )
+
+        if "iwf_repeticao_entrega_gabarito" in codigos:
+            reparo_prioritario += (
+                "Evite repetir no enunciado palavras que apareçam exclusivamente "
+                "na resposta correta e possam funcionar como pista lexical. "
+            )
+
+        if "iwf_termo_absoluto" in codigos:
+            reparo_prioritario += (
+                "Reformule o cenário evitando termos absolutos desnecessários "
+                "como sempre, nunca, todos e nenhum. "
+            )
+
         if "selecao_de_protocolo_potencialmente_ambigua" in codigos:
-            reparo_prioritario = (
+            reparo_prioritario += (
                 "CORREÇÃO OBRIGATÓRIA: não pergunte 'qual protocolo' e não use apenas "
                 "TCP ou UDP como resposta. Pergunte: 'Considerando exclusivamente TCP "
                 "e UDP, qual comparação descreve corretamente os serviços oferecidos?'. "
@@ -162,7 +338,7 @@ class EnadeStemGenerator:
         proibidos = {"alternativas", "distratores", "correta"} & data.keys()
         if proibidos:
             raise ValueError(f"LLM violou o contrato do núcleo: {sorted(proibidos)}")
-        provenance = {"modelo": self.model, "prompt_version": "enade-stem-1.1.0"}
+        provenance = {"modelo": self.model, "prompt_version": "enade-stem-1.2.0"}
         if token_usage: provenance["token_usage_remote"] = dict(token_usage)
         return NucleoQuestao(**data), provenance
 
@@ -270,12 +446,28 @@ class QwenDistractorGenerator:
             None,
         )
         rejeitados = resumir_feedback_distratores(feedback)
+        codigos_feedback = {
+            str(item.get("codigo") or item.get("code") or "")
+            for item in (feedback or [])
+        }
+
         instrucao_reparo = ""
+
         if rejeitados:
             instrucao_reparo = (
                 " Esta é uma nova tentativa. Não repita estas alternativas "
                 f"rejeitadas: {json.dumps(rejeitados, ensure_ascii=False)}. "
                 "Substitua-as por erros conceituais diferentes e plausíveis."
+            )
+
+        if codigos_feedback & {
+            "distrator_parafraseia_gabarito",
+            "copia_normalizada_gabarito",
+        }:
+            instrucao_reparo += (
+                " Não gere singular/plural, flexões, abreviações, erros ortográficos "
+                "ou reformulações lexicais da resposta correta. Use conceitos vizinhos "
+                "que sejam realmente incorretos no cenário."
             )
         texto = self._tokenizer.apply_chat_template(
             [
@@ -338,6 +530,19 @@ class QwenDistractorGenerator:
                         f"amostra_{numero_amostra}:placeholder_descartado"
                     )
                     continue
+                motivo_lexical = motivo_distrator_lexicalmente_suspeito(
+                    nucleo,
+                    distrator.texto,
+                )
+
+                if motivo_lexical:
+                    normalizacoes.append(
+                        f"amostra_{numero_amostra}:"
+                        f"candidato_lexical_descartado:"
+                        f"{motivo_lexical}"
+                    )
+                    continue
+
                 chave = chave_semantica_curta(distrator.texto)
                 if chave and chave == chave_gabarito:
                     normalizacoes.append(
@@ -359,7 +564,7 @@ class QwenDistractorGenerator:
                 "candidatos_gerados": len(acumulados[:tamanho_pool]),
                 "feedback_aplicado": bool(rejeitados),
                 "alternativas_rejeitadas": rejeitados,
-                "prompt_version": "qwen-distractors-1.5.0",
+                "prompt_version": "qwen-distractors-1.6.0",
                 "token_usage_local": {
                     "input_tokens": input_tokens_total,
                     "output_tokens": output_tokens_total,
@@ -443,6 +648,79 @@ class DeterministicPoolSelector:
         }
 
 
+
+def _token_qualidade(texto: str) -> str:
+    base = unicodedata.normalize("NFKD", str(texto).casefold())
+    base = "".join(c for c in base if not unicodedata.combining(c))
+    return re.sub(r"[^a-z0-9]", "", base)
+
+
+def _base_flexao_portugues(token: str) -> str:
+    # Plurais frequentes suficientes para não tratar flexão como corrupção.
+    # Ex.: requisito/requisitos e funcional/funcionais.
+    if len(token) > 6 and token.endswith("ais"):
+        return token[:-3] + "al"
+    if len(token) > 6 and token.endswith("eis"):
+        return token[:-3] + "el"
+    if len(token) > 6 and token.endswith("ois"):
+        return token[:-3] + "ol"
+    if len(token) > 6 and token.endswith("oes"):
+        return token[:-3] + "ao"
+    if len(token) > 4 and token.endswith("s"):
+        return token[:-1]
+    return token
+
+
+def _flexao_simples(a: str, b: str) -> bool:
+    return _base_flexao_portugues(a) == _base_flexao_portugues(b)
+
+
+def _motivo_candidato_pos_filtro(nucleo, texto: str) -> str | None:
+    bruto = str(texto).strip()
+    if re.search(r"^\s*(?:\([A-E]\)|[A-E][\)\].:\-])\s*", bruto, re.I):
+        return "rotulo_de_alternativa_embutido"
+
+    tokens_candidato = re.findall(r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ0-9_-]*", bruto)
+    tokens_gabarito = re.findall(
+        r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ0-9_-]*",
+        str(nucleo.resposta_correta),
+    )
+    bases_gabarito = [_token_qualidade(x) for x in tokens_gabarito]
+
+    for token in tokens_candidato:
+        base = _token_qualidade(token)
+        if len(base) < 6:
+            continue
+        for origem in bases_gabarito:
+            if len(origem) < 6 or base == origem:
+                continue
+            if _flexao_simples(base, origem):
+                continue
+            if base[:4] != origem[:4]:
+                continue
+            if abs(len(base) - len(origem)) > 4:
+                continue
+            sim = SequenceMatcher(None, base, origem).ratio()
+            if sim >= 0.80:
+                return (
+                    f'possivel_deformacao_lexical:{token}~{origem}:'
+                    f'{sim:.2f}'
+                )
+    return None
+
+
+def _filtrar_pool_final(nucleo, candidatos):
+    validos = []
+    rejeitados = []
+    for candidato in candidatos:
+        motivo = _motivo_candidato_pos_filtro(nucleo, candidato.texto)
+        if motivo:
+            rejeitados.append({"texto": candidato.texto, "motivo": motivo})
+        else:
+            validos.append(candidato)
+    return validos, rejeitados
+
+
 class BestOfNDistractorGenerator:
     """Gera N pela SLM e reduz para quatro sem permitir criação pelo seletor."""
     def __init__(self, generator, selector):
@@ -451,6 +729,17 @@ class BestOfNDistractorGenerator:
 
     def __call__(self, nucleo, feedback):
         candidatos, provenance = self.generator(nucleo, feedback)
+        candidatos, rejeitados_pos_filtro = _filtrar_pool_final(nucleo, candidatos)
+        if rejeitados_pos_filtro:
+            provenance = dict(
+                provenance,
+                pos_filtro_rejeitados=rejeitados_pos_filtro,
+            )
+        if len(candidatos) < 4:
+            raise ValueError(
+                "pool insuficiente após filtro de qualidade; "
+                f"validos={len(candidatos)}; rejeitados={rejeitados_pos_filtro}"
+            )
         if len(candidatos) == 4:
             return candidatos, dict(provenance, selecao="pool_exato")
         escolhidos, selecao = self.selector(nucleo, candidatos)
@@ -569,26 +858,39 @@ _LOCAL_SLM_CACHE: dict[tuple[str, str, str], Any] = {}
 
 def slm_generator_from_env() -> TinyLlamaLoraDistractorGenerator:
     from .hybrid import HybridDistractorGenerator
-    backend = os.getenv("HAILA_SLM_BACKEND", "qwen").strip().casefold()
-    path = os.getenv("HAILA_SLM_ADAPTER_PATH", "").strip() or None
-    base_model = os.getenv(
-        "HAILA_SLM_BASE_MODEL",
-        "Qwen/Qwen2.5-1.5B-Instruct" if backend == "qwen" else "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
-    )
+
+    backend = slm_backend()
+    path = resolve_adapter_path(backend=backend)
+    base_model = slm_base_model(backend)
+
     if backend not in {"qwen", "tinyllama"}:
         raise RuntimeError(f"HAILA_SLM_BACKEND inválido: {backend!r}")
-    if backend == "tinyllama" and not path:
-        raise RuntimeError("HAILA_SLM_ADAPTER_PATH não configurado para TinyLlama")
+
+    adapter_ok = adapter_is_complete(path)
+    if backend == "qwen" and not adapter_ok and not allow_base_qwen():
+        raise RuntimeError(
+            "LoRA Qwen do HAILA não encontrado ou incompleto em "
+            f"{path}. Esperados adapter_config.json e adapter_model.safetensors. "
+            "Use HAILA_ALLOW_BASE_QWEN=1 apenas para ablação com o modelo base."
+        )
+    if backend == "tinyllama" and not adapter_ok:
+        raise RuntimeError(
+            f"adapter TinyLlama não encontrado ou incompleto em {path}"
+        )
+
+    # Em produção Qwen usa sempre o LoRA selecionado. O base puro só é usado
+    # quando a ablação é habilitada explicitamente.
+    effective_path = path if adapter_ok else None
 
     use_memory = os.getenv("HAILA_USE_CURATED_MEMORY", "1") == "1"
     use_rules = os.getenv("HAILA_USE_DETERMINISTIC_DISTRACTOR_RULES", "1") == "1"
-    cache_key = (backend, base_model, path or "", use_memory, use_rules)
+    cache_key = (backend, base_model, str(effective_path or ""), use_memory, use_rules)
     hibrido = _LOCAL_SLM_CACHE.get(cache_key)
     if hibrido is None:
         slm = (
-            QwenDistractorGenerator(base_model, path)
+            QwenDistractorGenerator(base_model, effective_path)
             if backend == "qwen"
-            else TinyLlamaLoraDistractorGenerator(path, base_model)
+            else TinyLlamaLoraDistractorGenerator(effective_path, base_model)
         )
         hibrido = HybridDistractorGenerator(slm, use_memory=use_memory, use_rules=use_rules)
         _LOCAL_SLM_CACHE[cache_key] = hibrido

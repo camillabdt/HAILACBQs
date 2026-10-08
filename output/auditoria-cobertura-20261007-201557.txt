@@ -1,0 +1,91 @@
+==============================================================================
+HAILA — AUDITORIA DE COBERTURA RAG + DATASET LoRA
+==============================================================================
+
+1. CORPUS RAG
+==============================================================================
+Arquivo: /home/camilla/HAILA/backend/fontes_rag.jsonl
+Registros totais: 12
+
+Áreas explícitas no RAG
+-----------------------
+Sistemas Operacionais                      2   16.67%
+Algoritmos e Estruturas de Dados           2   16.67%
+Banco de Dados                             2   16.67%
+Engenharia de Software                     2   16.67%
+Redes de Computadores                      1    8.33%
+Segurança da Informação                    1    8.33%
+Inteligência Artificial                    1    8.33%
+Sistemas Distribuídos                      1    8.33%
+
+Áreas inferidas lexicalmente no RAG
+-----------------------------------
+Sistemas Operacionais                      2   16.67%
+Algoritmos e Estruturas de Dados           2   16.67%
+Banco de Dados                             2   16.67%
+Engenharia de Software                     2   16.67%
+Redes de Computadores                      1    8.33%
+Segurança                                  1    8.33%
+Inteligência Artificial                    1    8.33%
+Não classificado                           1    8.33%
+
+Cobertura específica de Redes no RAG
+------------------------------------
+TCP                                        1    8.33%
+UDP                                        1    8.33%
+
+Objetos de conhecimento mais frequentes no RAG:
+    1  Concorrência, condições de corrida, mutexes e semáforos
+    1  Memória virtual e paginação
+    1  Complexidade de algoritmos
+    1  Pilhas, filas, árvores e tabelas hash
+    1  Propriedades ACID e controle de concorrência
+    1  Modelo relacional e normalização
+    1  TCP, UDP e comunicação fim a fim
+    1  Confidencialidade, integridade e disponibilidade
+    1  Engenharia de requisitos
+    1  Testes de software
+    1  Aprendizado supervisionado e não supervisionado
+    1  Microsserviços e sistemas distribuídos
+
+
+2. DATASETS CANDIDATOS DO TREINO LoRA
+==============================================================================
+ - research/lora/MANIFESTO_DADOS.json
+ - research/lora/mapa_calibri_gid.json
+
+
+3. DISTRIBUIÇÃO DOS DATASETS
+==============================================================================
+
+
+4. VISÃO GLOBAL DOS ARQUIVOS CANDIDATOS
+==============================================================================
+Registros analisados: 0
+
+Áreas inferidas no material de treino
+-------------------------------------
+Nenhum dado.
+
+Subtemas de Redes no material de treino
+---------------------------------------
+Nenhum dado.
+
+
+5. DIAGNÓSTICO ESPECÍFICO — REDES
+==============================================================================
+IPv4                 RAG=  0 | TREINO=    0
+IPv6                 RAG=  0 | TREINO=    0
+Sub-redes/CIDR       RAG=  0 | TREINO=    0
+Roteamento           RAG=  0 | TREINO=    0
+TCP                  RAG=  1 | TREINO=    0
+UDP                  RAG=  1 | TREINO=    0
+DNS                  RAG=  0 | TREINO=    0
+HTTP                 RAG=  0 | TREINO=    0
+
+LEITURA RÁPIDA:
+⚠️ RAG sem cobertura detectável para: IPv4, Sub-redes/CIDR, Roteamento
+⚠️ Dataset analisado sem exemplos detectáveis para: IPv4, Sub-redes/CIDR, Roteamento
+
+OBSERVAÇÃO:
+A classificação de área sem metadado explícito é uma inferência lexical para diagnóstico, não uma rotulação científica definitiva do dataset.

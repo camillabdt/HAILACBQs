@@ -20,6 +20,89 @@ def _normalizar(texto: str) -> str:
     return re.sub(r"\W+", " ", texto.casefold()).strip()
 
 
+
+def _token_base_qualidade(token: str) -> str:
+    base = unicodedata.normalize(
+        "NFKD",
+        str(token).casefold(),
+    )
+    base = "".join(
+        c for c in base
+        if not unicodedata.combining(c)
+    )
+    return re.sub(r"[^a-z0-9]", "", base)
+
+
+def _tokens_qualidade(texto: str) -> list[str]:
+    return re.findall(
+        r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ0-9_-]*",
+        str(texto),
+    )
+
+
+def _corrupcao_lexical(
+    nucleo: NucleoQuestao,
+    candidato: str,
+) -> str | None:
+
+    origem = (
+        str(nucleo.enunciado)
+        + " "
+        + str(nucleo.resposta_correta)
+    )
+
+    bases = {}
+
+    for token in _tokens_qualidade(origem):
+        base = _token_base_qualidade(token)
+
+        if len(base) >= 4:
+            bases.setdefault(base, set()).add(
+                token.casefold()
+            )
+
+    for token in _tokens_qualidade(candidato):
+        base = _token_base_qualidade(token)
+
+        if len(base) < 5:
+            continue
+
+        if base in bases:
+            formas = bases[base]
+
+            if token.casefold() not in formas:
+                return (
+                    f'"{token}" parece uma deformação '
+                    f'ortográfica de termo presente na questão'
+                )
+
+            continue
+
+        for original in bases:
+            if len(original) < 5:
+                continue
+
+            if base[:3] != original[:3]:
+                continue
+
+            if abs(len(base) - len(original)) > 3:
+                continue
+
+            sim = SequenceMatcher(
+                None,
+                base,
+                original,
+            ).ratio()
+
+            if sim >= 0.86:
+                return (
+                    f'"{token}" apresenta similaridade '
+                    f'{sim:.2f} com "{original}"'
+                )
+
+    return None
+
+
 def _combinacao_invalida(texto: str) -> bool:
     itens = re.findall(r"\b[IVX]+\b", texto.upper())
     return bool(itens) and len(itens) != len(set(itens))
@@ -67,9 +150,24 @@ def avaliar_nucleo(n: NucleoQuestao, referencia: str = "") -> list[RedFlag]:
     if not n.objeto_conhecimento.strip(): add("objeto_conhecimento_ausente", "objeto_conhecimento", "campo vazio")
     resposta_norm = _normalizar(n.resposta_correta)
     enunciado_norm = _normalizar(n.enunciado)
+    # O núcleo é produzido antes das alternativas. Portanto,
+    # uma lista A), B), C)... dentro do enunciado é uma violação
+    # arquitetural e costuma induzir a SLM a copiar/parafrasear opções.
+    rotulos_embutidos = re.findall(
+        r"(?<!\w)([A-E])\)\s+",
+        n.enunciado,
+    )
+
+    if len(set(rotulos_embutidos)) >= 2:
+        add(
+            "alternativas_embutidas_no_nucleo",
+            "enunciado",
+            "o núcleo contém alternativas A-E; as alternativas devem ser geradas somente pela SLM",
+        )
+
     if (
         resposta_norm
-        and len(resposta_norm.split()) <= 4
+        and len(resposta_norm.split()) <= 18
         and re.search(rf"\b{re.escape(resposta_norm)}\b", enunciado_norm)
     ):
         add(
@@ -126,6 +224,46 @@ def avaliar_nucleo(n: NucleoQuestao, referencia: str = "") -> list[RedFlag]:
     return flags
 
 
+
+def _base_flexao_qualidade(token: str) -> str:
+    if len(token) > 6 and token.endswith("ais"):
+        return token[:-3] + "al"
+    if len(token) > 6 and token.endswith("eis"):
+        return token[:-3] + "el"
+    if len(token) > 6 and token.endswith("ois"):
+        return token[:-3] + "ol"
+    if len(token) > 6 and token.endswith("oes"):
+        return token[:-3] + "ao"
+    if len(token) > 4 and token.endswith("s"):
+        return token[:-1]
+    return token
+
+
+def _flexao_simples_qualidade(a: str, b: str) -> bool:
+    return _base_flexao_qualidade(a) == _base_flexao_qualidade(b)
+
+
+def _deformacao_lexical_do_gabarito(gabarito: str, candidato: str) -> str | None:
+    origem = [_normalizar(x).replace(" ", "") for x in re.findall(
+        r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ0-9_-]*", str(gabarito)
+    )]
+    destino = [_normalizar(x).replace(" ", "") for x in re.findall(
+        r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ0-9_-]*", str(candidato)
+    )]
+    for token in destino:
+        if len(token) < 6:
+            continue
+        for ref in origem:
+            if len(ref) < 6 or token == ref or _flexao_simples_qualidade(token, ref):
+                continue
+            if token[:4] != ref[:4] or abs(len(token) - len(ref)) > 4:
+                continue
+            sim = SequenceMatcher(None, token, ref).ratio()
+            if sim >= 0.80:
+                return f'{token}~{ref}:{sim:.2f}'
+    return None
+
+
 def avaliar_distratores(n: NucleoQuestao, distratores: list[DistratorGerado]) -> list[RedFlag]:
     flags = []
     add = lambda c, campo, ev: flags.append(RedFlag(c, "DISTRATORES", campo, ev, "DISTRATORES"))
@@ -136,22 +274,83 @@ def avaliar_distratores(n: NucleoQuestao, distratores: list[DistratorGerado]) ->
     }
     if len(distratores) != 4: add("quantidade_distratores_invalida", "distratores", f"recebidos={len(distratores)}; esperado=4")
     textos = [d.texto.strip() for d in distratores]
+    rotulados = [
+        (i, texto) for i, texto in enumerate(textos)
+        if re.search(r"^\s*(?:\([A-E]\)|[A-E][\)\].:\-])\s*", texto, re.I)
+    ]
+    if rotulados:
+        add(
+            "distrator_com_rotulo_embutido",
+            "distratores",
+            "; ".join(f'{i}:{texto}' for i, texto in rotulados),
+        )
+    deformados = [
+        (i, texto, _deformacao_lexical_do_gabarito(n.resposta_correta, texto))
+        for i, texto in enumerate(textos)
+    ]
+    deformados = [x for x in deformados if x[2]]
+    if deformados:
+        add(
+            "distrator_lexicalmente_corrompido",
+            "distratores",
+            "; ".join(f'{i}:{texto}:{motivo}' for i, texto, motivo in deformados),
+        )
     if any(not t for t in textos): add("distrator_vazio", "distratores", "há texto vazio")
     norm = [_normalizar(t) for t in textos]
     if len(norm) != len(set(norm)): add("distratores_duplicados", "distratores", "há textos repetidos")
     resposta_norm = _normalizar(n.resposta_correta)
     if resposta_norm in norm:
-        add("copia_normalizada_gabarito", "distratores", "distrator coincide com o gabarito normalizado")
-    elif (
-        not formato_fechado
-        and not _resposta_formulaica(n.resposta_correta)
-        and any(
-            _sim(t, n.resposta_correta) >= .82
-            and not _opostos_conceituais_validos(t, n.resposta_correta)
-            for t in textos
+        indice = norm.index(resposta_norm)
+        add(
+            "copia_normalizada_gabarito",
+            f"distratores[{indice}]",
+            f'"{textos[indice]}" coincide com o gabarito normalizado',
         )
-    ):
-        add("distrator_parafraseia_gabarito", "distratores", "similaridade lexical >= 0.82")
+    elif not formato_fechado and not _resposta_formulaica(n.resposta_correta):
+        ofensores = []
+        for indice, texto in enumerate(textos):
+            similaridade = _sim(texto, n.resposta_correta)
+            if (
+                similaridade >= .82
+                and not _opostos_conceituais_validos(texto, n.resposta_correta)
+            ):
+                ofensores.append((indice, texto, similaridade))
+
+        if ofensores:
+            evidencia = "; ".join(
+                f'distratores[{indice}]="{texto}" similaridade={similaridade:.3f}'
+                for indice, texto, similaridade in ofensores
+            )
+            add(
+                "distrator_parafraseia_gabarito",
+                f"distratores[{ofensores[0][0]}]",
+                evidencia,
+            )
+    corrupcoes = []
+
+    for indice, texto_distrator in enumerate(textos):
+        motivo = _corrupcao_lexical(
+            n,
+            texto_distrator,
+        )
+
+        if motivo:
+            corrupcoes.append(
+                (indice, texto_distrator, motivo)
+            )
+
+    if corrupcoes:
+        evidencia = "; ".join(
+            f'distratores[{indice}]="{texto}": {motivo}'
+            for indice, texto, motivo in corrupcoes
+        )
+
+        add(
+            "distrator_lexicalmente_corrompido",
+            "distratores",
+            evidencia,
+        )
+
     if any(_combinacao_invalida(t) for t in textos):
         add("combinacao_de_itens_invalida", "distratores", "há item romano repetido na alternativa")
     # O rótulo ``erro`` descreve uma classe de confusão, não a identidade da

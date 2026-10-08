@@ -1,0 +1,26 @@
+[
+  {
+    "teste": "banco_dados",
+    "request_id": "6a48466b-94ad-4645-a9f4-7fbcc42d73a4",
+    "state": "GENERATION_COMPLETED",
+    "duration_seconds": 2.99,
+    "red_flags": 0,
+    "question_generated": true,
+    "arquivo": "/home/camilla/HAILA/output/teste-geracao-lora-20261007-195752/01-banco_dados.json"
+  },
+  {
+    "teste": "engenharia_software",
+    "request_id": "c79e02d1-c20c-454f-bb2d-a1226a00863a",
+    "state": "GENERATION_COMPLETED",
+    "duration_seconds": 54.19,
+    "red_flags": 0,
+    "question_generated": true,
+    "arquivo": "/home/camilla/HAILA/output/teste-geracao-lora-20261007-195752/02-engenharia_software.json"
+  },
+  {
+    "teste": "redes",
+    "state": "ERROR",
+    "duration_seconds": 0.02,
+    "error": "HTTP 409 em /requests/6f98188d-a910-43ba-b268-8fe4792f366a/generate: {\"detail\": \"RAG sem referência relevante para o objetivo solicitado; amplie o acervo ou especifique o tema.\"}"
+  }
+]

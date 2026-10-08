@@ -16,11 +16,15 @@ from .rag import rag_from_env
 from .orchestrator import HailaOrchestrator
 from .redflags import deterministic_analyzer_from_env
 from .repository import HailaRepository
+from .slm_config import resolve_adapter_path, runtime_status, slm_base_model, slm_backend
 
 app=FastAPI(title="HAILA Backend",version="1.0.0")
-_DEFAULT_DB = Path(__file__).resolve().parents[2] / "runtime" / "haila.sqlite3"
-repo=HailaRepository(os.getenv("HAILA_DB",str(_DEFAULT_DB))); haila=HailaOrchestrator(repo)
-API_BUILD="20260924-17"
+_PROJECT_ROOT = Path(__file__).resolve().parents[2]
+_DEFAULT_DB = _PROJECT_ROOT / "runtime" / "haila.sqlite3"
+_db_raw = Path(os.getenv("HAILA_DB", str(_DEFAULT_DB))).expanduser()
+_DB_PATH = _db_raw if _db_raw.is_absolute() else _PROJECT_ROOT / _db_raw
+repo=HailaRepository(str(_DB_PATH.resolve())); haila=HailaOrchestrator(repo)
+API_BUILD="20261002-lora-poscomp"
 
 _OBJETIVO_GENERICO = {
     "analisar", "analise", "compreender", "entender", "saber", "responder",
@@ -76,9 +80,15 @@ _ABLATION_SLM=None
 def ablation_slm():
     global _ABLATION_SLM
     if _ABLATION_SLM is None:
-        base=os.getenv("HAILA_SLM_BASE_MODEL","Qwen/Qwen2.5-1.5B-Instruct")
-        adapter=os.getenv("HAILA_SLM_ADAPTER_PATH","").strip() or None
-        _ABLATION_SLM=BestOfNDistractorGenerator(QwenDistractorGenerator(base,adapter),DeterministicPoolSelector())
+        backend = slm_backend()
+        if backend != "qwen":
+            raise RuntimeError("A ablação C3 atual requer backend Qwen.")
+        base = slm_base_model(backend)
+        adapter = resolve_adapter_path(backend=backend)
+        _ABLATION_SLM=BestOfNDistractorGenerator(
+            QwenDistractorGenerator(base, adapter),
+            DeterministicPoolSelector(),
+        )
     return _ABLATION_SLM
 
 def executar(acao):
@@ -88,19 +98,24 @@ def executar(acao):
 
 @app.get("/health")
 def health():
-    backend=os.getenv("HAILA_SLM_BACKEND","qwen").strip().casefold()
-    adapter=os.getenv("HAILA_SLM_ADAPTER_PATH","").strip()
-    adapter_ok=bool(adapter) and Path(adapter).exists()
-    slm_ok=backend=="qwen" or adapter_ok
-    return {"status":"ok","service":"HAILA","build":API_BUILD,"llm_configured":bool(os.getenv("GROQ_API_KEY")),
-            "slm_backend":backend,"slm_configured":slm_ok,
-            # Distingue explicitamente o Qwen base do Qwen ajustado com LoRA.
-            "slm_adapter_path":adapter or None,"slm_adapter_loaded":adapter_ok,
-            "slm_mode":"lora" if adapter_ok else "base",
-            "distractor_memory":os.getenv("HAILA_USE_CURATED_MEMORY","1") == "1",
-            "distractor_rules":os.getenv("HAILA_USE_DETERMINISTIC_DISTRACTOR_RULES","1") == "1",
-            "rag_corpus":os.getenv("HAILA_RAG_CORPUS",str(Path(__file__).resolve().parents[1]/"fontes_rag.jsonl")),
-            "red_flags":"deterministic-v3.1","database":"configured"}
+    slm = runtime_status()
+    return {
+        "status":"ok",
+        "service":"HAILA",
+        "build":API_BUILD,
+        "llm_configured":bool(os.getenv("GROQ_API_KEY")),
+        "slm_backend":slm["backend"],
+        "slm_configured":slm["configured"],
+        "slm_base_model":slm["base_model"],
+        "slm_adapter_path":slm["adapter_path"],
+        "slm_adapter_loaded":slm["adapter_loaded"],
+        "slm_mode":slm["mode"],
+        "distractor_memory":os.getenv("HAILA_USE_CURATED_MEMORY","1") == "1",
+        "distractor_rules":os.getenv("HAILA_USE_DETERMINISTIC_DISTRACTOR_RULES","1") == "1",
+        "rag_corpus":os.getenv("HAILA_RAG_CORPUS",str(Path(__file__).resolve().parents[1]/"fontes_rag.jsonl")),
+        "red_flags":"deterministic-v3.1",
+        "database":"configured",
+    }
 
 @app.get("/settings/groq")
 def consultar_groq():

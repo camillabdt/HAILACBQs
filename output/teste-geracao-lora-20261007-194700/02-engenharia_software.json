@@ -1,0 +1,739 @@
+{
+  "input": {
+    "solicitante_id": "teste-lora-es",
+    "curso": "Computação",
+    "exame": "ENADE",
+    "componente": "ESPECIFICO",
+    "objetivo_pedagogico": "Avaliar se o estudante consegue identificar e classificar requisitos funcionais e não funcionais a partir de um cenário de desenvolvimento de software.",
+    "dificuldade": 3,
+    "competencia": "Analisar especificações de requisitos de software.",
+    "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+    "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+    "restricoes": [
+      "Usar um cenário realista de sistema de software.",
+      "Evitar pistas lexicais que revelem o gabarito.",
+      "Manter apenas uma alternativa correta."
+    ],
+    "max_tentativas": 3,
+    "max_tentativas_distratores": 3
+  },
+  "generate_response": {
+    "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+    "state": "ATTEMPTS_EXHAUSTED",
+    "red_flags": [
+      {
+        "codigo": "iwf_gabarito_mais_longo",
+        "etapa": "DETERMINISTICA",
+        "campo": "alternativas",
+        "evidencia": "palavras por alternativa=[9, 11, 7, 7, 11]; o gabarito não deve se destacar pela extensão",
+        "reparo": "DISTRATORES"
+      },
+      {
+        "codigo": "iwf_repeticao_entrega_gabarito",
+        "etapa": "DETERMINISTICA",
+        "campo": "enunciado",
+        "evidencia": "termos exclusivos repetidos no gabarito: disponibilidade, garantir, longo",
+        "reparo": "NUCLEO"
+      },
+      {
+        "codigo": "iwf_termo_absoluto",
+        "etapa": "DETERMINISTICA",
+        "campo": "questao",
+        "evidencia": "termos absolutos encontrados: todos",
+        "reparo": "NUCLEO"
+      }
+    ]
+  },
+  "history": {
+    "request": {
+      "id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+      "solicitante_id": "teste-lora-es",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "max_attempts": 3,
+      "max_distractor_attempts": 3,
+      "attempts": 4,
+      "stem_attempts": 3,
+      "distractor_attempts": 1,
+      "created_at": "2026-10-07T22:47:04.029127+00:00",
+      "updated_at": "2026-10-07T22:48:37.115934+00:00",
+      "specification": {
+        "solicitante_id": "teste-lora-es",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Avaliar se o estudante consegue identificar e classificar requisitos funcionais e não funcionais a partir de um cenário de desenvolvimento de software.",
+        "dificuldade": 3,
+        "competencia": "Analisar especificações de requisitos de software.",
+        "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+        "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+        "restricoes": [
+          "Usar um cenário realista de sistema de software.",
+          "Evitar pistas lexicais que revelem o gabarito.",
+          "Manter apenas uma alternativa correta."
+        ]
+      }
+    },
+    "versions": [
+      {
+        "id": "aeee784c-e61e-458e-81ce-bed5fae472b2",
+        "version_number": 1,
+        "created_at": "2026-10-07T22:48:37.097901+00:00"
+      }
+    ],
+    "latest_version": {
+      "id": "aeee784c-e61e-458e-81ce-bed5fae472b2",
+      "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+      "version_number": 1,
+      "created_at": "2026-10-07T22:48:37.097901+00:00",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Um sistema de gestão de aprendizado online deve atender aos seguintes requisitos: A) Permitir que estudantes enviem trabalhos acadêmicos via upload. B) Criptografar todos os dados em trânsito utilizando TLS 1.2. C) Gerar um relatório em PDF com as notas de cada disciplina. D) Garantir disponibilidade de 99,9% ao longo de um ano. Qual desses requisitos é classificado como não funcional?",
+        "alternativas": [
+          "A) Permitidr que estudants enviem trabalho acadêmico via upload",
+          "B) Criptoagrar todos os dadas em transito utilizando TSL -1. 2.",
+          "A) Permitidr que estudants enviem trabalho acadêmico",
+          "B) Cripto grafar todos dados em transito",
+          "D) Garantir disponibilidade de 99,9% ao longo de um ano"
+        ],
+        "correta": 4,
+        "explicacao": "Requisitos não funcionais descrevem atributos de qualidade do sistema, como disponibilidade, desempenho, segurança e usabilidade. O item D especifica a disponibilidade, que é um atributo de qualidade, portanto é um requisito não funcional. Os itens A e C descrevem funcionalidades do sistema, enquanto o item B trata de segurança, que também é não funcional, mas a pergunta pede a única alternativa correta; ao escolher D destaca‑se a característica de disponibilidade, que claramente se enquadra no conceito de requisito não funcional conforme a literatura de engenharia de requisitos.",
+        "competencia": "Analisar especificações de requisitos de software",
+        "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema",
+        "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "provenance": {
+        "rag_id": "rag-engsoftware-requisitos-009",
+        "llm": "openai/gpt-oss-120b",
+        "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp))"
+      }
+    },
+    "artifacts": [
+      {
+        "id": 28,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "kind": "REFERENCE",
+        "created_at": "2026-10-07T22:47:04.043173+00:00",
+        "payload": {
+          "id": "rag-engsoftware-requisitos-009",
+          "texto": "Requisitos funcionais descrevem serviços e comportamentos esperados do sistema. Requisitos não funcionais estabelecem atributos e restrições, como desempenho, segurança, confiabilidade e usabilidade. Elicitação, especificação, validação e gerenciamento de mudanças ajudam a manter alinhamento entre necessidades e solução.",
+          "exame": "ACERVO_CONCEITUAL_HAILA",
+          "ano": 2024,
+          "metadados": {
+            "curso": null,
+            "componente": null,
+            "area": "Engenharia de Software",
+            "habilidade": "Analisar e classificar requisitos",
+            "objeto_conhecimento": "Engenharia de requisitos",
+            "referencia": "SOMMERVILLE, I. Engenharia de Software.",
+            "linha": 9,
+            "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+            "retrieval": "bm25-aliases-v3",
+            "score": 17.959648,
+            "termos_recuperados": [
+              "classificar",
+              "engenharia",
+              "funcionais",
+              "nao",
+              "necessidades",
+              "requisitos"
+            ],
+            "candidatas_relevantes": 2,
+            "consulta_normalizada": [
+              "cenario",
+              "classificar",
+              "consegue",
+              "desenvolvimento",
+              "engenharia",
+              "especificacoes",
+              "estudante",
+              "funcionais",
+              "los",
+              "nao",
+              "necessidades",
+              "partir",
+              "relaciona",
+              "requisitos"
+            ],
+            "ranking": [
+              {
+                "id": "rag-engsoftware-requisitos-009",
+                "score": 17.959648
+              },
+              {
+                "id": "rag-engsoftware-testes-010",
+                "score": 2.733973
+              }
+            ]
+          }
+        },
+        "provenance": {}
+      },
+      {
+        "id": 29,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "kind": "STEM",
+        "created_at": "2026-10-07T22:47:06.507472+00:00",
+        "payload": {
+          "enunciado": "Em um sistema de gerenciamento de biblioteca digital, um dos requisitos especificados é: “O sistema deve gerar o relatório de empréstimos realizados nos últimos 30 dias em no máximo 3 segundos.” Classifique esse requisito como funcional ou não funcional.",
+          "resposta_correta": "Não funcional",
+          "explicacao": "O requisito descreve uma restrição de desempenho (tempo máximo para gerar o relatório), característica típica de requisitos não funcionais, pois não especifica um comportamento ou serviço, mas uma qualidade do sistema.",
+          "competencia": "Analisar especificações de requisitos de software.",
+          "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+          "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+          "tem_imagem": false,
+          "recurso_visual": null
+        },
+        "provenance": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.1.0",
+          "token_usage_remote": {
+            "prompt_tokens": 947,
+            "completion_tokens": 919,
+            "total_tokens": 1866
+          }
+        }
+      },
+      {
+        "id": 30,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "kind": "STEM",
+        "created_at": "2026-10-07T22:47:08.850699+00:00",
+        "payload": {
+          "enunciado": "Um sistema de gerenciamento de biblioteca online deve permitir que usuários: (I) cadastrem novos livros com título, autor e ISBN; (II) pesquisem por título ou autor; (III) o tempo de resposta para qualquer pesquisa não ultrapasse 2 segundos; (IV) apenas usuários autenticados possam remover registros. Considerando o requisito descrito no item III, classifique-o como requisito funcional ou não funcional.",
+          "resposta_correta": "Não funcional",
+          "explicacao": "O requisito do item III trata de um atributo de desempenho (tempo máximo de resposta), que não descreve uma função ou comportamento do sistema, mas sim uma restrição de qualidade. Portanto, trata‑se de um requisito não funcional, conforme a definição de requisitos não funcionais que abrangem desempenho, segurança, confiabilidade, etc.",
+          "competencia": "Analisar especificações de requisitos de software.",
+          "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+          "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+          "tem_imagem": false,
+          "recurso_visual": null
+        },
+        "provenance": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.1.0",
+          "token_usage_remote": {
+            "prompt_tokens": 1075,
+            "completion_tokens": 850,
+            "total_tokens": 1925
+          }
+        }
+      },
+      {
+        "id": 31,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "kind": "STEM",
+        "created_at": "2026-10-07T22:47:10.687093+00:00",
+        "payload": {
+          "enunciado": "Um sistema de gestão de aprendizado online deve atender aos seguintes requisitos: A) Permitir que estudantes enviem trabalhos acadêmicos via upload. B) Criptografar todos os dados em trânsito utilizando TLS 1.2. C) Gerar um relatório em PDF com as notas de cada disciplina. D) Garantir disponibilidade de 99,9% ao longo de um ano. Qual desses requisitos é classificado como não funcional?",
+          "resposta_correta": "D) Garantir disponibilidade de 99,9% ao longo de um ano",
+          "explicacao": "Requisitos não funcionais descrevem atributos de qualidade do sistema, como disponibilidade, desempenho, segurança e usabilidade. O item D especifica a disponibilidade, que é um atributo de qualidade, portanto é um requisito não funcional. Os itens A e C descrevem funcionalidades do sistema, enquanto o item B trata de segurança, que também é não funcional, mas a pergunta pede a única alternativa correta; ao escolher D destaca‑se a característica de disponibilidade, que claramente se enquadra no conceito de requisito não funcional conforme a literatura de engenharia de requisitos.",
+          "competencia": "Analisar especificações de requisitos de software",
+          "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema",
+          "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais",
+          "tem_imagem": false,
+          "recurso_visual": null
+        },
+        "provenance": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.1.0",
+          "token_usage_remote": {
+            "prompt_tokens": 1075,
+            "completion_tokens": 711,
+            "total_tokens": 1786
+          }
+        }
+      },
+      {
+        "id": 32,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-07T22:48:37.087111+00:00",
+        "payload": [
+          {
+            "texto": "B) Criptoagrar todos os dadas em transito utilizando TSL -1. 2.",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "A) Permitidr que estudants enviem trabalho acadêmico via upload",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "A) Permitidr que estudants enviem trabalho acadêmico",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "B) Cripto grafar todos dados em transito",
+            "erro": "",
+            "por_que_e_falso": ""
+          }
+        ],
+        "provenance": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_2:distratos->distratores",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 8,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.5.0",
+          "token_usage_local": {
+            "input_tokens": 1446,
+            "output_tokens": 209,
+            "total_tokens": 1655
+          },
+          "familia": "resposta_textual",
+          "roteador": "hybrid-v8",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 8,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              7,
+              6,
+              0,
+              1
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      },
+      {
+        "id": 33,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "kind": "DETERMINISTIC_RED_FLAGS",
+        "created_at": "2026-10-07T22:48:37.106394+00:00",
+        "payload": [
+          {
+            "codigo": "iwf_gabarito_mais_longo",
+            "etapa": "DETERMINISTICA",
+            "campo": "alternativas",
+            "evidencia": "palavras por alternativa=[9, 11, 7, 7, 11]; o gabarito não deve se destacar pela extensão",
+            "reparo": "DISTRATORES"
+          },
+          {
+            "codigo": "iwf_repeticao_entrega_gabarito",
+            "etapa": "DETERMINISTICA",
+            "campo": "enunciado",
+            "evidencia": "termos exclusivos repetidos no gabarito: disponibilidade, garantir, longo",
+            "reparo": "NUCLEO"
+          },
+          {
+            "codigo": "iwf_termo_absoluto",
+            "etapa": "DETERMINISTICA",
+            "campo": "questao",
+            "evidencia": "termos absolutos encontrados: todos",
+            "reparo": "NUCLEO"
+          }
+        ],
+        "provenance": {
+          "modelo": "haila-deterministic-redflags-v3",
+          "catalog_version": "haila-redflags-3.1.0",
+          "tipo": "deterministico"
+        }
+      }
+    ],
+    "red_flags": [
+      {
+        "id": 12,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "code": "gabarito_repetido_no_enunciado",
+        "stage": "NUCLEO",
+        "field": "enunciado",
+        "evidence": "o enunciado contém literalmente a resposta correta e pode revelar o gabarito",
+        "repair_target": "NUCLEO",
+        "created_at": "2026-10-07T22:47:06.517578+00:00"
+      },
+      {
+        "id": 13,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "code": "espaco_de_respostas_binario",
+        "stage": "NUCLEO",
+        "field": "enunciado",
+        "evidence": "o comando restringe a resposta a duas classes, mas o item objetivo exige cinco alternativas plausíveis",
+        "repair_target": "NUCLEO",
+        "created_at": "2026-10-07T22:47:06.518048+00:00"
+      },
+      {
+        "id": 14,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "code": "gabarito_repetido_no_enunciado",
+        "stage": "NUCLEO",
+        "field": "enunciado",
+        "evidence": "o enunciado contém literalmente a resposta correta e pode revelar o gabarito",
+        "repair_target": "NUCLEO",
+        "created_at": "2026-10-07T22:47:08.858938+00:00"
+      },
+      {
+        "id": 15,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "code": "espaco_de_respostas_binario",
+        "stage": "NUCLEO",
+        "field": "enunciado",
+        "evidence": "o comando restringe a resposta a duas classes, mas o item objetivo exige cinco alternativas plausíveis",
+        "repair_target": "NUCLEO",
+        "created_at": "2026-10-07T22:47:08.859177+00:00"
+      },
+      {
+        "id": 16,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "code": "iwf_gabarito_mais_longo",
+        "stage": "DETERMINISTICA",
+        "field": "alternativas",
+        "evidence": "palavras por alternativa=[9, 11, 7, 7, 11]; o gabarito não deve se destacar pela extensão",
+        "repair_target": "DISTRATORES",
+        "created_at": "2026-10-07T22:48:37.108883+00:00"
+      },
+      {
+        "id": 17,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "code": "iwf_repeticao_entrega_gabarito",
+        "stage": "DETERMINISTICA",
+        "field": "enunciado",
+        "evidence": "termos exclusivos repetidos no gabarito: disponibilidade, garantir, longo",
+        "repair_target": "NUCLEO",
+        "created_at": "2026-10-07T22:48:37.109017+00:00"
+      },
+      {
+        "id": 18,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "code": "iwf_termo_absoluto",
+        "stage": "DETERMINISTICA",
+        "field": "questao",
+        "evidence": "termos absolutos encontrados: todos",
+        "repair_target": "NUCLEO",
+        "created_at": "2026-10-07T22:48:37.109030+00:00"
+      }
+    ],
+    "events": [
+      {
+        "id": 46,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "version_id": null,
+        "from_state": null,
+        "to_state": "REQUESTED",
+        "component": "HAILA",
+        "reason": "solicitação registrada",
+        "created_at": "2026-10-07T22:47:04.029660+00:00",
+        "evidence": {
+          "solicitante_id": "teste-lora-es",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Avaliar se o estudante consegue identificar e classificar requisitos funcionais e não funcionais a partir de um cenário de desenvolvimento de software.",
+          "dificuldade": 3,
+          "competencia": "Analisar especificações de requisitos de software.",
+          "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+          "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+          "restricoes": [
+            "Usar um cenário realista de sistema de software.",
+            "Evitar pistas lexicais que revelem o gabarito.",
+            "Manter apenas uma alternativa correta."
+          ]
+        }
+      },
+      {
+        "id": 47,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "version_id": null,
+        "from_state": "REQUESTED",
+        "to_state": "REFERENCE_RETRIEVED",
+        "component": "HAILA_RAG",
+        "reason": "referência recuperada",
+        "created_at": "2026-10-07T22:47:04.047539+00:00",
+        "evidence": {
+          "id": "rag-engsoftware-requisitos-009"
+        }
+      },
+      {
+        "id": 48,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "version_id": null,
+        "from_state": "REFERENCE_RETRIEVED",
+        "to_state": "STEM_GENERATED",
+        "component": "HAILA_LLM",
+        "reason": "núcleo gerado",
+        "created_at": "2026-10-07T22:47:06.511739+00:00",
+        "evidence": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.1.0",
+          "token_usage_remote": {
+            "prompt_tokens": 947,
+            "completion_tokens": 919,
+            "total_tokens": 1866
+          }
+        }
+      },
+      {
+        "id": 49,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "version_id": null,
+        "from_state": "STEM_GENERATED",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "núcleo bloqueado",
+        "created_at": "2026-10-07T22:47:06.522503+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "gabarito_repetido_no_enunciado",
+              "etapa": "NUCLEO",
+              "campo": "enunciado",
+              "evidencia": "o enunciado contém literalmente a resposta correta e pode revelar o gabarito",
+              "reparo": "NUCLEO"
+            },
+            {
+              "codigo": "espaco_de_respostas_binario",
+              "etapa": "NUCLEO",
+              "campo": "enunciado",
+              "evidencia": "o comando restringe a resposta a duas classes, mas o item objetivo exige cinco alternativas plausíveis",
+              "reparo": "NUCLEO"
+            }
+          ]
+        }
+      },
+      {
+        "id": 50,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "STEM_GENERATED",
+        "component": "HAILA_LLM",
+        "reason": "núcleo gerado",
+        "created_at": "2026-10-07T22:47:08.855958+00:00",
+        "evidence": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.1.0",
+          "token_usage_remote": {
+            "prompt_tokens": 1075,
+            "completion_tokens": 850,
+            "total_tokens": 1925
+          }
+        }
+      },
+      {
+        "id": 51,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "version_id": null,
+        "from_state": "STEM_GENERATED",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "núcleo bloqueado",
+        "created_at": "2026-10-07T22:47:08.863622+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "gabarito_repetido_no_enunciado",
+              "etapa": "NUCLEO",
+              "campo": "enunciado",
+              "evidencia": "o enunciado contém literalmente a resposta correta e pode revelar o gabarito",
+              "reparo": "NUCLEO"
+            },
+            {
+              "codigo": "espaco_de_respostas_binario",
+              "etapa": "NUCLEO",
+              "campo": "enunciado",
+              "evidencia": "o comando restringe a resposta a duas classes, mas o item objetivo exige cinco alternativas plausíveis",
+              "reparo": "NUCLEO"
+            }
+          ]
+        }
+      },
+      {
+        "id": 52,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "STEM_GENERATED",
+        "component": "HAILA_LLM",
+        "reason": "núcleo gerado",
+        "created_at": "2026-10-07T22:47:10.692121+00:00",
+        "evidence": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.1.0",
+          "token_usage_remote": {
+            "prompt_tokens": 1075,
+            "completion_tokens": 711,
+            "total_tokens": 1786
+          }
+        }
+      },
+      {
+        "id": 53,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "version_id": null,
+        "from_state": "STEM_GENERATED",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-07T22:48:37.090649+00:00",
+        "evidence": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_2:distratos->distratores",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 8,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.5.0",
+          "token_usage_local": {
+            "input_tokens": 1446,
+            "output_tokens": 209,
+            "total_tokens": 1655
+          },
+          "familia": "resposta_textual",
+          "roteador": "hybrid-v8",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 8,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              7,
+              6,
+              0,
+              1
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      },
+      {
+        "id": 54,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "version_id": "aeee784c-e61e-458e-81ce-bed5fae472b2",
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "ITEM_ASSEMBLED",
+        "component": "HAILA_ASSEMBLER",
+        "reason": "item montado",
+        "created_at": "2026-10-07T22:48:37.101264+00:00",
+        "evidence": {}
+      },
+      {
+        "id": 55,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "version_id": "aeee784c-e61e-458e-81ce-bed5fae472b2",
+        "from_state": "ITEM_ASSEMBLED",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "conteúdo bloqueado",
+        "created_at": "2026-10-07T22:48:37.111353+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "iwf_gabarito_mais_longo",
+              "etapa": "DETERMINISTICA",
+              "campo": "alternativas",
+              "evidencia": "palavras por alternativa=[9, 11, 7, 7, 11]; o gabarito não deve se destacar pela extensão",
+              "reparo": "DISTRATORES"
+            },
+            {
+              "codigo": "iwf_repeticao_entrega_gabarito",
+              "etapa": "DETERMINISTICA",
+              "campo": "enunciado",
+              "evidencia": "termos exclusivos repetidos no gabarito: disponibilidade, garantir, longo",
+              "reparo": "NUCLEO"
+            },
+            {
+              "codigo": "iwf_termo_absoluto",
+              "etapa": "DETERMINISTICA",
+              "campo": "questao",
+              "evidencia": "termos absolutos encontrados: todos",
+              "reparo": "NUCLEO"
+            }
+          ]
+        }
+      },
+      {
+        "id": 56,
+        "request_id": "38f203ae-42be-4663-81da-3c8cca72d8ba",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "ATTEMPTS_EXHAUSTED",
+        "component": "HAILA",
+        "reason": "limite de tentativas da LLM atingido",
+        "created_at": "2026-10-07T22:48:37.116063+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "iwf_gabarito_mais_longo",
+              "etapa": "DETERMINISTICA",
+              "campo": "alternativas",
+              "evidencia": "palavras por alternativa=[9, 11, 7, 7, 11]; o gabarito não deve se destacar pela extensão",
+              "reparo": "DISTRATORES"
+            },
+            {
+              "codigo": "iwf_repeticao_entrega_gabarito",
+              "etapa": "DETERMINISTICA",
+              "campo": "enunciado",
+              "evidencia": "termos exclusivos repetidos no gabarito: disponibilidade, garantir, longo",
+              "reparo": "NUCLEO"
+            },
+            {
+              "codigo": "iwf_termo_absoluto",
+              "etapa": "DETERMINISTICA",
+              "campo": "questao",
+              "evidencia": "termos absolutos encontrados: todos",
+              "reparo": "NUCLEO"
+            }
+          ]
+        }
+      }
+    ],
+    "reviews": []
+  },
+  "duration_seconds": 93.18
+}

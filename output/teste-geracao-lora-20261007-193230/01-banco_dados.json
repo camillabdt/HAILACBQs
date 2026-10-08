@@ -1,0 +1,400 @@
+{
+  "input": {
+    "solicitante_id": "teste-lora-bd",
+    "curso": "Computação",
+    "exame": "ENADE",
+    "componente": "ESPECIFICO",
+    "objetivo_pedagogico": "Avaliar se o estudante consegue distinguir leitura suja, leitura não repetível e leitura fantasma em cenários de concorrência de transações em bancos de dados relacionais.",
+    "dificuldade": 3,
+    "competencia": "Analisar mecanismos de controle de concorrência em sistemas de banco de dados.",
+    "habilidade": "Distinguir anomalias de concorrência a partir de uma situação-problema.",
+    "objeto_conhecimento": "Transações, isolamento e controle de concorrência em bancos de dados.",
+    "restricoes": [
+      "Gerar uma questão contextualizada.",
+      "Evitar alternativas obviamente absurdas.",
+      "Manter apenas uma alternativa correta."
+    ],
+    "max_tentativas": 3,
+    "max_tentativas_distratores": 3
+  },
+  "generate_response": {
+    "request_id": "554511dd-f241-42fd-a3de-3a1553266c2b",
+    "version": {
+      "id": "67b3e68c-dcec-45d4-b4c9-b315b5bb5b70",
+      "request_id": "554511dd-f241-42fd-a3de-3a1553266c2b",
+      "version_number": 1,
+      "created_at": "2026-10-07T22:32:34.566619+00:00",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Considere duas transações T1 e T2 que atuam sobre a tabela Conta(id, saldo). T1 inicia e executa: SELECT saldo FROM Conta WHERE id=10; (sem efetuar COMMIT). Em seguida, T2 executa: UPDATE Conta SET saldo = saldo + 100 WHERE id=10; COMMIT. Depois, T1 executa novamente: SELECT saldo FROM Conta WHERE id=10;. Qual anomalia de concorrência pode ser observada nessa sequência?",
+        "alternativas": [
+          "Leitura suja",
+          "Atualização perdida",
+          "Escrita suja",
+          "Leitura não repetível",
+          "Leitura fantasma"
+        ],
+        "correta": 3,
+        "explicacao": "A primeira leitura de T1 obtém o saldo antigo. T2 modifica e confirma a tupla antes da segunda leitura de T1, que passa a ver o saldo atualizado. Como a transação T1 lê a mesma tupla duas vezes e obtém valores diferentes, ocorre a anomalia de leitura não repetível. Não há leitura suja (T2 já confirmou) nem leitura fantasma (o conjunto de tuplas consultado permanece o mesmo).",
+        "competencia": "Analisar mecanismos de controle de concorrência em sistemas de banco de dados.",
+        "habilidade": "Distinguir anomalias de concorrência a partir de uma situação-problema.",
+        "objeto_conhecimento": "Transações, isolamento e controle de concorrência em bancos de dados.",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "provenance": {
+        "rag_id": "rag-bd-transacoes-005",
+        "llm": "openai/gpt-oss-120b",
+        "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp))"
+      }
+    },
+    "state": "GENERATION_COMPLETED",
+    "red_flags": []
+  },
+  "history": {
+    "request": {
+      "id": "554511dd-f241-42fd-a3de-3a1553266c2b",
+      "solicitante_id": "teste-lora-bd",
+      "state": "GENERATION_COMPLETED",
+      "max_attempts": 3,
+      "max_distractor_attempts": 3,
+      "attempts": 2,
+      "stem_attempts": 1,
+      "distractor_attempts": 1,
+      "created_at": "2026-10-07T22:32:30.980325+00:00",
+      "updated_at": "2026-10-07T22:32:34.579129+00:00",
+      "specification": {
+        "solicitante_id": "teste-lora-bd",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Avaliar se o estudante consegue distinguir leitura suja, leitura não repetível e leitura fantasma em cenários de concorrência de transações em bancos de dados relacionais.",
+        "dificuldade": 3,
+        "competencia": "Analisar mecanismos de controle de concorrência em sistemas de banco de dados.",
+        "habilidade": "Distinguir anomalias de concorrência a partir de uma situação-problema.",
+        "objeto_conhecimento": "Transações, isolamento e controle de concorrência em bancos de dados.",
+        "restricoes": [
+          "Gerar uma questão contextualizada.",
+          "Evitar alternativas obviamente absurdas.",
+          "Manter apenas uma alternativa correta."
+        ]
+      }
+    },
+    "versions": [
+      {
+        "id": "67b3e68c-dcec-45d4-b4c9-b315b5bb5b70",
+        "version_number": 1,
+        "created_at": "2026-10-07T22:32:34.566619+00:00"
+      }
+    ],
+    "latest_version": {
+      "id": "67b3e68c-dcec-45d4-b4c9-b315b5bb5b70",
+      "request_id": "554511dd-f241-42fd-a3de-3a1553266c2b",
+      "version_number": 1,
+      "created_at": "2026-10-07T22:32:34.566619+00:00",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Considere duas transações T1 e T2 que atuam sobre a tabela Conta(id, saldo). T1 inicia e executa: SELECT saldo FROM Conta WHERE id=10; (sem efetuar COMMIT). Em seguida, T2 executa: UPDATE Conta SET saldo = saldo + 100 WHERE id=10; COMMIT. Depois, T1 executa novamente: SELECT saldo FROM Conta WHERE id=10;. Qual anomalia de concorrência pode ser observada nessa sequência?",
+        "alternativas": [
+          "Leitura suja",
+          "Atualização perdida",
+          "Escrita suja",
+          "Leitura não repetível",
+          "Leitura fantasma"
+        ],
+        "correta": 3,
+        "explicacao": "A primeira leitura de T1 obtém o saldo antigo. T2 modifica e confirma a tupla antes da segunda leitura de T1, que passa a ver o saldo atualizado. Como a transação T1 lê a mesma tupla duas vezes e obtém valores diferentes, ocorre a anomalia de leitura não repetível. Não há leitura suja (T2 já confirmou) nem leitura fantasma (o conjunto de tuplas consultado permanece o mesmo).",
+        "competencia": "Analisar mecanismos de controle de concorrência em sistemas de banco de dados.",
+        "habilidade": "Distinguir anomalias de concorrência a partir de uma situação-problema.",
+        "objeto_conhecimento": "Transações, isolamento e controle de concorrência em bancos de dados.",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 1
+          }
+        ]
+      },
+      "provenance": {
+        "rag_id": "rag-bd-transacoes-005",
+        "llm": "openai/gpt-oss-120b",
+        "slm": "best-of-n(hybrid-v8(Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp))"
+      }
+    },
+    "artifacts": [
+      {
+        "id": 15,
+        "request_id": "554511dd-f241-42fd-a3de-3a1553266c2b",
+        "kind": "REFERENCE",
+        "created_at": "2026-10-07T22:32:31.379312+00:00",
+        "payload": {
+          "id": "rag-bd-transacoes-005",
+          "texto": "Transações de banco de dados devem preservar atomicidade, consistência, isolamento e durabilidade. O controle de concorrência busca evitar anomalias como leitura suja, atualização perdida e leitura não repetível. Bloqueios, ordenação por marcas de tempo e controle multiversão são estratégias usuais. Atomicidade significa que a transação produz todos os seus efeitos ou nenhum. Durabilidade protege os efeitos de transações já confirmadas por COMMIT. Uma falha antes da confirmação não demonstra violação de durabilidade; desfazer efeitos parciais preserva atomicidade.",
+          "exame": "ACERVO_CONCEITUAL_HAILA",
+          "ano": 2024,
+          "metadados": {
+            "curso": null,
+            "componente": null,
+            "area": "Banco de Dados",
+            "habilidade": "Analisar transações concorrentes",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "referencia": "ELMASRI, R.; NAVATHE, S. Sistemas de Banco de Dados. Complemento conceitual: PostgreSQL, documentação 18, seção 3.4 Transactions, https://www.postgresql.org/docs/18/tutorial-transactions.html (consulta em 2026-09-22).",
+            "linha": 5,
+            "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+            "retrieval": "bm25-aliases-v3",
+            "score": 23.325497,
+            "termos_recuperados": [
+              "anomalias",
+              "banco",
+              "concorrencia",
+              "controle",
+              "isolamento",
+              "leitura",
+              "nao",
+              "repetivel",
+              "suja",
+              "transacoes"
+            ],
+            "candidatas_relevantes": 1,
+            "consulta_normalizada": [
+              "anomalias",
+              "banco",
+              "bancos",
+              "cenarios",
+              "concorrencia",
+              "consegue",
+              "controle",
+              "estudante",
+              "fantasma",
+              "isolamento",
+              "leitura",
+              "mecanismos",
+              "nao",
+              "partir",
+              "problema",
+              "relacionais",
+              "repetivel",
+              "situacao",
+              "suja",
+              "transacoes"
+            ],
+            "ranking": [
+              {
+                "id": "rag-bd-transacoes-005",
+                "score": 23.325497
+              }
+            ]
+          }
+        },
+        "provenance": {}
+      },
+      {
+        "id": 16,
+        "request_id": "554511dd-f241-42fd-a3de-3a1553266c2b",
+        "kind": "STEM",
+        "created_at": "2026-10-07T22:32:34.544514+00:00",
+        "payload": {
+          "enunciado": "Considere duas transações T1 e T2 que atuam sobre a tabela Conta(id, saldo). T1 inicia e executa: SELECT saldo FROM Conta WHERE id=10; (sem efetuar COMMIT). Em seguida, T2 executa: UPDATE Conta SET saldo = saldo + 100 WHERE id=10; COMMIT. Depois, T1 executa novamente: SELECT saldo FROM Conta WHERE id=10;. Qual anomalia de concorrência pode ser observada nessa sequência?",
+          "resposta_correta": "Leitura não repetível",
+          "explicacao": "A primeira leitura de T1 obtém o saldo antigo. T2 modifica e confirma a tupla antes da segunda leitura de T1, que passa a ver o saldo atualizado. Como a transação T1 lê a mesma tupla duas vezes e obtém valores diferentes, ocorre a anomalia de leitura não repetível. Não há leitura suja (T2 já confirmou) nem leitura fantasma (o conjunto de tuplas consultado permanece o mesmo).",
+          "competencia": "Analisar mecanismos de controle de concorrência em sistemas de banco de dados.",
+          "habilidade": "Distinguir anomalias de concorrência a partir de uma situação-problema.",
+          "objeto_conhecimento": "Transações, isolamento e controle de concorrência em bancos de dados.",
+          "tem_imagem": false,
+          "recurso_visual": null
+        },
+        "provenance": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.1.0",
+          "token_usage_remote": {
+            "prompt_tokens": 1092,
+            "completion_tokens": 778,
+            "total_tokens": 1870
+          }
+        }
+      },
+      {
+        "id": 17,
+        "request_id": "554511dd-f241-42fd-a3de-3a1553266c2b",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-07T22:32:34.558975+00:00",
+        "payload": [
+          {
+            "texto": "Leitura suja",
+            "erro": "conceito_vizinho",
+            "por_que_e_falso": "conceito da mesma família de Leitura não repetível, mas não responde ao cenário"
+          },
+          {
+            "texto": "Leitura fantasma",
+            "erro": "conceito_vizinho",
+            "por_que_e_falso": "conceito da mesma família de Leitura não repetível, mas não responde ao cenário"
+          },
+          {
+            "texto": "Atualização perdida",
+            "erro": "conceito_vizinho",
+            "por_que_e_falso": "conceito da mesma família de Leitura não repetível, mas não responde ao cenário"
+          },
+          {
+            "texto": "Escrita suja",
+            "erro": "conceito_vizinho",
+            "por_que_e_falso": "conceito da mesma família de Leitura não repetível, mas não responde ao cenário"
+          }
+        ],
+        "provenance": {
+          "modelo": "slm-memory-curated-v1",
+          "estrategia": "familia_conceitual_curada",
+          "resposta_reconhecida": "Leitura não repetível",
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v8",
+          "selecao": "pool_exato"
+        }
+      },
+      {
+        "id": 18,
+        "request_id": "554511dd-f241-42fd-a3de-3a1553266c2b",
+        "kind": "DETERMINISTIC_RED_FLAGS",
+        "created_at": "2026-10-07T22:32:34.575927+00:00",
+        "payload": [],
+        "provenance": {
+          "modelo": "haila-deterministic-redflags-v3",
+          "catalog_version": "haila-redflags-3.1.0",
+          "tipo": "deterministico"
+        }
+      }
+    ],
+    "red_flags": [],
+    "events": [
+      {
+        "id": 22,
+        "request_id": "554511dd-f241-42fd-a3de-3a1553266c2b",
+        "version_id": null,
+        "from_state": null,
+        "to_state": "REQUESTED",
+        "component": "HAILA",
+        "reason": "solicitação registrada",
+        "created_at": "2026-10-07T22:32:30.980752+00:00",
+        "evidence": {
+          "solicitante_id": "teste-lora-bd",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Avaliar se o estudante consegue distinguir leitura suja, leitura não repetível e leitura fantasma em cenários de concorrência de transações em bancos de dados relacionais.",
+          "dificuldade": 3,
+          "competencia": "Analisar mecanismos de controle de concorrência em sistemas de banco de dados.",
+          "habilidade": "Distinguir anomalias de concorrência a partir de uma situação-problema.",
+          "objeto_conhecimento": "Transações, isolamento e controle de concorrência em bancos de dados.",
+          "restricoes": [
+            "Gerar uma questão contextualizada.",
+            "Evitar alternativas obviamente absurdas.",
+            "Manter apenas uma alternativa correta."
+          ]
+        }
+      },
+      {
+        "id": 23,
+        "request_id": "554511dd-f241-42fd-a3de-3a1553266c2b",
+        "version_id": null,
+        "from_state": "REQUESTED",
+        "to_state": "REFERENCE_RETRIEVED",
+        "component": "HAILA_RAG",
+        "reason": "referência recuperada",
+        "created_at": "2026-10-07T22:32:31.382382+00:00",
+        "evidence": {
+          "id": "rag-bd-transacoes-005"
+        }
+      },
+      {
+        "id": 24,
+        "request_id": "554511dd-f241-42fd-a3de-3a1553266c2b",
+        "version_id": null,
+        "from_state": "REFERENCE_RETRIEVED",
+        "to_state": "STEM_GENERATED",
+        "component": "HAILA_LLM",
+        "reason": "núcleo gerado",
+        "created_at": "2026-10-07T22:32:34.548447+00:00",
+        "evidence": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.1.0",
+          "token_usage_remote": {
+            "prompt_tokens": 1092,
+            "completion_tokens": 778,
+            "total_tokens": 1870
+          }
+        }
+      },
+      {
+        "id": 25,
+        "request_id": "554511dd-f241-42fd-a3de-3a1553266c2b",
+        "version_id": null,
+        "from_state": "STEM_GENERATED",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-07T22:32:34.562401+00:00",
+        "evidence": {
+          "modelo": "slm-memory-curated-v1",
+          "estrategia": "familia_conceitual_curada",
+          "resposta_reconhecida": "Leitura não repetível",
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v8",
+          "selecao": "pool_exato"
+        }
+      },
+      {
+        "id": 26,
+        "request_id": "554511dd-f241-42fd-a3de-3a1553266c2b",
+        "version_id": "67b3e68c-dcec-45d4-b4c9-b315b5bb5b70",
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "ITEM_ASSEMBLED",
+        "component": "HAILA_ASSEMBLER",
+        "reason": "item montado",
+        "created_at": "2026-10-07T22:32:34.571566+00:00",
+        "evidence": {}
+      },
+      {
+        "id": 27,
+        "request_id": "554511dd-f241-42fd-a3de-3a1553266c2b",
+        "version_id": "67b3e68c-dcec-45d4-b4c9-b315b5bb5b70",
+        "from_state": "ITEM_ASSEMBLED",
+        "to_state": "GENERATION_COMPLETED",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "geração concluída sem red flags",
+        "created_at": "2026-10-07T22:32:34.579285+00:00",
+        "evidence": {}
+      }
+    ],
+    "reviews": []
+  },
+  "duration_seconds": 3.61
+}

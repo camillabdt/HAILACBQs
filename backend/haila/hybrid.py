@@ -219,6 +219,66 @@ def gerar_assercoes(resposta: str) -> list[DistratorGerado]:
     return [DistratorGerado(x, "relacao_entre_assercoes_incorreta", "relação lógica difere do gabarito") for x in saida[:4]]
 
 
+
+def _mascara_decimal_ipv4(prefixo: int) -> str:
+    if not 0 <= prefixo <= 32:
+        raise ValueError("prefixo IPv4 inválido")
+    valor = ((0xFFFFFFFF << (32 - prefixo)) & 0xFFFFFFFF) if prefixo else 0
+    return ".".join(
+        str((valor >> deslocamento) & 0xFF)
+        for deslocamento in (24, 16, 8, 0)
+    )
+
+
+def gerar_distratores_ipv4_cidr(
+    resposta: str,
+    enunciado: str = "",
+) -> list[DistratorGerado] | None:
+    """Rota determinística para alternativas de prefixo/máscara IPv4."""
+    contexto = normalizar_texto(f"{enunciado} {resposta}")
+    marcadores = (
+        "ipv4", "cidr", "sub-rede", "subrede", "mascara",
+        "prefixo", "hosts", "enderecos", "enderecamento",
+    )
+    if not any(m in contexto for m in marcadores):
+        return None
+
+    achado = re.search(r"(?<!\d)/\s*(\d{1,2})(?!\d)", str(resposta))
+    if not achado:
+        return None
+
+    correto = int(achado.group(1))
+    if not 1 <= correto <= 30:
+        return None
+
+    prefixos: list[int] = []
+    for delta in (-1, 1, -2, 2, -3, 3, -4, 4, -5, 5):
+        p = correto + delta
+        if 1 <= p <= 30 and p != correto and p not in prefixos:
+            prefixos.append(p)
+        if len(prefixos) == 4:
+            break
+    if len(prefixos) != 4:
+        return None
+
+    resposta_tem_decimal = bool(
+        re.search(r"\b(?:\d{1,3}\.){3}\d{1,3}\b", str(resposta))
+    )
+    saida: list[DistratorGerado] = []
+    for p in prefixos:
+        texto = f"/{p}"
+        if resposta_tem_decimal:
+            texto = f"Máscara /{p} ({_mascara_decimal_ipv4(p)})"
+        saida.append(
+            DistratorGerado(
+                texto,
+                "prefixo_ipv4_incorreto",
+                f"o prefixo /{p} oferece capacidade diferente da requerida",
+            )
+        )
+    return saida
+
+
 class HybridDistractorGenerator:
     """Roteia formatos fechados para regras e texto livre para o SLM."""
     def __init__(self, slm, memoria=None, use_memory=None, use_rules=None):
@@ -232,10 +292,23 @@ class HybridDistractorGenerator:
             os.getenv("HAILA_USE_DETERMINISTIC_DISTRACTOR_RULES", "1") == "1"
             if use_rules is None else bool(use_rules)
         )
-        modo = "hybrid-v8" if self.use_memory or self.use_rules else "slm-only-v1"
+        modo = "hybrid-v9" if self.use_memory or self.use_rules else "slm-only-v1"
         self.model = f"{modo}({getattr(slm, 'model', 'slm')})"
 
     def __call__(self, nucleo: NucleoQuestao, feedback):
+        if self.use_rules:
+            ipv4 = gerar_distratores_ipv4_cidr(
+                nucleo.resposta_correta,
+                nucleo.enunciado,
+            )
+            if ipv4:
+                return ipv4, {
+                    "modelo": "deterministic-ipv4-cidr-v1",
+                    "familia": "ipv4_cidr",
+                    "roteador": "hybrid-v9",
+                    "estrategia": "prefixos_vizinhos_validos",
+                }
+
         familia = classificar_familia(nucleo.resposta_correta, nucleo.enunciado)
         if self.use_rules and familia == FamiliaQuestao.COMBINACAO_ITENS:
             ds = gerar_combinacoes(nucleo.resposta_correta, nucleo.enunciado)
@@ -251,6 +324,6 @@ class HybridDistractorGenerator:
         )
         if recuperado:
             ds, prov = recuperado
-            return ds, dict(prov, familia=familia.value, roteador="hybrid-v8")
+            return ds, dict(prov, familia=familia.value, roteador="hybrid-v9")
         ds, prov = self.slm(nucleo, feedback)
-        return ds, dict(prov, familia=familia.value, roteador="hybrid-v8")
+        return ds, dict(prov, familia=familia.value, roteador="hybrid-v9")
