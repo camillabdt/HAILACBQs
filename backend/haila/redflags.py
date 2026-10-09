@@ -59,7 +59,12 @@ class DeterministicRedFlagAnalyzer:
         if isinstance(correta, int) and 0 <= correta < len(alternativas):
             resposta = alternativas[correta]
             tamanhos = [len(re.findall(r"\w+", alternativa)) for alternativa in alternativas]
-            if tamanhos and tamanhos[correta] == max(tamanhos) and tamanhos[correta] >= min(tamanhos) + 2:
+            if (
+                tamanhos
+                and tamanhos[correta] == max(tamanhos)
+                and tamanhos.count(tamanhos[correta]) == 1
+                and tamanhos[correta] >= min(tamanhos) + 2
+            ):
                 add(
                     "iwf_gabarito_mais_longo",
                     "alternativas",

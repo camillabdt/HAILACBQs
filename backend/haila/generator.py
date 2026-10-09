@@ -90,6 +90,30 @@ sem copiá-la no enunciado.
 Se o item reunir função e desempenho, pergunte separadamente pelo
 aspecto pretendido.
 
+REGRA DE COMANDO EXPLÍCITO:
+Todo enunciado deve terminar com uma pergunta ou tarefa clara ao estudante.
+Não entregue apenas a descrição de um cenário.
+
+Quando um cenário mencionar uma funcionalidade e também um atributo de
+qualidade, o comando deve indicar explicitamente qual elemento deve ser
+avaliado. Por exemplo, em uma questão sobre tempo de resposta, pergunte
+pela classificação da restrição de desempenho, e não pela classificação
+ambígua do cenário inteiro.
+
+REGRA DE FOCO SEMÂNTICO V13:
+Cada item deve avaliar UMA decisão principal. Não combine, no mesmo gabarito,
+uma máscara/prefixo de sub-rede com uma técnica de roteamento, protocolo,
+algoritmo ou outra decisão independente.
+
+Em questões de subnetting com divisão em partes iguais, calcule o prefixo antes
+de escrever resposta_correta e explicacao. Exemplo: dividir um /24 em quatro
+sub-redes iguais exige emprestar 2 bits, resultando em /26.
+
+Em Engenharia de Requisitos, mantenha o nível taxonômico consistente. Se o
+comando pede classificação geral, use "Requisito funcional" ou "Requisito não
+funcional". Se pede o tipo de atributo de qualidade, use categorias específicas,
+como "Requisito de desempenho", "Requisito de segurança" ou equivalentes.
+
 Responda somente JSON válido.
 """
 
@@ -226,6 +250,9 @@ def motivo_distrator_lexicalmente_suspeito(
             if len(original) < 5:
                 continue
 
+            if _flexao_simples(base, original):
+                continue
+
             if base[:3] != original[:3]:
                 continue
 
@@ -293,6 +320,19 @@ class EnadeStemGenerator:
             reparo_prioritario += (
                 "Evite repetir no enunciado palavras que apareçam exclusivamente "
                 "na resposta correta e possam funcionar como pista lexical. "
+            )
+
+        if "questao_multiconceito" in codigos:
+            reparo_prioritario += (
+                "CORREÇÃO OBRIGATÓRIA: avalie apenas UMA decisão. "
+                "Se o item for de subnetting, pergunte somente pela máscara/prefixo. "
+                "Não combine subnetting com roteamento no mesmo gabarito. "
+            )
+
+        if "gabarito_ipv4_inconsistente" in codigos:
+            reparo_prioritario += (
+                "CORREÇÃO OBRIGATÓRIA: refaça o cálculo de subnetting antes de "
+                "escrever o gabarito e confira a explicação matematicamente. "
             )
 
         if "iwf_termo_absoluto" in codigos:
@@ -812,25 +852,55 @@ def normalizar_distratores(data: Any) -> tuple[list[DistratorGerado], list[str]]
 def normalizar_distratores_parciais(data: Any) -> tuple[list[DistratorGerado], list[str]]:
     """Normaliza de zero a N candidatos; o contrato exato é aplicado acima."""
     normalizacoes: list[str] = []
+
+    # HAILA_V14_PARSER_TOLERANTE
     if isinstance(data, dict):
-        for chave in ("distratores", "distratos", "distrators", "distrutores", "alternativas"):
-            if chave in data:
-                data = data[chave]
-                if chave != "distratores": normalizacoes.append(f"{chave}->distratores")
-                break
-    if not isinstance(data, list): raise ValueError("saída SLM não contém lista de distratores")
+        aliases = {
+            "distratores", "distrator", "distratos",
+            "distrators", "distrutores", "alternativas",
+        }
+        candidatos_brutos = []
+
+        for chave, valor in data.items():
+            chave_norm = re.sub(r"[^a-z]", "", str(chave).casefold())
+            eh_alias = chave_norm in aliases
+            eh_variacao = chave_norm.startswith("distrat") or chave_norm.startswith("distor")
+            campo_correto = "corret" in chave_norm or "gabarit" in chave_norm or "answer" in chave_norm
+
+            if isinstance(valor, list) and (eh_alias or eh_variacao) and not campo_correto:
+                candidatos_brutos.extend(valor)
+                if chave != "distratores":
+                    normalizacoes.append(f"{chave}->distratores")
+
+        if candidatos_brutos:
+            data = candidatos_brutos
+
+    if not isinstance(data, list):
+        raise ValueError("saída SLM não contém lista de distratores")
+
     saida = []
     for item in data:
         if isinstance(item, str):
             normalizacoes.append("string->objeto")
             item = {"texto": item}
-        if not isinstance(item, dict): raise ValueError("distrator malformado")
-        texto = item.get("texto") or item.get("distrator") or item.get("alternativa")
-        if not texto: raise ValueError("distrator sem texto")
-        saida.append(DistratorGerado(str(texto).strip(), str(item.get("erro", "")).strip(),
-                                      str(item.get("por_que_e_falso", "")).strip()))
-    return saida, normalizacoes
+        if not isinstance(item, dict):
+            raise ValueError("distrator malformado")
 
+        texto = item.get("texto") or item.get("distrator") or item.get("alternativa")
+        if not texto:
+            raise ValueError("distrator sem texto")
+
+        texto = re.sub(r"\s+", " ", str(texto).replace("\\n", " ").strip())
+        if not texto:
+            continue
+
+        saida.append(DistratorGerado(
+            texto,
+            str(item.get("erro", "")).strip(),
+            str(item.get("por_que_e_falso", "")).strip(),
+        ))
+
+    return saida, normalizacoes
 
 def stem_generator_from_env() -> EnadeStemGenerator:
     key = os.getenv("GROQ_API_KEY")

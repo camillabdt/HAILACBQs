@@ -20,6 +20,9 @@ class FamiliaQuestao(str, Enum):
 
 
 TAXONOMIAS_CURADAS = (
+    ("Requisito funcional", "Requisito não funcional", "Regra de negócio", "Restrição de projeto", "Critério de aceitação"),
+    ("Requisito de desempenho", "Requisito de segurança", "Requisito de usabilidade", "Requisito de confiabilidade", "Requisito de portabilidade"),
+    ("Atributo de qualidade", "Requisito funcional", "Regra de negócio", "Requisito de interface", "Restrição de domínio"),
     ("Nenhuma", "Atomicidade", "Consistência", "Isolamento", "Durabilidade"),
     ("Atomicidade", "Consistência", "Isolamento", "Durabilidade", "Serialização"),
     ("Leitura suja", "Leitura não repetível", "Leitura fantasma", "Atualização perdida", "Escrita suja"),
@@ -42,6 +45,7 @@ TAXONOMIAS_CURADAS = (
     # rede, mas nenhum oferece o fluxo de bytes confiável e ordenado do TCP.
     ("TCP", "UDP", "SCTP", "DCCP", "QUIC"),
     ("Não funcional", "Funcional", "Regra de negócio", "Requisito de interface", "Restrição de domínio"),
+    ("Requisito não funcional", "Requisito funcional", "Regra de negócio", "Requisito de interface", "Restrição de domínio"),
     (
         "Aprendizado não supervisionado",
         "Aprendizado supervisionado",
@@ -230,11 +234,40 @@ def _mascara_decimal_ipv4(prefixo: int) -> str:
     )
 
 
+
+def _prefixo_de_mascara_decimal_ipv4(texto: str) -> int | None:
+    achado = re.search(r"\b((?:\d{1,3}\.){3}\d{1,3})\b", str(texto))
+    if not achado:
+        return None
+
+    partes = [int(x) for x in achado.group(1).split(".")]
+    if any(x < 0 or x > 255 for x in partes):
+        return None
+
+    valor = 0
+    for octeto in partes:
+        valor = (valor << 8) | octeto
+
+    bits = f"{valor:032b}"
+    if "01" in bits:
+        return None
+
+    return bits.count("1")
+
 def gerar_distratores_ipv4_cidr(
     resposta: str,
     enunciado: str = "",
 ) -> list[DistratorGerado] | None:
     """Rota determinística para alternativas de prefixo/máscara IPv4."""
+    # HAILA_V13_IPV4_SINGLE_FOCUS
+    resposta_norm = normalizar_texto(resposta)
+    if re.search(
+        r"\b(?:rota|roteamento|encaminhamento|gateway|ospf|rip|bgp|"
+        r"estatica|estatico|dinamica|dinamico)\b",
+        resposta_norm,
+    ):
+        return None
+
     contexto = normalizar_texto(f"{enunciado} {resposta}")
     marcadores = (
         "ipv4", "cidr", "sub-rede", "subrede", "mascara",
@@ -244,10 +277,13 @@ def gerar_distratores_ipv4_cidr(
         return None
 
     achado = re.search(r"(?<!\d)/\s*(\d{1,2})(?!\d)", str(resposta))
-    if not achado:
-        return None
+    if achado:
+        correto = int(achado.group(1))
+    else:
+        correto = _prefixo_de_mascara_decimal_ipv4(str(resposta))
+        if correto is None:
+            return None
 
-    correto = int(achado.group(1))
     if not 1 <= correto <= 30:
         return None
 

@@ -40,6 +40,31 @@ def _tokens_qualidade(texto: str) -> list[str]:
     )
 
 
+
+def _base_flexao_contextual(token: str) -> str:
+    token = _token_base_qualidade(token)
+    if len(token) > 6 and token.endswith("ais"):
+        return token[:-3] + "al"
+    if len(token) > 6 and token.endswith("eis"):
+        return token[:-3] + "el"
+    if len(token) > 6 and token.endswith("ois"):
+        return token[:-3] + "ol"
+    if len(token) > 6 and token.endswith("oes"):
+        return token[:-3] + "ao"
+    if len(token) > 4 and token.endswith("s"):
+        return token[:-1]
+    return token
+
+
+def _flexao_contextual_valida(a: str, b: str) -> bool:
+    aa = _base_flexao_contextual(a)
+    bb = _base_flexao_contextual(b)
+    if aa == bb:
+        return True
+    if len(aa) == len(bb) and len(aa) >= 6 and aa[:-1] == bb[:-1] and {aa[-1], bb[-1]} <= {"a", "o"}:
+        return True
+    return False
+
 def _corrupcao_lexical(
     nucleo: NucleoQuestao,
     candidato: str,
@@ -80,6 +105,9 @@ def _corrupcao_lexical(
 
         for original in bases:
             if len(original) < 5:
+                continue
+
+            if _flexao_contextual_valida(base, original):
                 continue
 
             if base[:3] != original[:3]:
@@ -123,6 +151,8 @@ def _opostos_conceituais_validos(a: str, b: str) -> bool:
         frozenset({"aprendizado supervisionado", "aprendizado nao supervisionado"}),
         frozenset({"aprendizagem supervisionada", "aprendizagem nao supervisionada"}),
         frozenset({"funcional", "nao funcional"}),
+        frozenset({"requisito funcional", "requisito nao funcional"}),
+        frozenset({"requisitos funcionais", "requisitos nao funcionais"}),
     }
     normalizados = {_normalizar(a), _normalizar(b)}
     if frozenset(normalizados) in pares:
@@ -139,6 +169,172 @@ def _opostos_conceituais_validos(a: str, b: str) -> bool:
     return len(normalizados) == 2 and normalizados <= paradigmas
 
 
+
+def _tem_comando_explicito(enunciado: str) -> bool:
+    """
+    Verifica se o estudante recebe uma tarefa explícita.
+    Aceita tanto pergunta interrogativa quanto comandos típicos
+    de itens objetivos.
+    """
+    texto = _normalizar(enunciado)
+
+    if "?" in str(enunciado):
+        return True
+
+    padrao = re.compile(
+        r"\b(?:"
+        r"assinale|selecione|indique|identifique|classifique|"
+        r"determine|calcule|avalie|aponte|escolha|informe|"
+        r"marque|qual|quais|"
+        r"que alternativa|que opcao"
+        r")\b",
+        re.I,
+    )
+
+    return bool(padrao.search(texto))
+
+
+def _mistura_funcao_e_atributo_sem_foco(n: NucleoQuestao) -> bool:
+    """
+    Detecta casos de Engenharia de Requisitos em que o cenário
+    mistura uma função do sistema com uma restrição de qualidade,
+    sem dizer explicitamente qual aspecto deve ser classificado.
+    """
+    resposta = _normalizar(n.resposta_correta)
+    enunciado = _normalizar(n.enunciado)
+
+    if not (
+        "requisito nao funcional" in resposta
+        or "requisito funcional" in resposta
+        or resposta in {"nao funcional", "funcional"}
+    ):
+        return False
+
+    tem_funcao = bool(
+        re.search(
+            r"\b(?:deve|devera)\s+"
+            r"(?:permitir|gerar|registrar|calcular|emitir|enviar|"
+            r"armazenar|consultar|atualizar|processar|realizar|"
+            r"exibir|produzir|fornecer|autenticar)\b",
+            enunciado,
+            re.I,
+        )
+    )
+
+    tem_qualidade = bool(
+        re.search(
+            r"\b(?:"
+            r"tempo maximo|tempo de resposta|"
+            r"\d+(?:[.,]\d+)?\s*(?:ms|milissegundos?|segundos?|minutos?)|"
+            r"disponibilidade|desempenho|seguranca|confiabilidade|"
+            r"usabilidade|capacidade|latencia|criptografia|"
+            r"99[.,]\d+\s*%"
+            r")\b",
+            enunciado,
+            re.I,
+        )
+    )
+
+    if not (tem_funcao and tem_qualidade):
+        return False
+
+    # Só consideramos resolvida a ambiguidade se o comando apontar
+    # explicitamente para a restrição/atributo que deve ser analisado.
+    foco_explicito = bool(
+        re.search(
+            r"(?:"
+            r"restricao de (?:tempo|desempenho|seguranca)|"
+            r"limite de tempo|"
+            r"atributo de qualidade|"
+            r"caracteristica de qualidade|"
+            r"aspecto de desempenho|"
+            r"classifica\w*.{0,40}"
+            r"(?:restricao|limite|desempenho|atributo|caracteristica)"
+            r")",
+            enunciado,
+            re.I,
+        )
+    )
+
+    return not foco_explicito
+
+
+def _prefixo_ipv4_resposta(texto: str) -> int | None:
+    achado = re.search(r"(?<!\d)/\s*(\d{1,2})(?!\d)", str(texto))
+    if achado:
+        valor = int(achado.group(1))
+        return valor if 0 <= valor <= 32 else None
+
+    func = globals().get("_prefixo_mascara_ipv4_qualidade")
+    if callable(func):
+        return func(str(texto))
+    return None
+
+
+def _numero_subredes_iguais(enunciado: str) -> tuple[int, int] | None:
+    texto = _normalizar(enunciado)
+    rede = re.search(r"\b(?:\d{1,3}\.){3}\d{1,3}/(\d{1,2})\b", str(enunciado))
+    if not rede:
+        return None
+
+    nomes = {
+        "duas": 2, "tres": 3, "quatro": 4, "cinco": 5,
+        "seis": 6, "sete": 7, "oito": 8, "dezesseis": 16,
+    }
+    achado = re.search(
+        r"\b(?:dividir|subdividir|segmentar|separar)\w*.{0,120}?"
+        r"\b(?:em|para)\s+(\d+|duas|tres|quatro|cinco|seis|sete|oito|dezesseis)"
+        r"\s+(?:sub\s*redes?|partes|blocos)\s+iguais\b",
+        texto,
+        re.I,
+    )
+    if not achado:
+        return None
+
+    bruto = achado.group(1)
+    quantidade = int(bruto) if bruto.isdigit() else nomes.get(bruto)
+    if not quantidade or quantidade < 2:
+        return None
+    return int(rede.group(1)), quantidade
+
+
+def _prefixo_esperado_subredes_iguais(enunciado: str) -> int | None:
+    dados = _numero_subredes_iguais(enunciado)
+    if not dados:
+        return None
+    prefixo_base, quantidade = dados
+    bits = 0
+    capacidade = 1
+    while capacidade < quantidade:
+        capacidade *= 2
+        bits += 1
+    esperado = prefixo_base + bits
+    return esperado if esperado <= 32 else None
+
+
+def _resposta_ipv4_multiconceito(n: NucleoQuestao) -> bool:
+    resposta = _normalizar(n.resposta_correta)
+    enunciado = _normalizar(n.enunciado)
+    tem_prefixo = _prefixo_ipv4_resposta(n.resposta_correta) is not None
+    tem_roteamento = bool(re.search(
+        r"\b(?:rota|roteamento|encaminhamento|gateway|ospf|rip|bgp|"
+        r"estatica|estatico|dinamica|dinamico)\b",
+        resposta,
+    ))
+    comando_duplo = bool(
+        re.search(
+            r"\b(?:enderecamento|mascara|sub\s*rede).{0,80}\b(?:e|com)\b"
+            r".{0,80}\b(?:roteamento|encaminhamento|rota)\b",
+            enunciado,
+        )
+        or re.search(
+            r"\b(?:roteamento|encaminhamento|rota).{0,80}\b(?:e|com)\b"
+            r".{0,80}\b(?:enderecamento|mascara|sub\s*rede)\b",
+            enunciado,
+        )
+    )
+    return tem_prefixo and (tem_roteamento or comando_duplo)
+
 def avaliar_nucleo(n: NucleoQuestao, referencia: str = "") -> list[RedFlag]:
     flags = []
     add = lambda c, campo, ev: flags.append(RedFlag(c, "NUCLEO", campo, ev, "NUCLEO"))
@@ -150,6 +346,53 @@ def avaliar_nucleo(n: NucleoQuestao, referencia: str = "") -> list[RedFlag]:
     if not n.objeto_conhecimento.strip(): add("objeto_conhecimento_ausente", "objeto_conhecimento", "campo vazio")
     resposta_norm = _normalizar(n.resposta_correta)
     enunciado_norm = _normalizar(n.enunciado)
+
+    if _resposta_ipv4_multiconceito(n):
+        add(
+            "questao_multiconceito",
+            "enunciado",
+            (
+                "o item exige simultaneamente uma decisão de subnetting e uma decisão "
+                "de roteamento; mantenha um único alvo cognitivo"
+            ),
+        )
+
+    esperado_ipv4 = _prefixo_esperado_subredes_iguais(n.enunciado)
+    resposta_ipv4 = _prefixo_ipv4_resposta(n.resposta_correta)
+    if (
+        esperado_ipv4 is not None
+        and resposta_ipv4 is not None
+        and esperado_ipv4 != resposta_ipv4
+    ):
+        add(
+            "gabarito_ipv4_inconsistente",
+            "resposta_correta",
+            (
+                f"para a subdivisão descrita, o prefixo esperado é /{esperado_ipv4}, "
+                f"mas o gabarito usa /{resposta_ipv4}"
+            ),
+        )
+
+    if not _tem_comando_explicito(n.enunciado):
+        add(
+            "comando_da_questao_ausente",
+            "enunciado",
+            (
+                "o cenário descreve informações, mas não apresenta "
+                "uma pergunta ou tarefa explícita ao estudante"
+            ),
+        )
+
+    if _mistura_funcao_e_atributo_sem_foco(n):
+        add(
+            "mistura_funcional_nao_funcional_ambigua",
+            "enunciado",
+            (
+                "o cenário reúne uma funcionalidade e uma restrição "
+                "de qualidade sem indicar explicitamente qual aspecto "
+                "deve ser classificado"
+            ),
+        )
     # O núcleo é produzido antes das alternativas. Portanto,
     # uma lista A), B), C)... dentro do enunciado é uma violação
     # arquitetural e costuma induzir a SLM a copiar/parafrasear opções.
@@ -264,6 +507,35 @@ def _deformacao_lexical_do_gabarito(gabarito: str, candidato: str) -> str | None
     return None
 
 
+
+def _prefixo_mascara_ipv4_qualidade(texto: str) -> int | None:
+    achado = re.search(r"\b((?:\d{1,3}\.){3}\d{1,3})\b", str(texto))
+    if not achado:
+        return None
+
+    partes = [int(x) for x in achado.group(1).split(".")]
+    if any(x < 0 or x > 255 for x in partes):
+        return None
+
+    valor = 0
+    for octeto in partes:
+        valor = (valor << 8) | octeto
+
+    bits = f"{valor:032b}"
+    if "01" in bits:
+        return None
+
+    return bits.count("1")
+
+
+def _parece_mascara_ipv4(texto: str) -> bool:
+    return bool(
+        re.search(
+            r"\b[0-9OoIl]{1,3}(?:\.[0-9OoIl]{1,3}){3}\b",
+            str(texto),
+        )
+    )
+
 def avaliar_distratores(n: NucleoQuestao, distratores: list[DistratorGerado]) -> list[RedFlag]:
     flags = []
     add = lambda c, campo, ev: flags.append(RedFlag(c, "DISTRATORES", campo, ev, "DISTRATORES"))
@@ -350,6 +622,58 @@ def avaliar_distratores(n: NucleoQuestao, distratores: list[DistratorGerado]) ->
             "distratores",
             evidencia,
         )
+
+    contexto_ipv4 = _normalizar(
+        f"{n.enunciado} {n.resposta_correta}"
+    )
+    resposta_prefixo = _prefixo_mascara_ipv4_qualidade(n.resposta_correta)
+    resposta_cidr = re.search(r"(?<!\d)/\s*(\d{1,2})(?!\d)", n.resposta_correta)
+    if resposta_prefixo is None and resposta_cidr:
+        resposta_prefixo = int(resposta_cidr.group(1))
+
+    if resposta_prefixo is not None and any(
+        termo in contexto_ipv4
+        for termo in ("ipv4", "mascara", "sub rede", "cidr", "hosts")
+    ):
+        invalidas = []
+        equivalentes = []
+        tipo_incompativel = []
+
+        for i, texto in enumerate(textos):
+            cidr = re.search(r"(?<!\d)/\s*(\d{1,2})(?!\d)", texto)
+            prefixo = int(cidr.group(1)) if cidr else _prefixo_mascara_ipv4_qualidade(texto)
+
+            if _parece_mascara_ipv4(texto) and prefixo is None:
+                invalidas.append((i, texto))
+                continue
+
+            if prefixo is None:
+                tipo_incompativel.append((i, texto))
+                continue
+
+            if prefixo == resposta_prefixo:
+                equivalentes.append((i, texto))
+
+        if invalidas:
+            add(
+                "mascara_ipv4_invalida",
+                "distratores",
+                "; ".join(f'{i}:"{texto}"' for i, texto in invalidas),
+            )
+
+        if equivalentes:
+            add(
+                "mascara_ipv4_equivalente_ao_gabarito",
+                "distratores",
+                "; ".join(f'{i}:"{texto}"' for i, texto in equivalentes),
+            )
+
+        if tipo_incompativel:
+            add(
+                "distrator_tipo_incompativel_ipv4",
+                "distratores",
+                "; ".join(f'{i}:"{texto}"' for i, texto in tipo_incompativel),
+            )
 
     if any(_combinacao_invalida(t) for t in textos):
         add("combinacao_de_itens_invalida", "distratores", "há item romano repetido na alternativa")

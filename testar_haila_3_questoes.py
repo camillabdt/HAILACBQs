@@ -74,17 +74,19 @@ TESTES = [
             "exame": "ENADE",
             "componente": "ESPECIFICO",
             "objetivo_pedagogico": (
-                "Avaliar se o estudante consegue selecionar o mecanismo de "
-                "endereçamento e roteamento adequado em uma situação de redes "
-                "IPv4 envolvendo sub-redes e encaminhamento de pacotes."
+                "Avaliar se o estudante consegue calcular e selecionar o prefixo "
+                "IPv4 adequado para atender a uma necessidade de hosts ou "
+                "para dividir uma rede em sub-redes."
             ),
             "dificuldade": 3,
             "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
-            "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
-            "objeto_conhecimento": "Endereçamento IPv4, sub-redes e roteamento.",
+            "habilidade": "Calcular o prefixo IPv4 adequado em uma situação de subnetting.",
+            "objeto_conhecimento": "Endereçamento IPv4, CIDR e subnetting.",
             "restricoes": [
+                "Avaliar somente subnetting; não combinar com roteamento, NAT, DHCP ou VLAN.",
+                "O gabarito deve ser apenas um prefixo CIDR (/xx) ou uma máscara decimal IPv4 válida.",
                 "Evitar cálculos excessivamente longos.",
-                "Produzir alternativas plausíveis.",
+                "Produzir alternativas plausíveis do mesmo tipo do gabarito.",
                 "Manter apenas uma alternativa correta."
             ],
             "max_tentativas": 3,
