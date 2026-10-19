@@ -17,6 +17,7 @@ from .orchestrator import HailaOrchestrator
 from .redflags import deterministic_analyzer_from_env
 from .repository import HailaRepository
 from .slm_config import resolve_adapter_path, runtime_status, slm_base_model, slm_backend
+from .jev import jev_evaluator_from_env, jev_runtime_status
 
 app=FastAPI(title="HAILA Backend",version="1.0.0")
 _PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -24,7 +25,7 @@ _DEFAULT_DB = _PROJECT_ROOT / "runtime" / "haila.sqlite3"
 _db_raw = Path(os.getenv("HAILA_DB", str(_DEFAULT_DB))).expanduser()
 _DB_PATH = _db_raw if _db_raw.is_absolute() else _PROJECT_ROOT / _db_raw
 repo=HailaRepository(str(_DB_PATH.resolve())); haila=HailaOrchestrator(repo)
-API_BUILD="20261002-lora-poscomp"
+API_BUILD="20261018-jev-experimental"
 
 _OBJETIVO_GENERICO = {
     "analisar", "analise", "compreender", "entender", "saber", "responder",
@@ -70,6 +71,11 @@ class AvaliacaoAutomatica(BaseModel):
     question:dict[str,Any]
     reference:str=""
 
+class AvaliacaoJev(BaseModel):
+    question:dict[str,Any]
+    specification:dict[str,Any]=Field(default_factory=dict)
+    reference:dict[str,Any]=Field(default_factory=dict)
+
 class ExecucaoAblacao(BaseModel):
     condition:Literal["C1_LLM","C2_RAG_LLM","C3_RAG_LLM_SLM"]
     specification:dict[str,Any]
@@ -99,6 +105,7 @@ def executar(acao):
 @app.get("/health")
 def health():
     slm = runtime_status()
+    jev = jev_runtime_status()
     return {
         "status":"ok",
         "service":"HAILA",
@@ -114,6 +121,11 @@ def health():
         "distractor_rules":os.getenv("HAILA_USE_DETERMINISTIC_DISTRACTOR_RULES","1") == "1",
         "rag_corpus":os.getenv("HAILA_RAG_CORPUS",str(Path(__file__).resolve().parents[1]/"fontes_rag.jsonl")),
         "red_flags":"deterministic-v3.1",
+        "jev_enabled":jev["enabled"],
+        "jev_configured":jev["configured"],
+        "jev_mode":jev["mode"],
+        "jev_model":jev["model"],
+        "jev_fail_policy":jev["fail_policy"],
         "database":"configured",
     }
 
@@ -154,8 +166,14 @@ def criar_solicitacao(payload:Solicitacao):
 @app.post("/requests/{request_id}/generate")
 def gerar(request_id:str):
     try:
-        return executar(lambda:haila.executar(request_id,rag_from_env(),stem_generator_from_env(),
-                                               slm_generator_from_env(),deterministic_analyzer_from_env()))
+        return executar(lambda:haila.executar(
+            request_id,
+            rag_from_env(),
+            stem_generator_from_env(),
+            slm_generator_from_env(),
+            deterministic_analyzer_from_env(),
+            jev_evaluator_from_env(),
+        ))
     except HTTPException:
         raise
     except Exception as exc:
@@ -198,6 +216,25 @@ def registrar_avaliacao(request_id:str,payload:AvaliacaoHumana):
 def avaliar_iwf(payload:AvaliacaoAutomatica):
     generator=stem_generator_from_env()
     return executar(lambda:evaluate_iwf(payload.question,generator.caller,payload.reference))
+
+@app.get("/settings/jev")
+def consultar_jev():
+    return jev_runtime_status()
+
+@app.post("/evaluations/jev")
+def avaliar_jev(payload:AvaliacaoJev):
+    evaluator=jev_evaluator_from_env()
+    if evaluator is None:
+        raise HTTPException(
+            409,
+            "Jev desativado. Defina HAILA_JEV_ENABLED=1.",
+        )
+    result, provenance=evaluator(
+        payload.question,
+        payload.specification,
+        payload.reference,
+    )
+    return {"result":result,"provenance":provenance}
 
 @app.post("/evaluations/ablation/run")
 def executar_ablacao(payload:ExecucaoAblacao):

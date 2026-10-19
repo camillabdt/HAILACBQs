@@ -13,9 +13,12 @@ flowchart LR
     L --> S[SLM Qwen: distratores]
     S --> M[Montagem]
     M --> D{Red flags determinísticas}
-    D -->|sem bloqueio| C[Candidata à revisão humana]
+    D -->|sem bloqueio| J{Jev opcional}
     D -->|núcleo| L
     D -->|distratores| S
+    J -->|shadow/aprovado| C[Candidata à revisão humana]
+    J -->|gate: núcleo| L
+    J -->|gate: distratores| S
     C --> H{Parecer do professor}
     H --> A[Aprovada]
     H --> X[Rejeitada]
@@ -58,4 +61,22 @@ make test
 
 As tarefas **HAILA: Testes**, **HAILA: Ablação C1-C3**, **HAILA: Ablação C4** e **HAILA: Consolidar tokens exatos** ficam disponíveis em **Terminal > Executar Tarefa**. Os resultados são gravados em `evaluation/results/`. O consolidado separa os tokens pagos da Groq dos tokens processados localmente pela SLM.
 
-Modelos que avaliam questões como substitutos de professores não fazem parte do fluxo de produção. Esse uso permanece em `research/` como protocolo experimental para comparação com pareceres humanos.
+A avaliação pedagógica final permanece humana. Jev pode ser habilitado como camada semântica experimental e opcional após as Red Flags determinísticas. Por padrão, `HAILA_JEV_ENABLED=0`; em `shadow`, seus sinais são apenas registrados. O objetivo é medir concordância, latência e custo contra pareceres docentes, não substituir professores.
+
+
+## Jev experimental
+
+A integração usa TypeSafe System One e cinco decisões `noul` em uma chamada:
+unicidade do gabarito, clareza, alinhamento pedagógico, plausibilidade dos
+distratores e ausência de ambiguidade.
+
+Comece em `shadow`:
+
+```bash
+HAILA_JEV_ENABLED=1
+HAILA_JEV_MODE=shadow
+TYPESAFE_API_KEY=...
+```
+
+Em `shadow`, o Jev não bloqueia nem regenera. `gate` exige limiares
+explicitamente configurados e calibrados contra avaliações docentes.

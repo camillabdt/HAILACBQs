@@ -21,7 +21,7 @@ class HailaOrchestrator:
         rid = self.repo.create_request(solicitante_id, specification, max_attempts, max_distractor_attempts)
         return self.repo.get_request(rid)
 
-    def executar(self, request_id: str, rag, stem_generator, distractor_generator, red_flag_analyzer) -> dict:
+    def executar(self, request_id: str, rag, stem_generator, distractor_generator, red_flag_analyzer, jev_evaluator=None) -> dict:
         """Executa a geração e garante que toda solicitação termine em estado terminal.
 
         Qualquer exceção não tratada (RAG sem referência, cota do provedor,
@@ -30,7 +30,7 @@ class HailaOrchestrator:
         intermediário e o histórico não explicaria o encerramento.
         """
         try:
-            return self._executar(request_id, rag, stem_generator, distractor_generator, red_flag_analyzer)
+            return self._executar(request_id, rag, stem_generator, distractor_generator, red_flag_analyzer, jev_evaluator)
         except Exception as exc:
             try:
                 atual = Estado(self.repo.get_request(request_id)["state"])
@@ -44,7 +44,7 @@ class HailaOrchestrator:
                 pass
             raise
 
-    def _executar(self, request_id: str, rag, stem_generator, distractor_generator, red_flag_analyzer) -> dict:
+    def _executar(self, request_id: str, rag, stem_generator, distractor_generator, red_flag_analyzer, jev_evaluator=None) -> dict:
         req = self.repo.get_request(request_id)
         referencia: ReferenciaRAG = rag(req["specification"])
         self.repo.save_artifact(request_id, "REFERENCE", referencia.to_dict(), {})
@@ -119,9 +119,61 @@ class HailaOrchestrator:
                         )
                         self.repo.save_artifact(request_id, "DETERMINISTIC_RED_FLAGS", [f.to_dict() for f in deterministic_flags], deterministic_prov)
                         iflags = deterministic_flags
+                    jev_completed = False
+                    if not iflags and jev_evaluator is not None:
+                        try:
+                            jev_result, jev_prov = jev_evaluator(
+                                questao,
+                                req["specification"],
+                                referencia.to_dict(),
+                            )
+                            self.repo.save_artifact(
+                                request_id,
+                                "JEV_SEMANTIC_EVALUATION",
+                                jev_result,
+                                jev_prov,
+                            )
+                            jev_completed = True
+                            jev_flags = jev_evaluator.blocking_flags(jev_result)
+                            if jev_flags:
+                                iflags = jev_flags
+                        except Exception as exc:
+                            self.repo.save_artifact(
+                                request_id,
+                                "JEV_ERROR",
+                                {
+                                    "type": type(exc).__name__,
+                                    "message": str(exc)[:800],
+                                },
+                                {
+                                    "provider": "typesafe",
+                                    "mode": getattr(jev_evaluator, "mode", "unknown"),
+                                },
+                            )
+                            if getattr(jev_evaluator, "fail_policy", "continue") == "error":
+                                raise
+
                     if not iflags:
-                        self.repo.transition(request_id, version["id"], Estado.GENERATION_COMPLETED, "HAILA_RED_FLAGS", "geração concluída sem red flags", {})
-                        return {"request_id": request_id, "version": version, "state": Estado.GENERATION_COMPLETED.value, "red_flags": []}
+                        component = "HAILA_JEV" if jev_completed else "HAILA_RED_FLAGS"
+                        reason = (
+                            "geração concluída após avaliação semântica Jev"
+                            if jev_completed
+                            else "geração concluída sem red flags"
+                        )
+                        self.repo.transition(
+                            request_id,
+                            version["id"],
+                            Estado.GENERATION_COMPLETED,
+                            component,
+                            reason,
+                            {},
+                        )
+                        return {
+                            "request_id": request_id,
+                            "version": version,
+                            "state": Estado.GENERATION_COMPLETED.value,
+                            "red_flags": [],
+                        }
                     # Cada flag informa qual componente deve repetir a geração.
                     if any(f.reparo == "NUCLEO" for f in iflags):
                         feedback_nucleo = [f.to_dict() for f in iflags]
