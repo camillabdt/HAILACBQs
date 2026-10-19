@@ -1,0 +1,505 @@
+{
+  "input": {
+    "solicitante_id": "teste-metricas-es",
+    "curso": "Computação",
+    "exame": "ENADE",
+    "componente": "ESPECIFICO",
+    "objetivo_pedagogico": "Avaliar se o estudante consegue identificar e classificar requisitos funcionais e não funcionais a partir de um cenário de desenvolvimento de software.",
+    "dificuldade": 3,
+    "competencia": "Analisar especificações de requisitos de software.",
+    "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+    "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+    "restricoes": [
+      "Usar um cenário realista de sistema de software.",
+      "Avaliar uma única decisão principal.",
+      "Evitar pistas lexicais que revelem o gabarito.",
+      "Manter apenas uma alternativa correta.",
+      "Produzir quatro distratores plausíveis e do mesmo nível conceitual do gabarito."
+    ],
+    "max_tentativas": 3,
+    "max_tentativas_distratores": 3
+  },
+  "generate_response": {
+    "request_id": "15767dd7-f29d-48bb-acb3-432848dfabfa",
+    "version": {
+      "id": "291339a6-2aa7-4fdd-891a-4be1f2ebd00f",
+      "request_id": "15767dd7-f29d-48bb-acb3-432848dfabfa",
+      "version_number": 1,
+      "created_at": "2026-10-08T21:44:49.924530+00:00",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Um portal de notícias online deve garantir que a página de resultados de busca seja exibida ao usuário em no máximo 1 segundo, mesmo sob carga de até 10.000 consultas simultâneas. De acordo com essa especificação, como esse requisito deve ser classificado?",
+        "alternativas": [
+          "Regra de negócio",
+          "Requisito de interface",
+          "Restrição de domínio",
+          "Requisito funcional",
+          "Requisito não funcional"
+        ],
+        "correta": 4,
+        "explicacao": "O requisito descreve um atributo de qualidade (tempo de resposta) imposto ao sistema, não uma funcionalidade observável. Assim, trata‑se de um requisito não funcional, especificamente de desempenho.",
+        "competencia": "Analisar especificações de requisitos de software.",
+        "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+        "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          }
+        ]
+      },
+      "provenance": {
+        "rag_id": "seed-engenharia-de-software-requisitos-funcionais-e-no-funcionais",
+        "llm": "openai/gpt-oss-120b",
+        "slm": "best-of-n(hybrid-v9(Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp))"
+      }
+    },
+    "state": "GENERATION_COMPLETED",
+    "red_flags": []
+  },
+  "history": {
+    "request": {
+      "id": "15767dd7-f29d-48bb-acb3-432848dfabfa",
+      "solicitante_id": "teste-metricas-es",
+      "state": "GENERATION_COMPLETED",
+      "max_attempts": 3,
+      "max_distractor_attempts": 3,
+      "attempts": 2,
+      "stem_attempts": 1,
+      "distractor_attempts": 1,
+      "created_at": "2026-10-08T21:44:45.067405+00:00",
+      "updated_at": "2026-10-08T21:44:49.937555+00:00",
+      "specification": {
+        "solicitante_id": "teste-metricas-es",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Avaliar se o estudante consegue identificar e classificar requisitos funcionais e não funcionais a partir de um cenário de desenvolvimento de software.",
+        "dificuldade": 3,
+        "competencia": "Analisar especificações de requisitos de software.",
+        "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+        "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+        "restricoes": [
+          "Usar um cenário realista de sistema de software.",
+          "Avaliar uma única decisão principal.",
+          "Evitar pistas lexicais que revelem o gabarito.",
+          "Manter apenas uma alternativa correta.",
+          "Produzir quatro distratores plausíveis e do mesmo nível conceitual do gabarito."
+        ]
+      }
+    },
+    "versions": [
+      {
+        "id": "291339a6-2aa7-4fdd-891a-4be1f2ebd00f",
+        "version_number": 1,
+        "created_at": "2026-10-08T21:44:49.924530+00:00"
+      }
+    ],
+    "latest_version": {
+      "id": "291339a6-2aa7-4fdd-891a-4be1f2ebd00f",
+      "request_id": "15767dd7-f29d-48bb-acb3-432848dfabfa",
+      "version_number": 1,
+      "created_at": "2026-10-08T21:44:49.924530+00:00",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Um portal de notícias online deve garantir que a página de resultados de busca seja exibida ao usuário em no máximo 1 segundo, mesmo sob carga de até 10.000 consultas simultâneas. De acordo com essa especificação, como esse requisito deve ser classificado?",
+        "alternativas": [
+          "Regra de negócio",
+          "Requisito de interface",
+          "Restrição de domínio",
+          "Requisito funcional",
+          "Requisito não funcional"
+        ],
+        "correta": 4,
+        "explicacao": "O requisito descreve um atributo de qualidade (tempo de resposta) imposto ao sistema, não uma funcionalidade observável. Assim, trata‑se de um requisito não funcional, especificamente de desempenho.",
+        "competencia": "Analisar especificações de requisitos de software.",
+        "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+        "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 1,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 0
+          }
+        ]
+      },
+      "provenance": {
+        "rag_id": "seed-engenharia-de-software-requisitos-funcionais-e-no-funcionais",
+        "llm": "openai/gpt-oss-120b",
+        "slm": "best-of-n(hybrid-v9(Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp))"
+      }
+    },
+    "artifacts": [
+      {
+        "id": 239,
+        "request_id": "15767dd7-f29d-48bb-acb3-432848dfabfa",
+        "kind": "REFERENCE",
+        "created_at": "2026-10-08T21:44:47.157458+00:00",
+        "payload": {
+          "id": "seed-engenharia-de-software-requisitos-funcionais-e-no-funcionais",
+          "texto": "[Fonte 1: seed-engenharia-de-software-requisitos-funcionais-e-no-funcionais | Engenharia de Software | Requisitos funcionais e não funcionais]\nRequisitos funcionais descrevem serviços e comportamentos observáveis do sistema. Requisitos não funcionais expressam atributos de qualidade, restrições ou condições sobre a solução, como desempenho, segurança e disponibilidade.\n\n[Fonte 2: rag-engsoftware-requisitos-009 | Engenharia de Software | Engenharia de requisitos]\nRequisitos funcionais descrevem serviços e comportamentos esperados do sistema. Requisitos não funcionais estabelecem atributos e restrições, como desempenho, segurança, confiabilidade e usabilidade. Elicitação, especificação, validação e gerenciamento de mudanças ajudam a manter alinhamento entre necessidades e solução.",
+          "exame": "ACERVO_CONCEITUAL_HAILA",
+          "ano": 2026,
+          "metadados": {
+            "curso": "Computação",
+            "componente": "ESPECIFICO",
+            "area": "Engenharia de Software",
+            "subarea": "Requisitos",
+            "habilidade": "Classificar requisitos",
+            "objeto_conhecimento": "Requisitos funcionais e não funcionais",
+            "palavras_chave": [
+              "requisito funcional",
+              "requisito não funcional",
+              "qualidade",
+              "restrição"
+            ],
+            "referencia": "SOMMERVILLE, I. Engenharia de Software; PRESSMAN, R.; MAXIM, B. Software Engineering: A Practitioner's Approach.",
+            "fonte_tipo": "sintese_conceitual_curada",
+            "origem": "HAILA_SEED_ENADE_POSCOMP_2026",
+            "linha": 62,
+            "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+            "retrieval": "hybrid-bm25-phrase-fuzzy-metadata-v4",
+            "area_inferida": "Engenharia de Software",
+            "top_k": 2,
+            "fontes_ids": [
+              "seed-engenharia-de-software-requisitos-funcionais-e-no-funcionais",
+              "rag-engsoftware-requisitos-009"
+            ],
+            "fontes": [
+              {
+                "id": "seed-engenharia-de-software-requisitos-funcionais-e-no-funcionais",
+                "area": "Engenharia de Software",
+                "subarea": "Requisitos",
+                "objeto_conhecimento": "Requisitos funcionais e não funcionais",
+                "referencia": "SOMMERVILLE, I. Engenharia de Software; PRESSMAN, R.; MAXIM, B. Software Engineering: A Practitioner's Approach.",
+                "score": 43.712499,
+                "focus_coverage": 0.75,
+                "termos_recuperados": [
+                  "classificar",
+                  "classificar__requisitos",
+                  "funcionais",
+                  "nao",
+                  "nao__funcionais",
+                  "requisito_funcional",
+                  "requisito_funcional__nao",
+                  "requisitos",
+                  "requisitos__classificar"
+                ],
+                "fuzzy": []
+              },
+              {
+                "id": "rag-engsoftware-requisitos-009",
+                "area": "Engenharia de Software",
+                "subarea": null,
+                "objeto_conhecimento": "Engenharia de requisitos",
+                "referencia": "SOMMERVILLE, I. Engenharia de Software.",
+                "score": 32.068391,
+                "focus_coverage": 0.5,
+                "termos_recuperados": [
+                  "classificar",
+                  "classificar__requisitos",
+                  "engenharia_requisitos",
+                  "engenharia_requisitos__requisito_funcional",
+                  "necessidades",
+                  "requisito_funcional",
+                  "requisitos"
+                ],
+                "fuzzy": [
+                  {
+                    "consulta": "especificacoes",
+                    "documento": "especificacao",
+                    "score": 0.889
+                  }
+                ]
+              }
+            ],
+            "candidatas_relevantes": 11,
+            "consulta_normalizada": [
+              "classificar",
+              "desenvolvimento",
+              "engenharia_requisitos",
+              "especificacoes",
+              "funcionais",
+              "los",
+              "nao",
+              "necessidades",
+              "relaciona",
+              "requisito_funcional",
+              "requisitos"
+            ],
+            "ranking": [
+              {
+                "id": "seed-engenharia-de-software-requisitos-funcionais-e-no-funcionais",
+                "score": 43.712499,
+                "area": "Engenharia de Software"
+              },
+              {
+                "id": "rag-engsoftware-requisitos-009",
+                "score": 32.068391,
+                "area": "Engenharia de Software"
+              },
+              {
+                "id": "seed-engenharia-de-software-elicitao-e-validao-de-requisitos",
+                "score": 17.044176,
+                "area": "Engenharia de Software"
+              },
+              {
+                "id": "seed-engenharia-de-software-rastreabilidade-e-mudana",
+                "score": 11.71585,
+                "area": "Engenharia de Software"
+              },
+              {
+                "id": "seed-engenharia-de-software-modelos-de-processo-de-software",
+                "score": 8.200098,
+                "area": "Engenharia de Software"
+              },
+              {
+                "id": "seed-engenharia-de-software-caixa-preta-e-caixa-branca",
+                "score": 6.584057,
+                "area": "Engenharia de Software"
+              },
+              {
+                "id": "seed-engenharia-de-software-scrum-e-desenvolvimento-iterativo",
+                "score": 6.452197,
+                "area": "Engenharia de Software"
+              },
+              {
+                "id": "seed-engenharia-de-software-manuteno-e-evoluo-de-software",
+                "score": 5.697444,
+                "area": "Engenharia de Software"
+              }
+            ],
+            "query_fingerprint": "cd40af1465704a25"
+          }
+        },
+        "provenance": {}
+      },
+      {
+        "id": 240,
+        "request_id": "15767dd7-f29d-48bb-acb3-432848dfabfa",
+        "kind": "STEM",
+        "created_at": "2026-10-08T21:44:49.893330+00:00",
+        "payload": {
+          "enunciado": "Um portal de notícias online deve garantir que a página de resultados de busca seja exibida ao usuário em no máximo 1 segundo, mesmo sob carga de até 10.000 consultas simultâneas. De acordo com essa especificação, como esse requisito deve ser classificado?",
+          "resposta_correta": "Requisito não funcional",
+          "explicacao": "O requisito descreve um atributo de qualidade (tempo de resposta) imposto ao sistema, não uma funcionalidade observável. Assim, trata‑se de um requisito não funcional, especificamente de desempenho.",
+          "competencia": "Analisar especificações de requisitos de software.",
+          "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+          "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+          "tem_imagem": false,
+          "recurso_visual": null
+        },
+        "provenance": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2358,
+            "completion_tokens": 888,
+            "total_tokens": 3246
+          }
+        }
+      },
+      {
+        "id": 241,
+        "request_id": "15767dd7-f29d-48bb-acb3-432848dfabfa",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-08T21:44:49.913752+00:00",
+        "payload": [
+          {
+            "texto": "Requisito funcional",
+            "erro": "conceito_vizinho",
+            "por_que_e_falso": "conceito da mesma família de Requisito não funcional, mas não responde ao cenário"
+          },
+          {
+            "texto": "Regra de negócio",
+            "erro": "conceito_vizinho",
+            "por_que_e_falso": "conceito da mesma família de Requisito não funcional, mas não responde ao cenário"
+          },
+          {
+            "texto": "Requisito de interface",
+            "erro": "conceito_vizinho",
+            "por_que_e_falso": "conceito da mesma família de Requisito não funcional, mas não responde ao cenário"
+          },
+          {
+            "texto": "Restrição de domínio",
+            "erro": "conceito_vizinho",
+            "por_que_e_falso": "conceito da mesma família de Requisito não funcional, mas não responde ao cenário"
+          }
+        ],
+        "provenance": {
+          "modelo": "slm-memory-curated-v1",
+          "estrategia": "familia_conceitual_curada",
+          "resposta_reconhecida": "Requisito não funcional",
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v9",
+          "selecao": "pool_exato"
+        }
+      },
+      {
+        "id": 242,
+        "request_id": "15767dd7-f29d-48bb-acb3-432848dfabfa",
+        "kind": "DETERMINISTIC_RED_FLAGS",
+        "created_at": "2026-10-08T21:44:49.934209+00:00",
+        "payload": [],
+        "provenance": {
+          "modelo": "haila-deterministic-redflags-v3",
+          "catalog_version": "haila-redflags-3.1.0",
+          "tipo": "deterministico"
+        }
+      }
+    ],
+    "red_flags": [],
+    "events": [
+      {
+        "id": 395,
+        "request_id": "15767dd7-f29d-48bb-acb3-432848dfabfa",
+        "version_id": null,
+        "from_state": null,
+        "to_state": "REQUESTED",
+        "component": "HAILA",
+        "reason": "solicitação registrada",
+        "created_at": "2026-10-08T21:44:45.068379+00:00",
+        "evidence": {
+          "solicitante_id": "teste-metricas-es",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Avaliar se o estudante consegue identificar e classificar requisitos funcionais e não funcionais a partir de um cenário de desenvolvimento de software.",
+          "dificuldade": 3,
+          "competencia": "Analisar especificações de requisitos de software.",
+          "habilidade": "Classificar requisitos e relacioná-los às necessidades do sistema.",
+          "objeto_conhecimento": "Engenharia de requisitos: requisitos funcionais e não funcionais.",
+          "restricoes": [
+            "Usar um cenário realista de sistema de software.",
+            "Avaliar uma única decisão principal.",
+            "Evitar pistas lexicais que revelem o gabarito.",
+            "Manter apenas uma alternativa correta.",
+            "Produzir quatro distratores plausíveis e do mesmo nível conceitual do gabarito."
+          ]
+        }
+      },
+      {
+        "id": 396,
+        "request_id": "15767dd7-f29d-48bb-acb3-432848dfabfa",
+        "version_id": null,
+        "from_state": "REQUESTED",
+        "to_state": "REFERENCE_RETRIEVED",
+        "component": "HAILA_RAG",
+        "reason": "referência recuperada",
+        "created_at": "2026-10-08T21:44:47.163133+00:00",
+        "evidence": {
+          "id": "seed-engenharia-de-software-requisitos-funcionais-e-no-funcionais"
+        }
+      },
+      {
+        "id": 397,
+        "request_id": "15767dd7-f29d-48bb-acb3-432848dfabfa",
+        "version_id": null,
+        "from_state": "REFERENCE_RETRIEVED",
+        "to_state": "STEM_GENERATED",
+        "component": "HAILA_LLM",
+        "reason": "núcleo gerado",
+        "created_at": "2026-10-08T21:44:49.897951+00:00",
+        "evidence": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2358,
+            "completion_tokens": 888,
+            "total_tokens": 3246
+          }
+        }
+      },
+      {
+        "id": 398,
+        "request_id": "15767dd7-f29d-48bb-acb3-432848dfabfa",
+        "version_id": null,
+        "from_state": "STEM_GENERATED",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-08T21:44:49.917877+00:00",
+        "evidence": {
+          "modelo": "slm-memory-curated-v1",
+          "estrategia": "familia_conceitual_curada",
+          "resposta_reconhecida": "Requisito não funcional",
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v9",
+          "selecao": "pool_exato"
+        }
+      },
+      {
+        "id": 399,
+        "request_id": "15767dd7-f29d-48bb-acb3-432848dfabfa",
+        "version_id": "291339a6-2aa7-4fdd-891a-4be1f2ebd00f",
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "ITEM_ASSEMBLED",
+        "component": "HAILA_ASSEMBLER",
+        "reason": "item montado",
+        "created_at": "2026-10-08T21:44:49.929304+00:00",
+        "evidence": {}
+      },
+      {
+        "id": 400,
+        "request_id": "15767dd7-f29d-48bb-acb3-432848dfabfa",
+        "version_id": "291339a6-2aa7-4fdd-891a-4be1f2ebd00f",
+        "from_state": "ITEM_ASSEMBLED",
+        "to_state": "GENERATION_COMPLETED",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "geração concluída sem red flags",
+        "created_at": "2026-10-08T21:44:49.937702+00:00",
+        "evidence": {}
+      }
+    ],
+    "reviews": []
+  },
+  "metrics": {
+    "teste": "engenharia_software",
+    "request_id": "15767dd7-f29d-48bb-acb3-432848dfabfa",
+    "state": "GENERATION_COMPLETED",
+    "duration_seconds": 4.88,
+    "attempts": 2,
+    "stem_attempts": 1,
+    "distractor_attempts": 1,
+    "historical_red_flags": 0,
+    "final_red_flags": 0,
+    "route": "memoria_curada",
+    "distractor_model": "slm-memory-curated-v1",
+    "router": "hybrid-v9",
+    "strategy": "familia_conceitual_curada",
+    "groq_prompt_tokens": 2358,
+    "groq_completion_tokens": 888,
+    "groq_total_tokens": 3246,
+    "slm_input_tokens": 0,
+    "slm_output_tokens": 0,
+    "slm_total_tokens": 0,
+    "question_generated": true
+  }
+}

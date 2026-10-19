@@ -1,0 +1,20 @@
+[
+  {
+    "teste": "banco_dados",
+    "state": "ERROR",
+    "duration_seconds": 1.68,
+    "error": "HTTP 500 em /requests/a750963e-4888-4002-b1b3-ba4341c17654/generate: {\"raw\": \"Internal Server Error\"}"
+  },
+  {
+    "teste": "engenharia_software",
+    "state": "ERROR",
+    "duration_seconds": 0.78,
+    "error": "HTTP 500 em /requests/4320af8c-d825-486e-93d8-01439b713e4f/generate: {\"raw\": \"Internal Server Error\"}"
+  },
+  {
+    "teste": "redes",
+    "state": "ERROR",
+    "duration_seconds": 0.77,
+    "error": "HTTP 500 em /requests/9cb13f92-24f4-4ea5-a9cc-0cd1a83bad1b/generate: {\"raw\": \"Internal Server Error\"}"
+  }
+]

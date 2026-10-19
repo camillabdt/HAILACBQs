@@ -1,0 +1,23 @@
+[
+  {
+    "teste": "banco_dados",
+    "request_id": "be398502-e2a2-4d8b-942e-fc7cd771c93a",
+    "state": "GENERATION_COMPLETED",
+    "duration_seconds": 4.32,
+    "red_flags": 0,
+    "question_generated": true,
+    "arquivo": "/home/camilla/HAILA/output/teste-geracao-lora-20261008-183704/01-banco_dados.json"
+  },
+  {
+    "teste": "engenharia_software",
+    "state": "ERROR",
+    "duration_seconds": 4.62,
+    "error": "HTTP 429 em /requests/7e7dc421-f426-4782-aa24-f98df2d7e974/generate: {\"detail\": \"Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo.\"}"
+  },
+  {
+    "teste": "redes",
+    "state": "ERROR",
+    "duration_seconds": 0.86,
+    "error": "HTTP 429 em /requests/d6c0cc4d-ce41-4a9f-b3db-e58c4fee0d77/generate: {\"detail\": \"Limite da Groq atingido. Aguarde a renovação da cota ou escolha outro modelo.\"}"
+  }
+]

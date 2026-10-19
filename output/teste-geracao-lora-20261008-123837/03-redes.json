@@ -1,0 +1,1167 @@
+{
+  "input": {
+    "solicitante_id": "teste-lora-redes",
+    "curso": "Computação",
+    "exame": "ENADE",
+    "componente": "ESPECIFICO",
+    "objetivo_pedagogico": "Avaliar se o estudante consegue selecionar o mecanismo de endereçamento e roteamento adequado em uma situação de redes IPv4 envolvendo sub-redes e encaminhamento de pacotes.",
+    "dificuldade": 3,
+    "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+    "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+    "objeto_conhecimento": "Endereçamento IPv4, sub-redes e roteamento.",
+    "restricoes": [
+      "Evitar cálculos excessivamente longos.",
+      "Produzir alternativas plausíveis.",
+      "Manter apenas uma alternativa correta."
+    ],
+    "max_tentativas": 3,
+    "max_tentativas_distratores": 3
+  },
+  "generate_response": {
+    "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+    "state": "ATTEMPTS_EXHAUSTED",
+    "red_flags": [
+      {
+        "codigo": "iwf_gabarito_mais_longo",
+        "etapa": "DETERMINISTICA",
+        "campo": "alternativas",
+        "evidencia": "palavras por alternativa=[1, 5, 1, 1, 1]; o gabarito não deve se destacar pela extensão",
+        "reparo": "DISTRATORES"
+      }
+    ]
+  },
+  "history": {
+    "request": {
+      "id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+      "solicitante_id": "teste-lora-redes",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "max_attempts": 3,
+      "max_distractor_attempts": 3,
+      "attempts": 8,
+      "stem_attempts": 3,
+      "distractor_attempts": 5,
+      "created_at": "2026-10-08T15:43:17.311140+00:00",
+      "updated_at": "2026-10-08T15:44:20.607096+00:00",
+      "specification": {
+        "solicitante_id": "teste-lora-redes",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Avaliar se o estudante consegue selecionar o mecanismo de endereçamento e roteamento adequado em uma situação de redes IPv4 envolvendo sub-redes e encaminhamento de pacotes.",
+        "dificuldade": 3,
+        "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+        "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+        "objeto_conhecimento": "Endereçamento IPv4, sub-redes e roteamento.",
+        "restricoes": [
+          "Evitar cálculos excessivamente longos.",
+          "Produzir alternativas plausíveis.",
+          "Manter apenas uma alternativa correta."
+        ]
+      }
+    },
+    "versions": [
+      {
+        "id": "651fb351-a7bc-408e-ae80-270660aeb8ed",
+        "version_number": 1,
+        "created_at": "2026-10-08T15:43:21.721386+00:00"
+      },
+      {
+        "id": "fd8c1f35-528d-467c-91e0-1d4742119544",
+        "version_number": 2,
+        "created_at": "2026-10-08T15:44:17.318171+00:00"
+      },
+      {
+        "id": "6ea2e322-9d12-4116-83f7-c550ec5117f0",
+        "version_number": 3,
+        "created_at": "2026-10-08T15:44:20.516870+00:00"
+      },
+      {
+        "id": "635d3730-d608-4862-bc1b-2e6238c802a4",
+        "version_number": 4,
+        "created_at": "2026-10-08T15:44:20.549426+00:00"
+      },
+      {
+        "id": "3887dffd-5e9a-4952-9219-483396db9ae0",
+        "version_number": 5,
+        "created_at": "2026-10-08T15:44:20.587831+00:00"
+      }
+    ],
+    "latest_version": {
+      "id": "3887dffd-5e9a-4952-9219-483396db9ae0",
+      "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+      "version_number": 5,
+      "created_at": "2026-10-08T15:44:20.587831+00:00",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Uma empresa possui a rede IPv4 200.100.50.0/24 e pretende dividir esse bloco em quatro partes iguais para atender a quatro departamentos. Cada parte deve ter endereços suficientes apenas para hosts e para o roteador que interconecta os departamentos. Além disso, o roteador deve encaminhar pacotes provenientes do Departamento A (primeiro sub‑bloco) para a rede externa 150.20.0.0/16 usando a interface que está conectada a esse destino. Qual mecanismo de endereçamento e de encaminhamento deve ser configurado para atender a esses requisitos?",
+        "alternativas": [
+          "/25",
+          "CIDR /27 com rota fixa",
+          "/28",
+          "/29",
+          "/26"
+        ],
+        "correta": 1,
+        "explicacao": "Dividir 200.100.50.0/24 em quatro sub‑redes iguais requer usar um prefixo de 27 bits (blocos de 32 endereços), pois cada bit adicional ao prefixo dobra o número de sub‑redes e reduz pela metade o tamanho de cada bloco. Assim, cada departamento recebe 30 endereços utilizáveis (32 menos rede e broadcast). Para que o roteador encaminhe tráfego do primeiro sub‑bloco para 150.20.0.0/16, basta inserir uma rota fixa (estática) apontando para a interface que conecta ao destino. Essa combinação satisfaz tanto o requisito de subdivisão quanto o de encaminhamento específico.",
+        "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+        "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+        "objeto_conhecimento": "Endereçamento IPv4, sub‑redes e roteamento.",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 0,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 0
+          }
+        ]
+      },
+      "provenance": {
+        "rag_id": "seed-redes-de-computadores-subnetting-ipv4",
+        "llm": "openai/gpt-oss-120b",
+        "slm": "best-of-n(hybrid-v9(Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp))"
+      }
+    },
+    "artifacts": [
+      {
+        "id": 189,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "kind": "REFERENCE",
+        "created_at": "2026-10-08T15:43:17.918568+00:00",
+        "payload": {
+          "id": "seed-redes-de-computadores-subnetting-ipv4",
+          "texto": "[Fonte 1: seed-redes-de-computadores-subnetting-ipv4 | Redes de Computadores | Subnetting IPv4]\nPara dividir uma rede IPv4 em sub-redes, bits originalmente destinados a hosts são incorporados ao prefixo. Cada bit adicional no prefixo dobra o número de sub-redes possíveis e reduz pela metade o bloco de endereços de cada sub-rede.\n\n[Fonte 2: seed-redes-de-computadores-endereamento-ipv4 | Redes de Computadores | Endereçamento IPv4]\nUm endereço IPv4 possui 32 bits. O prefixo identifica a rede e os bits restantes identificam endereços dentro da sub-rede; a notação CIDR /n informa quantos bits pertencem ao prefixo.\n\n[Fonte 3: seed-redes-de-computadores-endereo-de-rede-broadcast-e-hosts-ipv4 | Redes de Computadores | Endereço de rede, broadcast e hosts IPv4]\nEm uma sub-rede IPv4 tradicional, o primeiro endereço representa a rede e o último é o broadcast dirigido; os endereços intermediários podem ser atribuídos a interfaces de hosts, observadas exceções e usos especiais.",
+          "exame": "ACERVO_CONCEITUAL_HAILA",
+          "ano": 2026,
+          "metadados": {
+            "curso": "Computação",
+            "componente": "ESPECIFICO",
+            "area": "Redes de Computadores",
+            "subarea": "Camada de Rede",
+            "habilidade": "Dividir uma rede em sub-redes",
+            "objeto_conhecimento": "Subnetting IPv4",
+            "palavras_chave": [
+              "subnetting",
+              "IPv4",
+              "sub-redes",
+              "máscara",
+              "prefixo"
+            ],
+            "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+            "fonte_tipo": "sintese_conceitual_curada",
+            "origem": "HAILA_SEED_ENADE_POSCOMP_2026",
+            "linha": 18,
+            "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+            "retrieval": "hybrid-bm25-phrase-fuzzy-metadata-v4",
+            "area_inferida": "Redes de Computadores",
+            "top_k": 3,
+            "fontes_ids": [
+              "seed-redes-de-computadores-subnetting-ipv4",
+              "seed-redes-de-computadores-endereamento-ipv4",
+              "seed-redes-de-computadores-endereo-de-rede-broadcast-e-hosts-ipv4"
+            ],
+            "fontes": [
+              {
+                "id": "seed-redes-de-computadores-subnetting-ipv4",
+                "area": "Redes de Computadores",
+                "subarea": "Camada de Rede",
+                "objeto_conhecimento": "Subnetting IPv4",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+                "score": 23.817349,
+                "focus_coverage": 0.5,
+                "termos_recuperados": [
+                  "computadores",
+                  "ipv4",
+                  "ipv4__subrede",
+                  "redes",
+                  "redes__computadores",
+                  "subrede"
+                ],
+                "fuzzy": []
+              },
+              {
+                "id": "seed-redes-de-computadores-endereamento-ipv4",
+                "area": "Redes de Computadores",
+                "subarea": "Camada de Rede",
+                "objeto_conhecimento": "Endereçamento IPv4",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+                "score": 23.329117,
+                "focus_coverage": 0.75,
+                "termos_recuperados": [
+                  "computadores",
+                  "enderecamento",
+                  "enderecamento__ipv4",
+                  "ipv4",
+                  "redes",
+                  "redes__computadores",
+                  "subrede"
+                ],
+                "fuzzy": []
+              },
+              {
+                "id": "seed-redes-de-computadores-endereo-de-rede-broadcast-e-hosts-ipv4",
+                "area": "Redes de Computadores",
+                "subarea": "Camada de Rede",
+                "objeto_conhecimento": "Endereço de rede, broadcast e hosts IPv4",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+                "score": 20.033656,
+                "focus_coverage": 0.5,
+                "termos_recuperados": [
+                  "computadores",
+                  "ipv4",
+                  "ipv4__subrede",
+                  "redes",
+                  "redes__computadores",
+                  "subrede"
+                ],
+                "fuzzy": []
+              }
+            ],
+            "candidatas_relevantes": 25,
+            "consulta_normalizada": [
+              "adequado",
+              "aplicar",
+              "computadores",
+              "comunicacao",
+              "encaminhamento",
+              "enderecamento",
+              "envolvendo",
+              "ipv4",
+              "mecanismo",
+              "organizacao",
+              "pacotes",
+              "principios",
+              "redes",
+              "roteamento",
+              "selecionar",
+              "subrede"
+            ],
+            "ranking": [
+              {
+                "id": "seed-redes-de-computadores-subnetting-ipv4",
+                "score": 23.817349,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-endereamento-ipv4",
+                "score": 23.329117,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-endereo-de-rede-broadcast-e-hosts-ipv4",
+                "score": 20.033656,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-roteamento-ip-e-tabela-de-rotas",
+                "score": 18.492775,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-vlsm-e-alocao-de-sub-redes",
+                "score": 17.680718,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-roteamento-esttico-e-rota-padro",
+                "score": 16.330439,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-mscara-de-sub-rede-e-cidr",
+                "score": 16.113014,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-ipv6-e-estrutura-de-endereamento",
+                "score": 15.636952,
+                "area": "Redes de Computadores"
+              }
+            ],
+            "query_fingerprint": "9de8e1b37e55f716"
+          }
+        },
+        "provenance": {}
+      },
+      {
+        "id": 190,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "kind": "STEM",
+        "created_at": "2026-10-08T15:43:21.688718+00:00",
+        "payload": {
+          "enunciado": "Uma empresa possui a rede IPv4 10.0.0.0/16 que será dividida em sub‑redes para quatro filiais, cada uma precisando suportar até 200 hosts simultâneos. A política de gerenciamento da empresa privilegia configurações simples e controle centralizado do tráfego entre as filiais. Qual máscara de sub‑rede (em notação CIDR) e qual tipo de roteamento (estático ou dinâmico) devem ser adotados para atender a esses requisitos?",
+          "resposta_correta": "/24 e roteamento estático",
+          "explicacao": "Para suportar até 200 hosts é necessário um bloco de endereços com pelo menos 256 endereços (2^8), portanto a máscara mais curta que permite isso é /24 (10.x.x.0/24). Cada filial recebe um /24, resultando em quatro sub‑redes distintas dentro de 10.0.0.0/16. Como a rede tem apenas quatro sub‑redes e a empresa deseja configuração simples e gerenciamento centralizado, o roteamento estático é suficiente e evita a complexidade de protocolos dinâmicos, garantindo controle preciso das rotas entre as filiais.",
+          "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+          "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+          "objeto_conhecimento": "Endereçamento IPv4, sub‑redes e roteamento.",
+          "tem_imagem": false,
+          "recurso_visual": null
+        },
+        "provenance": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2491,
+            "completion_tokens": 995,
+            "total_tokens": 3486
+          }
+        }
+      },
+      {
+        "id": 191,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-08T15:43:21.711654+00:00",
+        "payload": [
+          {
+            "texto": "/23",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /23 oferece capacidade diferente da requerida"
+          },
+          {
+            "texto": "/25",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /25 oferece capacidade diferente da requerida"
+          },
+          {
+            "texto": "/22",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /22 oferece capacidade diferente da requerida"
+          },
+          {
+            "texto": "/26",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /26 oferece capacidade diferente da requerida"
+          }
+        ],
+        "provenance": {
+          "modelo": "deterministic-ipv4-cidr-v1",
+          "familia": "ipv4_cidr",
+          "roteador": "hybrid-v9",
+          "estrategia": "prefixos_vizinhos_validos",
+          "selecao": "pool_exato"
+        }
+      },
+      {
+        "id": 192,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "kind": "DETERMINISTIC_RED_FLAGS",
+        "created_at": "2026-10-08T15:43:21.732153+00:00",
+        "payload": [
+          {
+            "codigo": "iwf_gabarito_mais_longo",
+            "etapa": "DETERMINISTICA",
+            "campo": "alternativas",
+            "evidencia": "palavras por alternativa=[1, 4, 1, 1, 1]; o gabarito não deve se destacar pela extensão",
+            "reparo": "DISTRATORES"
+          },
+          {
+            "codigo": "iwf_repeticao_entrega_gabarito",
+            "etapa": "DETERMINISTICA",
+            "campo": "enunciado",
+            "evidencia": "termos exclusivos repetidos no gabarito: estatico, roteamento",
+            "reparo": "NUCLEO"
+          }
+        ],
+        "provenance": {
+          "modelo": "haila-deterministic-redflags-v3",
+          "catalog_version": "haila-redflags-3.1.0",
+          "tipo": "deterministico"
+        }
+      },
+      {
+        "id": 193,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "kind": "STEM",
+        "created_at": "2026-10-08T15:43:23.960922+00:00",
+        "payload": {
+          "enunciado": "Uma organização possui a rede 192.168.0.0/24 subdividida em duas sub‑redes /25: 192.168.0.0/25 (endereços de host de .1 a .126) e 192.168.0.128/25 (endereços de host de .129 a .254). Um único roteador, com duas interfaces, conecta as duas sub‑redes. O administrador deseja definir manualmente o próximo salto para cada destino, de modo que o tráfego entre as sub‑redes siga as regras especificadas por ele. Qual mecanismo de roteamento deve ser utilizado para atender a esse requisito?",
+          "resposta_correta": "Roteamento estático",
+          "explicacao": "O cenário descreve a necessidade de configuração manual de rotas entre duas sub‑redes conectadas a um único roteador. Quando o administrador especifica explicitamente o próximo salto para cada rede, utiliza-se roteamento estático, que não depende de protocolos dinâmicos de troca de informações e garante que as rotas permanecem exatamente como definidas.",
+          "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+          "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+          "objeto_conhecimento": "Endereçamento IPv4, sub‑redes e roteamento.",
+          "tem_imagem": false,
+          "recurso_visual": null
+        },
+        "provenance": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2680,
+            "completion_tokens": 860,
+            "total_tokens": 3540
+          }
+        }
+      },
+      {
+        "id": 194,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-08T15:44:17.307331+00:00",
+        "payload": [
+          {
+            "texto": "Roteio basico",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Máquina virtual",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Roteiro dinâmico",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Máquinas virtuais",
+            "erro": "",
+            "por_que_e_falso": ""
+          }
+        ],
+        "provenance": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_2:distratos->distratores",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 11,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.6.0",
+          "token_usage_local": {
+            "input_tokens": 1620,
+            "output_tokens": 122,
+            "total_tokens": 1742
+          },
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v9",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 11,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              1,
+              3,
+              4,
+              6
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      },
+      {
+        "id": 195,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "kind": "DETERMINISTIC_RED_FLAGS",
+        "created_at": "2026-10-08T15:44:17.330199+00:00",
+        "payload": [
+          {
+            "codigo": "iwf_repeticao_entrega_gabarito",
+            "etapa": "DETERMINISTICA",
+            "campo": "enunciado",
+            "evidencia": "termos exclusivos repetidos no gabarito: roteamento",
+            "reparo": "NUCLEO"
+          }
+        ],
+        "provenance": {
+          "modelo": "haila-deterministic-redflags-v3",
+          "catalog_version": "haila-redflags-3.1.0",
+          "tipo": "deterministico"
+        }
+      },
+      {
+        "id": 196,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "kind": "STEM",
+        "created_at": "2026-10-08T15:44:20.495854+00:00",
+        "payload": {
+          "enunciado": "Uma empresa possui a rede IPv4 200.100.50.0/24 e pretende dividir esse bloco em quatro partes iguais para atender a quatro departamentos. Cada parte deve ter endereços suficientes apenas para hosts e para o roteador que interconecta os departamentos. Além disso, o roteador deve encaminhar pacotes provenientes do Departamento A (primeiro sub‑bloco) para a rede externa 150.20.0.0/16 usando a interface que está conectada a esse destino. Qual mecanismo de endereçamento e de encaminhamento deve ser configurado para atender a esses requisitos?",
+          "resposta_correta": "CIDR /27 com rota fixa",
+          "explicacao": "Dividir 200.100.50.0/24 em quatro sub‑redes iguais requer usar um prefixo de 27 bits (blocos de 32 endereços), pois cada bit adicional ao prefixo dobra o número de sub‑redes e reduz pela metade o tamanho de cada bloco. Assim, cada departamento recebe 30 endereços utilizáveis (32 menos rede e broadcast). Para que o roteador encaminhe tráfego do primeiro sub‑bloco para 150.20.0.0/16, basta inserir uma rota fixa (estática) apontando para a interface que conecta ao destino. Essa combinação satisfaz tanto o requisito de subdivisão quanto o de encaminhamento específico.",
+          "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+          "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+          "objeto_conhecimento": "Endereçamento IPv4, sub‑redes e roteamento.",
+          "tem_imagem": false,
+          "recurso_visual": null
+        },
+        "provenance": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2599,
+            "completion_tokens": 1197,
+            "total_tokens": 3796
+          }
+        }
+      },
+      {
+        "id": 197,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-08T15:44:20.508666+00:00",
+        "payload": [
+          {
+            "texto": "/26",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /26 oferece capacidade diferente da requerida"
+          },
+          {
+            "texto": "/28",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /28 oferece capacidade diferente da requerida"
+          },
+          {
+            "texto": "/25",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /25 oferece capacidade diferente da requerida"
+          },
+          {
+            "texto": "/29",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /29 oferece capacidade diferente da requerida"
+          }
+        ],
+        "provenance": {
+          "modelo": "deterministic-ipv4-cidr-v1",
+          "familia": "ipv4_cidr",
+          "roteador": "hybrid-v9",
+          "estrategia": "prefixos_vizinhos_validos",
+          "selecao": "pool_exato"
+        }
+      },
+      {
+        "id": 198,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "kind": "DETERMINISTIC_RED_FLAGS",
+        "created_at": "2026-10-08T15:44:20.525830+00:00",
+        "payload": [
+          {
+            "codigo": "iwf_gabarito_mais_longo",
+            "etapa": "DETERMINISTICA",
+            "campo": "alternativas",
+            "evidencia": "palavras por alternativa=[1, 5, 1, 1, 1]; o gabarito não deve se destacar pela extensão",
+            "reparo": "DISTRATORES"
+          }
+        ],
+        "provenance": {
+          "modelo": "haila-deterministic-redflags-v3",
+          "catalog_version": "haila-redflags-3.1.0",
+          "tipo": "deterministico"
+        }
+      },
+      {
+        "id": 199,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-08T15:44:20.540930+00:00",
+        "payload": [
+          {
+            "texto": "/26",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /26 oferece capacidade diferente da requerida"
+          },
+          {
+            "texto": "/28",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /28 oferece capacidade diferente da requerida"
+          },
+          {
+            "texto": "/25",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /25 oferece capacidade diferente da requerida"
+          },
+          {
+            "texto": "/29",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /29 oferece capacidade diferente da requerida"
+          }
+        ],
+        "provenance": {
+          "modelo": "deterministic-ipv4-cidr-v1",
+          "familia": "ipv4_cidr",
+          "roteador": "hybrid-v9",
+          "estrategia": "prefixos_vizinhos_validos",
+          "selecao": "pool_exato"
+        }
+      },
+      {
+        "id": 200,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "kind": "DETERMINISTIC_RED_FLAGS",
+        "created_at": "2026-10-08T15:44:20.557891+00:00",
+        "payload": [
+          {
+            "codigo": "iwf_gabarito_mais_longo",
+            "etapa": "DETERMINISTICA",
+            "campo": "alternativas",
+            "evidencia": "palavras por alternativa=[1, 5, 1, 1, 1]; o gabarito não deve se destacar pela extensão",
+            "reparo": "DISTRATORES"
+          }
+        ],
+        "provenance": {
+          "modelo": "haila-deterministic-redflags-v3",
+          "catalog_version": "haila-redflags-3.1.0",
+          "tipo": "deterministico"
+        }
+      },
+      {
+        "id": 201,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-08T15:44:20.578519+00:00",
+        "payload": [
+          {
+            "texto": "/26",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /26 oferece capacidade diferente da requerida"
+          },
+          {
+            "texto": "/28",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /28 oferece capacidade diferente da requerida"
+          },
+          {
+            "texto": "/25",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /25 oferece capacidade diferente da requerida"
+          },
+          {
+            "texto": "/29",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /29 oferece capacidade diferente da requerida"
+          }
+        ],
+        "provenance": {
+          "modelo": "deterministic-ipv4-cidr-v1",
+          "familia": "ipv4_cidr",
+          "roteador": "hybrid-v9",
+          "estrategia": "prefixos_vizinhos_validos",
+          "selecao": "pool_exato"
+        }
+      },
+      {
+        "id": 202,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "kind": "DETERMINISTIC_RED_FLAGS",
+        "created_at": "2026-10-08T15:44:20.596473+00:00",
+        "payload": [
+          {
+            "codigo": "iwf_gabarito_mais_longo",
+            "etapa": "DETERMINISTICA",
+            "campo": "alternativas",
+            "evidencia": "palavras por alternativa=[1, 5, 1, 1, 1]; o gabarito não deve se destacar pela extensão",
+            "reparo": "DISTRATORES"
+          }
+        ],
+        "provenance": {
+          "modelo": "haila-deterministic-redflags-v3",
+          "catalog_version": "haila-redflags-3.1.0",
+          "tipo": "deterministico"
+        }
+      }
+    ],
+    "red_flags": [
+      {
+        "id": 50,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "code": "iwf_gabarito_mais_longo",
+        "stage": "DETERMINISTICA",
+        "field": "alternativas",
+        "evidence": "palavras por alternativa=[1, 4, 1, 1, 1]; o gabarito não deve se destacar pela extensão",
+        "repair_target": "DISTRATORES",
+        "created_at": "2026-10-08T15:43:21.740224+00:00"
+      },
+      {
+        "id": 51,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "code": "iwf_repeticao_entrega_gabarito",
+        "stage": "DETERMINISTICA",
+        "field": "enunciado",
+        "evidence": "termos exclusivos repetidos no gabarito: estatico, roteamento",
+        "repair_target": "NUCLEO",
+        "created_at": "2026-10-08T15:43:21.740506+00:00"
+      },
+      {
+        "id": 52,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "code": "iwf_repeticao_entrega_gabarito",
+        "stage": "DETERMINISTICA",
+        "field": "enunciado",
+        "evidence": "termos exclusivos repetidos no gabarito: roteamento",
+        "repair_target": "NUCLEO",
+        "created_at": "2026-10-08T15:44:17.335485+00:00"
+      },
+      {
+        "id": 53,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "code": "iwf_gabarito_mais_longo",
+        "stage": "DETERMINISTICA",
+        "field": "alternativas",
+        "evidence": "palavras por alternativa=[1, 5, 1, 1, 1]; o gabarito não deve se destacar pela extensão",
+        "repair_target": "DISTRATORES",
+        "created_at": "2026-10-08T15:44:20.530263+00:00"
+      },
+      {
+        "id": 54,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "code": "iwf_gabarito_mais_longo",
+        "stage": "DETERMINISTICA",
+        "field": "alternativas",
+        "evidence": "palavras por alternativa=[1, 5, 1, 1, 1]; o gabarito não deve se destacar pela extensão",
+        "repair_target": "DISTRATORES",
+        "created_at": "2026-10-08T15:44:20.564231+00:00"
+      },
+      {
+        "id": 55,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "code": "iwf_gabarito_mais_longo",
+        "stage": "DETERMINISTICA",
+        "field": "alternativas",
+        "evidence": "palavras por alternativa=[1, 5, 1, 1, 1]; o gabarito não deve se destacar pela extensão",
+        "repair_target": "DISTRATORES",
+        "created_at": "2026-10-08T15:44:20.599923+00:00"
+      }
+    ],
+    "events": [
+      {
+        "id": 306,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": null,
+        "from_state": null,
+        "to_state": "REQUESTED",
+        "component": "HAILA",
+        "reason": "solicitação registrada",
+        "created_at": "2026-10-08T15:43:17.312045+00:00",
+        "evidence": {
+          "solicitante_id": "teste-lora-redes",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Avaliar se o estudante consegue selecionar o mecanismo de endereçamento e roteamento adequado em uma situação de redes IPv4 envolvendo sub-redes e encaminhamento de pacotes.",
+          "dificuldade": 3,
+          "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+          "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+          "objeto_conhecimento": "Endereçamento IPv4, sub-redes e roteamento.",
+          "restricoes": [
+            "Evitar cálculos excessivamente longos.",
+            "Produzir alternativas plausíveis.",
+            "Manter apenas uma alternativa correta."
+          ]
+        }
+      },
+      {
+        "id": 307,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": null,
+        "from_state": "REQUESTED",
+        "to_state": "REFERENCE_RETRIEVED",
+        "component": "HAILA_RAG",
+        "reason": "referência recuperada",
+        "created_at": "2026-10-08T15:43:17.924643+00:00",
+        "evidence": {
+          "id": "seed-redes-de-computadores-subnetting-ipv4"
+        }
+      },
+      {
+        "id": 308,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": null,
+        "from_state": "REFERENCE_RETRIEVED",
+        "to_state": "STEM_GENERATED",
+        "component": "HAILA_LLM",
+        "reason": "núcleo gerado",
+        "created_at": "2026-10-08T15:43:21.700949+00:00",
+        "evidence": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2491,
+            "completion_tokens": 995,
+            "total_tokens": 3486
+          }
+        }
+      },
+      {
+        "id": 309,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": null,
+        "from_state": "STEM_GENERATED",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-08T15:43:21.715470+00:00",
+        "evidence": {
+          "modelo": "deterministic-ipv4-cidr-v1",
+          "familia": "ipv4_cidr",
+          "roteador": "hybrid-v9",
+          "estrategia": "prefixos_vizinhos_validos",
+          "selecao": "pool_exato"
+        }
+      },
+      {
+        "id": 310,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": "651fb351-a7bc-408e-ae80-270660aeb8ed",
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "ITEM_ASSEMBLED",
+        "component": "HAILA_ASSEMBLER",
+        "reason": "item montado",
+        "created_at": "2026-10-08T15:43:21.727159+00:00",
+        "evidence": {}
+      },
+      {
+        "id": 311,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": "651fb351-a7bc-408e-ae80-270660aeb8ed",
+        "from_state": "ITEM_ASSEMBLED",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "conteúdo bloqueado",
+        "created_at": "2026-10-08T15:43:21.747215+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "iwf_gabarito_mais_longo",
+              "etapa": "DETERMINISTICA",
+              "campo": "alternativas",
+              "evidencia": "palavras por alternativa=[1, 4, 1, 1, 1]; o gabarito não deve se destacar pela extensão",
+              "reparo": "DISTRATORES"
+            },
+            {
+              "codigo": "iwf_repeticao_entrega_gabarito",
+              "etapa": "DETERMINISTICA",
+              "campo": "enunciado",
+              "evidencia": "termos exclusivos repetidos no gabarito: estatico, roteamento",
+              "reparo": "NUCLEO"
+            }
+          ]
+        }
+      },
+      {
+        "id": 312,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "STEM_GENERATED",
+        "component": "HAILA_LLM",
+        "reason": "núcleo gerado",
+        "created_at": "2026-10-08T15:43:23.964611+00:00",
+        "evidence": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2680,
+            "completion_tokens": 860,
+            "total_tokens": 3540
+          }
+        }
+      },
+      {
+        "id": 313,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": null,
+        "from_state": "STEM_GENERATED",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-08T15:44:17.312725+00:00",
+        "evidence": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_2:distratos->distratores",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 11,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.6.0",
+          "token_usage_local": {
+            "input_tokens": 1620,
+            "output_tokens": 122,
+            "total_tokens": 1742
+          },
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v9",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 11,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              1,
+              3,
+              4,
+              6
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      },
+      {
+        "id": 314,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": "fd8c1f35-528d-467c-91e0-1d4742119544",
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "ITEM_ASSEMBLED",
+        "component": "HAILA_ASSEMBLER",
+        "reason": "item montado",
+        "created_at": "2026-10-08T15:44:17.324527+00:00",
+        "evidence": {}
+      },
+      {
+        "id": 315,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": "fd8c1f35-528d-467c-91e0-1d4742119544",
+        "from_state": "ITEM_ASSEMBLED",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "conteúdo bloqueado",
+        "created_at": "2026-10-08T15:44:17.338742+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "iwf_repeticao_entrega_gabarito",
+              "etapa": "DETERMINISTICA",
+              "campo": "enunciado",
+              "evidencia": "termos exclusivos repetidos no gabarito: roteamento",
+              "reparo": "NUCLEO"
+            }
+          ]
+        }
+      },
+      {
+        "id": 316,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "STEM_GENERATED",
+        "component": "HAILA_LLM",
+        "reason": "núcleo gerado",
+        "created_at": "2026-10-08T15:44:20.499829+00:00",
+        "evidence": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2599,
+            "completion_tokens": 1197,
+            "total_tokens": 3796
+          }
+        }
+      },
+      {
+        "id": 317,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": null,
+        "from_state": "STEM_GENERATED",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-08T15:44:20.513151+00:00",
+        "evidence": {
+          "modelo": "deterministic-ipv4-cidr-v1",
+          "familia": "ipv4_cidr",
+          "roteador": "hybrid-v9",
+          "estrategia": "prefixos_vizinhos_validos",
+          "selecao": "pool_exato"
+        }
+      },
+      {
+        "id": 318,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": "6ea2e322-9d12-4116-83f7-c550ec5117f0",
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "ITEM_ASSEMBLED",
+        "component": "HAILA_ASSEMBLER",
+        "reason": "item montado",
+        "created_at": "2026-10-08T15:44:20.522527+00:00",
+        "evidence": {}
+      },
+      {
+        "id": 319,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": null,
+        "from_state": "ITEM_ASSEMBLED",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "distratores/item bloqueados",
+        "created_at": "2026-10-08T15:44:20.533338+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "iwf_gabarito_mais_longo",
+              "etapa": "DETERMINISTICA",
+              "campo": "alternativas",
+              "evidencia": "palavras por alternativa=[1, 5, 1, 1, 1]; o gabarito não deve se destacar pela extensão",
+              "reparo": "DISTRATORES"
+            }
+          ]
+        }
+      },
+      {
+        "id": 320,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-08T15:44:20.543998+00:00",
+        "evidence": {
+          "modelo": "deterministic-ipv4-cidr-v1",
+          "familia": "ipv4_cidr",
+          "roteador": "hybrid-v9",
+          "estrategia": "prefixos_vizinhos_validos",
+          "selecao": "pool_exato"
+        }
+      },
+      {
+        "id": 321,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": "635d3730-d608-4862-bc1b-2e6238c802a4",
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "ITEM_ASSEMBLED",
+        "component": "HAILA_ASSEMBLER",
+        "reason": "item montado",
+        "created_at": "2026-10-08T15:44:20.553141+00:00",
+        "evidence": {}
+      },
+      {
+        "id": 322,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": null,
+        "from_state": "ITEM_ASSEMBLED",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "distratores/item bloqueados",
+        "created_at": "2026-10-08T15:44:20.567344+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "iwf_gabarito_mais_longo",
+              "etapa": "DETERMINISTICA",
+              "campo": "alternativas",
+              "evidencia": "palavras por alternativa=[1, 5, 1, 1, 1]; o gabarito não deve se destacar pela extensão",
+              "reparo": "DISTRATORES"
+            }
+          ]
+        }
+      },
+      {
+        "id": 323,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-08T15:44:20.581034+00:00",
+        "evidence": {
+          "modelo": "deterministic-ipv4-cidr-v1",
+          "familia": "ipv4_cidr",
+          "roteador": "hybrid-v9",
+          "estrategia": "prefixos_vizinhos_validos",
+          "selecao": "pool_exato"
+        }
+      },
+      {
+        "id": 324,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": "3887dffd-5e9a-4952-9219-483396db9ae0",
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "ITEM_ASSEMBLED",
+        "component": "HAILA_ASSEMBLER",
+        "reason": "item montado",
+        "created_at": "2026-10-08T15:44:20.591789+00:00",
+        "evidence": {}
+      },
+      {
+        "id": 325,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": null,
+        "from_state": "ITEM_ASSEMBLED",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "distratores/item bloqueados",
+        "created_at": "2026-10-08T15:44:20.604414+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "iwf_gabarito_mais_longo",
+              "etapa": "DETERMINISTICA",
+              "campo": "alternativas",
+              "evidencia": "palavras por alternativa=[1, 5, 1, 1, 1]; o gabarito não deve se destacar pela extensão",
+              "reparo": "DISTRATORES"
+            }
+          ]
+        }
+      },
+      {
+        "id": 326,
+        "request_id": "2a4e1089-66c4-4c40-b2c1-92cbfb3da128",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "ATTEMPTS_EXHAUSTED",
+        "component": "HAILA",
+        "reason": "limite de tentativas do SLM atingido",
+        "created_at": "2026-10-08T15:44:20.607218+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "iwf_gabarito_mais_longo",
+              "etapa": "DETERMINISTICA",
+              "campo": "alternativas",
+              "evidencia": "palavras por alternativa=[1, 5, 1, 1, 1]; o gabarito não deve se destacar pela extensão",
+              "reparo": "DISTRATORES"
+            }
+          ]
+        }
+      }
+    ],
+    "reviews": []
+  },
+  "duration_seconds": 63.32
+}

@@ -1,0 +1,52 @@
+{
+  "request_id": "a0744215-8836-41e1-9dcf-6b65b44f14e9",
+  "version": {
+    "id": "6ec4d7e8-ed34-441e-b13e-140986fb4e8a",
+    "request_id": "a0744215-8836-41e1-9dcf-6b65b44f14e9",
+    "version_number": 1,
+    "created_at": "2026-10-19T00:30:07.041400+00:00",
+    "question": {
+      "exame": "ENADE",
+      "enunciado": "Durante a especificação de um sistema de gerenciamento de biblioteca digital, a equipe define que \"as consultas de pesquisa de livros deverão ser apresentadas ao usuário em no máximo 1,5 segundo, independentemente do número de usuários simultâneos\". De acordo com a taxonomia de requisitos, qual a classificação apropriada para esse requisito?",
+      "alternativas": [
+        "Requisito funcional",
+        "Restrição de domínio",
+        "Regra de negócio",
+        "Requisito de interface",
+        "Requisito não funcional"
+      ],
+      "correta": 4,
+      "explicacao": "O enunciado descreve um limite de tempo para a resposta do sistema, caracterizando um atributo de qualidade relacionado ao desempenho. Requisitos que especificam atributos como tempo de resposta, disponibilidade ou segurança são classificados como requisitos não funcionais, enquanto requisitos funcionais descrevem serviços ou comportamentos observáveis do sistema.",
+      "competencia": "Analisar e classificar requisitos de software conforme sua natureza funcional ou não funcional",
+      "habilidade": "Classificar requisitos",
+      "objeto_conhecimento": "Requisitos funcionais e não funcionais",
+      "tem_imagem": false,
+      "recurso_visual": null,
+      "rastreio_distratores": [
+        {
+          "indice_final": 0,
+          "distrator_origem": 0
+        },
+        {
+          "indice_final": 1,
+          "distrator_origem": 3
+        },
+        {
+          "indice_final": 2,
+          "distrator_origem": 1
+        },
+        {
+          "indice_final": 3,
+          "distrator_origem": 2
+        }
+      ]
+    },
+    "provenance": {
+      "rag_id": "seed-engenharia-de-software-requisitos-funcionais-e-no-funcionais",
+      "llm": "openai/gpt-oss-120b",
+      "slm": "best-of-n(hybrid-v9(Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp))"
+    }
+  },
+  "state": "GENERATION_COMPLETED",
+  "red_flags": []
+}

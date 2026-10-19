@@ -1,0 +1,29 @@
+[
+  {
+    "teste": "banco_dados",
+    "request_id": "b30fba79-6da9-4d71-aad5-419df95dcd29",
+    "state": "GENERATION_COMPLETED",
+    "duration_seconds": 3.41,
+    "red_flags": 0,
+    "question_generated": true,
+    "arquivo": "/home/camilla/HAILA/output/teste-geracao-lora-20261008-120858/01-banco_dados.json"
+  },
+  {
+    "teste": "engenharia_software",
+    "request_id": "02da73fe-0d20-40aa-a5ab-058367eb73a6",
+    "state": "GENERATION_COMPLETED",
+    "duration_seconds": 228.63,
+    "red_flags": 2,
+    "question_generated": true,
+    "arquivo": "/home/camilla/HAILA/output/teste-geracao-lora-20261008-120858/02-engenharia_software.json"
+  },
+  {
+    "teste": "redes",
+    "request_id": "d07953a1-fdb4-4ce1-9ab4-5d34f18c79e8",
+    "state": "GENERATION_COMPLETED",
+    "duration_seconds": 66.9,
+    "red_flags": 0,
+    "question_generated": true,
+    "arquivo": "/home/camilla/HAILA/output/teste-geracao-lora-20261008-120858/03-redes.json"
+  }
+]

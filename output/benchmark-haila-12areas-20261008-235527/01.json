@@ -1,0 +1,525 @@
+{
+  "input": {
+    "solicitante_id": "benchmark-haila-12areas-01",
+    "curso": "Computação",
+    "exame": "ENADE",
+    "componente": "ESPECIFICO",
+    "objetivo_pedagogico": "Distinguir anomalias de isolamento em um cenário de transações concorrentes.",
+    "dificuldade": 3,
+    "competencia": "Analisar mecanismos de controle de concorrência em bancos de dados.",
+    "habilidade": "Identificar a anomalia de isolamento a partir de uma situação-problema.",
+    "objeto_conhecimento": "Transações, isolamento e controle de concorrência.",
+    "restricoes": [
+      "Gerar uma questão contextualizada e autocontida.",
+      "Avaliar uma única decisão principal.",
+      "Manter somente uma alternativa defensável como correta.",
+      "Produzir quatro distratores plausíveis e do mesmo nível conceitual do gabarito.",
+      "Evitar pistas lexicais, alternativas absurdas e formulações ambíguas."
+    ],
+    "max_tentativas": 3,
+    "max_tentativas_distratores": 3
+  },
+  "generate_response": {
+    "request_id": "f4ffb7b8-ade2-4197-9d44-dbc5e03bfa93",
+    "version": {
+      "id": "b9111347-574d-4c6e-a577-946e885de2be",
+      "request_id": "f4ffb7b8-ade2-4197-9d44-dbc5e03bfa93",
+      "version_number": 1,
+      "created_at": "2026-10-09T02:55:30.589067+00:00",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Considere duas transações concorrentes que operam sobre a tabela Accounts, contendo a coluna balance. A transação T1 executa: 1) SELECT balance FROM Accounts WHERE account_id = 10; 2) (aguarda) 3) SELECT balance FROM Accounts WHERE account_id = 10; Enquanto isso, a transação T2 executa: a) UPDATE Accounts SET balance = balance + 200 WHERE account_id = 10; b) (não executa COMMIT ainda). Quando T1 realiza a segunda leitura, o valor retornado reflete a atualização feita por T2, embora T2 ainda não tenha confirmado a transação. Qual anomalia de isolamento está presente neste cenário?",
+        "alternativas": [
+          "Leitura suja",
+          "Escrita suja",
+          "Leitura não repetível",
+          "Leitura fantasma",
+          "Atualização perdida"
+        ],
+        "correta": 0,
+        "explicacao": "Leitura suja ocorre quando uma transação lê dados que foram modificados por outra transação ainda não confirmada (não comitada). No cenário descrito, T1 lê o saldo atualizado por T2 antes que T2 execute COMMIT, caracterizando exatamente essa anomalia de isolamento. As demais anomalias – leitura não repetível, leitura fantasma e atualização perdida – envolvem diferentes padrões de acesso (releituras de dados já confirmados, mudanças no conjunto de linhas ou sobrescrita de modificações confirmadas), não se aplicando ao caso apresentado.",
+        "competencia": "Analisar mecanismos de controle de concorrência em bancos de dados.",
+        "habilidade": "Identificar a anomalia de isolamento a partir de uma situação-problema.",
+        "objeto_conhecimento": "Transações, isolamento e controle de concorrência.",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 2
+          }
+        ]
+      },
+      "provenance": {
+        "rag_id": "rag-bd-transacoes-005",
+        "llm": "openai/gpt-oss-120b",
+        "slm": "best-of-n(hybrid-v9(Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp))"
+      }
+    },
+    "state": "GENERATION_COMPLETED",
+    "red_flags": []
+  },
+  "history": {
+    "request": {
+      "id": "f4ffb7b8-ade2-4197-9d44-dbc5e03bfa93",
+      "solicitante_id": "benchmark-haila-12areas-01",
+      "state": "GENERATION_COMPLETED",
+      "max_attempts": 3,
+      "max_distractor_attempts": 3,
+      "attempts": 2,
+      "stem_attempts": 1,
+      "distractor_attempts": 1,
+      "created_at": "2026-10-09T02:55:27.339921+00:00",
+      "updated_at": "2026-10-09T02:55:30.599727+00:00",
+      "specification": {
+        "solicitante_id": "benchmark-haila-12areas-01",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Distinguir anomalias de isolamento em um cenário de transações concorrentes.",
+        "dificuldade": 3,
+        "competencia": "Analisar mecanismos de controle de concorrência em bancos de dados.",
+        "habilidade": "Identificar a anomalia de isolamento a partir de uma situação-problema.",
+        "objeto_conhecimento": "Transações, isolamento e controle de concorrência.",
+        "restricoes": [
+          "Gerar uma questão contextualizada e autocontida.",
+          "Avaliar uma única decisão principal.",
+          "Manter somente uma alternativa defensável como correta.",
+          "Produzir quatro distratores plausíveis e do mesmo nível conceitual do gabarito.",
+          "Evitar pistas lexicais, alternativas absurdas e formulações ambíguas."
+        ]
+      }
+    },
+    "versions": [
+      {
+        "id": "b9111347-574d-4c6e-a577-946e885de2be",
+        "version_number": 1,
+        "created_at": "2026-10-09T02:55:30.589067+00:00"
+      }
+    ],
+    "latest_version": {
+      "id": "b9111347-574d-4c6e-a577-946e885de2be",
+      "request_id": "f4ffb7b8-ade2-4197-9d44-dbc5e03bfa93",
+      "version_number": 1,
+      "created_at": "2026-10-09T02:55:30.589067+00:00",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "Considere duas transações concorrentes que operam sobre a tabela Accounts, contendo a coluna balance. A transação T1 executa: 1) SELECT balance FROM Accounts WHERE account_id = 10; 2) (aguarda) 3) SELECT balance FROM Accounts WHERE account_id = 10; Enquanto isso, a transação T2 executa: a) UPDATE Accounts SET balance = balance + 200 WHERE account_id = 10; b) (não executa COMMIT ainda). Quando T1 realiza a segunda leitura, o valor retornado reflete a atualização feita por T2, embora T2 ainda não tenha confirmado a transação. Qual anomalia de isolamento está presente neste cenário?",
+        "alternativas": [
+          "Leitura suja",
+          "Escrita suja",
+          "Leitura não repetível",
+          "Leitura fantasma",
+          "Atualização perdida"
+        ],
+        "correta": 0,
+        "explicacao": "Leitura suja ocorre quando uma transação lê dados que foram modificados por outra transação ainda não confirmada (não comitada). No cenário descrito, T1 lê o saldo atualizado por T2 antes que T2 execute COMMIT, caracterizando exatamente essa anomalia de isolamento. As demais anomalias – leitura não repetível, leitura fantasma e atualização perdida – envolvem diferentes padrões de acesso (releituras de dados já confirmados, mudanças no conjunto de linhas ou sobrescrita de modificações confirmadas), não se aplicando ao caso apresentado.",
+        "competencia": "Analisar mecanismos de controle de concorrência em bancos de dados.",
+        "habilidade": "Identificar a anomalia de isolamento a partir de uma situação-problema.",
+        "objeto_conhecimento": "Transações, isolamento e controle de concorrência.",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 3
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 2
+          }
+        ]
+      },
+      "provenance": {
+        "rag_id": "rag-bd-transacoes-005",
+        "llm": "openai/gpt-oss-120b",
+        "slm": "best-of-n(hybrid-v9(Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp))"
+      }
+    },
+    "artifacts": [
+      {
+        "id": 247,
+        "request_id": "f4ffb7b8-ade2-4197-9d44-dbc5e03bfa93",
+        "kind": "REFERENCE",
+        "created_at": "2026-10-09T02:55:28.366041+00:00",
+        "payload": {
+          "id": "rag-bd-transacoes-005",
+          "texto": "[Fonte 1: rag-bd-transacoes-005 | Banco de Dados | Propriedades ACID e controle de concorrência]\nTransações de banco de dados devem preservar atomicidade, consistência, isolamento e durabilidade. O controle de concorrência busca evitar anomalias como leitura suja, atualização perdida e leitura não repetível. Bloqueios, ordenação por marcas de tempo e controle multiversão são estratégias usuais. Atomicidade significa que a transação produz todos os seus efeitos ou nenhum. Durabilidade protege os efeitos de transações já confirmadas por COMMIT. Uma falha antes da confirmação não demonstra violação de durabilidade; desfazer efeitos parciais preserva atomicidade.\n\n[Fonte 2: seed-banco-de-dados-anomalias-de-isolamento | Banco de Dados | Anomalias de isolamento]\nLeitura suja ocorre quando dados não confirmados são lidos; leitura não repetível ocorre quando a mesma linha confirmada muda entre leituras; leitura fantasma envolve mudança no conjunto de linhas que satisfaz uma condição.\n\n[Fonte 3: seed-banco-de-dados-propriedades-acid | Banco de Dados | Propriedades ACID]\nAtomicidade trata a transação como unidade indivisível; consistência preserva regras válidas; isolamento controla interferência entre transações concorrentes; durabilidade preserva efeitos confirmados mesmo após falhas.",
+          "exame": "ACERVO_CONCEITUAL_HAILA",
+          "ano": 2024,
+          "metadados": {
+            "curso": null,
+            "componente": null,
+            "area": "Banco de Dados",
+            "subarea": null,
+            "habilidade": "Analisar transações concorrentes",
+            "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+            "palavras_chave": [],
+            "referencia": "ELMASRI, R.; NAVATHE, S. Sistemas de Banco de Dados. Complemento conceitual: PostgreSQL, documentação 18, seção 3.4 Transactions, https://www.postgresql.org/docs/18/tutorial-transactions.html (consulta em 2026-09-22).",
+            "fonte_tipo": null,
+            "origem": null,
+            "linha": 5,
+            "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+            "retrieval": "hybrid-bm25-phrase-fuzzy-metadata-v4",
+            "area_inferida": "Banco de Dados",
+            "top_k": 3,
+            "fontes_ids": [
+              "rag-bd-transacoes-005",
+              "seed-banco-de-dados-anomalias-de-isolamento",
+              "seed-banco-de-dados-propriedades-acid"
+            ],
+            "fontes": [
+              {
+                "id": "rag-bd-transacoes-005",
+                "area": "Banco de Dados",
+                "subarea": null,
+                "objeto_conhecimento": "Propriedades ACID e controle de concorrência",
+                "referencia": "ELMASRI, R.; NAVATHE, S. Sistemas de Banco de Dados. Complemento conceitual: PostgreSQL, documentação 18, seção 3.4 Transactions, https://www.postgresql.org/docs/18/tutorial-transactions.html (consulta em 2026-09-22).",
+                "score": 31.389704,
+                "focus_coverage": 1.0,
+                "termos_recuperados": [
+                  "anomalias",
+                  "concorrencia",
+                  "concorrentes",
+                  "controle",
+                  "controle__concorrencia",
+                  "isolamento",
+                  "transacao",
+                  "transacao__concorrentes"
+                ],
+                "fuzzy": [
+                  {
+                    "consulta": "anomalia",
+                    "documento": "anomalias",
+                    "score": 0.941
+                  }
+                ]
+              },
+              {
+                "id": "seed-banco-de-dados-anomalias-de-isolamento",
+                "area": "Banco de Dados",
+                "subarea": "Concorrência",
+                "objeto_conhecimento": "Anomalias de isolamento",
+                "referencia": "ELMASRI, R.; NAVATHE, S. Sistemas de Banco de Dados; SILBERSCHATZ, A.; KORTH, H.; SUDARSHAN, S. Database System Concepts.",
+                "score": 23.066744,
+                "focus_coverage": 0.5,
+                "termos_recuperados": [
+                  "anomalias",
+                  "anomalias__isolamento",
+                  "concorrencia",
+                  "concorrentes",
+                  "isolamento"
+                ],
+                "fuzzy": [
+                  {
+                    "consulta": "anomalia",
+                    "documento": "anomalias",
+                    "score": 0.941
+                  }
+                ]
+              },
+              {
+                "id": "seed-banco-de-dados-propriedades-acid",
+                "area": "Banco de Dados",
+                "subarea": "Transações",
+                "objeto_conhecimento": "Propriedades ACID",
+                "referencia": "ELMASRI, R.; NAVATHE, S. Sistemas de Banco de Dados; SILBERSCHATZ, A.; KORTH, H.; SUDARSHAN, S. Database System Concepts.",
+                "score": 21.302697,
+                "focus_coverage": 0.5,
+                "termos_recuperados": [
+                  "concorrentes",
+                  "isolamento",
+                  "transacao",
+                  "transacao__concorrentes"
+                ],
+                "fuzzy": []
+              }
+            ],
+            "candidatas_relevantes": 7,
+            "consulta_normalizada": [
+              "anomalia",
+              "anomalias",
+              "bancos",
+              "concorrencia",
+              "concorrentes",
+              "controle",
+              "isolamento",
+              "mecanismos",
+              "transacao"
+            ],
+            "ranking": [
+              {
+                "id": "rag-bd-transacoes-005",
+                "score": 31.389704,
+                "area": "Banco de Dados"
+              },
+              {
+                "id": "seed-banco-de-dados-anomalias-de-isolamento",
+                "score": 23.066744,
+                "area": "Banco de Dados"
+              },
+              {
+                "id": "seed-banco-de-dados-propriedades-acid",
+                "score": 21.302697,
+                "area": "Banco de Dados"
+              },
+              {
+                "id": "seed-banco-de-dados-bloqueios-e-serializao",
+                "score": 14.740729,
+                "area": "Banco de Dados"
+              },
+              {
+                "id": "seed-banco-de-dados-modelos-nosql-e-consistncia",
+                "score": 6.926036,
+                "area": "Banco de Dados"
+              },
+              {
+                "id": "seed-banco-de-dados-normalizao-e-dependncias-funcionais",
+                "score": 6.071604,
+                "area": "Banco de Dados"
+              },
+              {
+                "id": "rag-bd-modelagem-006",
+                "score": 5.98324,
+                "area": "Banco de Dados"
+              }
+            ],
+            "query_fingerprint": "dec3d50e751d907e"
+          }
+        },
+        "provenance": {}
+      },
+      {
+        "id": 248,
+        "request_id": "f4ffb7b8-ade2-4197-9d44-dbc5e03bfa93",
+        "kind": "STEM",
+        "created_at": "2026-10-09T02:55:30.568367+00:00",
+        "payload": {
+          "enunciado": "Considere duas transações concorrentes que operam sobre a tabela Accounts, contendo a coluna balance. A transação T1 executa: 1) SELECT balance FROM Accounts WHERE account_id = 10; 2) (aguarda) 3) SELECT balance FROM Accounts WHERE account_id = 10; Enquanto isso, a transação T2 executa: a) UPDATE Accounts SET balance = balance + 200 WHERE account_id = 10; b) (não executa COMMIT ainda). Quando T1 realiza a segunda leitura, o valor retornado reflete a atualização feita por T2, embora T2 ainda não tenha confirmado a transação. Qual anomalia de isolamento está presente neste cenário?",
+          "resposta_correta": "Leitura suja",
+          "explicacao": "Leitura suja ocorre quando uma transação lê dados que foram modificados por outra transação ainda não confirmada (não comitada). No cenário descrito, T1 lê o saldo atualizado por T2 antes que T2 execute COMMIT, caracterizando exatamente essa anomalia de isolamento. As demais anomalias – leitura não repetível, leitura fantasma e atualização perdida – envolvem diferentes padrões de acesso (releituras de dados já confirmados, mudanças no conjunto de linhas ou sobrescrita de modificações confirmadas), não se aplicando ao caso apresentado.",
+          "competencia": "Analisar mecanismos de controle de concorrência em bancos de dados.",
+          "habilidade": "Identificar a anomalia de isolamento a partir de uma situação-problema.",
+          "objeto_conhecimento": "Transações, isolamento e controle de concorrência.",
+          "tem_imagem": false,
+          "recurso_visual": null
+        },
+        "provenance": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2590,
+            "completion_tokens": 770,
+            "total_tokens": 3360
+          }
+        }
+      },
+      {
+        "id": 249,
+        "request_id": "f4ffb7b8-ade2-4197-9d44-dbc5e03bfa93",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-09T02:55:30.580562+00:00",
+        "payload": [
+          {
+            "texto": "Leitura não repetível",
+            "erro": "conceito_vizinho",
+            "por_que_e_falso": "conceito da mesma família de Leitura suja, mas não responde ao cenário"
+          },
+          {
+            "texto": "Leitura fantasma",
+            "erro": "conceito_vizinho",
+            "por_que_e_falso": "conceito da mesma família de Leitura suja, mas não responde ao cenário"
+          },
+          {
+            "texto": "Atualização perdida",
+            "erro": "conceito_vizinho",
+            "por_que_e_falso": "conceito da mesma família de Leitura suja, mas não responde ao cenário"
+          },
+          {
+            "texto": "Escrita suja",
+            "erro": "conceito_vizinho",
+            "por_que_e_falso": "conceito da mesma família de Leitura suja, mas não responde ao cenário"
+          }
+        ],
+        "provenance": {
+          "modelo": "slm-memory-curated-v1",
+          "estrategia": "familia_conceitual_curada",
+          "resposta_reconhecida": "Leitura suja",
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v9",
+          "selecao": "pool_exato"
+        }
+      },
+      {
+        "id": 250,
+        "request_id": "f4ffb7b8-ade2-4197-9d44-dbc5e03bfa93",
+        "kind": "DETERMINISTIC_RED_FLAGS",
+        "created_at": "2026-10-09T02:55:30.597127+00:00",
+        "payload": [],
+        "provenance": {
+          "modelo": "haila-deterministic-redflags-v3",
+          "catalog_version": "haila-redflags-3.1.0",
+          "tipo": "deterministico"
+        }
+      }
+    ],
+    "red_flags": [],
+    "events": [
+      {
+        "id": 407,
+        "request_id": "f4ffb7b8-ade2-4197-9d44-dbc5e03bfa93",
+        "version_id": null,
+        "from_state": null,
+        "to_state": "REQUESTED",
+        "component": "HAILA",
+        "reason": "solicitação registrada",
+        "created_at": "2026-10-09T02:55:27.340802+00:00",
+        "evidence": {
+          "solicitante_id": "benchmark-haila-12areas-01",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Distinguir anomalias de isolamento em um cenário de transações concorrentes.",
+          "dificuldade": 3,
+          "competencia": "Analisar mecanismos de controle de concorrência em bancos de dados.",
+          "habilidade": "Identificar a anomalia de isolamento a partir de uma situação-problema.",
+          "objeto_conhecimento": "Transações, isolamento e controle de concorrência.",
+          "restricoes": [
+            "Gerar uma questão contextualizada e autocontida.",
+            "Avaliar uma única decisão principal.",
+            "Manter somente uma alternativa defensável como correta.",
+            "Produzir quatro distratores plausíveis e do mesmo nível conceitual do gabarito.",
+            "Evitar pistas lexicais, alternativas absurdas e formulações ambíguas."
+          ]
+        }
+      },
+      {
+        "id": 408,
+        "request_id": "f4ffb7b8-ade2-4197-9d44-dbc5e03bfa93",
+        "version_id": null,
+        "from_state": "REQUESTED",
+        "to_state": "REFERENCE_RETRIEVED",
+        "component": "HAILA_RAG",
+        "reason": "referência recuperada",
+        "created_at": "2026-10-09T02:55:28.372946+00:00",
+        "evidence": {
+          "id": "rag-bd-transacoes-005"
+        }
+      },
+      {
+        "id": 409,
+        "request_id": "f4ffb7b8-ade2-4197-9d44-dbc5e03bfa93",
+        "version_id": null,
+        "from_state": "REFERENCE_RETRIEVED",
+        "to_state": "STEM_GENERATED",
+        "component": "HAILA_LLM",
+        "reason": "núcleo gerado",
+        "created_at": "2026-10-09T02:55:30.571278+00:00",
+        "evidence": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2590,
+            "completion_tokens": 770,
+            "total_tokens": 3360
+          }
+        }
+      },
+      {
+        "id": 410,
+        "request_id": "f4ffb7b8-ade2-4197-9d44-dbc5e03bfa93",
+        "version_id": null,
+        "from_state": "STEM_GENERATED",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-09T02:55:30.583378+00:00",
+        "evidence": {
+          "modelo": "slm-memory-curated-v1",
+          "estrategia": "familia_conceitual_curada",
+          "resposta_reconhecida": "Leitura suja",
+          "familia": "resposta_curta",
+          "roteador": "hybrid-v9",
+          "selecao": "pool_exato"
+        }
+      },
+      {
+        "id": 411,
+        "request_id": "f4ffb7b8-ade2-4197-9d44-dbc5e03bfa93",
+        "version_id": "b9111347-574d-4c6e-a577-946e885de2be",
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "ITEM_ASSEMBLED",
+        "component": "HAILA_ASSEMBLER",
+        "reason": "item montado",
+        "created_at": "2026-10-09T02:55:30.592447+00:00",
+        "evidence": {}
+      },
+      {
+        "id": 412,
+        "request_id": "f4ffb7b8-ade2-4197-9d44-dbc5e03bfa93",
+        "version_id": "b9111347-574d-4c6e-a577-946e885de2be",
+        "from_state": "ITEM_ASSEMBLED",
+        "to_state": "GENERATION_COMPLETED",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "geração concluída sem red flags",
+        "created_at": "2026-10-09T02:55:30.599789+00:00",
+        "evidence": {}
+      }
+    ],
+    "reviews": []
+  },
+  "metrics": {
+    "id": 1,
+    "area": "Banco de Dados",
+    "subtema": "Transações e isolamento",
+    "request_id": "f4ffb7b8-ade2-4197-9d44-dbc5e03bfa93",
+    "state": "GENERATION_COMPLETED",
+    "operational_success": true,
+    "automatic_quality_pass": true,
+    "duration_seconds": 3.28,
+    "provider_wait_seconds": 0.0,
+    "provider_retries": 0,
+    "attempts": 2,
+    "stem_attempts": 1,
+    "distractor_attempts": 1,
+    "historical_red_flags": 0,
+    "final_red_flags": 0,
+    "route": "memoria_curada",
+    "distractor_model": "slm-memory-curated-v1",
+    "strategy": "familia_conceitual_curada",
+    "groq_prompt_tokens": 2590,
+    "groq_completion_tokens": 770,
+    "groq_total_tokens": 3360,
+    "slm_input_tokens": 0,
+    "slm_output_tokens": 0,
+    "slm_total_tokens": 0,
+    "estimated_groq_cost_usd": 0.0008505,
+    "q_exists": true,
+    "five_alternatives": true,
+    "unique_alternatives": true,
+    "valid_answer_index": true,
+    "auto_structure_pass": true,
+    "error_class": "",
+    "error": ""
+  }
+}

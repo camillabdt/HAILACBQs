@@ -1,0 +1,52 @@
+{
+  "request_id": "cad3fd27-1d5f-43ad-84ed-8bf82576662d",
+  "version": {
+    "id": "fe0dce0e-0b83-4e24-9451-6bab40ed0ffe",
+    "request_id": "cad3fd27-1d5f-43ad-84ed-8bf82576662d",
+    "version_number": 1,
+    "created_at": "2026-10-19T00:30:13.907691+00:00",
+    "question": {
+      "exame": "ENADE",
+      "enunciado": "Considere a rede IPv4 192.168.0.0/24. Quantos bits devem ser adicionados ao prefixo para obter exatamente 8 sub‑redes de tamanho idêntico, e qual será o novo prefixo CIDR resultante?",
+      "alternativas": [
+        "/27",
+        "/26",
+        "/28",
+        "/25",
+        "/29"
+      ],
+      "correta": 0,
+      "explicacao": "Para gerar 8 sub‑redes é necessário 2³=8, logo devem‑se emprestar 3 bits da parte de host ao prefixo. O prefixo original /24 + 3 bits = /27, produzindo 8 sub‑redes com 32 endereços cada (30 utilizáveis).",
+      "competencia": "Aplicar conceitos de endereçamento IP e subnetting em cenários de redes de computadores",
+      "habilidade": "Calcular o prefixo CIDR necessário para dividir uma rede IPv4 em sub‑redes iguais",
+      "objeto_conhecimento": "Subnetting IPv4",
+      "tem_imagem": false,
+      "recurso_visual": null,
+      "rastreio_distratores": [
+        {
+          "indice_final": 1,
+          "distrator_origem": 0
+        },
+        {
+          "indice_final": 2,
+          "distrator_origem": 1
+        },
+        {
+          "indice_final": 3,
+          "distrator_origem": 2
+        },
+        {
+          "indice_final": 4,
+          "distrator_origem": 3
+        }
+      ]
+    },
+    "provenance": {
+      "rag_id": "seed-redes-de-computadores-subnetting-ipv4",
+      "llm": "openai/gpt-oss-120b",
+      "slm": "best-of-n(hybrid-v9(Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp))"
+    }
+  },
+  "state": "GENERATION_COMPLETED",
+  "red_flags": []
+}

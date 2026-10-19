@@ -1,0 +1,529 @@
+{
+  "input": {
+    "solicitante_id": "teste-metricas-redes",
+    "curso": "Computação",
+    "exame": "ENADE",
+    "componente": "ESPECIFICO",
+    "objetivo_pedagogico": "Avaliar se o estudante consegue calcular e selecionar o prefixo IPv4 adequado para atender a uma necessidade de hosts ou para dividir uma rede em sub-redes.",
+    "dificuldade": 3,
+    "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+    "habilidade": "Calcular o prefixo IPv4 adequado em uma situação de subnetting.",
+    "objeto_conhecimento": "Endereçamento IPv4, CIDR e subnetting.",
+    "restricoes": [
+      "Avaliar somente subnetting; não combinar com roteamento, NAT, DHCP ou VLAN.",
+      "O gabarito deve ser apenas um prefixo CIDR (/xx) ou uma máscara decimal IPv4 válida.",
+      "Evitar cálculos excessivamente longos.",
+      "Produzir alternativas plausíveis do mesmo tipo do gabarito.",
+      "Manter apenas uma alternativa correta."
+    ],
+    "max_tentativas": 3,
+    "max_tentativas_distratores": 3
+  },
+  "generate_response": {
+    "request_id": "6a325fe4-e152-4996-a4ab-5395d20ac1f1",
+    "version": {
+      "id": "44911c39-1945-4f0c-99ad-4fc627bbce76",
+      "request_id": "6a325fe4-e152-4996-a4ab-5395d20ac1f1",
+      "version_number": 1,
+      "created_at": "2026-10-08T21:45:04.760879+00:00",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "A organização possui o bloco de endereços IPv4 172.16.0.0/20 e deseja criar sub‑redes distintas para quatro filiais, de modo que cada filial tenha endereços suficientes para, no mínimo, 500 hosts utilizáveis. Qual é o prefixo CIDR mais longo que pode ser atribuído a cada sub‑rede, garantindo que as quatro filiais recebam sub‑redes diferentes dentro do bloco original?",
+        "alternativas": [
+          "/23",
+          "/22",
+          "/21",
+          "/24",
+          "/25"
+        ],
+        "correta": 0,
+        "explicacao": "Cada filial precisa de pelo menos 500 hosts utilizáveis. Como o endereço de rede e o de broadcast também ocupam endereços, são necessários 502 endereços. O menor número de endereços que cobre 502 é 512, que corresponde a 2^9 endereços, logo são necessários 9 bits para hosts. Assim, o prefixo mais longo possível é 32‑9 = /23. Um /23 oferece 512 endereços (510 hosts utilizáveis) e, a partir de /20, é possível obter 2^(23‑20)=8 sub‑redes de tamanho /23, suficientes para as quatro filiais. Portanto, o prefixo CIDR mais longo que satisfaz a restrição é /23.",
+        "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+        "habilidade": "Calcular o prefixo IPv4 adequado em uma situação de subnetting.",
+        "objeto_conhecimento": "Endereçamento IPv4, CIDR e subnetting.",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "provenance": {
+        "rag_id": "seed-redes-de-computadores-subnetting-ipv4",
+        "llm": "openai/gpt-oss-120b",
+        "slm": "best-of-n(hybrid-v9(Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp))"
+      }
+    },
+    "state": "GENERATION_COMPLETED",
+    "red_flags": []
+  },
+  "history": {
+    "request": {
+      "id": "6a325fe4-e152-4996-a4ab-5395d20ac1f1",
+      "solicitante_id": "teste-metricas-redes",
+      "state": "GENERATION_COMPLETED",
+      "max_attempts": 3,
+      "max_distractor_attempts": 3,
+      "attempts": 2,
+      "stem_attempts": 1,
+      "distractor_attempts": 1,
+      "created_at": "2026-10-08T21:44:59.953409+00:00",
+      "updated_at": "2026-10-08T21:45:04.773605+00:00",
+      "specification": {
+        "solicitante_id": "teste-metricas-redes",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Avaliar se o estudante consegue calcular e selecionar o prefixo IPv4 adequado para atender a uma necessidade de hosts ou para dividir uma rede em sub-redes.",
+        "dificuldade": 3,
+        "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+        "habilidade": "Calcular o prefixo IPv4 adequado em uma situação de subnetting.",
+        "objeto_conhecimento": "Endereçamento IPv4, CIDR e subnetting.",
+        "restricoes": [
+          "Avaliar somente subnetting; não combinar com roteamento, NAT, DHCP ou VLAN.",
+          "O gabarito deve ser apenas um prefixo CIDR (/xx) ou uma máscara decimal IPv4 válida.",
+          "Evitar cálculos excessivamente longos.",
+          "Produzir alternativas plausíveis do mesmo tipo do gabarito.",
+          "Manter apenas uma alternativa correta."
+        ]
+      }
+    },
+    "versions": [
+      {
+        "id": "44911c39-1945-4f0c-99ad-4fc627bbce76",
+        "version_number": 1,
+        "created_at": "2026-10-08T21:45:04.760879+00:00"
+      }
+    ],
+    "latest_version": {
+      "id": "44911c39-1945-4f0c-99ad-4fc627bbce76",
+      "request_id": "6a325fe4-e152-4996-a4ab-5395d20ac1f1",
+      "version_number": 1,
+      "created_at": "2026-10-08T21:45:04.760879+00:00",
+      "question": {
+        "exame": "ENADE",
+        "enunciado": "A organização possui o bloco de endereços IPv4 172.16.0.0/20 e deseja criar sub‑redes distintas para quatro filiais, de modo que cada filial tenha endereços suficientes para, no mínimo, 500 hosts utilizáveis. Qual é o prefixo CIDR mais longo que pode ser atribuído a cada sub‑rede, garantindo que as quatro filiais recebam sub‑redes diferentes dentro do bloco original?",
+        "alternativas": [
+          "/23",
+          "/22",
+          "/21",
+          "/24",
+          "/25"
+        ],
+        "correta": 0,
+        "explicacao": "Cada filial precisa de pelo menos 500 hosts utilizáveis. Como o endereço de rede e o de broadcast também ocupam endereços, são necessários 502 endereços. O menor número de endereços que cobre 502 é 512, que corresponde a 2^9 endereços, logo são necessários 9 bits para hosts. Assim, o prefixo mais longo possível é 32‑9 = /23. Um /23 oferece 512 endereços (510 hosts utilizáveis) e, a partir de /20, é possível obter 2^(23‑20)=8 sub‑redes de tamanho /23, suficientes para as quatro filiais. Portanto, o prefixo CIDR mais longo que satisfaz a restrição é /23.",
+        "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+        "habilidade": "Calcular o prefixo IPv4 adequado em uma situação de subnetting.",
+        "objeto_conhecimento": "Endereçamento IPv4, CIDR e subnetting.",
+        "tem_imagem": false,
+        "recurso_visual": null,
+        "rastreio_distratores": [
+          {
+            "indice_final": 1,
+            "distrator_origem": 0
+          },
+          {
+            "indice_final": 2,
+            "distrator_origem": 2
+          },
+          {
+            "indice_final": 3,
+            "distrator_origem": 1
+          },
+          {
+            "indice_final": 4,
+            "distrator_origem": 3
+          }
+        ]
+      },
+      "provenance": {
+        "rag_id": "seed-redes-de-computadores-subnetting-ipv4",
+        "llm": "openai/gpt-oss-120b",
+        "slm": "best-of-n(hybrid-v9(Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp))"
+      }
+    },
+    "artifacts": [
+      {
+        "id": 243,
+        "request_id": "6a325fe4-e152-4996-a4ab-5395d20ac1f1",
+        "kind": "REFERENCE",
+        "created_at": "2026-10-08T21:45:01.110702+00:00",
+        "payload": {
+          "id": "seed-redes-de-computadores-subnetting-ipv4",
+          "texto": "[Fonte 1: seed-redes-de-computadores-subnetting-ipv4 | Redes de Computadores | Subnetting IPv4]\nPara dividir uma rede IPv4 em sub-redes, bits originalmente destinados a hosts são incorporados ao prefixo. Cada bit adicional no prefixo dobra o número de sub-redes possíveis e reduz pela metade o bloco de endereços de cada sub-rede.\n\n[Fonte 2: seed-redes-de-computadores-mscara-de-sub-rede-e-cidr | Redes de Computadores | Máscara de sub-rede e CIDR]\nA máscara de sub-rede separa bits de rede e host. Em CIDR, /24 equivale a 24 bits de prefixo; aumentar o prefixo cria sub-redes menores e reduz a quantidade de endereços disponível em cada uma.\n\n[Fonte 3: seed-redes-de-computadores-endereamento-ipv4 | Redes de Computadores | Endereçamento IPv4]\nUm endereço IPv4 possui 32 bits. O prefixo identifica a rede e os bits restantes identificam endereços dentro da sub-rede; a notação CIDR /n informa quantos bits pertencem ao prefixo.",
+          "exame": "ACERVO_CONCEITUAL_HAILA",
+          "ano": 2026,
+          "metadados": {
+            "curso": "Computação",
+            "componente": "ESPECIFICO",
+            "area": "Redes de Computadores",
+            "subarea": "Camada de Rede",
+            "habilidade": "Dividir uma rede em sub-redes",
+            "objeto_conhecimento": "Subnetting IPv4",
+            "palavras_chave": [
+              "subnetting",
+              "IPv4",
+              "sub-redes",
+              "máscara",
+              "prefixo"
+            ],
+            "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+            "fonte_tipo": "sintese_conceitual_curada",
+            "origem": "HAILA_SEED_ENADE_POSCOMP_2026",
+            "linha": 18,
+            "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+            "retrieval": "hybrid-bm25-phrase-fuzzy-metadata-v4",
+            "area_inferida": "Redes de Computadores",
+            "top_k": 3,
+            "fontes_ids": [
+              "seed-redes-de-computadores-subnetting-ipv4",
+              "seed-redes-de-computadores-mscara-de-sub-rede-e-cidr",
+              "seed-redes-de-computadores-endereamento-ipv4"
+            ],
+            "fontes": [
+              {
+                "id": "seed-redes-de-computadores-subnetting-ipv4",
+                "area": "Redes de Computadores",
+                "subarea": "Camada de Rede",
+                "objeto_conhecimento": "Subnetting IPv4",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+                "score": 40.15877,
+                "focus_coverage": 0.5,
+                "termos_recuperados": [
+                  "computadores",
+                  "dividir",
+                  "dividir__rede",
+                  "hosts",
+                  "ipv4",
+                  "rede",
+                  "rede__subrede",
+                  "redes",
+                  "redes__computadores",
+                  "subrede"
+                ],
+                "fuzzy": []
+              },
+              {
+                "id": "seed-redes-de-computadores-mscara-de-sub-rede-e-cidr",
+                "area": "Redes de Computadores",
+                "subarea": "Camada de Rede",
+                "objeto_conhecimento": "Máscara de sub-rede e CIDR",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+                "score": 32.465847,
+                "focus_coverage": 0.75,
+                "termos_recuperados": [
+                  "calcular",
+                  "cidr",
+                  "cidr__subrede",
+                  "computadores",
+                  "ipv4",
+                  "rede",
+                  "redes",
+                  "redes__computadores",
+                  "subrede"
+                ],
+                "fuzzy": []
+              },
+              {
+                "id": "seed-redes-de-computadores-endereamento-ipv4",
+                "area": "Redes de Computadores",
+                "subarea": "Camada de Rede",
+                "objeto_conhecimento": "Endereçamento IPv4",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+                "score": 31.284106,
+                "focus_coverage": 1.0,
+                "termos_recuperados": [
+                  "cidr",
+                  "computadores",
+                  "enderecamento",
+                  "enderecamento__ipv4",
+                  "ipv4",
+                  "rede",
+                  "redes",
+                  "redes__computadores",
+                  "subrede"
+                ],
+                "fuzzy": []
+              }
+            ],
+            "candidatas_relevantes": 25,
+            "consulta_normalizada": [
+              "adequado",
+              "atender",
+              "calcular",
+              "cidr",
+              "computadores",
+              "comunicacao",
+              "dividir",
+              "enderecamento",
+              "hosts",
+              "ipv4",
+              "necessidade",
+              "organizacao",
+              "principios",
+              "rede",
+              "redes",
+              "selecionar",
+              "subrede"
+            ],
+            "ranking": [
+              {
+                "id": "seed-redes-de-computadores-subnetting-ipv4",
+                "score": 40.15877,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-mscara-de-sub-rede-e-cidr",
+                "score": 32.465847,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-endereamento-ipv4",
+                "score": 31.284106,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-endereo-de-rede-broadcast-e-hosts-ipv4",
+                "score": 24.981987,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-vlsm-e-alocao-de-sub-redes",
+                "score": 24.566967,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-nat-e-traduo-de-endereos",
+                "score": 19.735063,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-arp-e-resoluo-ipv4-mac",
+                "score": 17.743375,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-ipv6-e-estrutura-de-endereamento",
+                "score": 17.174566,
+                "area": "Redes de Computadores"
+              }
+            ],
+            "query_fingerprint": "90b08b134ea2bc4a"
+          }
+        },
+        "provenance": {}
+      },
+      {
+        "id": 244,
+        "request_id": "6a325fe4-e152-4996-a4ab-5395d20ac1f1",
+        "kind": "STEM",
+        "created_at": "2026-10-08T21:45:04.731682+00:00",
+        "payload": {
+          "enunciado": "A organização possui o bloco de endereços IPv4 172.16.0.0/20 e deseja criar sub‑redes distintas para quatro filiais, de modo que cada filial tenha endereços suficientes para, no mínimo, 500 hosts utilizáveis. Qual é o prefixo CIDR mais longo que pode ser atribuído a cada sub‑rede, garantindo que as quatro filiais recebam sub‑redes diferentes dentro do bloco original?",
+          "resposta_correta": "/23",
+          "explicacao": "Cada filial precisa de pelo menos 500 hosts utilizáveis. Como o endereço de rede e o de broadcast também ocupam endereços, são necessários 502 endereços. O menor número de endereços que cobre 502 é 512, que corresponde a 2^9 endereços, logo são necessários 9 bits para hosts. Assim, o prefixo mais longo possível é 32‑9 = /23. Um /23 oferece 512 endereços (510 hosts utilizáveis) e, a partir de /20, é possível obter 2^(23‑20)=8 sub‑redes de tamanho /23, suficientes para as quatro filiais. Portanto, o prefixo CIDR mais longo que satisfaz a restrição é /23.",
+          "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+          "habilidade": "Calcular o prefixo IPv4 adequado em uma situação de subnetting.",
+          "objeto_conhecimento": "Endereçamento IPv4, CIDR e subnetting.",
+          "tem_imagem": false,
+          "recurso_visual": null
+        },
+        "provenance": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2742,
+            "completion_tokens": 1315,
+            "total_tokens": 4057
+          }
+        }
+      },
+      {
+        "id": 245,
+        "request_id": "6a325fe4-e152-4996-a4ab-5395d20ac1f1",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-08T21:45:04.749560+00:00",
+        "payload": [
+          {
+            "texto": "/22",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /22 oferece capacidade diferente da requerida"
+          },
+          {
+            "texto": "/24",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /24 oferece capacidade diferente da requerida"
+          },
+          {
+            "texto": "/21",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /21 oferece capacidade diferente da requerida"
+          },
+          {
+            "texto": "/25",
+            "erro": "prefixo_ipv4_incorreto",
+            "por_que_e_falso": "o prefixo /25 oferece capacidade diferente da requerida"
+          }
+        ],
+        "provenance": {
+          "modelo": "deterministic-ipv4-cidr-v1",
+          "familia": "ipv4_cidr",
+          "roteador": "hybrid-v9",
+          "estrategia": "prefixos_vizinhos_validos",
+          "selecao": "pool_exato"
+        }
+      },
+      {
+        "id": 246,
+        "request_id": "6a325fe4-e152-4996-a4ab-5395d20ac1f1",
+        "kind": "DETERMINISTIC_RED_FLAGS",
+        "created_at": "2026-10-08T21:45:04.770359+00:00",
+        "payload": [],
+        "provenance": {
+          "modelo": "haila-deterministic-redflags-v3",
+          "catalog_version": "haila-redflags-3.1.0",
+          "tipo": "deterministico"
+        }
+      }
+    ],
+    "red_flags": [],
+    "events": [
+      {
+        "id": 401,
+        "request_id": "6a325fe4-e152-4996-a4ab-5395d20ac1f1",
+        "version_id": null,
+        "from_state": null,
+        "to_state": "REQUESTED",
+        "component": "HAILA",
+        "reason": "solicitação registrada",
+        "created_at": "2026-10-08T21:44:59.954481+00:00",
+        "evidence": {
+          "solicitante_id": "teste-metricas-redes",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Avaliar se o estudante consegue calcular e selecionar o prefixo IPv4 adequado para atender a uma necessidade de hosts ou para dividir uma rede em sub-redes.",
+          "dificuldade": 3,
+          "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+          "habilidade": "Calcular o prefixo IPv4 adequado em uma situação de subnetting.",
+          "objeto_conhecimento": "Endereçamento IPv4, CIDR e subnetting.",
+          "restricoes": [
+            "Avaliar somente subnetting; não combinar com roteamento, NAT, DHCP ou VLAN.",
+            "O gabarito deve ser apenas um prefixo CIDR (/xx) ou uma máscara decimal IPv4 válida.",
+            "Evitar cálculos excessivamente longos.",
+            "Produzir alternativas plausíveis do mesmo tipo do gabarito.",
+            "Manter apenas uma alternativa correta."
+          ]
+        }
+      },
+      {
+        "id": 402,
+        "request_id": "6a325fe4-e152-4996-a4ab-5395d20ac1f1",
+        "version_id": null,
+        "from_state": "REQUESTED",
+        "to_state": "REFERENCE_RETRIEVED",
+        "component": "HAILA_RAG",
+        "reason": "referência recuperada",
+        "created_at": "2026-10-08T21:45:01.116379+00:00",
+        "evidence": {
+          "id": "seed-redes-de-computadores-subnetting-ipv4"
+        }
+      },
+      {
+        "id": 403,
+        "request_id": "6a325fe4-e152-4996-a4ab-5395d20ac1f1",
+        "version_id": null,
+        "from_state": "REFERENCE_RETRIEVED",
+        "to_state": "STEM_GENERATED",
+        "component": "HAILA_LLM",
+        "reason": "núcleo gerado",
+        "created_at": "2026-10-08T21:45:04.736874+00:00",
+        "evidence": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2742,
+            "completion_tokens": 1315,
+            "total_tokens": 4057
+          }
+        }
+      },
+      {
+        "id": 404,
+        "request_id": "6a325fe4-e152-4996-a4ab-5395d20ac1f1",
+        "version_id": null,
+        "from_state": "STEM_GENERATED",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-08T21:45:04.753413+00:00",
+        "evidence": {
+          "modelo": "deterministic-ipv4-cidr-v1",
+          "familia": "ipv4_cidr",
+          "roteador": "hybrid-v9",
+          "estrategia": "prefixos_vizinhos_validos",
+          "selecao": "pool_exato"
+        }
+      },
+      {
+        "id": 405,
+        "request_id": "6a325fe4-e152-4996-a4ab-5395d20ac1f1",
+        "version_id": "44911c39-1945-4f0c-99ad-4fc627bbce76",
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "ITEM_ASSEMBLED",
+        "component": "HAILA_ASSEMBLER",
+        "reason": "item montado",
+        "created_at": "2026-10-08T21:45:04.765230+00:00",
+        "evidence": {}
+      },
+      {
+        "id": 406,
+        "request_id": "6a325fe4-e152-4996-a4ab-5395d20ac1f1",
+        "version_id": "44911c39-1945-4f0c-99ad-4fc627bbce76",
+        "from_state": "ITEM_ASSEMBLED",
+        "to_state": "GENERATION_COMPLETED",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "geração concluída sem red flags",
+        "created_at": "2026-10-08T21:45:04.773786+00:00",
+        "evidence": {}
+      }
+    ],
+    "reviews": []
+  },
+  "metrics": {
+    "teste": "redes",
+    "request_id": "6a325fe4-e152-4996-a4ab-5395d20ac1f1",
+    "state": "GENERATION_COMPLETED",
+    "duration_seconds": 4.84,
+    "attempts": 2,
+    "stem_attempts": 1,
+    "distractor_attempts": 1,
+    "historical_red_flags": 0,
+    "final_red_flags": 0,
+    "route": "deterministico",
+    "distractor_model": "deterministic-ipv4-cidr-v1",
+    "router": "hybrid-v9",
+    "strategy": "prefixos_vizinhos_validos",
+    "groq_prompt_tokens": 2742,
+    "groq_completion_tokens": 1315,
+    "groq_total_tokens": 4057,
+    "slm_input_tokens": 0,
+    "slm_output_tokens": 0,
+    "slm_total_tokens": 0,
+    "question_generated": true
+  }
+}

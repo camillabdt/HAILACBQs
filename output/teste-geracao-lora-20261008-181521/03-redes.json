@@ -1,0 +1,558 @@
+{
+  "input": {
+    "solicitante_id": "teste-lora-redes",
+    "curso": "Computação",
+    "exame": "ENADE",
+    "componente": "ESPECIFICO",
+    "objetivo_pedagogico": "Avaliar se o estudante consegue selecionar o mecanismo de endereçamento e roteamento adequado em uma situação de redes IPv4 envolvendo sub-redes e encaminhamento de pacotes.",
+    "dificuldade": 3,
+    "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+    "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+    "objeto_conhecimento": "Endereçamento IPv4, sub-redes e roteamento.",
+    "restricoes": [
+      "Evitar cálculos excessivamente longos.",
+      "Produzir alternativas plausíveis.",
+      "Manter apenas uma alternativa correta."
+    ],
+    "max_tentativas": 3,
+    "max_tentativas_distratores": 3
+  },
+  "generate_response": {
+    "request_id": "1f7eb2f5-200b-4eb6-af06-b573ccecc2a5",
+    "state": "ATTEMPTS_EXHAUSTED",
+    "red_flags": [
+      {
+        "codigo": "formatacao_quebrada",
+        "etapa": "DISTRATORES",
+        "campo": "saida_slm",
+        "evidencia": "distratores não puderam ser interpretados: Qwen não reuniu 4 distratores distintos; candidatos=1; amostras=3; inicios=['{\"distrator\": [\"Utilizar VLAN (Virtual Local Area Network)\"], \"distortores\": [\"Adquirindo mais espaços públicos\", \"Ajudar a reduzir a necessidade de redes físicas\", \"Usar o padrão ', '{\"distrator\": [\"Utilizar VLAN (Virtual Local Area Network)\"], \"distortores\": [\"Adquirindo mais espaços públicos de endereoip.\", \"Utilizando a tecnologia NAT (Network Address Transl', '{\"distrator\": [\"Utilizar VLAN (Virtual Local Area Network)\"], \"distortores\": [\"Não utilizar subnetting\", \"Usar DHCP (Dynamic Host Configuration Protocol) para atribuir enderecos\", ']",
+        "reparo": "DISTRATORES"
+      }
+    ]
+  },
+  "history": {
+    "request": {
+      "id": "1f7eb2f5-200b-4eb6-af06-b573ccecc2a5",
+      "solicitante_id": "teste-lora-redes",
+      "state": "ATTEMPTS_EXHAUSTED",
+      "max_attempts": 3,
+      "max_distractor_attempts": 3,
+      "attempts": 4,
+      "stem_attempts": 1,
+      "distractor_attempts": 3,
+      "created_at": "2026-10-08T21:18:19.667711+00:00",
+      "updated_at": "2026-10-08T21:21:52.192802+00:00",
+      "specification": {
+        "solicitante_id": "teste-lora-redes",
+        "curso": "Computação",
+        "exame": "ENADE",
+        "componente": "ESPECIFICO",
+        "objetivo_pedagogico": "Avaliar se o estudante consegue selecionar o mecanismo de endereçamento e roteamento adequado em uma situação de redes IPv4 envolvendo sub-redes e encaminhamento de pacotes.",
+        "dificuldade": 3,
+        "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+        "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+        "objeto_conhecimento": "Endereçamento IPv4, sub-redes e roteamento.",
+        "restricoes": [
+          "Evitar cálculos excessivamente longos.",
+          "Produzir alternativas plausíveis.",
+          "Manter apenas uma alternativa correta."
+        ]
+      }
+    },
+    "versions": [],
+    "latest_version": null,
+    "artifacts": [
+      {
+        "id": 226,
+        "request_id": "1f7eb2f5-200b-4eb6-af06-b573ccecc2a5",
+        "kind": "REFERENCE",
+        "created_at": "2026-10-08T21:18:20.242361+00:00",
+        "payload": {
+          "id": "seed-redes-de-computadores-subnetting-ipv4",
+          "texto": "[Fonte 1: seed-redes-de-computadores-subnetting-ipv4 | Redes de Computadores | Subnetting IPv4]\nPara dividir uma rede IPv4 em sub-redes, bits originalmente destinados a hosts são incorporados ao prefixo. Cada bit adicional no prefixo dobra o número de sub-redes possíveis e reduz pela metade o bloco de endereços de cada sub-rede.\n\n[Fonte 2: seed-redes-de-computadores-endereamento-ipv4 | Redes de Computadores | Endereçamento IPv4]\nUm endereço IPv4 possui 32 bits. O prefixo identifica a rede e os bits restantes identificam endereços dentro da sub-rede; a notação CIDR /n informa quantos bits pertencem ao prefixo.\n\n[Fonte 3: seed-redes-de-computadores-endereo-de-rede-broadcast-e-hosts-ipv4 | Redes de Computadores | Endereço de rede, broadcast e hosts IPv4]\nEm uma sub-rede IPv4 tradicional, o primeiro endereço representa a rede e o último é o broadcast dirigido; os endereços intermediários podem ser atribuídos a interfaces de hosts, observadas exceções e usos especiais.",
+          "exame": "ACERVO_CONCEITUAL_HAILA",
+          "ano": 2026,
+          "metadados": {
+            "curso": "Computação",
+            "componente": "ESPECIFICO",
+            "area": "Redes de Computadores",
+            "subarea": "Camada de Rede",
+            "habilidade": "Dividir uma rede em sub-redes",
+            "objeto_conhecimento": "Subnetting IPv4",
+            "palavras_chave": [
+              "subnetting",
+              "IPv4",
+              "sub-redes",
+              "máscara",
+              "prefixo"
+            ],
+            "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+            "fonte_tipo": "sintese_conceitual_curada",
+            "origem": "HAILA_SEED_ENADE_POSCOMP_2026",
+            "linha": 18,
+            "corpus": "/home/camilla/HAILA/backend/fontes_rag.jsonl",
+            "retrieval": "hybrid-bm25-phrase-fuzzy-metadata-v4",
+            "area_inferida": "Redes de Computadores",
+            "top_k": 3,
+            "fontes_ids": [
+              "seed-redes-de-computadores-subnetting-ipv4",
+              "seed-redes-de-computadores-endereamento-ipv4",
+              "seed-redes-de-computadores-endereo-de-rede-broadcast-e-hosts-ipv4"
+            ],
+            "fontes": [
+              {
+                "id": "seed-redes-de-computadores-subnetting-ipv4",
+                "area": "Redes de Computadores",
+                "subarea": "Camada de Rede",
+                "objeto_conhecimento": "Subnetting IPv4",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+                "score": 23.817349,
+                "focus_coverage": 0.5,
+                "termos_recuperados": [
+                  "computadores",
+                  "ipv4",
+                  "ipv4__subrede",
+                  "redes",
+                  "redes__computadores",
+                  "subrede"
+                ],
+                "fuzzy": []
+              },
+              {
+                "id": "seed-redes-de-computadores-endereamento-ipv4",
+                "area": "Redes de Computadores",
+                "subarea": "Camada de Rede",
+                "objeto_conhecimento": "Endereçamento IPv4",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+                "score": 23.329117,
+                "focus_coverage": 0.75,
+                "termos_recuperados": [
+                  "computadores",
+                  "enderecamento",
+                  "enderecamento__ipv4",
+                  "ipv4",
+                  "redes",
+                  "redes__computadores",
+                  "subrede"
+                ],
+                "fuzzy": []
+              },
+              {
+                "id": "seed-redes-de-computadores-endereo-de-rede-broadcast-e-hosts-ipv4",
+                "area": "Redes de Computadores",
+                "subarea": "Camada de Rede",
+                "objeto_conhecimento": "Endereço de rede, broadcast e hosts IPv4",
+                "referencia": "KUROSE, J. F.; ROSS, K. W. Redes de Computadores e a Internet; TANENBAUM, A. S.; WETHERALL, D. Redes de Computadores.",
+                "score": 20.033656,
+                "focus_coverage": 0.5,
+                "termos_recuperados": [
+                  "computadores",
+                  "ipv4",
+                  "ipv4__subrede",
+                  "redes",
+                  "redes__computadores",
+                  "subrede"
+                ],
+                "fuzzy": []
+              }
+            ],
+            "candidatas_relevantes": 25,
+            "consulta_normalizada": [
+              "adequado",
+              "aplicar",
+              "computadores",
+              "comunicacao",
+              "encaminhamento",
+              "enderecamento",
+              "envolvendo",
+              "ipv4",
+              "mecanismo",
+              "organizacao",
+              "pacotes",
+              "principios",
+              "redes",
+              "roteamento",
+              "selecionar",
+              "subrede"
+            ],
+            "ranking": [
+              {
+                "id": "seed-redes-de-computadores-subnetting-ipv4",
+                "score": 23.817349,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-endereamento-ipv4",
+                "score": 23.329117,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-endereo-de-rede-broadcast-e-hosts-ipv4",
+                "score": 20.033656,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-roteamento-ip-e-tabela-de-rotas",
+                "score": 18.492775,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-vlsm-e-alocao-de-sub-redes",
+                "score": 17.680718,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-roteamento-esttico-e-rota-padro",
+                "score": 16.330439,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-mscara-de-sub-rede-e-cidr",
+                "score": 16.113014,
+                "area": "Redes de Computadores"
+              },
+              {
+                "id": "seed-redes-de-computadores-ipv6-e-estrutura-de-endereamento",
+                "score": 15.636952,
+                "area": "Redes de Computadores"
+              }
+            ],
+            "query_fingerprint": "9de8e1b37e55f716"
+          }
+        },
+        "provenance": {}
+      },
+      {
+        "id": 227,
+        "request_id": "1f7eb2f5-200b-4eb6-af06-b573ccecc2a5",
+        "kind": "STEM",
+        "created_at": "2026-10-08T21:18:23.001531+00:00",
+        "payload": {
+          "enunciado": "Uma empresa possui a rede IPv4 192.168.0.0/24 e precisa alocar sub‑redes para três departamentos: Vendas requer 50 endereços utilizáveis, Desenvolvimento 20 endereços e Suporte 10 endereços. O administrador deve escolher o mecanismo de endereçamento que permita criar sub‑redes de tamanhos diferentes, usando o menor número possível de máscaras distintas e facilitando a configuração de rotas estáticas resumidas na tabela de roteamento do roteador de borda. Qual técnica de endereçamento IPv4 deve ser adotada para atender a esses requisitos?",
+          "resposta_correta": "Utilizar VLSM (subnetting de comprimento variável)",
+          "explicacao": "VLSM permite dividir uma rede em sub‑redes com máscaras de tamanho adequado a cada demanda de hosts, evitando desperdício de endereços. Ao alocar /26 (62 hosts) para Vendas, /27 (30 hosts) para Desenvolvimento e /28 (14 hosts) para Suporte, obtém‑se o menor número de máscaras distintas e ainda é possível resumir as rotas (por exemplo, 192.168.0.0/24) na tabela de roteamento, reduzindo sua complexidade. Técnicas alternativas como subnetting de tamanho fixo, uso de máscara de classe ou NAT não atendem simultaneamente à heterogeneidade de tamanhos e à resumibilidade das rotas.",
+          "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+          "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+          "objeto_conhecimento": "Endereçamento IPv4, sub‑redes e roteamento.",
+          "tem_imagem": false,
+          "recurso_visual": null
+        },
+        "provenance": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2675,
+            "completion_tokens": 1040,
+            "total_tokens": 3715
+          }
+        }
+      },
+      {
+        "id": 228,
+        "request_id": "1f7eb2f5-200b-4eb6-af06-b573ccecc2a5",
+        "kind": "DISTRACTORS",
+        "created_at": "2026-10-08T21:19:26.075800+00:00",
+        "payload": [
+          {
+            "texto": "Usar Endereço IP Público (Public IP)",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Usar a tecnologia de broadcast",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Adicionar um prefixo fixo ao cabeçote dos pacotes",
+            "erro": "",
+            "por_que_e_falso": ""
+          },
+          {
+            "texto": "Usando a tecnologia DHCP (Dynamic Host Configuration Protocol)",
+            "erro": "",
+            "por_que_e_falso": ""
+          }
+        ],
+        "provenance": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_2:distratos->distratores",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 12,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.6.0",
+          "token_usage_local": {
+            "input_tokens": 1587,
+            "output_tokens": 178,
+            "total_tokens": 1765
+          },
+          "familia": "resposta_textual",
+          "roteador": "hybrid-v9",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 12,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              2,
+              5,
+              1,
+              3
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      }
+    ],
+    "red_flags": [
+      {
+        "id": 59,
+        "request_id": "1f7eb2f5-200b-4eb6-af06-b573ccecc2a5",
+        "code": "distrator_lexicalmente_corrompido",
+        "stage": "DISTRATORES",
+        "field": "distratores",
+        "evidence": "distratores[0]=\"Usar Endereço IP Público (Public IP)\": \"Endereço\" apresenta similaridade 0.94 com \"enderecos\"",
+        "repair_target": "DISTRATORES",
+        "created_at": "2026-10-08T21:19:26.084898+00:00"
+      },
+      {
+        "id": 60,
+        "request_id": "1f7eb2f5-200b-4eb6-af06-b573ccecc2a5",
+        "code": "formatacao_quebrada",
+        "stage": "DISTRATORES",
+        "field": "saida_slm",
+        "evidence": "distratores não puderam ser interpretados: Qwen não reuniu 4 distratores distintos; candidatos=2; amostras=3; inicios=['{\"distratos\": [\"Utilizar CIDR (Classless Inter-Domain Routing)\"], \"distratodos\": [\"Adicionar um prefixo fixo ao endereço IP.\", \"Adquirir mais espaço de endereço público.\", \"Ajustar', '{\"distratos\": [\"Utilizar CIDR (Classless Inter-Domain Routing)\"], \"distratodos\": [\"Adicionar um segmento de rede ao prefixo baseado em 24 bits.\", \"Adicionar mais dois zeros após o ', '{\"distratos\": [\"Utilizar VLAN (Virtual Local Area Network)\"], \"distrator_correto\": \"Utilizar DHCP (Dynamic Host Configuration Protocol)\", \"Utilizá-lo com um único prefixo de mascar']",
+        "repair_target": "DISTRATORES",
+        "created_at": "2026-10-08T21:20:43.746756+00:00"
+      },
+      {
+        "id": 61,
+        "request_id": "1f7eb2f5-200b-4eb6-af06-b573ccecc2a5",
+        "code": "formatacao_quebrada",
+        "stage": "DISTRATORES",
+        "field": "saida_slm",
+        "evidence": "distratores não puderam ser interpretados: Qwen não reuniu 4 distratores distintos; candidatos=1; amostras=3; inicios=['{\"distrator\": [\"Utilizar VLAN (Virtual Local Area Network)\"], \"distortores\": [\"Adquirindo mais espaços públicos\", \"Ajudar a reduzir a necessidade de redes físicas\", \"Usar o padrão ', '{\"distrator\": [\"Utilizar VLAN (Virtual Local Area Network)\"], \"distortores\": [\"Adquirindo mais espaços públicos de endereoip.\", \"Utilizando a tecnologia NAT (Network Address Transl', '{\"distrator\": [\"Utilizar VLAN (Virtual Local Area Network)\"], \"distortores\": [\"Não utilizar subnetting\", \"Usar DHCP (Dynamic Host Configuration Protocol) para atribuir enderecos\", ']",
+        "repair_target": "DISTRATORES",
+        "created_at": "2026-10-08T21:21:52.186720+00:00"
+      }
+    ],
+    "events": [
+      {
+        "id": 371,
+        "request_id": "1f7eb2f5-200b-4eb6-af06-b573ccecc2a5",
+        "version_id": null,
+        "from_state": null,
+        "to_state": "REQUESTED",
+        "component": "HAILA",
+        "reason": "solicitação registrada",
+        "created_at": "2026-10-08T21:18:19.668495+00:00",
+        "evidence": {
+          "solicitante_id": "teste-lora-redes",
+          "curso": "Computação",
+          "exame": "ENADE",
+          "componente": "ESPECIFICO",
+          "objetivo_pedagogico": "Avaliar se o estudante consegue selecionar o mecanismo de endereçamento e roteamento adequado em uma situação de redes IPv4 envolvendo sub-redes e encaminhamento de pacotes.",
+          "dificuldade": 3,
+          "competencia": "Analisar princípios de comunicação e organização de redes de computadores.",
+          "habilidade": "Aplicar conceitos de endereçamento IPv4 e roteamento em uma situação-problema.",
+          "objeto_conhecimento": "Endereçamento IPv4, sub-redes e roteamento.",
+          "restricoes": [
+            "Evitar cálculos excessivamente longos.",
+            "Produzir alternativas plausíveis.",
+            "Manter apenas uma alternativa correta."
+          ]
+        }
+      },
+      {
+        "id": 372,
+        "request_id": "1f7eb2f5-200b-4eb6-af06-b573ccecc2a5",
+        "version_id": null,
+        "from_state": "REQUESTED",
+        "to_state": "REFERENCE_RETRIEVED",
+        "component": "HAILA_RAG",
+        "reason": "referência recuperada",
+        "created_at": "2026-10-08T21:18:20.248504+00:00",
+        "evidence": {
+          "id": "seed-redes-de-computadores-subnetting-ipv4"
+        }
+      },
+      {
+        "id": 373,
+        "request_id": "1f7eb2f5-200b-4eb6-af06-b573ccecc2a5",
+        "version_id": null,
+        "from_state": "REFERENCE_RETRIEVED",
+        "to_state": "STEM_GENERATED",
+        "component": "HAILA_LLM",
+        "reason": "núcleo gerado",
+        "created_at": "2026-10-08T21:18:23.008040+00:00",
+        "evidence": {
+          "modelo": "openai/gpt-oss-120b",
+          "prompt_version": "enade-stem-1.2.0",
+          "token_usage_remote": {
+            "prompt_tokens": 2675,
+            "completion_tokens": 1040,
+            "total_tokens": 3715
+          }
+        }
+      },
+      {
+        "id": 374,
+        "request_id": "1f7eb2f5-200b-4eb6-af06-b573ccecc2a5",
+        "version_id": null,
+        "from_state": "STEM_GENERATED",
+        "to_state": "DISTRACTORS_GENERATED",
+        "component": "HAILA_SLM",
+        "reason": "distratores gerados",
+        "created_at": "2026-10-08T21:19:26.079769+00:00",
+        "evidence": {
+          "modelo": "Qwen/Qwen2.5-1.5B-Instruct+LoRA:qwen-distratores-enade-poscomp",
+          "adapter_path": "/home/camilla/HAILA/adapters/qwen-distratores-enade-poscomp",
+          "normalizacoes": [
+            "amostra_1:distratos->distratores",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_1:string->objeto",
+            "amostra_2:distratos->distratores",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_2:string->objeto",
+            "amostra_3:distratos->distratores",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto",
+            "amostra_3:string->objeto"
+          ],
+          "amostras": 3,
+          "candidatos_gerados": 12,
+          "feedback_aplicado": false,
+          "alternativas_rejeitadas": [],
+          "prompt_version": "qwen-distractors-1.6.0",
+          "token_usage_local": {
+            "input_tokens": 1587,
+            "output_tokens": 178,
+            "total_tokens": 1765
+          },
+          "familia": "resposta_textual",
+          "roteador": "hybrid-v9",
+          "selecao": "deterministic_best_of_n",
+          "candidatos_no_pool": 12,
+          "seletor": {
+            "modelo": "deterministic-pool-selector-v1",
+            "indices_selecionados": [
+              2,
+              5,
+              1,
+              3
+            ],
+            "criterio": "paralelismo_de_extensao_e_especificidade_lexical"
+          }
+        }
+      },
+      {
+        "id": 375,
+        "request_id": "1f7eb2f5-200b-4eb6-af06-b573ccecc2a5",
+        "version_id": null,
+        "from_state": "DISTRACTORS_GENERATED",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "distratores/item bloqueados",
+        "created_at": "2026-10-08T21:19:26.089110+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "distrator_lexicalmente_corrompido",
+              "etapa": "DISTRATORES",
+              "campo": "distratores",
+              "evidencia": "distratores[0]=\"Usar Endereço IP Público (Public IP)\": \"Endereço\" apresenta similaridade 0.94 com \"enderecos\"",
+              "reparo": "DISTRATORES"
+            }
+          ]
+        }
+      },
+      {
+        "id": 376,
+        "request_id": "1f7eb2f5-200b-4eb6-af06-b573ccecc2a5",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "saída inválida do SLM; nova tentativa solicitada",
+        "created_at": "2026-10-08T21:20:43.750076+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "formatacao_quebrada",
+              "etapa": "DISTRATORES",
+              "campo": "saida_slm",
+              "evidencia": "distratores não puderam ser interpretados: Qwen não reuniu 4 distratores distintos; candidatos=2; amostras=3; inicios=['{\"distratos\": [\"Utilizar CIDR (Classless Inter-Domain Routing)\"], \"distratodos\": [\"Adicionar um prefixo fixo ao endereço IP.\", \"Adquirir mais espaço de endereço público.\", \"Ajustar', '{\"distratos\": [\"Utilizar CIDR (Classless Inter-Domain Routing)\"], \"distratodos\": [\"Adicionar um segmento de rede ao prefixo baseado em 24 bits.\", \"Adicionar mais dois zeros após o ', '{\"distratos\": [\"Utilizar VLAN (Virtual Local Area Network)\"], \"distrator_correto\": \"Utilizar DHCP (Dynamic Host Configuration Protocol)\", \"Utilizá-lo com um único prefixo de mascar']",
+              "reparo": "DISTRATORES"
+            }
+          ]
+        }
+      },
+      {
+        "id": 377,
+        "request_id": "1f7eb2f5-200b-4eb6-af06-b573ccecc2a5",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "BLOCKED_BY_RED_FLAGS",
+        "component": "HAILA_RED_FLAGS",
+        "reason": "saída inválida do SLM; nova tentativa solicitada",
+        "created_at": "2026-10-08T21:21:52.189127+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "formatacao_quebrada",
+              "etapa": "DISTRATORES",
+              "campo": "saida_slm",
+              "evidencia": "distratores não puderam ser interpretados: Qwen não reuniu 4 distratores distintos; candidatos=1; amostras=3; inicios=['{\"distrator\": [\"Utilizar VLAN (Virtual Local Area Network)\"], \"distortores\": [\"Adquirindo mais espaços públicos\", \"Ajudar a reduzir a necessidade de redes físicas\", \"Usar o padrão ', '{\"distrator\": [\"Utilizar VLAN (Virtual Local Area Network)\"], \"distortores\": [\"Adquirindo mais espaços públicos de endereoip.\", \"Utilizando a tecnologia NAT (Network Address Transl', '{\"distrator\": [\"Utilizar VLAN (Virtual Local Area Network)\"], \"distortores\": [\"Não utilizar subnetting\", \"Usar DHCP (Dynamic Host Configuration Protocol) para atribuir enderecos\", ']",
+              "reparo": "DISTRATORES"
+            }
+          ]
+        }
+      },
+      {
+        "id": 378,
+        "request_id": "1f7eb2f5-200b-4eb6-af06-b573ccecc2a5",
+        "version_id": null,
+        "from_state": "BLOCKED_BY_RED_FLAGS",
+        "to_state": "ATTEMPTS_EXHAUSTED",
+        "component": "HAILA",
+        "reason": "limite de tentativas do SLM atingido",
+        "created_at": "2026-10-08T21:21:52.192887+00:00",
+        "evidence": {
+          "red_flags": [
+            {
+              "codigo": "formatacao_quebrada",
+              "etapa": "DISTRATORES",
+              "campo": "saida_slm",
+              "evidencia": "distratores não puderam ser interpretados: Qwen não reuniu 4 distratores distintos; candidatos=1; amostras=3; inicios=['{\"distrator\": [\"Utilizar VLAN (Virtual Local Area Network)\"], \"distortores\": [\"Adquirindo mais espaços públicos\", \"Ajudar a reduzir a necessidade de redes físicas\", \"Usar o padrão ', '{\"distrator\": [\"Utilizar VLAN (Virtual Local Area Network)\"], \"distortores\": [\"Adquirindo mais espaços públicos de endereoip.\", \"Utilizando a tecnologia NAT (Network Address Transl', '{\"distrator\": [\"Utilizar VLAN (Virtual Local Area Network)\"], \"distortores\": [\"Não utilizar subnetting\", \"Usar DHCP (Dynamic Host Configuration Protocol) para atribuir enderecos\", ']",
+              "reparo": "DISTRATORES"
+            }
+          ]
+        }
+      }
+    ],
+    "reviews": []
+  },
+  "duration_seconds": 212.54
+}

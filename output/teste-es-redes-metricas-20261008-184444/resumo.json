@@ -1,0 +1,52 @@
+{
+  "timestamp": "20261008-184444",
+  "model": "openai/gpt-oss-120b",
+  "slm_model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "slm_mode": "lora",
+  "results": [
+    {
+      "teste": "engenharia_software",
+      "request_id": "15767dd7-f29d-48bb-acb3-432848dfabfa",
+      "state": "GENERATION_COMPLETED",
+      "duration_seconds": 4.88,
+      "attempts": 2,
+      "stem_attempts": 1,
+      "distractor_attempts": 1,
+      "historical_red_flags": 0,
+      "final_red_flags": 0,
+      "route": "memoria_curada",
+      "distractor_model": "slm-memory-curated-v1",
+      "router": "hybrid-v9",
+      "strategy": "familia_conceitual_curada",
+      "groq_prompt_tokens": 2358,
+      "groq_completion_tokens": 888,
+      "groq_total_tokens": 3246,
+      "slm_input_tokens": 0,
+      "slm_output_tokens": 0,
+      "slm_total_tokens": 0,
+      "question_generated": true
+    },
+    {
+      "teste": "redes",
+      "request_id": "6a325fe4-e152-4996-a4ab-5395d20ac1f1",
+      "state": "GENERATION_COMPLETED",
+      "duration_seconds": 4.84,
+      "attempts": 2,
+      "stem_attempts": 1,
+      "distractor_attempts": 1,
+      "historical_red_flags": 0,
+      "final_red_flags": 0,
+      "route": "deterministico",
+      "distractor_model": "deterministic-ipv4-cidr-v1",
+      "router": "hybrid-v9",
+      "strategy": "prefixos_vizinhos_validos",
+      "groq_prompt_tokens": 2742,
+      "groq_completion_tokens": 1315,
+      "groq_total_tokens": 4057,
+      "slm_input_tokens": 0,
+      "slm_output_tokens": 0,
+      "slm_total_tokens": 0,
+      "question_generated": true
+    }
+  ]
+}
