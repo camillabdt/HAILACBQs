@@ -17,6 +17,8 @@ from .orchestrator import HailaOrchestrator
 from .redflags import deterministic_analyzer_from_env
 from .repository import HailaRepository
 from .slm_config import resolve_adapter_path, runtime_status, slm_base_model, slm_backend
+from .jev import jev_evaluator_from_env, jev_runtime_status
+from .jury_integration import jury_runtime_status, run_optional_jury
 
 app=FastAPI(title="HAILA Backend",version="1.0.0")
 _PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -24,7 +26,7 @@ _DEFAULT_DB = _PROJECT_ROOT / "runtime" / "haila.sqlite3"
 _db_raw = Path(os.getenv("HAILA_DB", str(_DEFAULT_DB))).expanduser()
 _DB_PATH = _db_raw if _db_raw.is_absolute() else _PROJECT_ROOT / _db_raw
 repo=HailaRepository(str(_DB_PATH.resolve())); haila=HailaOrchestrator(repo)
-API_BUILD="20261002-lora-poscomp"
+API_BUILD="20261020-sustainable-quality-v3-trace1"
 
 _OBJETIVO_GENERICO = {
     "analisar", "analise", "compreender", "entender", "saber", "responder",
@@ -70,6 +72,14 @@ class AvaliacaoAutomatica(BaseModel):
     question:dict[str,Any]
     reference:str=""
 
+class AvaliacaoJev(BaseModel):
+    question:dict[str,Any]
+    specification:dict[str,Any]=Field(default_factory=dict)
+    reference:dict[str,Any]=Field(default_factory=dict)
+
+class AvaliacaoJuriOpcional(BaseModel):
+    force:bool=False
+
 class ExecucaoAblacao(BaseModel):
     condition:Literal["C1_LLM","C2_RAG_LLM","C3_RAG_LLM_SLM"]
     specification:dict[str,Any]
@@ -99,6 +109,7 @@ def executar(acao):
 @app.get("/health")
 def health():
     slm = runtime_status()
+    jev = jev_runtime_status()
     return {
         "status":"ok",
         "service":"HAILA",
@@ -114,7 +125,29 @@ def health():
         "distractor_rules":os.getenv("HAILA_USE_DETERMINISTIC_DISTRACTOR_RULES","1") == "1",
         "rag_corpus":os.getenv("HAILA_RAG_CORPUS",str(Path(__file__).resolve().parents[1]/"fontes_rag.jsonl")),
         "red_flags":"deterministic-v3.1",
+        "jev_enabled":jev["enabled"],
+        "jev_configured":jev["configured"],
+        "jev_mode":jev["mode"],
+        "jev_model":jev["model"],
+        "jev_fail_policy":jev["fail_policy"],
+        "jury_enabled":jury_runtime_status()["enabled"],
+        "jury_configured":jury_runtime_status()["configured"],
+        "jury_mode":jury_runtime_status()["mode"],
+        "jury_profile_id":jury_runtime_status()["profile_id"],
         "database":"configured",
+        "generation_pipeline":(
+            "sustainable-quality-v3"
+            if os.getenv("HAILA_SUSTAINABLE_PIPELINE", "1") == "1"
+            else "legacy-retry-v1"
+        ),
+        "checkpoint_resume":os.getenv("HAILA_SUSTAINABLE_PIPELINE", "1") == "1",
+        "incremental_distractor_pool":os.getenv("HAILA_SUSTAINABLE_PIPELINE", "1") == "1",
+        "local_semantic_distractor_gate":os.getenv("HAILA_DISTRACTOR_QUALITY_GATE", os.getenv("HAILA_LOCAL_SEMANTIC_GATE", "1")) == "1",
+        "distractor_quality_gate":os.getenv("HAILA_DISTRACTOR_QUALITY_GATE", os.getenv("HAILA_LOCAL_SEMANTIC_GATE", "1")) == "1",
+        "distractor_quality_criteria":["terminologia_padronizada","mesmo_dominio","plausibilidade","incorrecao_contextual","unicidade_do_gabarito"],
+        "candidate_reserve_bank":True,
+        "quality_gate_policy":"reject_only_affected_candidate_promote_reserve_then_refill",
+        "quality_trace_ui":True,
     }
 
 @app.get("/settings/groq")
@@ -154,8 +187,14 @@ def criar_solicitacao(payload:Solicitacao):
 @app.post("/requests/{request_id}/generate")
 def gerar(request_id:str):
     try:
-        return executar(lambda:haila.executar(request_id,rag_from_env(),stem_generator_from_env(),
-                                               slm_generator_from_env(),deterministic_analyzer_from_env()))
+        return executar(lambda:haila.executar(
+            request_id,
+            rag_from_env(),
+            stem_generator_from_env(),
+            slm_generator_from_env(),
+            deterministic_analyzer_from_env(),
+            jev_evaluator_from_env(),
+        ))
     except HTTPException:
         raise
     except Exception as exc:
@@ -169,15 +208,59 @@ def gerar(request_id:str):
                 if rate_limited else
                 "A Groq não respondeu dentro do limite de tempo. Tente novamente mais tarde."
             )
+
+            # Observabilidade apenas: preserva mensagem e headers do provedor.
+            response = getattr(exc, "response", None)
+            headers = getattr(response, "headers", None) or {}
+            wanted_headers = (
+                "retry-after",
+                "x-ratelimit-limit-requests",
+                "x-ratelimit-remaining-requests",
+                "x-ratelimit-reset-requests",
+                "x-ratelimit-limit-tokens",
+                "x-ratelimit-remaining-tokens",
+                "x-ratelimit-reset-tokens",
+                "x-request-id",
+            )
+            provider_headers = {
+                key: headers.get(key)
+                for key in wanted_headers
+                if headers.get(key) is not None
+            }
+            provider_details = {
+                "error_type": exc.__class__.__name__,
+                "provider_message": str(exc)[:4000],
+                "provider_body": repr(getattr(exc, "body", None))[:4000],
+                "headers": provider_headers,
+            }
+
+            if rate_limited:
+                print(
+                    "[GROQ_RATE_LIMIT_DIAGNOSTIC]",
+                    {"request_id": request_id, **provider_details},
+                    flush=True,
+                )
+
             repo.save_artifact(request_id,"provider_error",{
-                "code":code,"status":status,"message":message,
+                "code":code,
+                "status":status,
+                "message":message,
+                "provider_details":provider_details,
             },{"provider":"groq"})
-            try:
-                repo.transition(request_id,None,Estado.GENERATION_FAILED,"HAILA",message,{"provider":"groq","status":status})
-            except RuntimeError:
-                # O artefato permanece disponível mesmo se a solicitação já
-                # tiver alcançado um estado terminal concorrente.
-                pass
+            # Erros transitórios do provedor NÃO encerram a solicitação.
+            # O RAG, o núcleo já aceito e o banco incremental de distratores
+            # permanecem no SQLite; um novo POST /generate retoma do checkpoint.
+            repo.save_artifact(
+                request_id,
+                "PROVIDER_RETRYABLE",
+                {
+                    "code": code,
+                    "status": status,
+                    "message": message,
+                    "resume_supported": True,
+                },
+                {"provider": "groq", "terminal": False},
+            )
             raise HTTPException(status,message) from exc
         raise
 
@@ -198,6 +281,42 @@ def registrar_avaliacao(request_id:str,payload:AvaliacaoHumana):
 def avaliar_iwf(payload:AvaliacaoAutomatica):
     generator=stem_generator_from_env()
     return executar(lambda:evaluate_iwf(payload.question,generator.caller,payload.reference))
+
+@app.get("/settings/jev")
+def consultar_jev():
+    return jev_runtime_status()
+
+@app.post("/evaluations/jev")
+def avaliar_jev(payload:AvaliacaoJev):
+    evaluator=jev_evaluator_from_env()
+    if evaluator is None:
+        raise HTTPException(
+            409,
+            "Jev desativado. Defina HAILA_JEV_ENABLED=1.",
+        )
+    result, provenance=evaluator(
+        payload.question,
+        payload.specification,
+        payload.reference,
+    )
+    return {"result":result,"provenance":provenance}
+
+@app.get("/settings/jury")
+def consultar_juri():
+    return jury_runtime_status()
+
+@app.post("/requests/{request_id}/jury-evaluation",status_code=201)
+def avaliar_juri_opcional(request_id:str,payload:AvaliacaoJuriOpcional):
+    try:
+        return run_optional_jury(repo,request_id,force=payload.force)
+    except KeyError as exc:
+        raise HTTPException(404,str(exc)) from exc
+    except ValueError as exc:
+        raise HTTPException(409,str(exc)) from exc
+    except RuntimeError as exc:
+        message=str(exc)
+        status=429 if "Limite temporário" in message else 409
+        raise HTTPException(status,message) from exc
 
 @app.post("/evaluations/ablation/run")
 def executar_ablacao(payload:ExecucaoAblacao):

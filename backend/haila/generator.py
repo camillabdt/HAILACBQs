@@ -128,7 +128,10 @@ SYSTEM_DISTRACTORES_QWEN = (
     "Produza exatamente quatro alternativas incorretas, plausíveis, relevantes, "
     "gramaticalmente corretas e do mesmo tipo conceitual e nível de especificidade "
     "do gabarito. Cada alternativa deve representar uma confusão real de estudante "
-    "sobre o conceito cobrado. Evite recipientes ou categorias genéricas como "
+    "sobre o conceito cobrado. Use SOMENTE terminologia técnica reconhecida no "
+    "domínio: nunca invente rótulos, combinações artificiais ou pseudo-termos. "
+    "Quando o gabarito for uma classificação técnica, escolha conceitos irmãos "
+    "reais da mesma taxonomia. Evite recipientes ou categorias genéricas como "
     "'arquivo', 'sistema', 'banco de dados' ou 'lista' quando o gabarito nomeia uma "
     "estrutura, protocolo, propriedade ou mecanismo específico. Não copie, não "
     "parafraseie e não inclua o gabarito. Não invente palavras. Nunca devolva "
@@ -138,6 +141,10 @@ SYSTEM_DISTRACTORES_QWEN = (
     "mesma categoria. "
     "Mantenha as quatro alternativas com extensão e estrutura gramatical próximas "
     "às da resposta correta, para que o gabarito não se destaque pelo tamanho. "
+    "Cada distrator deve ser inequivocamente falso no cenário exato: não use "
+    "sinônimos, papéis sobrepostos, termos não padronizados ou formulações que "
+    "possam ser defendidas como uma segunda resposta correta. Um bom distrator "
+    "é tecnicamente existente e plausível, porém errado especificamente no cenário. "
     "Responda exclusivamente com JSON válido no formato "
     '{"distratores":["D1","D2","D3","D4"]}.'
 )
@@ -523,8 +530,22 @@ class QwenDistractorGenerator:
             truncation=True,
             max_length=int(os.getenv("HAILA_SLM_MAX_INPUT_TOKENS", "2048")),
         )
+        # Geração adaptativa: em uso interativo não precisamos preencher todo o
+        # pool antes de devolver quatro distratores válidos. Fazemos pelo menos
+        # duas amostras para preservar diversidade e só executamos a terceira
+        # quando ainda não houver candidatos suficientes. Todos os limites são
+        # configuráveis por ambiente para permitir reprodução dos experimentos.
         max_amostras = max(1, int(os.getenv("HAILA_QWEN_MAX_AMOSTRAS", "3")))
+        min_amostras = max(
+            1,
+            min(max_amostras, int(os.getenv("HAILA_QWEN_MIN_AMOSTRAS", "2"))),
+        )
         tamanho_pool = max(4, int(os.getenv("HAILA_QWEN_CANDIDATE_POOL", "8")))
+        early_stop_pool = max(
+            4,
+            min(tamanho_pool, int(os.getenv("HAILA_QWEN_EARLY_STOP_POOL", "4"))),
+        )
+        max_new_tokens = max(64, int(os.getenv("HAILA_QWEN_MAX_NEW_TOKENS", "256")))
         acumulados: list[DistratorGerado] = []
         vistos: set[str] = {chave_semantica_curta(t) for t in rejeitados}
         chave_gabarito = chave_semantica_curta(nucleo.resposta_correta)
@@ -537,7 +558,7 @@ class QwenDistractorGenerator:
             with torch.inference_mode():
                 ids = self._model.generate(
                     **entrada,
-                    max_new_tokens=int(os.getenv("HAILA_SLM_MAX_NEW_TOKENS", "512")),
+                    max_new_tokens=max_new_tokens,
                     do_sample=True,
                     temperature=float(os.getenv("HAILA_SLM_TEMPERATURE", "0.3")),
                     top_p=float(os.getenv("HAILA_SLM_TOP_P", "0.85")),
@@ -592,7 +613,12 @@ class QwenDistractorGenerator:
                 if chave and chave not in vistos:
                     vistos.add(chave)
                     acumulados.append(distrator)
+            # Mantém o limite superior antigo, mas encerra cedo assim que a
+            # quantidade mínima de amostras já produziu quatro bons candidatos.
+            # Isso evita uma terceira inferência Qwen obrigatória no caminho comum.
             if len(acumulados) >= tamanho_pool:
+                break
+            if numero_amostra >= min_amostras and len(acumulados) >= early_stop_pool:
                 break
 
         if len(acumulados) >= 4:
@@ -601,6 +627,10 @@ class QwenDistractorGenerator:
                 "adapter_path": str(self.adapter_path) if self.adapter_path else None,
                 "normalizacoes": normalizacoes,
                 "amostras": len(brutos),
+                "amostras_minimas_configuradas": min_amostras,
+                "amostras_maximas_configuradas": max_amostras,
+                "early_stop_pool": early_stop_pool,
+                "max_new_tokens": max_new_tokens,
                 "candidatos_gerados": len(acumulados[:tamanho_pool]),
                 "feedback_aplicado": bool(rejeitados),
                 "alternativas_rejeitadas": rejeitados,
@@ -618,6 +648,311 @@ class QwenDistractorGenerator:
             f"candidatos={len(acumulados)}; amostras={max_amostras}; "
             f"inicios={amostras_brutas!r}"
         )
+
+
+
+    def validate_candidates_quality(self, nucleo, candidates):
+        """Audit distractor quality in one short local batched inference.
+
+        The local Qwen already loaded for distractor generation evaluates the
+        four active candidates together. It rejects only the affected candidate
+        when it is a possible second answer, a synonym/equivalent of the key,
+        a non-standard/invented term, outside the conceptual domain, implausible
+        as a misconception, or at an incompatible conceptual level.
+        """
+        enabled = os.getenv(
+            "HAILA_DISTRACTOR_QUALITY_GATE",
+            os.getenv("HAILA_LOCAL_SEMANTIC_GATE", "1"),
+        ) == "1"
+        if not enabled:
+            return [], {
+                "enabled": False,
+                "modelo": self.model,
+                "reason": "disabled_by_env",
+            }
+        if not candidates:
+            return [], {"enabled": True, "modelo": self.model, "empty": True}
+        if self._model is None:
+            self._load()
+        import torch
+
+        enumeradas = "\n".join(
+            f"{i}. {c.texto}" for i, c in enumerate(candidates)
+        )
+        system = (
+            "Você é o controle de qualidade de distratores de uma questão de "
+            "múltipla escolha. Avalie SOMENTE os distratores candidatos e rejeite "
+            "apenas o candidato problemático. Um distrator bom deve simultaneamente: "
+            "(a) usar um conceito ou termo técnico real e padronizado; (b) pertencer "
+            "ao mesmo domínio e nível conceitual do gabarito; (c) representar um erro "
+            "ou confusão plausível de estudante; (d) ser inequivocamente incorreto no "
+            "cenário; e (e) não ser sinônimo, equivalente, caso especial, papel "
+            "sobreposto ou segunda resposta defensável. Rejeite pseudo-termos, rótulos "
+            "inventados, palavras sem relação, alternativas absurdas/fáceis demais e "
+            "conceitos corretos no cenário. Não rejeite um conceito real só por ele ser "
+            "plausível: plausibilidade é desejável quando continua falso. Use somente "
+            "estes códigos: segunda_resposta, equivalente_gabarito, termo_nao_padronizado, "
+            "fora_do_dominio, implausivel, nivel_conceitual_incompativel. Responda "
+            "SOMENTE JSON válido no formato {\"rejeicoes\":[{\"indice\":0,"
+            "\"codigo\":\"implausivel\",\"motivo\":\"...\"}]}. Se todos os "
+            "quatro forem adequados, responda {\"rejeicoes\":[]}."
+        )
+        user = (
+            f"ENUNCIADO:\n{nucleo.enunciado}\n\n"
+            f"GABARITO:\n{nucleo.resposta_correta}\n\n"
+            f"EXPLICAÇÃO DO GABARITO:\n{nucleo.explicacao}\n\n"
+            f"OBJETO DE CONHECIMENTO:\n{getattr(nucleo, 'objeto_conhecimento', '')}\n\n"
+            f"HABILIDADE:\n{getattr(nucleo, 'habilidade', '')}\n\n"
+            f"DISTRATORES CANDIDATOS:\n{enumeradas}"
+        )
+        texto = self._tokenizer.apply_chat_template(
+            [
+                {"role": "system", "content": system},
+                {"role": "user", "content": user},
+            ],
+            tokenize=False,
+            add_generation_prompt=True,
+        )
+        entrada = self._tokenizer(
+            texto,
+            return_tensors="pt",
+            truncation=True,
+            max_length=int(os.getenv("HAILA_SLM_MAX_INPUT_TOKENS", "2048")),
+        )
+        max_new_tokens = max(
+            64,
+            int(os.getenv("HAILA_DISTRACTOR_QUALITY_MAX_NEW_TOKENS", "128")),
+        )
+        with torch.inference_mode():
+            ids = self._model.generate(
+                **entrada,
+                max_new_tokens=max_new_tokens,
+                do_sample=False,
+                repetition_penalty=1.05,
+                pad_token_id=self._tokenizer.eos_token_id,
+            )
+        output_tokens = int(ids.shape[1] - entrada["input_ids"].shape[1])
+        bruto = self._tokenizer.decode(
+            ids[0][entrada["input_ids"].shape[1]:],
+            skip_special_tokens=True,
+        )
+
+        try:
+            data = _extrair_json(bruto)
+            raw_rejections = data.get("rejeicoes", []) if isinstance(data, dict) else []
+        except ValueError:
+            raw_rejections = []
+            data = None
+
+        allowed_codes = {
+            "segunda_resposta",
+            "equivalente_gabarito",
+            "termo_nao_padronizado",
+            "fora_do_dominio",
+            "implausivel",
+            "nivel_conceitual_incompativel",
+        }
+        rejeicoes = []
+        vistos = set()
+        if isinstance(raw_rejections, list):
+            for item in raw_rejections:
+                if not isinstance(item, dict):
+                    continue
+                try:
+                    indice = int(item.get("indice"))
+                except (TypeError, ValueError):
+                    continue
+                if indice < 0 or indice >= len(candidates) or indice in vistos:
+                    continue
+                vistos.add(indice)
+                codigo = str(item.get("codigo") or "implausivel").strip()
+                if codigo not in allowed_codes:
+                    codigo = "implausivel"
+                motivo = str(
+                    item.get("motivo")
+                    or "candidato não atende aos critérios de qualidade do distrator"
+                ).strip()
+                rejeicoes.append({
+                    "indice": indice,
+                    "codigo": codigo,
+                    "motivo": motivo[:500],
+                    "texto": candidates[indice].texto,
+                })
+
+        return rejeicoes, {
+            "enabled": True,
+            "modelo": self.model,
+            "modo": "local_batched_distractor_quality_gate",
+            "prompt_version": "distractor-quality-gate-2.0.0",
+            "criterios": [
+                "terminologia_padronizada",
+                "mesmo_dominio",
+                "plausibilidade",
+                "incorrecao_contextual",
+                "unicidade_do_gabarito",
+            ],
+            "candidatos_avaliados": len(candidates),
+            "rejeitados": len(rejeicoes),
+            "parse_ok": data is not None,
+            "token_usage_local": {
+                "input_tokens": int(entrada["input_ids"].shape[1]),
+                "output_tokens": output_tokens,
+                "total_tokens": int(entrada["input_ids"].shape[1]) + output_tokens,
+            },
+        }
+
+    def validate_candidates_semantically(self, nucleo, candidates):
+        """Backward-compatible alias for the v2 semantic-only gate."""
+        return self.validate_candidates_quality(nucleo, candidates)
+
+
+    def generate_candidates(
+        self,
+        nucleo,
+        feedback,
+        target_count=4,
+        avoid_texts=None,
+        max_samples=1,
+    ):
+        """Generate one small incremental batch without requiring four outputs.
+
+        The fine-tuned prompt still asks for four distractors (the distribution the
+        LoRA saw during training), but every valid candidate is returned immediately.
+        The orchestrator persists those candidates and calls again only if the bank
+        still has fewer than four usable distractors.
+        """
+        if self._model is None:
+            self._load()
+        import torch
+
+        usuario = criar_prompt_distratores(
+            nucleo.enunciado,
+            nucleo.resposta_correta,
+            None,
+        )
+        rejeitados = resumir_feedback_distratores(feedback)
+        for texto_avoid in avoid_texts or []:
+            texto_avoid = str(texto_avoid or "").strip()
+            if texto_avoid and texto_avoid not in rejeitados:
+                rejeitados.append(texto_avoid)
+
+        codigos_feedback = {
+            str(item.get("codigo") or item.get("code") or "")
+            for item in (feedback or [])
+        }
+        instrucao_reparo = ""
+        if rejeitados:
+            instrucao_reparo += (
+                " Não repita nenhuma destas alternativas já usadas ou rejeitadas: "
+                f"{json.dumps(rejeitados[:16], ensure_ascii=False)}. "
+                "Produza erros conceituais diferentes e plausíveis."
+            )
+        if codigos_feedback & {
+            "distrator_parafraseia_gabarito",
+            "copia_normalizada_gabarito",
+        }:
+            instrucao_reparo += (
+                " Não gere singular/plural, flexões, abreviações, erros ortográficos "
+                "ou reformulações lexicais da resposta correta. Use conceitos vizinhos "
+                "realmente incorretos no cenário."
+            )
+
+        texto = self._tokenizer.apply_chat_template(
+            [
+                {"role": "system", "content": SYSTEM_DISTRACTORES_QWEN + instrucao_reparo},
+                {"role": "user", "content": usuario},
+            ],
+            tokenize=False,
+            add_generation_prompt=True,
+        )
+        entrada = self._tokenizer(
+            texto,
+            return_tensors="pt",
+            truncation=True,
+            max_length=int(os.getenv("HAILA_SLM_MAX_INPUT_TOKENS", "2048")),
+        )
+        max_new_tokens = max(64, int(os.getenv("HAILA_QWEN_MAX_NEW_TOKENS", "256")))
+        max_samples = max(1, int(max_samples or 1))
+        acumulados: list[DistratorGerado] = []
+        vistos: set[str] = {chave_semantica_curta(t) for t in rejeitados}
+        chave_gabarito = chave_semantica_curta(nucleo.resposta_correta)
+        normalizacoes: list[str] = []
+        brutos: list[str] = []
+        input_tokens_total = 0
+        output_tokens_total = 0
+
+        for numero_amostra in range(1, max_samples + 1):
+            with torch.inference_mode():
+                ids = self._model.generate(
+                    **entrada,
+                    max_new_tokens=max_new_tokens,
+                    do_sample=True,
+                    temperature=float(os.getenv("HAILA_SLM_TEMPERATURE", "0.3")),
+                    top_p=float(os.getenv("HAILA_SLM_TOP_P", "0.85")),
+                    repetition_penalty=float(os.getenv("HAILA_SLM_REPETITION_PENALTY", "1.15")),
+                    no_repeat_ngram_size=int(os.getenv("HAILA_SLM_NO_REPEAT_NGRAM_SIZE", "3")),
+                    pad_token_id=self._tokenizer.eos_token_id,
+                )
+            input_tokens_total += int(entrada["input_ids"].shape[1])
+            output_tokens_total += int(ids.shape[1] - entrada["input_ids"].shape[1])
+            bruto = self._tokenizer.decode(
+                ids[0][entrada["input_ids"].shape[1]:],
+                skip_special_tokens=True,
+            )
+            brutos.append(bruto)
+            try:
+                data = _extrair_json(bruto)
+                parciais, reparos = normalizar_distratores_parciais(data)
+            except ValueError:
+                continue
+            normalizacoes.extend(
+                f"amostra_{numero_amostra}:{reparo}" for reparo in reparos
+            )
+            for distrator in parciais:
+                if re.search(r"<\s*[A-Z][A-Z0-9_-]*\s*>", distrator.texto):
+                    normalizacoes.append(
+                        f"amostra_{numero_amostra}:placeholder_descartado"
+                    )
+                    continue
+                motivo_lexical = motivo_distrator_lexicalmente_suspeito(
+                    nucleo,
+                    distrator.texto,
+                )
+                if motivo_lexical:
+                    normalizacoes.append(
+                        f"amostra_{numero_amostra}:candidato_lexical_descartado:{motivo_lexical}"
+                    )
+                    continue
+                chave = chave_semantica_curta(distrator.texto)
+                if not chave or chave == chave_gabarito or chave in vistos:
+                    continue
+                vistos.add(chave)
+                acumulados.append(distrator)
+
+        if not acumulados:
+            amostras_brutas = [x.strip().replace("\n", " ")[:180] for x in brutos]
+            raise ValueError(
+                "Qwen não produziu candidato novo utilizável nesta rodada; "
+                f"amostras={max_samples}; inicios={amostras_brutas!r}"
+            )
+
+        return acumulados, {
+            "modelo": self.model,
+            "adapter_path": str(self.adapter_path) if self.adapter_path else None,
+            "normalizacoes": normalizacoes,
+            "amostras": len(brutos),
+            "modo_incremental": True,
+            "target_count": int(target_count or 4),
+            "candidatos_gerados": len(acumulados),
+            "evitados": rejeitados[:16],
+            "prompt_version": "qwen-distractors-1.6.0",
+            "max_new_tokens": max_new_tokens,
+            "token_usage_local": {
+                "input_tokens": input_tokens_total,
+                "output_tokens": output_tokens_total,
+                "total_tokens": input_tokens_total + output_tokens_total,
+            },
+        }
 
 
 class GroqBestOfNSelector:
@@ -794,6 +1129,71 @@ class BestOfNDistractorGenerator:
             candidatos_no_pool=len(candidatos),
             seletor=selecao,
         )
+
+
+    def generate_candidates(
+        self,
+        nucleo,
+        feedback,
+        target_count=4,
+        avoid_texts=None,
+        max_samples=1,
+    ):
+        """Incremental entry point used by the interactive sustainable pipeline."""
+        if hasattr(self.generator, "generate_candidates"):
+            candidatos, provenance = self.generator.generate_candidates(
+                nucleo,
+                feedback,
+                target_count=target_count,
+                avoid_texts=avoid_texts,
+                max_samples=max_samples,
+            )
+        else:
+            candidatos, provenance = self.generator(nucleo, feedback)
+
+        candidatos, rejeitados_pos_filtro = _filtrar_pool_final(nucleo, candidatos)
+        avoid = {chave_semantica_curta(x) for x in (avoid_texts or [])}
+        unicos = []
+        vistos = set(avoid)
+        for candidato in candidatos:
+            chave = chave_semantica_curta(candidato.texto)
+            if not chave or chave in vistos:
+                continue
+            vistos.add(chave)
+            unicos.append(candidato)
+
+        provenance = dict(
+            provenance,
+            modo_incremental=True,
+            pos_filtro_rejeitados=rejeitados_pos_filtro,
+            candidatos_no_lote=len(unicos),
+        )
+        if not unicos:
+            raise ValueError(
+                "lote incremental sem candidatos utilizáveis após pós-filtro"
+            )
+        return unicos, provenance
+
+    def validate_candidates_quality(self, nucleo, candidatos):
+        if hasattr(self.generator, "validate_candidates_quality"):
+            return self.generator.validate_candidates_quality(nucleo, candidatos)
+        if hasattr(self.generator, "validate_candidates_semantically"):
+            return self.generator.validate_candidates_semantically(nucleo, candidatos)
+        return [], {"enabled": False, "reason": "validator_unavailable"}
+
+    def validate_candidates_semantically(self, nucleo, candidatos):
+        return self.validate_candidates_quality(nucleo, candidatos)
+
+    def select_from_pool(self, nucleo, candidatos):
+        """Select exactly four from an already persisted candidate bank."""
+        if len(candidatos) < 4:
+            raise ValueError("pool persistente ainda não contém quatro candidatos")
+        if len(candidatos) == 4:
+            return list(candidatos), {
+                "modelo": "pool_exato",
+                "indices_selecionados": [0, 1, 2, 3],
+            }
+        return self.selector(nucleo, candidatos)
 
 
 def _extrair_json(raw: str) -> Any:

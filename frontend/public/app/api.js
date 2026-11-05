@@ -87,4 +87,16 @@ export class HailaApi {
     });
   }
 
+  jurySettings() {
+    return this.request("/settings/jury");
+  }
+
+  runJuryEvaluation(requestId, force = false) {
+    return this.request(`/requests/${encodeURIComponent(requestId)}/jury-evaluation`, {
+      method: "POST",
+      body: { force },
+      timeout: 8 * 60 * 1000,
+    });
+  }
+
 }

@@ -26,6 +26,7 @@ TAXONOMIAS_CURADAS = (
     ("Nenhuma", "Atomicidade", "Consistência", "Isolamento", "Durabilidade"),
     ("Atomicidade", "Consistência", "Isolamento", "Durabilidade", "Serialização"),
     ("Leitura suja", "Leitura não repetível", "Leitura fantasma", "Atualização perdida", "Escrita suja"),
+    ("Chave estrangeira", "Chave primária", "Chave candidata", "Chave composta", "Superchave"),
     ("MVCC", "Bloqueio em duas fases (2PL)", "Controle otimista por validação", "Ordenação por carimbo de tempo", "Bloqueio pessimista"),
     ("Fila", "Pilha", "Árvore binária de busca", "Tabela hash", "Heap"),
     ("Padrão SAGA", "Protocolo Two-Phase Commit (2PC)", "Protocolo Three-Phase Commit (3PC)", "Transação distribuída XA", "Bloqueio distribuído"),
@@ -363,3 +364,93 @@ class HybridDistractorGenerator:
             return ds, dict(prov, familia=familia.value, roteador="hybrid-v9")
         ds, prov = self.slm(nucleo, feedback)
         return ds, dict(prov, familia=familia.value, roteador="hybrid-v9")
+
+
+    def validate_candidates_quality(self, nucleo, candidatos):
+        """Audit every source with the same local distractor quality gate."""
+        if hasattr(self.slm, "validate_candidates_quality"):
+            return self.slm.validate_candidates_quality(nucleo, candidatos)
+        if hasattr(self.slm, "validate_candidates_semantically"):
+            return self.slm.validate_candidates_semantically(nucleo, candidatos)
+        return [], {"enabled": False, "reason": "local_validator_unavailable"}
+
+    def validate_candidates_semantically(self, nucleo, candidatos):
+        return self.validate_candidates_quality(nucleo, candidatos)
+
+    def generate_candidates(
+        self,
+        nucleo: NucleoQuestao,
+        feedback,
+        target_count=4,
+        avoid_texts=None,
+        max_samples=1,
+    ):
+        """Build an incremental candidate batch, reusing rules/memory before SLM."""
+        target_count = max(1, int(target_count or 4))
+        avoid_norm = {normalizar_texto(x) for x in (avoid_texts or []) if str(x).strip()}
+        saida: list[DistratorGerado] = []
+        vistos = set(avoid_norm)
+        fontes = []
+
+        def adicionar(candidatos, fonte):
+            adicionados = 0
+            for candidato in candidatos or []:
+                chave = normalizar_texto(candidato.texto)
+                if not chave or chave in vistos:
+                    continue
+                vistos.add(chave)
+                saida.append(candidato)
+                adicionados += 1
+            if adicionados:
+                fontes.append({"fonte": fonte, "adicionados": adicionados})
+
+        if self.use_rules:
+            ipv4 = gerar_distratores_ipv4_cidr(
+                nucleo.resposta_correta,
+                nucleo.enunciado,
+            )
+            if ipv4:
+                adicionar(ipv4, "deterministic-ipv4-cidr-v1")
+
+        familia = classificar_familia(nucleo.resposta_correta, nucleo.enunciado)
+        if self.use_rules and not saida and familia == FamiliaQuestao.COMBINACAO_ITENS:
+            adicionar(gerar_combinacoes(nucleo.resposta_correta, nucleo.enunciado), "deterministic-v8")
+        if self.use_rules and not saida and familia == FamiliaQuestao.ASSERCOES:
+            adicionar(gerar_assercoes(nucleo.resposta_correta), "deterministic-v8")
+
+        if self.use_memory and len(saida) < target_count:
+            recuperado = self.memoria.recuperar(nucleo.resposta_correta)
+            if recuperado:
+                ds_memoria, prov_memoria = recuperado
+                adicionar(ds_memoria, prov_memoria.get("modelo", "slm-memory-curated-v1"))
+
+        if len(saida) < target_count:
+            faltam = target_count - len(saida)
+            evitar = [*list(avoid_texts or []), *(d.texto for d in saida)]
+            if hasattr(self.slm, "generate_candidates"):
+                ds_slm, prov_slm = self.slm.generate_candidates(
+                    nucleo,
+                    feedback,
+                    target_count=faltam,
+                    avoid_texts=evitar,
+                    max_samples=max_samples,
+                )
+            else:
+                ds_slm, prov_slm = self.slm(nucleo, feedback)
+            adicionar(ds_slm, prov_slm.get("modelo", getattr(self.slm, "model", "slm")))
+            slm_prov = prov_slm
+        else:
+            slm_prov = None
+
+        if not saida:
+            raise ValueError("roteador híbrido não produziu candidato novo")
+
+        return saida, {
+            "modelo": self.model,
+            "familia": familia.value,
+            "roteador": "hybrid-v10-incremental",
+            "modo_incremental": True,
+            "target_count": target_count,
+            "fontes": fontes,
+            "slm": slm_prov,
+        }

@@ -13,9 +13,12 @@ flowchart LR
     L --> S[SLM Qwen: distratores]
     S --> M[Montagem]
     M --> D{Red flags determinísticas}
-    D -->|sem bloqueio| C[Candidata à revisão humana]
+    D -->|sem bloqueio| J{Jev opcional}
     D -->|núcleo| L
     D -->|distratores| S
+    J -->|shadow/aprovado| C[Candidata à revisão humana]
+    J -->|gate: núcleo| L
+    J -->|gate: distratores| S
     C --> H{Parecer do professor}
     H --> A[Aprovada]
     H --> X[Rejeitada]
@@ -30,7 +33,6 @@ O RAG recupera uma referência do acervo local. A LLM produz enunciado, resposta
 - `research/`: protocolos e componentes experimentais da dissertação.
 - `docs/`: documentação da arquitetura e do contrato da API.
 - `runtime/`: banco e saídas locais; não deve ser versionado.
-- `archive/`: orientação sobre o código legado preservado.
 
 ## Execução
 
@@ -49,13 +51,23 @@ A API ficará em `http://127.0.0.1:8000` e o HAILA Studio em `http://127.0.0.1:4
 make test
 ```
 
-## Execução no VS Code
+## Avaliação da dissertação
 
-1. Abra a pasta raiz `HAILA` no VS Code.
-2. Copie `.env.example` para `.env` e preencha `GROQ_API_KEY` somente no arquivo local.
-3. Abra **Executar e Depurar** e selecione **HAILA: Front + Back**.
-4. Acesse `http://127.0.0.1:4174/studio.html`.
+A campanha final foi avaliada com regras determinísticas, métricas textuais e Jev em modo shadow. A revisão humana faz parte da interface. A campanha final não incluiu avaliação docente.
 
-As tarefas **HAILA: Testes**, **HAILA: Ablação C1-C3**, **HAILA: Ablação C4** e **HAILA: Consolidar tokens exatos** ficam disponíveis em **Terminal > Executar Tarefa**. Os resultados são gravados em `evaluation/results/`. O consolidado separa os tokens pagos da Groq dos tokens processados localmente pela SLM.
+## Jev experimental
 
-Modelos que avaliam questões como substitutos de professores não fazem parte do fluxo de produção. Esse uso permanece em `research/` como protocolo experimental para comparação com pareceres humanos.
+A integração usa TypeSafe System One e cinco decisões `noul` em uma chamada:
+unicidade do gabarito, clareza, alinhamento pedagógico, plausibilidade dos
+distratores e ausência de ambiguidade.
+
+Comece em `shadow`:
+
+```bash
+HAILA_JEV_ENABLED=1
+HAILA_JEV_MODE=shadow
+TYPESAFE_API_KEY=...
+```
+
+Em `shadow`, o Jev não bloqueia nem regenera. `gate` exige limiares
+explicitamente configurados e calibrados contra avaliações docentes.

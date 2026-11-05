@@ -1,7 +1,131 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HAILA · Questões inteligentes com IA</title><meta name="description" content="Crie questões ENADE com a arquitetura híbrida HAILA: referências, geração de enunciados, distratores e revisão humana."><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="landing.css"></head><body>
-<header class="header"><a class="logo" href="/" aria-label="HAILA início">HAILA<span>.</span></a><nav aria-label="Navegação principal"><a href="#como-funciona">Como funciona</a></nav><a class="button small" href="studio.html">Abrir estúdio</a></header>
-<main><section class="hero" id="sobre"><div class="hero-copy"><div class="pill"><span></span> IA para o ENADE</div><h1>Questões<br><em>inteligentes</em><br>com <strong>IA.</strong></h1><p>Geração assistida de questões ENADE<br>com inteligência híbrida e revisão humana.</p><div class="actions"><a class="button" href="studio.html">Abrir estúdio <span>→</span></a></div><div class="facts"><div><strong>RAG</strong><span>Referências</span></div><div><strong>LLM</strong><span>Enunciados</span></div><div><strong>SLM</strong><span>Distratores</span></div></div></div>
-<div class="mascot-scene"><div class="halo"></div><img class="mascot" src="mascot.png" alt="Mascote HAILA, uma robô sorridente com detalhes rosa e rosto verde" width="1024" height="1536"><div class="float-card review-card"><span class="card-icon">✓</span><div><strong>Seu olhar faz a diferença.</strong><small>A decisão final é humana.</small></div></div></div>
-<div class="feature-cards" id="como-funciona"><article><div class="feature-icon teal">◈</div><h2>LLM Núcleo</h2><p>Compõe enunciados, respostas e explicações contextualizadas.</p></article><article><div class="feature-icon pink">⌘</div><h2>SLM Distratores</h2><p>Constrói alternativas para compor cada questão.</p></article><article><div class="feature-icon violet">✓</div><h2>Verificação e revisão</h2><p>Red flags automáticas e revisão pedagógica pelo professor.</p></article></div></section></main>
-<footer><div class="technologies"><span>Tecnologias</span><span class="chip">RAG</span><span class="chip muted">LLM</span><span class="chip pink">Red Flags</span><span class="chip muted">SLM</span><span class="chip">Corpus ENADE</span><span class="chip muted">Python</span></div><span>HAILA · Ambiente de pesquisa</span></footer>
-</body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HAILA · Questões inteligentes com IA</title>
+  <meta name="description" content="HAILA combina RAG, LLM, SLM, controles de qualidade e revisão humana para gerar questões ENADE rastreáveis.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="landing.css?v=20261021-front-final-v1.1-mascote">
+  <script type="module" src="app/home.js?v=20261021-front-final-v1"></script>
+</head>
+<body>
+  <header class="home-header home-header-dark">
+    <a class="home-logo" href="#top" aria-label="HAILA início"><strong>HAILA</strong><span class="logo-dot">.</span></a>
+    <nav aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#como">Como funciona</a>
+      <a href="#arquitetura">Arquitetura</a>
+      <a href="#qualidade">Qualidade</a>
+      <a href="#relatorios">Relatórios</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="home-cta small" href="studio.html?new=1">Abrir estúdio</a>
+  </header>
+
+  <main id="top">
+    <section class="mascot-hero" aria-labelledby="hero-title">
+      <div class="mascot-hero-inner">
+        <div class="mascot-copy">
+          <div class="hero-pill"><span></span> IA para o ENADE</div>
+          <h1 id="hero-title">Questões<br><em>inteligentes</em><br>com <strong>IA.</strong></h1>
+          <p>Geração assistida de questões ENADE<br>com inteligência híbrida e revisão humana.</p>
+          <div class="hero-actions">
+            <a class="hero-button" href="studio.html?new=1">Abrir estúdio <span>→</span></a>
+            <a class="hero-text-link" href="#sobre">Conhecer a HAILA</a>
+          </div>
+          <div class="hero-facts" aria-label="Componentes da HAILA">
+            <div><strong>RAG</strong><span>Referências</span></div>
+            <div><strong>LLM</strong><span>Enunciados</span></div>
+            <div><strong>SLM</strong><span>Distratores</span></div>
+          </div>
+        </div>
+
+        <div class="mascot-scene">
+          <div class="mascot-halo"></div>
+          <img class="mascot" src="mascot.png" alt="Mascote HAILA, uma robô sorridente com detalhes rosa e rosto verde" width="1024" height="1536">
+          <div class="float-card review-card">
+            <span class="float-icon">✓</span>
+            <div><strong>Seu olhar faz a diferença.</strong><small>A decisão final é humana.</small></div>
+          </div>
+        </div>
+
+        <div class="feature-cards" id="como-funciona">
+          <article><div class="feature-icon teal">◈</div><h2>LLM Núcleo</h2><p>Compõe enunciados, respostas e explicações contextualizadas.</p></article>
+          <article><div class="feature-icon pink">⌘</div><h2>SLM Distratores</h2><p>Constrói alternativas para compor cada questão.</p></article>
+          <article><div class="feature-icon violet">✓</div><h2>Verificação e revisão</h2><p>Red Flags automáticas e revisão pedagógica pelo professor.</p></article>
+        </div>
+      </div>
+      <div class="hero-techbar">
+        <span>Tecnologias</span><span class="tech-chip">RAG</span><span class="tech-chip muted">LLM</span><span class="tech-chip redflag">⚑ Red Flags</span><span class="tech-chip muted">SLM</span><span class="tech-chip">Corpus ENADE</span><span class="tech-chip muted">Python</span>
+      </div>
+    </section>
+
+    <section id="sobre" class="home-section card-section">
+      <div class="section-heading"><span class="section-kicker">QUEM É HAILA</span><h2>Uma arquitetura híbrida para criação e revisão de questões.</h2></div>
+      <div class="card-grid two">
+        <article class="info-card accent-purple"><span class="card-number">01</span><h3>Geração assistida</h3><p>O LLM compõe o núcleo; o SLM local, a memória e as regras constroem e reaproveitam distratores.</p></article>
+        <article class="info-card accent-teal"><span class="card-number">02</span><h3>Decisão humana</h3><p>Os controles automáticos sinalizam. O professor continua responsável pela decisão final de uso.</p></article>
+      </div>
+    </section>
+
+    <section id="como" class="home-section">
+      <div class="section-heading"><span class="section-kicker">COMO USAR</span><h2>Três passos.</h2></div>
+      <div class="steps-grid">
+        <article><span>1</span><h3>Defina</h3><p>Objeto, objetivo, dificuldade e quantidade.</p></article>
+        <article><span>2</span><h3>Gere</h3><p>A HAILA preserva o núcleo e completa apenas o que falta.</p></article>
+        <article><span>3</span><h3>Revise</h3><p>Consulte qualidade, rastreabilidade e registre seu parecer.</p></article>
+      </div>
+    </section>
+
+    <section id="arquitetura" class="home-section card-section">
+      <div class="section-heading"><span class="section-kicker">ARQUITETURA</span><h2>Papéis complementares.</h2></div>
+      <div class="architecture-flow">
+        <article><span>RAG</span><strong>Fundamentar</strong><small>referências</small></article>
+        <i>→</i><article><span>LLM</span><strong>Contextualizar</strong><small>núcleo + gabarito</small></article>
+        <i>→</i><article><span>SLM</span><strong>Construir</strong><small>distratores</small></article>
+        <i>→</i><article><span>QUALIDADE</span><strong>Verificar</strong><small>estrutura + semântica</small></article>
+        <i>→</i><article><span>PROFESSOR</span><strong>Decidir</strong><small>uso final</small></article>
+      </div>
+    </section>
+
+    <section id="qualidade" class="home-section quality-home">
+      <div class="section-heading"><span class="section-kicker">QUALIDADE</span><h2>Menos texto. Mais sinal.</h2></div>
+      <div class="quality-grid">
+        <article class="quality-card redflag-card"><span class="quality-icon">⚑</span><div><strong>Red Flags</strong><p>A bandeira em vermelho escuro identifica alertas finais e ocorrências tratadas.</p></div></article>
+        <article class="quality-card"><span class="quality-icon teal">✓</span><div><strong>Reparo localizado</strong><p>O candidato ruim sai; os bons permanecem.</p></div></article>
+        <article class="quality-card"><span class="quality-icon purple">◈</span><div><strong>Rastreabilidade</strong><p>Modelo, chamadas, candidatos, tempo e decisões ficam registrados.</p></div></article>
+      </div>
+    </section>
+
+    <section id="dashboard" class="home-section card-section">
+      <div class="section-heading split"><div><span class="section-kicker">ÚLTIMA GERAÇÃO</span><h2>Um olhar rápido.</h2></div><a id="last-open" class="text-link" href="studio.html" hidden>Abrir no Studio →</a></div>
+      <div id="last-generation" class="last-generation" aria-live="polite">
+        <div class="metric-card"><span>Estado</span><strong id="last-state">—</strong></div>
+        <div class="metric-card flag"><span>Red Flags</span><strong id="last-flags">—</strong></div>
+        <div class="metric-card"><span>Tratadas</span><strong id="last-treated">—</strong></div>
+        <div class="metric-card"><span>SLM</span><strong id="last-slm">—</strong></div>
+        <div class="metric-card"><span>Tempo</span><strong id="last-time">—</strong></div>
+      </div>
+      <p id="last-note" class="dashboard-note">Nenhuma geração carregada neste navegador.</p>
+    </section>
+
+    <section id="relatorios" class="home-section reports-section">
+      <div class="section-heading"><span class="section-kicker">RELATÓRIOS</span><h2>Quatro formatos, quatro usos.</h2></div>
+      <div class="report-grid">
+        <article><strong>PDF</strong><span>leitura humana e banca</span></article>
+        <article><strong>JSON</strong><span>rastreabilidade completa</span></article>
+        <article><strong>CSV</strong><span>métricas e análise</span></article>
+        <article><strong>MD</strong><span>documentação e GitHub</span></article>
+      </div>
+    </section>
+
+    <section id="contato" class="home-section contact-section">
+      <div><span class="section-kicker">PESQUISA & CONTATO</span><h2>HAILA</h2><p>Arquitetura de pesquisa para geração automática de questões de múltipla escolha com inteligência híbrida, qualidade rastreável e revisão humana.</p></div>
+      <a href="mailto:kamysbdt@gmail.com">kamysbdt@gmail.com</a>
+    </section>
+  </main>
+
+  <footer class="home-footer"><span>HAILA · Ambiente de pesquisa</span><a href="studio.html?new=1">Criar questão →</a></footer>
+</body>
+</html>
