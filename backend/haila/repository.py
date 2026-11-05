@@ -7,6 +7,150 @@ from .domain import Estado, TRANSICOES_PERMITIDAS
 
 def agora(): return datetime.now(timezone.utc).isoformat()
 
+
+def _normalizar_flag_visual(flag):
+    if not isinstance(flag, dict):
+        return {"code": "alerta", "stage": "QUALIDADE", "field": "", "evidence": str(flag), "repair_target": ""}
+    return {
+        "code": flag.get("codigo") or flag.get("code") or "alerta",
+        "stage": flag.get("etapa") or flag.get("stage") or "QUALIDADE",
+        "field": flag.get("campo") or flag.get("field") or "",
+        "evidence": flag.get("evidencia") or flag.get("evidence") or "",
+        "repair_target": flag.get("reparo") or flag.get("repair_target") or "",
+    }
+
+
+def _quality_trace(req, artifacts, flags, events):
+    """Build a compact, read-only quality/audit summary for the Studio.
+
+    The database remains append-only.  This function only derives a view from
+    already persisted artifacts, red flags and events so the UI can distinguish
+    final warnings from problems that were detected and repaired during generation.
+    """
+    latest_summary = next(
+        (a for a in reversed(artifacts) if a.get("kind") == "QUALITY_SUMMARY"),
+        None,
+    )
+    summary_payload = (latest_summary or {}).get("payload") or {}
+    final_warnings = [
+        _normalizar_flag_visual(item)
+        for item in (summary_payload.get("warnings") or [])
+    ]
+
+    treated = []
+    for artifact in artifacts:
+        kind = artifact.get("kind")
+        payload = artifact.get("payload") or {}
+        prov = artifact.get("provenance") or {}
+        texto = payload.get("texto") if isinstance(payload, dict) else None
+
+        if kind == "DISTRACTOR_CANDIDATE_REJECTED":
+            artifact_flags = prov.get("flags") or []
+            if artifact_flags:
+                for raw in artifact_flags:
+                    flag = _normalizar_flag_visual(raw)
+                    treated.append({
+                        **flag,
+                        "type": "red_flag_tratada",
+                        "candidate": texto or raw.get("alternativa_rejeitada") or "",
+                        "action": "distrator_rejeitado",
+                    })
+            else:
+                treated.append({
+                    "type": "red_flag_tratada",
+                    "code": "distrator_rejeitado",
+                    "stage": "DISTRATORES",
+                    "field": "alternativas",
+                    "evidence": prov.get("reason") or "candidato rejeitado pelo filtro estrutural",
+                    "repair_target": "DISTRATORES",
+                    "candidate": texto or "",
+                    "action": "distrator_rejeitado",
+                })
+
+        elif kind == "DISTRACTOR_CANDIDATE_REJECTED_QUALITY":
+            treated.append({
+                "type": "rejeicao_qualidade",
+                "code": prov.get("quality_code") or "qualidade_distrator",
+                "stage": "DISTRATORES",
+                "field": "alternativas",
+                "evidence": prov.get("reason") or "candidato rejeitado pela guarda de qualidade",
+                "repair_target": "DISTRATORES",
+                "candidate": texto or "",
+                "action": "distrator_rejeitado",
+            })
+
+    promotions = []
+    for artifact in artifacts:
+        if artifact.get("kind") != "DISTRACTOR_RESERVE_PROMOTED":
+            continue
+        payload = artifact.get("payload") or {}
+        prov = artifact.get("provenance") or {}
+        promotions.append({
+            "candidate": payload.get("texto") if isinstance(payload, dict) else "",
+            "reason": prov.get("reason") or "reserva promovida após rejeição localizada",
+            "check": prov.get("check"),
+        })
+
+    batches = [a for a in artifacts if a.get("kind") == "DISTRACTOR_BATCH"]
+    generated = sum(
+        len(a.get("payload") or [])
+        for a in batches
+        if isinstance(a.get("payload"), list)
+    )
+    accepted = sum(a.get("kind") == "DISTRACTOR_CANDIDATE_ACCEPTED" for a in artifacts)
+    reserve_saved = sum(a.get("kind") == "DISTRACTOR_CANDIDATE_RESERVE" for a in artifacts)
+    structural_rejections = sum(a.get("kind") == "DISTRACTOR_CANDIDATE_REJECTED" for a in artifacts)
+    quality_rejections = sum(a.get("kind") == "DISTRACTOR_CANDIDATE_REJECTED_QUALITY" for a in artifacts)
+    gate_checks = sum(a.get("kind") == "DISTRACTOR_QUALITY_GATE" for a in artifacts)
+
+    duration_seconds = None
+    timestamps = []
+    for event in events:
+        raw = event.get("created_at")
+        if not raw:
+            continue
+        try:
+            timestamps.append(datetime.fromisoformat(raw.replace("Z", "+00:00")))
+        except (TypeError, ValueError):
+            pass
+    if len(timestamps) >= 2:
+        duration_seconds = round((max(timestamps) - min(timestamps)).total_seconds(), 2)
+
+    return {
+        "final_warnings": final_warnings,
+        "final_warning_count": len(final_warnings),
+        "historical_red_flags": [
+            {
+                "code": f.get("code") or "alerta",
+                "stage": f.get("stage") or "",
+                "field": f.get("field") or "",
+                "evidence": f.get("evidence") or "",
+                "repair_target": f.get("repair_target") or "",
+            }
+            for f in flags
+        ],
+        "historical_red_flag_count": len(flags),
+        "treated_occurrences": treated,
+        "treated_occurrence_count": len(treated),
+        "reserve_promotions": promotions,
+        "reserve_promotion_count": len(promotions),
+        "metrics": {
+            "stem_attempts": req.get("stem_attempts", 0),
+            "slm_calls": req.get("distractor_attempts", 0),
+            "distractor_batches": len(batches),
+            "candidates_generated": generated,
+            "candidates_accepted_active": accepted,
+            "candidates_saved_as_reserve": reserve_saved,
+            "structural_rejections": structural_rejections,
+            "quality_rejections": quality_rejections,
+            "quality_gate_checks": gate_checks,
+            "active_distractors": summary_payload.get("active_distractors"),
+            "reserve_distractors": summary_payload.get("reserve_distractors"),
+            "candidate_bank_size": summary_payload.get("candidate_bank_size"),
+            "duration_seconds": duration_seconds,
+        },
+    }
+
 class HailaRepository:
     """Registro append-only de eventos, artefatos, versões e pareceres da HAILA."""
     def __init__(self, caminho: str | Path = "runtime/haila.sqlite3"):
@@ -59,6 +203,54 @@ class HailaRepository:
         with self._connect() as con:
             for f in flags: con.execute("INSERT INTO red_flags(request_id,code,stage,field,evidence,repair_target,created_at) VALUES(?,?,?,?,?,?,?)",
                 (rid,f["codigo"],f["etapa"],f["campo"],f["evidencia"],f["reparo"],agora()))
+
+
+    def artifacts_by_kind(self, rid, kind):
+        """Return decoded artifacts of one kind, oldest first."""
+        with self._connect() as con:
+            rows = [
+                dict(r) for r in con.execute(
+                    "SELECT * FROM artifacts WHERE request_id=? AND kind=? ORDER BY id",
+                    (rid, kind),
+                )
+            ]
+        for item in rows:
+            item["payload"] = json.loads(item.pop("payload_json"))
+            item["provenance"] = json.loads(item.pop("provenance_json"))
+        return rows
+
+    def latest_artifact(self, rid, kind):
+        """Return the newest decoded artifact of one kind, or None."""
+        with self._connect() as con:
+            row = con.execute(
+                "SELECT * FROM artifacts WHERE request_id=? AND kind=? ORDER BY id DESC LIMIT 1",
+                (rid, kind),
+            ).fetchone()
+        if row is None:
+            return None
+        item = dict(row)
+        item["payload"] = json.loads(item.pop("payload_json"))
+        item["provenance"] = json.loads(item.pop("provenance_json"))
+        return item
+
+    def save_distractor_pool(self, rid, distractors, provenance=None):
+        """Persist the current accepted pool as a checkpoint artifact."""
+        payload = [
+            d.to_dict() if hasattr(d, "to_dict") else dict(d)
+            for d in distractors
+        ]
+        self.save_artifact(
+            rid,
+            "DISTRACTOR_POOL_CHECKPOINT",
+            payload,
+            provenance or {},
+        )
+
+    def load_distractor_pool(self, rid):
+        """Load the newest accepted distractor pool checkpoint."""
+        artifact = self.latest_artifact(rid, "DISTRACTOR_POOL_CHECKPOINT")
+        return [] if artifact is None else list(artifact["payload"])
+
     def add_version(self,rid,question,provenance):
         with self._connect() as con:
             if con.execute("SELECT 1 FROM requests WHERE id=?",(rid,)).fetchone() is None: raise KeyError(rid)
@@ -107,7 +299,8 @@ class HailaRepository:
         for a in artifacts:a["payload"]=json.loads(a.pop("payload_json"));a["provenance"]=json.loads(a.pop("provenance_json"))
         for review in reviews:review["red_flags"]=json.loads(review.pop("red_flags_json"))
         latest=self.get_version(versions[-1]["id"]) if versions else None
-        return {"request":req,"versions":versions,"latest_version":latest,"artifacts":artifacts,"red_flags":flags,"events":events,"reviews":reviews}
+        quality_trace=_quality_trace(req,artifacts,flags,events)
+        return {"request":req,"versions":versions,"latest_version":latest,"artifacts":artifacts,"red_flags":flags,"events":events,"reviews":reviews,"quality_trace":quality_trace}
     @staticmethod
     def _event(con,rid,vid,old,new,component,reason,evidence): con.execute("INSERT INTO events(request_id,version_id,from_state,to_state,component,reason,evidence_json,created_at) VALUES(?,?,?,?,?,?,?,?)",
         (rid,vid,old.value if old else None,new.value,component,reason,json.dumps(evidence or {},ensure_ascii=False),agora()))

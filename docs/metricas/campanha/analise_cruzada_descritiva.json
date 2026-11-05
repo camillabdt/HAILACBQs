@@ -1,0 +1,52 @@
+{
+  "groups": {
+    "sem_rf_final": {
+      "n": 53,
+      "jev_distratores_mean": 0.33584905660377357,
+      "jev_mean": 0.7749433962264151
+    },
+    "com_rf_final": {
+      "n": 47,
+      "jev_distratores_mean": 0.2919148936170213,
+      "jev_mean": 0.7827234042553192
+    }
+  },
+  "correlations": [
+    {
+      "x": "final_red_flags",
+      "y": "jev_distratores_plausiveis",
+      "n": 100,
+      "pearson_r": -0.19798612141930683,
+      "spearman_rho": -0.1464189964941004
+    },
+    {
+      "x": "final_red_flags",
+      "y": "jev_mean_probability",
+      "n": 100,
+      "pearson_r": 0.001630179977810014,
+      "spearman_rho": -0.013321256467064757
+    },
+    {
+      "x": "cosine_mean_answer_distractors",
+      "y": "jev_distratores_plausiveis",
+      "n": 100,
+      "pearson_r": 0.22609007875259746,
+      "spearman_rho": 0.14790535318496886
+    },
+    {
+      "x": "cosine_max_answer_distractors",
+      "y": "jev_distratores_plausiveis",
+      "n": 100,
+      "pearson_r": 0.20576964013382892,
+      "spearman_rho": 0.1437868651071604
+    },
+    {
+      "x": "slm_calls",
+      "y": "jev_distratores_plausiveis",
+      "n": 100,
+      "pearson_r": -0.3010619941586309,
+      "spearman_rho": -0.37308785255001586
+    }
+  ],
+  "note": "Análise exploratória sem teste de hipótese; associação não implica causalidade. Escores não foram calibrados com avaliadores humanos."
+}

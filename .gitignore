@@ -10,3 +10,18 @@ runtime/*
 adapters/
 dados/
 enade/
+
+# Artefatos locais do HAILA
+.venv*/
+node_modules/
+.pytest_cache/
+evaluation/results/
+evaluation/checkpoints/
+output/
+backend/runtime/
+runtime/*
+!runtime/.gitkeep
+HAILA-backup-*/
+*.backup-*
+*.sqlite3*
+*.zip

@@ -1,0 +1,8 @@
+codigo,final_occurrences,final_questions,final_question_rate,historical_occurrences,historical_questions,historical_question_rate
+auditoria_qualidade_distratores_inconclusiva,2,2,0.02,0,0,0.0
+combinacao_de_itens_invalida,0,0,0.0,6,2,0.02
+distrator_parafraseia_gabarito,0,0,0.0,4,3,0.03
+gabarito_repetido_no_enunciado,3,3,0.03,3,3,0.03
+iwf_gabarito_mais_longo,21,21,0.21,21,21,0.21
+iwf_repeticao_entrega_gabarito,27,27,0.27,27,27,0.27
+iwf_termo_absoluto,21,21,0.21,21,21,0.21

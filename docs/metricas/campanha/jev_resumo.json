@@ -1,0 +1,67 @@
+{
+  "updated_at_utc": "2026-10-22T00:25:40.778342+00:00",
+  "frozen_dir": "evaluation/results/dissertacao-final-2026-FROZEN",
+  "evaluated_ok": 100,
+  "expected": 100,
+  "complete": true,
+  "mode": "shadow",
+  "criteria": {
+    "gabarito_unico": {
+      "mean": 0.8542,
+      "median": 0.91,
+      "min": 0.32,
+      "max": 0.97
+    },
+    "enunciado_claro": {
+      "mean": 0.9353,
+      "median": 0.94,
+      "min": 0.77,
+      "max": 0.97
+    },
+    "alinhamento_pedagogico": {
+      "mean": 0.9248,
+      "median": 0.95,
+      "min": 0.39,
+      "max": 0.98
+    },
+    "distratores_plausiveis": {
+      "mean": 0.3152,
+      "median": 0.28500000000000003,
+      "min": 0.07,
+      "max": 0.72
+    },
+    "sem_ambiguidade": {
+      "mean": 0.8635,
+      "median": 0.9,
+      "min": 0.36,
+      "max": 0.96
+    }
+  },
+  "minimum_probability": {
+    "mean": 0.3112,
+    "median": 0.28500000000000003,
+    "min": 0.07,
+    "max": 0.72
+  },
+  "mean_probability": {
+    "mean": 0.7786,
+    "median": 0.7859999999999999,
+    "min": 0.508,
+    "max": 0.9119999999999999
+  },
+  "latency_ms": {
+    "mean": 329.4166,
+    "median": 300.6,
+    "min": 226.09,
+    "max": 742.29
+  },
+  "usage": {
+    "input_tokens_total": 130079,
+    "output_tokens_total": 11000
+  },
+  "lowest_criterion_counts": {
+    "distratores_plausiveis": 98,
+    "alinhamento_pedagogico": 2
+  },
+  "estimated_cost_usd_total": 0.005463318
+}

@@ -1,0 +1,127 @@
+{
+  "questions": 100,
+  "paired_ids_match": true,
+  "checksum": {
+    "matched": 109,
+    "mismatched": [],
+    "missing": [
+      "campanha.log"
+    ]
+  },
+  "corpus_hash_matches_manifest": true,
+  "areas": {
+    "Sistemas Operacionais": 8,
+    "Inteligência Artificial": 7,
+    "Segurança da Informação": 7,
+    "Algoritmos e Estruturas de Dados": 13,
+    "Sistemas Distribuídos": 5,
+    "Redes de Computadores": 18,
+    "Engenharia de Software": 10,
+    "Computação e Sociedade": 2,
+    "Banco de Dados": 9,
+    "Arquitetura e Organização de Computadores": 4,
+    "Programação": 3,
+    "Teoria da Computação": 3,
+    "Matemática para Computação": 4,
+    "Compiladores e Linguagens": 4,
+    "Interação Humano-Computador": 3
+  },
+  "difficulty_target": {
+    "1": 20,
+    "4": 20,
+    "5": 20,
+    "3": 20,
+    "2": 20
+  },
+  "completion_count": 100,
+  "conforming_histories": 100,
+  "clean_output_count": 53,
+  "final_red_flag_questions": 47,
+  "final_red_flag_occurrences": 74,
+  "historical_red_flag_questions": 49,
+  "historical_red_flag_occurrences": 82,
+  "final_distribution": {
+    "iwf_termo_absoluto": 21,
+    "gabarito_repetido_no_enunciado": 3,
+    "iwf_repeticao_entrega_gabarito": 27,
+    "iwf_gabarito_mais_longo": 21,
+    "auditoria_qualidade_distratores_inconclusiva": 2
+  },
+  "valid_client_timing": {
+    "n": 52,
+    "mean_seconds": 63.70126923076923
+  },
+  "jev": {
+    "updated_at_utc": "2026-10-22T00:25:40.778342+00:00",
+    "frozen_dir": "evaluation/results/dissertacao-final-2026-FROZEN",
+    "evaluated_ok": 100,
+    "expected": 100,
+    "complete": true,
+    "mode": "shadow",
+    "criteria": {
+      "gabarito_unico": {
+        "mean": 0.8542,
+        "median": 0.91,
+        "min": 0.32,
+        "max": 0.97
+      },
+      "enunciado_claro": {
+        "mean": 0.9353,
+        "median": 0.94,
+        "min": 0.77,
+        "max": 0.97
+      },
+      "alinhamento_pedagogico": {
+        "mean": 0.9248,
+        "median": 0.95,
+        "min": 0.39,
+        "max": 0.98
+      },
+      "distratores_plausiveis": {
+        "mean": 0.3152,
+        "median": 0.28500000000000003,
+        "min": 0.07,
+        "max": 0.72
+      },
+      "sem_ambiguidade": {
+        "mean": 0.8635,
+        "median": 0.9,
+        "min": 0.36,
+        "max": 0.96
+      }
+    },
+    "minimum_probability": {
+      "mean": 0.3112,
+      "median": 0.28500000000000003,
+      "min": 0.07,
+      "max": 0.72
+    },
+    "mean_probability": {
+      "mean": 0.7786,
+      "median": 0.7859999999999999,
+      "min": 0.508,
+      "max": 0.9119999999999999
+    },
+    "latency_ms": {
+      "mean": 329.4166,
+      "median": 300.6,
+      "min": 226.09,
+      "max": 742.29
+    },
+    "usage": {
+      "input_tokens_total": 130079,
+      "output_tokens_total": 11000
+    },
+    "lowest_criterion_counts": {
+      "distratores_plausiveis": 98,
+      "alinhamento_pedagogico": 2
+    },
+    "estimated_cost_usd_total": 0.005463318
+  },
+  "notes": [
+    "Escores do Jev não são taxa de acerto nem avaliação docente.",
+    "Ausência de Red Flags não comprova correção semântica.",
+    "Tempo válido restrito aos registros explicitamente marcados.",
+    "Arquivos originais não foram alterados."
+  ]
+}
